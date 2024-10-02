@@ -1,0 +1,2 @@
+-  SISTEMA PARA UNA VETERINARIA
+-  La empresa “Cat-Dog” es una veterinaria que requiere un Sistema Informático que le permite registrar la información general de los clientes (dueños) y sus mascotas.
