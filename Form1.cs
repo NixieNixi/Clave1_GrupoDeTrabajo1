@@ -16,5 +16,14 @@ namespace Clave1_GrupoDeTrabajo1
         {
             InitializeComponent();
         }
+
+        //Metodo para abrir otro form
+        private void txtInicioSesion_Click(object sender, EventArgs e)
+        {
+            //Creacion del objeto inicio de la clase inicioSesion
+            inicioSesion inicio = new inicioSesion();
+            //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
+            inicio.ShowDialog();
+        }
     }
 }

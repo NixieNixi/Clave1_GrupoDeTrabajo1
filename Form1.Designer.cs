@@ -29,76 +29,36 @@ namespace Clave1_GrupoDeTrabajo1
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblContrasena = new System.Windows.Forms.Label();
-            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
+            this.txtInicioSesion = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // btnIngresar
+            // txtInicioSesion
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(259, 274);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
-            this.btnIngresar.TabIndex = 0;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.txtInicioSesion.Location = new System.Drawing.Point(170, 213);
+            this.txtInicioSesion.Name = "txtInicioSesion";
+            this.txtInicioSesion.Size = new System.Drawing.Size(75, 23);
+            this.txtInicioSesion.TabIndex = 0;
+            this.txtInicioSesion.Text = "Abrir";
+            this.txtInicioSesion.UseVisualStyleBackColor = true;
+            this.txtInicioSesion.Click += new System.EventHandler(this.txtInicioSesion_Click);
             // 
-            // btnSalir
+            // label1
             // 
-            this.btnSalir.Location = new System.Drawing.Point(259, 329);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 1;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(157, 117);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(98, 13);
-            this.lblNombreUsuario.TabIndex = 2;
-            this.lblNombreUsuario.Text = "Nombre de Usuario";
-            // 
-            // lblContrasena
-            // 
-            this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(157, 187);
-            this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(61, 13);
-            this.lblContrasena.TabIndex = 3;
-            this.lblContrasena.Text = "Contraseña";
-            // 
-            // txtNombreUsuario
-            // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(283, 117);
-            this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(100, 20);
-            this.txtNombreUsuario.TabIndex = 4;
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Location = new System.Drawing.Point(283, 187);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '*';
-            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
-            this.txtContrasena.TabIndex = 5;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(160, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Abrir otro formulario";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.txtNombreUsuario);
-            this.Controls.Add(this.lblContrasena);
-            this.Controls.Add(this.lblNombreUsuario);
-            this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnIngresar);
+            this.ClientSize = new System.Drawing.Size(424, 412);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtInicioSesion);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -108,12 +68,8 @@ namespace Clave1_GrupoDeTrabajo1
 
         #endregion
 
-        private System.Windows.Forms.Button btnIngresar;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblContrasena;
-        private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.TextBox txtContrasena;
+        private System.Windows.Forms.Button txtInicioSesion;
+        private System.Windows.Forms.Label label1;
     }
 }
 
