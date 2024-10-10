@@ -31,11 +31,17 @@ namespace Clave1_GrupoDeTrabajo1
         {
             this.txtInicioSesion = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblIngresoVete = new System.Windows.Forms.Label();
+            this.btnIngresoVete = new System.Windows.Forms.Button();
+            this.lblIngresoAdmin = new System.Windows.Forms.Label();
+            this.btnIngresoAdmin = new System.Windows.Forms.Button();
+            this.lblIngresoDueno = new System.Windows.Forms.Label();
+            this.btnIngresoDueno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtInicioSesion
             // 
-            this.txtInicioSesion.Location = new System.Drawing.Point(170, 213);
+            this.txtInicioSesion.Location = new System.Drawing.Point(22, 38);
             this.txtInicioSesion.Name = "txtInicioSesion";
             this.txtInicioSesion.Size = new System.Drawing.Size(75, 23);
             this.txtInicioSesion.TabIndex = 0;
@@ -46,17 +52,77 @@ namespace Clave1_GrupoDeTrabajo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(160, 184);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Abrir otro formulario";
             // 
+            // lblIngresoVete
+            // 
+            this.lblIngresoVete.AutoSize = true;
+            this.lblIngresoVete.Location = new System.Drawing.Point(19, 248);
+            this.lblIngresoVete.Name = "lblIngresoVete";
+            this.lblIngresoVete.Size = new System.Drawing.Size(95, 13);
+            this.lblIngresoVete.TabIndex = 3;
+            this.lblIngresoVete.Text = "Ingreso Veterinario";
+            // 
+            // btnIngresoVete
+            // 
+            this.btnIngresoVete.Location = new System.Drawing.Point(29, 277);
+            this.btnIngresoVete.Name = "btnIngresoVete";
+            this.btnIngresoVete.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresoVete.TabIndex = 2;
+            this.btnIngresoVete.Text = "Ingresar";
+            this.btnIngresoVete.UseVisualStyleBackColor = true;
+            // 
+            // lblIngresoAdmin
+            // 
+            this.lblIngresoAdmin.AutoSize = true;
+            this.lblIngresoAdmin.Location = new System.Drawing.Point(173, 248);
+            this.lblIngresoAdmin.Name = "lblIngresoAdmin";
+            this.lblIngresoAdmin.Size = new System.Drawing.Size(108, 13);
+            this.lblIngresoAdmin.TabIndex = 5;
+            this.lblIngresoAdmin.Text = "Ingreso Administrador";
+            // 
+            // btnIngresoAdmin
+            // 
+            this.btnIngresoAdmin.Location = new System.Drawing.Point(183, 277);
+            this.btnIngresoAdmin.Name = "btnIngresoAdmin";
+            this.btnIngresoAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresoAdmin.TabIndex = 4;
+            this.btnIngresoAdmin.Text = "Ingresar";
+            this.btnIngresoAdmin.UseVisualStyleBackColor = true;
+            // 
+            // lblIngresoDueno
+            // 
+            this.lblIngresoDueno.AutoSize = true;
+            this.lblIngresoDueno.Location = new System.Drawing.Point(317, 248);
+            this.lblIngresoDueno.Name = "lblIngresoDueno";
+            this.lblIngresoDueno.Size = new System.Drawing.Size(77, 13);
+            this.lblIngresoDueno.TabIndex = 7;
+            this.lblIngresoDueno.Text = "Ingreso Dueño";
+            // 
+            // btnIngresoDueno
+            // 
+            this.btnIngresoDueno.Location = new System.Drawing.Point(327, 277);
+            this.btnIngresoDueno.Name = "btnIngresoDueno";
+            this.btnIngresoDueno.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresoDueno.TabIndex = 6;
+            this.btnIngresoDueno.Text = "Ingresar";
+            this.btnIngresoDueno.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 412);
+            this.ClientSize = new System.Drawing.Size(503, 333);
+            this.Controls.Add(this.lblIngresoDueno);
+            this.Controls.Add(this.btnIngresoDueno);
+            this.Controls.Add(this.lblIngresoAdmin);
+            this.Controls.Add(this.btnIngresoAdmin);
+            this.Controls.Add(this.lblIngresoVete);
+            this.Controls.Add(this.btnIngresoVete);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtInicioSesion);
             this.Name = "Form1";
@@ -70,6 +136,12 @@ namespace Clave1_GrupoDeTrabajo1
 
         private System.Windows.Forms.Button txtInicioSesion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIngresoVete;
+        private System.Windows.Forms.Button btnIngresoVete;
+        private System.Windows.Forms.Label lblIngresoAdmin;
+        private System.Windows.Forms.Button btnIngresoAdmin;
+        private System.Windows.Forms.Label lblIngresoDueno;
+        private System.Windows.Forms.Button btnIngresoDueno;
     }
 }
 
