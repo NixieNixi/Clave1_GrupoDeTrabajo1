@@ -30,10 +30,12 @@ namespace Clave1_GrupoDeTrabajo1
        
         private void txtInicioSesion_Click(object sender, EventArgs e)
         {
+
+            this.Close();
             //Creacion del objeto inicio de la clase inicioSesion(CanelaFeliz)
-            inicioSesion inicio = new inicioSesion();
+            //inicioSesion inicio = new inicioSesion();
             //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
-            inicio.ShowDialog();
+           // inicio.ShowDialog();
         }
 
         // Este método debería abrir el formulario donde el veterinario podrá iniciar sesión.
@@ -43,6 +45,10 @@ namespace Clave1_GrupoDeTrabajo1
             // Aquí se implementará la apertura del formulario donde el veterinario realizará su login.
             // Rol: Veterinario
             // Responsabilidad: Registrar consultas, manejar cuadro clínico y administrar vacunas.
+            LoginVeterinario loginVeterinario = new LoginVeterinario();
+            loginVeterinario.ShowDialog();
+
+
         }
 
         // Este método debería abrir el formulario donde el administrador del sistema inicia sesión.
@@ -52,6 +58,8 @@ namespace Clave1_GrupoDeTrabajo1
             // Aquí se implementará la apertura del formulario donde el administrador realizará su login.
             // Rol: Administrador
             // Responsabilidad: Gestionar citas, modificar registros, y controlar los pagos.
+            LoginAdmin loginAdmin = new LoginAdmin();
+            loginAdmin.ShowDialog();
         }
 
         // Este método debería abrir el formulario donde el dueño de la mascota inicia sesión.
@@ -61,6 +69,8 @@ namespace Clave1_GrupoDeTrabajo1
             // Aquí se implementará la apertura del formulario donde el dueño realizará su login.
             // Rol: Dueño de la Mascota
             // Responsabilidad: Programar, cancelar o modificar citas y realizar compras.
+            LoginDueno loginDueno = new LoginDueno();
+            loginDueno.ShowDialog();
 
         }
     }

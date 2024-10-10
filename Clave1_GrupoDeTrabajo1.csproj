@@ -58,6 +58,36 @@
     <Compile Include="inicioSesion.Designer.cs">
       <DependentUpon>inicioSesion.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginAdmin.Designer.cs">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginDueno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginDueno.Designer.cs">
+      <DependentUpon>LoginDueno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginVeterinario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginVeterinario.Designer.cs">
+      <DependentUpon>LoginVeterinario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuAdmin.Designer.cs">
+      <DependentUpon>MenuAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuDueno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuDueno.Designer.cs">
+      <DependentUpon>MenuDueno.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -65,6 +95,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inicioSesion.resx">
       <DependentUpon>inicioSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginAdmin.resx">
+      <DependentUpon>LoginAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginDueno.resx">
+      <DependentUpon>LoginDueno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
