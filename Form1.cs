@@ -18,12 +18,30 @@ namespace Clave1_GrupoDeTrabajo1
         }
 
         //Metodo para abrir otro form
+       
         private void txtInicioSesion_Click(object sender, EventArgs e)
         {
-            //Creacion del objeto inicio de la clase inicioSesion
+            //Creacion del objeto inicio de la clase inicioSesion(CanelaFeliz)
             inicioSesion inicio = new inicioSesion();
             //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
             inicio.ShowDialog();
+        }
+        
+        private void btnIngresoVete_Click(object sender, EventArgs e)
+        {
+            //Aqui iria el para abrir donde el user vete realizara su login.(NixieNixi)
+        }
+
+        private void btnIngresoAdmin_Click(object sender, EventArgs e)
+        {
+            //Aqui iria el para abrir donde el user Administrador realizara su login.(NixieNixi)
+
+        }
+
+        private void btnIngresoDueno_Click(object sender, EventArgs e)
+        {
+            //Aqui iria el para abrir donde el user Dueño  realizara su login.(NixieNixi)
+
         }
     }
 }

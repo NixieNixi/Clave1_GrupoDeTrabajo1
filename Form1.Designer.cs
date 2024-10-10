@@ -75,6 +75,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoVete.TabIndex = 2;
             this.btnIngresoVete.Text = "Ingresar";
             this.btnIngresoVete.UseVisualStyleBackColor = true;
+            this.btnIngresoVete.Click += new System.EventHandler(this.btnIngresoVete_Click);
             // 
             // lblIngresoAdmin
             // 
@@ -93,6 +94,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoAdmin.TabIndex = 4;
             this.btnIngresoAdmin.Text = "Ingresar";
             this.btnIngresoAdmin.UseVisualStyleBackColor = true;
+            this.btnIngresoAdmin.Click += new System.EventHandler(this.btnIngresoAdmin_Click);
             // 
             // lblIngresoDueno
             // 
@@ -111,6 +113,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoDueno.TabIndex = 6;
             this.btnIngresoDueno.Text = "Ingresar";
             this.btnIngresoDueno.UseVisualStyleBackColor = true;
+            this.btnIngresoDueno.Click += new System.EventHandler(this.btnIngresoDueno_Click);
             // 
             // Form1
             // 
