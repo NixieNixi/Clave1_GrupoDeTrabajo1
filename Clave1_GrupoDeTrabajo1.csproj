@@ -46,60 +46,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="interfaz\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="interfaz\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginAdmin.cs">
+    <Compile Include="interfaz\LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginAdmin.Designer.cs">
+    <Compile Include="interfaz\LoginAdmin.Designer.cs">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginDueno.cs">
+    <Compile Include="interfaz\LoginDueno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginDueno.Designer.cs">
+    <Compile Include="interfaz\LoginDueno.Designer.cs">
       <DependentUpon>LoginDueno.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginVeterinario.cs">
+    <Compile Include="interfaz\LoginVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginVeterinario.Designer.cs">
+    <Compile Include="interfaz\LoginVeterinario.Designer.cs">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuAdmin.cs">
+    <Compile Include="interfaz\MenuAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuAdmin.Designer.cs">
+    <Compile Include="interfaz\MenuAdmin.Designer.cs">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuDueno.cs">
+    <Compile Include="interfaz\MenuDueno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuDueno.Designer.cs">
+    <Compile Include="interfaz\MenuDueno.Designer.cs">
       <DependentUpon>MenuDueno.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuVeterinario.cs">
+    <Compile Include="interfaz\MenuVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuVeterinario.Designer.cs">
+    <Compile Include="interfaz\MenuVeterinario.Designer.cs">
       <DependentUpon>MenuVeterinario.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
+    <EmbeddedResource Include="interfaz\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginAdmin.resx">
+    <EmbeddedResource Include="interfaz\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginDueno.resx">
+    <EmbeddedResource Include="interfaz\LoginDueno.resx">
       <DependentUpon>LoginDueno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginVeterinario.resx">
+    <EmbeddedResource Include="interfaz\LoginVeterinario.resx">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
