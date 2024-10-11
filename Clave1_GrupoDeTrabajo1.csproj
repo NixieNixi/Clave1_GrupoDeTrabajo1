@@ -102,6 +102,9 @@
     <EmbeddedResource Include="interfaz\LoginVeterinario.resx">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\MenuDueno.resx">
+      <DependentUpon>MenuDueno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

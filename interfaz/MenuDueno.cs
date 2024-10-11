@@ -16,5 +16,25 @@ namespace Clave1_GrupoDeTrabajo1
         {
             InitializeComponent();
         }
+
+        private void btnAgendarCita_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVerCitas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnComprar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
