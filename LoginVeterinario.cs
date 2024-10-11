@@ -16,5 +16,17 @@ namespace Clave1_GrupoDeTrabajo1
         {
             InitializeComponent();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnIngresoVete_Click(object sender, EventArgs e)
+        {
+            MenuVeterinario menuVeterinario = new MenuVeterinario();
+            menuVeterinario.ShowDialog();
+            this.Hide();
+        }
     }
 }

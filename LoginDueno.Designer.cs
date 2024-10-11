@@ -31,10 +31,10 @@ namespace Clave1_GrupoDeTrabajo1
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresoDueno = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnLoginNomDueno = new System.Windows.Forms.TextBox();
+            this.txtLoginNomDueno = new System.Windows.Forms.TextBox();
+            this.lblLoginContDueno = new System.Windows.Forms.Label();
+            this.lblLoginNomDueno = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -57,37 +57,37 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoDueno.UseVisualStyleBackColor = true;
             this.btnIngresoDueno.Click += new System.EventHandler(this.btnIngresoDueno_Click);
             // 
-            // textBox2
+            // btnLoginNomDueno
             // 
-            this.textBox2.Location = new System.Drawing.Point(173, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 9;
+            this.btnLoginNomDueno.Location = new System.Drawing.Point(173, 142);
+            this.btnLoginNomDueno.Name = "btnLoginNomDueno";
+            this.btnLoginNomDueno.Size = new System.Drawing.Size(100, 20);
+            this.btnLoginNomDueno.TabIndex = 9;
             // 
-            // textBox1
+            // txtLoginNomDueno
             // 
-            this.textBox1.Location = new System.Drawing.Point(173, 75);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 8;
+            this.txtLoginNomDueno.Location = new System.Drawing.Point(173, 75);
+            this.txtLoginNomDueno.Name = "txtLoginNomDueno";
+            this.txtLoginNomDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginNomDueno.TabIndex = 8;
             // 
-            // label2
+            // lblLoginContDueno
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(84, 131);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Contrasena";
+            this.lblLoginContDueno.AutoSize = true;
+            this.lblLoginContDueno.Location = new System.Drawing.Point(84, 131);
+            this.lblLoginContDueno.Name = "lblLoginContDueno";
+            this.lblLoginContDueno.Size = new System.Drawing.Size(61, 13);
+            this.lblLoginContDueno.TabIndex = 7;
+            this.lblLoginContDueno.Text = "Contrasena";
             // 
-            // label1
+            // lblLoginNomDueno
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Nombre";
+            this.lblLoginNomDueno.AutoSize = true;
+            this.lblLoginNomDueno.Location = new System.Drawing.Point(81, 83);
+            this.lblLoginNomDueno.Name = "lblLoginNomDueno";
+            this.lblLoginNomDueno.Size = new System.Drawing.Size(44, 13);
+            this.lblLoginNomDueno.TabIndex = 6;
+            this.lblLoginNomDueno.Text = "Nombre";
             // 
             // LoginDueno
             // 
@@ -96,10 +96,10 @@ namespace Clave1_GrupoDeTrabajo1
             this.ClientSize = new System.Drawing.Size(388, 359);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresoDueno);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnLoginNomDueno);
+            this.Controls.Add(this.txtLoginNomDueno);
+            this.Controls.Add(this.lblLoginContDueno);
+            this.Controls.Add(this.lblLoginNomDueno);
             this.Name = "LoginDueno";
             this.Text = "LoginDueno";
             this.ResumeLayout(false);
@@ -111,9 +111,9 @@ namespace Clave1_GrupoDeTrabajo1
 
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresoDueno;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox btnLoginNomDueno;
+        private System.Windows.Forms.TextBox txtLoginNomDueno;
+        private System.Windows.Forms.Label lblLoginContDueno;
+        private System.Windows.Forms.Label lblLoginNomDueno;
     }
 }

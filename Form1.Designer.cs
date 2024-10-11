@@ -45,7 +45,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.txtInicioSesion.Name = "txtInicioSesion";
             this.txtInicioSesion.Size = new System.Drawing.Size(75, 23);
             this.txtInicioSesion.TabIndex = 0;
-            this.txtInicioSesion.Text = "Abrir";
+            this.txtInicioSesion.Text = "Salir";
             this.txtInicioSesion.UseVisualStyleBackColor = true;
             this.txtInicioSesion.Click += new System.EventHandler(this.txtInicioSesion_Click);
             // 

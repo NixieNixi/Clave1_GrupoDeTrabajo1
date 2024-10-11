@@ -31,10 +31,10 @@ namespace Clave1_GrupoDeTrabajo1
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnIngresoAdmin = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtLoginContAdmin = new System.Windows.Forms.TextBox();
+            this.txtLoginNomAdmin = new System.Windows.Forms.TextBox();
+            this.lblLoginContAdmin = new System.Windows.Forms.Label();
+            this.lblLoginNomAdmin = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -57,37 +57,37 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoAdmin.UseVisualStyleBackColor = true;
             this.btnIngresoAdmin.Click += new System.EventHandler(this.btnIngresoAdmin_Click);
             // 
-            // textBox2
+            // txtLoginContAdmin
             // 
-            this.textBox2.Location = new System.Drawing.Point(149, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 21;
+            this.txtLoginContAdmin.Location = new System.Drawing.Point(149, 108);
+            this.txtLoginContAdmin.Name = "txtLoginContAdmin";
+            this.txtLoginContAdmin.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginContAdmin.TabIndex = 21;
             // 
-            // textBox1
+            // txtLoginNomAdmin
             // 
-            this.textBox1.Location = new System.Drawing.Point(149, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtLoginNomAdmin.Location = new System.Drawing.Point(149, 41);
+            this.txtLoginNomAdmin.Name = "txtLoginNomAdmin";
+            this.txtLoginNomAdmin.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginNomAdmin.TabIndex = 20;
             // 
-            // label2
+            // lblLoginContAdmin
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Contrasena";
+            this.lblLoginContAdmin.AutoSize = true;
+            this.lblLoginContAdmin.Location = new System.Drawing.Point(60, 97);
+            this.lblLoginContAdmin.Name = "lblLoginContAdmin";
+            this.lblLoginContAdmin.Size = new System.Drawing.Size(61, 13);
+            this.lblLoginContAdmin.TabIndex = 19;
+            this.lblLoginContAdmin.Text = "Contrasena";
             // 
-            // label1
+            // lblLoginNomAdmin
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(57, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Nombre";
+            this.lblLoginNomAdmin.AutoSize = true;
+            this.lblLoginNomAdmin.Location = new System.Drawing.Point(57, 49);
+            this.lblLoginNomAdmin.Name = "lblLoginNomAdmin";
+            this.lblLoginNomAdmin.Size = new System.Drawing.Size(44, 13);
+            this.lblLoginNomAdmin.TabIndex = 18;
+            this.lblLoginNomAdmin.Text = "Nombre";
             // 
             // LoginAdmin
             // 
@@ -96,10 +96,10 @@ namespace Clave1_GrupoDeTrabajo1
             this.ClientSize = new System.Drawing.Size(418, 355);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIngresoAdmin);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtLoginContAdmin);
+            this.Controls.Add(this.txtLoginNomAdmin);
+            this.Controls.Add(this.lblLoginContAdmin);
+            this.Controls.Add(this.lblLoginNomAdmin);
             this.Name = "LoginAdmin";
             this.Text = "LoginAdmin";
             this.ResumeLayout(false);
@@ -111,9 +111,9 @@ namespace Clave1_GrupoDeTrabajo1
 
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnIngresoAdmin;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtLoginContAdmin;
+        private System.Windows.Forms.TextBox txtLoginNomAdmin;
+        private System.Windows.Forms.Label lblLoginContAdmin;
+        private System.Windows.Forms.Label lblLoginNomAdmin;
     }
 }
