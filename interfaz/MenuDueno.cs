@@ -31,7 +31,9 @@ namespace Clave1_GrupoDeTrabajo1
 
         private void btnComprar_Click(object sender, EventArgs e)
         {
-
+            ComprarProductos comprarProductos = new ComprarProductos();
+            this.Hide();
+            comprarProductos.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

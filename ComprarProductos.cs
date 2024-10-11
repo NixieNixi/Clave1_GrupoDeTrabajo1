@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clave1_GrupoDeTrabajo1
 {
-    public partial class AgendarCita : Form
+    public partial class ComprarProductos : Form
     {
-        public AgendarCita()
+        public ComprarProductos()
         {
             InitializeComponent();
         }
