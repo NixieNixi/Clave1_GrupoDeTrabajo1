@@ -19,12 +19,14 @@ namespace Clave1_GrupoDeTrabajo1
 
         private void btnAgendarCita_Click(object sender, EventArgs e)
         {
-
+            AgendarCita agendarCita = new AgendarCita();
+            this.Hide();
+            agendarCita.ShowDialog();
         }
 
         private void btnVerCitas_Click(object sender, EventArgs e)
         {
-
+           
         }
 
         private void btnComprar_Click(object sender, EventArgs e)

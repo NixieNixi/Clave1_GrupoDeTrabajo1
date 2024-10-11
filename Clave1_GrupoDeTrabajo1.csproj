@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgendarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgendarCita.Designer.cs">
+      <DependentUpon>AgendarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
