@@ -27,18 +27,6 @@ namespace Clave1_GrupoDeTrabajo1
             InitializeComponent();
         }
 
-        //Metodo para abrir otro form
-       
-        private void txtInicioSesion_Click(object sender, EventArgs e)
-        {
-
-            this.Close();
-            //Creacion del objeto inicio de la clase inicioSesion(CanelaFeliz)
-            //inicioSesion inicio = new inicioSesion();
-            //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
-           // inicio.ShowDialog();
-        }
-
         // Este método debería abrir el formulario donde el veterinario podrá iniciar sesión.
         // El veterinario tiene permisos para registrar, consultas y administrar el cuadro clínico de las mascotas.
         private void btnIngresoVete_Click(object sender, EventArgs e)
@@ -73,6 +61,16 @@ namespace Clave1_GrupoDeTrabajo1
             LoginDueno loginDueno = new LoginDueno();
             loginDueno.ShowDialog();
 
+        }
+
+        //Metodo para cerrar el form
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            //Creacion del objeto inicio de la clase inicioSesion(CanelaFeliz)
+            //inicioSesion inicio = new inicioSesion();
+            //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
+            // inicio.ShowDialog();
         }
     }
 }

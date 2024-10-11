@@ -52,12 +52,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="inicioSesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="inicioSesion.Designer.cs">
-      <DependentUpon>inicioSesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,9 +92,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="inicioSesion.resx">
-      <DependentUpon>inicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>

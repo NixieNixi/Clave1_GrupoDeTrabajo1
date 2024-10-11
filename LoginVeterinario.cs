@@ -25,8 +25,8 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnIngresoVete_Click(object sender, EventArgs e)
         {
             MenuVeterinario menuVeterinario = new MenuVeterinario();
-            menuVeterinario.ShowDialog();
             this.Hide();
+            menuVeterinario.ShowDialog();
         }
     }
 }

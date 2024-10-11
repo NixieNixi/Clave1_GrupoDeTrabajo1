@@ -25,8 +25,8 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnIngresoAdmin_Click(object sender, EventArgs e)
         {
             MenuAdmin menuAdmin = new MenuAdmin();
-            menuAdmin.ShowDialog();
             this.Hide();
+            menuAdmin.ShowDialog();
         }
     }
 }

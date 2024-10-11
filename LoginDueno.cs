@@ -25,8 +25,8 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnIngresoDueno_Click(object sender, EventArgs e)
         {
             MenuDueno menuDueno = new MenuDueno();
-            menuDueno.ShowDialog();
             this.Hide();
+            menuDueno.ShowDialog();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Clave1_GrupoDeTrabajo1
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtInicioSesion = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblIngresoVete = new System.Windows.Forms.Label();
             this.btnIngresoVete = new System.Windows.Forms.Button();
@@ -39,24 +39,24 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoDueno = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // txtInicioSesion
+            // btnSalir
             // 
-            this.txtInicioSesion.Location = new System.Drawing.Point(22, 38);
-            this.txtInicioSesion.Name = "txtInicioSesion";
-            this.txtInicioSesion.Size = new System.Drawing.Size(75, 23);
-            this.txtInicioSesion.TabIndex = 0;
-            this.txtInicioSesion.Text = "Salir";
-            this.txtInicioSesion.UseVisualStyleBackColor = true;
-            this.txtInicioSesion.Click += new System.EventHandler(this.txtInicioSesion_Click);
+            this.btnSalir.Location = new System.Drawing.Point(22, 38);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.TabIndex = 0;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
+            this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Abrir otro formulario";
+            this.label1.Text = "Cerrar";
             // 
             // lblIngresoVete
             // 
@@ -127,9 +127,9 @@ namespace Clave1_GrupoDeTrabajo1
             this.Controls.Add(this.lblIngresoVete);
             this.Controls.Add(this.btnIngresoVete);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtInicioSesion);
+            this.Controls.Add(this.btnSalir);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Menu principal";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +137,7 @@ namespace Clave1_GrupoDeTrabajo1
 
         #endregion
 
-        private System.Windows.Forms.Button txtInicioSesion;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblIngresoVete;
         private System.Windows.Forms.Button btnIngresoVete;
