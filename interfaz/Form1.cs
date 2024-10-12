@@ -71,6 +71,9 @@ namespace Clave1_GrupoDeTrabajo1
             //inicioSesion inicio = new inicioSesion();
             //se usa la propiedad ShowDialog del objeto creado para abrir el nuevo form
             // inicio.ShowDialog();
+
+         
+            //si ve no le aparece lo que yo tengo en mi rama lo de la ventana del dueno, es porque aun no e fusioando mi rama con la rama master y no fusionado la rama master con la rama mustis
         }
     }
 }
