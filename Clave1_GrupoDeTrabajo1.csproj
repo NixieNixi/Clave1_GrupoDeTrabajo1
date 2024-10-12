@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaz\ComprarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\ComprarProductos.Designer.cs">
+      <DependentUpon>ComprarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\AgendarCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\AgendarCita.Designer.cs">
+      <DependentUpon>AgendarCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="interfaz\VerCitas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\VerCitas.Designer.cs">
+      <DependentUpon>VerCitas.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="interfaz\AgendarCita.resx">
+      <DependentUpon>AgendarCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\ComprarProductos.resx">
+      <DependentUpon>ComprarProductos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +126,12 @@
     <EmbeddedResource Include="interfaz\LoginVeterinario.resx">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\MenuDueno.resx">
+      <DependentUpon>MenuDueno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\MenuVeterinario.resx">
+      <DependentUpon>MenuVeterinario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -111,6 +141,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="interfaz\VerCitas.resx">
+      <DependentUpon>VerCitas.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
