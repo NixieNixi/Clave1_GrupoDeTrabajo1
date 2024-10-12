@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace Clave1_GrupoDeTrabajo1
 {
-    public partial class ComprarProductos : Form
+    public partial class VerCitas : Form
     {
-        public ComprarProductos()
+        public VerCitas()
         {
             InitializeComponent();
+        }
+
+        private void btnVolverMenuDueno_Click(object sender, EventArgs e)
+        {
+            MenuDueno menuDueno = new MenuDueno();
+            this.Hide();
+            menuDueno.ShowDialog();
         }
     }
 }

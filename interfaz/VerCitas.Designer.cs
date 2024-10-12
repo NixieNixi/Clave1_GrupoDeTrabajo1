@@ -1,7 +1,7 @@
 ﻿
 namespace Clave1_GrupoDeTrabajo1
 {
-    partial class ComprarProductos
+    partial class VerCitas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,33 @@ namespace Clave1_GrupoDeTrabajo1
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btnVolverMenuDueno = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btnVolverMenuDueno
+            // 
+            this.btnVolverMenuDueno.Location = new System.Drawing.Point(602, 347);
+            this.btnVolverMenuDueno.Name = "btnVolverMenuDueno";
+            this.btnVolverMenuDueno.Size = new System.Drawing.Size(106, 42);
+            this.btnVolverMenuDueno.TabIndex = 0;
+            this.btnVolverMenuDueno.Text = "Volver Menu Dueno";
+            this.btnVolverMenuDueno.UseVisualStyleBackColor = true;
+            this.btnVolverMenuDueno.Click += new System.EventHandler(this.btnVolverMenuDueno_Click);
+            // 
+            // VerCitas
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ComprarProductos";
+            this.Controls.Add(this.btnVolverMenuDueno);
+            this.Name = "VerCitas";
+            this.Text = "VerCitas";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btnVolverMenuDueno;
     }
 }

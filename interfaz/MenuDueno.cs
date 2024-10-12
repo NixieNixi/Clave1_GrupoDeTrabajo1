@@ -26,7 +26,9 @@ namespace Clave1_GrupoDeTrabajo1
 
         private void btnVerCitas_Click(object sender, EventArgs e)
         {
-           
+            VerCitas verCitas = new VerCitas();
+            this.Hide();
+            verCitas.ShowDialog();
         }
 
         private void btnComprar_Click(object sender, EventArgs e)
