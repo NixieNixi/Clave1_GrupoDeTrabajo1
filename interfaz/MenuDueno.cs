@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Clave1_GrupoDeTrabajo1.interfaz;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,31 +17,39 @@ namespace Clave1_GrupoDeTrabajo1
         {
             InitializeComponent();
         }
-
-        private void btnAgendarCita_Click(object sender, EventArgs e)
+               
+        //Metodo de cierre de sesion. redirige al menu principal
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            AgendarCita agendarCita = new AgendarCita();
-            this.Hide();
-            agendarCita.ShowDialog();
+            this.Close();
         }
 
-        private void btnVerCitas_Click(object sender, EventArgs e)
+        //Este metodo permitiria abrir una ventana donde al Dueño pueda editar informacion personal tal como el numero de telefono o el email
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Un saludo al grupo");
+        }
+
+        //Este metodo permitiria abrir una ventana donde pueda ver las citas que tiene agendadas, editarlas o crear una nueva
+        private void btnCitas_Click(object sender, EventArgs e)
         {
             VerCitas verCitas = new VerCitas();
             this.Hide();
             verCitas.ShowDialog();
         }
 
-        private void btnComprar_Click(object sender, EventArgs e)
+        //Comprar productos
+        private void btnProductos_Click(object sender, EventArgs e)
         {
             ComprarProductos comprarProductos = new ComprarProductos();
             this.Hide();
             comprarProductos.ShowDialog();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void btnMascotas_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Mascotas mascotas = new Mascotas();
+            mascotas.ShowDialog();
         }
     }
 }

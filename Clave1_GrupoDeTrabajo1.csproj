@@ -64,6 +64,12 @@
     <Compile Include="interfaz\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="interfaz\Mascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\Mascotas.Designer.cs">
+      <DependentUpon>Mascotas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login\LoginAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\Mascotas.resx">
+      <DependentUpon>Mascotas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>

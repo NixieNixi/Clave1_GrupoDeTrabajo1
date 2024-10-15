@@ -52,6 +52,7 @@ namespace Clave1_GrupoDeTrabajo1
             MessageBox.Show("Aqui se mostrara informacion tal como el horario de atencion, productos y servicios disponibles");
         }
 
+        //Metodo que abre el form donde se decide el tipo de usuario administrativo que desea entrar al sistema
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             LoginAdminSelec adminSelec = new LoginAdminSelec();

@@ -39,7 +39,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.txtDirecDueno = new System.Windows.Forms.TextBox();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnServicios = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
             this.btnMascotas = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
@@ -121,6 +121,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "Editar";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnCerrarSesion
             // 
@@ -130,15 +131,17 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnCerrarSesion.TabIndex = 2;
             this.btnCerrarSesion.Text = "Cerrar sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // btnServicios
+            // btnCitas
             // 
-            this.btnServicios.Location = new System.Drawing.Point(419, 25);
-            this.btnServicios.Name = "btnServicios";
-            this.btnServicios.Size = new System.Drawing.Size(75, 23);
-            this.btnServicios.TabIndex = 2;
-            this.btnServicios.Text = "Servicios";
-            this.btnServicios.UseVisualStyleBackColor = true;
+            this.btnCitas.Location = new System.Drawing.Point(419, 25);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(75, 23);
+            this.btnCitas.TabIndex = 2;
+            this.btnCitas.Text = "Citas";
+            this.btnCitas.UseVisualStyleBackColor = true;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
             // 
             // btnMascotas
             // 
@@ -148,6 +151,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnMascotas.TabIndex = 2;
             this.btnMascotas.Text = "Mascotas";
             this.btnMascotas.UseVisualStyleBackColor = true;
+            this.btnMascotas.Click += new System.EventHandler(this.btnMascotas_Click);
             // 
             // btnPagos
             // 
@@ -166,6 +170,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnProductos.TabIndex = 2;
             this.btnProductos.Text = "Productos";
             this.btnProductos.UseVisualStyleBackColor = true;
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
             // MenuDueno
             // 
@@ -175,7 +180,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.Controls.Add(this.btnPagos);
             this.Controls.Add(this.btnMascotas);
             this.Controls.Add(this.btnProductos);
-            this.Controls.Add(this.btnServicios);
+            this.Controls.Add(this.btnCitas);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.txtDirecDueno);
@@ -205,7 +210,7 @@ namespace Clave1_GrupoDeTrabajo1
         private System.Windows.Forms.TextBox txtDirecDueno;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnServicios;
+        private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Button btnMascotas;
         private System.Windows.Forms.Button btnPagos;
         private System.Windows.Forms.Button btnProductos;
