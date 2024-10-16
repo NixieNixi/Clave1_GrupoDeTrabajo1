@@ -55,7 +55,9 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo que abre el form donde se decide el tipo de usuario administrativo que desea entrar al sistema
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            //Llamara al formulario donde se podra elegir a uno de los usuarios de la administracion de la veterinaria (Veterinario o Administrador del sistema)
+            LoginAdminSelec LoginAdminSelec = new LoginAdminSelec();
+            LoginAdminSelec.ShowDialog();
         }
     }
 }

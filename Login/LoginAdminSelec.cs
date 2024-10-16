@@ -28,6 +28,7 @@ namespace Clave1_GrupoDeTrabajo1.Login
         private void btnVeterinario_Click(object sender, EventArgs e)
         {
             LoginVeterinario login = new LoginVeterinario();
+            this.Visible = false;
             login.ShowDialog();
         }
     }
