@@ -24,6 +24,8 @@ namespace Clave1_GrupoDeTrabajo1
             this.Hide();
             menuVeterinario.ShowDialog();
             //Si se puede
+            //Mi mama me mima a los 37. Metas ami me reganan :c
+            //un saludo a todo el mundo, mi gente latinooo.
         }
     }
 }
