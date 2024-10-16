@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="interfaz\FormExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\FormExpediente.Designer.cs">
+      <DependentUpon>FormExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="interfaz\FormVacunas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="interfaz\FormVacunas.Designer.cs">
+      <DependentUpon>FormVacunas.cs</DependentUpon>
+    </Compile>
     <Compile Include="interfaz\ComprarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     <Compile Include="interfaz\VerCitas.Designer.cs">
       <DependentUpon>VerCitas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="interfaz\FormExpediente.resx">
+      <DependentUpon>FormExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="interfaz\FormVacunas.resx">
+      <DependentUpon>FormVacunas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="interfaz\AgendarCita.resx">
       <DependentUpon>AgendarCita.cs</DependentUpon>
     </EmbeddedResource>

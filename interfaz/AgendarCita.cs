@@ -21,7 +21,7 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnVolverMenuDueno_Click(object sender, EventArgs e)
         {
             //this.Close();
-            MenuDueno menuDueno = new MenuDueno(); //para llamar al objeto menudueno
+           MenuDueno menuDueno = new MenuDueno(); //para llamar al objeto menudueno
            this.Hide(); // ste es para que el form de agendar cita se oculte
            menuDueno.ShowDialog(); // pa abir el form 
         }

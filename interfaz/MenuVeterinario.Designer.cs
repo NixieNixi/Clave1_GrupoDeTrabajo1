@@ -30,8 +30,8 @@ namespace Clave1_GrupoDeTrabajo1
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbVacunas = new System.Windows.Forms.RadioButton();
             this.rdbExpediente = new System.Windows.Forms.RadioButton();
+            this.rdbVacunas = new System.Windows.Forms.RadioButton();
             this.BtnMenuVeteIr = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,18 +48,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione Tipo de Registro";
             // 
-            // rdbVacunas
-            // 
-            this.rdbVacunas.AutoSize = true;
-            this.rdbVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbVacunas.Location = new System.Drawing.Point(7, 35);
-            this.rdbVacunas.Name = "rdbVacunas";
-            this.rdbVacunas.Size = new System.Drawing.Size(67, 17);
-            this.rdbVacunas.TabIndex = 0;
-            this.rdbVacunas.TabStop = true;
-            this.rdbVacunas.Text = "Vacunas";
-            this.rdbVacunas.UseVisualStyleBackColor = true;
-            // 
             // rdbExpediente
             // 
             this.rdbExpediente.AutoSize = true;
@@ -72,6 +60,18 @@ namespace Clave1_GrupoDeTrabajo1
             this.rdbExpediente.Text = "Expediente Clinico";
             this.rdbExpediente.UseVisualStyleBackColor = true;
             // 
+            // rdbVacunas
+            // 
+            this.rdbVacunas.AutoSize = true;
+            this.rdbVacunas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbVacunas.Location = new System.Drawing.Point(7, 35);
+            this.rdbVacunas.Name = "rdbVacunas";
+            this.rdbVacunas.Size = new System.Drawing.Size(67, 17);
+            this.rdbVacunas.TabIndex = 0;
+            this.rdbVacunas.TabStop = true;
+            this.rdbVacunas.Text = "Vacunas";
+            this.rdbVacunas.UseVisualStyleBackColor = true;
+            // 
             // BtnMenuVeteIr
             // 
             this.BtnMenuVeteIr.Location = new System.Drawing.Point(20, 119);
@@ -80,12 +80,13 @@ namespace Clave1_GrupoDeTrabajo1
             this.BtnMenuVeteIr.TabIndex = 2;
             this.BtnMenuVeteIr.Text = "Ir";
             this.BtnMenuVeteIr.UseVisualStyleBackColor = true;
+            this.BtnMenuVeteIr.Click += new System.EventHandler(this.BtnMenuVeteIr_Click);
             // 
             // MenuVeterinario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 162);
+            this.ClientSize = new System.Drawing.Size(383, 195);
             this.Controls.Add(this.BtnMenuVeteIr);
             this.Controls.Add(this.groupBox1);
             this.Name = "MenuVeterinario";
