@@ -12,16 +12,26 @@ namespace Clave1_GrupoDeTrabajo1
 {
     public partial class ComprarProductos : Form
     {
+        int i = 0;
+        
         public ComprarProductos()
         {
             InitializeComponent();
         }
 
-        private void btnVolverMenuDueno_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            MenuDueno menuDueno = new MenuDueno();
-            this.Hide();
-            menuDueno.ShowDialog();
+            MenuDueno menu = new MenuDueno();
+            menu.ShowDialog();
+        }
+
+        private int Mas() => i++;
+        private int Menos() => i--;
+
+        private void btnProd1Mas_Click(object sender, EventArgs e)
+        {
+            txtProducto1.Text = Convert.ToString(i);
+            Menos();
         }
     }
 }

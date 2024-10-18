@@ -64,22 +64,34 @@
     <Compile Include="interfaz\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\LoginAdmin.cs">
+    <Compile Include="interfaz\Mascotas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\LoginAdmin.Designer.cs">
+    <Compile Include="interfaz\Mascotas.Designer.cs">
+      <DependentUpon>Mascotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginAdmin.Designer.cs">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\LoginDueno.cs">
+    <Compile Include="Login\LoginAdminSelec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\LoginDueno.Designer.cs">
+    <Compile Include="Login\LoginAdminSelec.Designer.cs">
+      <DependentUpon>LoginAdminSelec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login\LoginDueno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login\LoginDueno.Designer.cs">
       <DependentUpon>LoginDueno.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\LoginVeterinario.cs">
+    <Compile Include="Login\LoginVeterinario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\LoginVeterinario.Designer.cs">
+    <Compile Include="Login\LoginVeterinario.Designer.cs">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </Compile>
     <Compile Include="interfaz\MenuAdmin.cs">
@@ -117,13 +129,19 @@
     <EmbeddedResource Include="interfaz\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\LoginAdmin.resx">
+    <EmbeddedResource Include="interfaz\Mascotas.resx">
+      <DependentUpon>Mascotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginAdmin.resx">
       <DependentUpon>LoginAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\LoginDueno.resx">
+    <EmbeddedResource Include="Login\LoginAdminSelec.resx">
+      <DependentUpon>LoginAdminSelec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login\LoginDueno.resx">
       <DependentUpon>LoginDueno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\LoginVeterinario.resx">
+    <EmbeddedResource Include="Login\LoginVeterinario.resx">
       <DependentUpon>LoginVeterinario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="interfaz\MenuDueno.resx">
