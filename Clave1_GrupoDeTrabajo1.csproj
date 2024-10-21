@@ -46,109 +46,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="interfaz\ComprarProductos.cs">
+    <Compile Include="Interfaz\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\ComprarProductos.Designer.cs">
-      <DependentUpon>ComprarProductos.cs</DependentUpon>
+    <Compile Include="Interfaz\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="interfaz\AgendarCita.cs">
+    <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="interfaz\AgendarCita.Designer.cs">
-      <DependentUpon>AgendarCita.cs</DependentUpon>
-    </Compile>
-    <Compile Include="interfaz\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="interfaz\Mascotas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\Mascotas.Designer.cs">
-      <DependentUpon>Mascotas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\LoginAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\LoginAdmin.Designer.cs">
-      <DependentUpon>LoginAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\LoginAdminSelec.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\LoginAdminSelec.Designer.cs">
-      <DependentUpon>LoginAdminSelec.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\LoginDueno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\LoginDueno.Designer.cs">
-      <DependentUpon>LoginDueno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login\LoginVeterinario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login\LoginVeterinario.Designer.cs">
-      <DependentUpon>LoginVeterinario.cs</DependentUpon>
-    </Compile>
-    <Compile Include="interfaz\MenuAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\MenuAdmin.Designer.cs">
-      <DependentUpon>MenuAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="interfaz\MenuDueno.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\MenuDueno.Designer.cs">
-      <DependentUpon>MenuDueno.cs</DependentUpon>
-    </Compile>
-    <Compile Include="interfaz\MenuVeterinario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\MenuVeterinario.Designer.cs">
-      <DependentUpon>MenuVeterinario.cs</DependentUpon>
+    <Compile Include="MenuPrincipal.Designer.cs">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="interfaz\VerCitas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="interfaz\VerCitas.Designer.cs">
-      <DependentUpon>VerCitas.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="interfaz\AgendarCita.resx">
-      <DependentUpon>AgendarCita.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\ComprarProductos.resx">
-      <DependentUpon>ComprarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\Mascotas.resx">
-      <DependentUpon>Mascotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\LoginAdmin.resx">
-      <DependentUpon>LoginAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\LoginAdminSelec.resx">
-      <DependentUpon>LoginAdminSelec.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\LoginDueno.resx">
-      <DependentUpon>LoginDueno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login\LoginVeterinario.resx">
-      <DependentUpon>LoginVeterinario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\MenuDueno.resx">
-      <DependentUpon>MenuDueno.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="interfaz\MenuVeterinario.resx">
-      <DependentUpon>MenuVeterinario.cs</DependentUpon>
+    <EmbeddedResource Include="MenuPrincipal.resx">
+      <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,9 +75,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="interfaz\VerCitas.resx">
-      <DependentUpon>VerCitas.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

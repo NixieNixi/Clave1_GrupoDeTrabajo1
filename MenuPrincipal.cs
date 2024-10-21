@@ -1,5 +1,4 @@
-﻿using Clave1_GrupoDeTrabajo1.Login;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,24 +20,13 @@ namespace Clave1_GrupoDeTrabajo1
 { 
     
     //Formulario Principal de la Aplicacion.
-    public partial class Form1 : Form
+    public partial class MenuPrincipal : Form
     {
         //Constructor del formulario principal.
-        public Form1()
+        public MenuPrincipal()
         {
             // Inicialización de los componentes visuales del formulario
             InitializeComponent();
-        }
-   
-        // Este método abre el formulario donde el dueño de la mascota inicia sesión.
-        // El dueño podrá programar, modificar o cancelar citas, además de realizar compras de productos.
-        private void btnIngresoDueno_Click_1(object sender, EventArgs e)
-        {
-            // Aquí se implementará la apertura del formulario donde el dueño realizará su login.
-            // Rol: Dueño de la Mascota
-            // Responsabilidad: Programar, cancelar o modificar citas y realizar compras.
-            LoginDueno loginDueno = new LoginDueno();
-            loginDueno.ShowDialog();
         }
 
         //Metodo para cerrar el form
@@ -52,10 +40,12 @@ namespace Clave1_GrupoDeTrabajo1
             MessageBox.Show("Aqui se mostrara informacion tal como el horario de atencion, productos y servicios disponibles");
         }
 
-        //Metodo que abre el form donde se decide el tipo de usuario administrativo que desea entrar al sistema
-        private void btnAdmin_Click(object sender, EventArgs e)
+        //Metodo para abrir la ventana de Login
+        private void btnIngresoDueno_Click(object sender, EventArgs e)
         {
-
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
         }
     }
 }
