@@ -1,7 +1,7 @@
 ﻿
 namespace Clave1_GrupoDeTrabajo1
 {
-    partial class Form1
+    partial class MenuPrincipal
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -32,7 +32,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.label1 = new System.Windows.Forms.Label();
             this.btnIngresoDueno = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,7 +53,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoDueno.TabIndex = 1;
             this.btnIngresoDueno.Text = "Iniciar sesion";
             this.btnIngresoDueno.UseVisualStyleBackColor = true;
-            this.btnIngresoDueno.Click += new System.EventHandler(this.btnIngresoDueno_Click_1);
+            this.btnIngresoDueno.Click += new System.EventHandler(this.btnIngresoDueno_Click);
             // 
             // btnInfo
             // 
@@ -66,16 +65,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(12, 358);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(92, 23);
-            this.btnAdmin.TabIndex = 2;
-            this.btnAdmin.Text = "Administracion";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(254, 243);
@@ -86,17 +75,16 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
-            // Form1
+            // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 393);
-            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnIngresoDueno);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MenuPrincipal";
             this.Text = "Menu principal";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -108,7 +96,6 @@ namespace Clave1_GrupoDeTrabajo1
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIngresoDueno;
         private System.Windows.Forms.Button btnInfo;
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnSalir;
     }
 }
