@@ -59,9 +59,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblNomDueno = new System.Windows.Forms.Label();
+            this.panelHM = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.tabControlExpediente.SuspendLayout();
             this.tabDatosMascota.SuspendLayout();
             this.tabDatosDueno.SuspendLayout();
+            this.tabHistorialMedico.SuspendLayout();
+            this.panelHM.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlExpediente
@@ -72,7 +78,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabControlExpediente.Location = new System.Drawing.Point(-3, -3);
             this.tabControlExpediente.Name = "tabControlExpediente";
             this.tabControlExpediente.SelectedIndex = 0;
-            this.tabControlExpediente.Size = new System.Drawing.Size(790, 439);
+            this.tabControlExpediente.Size = new System.Drawing.Size(894, 576);
             this.tabControlExpediente.TabIndex = 0;
             // 
             // tabDatosMascota
@@ -123,10 +129,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // tabHistorialMedico
             // 
+            this.tabHistorialMedico.Controls.Add(this.panelHM);
             this.tabHistorialMedico.Location = new System.Drawing.Point(4, 22);
             this.tabHistorialMedico.Name = "tabHistorialMedico";
             this.tabHistorialMedico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistorialMedico.Size = new System.Drawing.Size(782, 413);
+            this.tabHistorialMedico.Size = new System.Drawing.Size(886, 550);
             this.tabHistorialMedico.TabIndex = 2;
             this.tabHistorialMedico.Text = "Historial Medico";
             this.tabHistorialMedico.UseVisualStyleBackColor = true;
@@ -352,11 +359,49 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNomDueno.TabIndex = 28;
             this.lblNomDueno.Text = "Nombre Dueno";
             // 
+            // panelHM
+            // 
+            this.panelHM.AutoScroll = true;
+            this.panelHM.Controls.Add(this.label3);
+            this.panelHM.Controls.Add(this.label2);
+            this.panelHM.Controls.Add(this.label1);
+            this.panelHM.Location = new System.Drawing.Point(3, 6);
+            this.panelHM.Name = "panelHM";
+            this.panelHM.Size = new System.Drawing.Size(887, 544);
+            this.panelHM.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 635);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(729, 300);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "label3";
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(799, 448);
+            this.ClientSize = new System.Drawing.Size(886, 572);
             this.Controls.Add(this.tabControlExpediente);
             this.Name = "veterinarioExpediente";
             this.Text = "veterinarioExpediente";
@@ -365,6 +410,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabDatosMascota.PerformLayout();
             this.tabDatosDueno.ResumeLayout(false);
             this.tabDatosDueno.PerformLayout();
+            this.tabHistorialMedico.ResumeLayout(false);
+            this.panelHM.ResumeLayout(false);
+            this.panelHM.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -401,5 +449,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.Label lblIdDueno;
+        private System.Windows.Forms.Panel panelHM;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }
