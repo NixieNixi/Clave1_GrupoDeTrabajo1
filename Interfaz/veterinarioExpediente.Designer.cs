@@ -49,8 +49,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtNomDueno = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtIdDueno = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.lblIdDueno = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblNomDueno = new System.Windows.Forms.Label();
             this.tabControlExpediente.SuspendLayout();
             this.tabDatosMascota.SuspendLayout();
+            this.tabDatosDueno.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControlExpediente
@@ -92,6 +103,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // tabDatosDueno
             // 
+            this.tabDatosDueno.Controls.Add(this.lblNomDueno);
+            this.tabDatosDueno.Controls.Add(this.lblTelefono);
+            this.tabDatosDueno.Controls.Add(this.lblCorreo);
+            this.tabDatosDueno.Controls.Add(this.lblDireccion);
+            this.tabDatosDueno.Controls.Add(this.lblIdDueno);
+            this.tabDatosDueno.Controls.Add(this.txtDireccion);
+            this.tabDatosDueno.Controls.Add(this.txtCorreo);
+            this.tabDatosDueno.Controls.Add(this.txtNomDueno);
+            this.tabDatosDueno.Controls.Add(this.txtTelefono);
+            this.tabDatosDueno.Controls.Add(this.txtIdDueno);
             this.tabDatosDueno.Location = new System.Drawing.Point(4, 22);
             this.tabDatosDueno.Name = "tabDatosDueno";
             this.tabDatosDueno.Padding = new System.Windows.Forms.Padding(3);
@@ -246,6 +267,91 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtFechaNacimiento.Size = new System.Drawing.Size(100, 20);
             this.txtFechaNacimiento.TabIndex = 22;
             // 
+            // txtCorreo
+            // 
+            this.txtCorreo.Location = new System.Drawing.Point(500, 110);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.ReadOnly = true;
+            this.txtCorreo.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreo.TabIndex = 22;
+            // 
+            // txtNomDueno
+            // 
+            this.txtNomDueno.Location = new System.Drawing.Point(178, 110);
+            this.txtNomDueno.Name = "txtNomDueno";
+            this.txtNomDueno.ReadOnly = true;
+            this.txtNomDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtNomDueno.TabIndex = 21;
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(337, 110);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.ReadOnly = true;
+            this.txtTelefono.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefono.TabIndex = 20;
+            // 
+            // txtIdDueno
+            // 
+            this.txtIdDueno.Location = new System.Drawing.Point(15, 110);
+            this.txtIdDueno.Name = "txtIdDueno";
+            this.txtIdDueno.ReadOnly = true;
+            this.txtIdDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtIdDueno.TabIndex = 19;
+            // 
+            // txtDireccion
+            // 
+            this.txtDireccion.Location = new System.Drawing.Point(660, 110);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.ReadOnly = true;
+            this.txtDireccion.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccion.TabIndex = 23;
+            // 
+            // lblIdDueno
+            // 
+            this.lblIdDueno.AutoSize = true;
+            this.lblIdDueno.Location = new System.Drawing.Point(15, 59);
+            this.lblIdDueno.Name = "lblIdDueno";
+            this.lblIdDueno.Size = new System.Drawing.Size(53, 13);
+            this.lblIdDueno.TabIndex = 24;
+            this.lblIdDueno.Text = "ID Dueno";
+            // 
+            // lblDireccion
+            // 
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(657, 59);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 25;
+            this.lblDireccion.Text = "Direccion";
+            // 
+            // lblCorreo
+            // 
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(497, 59);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
+            this.lblCorreo.TabIndex = 26;
+            this.lblCorreo.Text = "Correo";
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(334, 59);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 27;
+            this.lblTelefono.Text = "Telefono";
+            // 
+            // lblNomDueno
+            // 
+            this.lblNomDueno.AutoSize = true;
+            this.lblNomDueno.Location = new System.Drawing.Point(175, 59);
+            this.lblNomDueno.Name = "lblNomDueno";
+            this.lblNomDueno.Size = new System.Drawing.Size(79, 13);
+            this.lblNomDueno.TabIndex = 28;
+            this.lblNomDueno.Text = "Nombre Dueno";
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +363,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabControlExpediente.ResumeLayout(false);
             this.tabDatosMascota.ResumeLayout(false);
             this.tabDatosMascota.PerformLayout();
+            this.tabDatosDueno.ResumeLayout(false);
+            this.tabDatosDueno.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -283,5 +391,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtEspecie;
         private System.Windows.Forms.TextBox txtIdMascota;
         private System.Windows.Forms.TextBox txtNomMascota;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtCorreo;
+        private System.Windows.Forms.TextBox txtNomDueno;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtIdDueno;
+        private System.Windows.Forms.Label lblNomDueno;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblIdDueno;
     }
 }
