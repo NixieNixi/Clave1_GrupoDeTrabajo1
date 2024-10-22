@@ -29,68 +29,111 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnConsultarExpediente = new System.Windows.Forms.Button();
+            this.btnCita = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnConsultarVacunas = new System.Windows.Forms.Button();
+            this.gbVeterinarioPerfil = new System.Windows.Forms.GroupBox();
+            this.lblNombreVeterinario = new System.Windows.Forms.Label();
+            this.lblUserVeterinario = new System.Windows.Forms.Label();
+            this.gbVeterinarioPerfil.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button1
+            // btnConsultarExpediente
             // 
-            this.button1.Location = new System.Drawing.Point(143, 342);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConsultarExpediente.Location = new System.Drawing.Point(56, 335);
+            this.btnConsultarExpediente.Name = "btnConsultarExpediente";
+            this.btnConsultarExpediente.Size = new System.Drawing.Size(129, 39);
+            this.btnConsultarExpediente.TabIndex = 0;
+            this.btnConsultarExpediente.Text = "Consultar Expediente";
+            this.btnConsultarExpediente.UseVisualStyleBackColor = true;
+            this.btnConsultarExpediente.Click += new System.EventHandler(this.btnConsultarExpediente_Click);
             // 
-            // button2
+            // btnCita
             // 
-            this.button2.Location = new System.Drawing.Point(344, 341);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCita.Location = new System.Drawing.Point(393, 335);
+            this.btnCita.Name = "btnCita";
+            this.btnCita.Size = new System.Drawing.Size(75, 39);
+            this.btnCita.TabIndex = 1;
+            this.btnCita.Text = "Cita";
+            this.btnCita.UseVisualStyleBackColor = true;
+            this.btnCita.Click += new System.EventHandler(this.btnCita_Click);
             // 
-            // button3
+            // btnCerrar
             // 
-            this.button3.Location = new System.Drawing.Point(445, 342);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCerrar.Location = new System.Drawing.Point(526, 335);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(78, 39);
+            this.btnCerrar.TabIndex = 3;
+            this.btnCerrar.Text = "Cerrar Sesion";
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // button4
+            // btnConsultarVacunas
             // 
-            this.button4.Location = new System.Drawing.Point(244, 343);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnConsultarVacunas.Location = new System.Drawing.Point(220, 335);
+            this.btnConsultarVacunas.Name = "btnConsultarVacunas";
+            this.btnConsultarVacunas.Size = new System.Drawing.Size(129, 39);
+            this.btnConsultarVacunas.TabIndex = 2;
+            this.btnConsultarVacunas.Text = "Consultar Vacuna";
+            this.btnConsultarVacunas.UseVisualStyleBackColor = true;
+            this.btnConsultarVacunas.Click += new System.EventHandler(this.btnConsultarVacunas_Click);
+            // 
+            // gbVeterinarioPerfil
+            // 
+            this.gbVeterinarioPerfil.Controls.Add(this.lblUserVeterinario);
+            this.gbVeterinarioPerfil.Controls.Add(this.lblNombreVeterinario);
+            this.gbVeterinarioPerfil.Location = new System.Drawing.Point(67, 35);
+            this.gbVeterinarioPerfil.Name = "gbVeterinarioPerfil";
+            this.gbVeterinarioPerfil.Size = new System.Drawing.Size(420, 100);
+            this.gbVeterinarioPerfil.TabIndex = 4;
+            this.gbVeterinarioPerfil.TabStop = false;
+            this.gbVeterinarioPerfil.Text = "Veterinario Perfil";
+            // 
+            // lblNombreVeterinario
+            // 
+            this.lblNombreVeterinario.AutoSize = true;
+            this.lblNombreVeterinario.Location = new System.Drawing.Point(50, 50);
+            this.lblNombreVeterinario.Name = "lblNombreVeterinario";
+            this.lblNombreVeterinario.Size = new System.Drawing.Size(97, 13);
+            this.lblNombreVeterinario.TabIndex = 0;
+            this.lblNombreVeterinario.Text = "Nombre Veterinario";
+            // 
+            // lblUserVeterinario
+            // 
+            this.lblUserVeterinario.AutoSize = true;
+            this.lblUserVeterinario.Location = new System.Drawing.Point(207, 50);
+            this.lblUserVeterinario.Name = "lblUserVeterinario";
+            this.lblUserVeterinario.Size = new System.Drawing.Size(96, 13);
+            this.lblUserVeterinario.TabIndex = 1;
+            this.lblUserVeterinario.Text = "Usuario Veterinario";
             // 
             // veterinarioPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.gbVeterinarioPerfil);
+            this.Controls.Add(this.btnCerrar);
+            this.Controls.Add(this.btnConsultarVacunas);
+            this.Controls.Add(this.btnCita);
+            this.Controls.Add(this.btnConsultarExpediente);
             this.Name = "veterinarioPerfil";
             this.Text = "veterinarioPerfil";
+            this.gbVeterinarioPerfil.ResumeLayout(false);
+            this.gbVeterinarioPerfil.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnConsultarExpediente;
+        private System.Windows.Forms.Button btnCita;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnConsultarVacunas;
+        private System.Windows.Forms.GroupBox gbVeterinarioPerfil;
+        private System.Windows.Forms.Label lblUserVeterinario;
+        private System.Windows.Forms.Label lblNombreVeterinario;
     }
 }

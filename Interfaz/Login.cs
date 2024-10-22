@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clave1_GrupoDeTrabajo1.Interfaz;
 
 namespace Clave1_GrupoDeTrabajo1
 {
@@ -34,7 +35,9 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir el perfil del veterinario
         private void btnVeterinario_Click(object sender, EventArgs e)
         {
-
+            veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
+            this.Hide();
+            veterinarioPerfil.ShowDialog();
         }
 
         //Metodo para abrir el perfil del Administrador
