@@ -363,17 +363,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.panelHM.AutoScroll = true;
             this.panelHM.Controls.Add(this.label3);
-            this.panelHM.Controls.Add(this.label2);
             this.panelHM.Controls.Add(this.label1);
-            this.panelHM.Location = new System.Drawing.Point(3, 6);
+            this.panelHM.Controls.Add(this.label2);
+            this.panelHM.Location = new System.Drawing.Point(0, 0);
             this.panelHM.Name = "panelHM";
-            this.panelHM.Size = new System.Drawing.Size(887, 544);
+            this.panelHM.Size = new System.Drawing.Size(887, 485);
             this.panelHM.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 635);
+            this.label1.Location = new System.Drawing.Point(62, 503);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
@@ -401,7 +401,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 572);
+            this.ClientSize = new System.Drawing.Size(894, 635);
             this.Controls.Add(this.tabControlExpediente);
             this.Name = "veterinarioExpediente";
             this.Text = "veterinarioExpediente";
