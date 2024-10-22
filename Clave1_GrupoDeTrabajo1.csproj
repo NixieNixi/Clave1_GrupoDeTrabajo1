@@ -87,6 +87,9 @@
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\veterinarioExpediente.resx">
+      <DependentUpon>veterinarioExpediente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\veterinarioPerfil.resx">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </EmbeddedResource>
