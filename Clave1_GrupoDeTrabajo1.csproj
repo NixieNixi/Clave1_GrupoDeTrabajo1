@@ -52,6 +52,30 @@
     <Compile Include="Interfaz\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\veterinarioCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioCita.Designer.cs">
+      <DependentUpon>veterinarioCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioExpediente.Designer.cs">
+      <DependentUpon>veterinarioExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioPerfil.Designer.cs">
+      <DependentUpon>veterinarioPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\veterinarioVacuna.Designer.cs">
+      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +86,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\veterinarioPerfil.resx">
+      <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
