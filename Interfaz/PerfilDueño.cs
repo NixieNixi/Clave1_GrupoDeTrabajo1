@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clave1_GrupoDeTrabajo1;
+
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -33,6 +35,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             CitaMascota VerCitas = new CitaMascota();
             VerCitas.ShowDialog();
+        }
+
+        private void PerfilDueño_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -195,6 +195,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label1);
             this.Name = "PerfilDueño";
             this.Text = "PerfilDueño";
+            this.Load += new System.EventHandler(this.PerfilDueño_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
