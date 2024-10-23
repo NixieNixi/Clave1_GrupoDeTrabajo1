@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Interfaz\CitaMascota.cs">
+    <Compile Include="Dueno\CitaMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\CitaMascota.Designer.cs">
+    <Compile Include="Dueno\CitaMascota.Designer.cs">
       <DependentUpon>CitaMascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\IniciarSesionDueño.cs">
+    <Compile Include="Dueno\IniciarSesionDueño.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\IniciarSesionDueño.Designer.cs">
+    <Compile Include="Dueno\IniciarSesionDueño.Designer.cs">
       <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Login.cs">
@@ -64,28 +64,52 @@
     <Compile Include="Interfaz\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\MenuPrincipalDueño.cs">
+    <Compile Include="Veterinario\veterinarioCita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\MenuPrincipalDueño.Designer.cs">
+    <Compile Include="Veterinario\veterinarioCita.Designer.cs">
+      <DependentUpon>veterinarioCita.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioExpediente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioExpediente.Designer.cs">
+      <DependentUpon>veterinarioExpediente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioPerfil.Designer.cs">
+      <DependentUpon>veterinarioPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioVacuna.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Veterinario\veterinarioVacuna.Designer.cs">
+      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dueno\MenuPrincipalDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\MenuPrincipalDueño.Designer.cs">
       <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\PerfilDueño.cs">
+    <Compile Include="Dueno\PerfilDueño.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\PerfilDueño.Designer.cs">
+    <Compile Include="Dueno\PerfilDueño.Designer.cs">
       <DependentUpon>PerfilDueño.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\PerfilMascota.cs">
+    <Compile Include="Dueno\PerfilMascota.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\PerfilMascota.Designer.cs">
+    <Compile Include="Dueno\PerfilMascota.Designer.cs">
       <DependentUpon>PerfilMascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Tienda.cs">
+    <Compile Include="Dueno\Tienda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Tienda.Designer.cs">
+    <Compile Include="Dueno\Tienda.Designer.cs">
       <DependentUpon>Tienda.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
@@ -94,39 +118,48 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaletaDeColores.cs">
+    <Compile Include="Interfaz\PaletaDeColores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaletaDeColores.Designer.cs">
+    <Compile Include="Interfaz\PaletaDeColores.Designer.cs">
       <DependentUpon>PaletaDeColores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Interfaz\CitaMascota.resx">
+    <EmbeddedResource Include="Dueno\CitaMascota.resx">
       <DependentUpon>CitaMascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\IniciarSesionDueño.resx">
+    <EmbeddedResource Include="Dueno\IniciarSesionDueño.resx">
       <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\MenuPrincipalDueño.resx">
+    <EmbeddedResource Include="Veterinario\veterinarioExpediente.resx">
+      <DependentUpon>veterinarioExpediente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\veterinarioPerfil.resx">
+      <DependentUpon>veterinarioPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Veterinario\veterinarioVacuna.resx">
+      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\MenuPrincipalDueño.resx">
       <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\PerfilDueño.resx">
+    <EmbeddedResource Include="Dueno\PerfilDueño.resx">
       <DependentUpon>PerfilDueño.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\PerfilMascota.resx">
+    <EmbeddedResource Include="Dueno\PerfilMascota.resx">
       <DependentUpon>PerfilMascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Tienda.resx">
+    <EmbeddedResource Include="Dueno\Tienda.resx">
       <DependentUpon>Tienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaletaDeColores.resx">
+    <EmbeddedResource Include="Interfaz\PaletaDeColores.resx">
       <DependentUpon>PaletaDeColores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -31,13 +31,16 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnDueño_Click(object sender, EventArgs e)
         {
             PerfilDueño VerDueñoPerfil = new PerfilDueño();
+            this.Hide();
             VerDueñoPerfil.ShowDialog();
         }
 
         //Metodo para abrir el perfil del veterinario
         private void btnVeterinario_Click(object sender, EventArgs e)
         {
-
+            veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
+            this.Hide();
+            veterinarioPerfil.ShowDialog();
         }
 
         //Metodo para abrir el perfil del Administrador
