@@ -31,6 +31,7 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnDueño_Click(object sender, EventArgs e)
         {
             PerfilDueño VerDueñoPerfil = new PerfilDueño();
+            this.Hide();
             VerDueñoPerfil.ShowDialog();
         }
 

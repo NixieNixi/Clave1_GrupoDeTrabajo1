@@ -118,10 +118,10 @@
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaletaDeColores.cs">
+    <Compile Include="Interfaz\PaletaDeColores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PaletaDeColores.Designer.cs">
+    <Compile Include="Interfaz\PaletaDeColores.Designer.cs">
       <DependentUpon>PaletaDeColores.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -159,7 +159,7 @@
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaletaDeColores.resx">
+    <EmbeddedResource Include="Interfaz\PaletaDeColores.resx">
       <DependentUpon>PaletaDeColores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
