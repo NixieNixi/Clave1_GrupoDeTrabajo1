@@ -52,28 +52,28 @@
     <Compile Include="Interfaz\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\veterinarioCita.cs">
+    <Compile Include="Veterinario\veterinarioCita.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\veterinarioCita.Designer.cs">
+    <Compile Include="Veterinario\veterinarioCita.Designer.cs">
       <DependentUpon>veterinarioCita.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\veterinarioExpediente.cs">
+    <Compile Include="Veterinario\veterinarioExpediente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\veterinarioExpediente.Designer.cs">
+    <Compile Include="Veterinario\veterinarioExpediente.Designer.cs">
       <DependentUpon>veterinarioExpediente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\veterinarioPerfil.cs">
+    <Compile Include="Veterinario\veterinarioPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\veterinarioPerfil.Designer.cs">
+    <Compile Include="Veterinario\veterinarioPerfil.Designer.cs">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\veterinarioVacuna.cs">
+    <Compile Include="Veterinario\veterinarioVacuna.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\veterinarioVacuna.Designer.cs">
+    <Compile Include="Veterinario\veterinarioVacuna.Designer.cs">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
@@ -87,13 +87,13 @@
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\veterinarioExpediente.resx">
+    <EmbeddedResource Include="Veterinario\veterinarioExpediente.resx">
       <DependentUpon>veterinarioExpediente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\veterinarioPerfil.resx">
+    <EmbeddedResource Include="Veterinario\veterinarioPerfil.resx">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\veterinarioVacuna.resx">
+    <EmbeddedResource Include="Veterinario\veterinarioVacuna.resx">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
