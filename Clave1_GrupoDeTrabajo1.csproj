@@ -46,11 +46,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaz\CitaMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\CitaMascota.Designer.cs">
+      <DependentUpon>CitaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\IniciarSesionDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\IniciarSesionDueño.Designer.cs">
+      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\MenuPrincipalDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\MenuPrincipalDueño.Designer.cs">
+      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\PerfilDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\PerfilDueño.Designer.cs">
+      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\PerfilMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\PerfilMascota.Designer.cs">
+      <DependentUpon>PerfilMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Tienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Tienda.Designer.cs">
+      <DependentUpon>Tienda.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -60,8 +96,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Interfaz\CitaMascota.resx">
+      <DependentUpon>CitaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\IniciarSesionDueño.resx">
+      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\MenuPrincipalDueño.resx">
+      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\PerfilDueño.resx">
+      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\PerfilMascota.resx">
+      <DependentUpon>PerfilMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Tienda.resx">
+      <DependentUpon>Tienda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

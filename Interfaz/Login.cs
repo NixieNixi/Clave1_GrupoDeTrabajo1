@@ -28,7 +28,7 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir el perfil de Dueño
         private void btnDueño_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         //Metodo para abrir el perfil del veterinario
