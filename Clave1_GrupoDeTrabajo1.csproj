@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dueno\CitaMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\CitaMascota.Designer.cs">
+      <DependentUpon>CitaMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dueno\IniciarSesionDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\IniciarSesionDueño.Designer.cs">
+      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,14 +88,50 @@
     <Compile Include="Veterinario\veterinarioVacuna.Designer.cs">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dueno\MenuPrincipalDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\MenuPrincipalDueño.Designer.cs">
+      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dueno\PerfilDueño.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\PerfilDueño.Designer.cs">
+      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dueno\PerfilMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\PerfilMascota.Designer.cs">
+      <DependentUpon>PerfilMascota.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dueno\Tienda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dueno\Tienda.Designer.cs">
+      <DependentUpon>Tienda.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MenuPrincipal.Designer.cs">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="PaletaDeColores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaletaDeColores.Designer.cs">
+      <DependentUpon>PaletaDeColores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dueno\CitaMascota.resx">
+      <DependentUpon>CitaMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\IniciarSesionDueño.resx">
+      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,8 +144,23 @@
     <EmbeddedResource Include="Veterinario\veterinarioVacuna.resx">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\MenuPrincipalDueño.resx">
+      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\PerfilDueño.resx">
+      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\PerfilMascota.resx">
+      <DependentUpon>PerfilMascota.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dueno\Tienda.resx">
+      <DependentUpon>Tienda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaletaDeColores.resx">
+      <DependentUpon>PaletaDeColores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
