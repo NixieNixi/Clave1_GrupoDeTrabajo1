@@ -24,6 +24,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnCitasMascD_Click(object sender, EventArgs e)
         {
+            //se enlaza con cita de la mascota con su boton
             CitaMascota Cita = new CitaMascota();
             Cita.ShowDialog();
 
@@ -31,6 +32,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnVolverD_Click(object sender, EventArgs e)
         {
+            //se enlaza a perfil del dueño mediante un boton
             PerfilDueño VolverVolver = new PerfilDueño();
             VolverVolver.ShowDialog();
         }

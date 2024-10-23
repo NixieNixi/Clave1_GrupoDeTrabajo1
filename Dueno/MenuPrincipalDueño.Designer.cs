@@ -61,6 +61,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.btnCerrarD);
             this.Name = "MenuPrincipalDueño";
             this.Text = "MenuPrincipalDueño";
+            this.Load += new System.EventHandler(this.MenuPrincipalDueño_Load);
             this.ResumeLayout(false);
 
         }

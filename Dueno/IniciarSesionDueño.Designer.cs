@@ -102,6 +102,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label1);
             this.Name = "IniciarSesionDueño";
             this.Text = "IniciarSesionDueño";
+            this.Load += new System.EventHandler(this.IniciarSesionDueño_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
