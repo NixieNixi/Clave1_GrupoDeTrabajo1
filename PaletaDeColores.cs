@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Dueño
+namespace Clave1_GrupoDeTrabajo1
 {
-    public partial class Acciones : Form
+    public partial class PaletaDeColores : Form
     {
-        public Acciones()
+        public PaletaDeColores()
         {
             InitializeComponent();
-        }
-
-        private void Form4_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
