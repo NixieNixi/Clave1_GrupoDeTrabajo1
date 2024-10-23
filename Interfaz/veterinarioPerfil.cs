@@ -22,8 +22,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>/
 
         ///<remarks>
-        /// Fecha de Modificacion: 
+        /// Fecha de Modificacion: 22/10/2024
         /// Modificado Por: NixieNixi
+        /// Descripcion: pediente
         /// </remarks>
 
         public veterinarioPerfil()

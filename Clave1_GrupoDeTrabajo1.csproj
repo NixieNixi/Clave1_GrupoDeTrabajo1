@@ -93,6 +93,9 @@
     <EmbeddedResource Include="Interfaz\veterinarioPerfil.resx">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\veterinarioVacuna.resx">
+      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
