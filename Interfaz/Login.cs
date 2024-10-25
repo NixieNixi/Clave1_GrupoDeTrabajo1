@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clave1_GrupoDeTrabajo1;
+using Clave1_GrupoDeTrabajo1.Administrador;
 using Clave1_GrupoDeTrabajo1.Interfaz;
 using MySql.Data.MySqlClient;
 
@@ -59,7 +60,9 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir el perfil del Administrador
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            AdministradorPerfil administrador = new AdministradorPerfil();
+            this.Hide();
+            administrador.ShowDialog();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
