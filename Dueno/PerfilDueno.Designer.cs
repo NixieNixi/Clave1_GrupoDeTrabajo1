@@ -1,7 +1,7 @@
 ﻿
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
-    partial class PerfilDueño
+    partial class PerfilDueno
     {
         /// <summary>
         /// Required designer variable.

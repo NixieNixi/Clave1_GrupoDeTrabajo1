@@ -20,7 +20,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnIniciarSesionD_Click(object sender, EventArgs e)
         {
             //se elaza mediante el boton correspondiente
-            IniciarSesionDueño IniciarSesion = new IniciarSesionDueño();
+            IniciarSesionDueno IniciarSesion = new IniciarSesionDueno();
             IniciarSesion.ShowDialog();
         }
 

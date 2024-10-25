@@ -1,7 +1,7 @@
 ﻿
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
-    partial class IniciarSesionDueño
+    partial class IniciarSesionDueno
     {
         /// <summary>
         /// Required designer variable.

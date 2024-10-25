@@ -12,9 +12,9 @@ using Clave1_GrupoDeTrabajo1;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
-    public partial class PerfilDueño : Form
+    public partial class PerfilDueno : Form
     {
-        public PerfilDueño()
+        public PerfilDueno()
         {
             InitializeComponent();
         }

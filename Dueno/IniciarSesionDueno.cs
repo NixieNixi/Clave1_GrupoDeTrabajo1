@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
-    public partial class IniciarSesionDueño : Form
+    public partial class IniciarSesionDueno : Form
     {
-        public IniciarSesionDueño()
+        public IniciarSesionDueno()
         {
             InitializeComponent();
         }
@@ -28,7 +28,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             
             //se enlaza con el perfil del dueño mediante el boton correspondiente
-            PerfilDueño IniPer = new PerfilDueño();
+            PerfilDueno IniPer = new PerfilDueno();
             IniPer.ShowDialog();
         }
 

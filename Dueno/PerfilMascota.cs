@@ -33,7 +33,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnVolverD_Click(object sender, EventArgs e)
         {
             //se enlaza a perfil del dueño mediante un boton
-            PerfilDueño VolverVolver = new PerfilDueño();
+            PerfilDueno VolverVolver = new PerfilDueno();
             VolverVolver.ShowDialog();
         }
     }

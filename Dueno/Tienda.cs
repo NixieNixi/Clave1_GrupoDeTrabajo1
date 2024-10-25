@@ -20,7 +20,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnVolD_Click(object sender, EventArgs e)
         {
             //se enlaza a suboton de perfil
-            PerfilDueño Vo = new PerfilDueño();
+            PerfilDueno Vo = new PerfilDueno();
             Vo.ShowDialog();
         }
     }
