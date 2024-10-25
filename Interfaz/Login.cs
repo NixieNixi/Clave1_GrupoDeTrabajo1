@@ -107,7 +107,7 @@ namespace Clave1_GrupoDeTrabajo1
                                         break;
 
                                     case "Dueno":
-                                        PerfilDueño perfilDueno = new PerfilDueño();
+                                        PerfilDueno perfilDueno = new PerfilDueno();
                                         perfilDueno.Show();
                                         this.Hide();
                                         break;
