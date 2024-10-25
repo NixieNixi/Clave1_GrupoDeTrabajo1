@@ -30,18 +30,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void InitializeComponent()
         {
             this.panelVeterinarioCita = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.gbxInfoCirugia = new System.Windows.Forms.GroupBox();
-            this.lblTipoCirugia = new System.Windows.Forms.Label();
-            this.lblMotiCirugia = new System.Windows.Forms.Label();
+            this.gbxInfoExamen = new System.Windows.Forms.GroupBox();
+            this.cbxTipoExamen = new System.Windows.Forms.ComboBox();
+            this.lblTipoExamen = new System.Windows.Forms.Label();
+            this.lblMotiExamen = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblNotasCirugia = new System.Windows.Forms.Label();
-            this.lblUsaMateriales = new System.Windows.Forms.Label();
-            this.txtTipoCirugia = new System.Windows.Forms.TextBox();
-            this.txtNotasCirugia = new System.Windows.Forms.TextBox();
-            this.txtUsaMateriales = new System.Windows.Forms.TextBox();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.txtMotiCirugia = new System.Windows.Forms.TextBox();
+            this.lblNotasExamen = new System.Windows.Forms.Label();
+            this.lblUsaMateriaesExamen = new System.Windows.Forms.Label();
+            this.txtNotasExamen = new System.Windows.Forms.TextBox();
+            this.txtUsaMateriaesExamen = new System.Windows.Forms.TextBox();
+            this.txtDescripcionExamen = new System.Windows.Forms.TextBox();
+            this.txtMotiExamen = new System.Windows.Forms.TextBox();
+            this.gbxInfoVacuna = new System.Windows.Forms.GroupBox();
+            this.cbxTipoVacuna = new System.Windows.Forms.ComboBox();
+            this.lblTipoVacuna = new System.Windows.Forms.Label();
+            this.lblMotiVacuna = new System.Windows.Forms.Label();
+            this.lblDescripcionVacuna = new System.Windows.Forms.Label();
+            this.lblNotasVacuna = new System.Windows.Forms.Label();
+            this.lblUsaMaterialesVacuna = new System.Windows.Forms.Label();
+            this.txtNotasVacuna = new System.Windows.Forms.TextBox();
+            this.txtUsaMaterialesVacuna = new System.Windows.Forms.TextBox();
+            this.txtDescripcionVacuna = new System.Windows.Forms.TextBox();
+            this.txtMotiVacuna = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.gbxInfoCita = new System.Windows.Forms.GroupBox();
             this.lblSintomas = new System.Windows.Forms.Label();
             this.lblExamFisico = new System.Windows.Forms.Label();
@@ -55,28 +66,41 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtTratamienta = new System.Windows.Forms.TextBox();
             this.txtDiagnostico = new System.Windows.Forms.TextBox();
             this.txtExamFisico = new System.Windows.Forms.TextBox();
+            this.gbxInfoCirugia = new System.Windows.Forms.GroupBox();
+            this.lblTipoCirugia = new System.Windows.Forms.Label();
+            this.lblMotiCirugia = new System.Windows.Forms.Label();
+            this.lblDescripcionCirugia = new System.Windows.Forms.Label();
+            this.lblNotasCirugia = new System.Windows.Forms.Label();
+            this.lblUsaMaterialesCirugia = new System.Windows.Forms.Label();
+            this.txtTipoCirugia = new System.Windows.Forms.TextBox();
+            this.txtNotasCirugia = new System.Windows.Forms.TextBox();
+            this.txtUsaMaterialesCirugia = new System.Windows.Forms.TextBox();
+            this.txtDescripcionCirugia = new System.Windows.Forms.TextBox();
+            this.txtMotiCirugia = new System.Windows.Forms.TextBox();
             this.gbxaInfoExpediente = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.lblFechaHora = new System.Windows.Forms.Label();
-            this.lblIdMascota = new System.Windows.Forms.Label();
-            this.lblMotiConsulta = new System.Windows.Forms.Label();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.lblEspecie = new System.Windows.Forms.Label();
-            this.lblNomMascota = new System.Windows.Forms.Label();
-            this.lblIdExpediente = new System.Windows.Forms.Label();
-            this.txtIDCita = new System.Windows.Forms.TextBox();
             this.txtMotiConsulta = new System.Windows.Forms.TextBox();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.txtEspecie = new System.Windows.Forms.TextBox();
-            this.txtNomMascota = new System.Windows.Forms.TextBox();
-            this.txtIdMascota = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.lblIdExpediente = new System.Windows.Forms.Label();
+            this.lblMotiConsulta = new System.Windows.Forms.Label();
             this.cbxIdExpediente = new System.Windows.Forms.ComboBox();
+            this.lblIdMascota = new System.Windows.Forms.Label();
+            this.lblEspecie = new System.Windows.Forms.Label();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtIdMascota = new System.Windows.Forms.TextBox();
+            this.txtEspecie = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.lblNomMascota = new System.Windows.Forms.Label();
+            this.txtIDCita = new System.Windows.Forms.TextBox();
+            this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panelVeterinarioCita.SuspendLayout();
-            this.gbxInfoCirugia.SuspendLayout();
+            this.gbxInfoExamen.SuspendLayout();
+            this.gbxInfoVacuna.SuspendLayout();
             this.gbxInfoCita.SuspendLayout();
+            this.gbxInfoCirugia.SuspendLayout();
             this.gbxaInfoExpediente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,6 +110,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
+            this.panelVeterinarioCita.Controls.Add(this.gbxInfoExamen);
+            this.panelVeterinarioCita.Controls.Add(this.gbxInfoVacuna);
             this.panelVeterinarioCita.Controls.Add(this.label7);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoCita);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoCirugia);
@@ -95,51 +121,50 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelVeterinarioCita.Size = new System.Drawing.Size(813, 811);
             this.panelVeterinarioCita.TabIndex = 0;
             // 
-            // label7
+            // gbxInfoExamen
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 1072);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
+            this.gbxInfoExamen.Controls.Add(this.cbxTipoExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblTipoExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblMotiExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblDescripcion);
+            this.gbxInfoExamen.Controls.Add(this.lblNotasExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblUsaMateriaesExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtNotasExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtUsaMateriaesExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtDescripcionExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtMotiExamen);
+            this.gbxInfoExamen.Location = new System.Drawing.Point(40, 1308);
+            this.gbxInfoExamen.Name = "gbxInfoExamen";
+            this.gbxInfoExamen.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoExamen.TabIndex = 19;
+            this.gbxInfoExamen.TabStop = false;
+            this.gbxInfoExamen.Text = "Informacion de el Examen";
             // 
-            // gbxInfoCirugia
+            // cbxTipoExamen
             // 
-            this.gbxInfoCirugia.Controls.Add(this.lblTipoCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.lblMotiCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.lblDescripcion);
-            this.gbxInfoCirugia.Controls.Add(this.lblNotasCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.lblUsaMateriales);
-            this.gbxInfoCirugia.Controls.Add(this.txtTipoCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.txtNotasCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.txtUsaMateriales);
-            this.gbxInfoCirugia.Controls.Add(this.txtDescripcion);
-            this.gbxInfoCirugia.Controls.Add(this.txtMotiCirugia);
-            this.gbxInfoCirugia.Location = new System.Drawing.Point(40, 686);
-            this.gbxInfoCirugia.Name = "gbxInfoCirugia";
-            this.gbxInfoCirugia.Size = new System.Drawing.Size(709, 248);
-            this.gbxInfoCirugia.TabIndex = 13;
-            this.gbxInfoCirugia.TabStop = false;
-            this.gbxInfoCirugia.Text = "Informacion de la Cirugia";
+            this.cbxTipoExamen.FormattingEnabled = true;
+            this.cbxTipoExamen.Location = new System.Drawing.Point(130, 39);
+            this.cbxTipoExamen.Name = "cbxTipoExamen";
+            this.cbxTipoExamen.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoExamen.TabIndex = 18;
             // 
-            // lblTipoCirugia
+            // lblTipoExamen
             // 
-            this.lblTipoCirugia.AutoSize = true;
-            this.lblTipoCirugia.Location = new System.Drawing.Point(25, 46);
-            this.lblTipoCirugia.Name = "lblTipoCirugia";
-            this.lblTipoCirugia.Size = new System.Drawing.Size(63, 13);
-            this.lblTipoCirugia.TabIndex = 17;
-            this.lblTipoCirugia.Text = "Tipo Cirugia";
+            this.lblTipoExamen.AutoSize = true;
+            this.lblTipoExamen.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoExamen.Name = "lblTipoExamen";
+            this.lblTipoExamen.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoExamen.TabIndex = 17;
+            this.lblTipoExamen.Text = "Tipo Examen";
             // 
-            // lblMotiCirugia
+            // lblMotiExamen
             // 
-            this.lblMotiCirugia.AutoSize = true;
-            this.lblMotiCirugia.Location = new System.Drawing.Point(25, 106);
-            this.lblMotiCirugia.Name = "lblMotiCirugia";
-            this.lblMotiCirugia.Size = new System.Drawing.Size(74, 13);
-            this.lblMotiCirugia.TabIndex = 16;
-            this.lblMotiCirugia.Text = "Motivo Cirugia";
+            this.lblMotiExamen.AutoSize = true;
+            this.lblMotiExamen.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiExamen.Name = "lblMotiExamen";
+            this.lblMotiExamen.Size = new System.Drawing.Size(80, 13);
+            this.lblMotiExamen.TabIndex = 16;
+            this.lblMotiExamen.Text = "Motivo Examen";
             // 
             // lblDescripcion
             // 
@@ -150,58 +175,160 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblDescripcion.TabIndex = 15;
             this.lblDescripcion.Text = "Descripcion";
             // 
-            // lblNotasCirugia
+            // lblNotasExamen
             // 
-            this.lblNotasCirugia.AutoSize = true;
-            this.lblNotasCirugia.Location = new System.Drawing.Point(25, 171);
-            this.lblNotasCirugia.Name = "lblNotasCirugia";
-            this.lblNotasCirugia.Size = new System.Drawing.Size(35, 13);
-            this.lblNotasCirugia.TabIndex = 12;
-            this.lblNotasCirugia.Text = "Notas";
+            this.lblNotasExamen.AutoSize = true;
+            this.lblNotasExamen.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasExamen.Name = "lblNotasExamen";
+            this.lblNotasExamen.Size = new System.Drawing.Size(35, 13);
+            this.lblNotasExamen.TabIndex = 12;
+            this.lblNotasExamen.Text = "Notas";
             // 
-            // lblUsaMateriales
+            // lblUsaMateriaesExamen
             // 
-            this.lblUsaMateriales.AutoSize = true;
-            this.lblUsaMateriales.Location = new System.Drawing.Point(444, 46);
-            this.lblUsaMateriales.Name = "lblUsaMateriales";
-            this.lblUsaMateriales.Size = new System.Drawing.Size(94, 13);
-            this.lblUsaMateriales.TabIndex = 11;
-            this.lblUsaMateriales.Text = "Materiales Usados";
+            this.lblUsaMateriaesExamen.AutoSize = true;
+            this.lblUsaMateriaesExamen.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMateriaesExamen.Name = "lblUsaMateriaesExamen";
+            this.lblUsaMateriaesExamen.Size = new System.Drawing.Size(94, 13);
+            this.lblUsaMateriaesExamen.TabIndex = 11;
+            this.lblUsaMateriaesExamen.Text = "Materiales Usados";
             // 
-            // txtTipoCirugia
+            // txtNotasExamen
             // 
-            this.txtTipoCirugia.Location = new System.Drawing.Point(130, 43);
-            this.txtTipoCirugia.Name = "txtTipoCirugia";
-            this.txtTipoCirugia.Size = new System.Drawing.Size(121, 20);
-            this.txtTipoCirugia.TabIndex = 2;
+            this.txtNotasExamen.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasExamen.Name = "txtNotasExamen";
+            this.txtNotasExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasExamen.TabIndex = 6;
             // 
-            // txtNotasCirugia
+            // txtUsaMateriaesExamen
             // 
-            this.txtNotasCirugia.Location = new System.Drawing.Point(130, 164);
-            this.txtNotasCirugia.Name = "txtNotasCirugia";
-            this.txtNotasCirugia.Size = new System.Drawing.Size(121, 20);
-            this.txtNotasCirugia.TabIndex = 6;
+            this.txtUsaMateriaesExamen.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMateriaesExamen.Name = "txtUsaMateriaesExamen";
+            this.txtUsaMateriaesExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMateriaesExamen.TabIndex = 7;
             // 
-            // txtUsaMateriales
+            // txtDescripcionExamen
             // 
-            this.txtUsaMateriales.Location = new System.Drawing.Point(559, 39);
-            this.txtUsaMateriales.Name = "txtUsaMateriales";
-            this.txtUsaMateriales.Size = new System.Drawing.Size(121, 20);
-            this.txtUsaMateriales.TabIndex = 7;
+            this.txtDescripcionExamen.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionExamen.Name = "txtDescripcionExamen";
+            this.txtDescripcionExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionExamen.TabIndex = 8;
             // 
-            // txtDescripcion
+            // txtMotiExamen
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(559, 106);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(121, 20);
-            this.txtDescripcion.TabIndex = 8;
+            this.txtMotiExamen.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiExamen.Name = "txtMotiExamen";
+            this.txtMotiExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiExamen.TabIndex = 9;
             // 
-            // txtMotiCirugia
+            // gbxInfoVacuna
             // 
-            this.txtMotiCirugia.Location = new System.Drawing.Point(130, 99);
-            this.txtMotiCirugia.Name = "txtMotiCirugia";
-            this.txtMotiCirugia.Size = new System.Drawing.Size(121, 20);
-            this.txtMotiCirugia.TabIndex = 9;
+            this.gbxInfoVacuna.Controls.Add(this.cbxTipoVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblTipoVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblMotiVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblDescripcionVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblNotasVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblUsaMaterialesVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtNotasVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtUsaMaterialesVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtDescripcionVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtMotiVacuna);
+            this.gbxInfoVacuna.Location = new System.Drawing.Point(40, 999);
+            this.gbxInfoVacuna.Name = "gbxInfoVacuna";
+            this.gbxInfoVacuna.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoVacuna.TabIndex = 15;
+            this.gbxInfoVacuna.TabStop = false;
+            this.gbxInfoVacuna.Text = "Informacion de la Vacuna";
+            // 
+            // cbxTipoVacuna
+            // 
+            this.cbxTipoVacuna.FormattingEnabled = true;
+            this.cbxTipoVacuna.Location = new System.Drawing.Point(130, 39);
+            this.cbxTipoVacuna.Name = "cbxTipoVacuna";
+            this.cbxTipoVacuna.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoVacuna.TabIndex = 18;
+            // 
+            // lblTipoVacuna
+            // 
+            this.lblTipoVacuna.AutoSize = true;
+            this.lblTipoVacuna.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoVacuna.Name = "lblTipoVacuna";
+            this.lblTipoVacuna.Size = new System.Drawing.Size(68, 13);
+            this.lblTipoVacuna.TabIndex = 17;
+            this.lblTipoVacuna.Text = "Tipo Vacuna";
+            // 
+            // lblMotiVacuna
+            // 
+            this.lblMotiVacuna.AutoSize = true;
+            this.lblMotiVacuna.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiVacuna.Name = "lblMotiVacuna";
+            this.lblMotiVacuna.Size = new System.Drawing.Size(79, 13);
+            this.lblMotiVacuna.TabIndex = 16;
+            this.lblMotiVacuna.Text = "Motivo Vacuna";
+            // 
+            // lblDescripcionVacuna
+            // 
+            this.lblDescripcionVacuna.AutoSize = true;
+            this.lblDescripcionVacuna.Location = new System.Drawing.Point(444, 106);
+            this.lblDescripcionVacuna.Name = "lblDescripcionVacuna";
+            this.lblDescripcionVacuna.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcionVacuna.TabIndex = 15;
+            this.lblDescripcionVacuna.Text = "Descripcion";
+            // 
+            // lblNotasVacuna
+            // 
+            this.lblNotasVacuna.AutoSize = true;
+            this.lblNotasVacuna.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasVacuna.Name = "lblNotasVacuna";
+            this.lblNotasVacuna.Size = new System.Drawing.Size(35, 13);
+            this.lblNotasVacuna.TabIndex = 12;
+            this.lblNotasVacuna.Text = "Notas";
+            // 
+            // lblUsaMaterialesVacuna
+            // 
+            this.lblUsaMaterialesVacuna.AutoSize = true;
+            this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMaterialesVacuna.Name = "lblUsaMaterialesVacuna";
+            this.lblUsaMaterialesVacuna.Size = new System.Drawing.Size(94, 13);
+            this.lblUsaMaterialesVacuna.TabIndex = 11;
+            this.lblUsaMaterialesVacuna.Text = "Materiales Usados";
+            // 
+            // txtNotasVacuna
+            // 
+            this.txtNotasVacuna.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasVacuna.Name = "txtNotasVacuna";
+            this.txtNotasVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasVacuna.TabIndex = 6;
+            // 
+            // txtUsaMaterialesVacuna
+            // 
+            this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesVacuna.Name = "txtUsaMaterialesVacuna";
+            this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesVacuna.TabIndex = 7;
+            // 
+            // txtDescripcionVacuna
+            // 
+            this.txtDescripcionVacuna.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionVacuna.Name = "txtDescripcionVacuna";
+            this.txtDescripcionVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionVacuna.TabIndex = 8;
+            // 
+            // txtMotiVacuna
+            // 
+            this.txtMotiVacuna.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiVacuna.Name = "txtMotiVacuna";
+            this.txtMotiVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiVacuna.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(10, 1618);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 13);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "label7";
             // 
             // gbxInfoCita
             // 
@@ -320,6 +447,105 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtExamFisico.Size = new System.Drawing.Size(121, 20);
             this.txtExamFisico.TabIndex = 9;
             // 
+            // gbxInfoCirugia
+            // 
+            this.gbxInfoCirugia.Controls.Add(this.lblTipoCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.lblMotiCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.lblDescripcionCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.lblNotasCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.lblUsaMaterialesCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.txtTipoCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.txtNotasCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.txtUsaMaterialesCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.txtDescripcionCirugia);
+            this.gbxInfoCirugia.Controls.Add(this.txtMotiCirugia);
+            this.gbxInfoCirugia.Location = new System.Drawing.Point(40, 686);
+            this.gbxInfoCirugia.Name = "gbxInfoCirugia";
+            this.gbxInfoCirugia.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoCirugia.TabIndex = 13;
+            this.gbxInfoCirugia.TabStop = false;
+            this.gbxInfoCirugia.Text = "Informacion de la Cirugia";
+            // 
+            // lblTipoCirugia
+            // 
+            this.lblTipoCirugia.AutoSize = true;
+            this.lblTipoCirugia.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoCirugia.Name = "lblTipoCirugia";
+            this.lblTipoCirugia.Size = new System.Drawing.Size(63, 13);
+            this.lblTipoCirugia.TabIndex = 17;
+            this.lblTipoCirugia.Text = "Tipo Cirugia";
+            // 
+            // lblMotiCirugia
+            // 
+            this.lblMotiCirugia.AutoSize = true;
+            this.lblMotiCirugia.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiCirugia.Name = "lblMotiCirugia";
+            this.lblMotiCirugia.Size = new System.Drawing.Size(74, 13);
+            this.lblMotiCirugia.TabIndex = 16;
+            this.lblMotiCirugia.Text = "Motivo Cirugia";
+            // 
+            // lblDescripcionCirugia
+            // 
+            this.lblDescripcionCirugia.AutoSize = true;
+            this.lblDescripcionCirugia.Location = new System.Drawing.Point(444, 106);
+            this.lblDescripcionCirugia.Name = "lblDescripcionCirugia";
+            this.lblDescripcionCirugia.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcionCirugia.TabIndex = 15;
+            this.lblDescripcionCirugia.Text = "Descripcion";
+            // 
+            // lblNotasCirugia
+            // 
+            this.lblNotasCirugia.AutoSize = true;
+            this.lblNotasCirugia.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasCirugia.Name = "lblNotasCirugia";
+            this.lblNotasCirugia.Size = new System.Drawing.Size(35, 13);
+            this.lblNotasCirugia.TabIndex = 12;
+            this.lblNotasCirugia.Text = "Notas";
+            // 
+            // lblUsaMaterialesCirugia
+            // 
+            this.lblUsaMaterialesCirugia.AutoSize = true;
+            this.lblUsaMaterialesCirugia.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMaterialesCirugia.Name = "lblUsaMaterialesCirugia";
+            this.lblUsaMaterialesCirugia.Size = new System.Drawing.Size(94, 13);
+            this.lblUsaMaterialesCirugia.TabIndex = 11;
+            this.lblUsaMaterialesCirugia.Text = "Materiales Usados";
+            // 
+            // txtTipoCirugia
+            // 
+            this.txtTipoCirugia.Location = new System.Drawing.Point(130, 43);
+            this.txtTipoCirugia.Name = "txtTipoCirugia";
+            this.txtTipoCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtTipoCirugia.TabIndex = 2;
+            // 
+            // txtNotasCirugia
+            // 
+            this.txtNotasCirugia.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasCirugia.Name = "txtNotasCirugia";
+            this.txtNotasCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasCirugia.TabIndex = 6;
+            // 
+            // txtUsaMaterialesCirugia
+            // 
+            this.txtUsaMaterialesCirugia.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesCirugia.Name = "txtUsaMaterialesCirugia";
+            this.txtUsaMaterialesCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesCirugia.TabIndex = 7;
+            // 
+            // txtDescripcionCirugia
+            // 
+            this.txtDescripcionCirugia.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionCirugia.Name = "txtDescripcionCirugia";
+            this.txtDescripcionCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionCirugia.TabIndex = 8;
+            // 
+            // txtMotiCirugia
+            // 
+            this.txtMotiCirugia.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiCirugia.Name = "txtMotiCirugia";
+            this.txtMotiCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiCirugia.TabIndex = 9;
+            // 
             // gbxaInfoExpediente
             // 
             this.gbxaInfoExpediente.Controls.Add(this.txtMotiConsulta);
@@ -345,82 +571,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.TabStop = false;
             this.gbxaInfoExpediente.Text = "Informacion de La Mascota";
             // 
-            // label9
+            // txtMotiConsulta
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(5, 148);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(39, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "ID Cita";
-            // 
-            // lblFechaHora
-            // 
-            this.lblFechaHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaHora.AutoSize = true;
-            this.lblFechaHora.Location = new System.Drawing.Point(5, 87);
-            this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(71, 13);
-            this.lblFechaHora.TabIndex = 16;
-            this.lblFechaHora.Text = "Fecha y Hora";
-            // 
-            // lblIdMascota
-            // 
-            this.lblIdMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblIdMascota.AutoSize = true;
-            this.lblIdMascota.Location = new System.Drawing.Point(5, 199);
-            this.lblIdMascota.Name = "lblIdMascota";
-            this.lblIdMascota.Size = new System.Drawing.Size(62, 13);
-            this.lblIdMascota.TabIndex = 15;
-            this.lblIdMascota.Text = "ID Mascota";
-            // 
-            // lblMotiConsulta
-            // 
-            this.lblMotiConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblMotiConsulta.AutoSize = true;
-            this.lblMotiConsulta.Location = new System.Drawing.Point(371, 199);
-            this.lblMotiConsulta.Name = "lblMotiConsulta";
-            this.lblMotiConsulta.Size = new System.Drawing.Size(80, 13);
-            this.lblMotiConsulta.TabIndex = 14;
-            this.lblMotiConsulta.Text = "MotivoConsulta";
-            // 
-            // lblPeso
-            // 
-            this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(371, 148);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(31, 13);
-            this.lblPeso.TabIndex = 13;
-            this.lblPeso.Text = "Peso";
-            // 
-            // lblEspecie
-            // 
-            this.lblEspecie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEspecie.AutoSize = true;
-            this.lblEspecie.Location = new System.Drawing.Point(371, 87);
-            this.lblEspecie.Name = "lblEspecie";
-            this.lblEspecie.Size = new System.Drawing.Size(45, 13);
-            this.lblEspecie.TabIndex = 12;
-            this.lblEspecie.Text = "Especie";
-            // 
-            // lblNomMascota
-            // 
-            this.lblNomMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblNomMascota.AutoSize = true;
-            this.lblNomMascota.Location = new System.Drawing.Point(371, 26);
-            this.lblNomMascota.Name = "lblNomMascota";
-            this.lblNomMascota.Size = new System.Drawing.Size(88, 13);
-            this.lblNomMascota.TabIndex = 11;
-            this.lblNomMascota.Text = "Nombre Mascota";
+            this.txtMotiConsulta.Location = new System.Drawing.Point(483, 202);
+            this.txtMotiConsulta.Name = "txtMotiConsulta";
+            this.txtMotiConsulta.Size = new System.Drawing.Size(175, 20);
+            this.txtMotiConsulta.TabIndex = 4;
             // 
             // lblIdExpediente
             // 
@@ -433,54 +589,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblIdExpediente.TabIndex = 10;
             this.lblIdExpediente.Text = "ID Expediente";
             // 
-            // txtIDCita
+            // lblMotiConsulta
             // 
-            this.txtIDCita.Location = new System.Drawing.Point(106, 90);
-            this.txtIDCita.Name = "txtIDCita";
-            this.txtIDCita.Size = new System.Drawing.Size(175, 20);
-            this.txtIDCita.TabIndex = 2;
-            // 
-            // txtMotiConsulta
-            // 
-            this.txtMotiConsulta.Location = new System.Drawing.Point(483, 202);
-            this.txtMotiConsulta.Name = "txtMotiConsulta";
-            this.txtMotiConsulta.Size = new System.Drawing.Size(175, 20);
-            this.txtMotiConsulta.TabIndex = 4;
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(483, 151);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(175, 20);
-            this.txtPeso.TabIndex = 5;
-            // 
-            // txtEspecie
-            // 
-            this.txtEspecie.Location = new System.Drawing.Point(483, 90);
-            this.txtEspecie.Name = "txtEspecie";
-            this.txtEspecie.Size = new System.Drawing.Size(175, 20);
-            this.txtEspecie.TabIndex = 6;
-            // 
-            // txtNomMascota
-            // 
-            this.txtNomMascota.Location = new System.Drawing.Point(483, 29);
-            this.txtNomMascota.Name = "txtNomMascota";
-            this.txtNomMascota.Size = new System.Drawing.Size(175, 20);
-            this.txtNomMascota.TabIndex = 7;
-            // 
-            // txtIdMascota
-            // 
-            this.txtIdMascota.Location = new System.Drawing.Point(106, 202);
-            this.txtIdMascota.Name = "txtIdMascota";
-            this.txtIdMascota.Size = new System.Drawing.Size(175, 20);
-            this.txtIdMascota.TabIndex = 8;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(106, 151);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
-            this.textBox8.TabIndex = 9;
+            this.lblMotiConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblMotiConsulta.AutoSize = true;
+            this.lblMotiConsulta.Location = new System.Drawing.Point(371, 199);
+            this.lblMotiConsulta.Name = "lblMotiConsulta";
+            this.lblMotiConsulta.Size = new System.Drawing.Size(80, 13);
+            this.lblMotiConsulta.TabIndex = 14;
+            this.lblMotiConsulta.Text = "MotivoConsulta";
             // 
             // cbxIdExpediente
             // 
@@ -489,6 +607,114 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdExpediente.Name = "cbxIdExpediente";
             this.cbxIdExpediente.Size = new System.Drawing.Size(175, 21);
             this.cbxIdExpediente.TabIndex = 1;
+            // 
+            // lblIdMascota
+            // 
+            this.lblIdMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblIdMascota.AutoSize = true;
+            this.lblIdMascota.Location = new System.Drawing.Point(5, 199);
+            this.lblIdMascota.Name = "lblIdMascota";
+            this.lblIdMascota.Size = new System.Drawing.Size(62, 13);
+            this.lblIdMascota.TabIndex = 15;
+            this.lblIdMascota.Text = "ID Mascota";
+            // 
+            // lblEspecie
+            // 
+            this.lblEspecie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblEspecie.AutoSize = true;
+            this.lblEspecie.Location = new System.Drawing.Point(371, 87);
+            this.lblEspecie.Name = "lblEspecie";
+            this.lblEspecie.Size = new System.Drawing.Size(45, 13);
+            this.lblEspecie.TabIndex = 12;
+            this.lblEspecie.Text = "Especie";
+            // 
+            // lblPeso
+            // 
+            this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Location = new System.Drawing.Point(371, 148);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(31, 13);
+            this.lblPeso.TabIndex = 13;
+            this.lblPeso.Text = "Peso";
+            // 
+            // lblFechaHora
+            // 
+            this.lblFechaHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblFechaHora.AutoSize = true;
+            this.lblFechaHora.Location = new System.Drawing.Point(5, 87);
+            this.lblFechaHora.Name = "lblFechaHora";
+            this.lblFechaHora.Size = new System.Drawing.Size(71, 13);
+            this.lblFechaHora.TabIndex = 16;
+            this.lblFechaHora.Text = "Fecha y Hora";
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(483, 151);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(175, 20);
+            this.txtPeso.TabIndex = 5;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(5, 148);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(39, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "ID Cita";
+            // 
+            // txtIdMascota
+            // 
+            this.txtIdMascota.Location = new System.Drawing.Point(106, 202);
+            this.txtIdMascota.Name = "txtIdMascota";
+            this.txtIdMascota.Size = new System.Drawing.Size(175, 20);
+            this.txtIdMascota.TabIndex = 8;
+            // 
+            // txtEspecie
+            // 
+            this.txtEspecie.Location = new System.Drawing.Point(483, 90);
+            this.txtEspecie.Name = "txtEspecie";
+            this.txtEspecie.Size = new System.Drawing.Size(175, 20);
+            this.txtEspecie.TabIndex = 6;
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(106, 151);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(175, 20);
+            this.textBox8.TabIndex = 9;
+            // 
+            // lblNomMascota
+            // 
+            this.lblNomMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNomMascota.AutoSize = true;
+            this.lblNomMascota.Location = new System.Drawing.Point(371, 26);
+            this.lblNomMascota.Name = "lblNomMascota";
+            this.lblNomMascota.Size = new System.Drawing.Size(88, 13);
+            this.lblNomMascota.TabIndex = 11;
+            this.lblNomMascota.Text = "Nombre Mascota";
+            // 
+            // txtIDCita
+            // 
+            this.txtIDCita.Location = new System.Drawing.Point(106, 90);
+            this.txtIDCita.Name = "txtIDCita";
+            this.txtIDCita.Size = new System.Drawing.Size(175, 20);
+            this.txtIDCita.TabIndex = 2;
+            // 
+            // txtNomMascota
+            // 
+            this.txtNomMascota.Location = new System.Drawing.Point(483, 29);
+            this.txtNomMascota.Name = "txtNomMascota";
+            this.txtNomMascota.Size = new System.Drawing.Size(175, 20);
+            this.txtNomMascota.TabIndex = 7;
             // 
             // btnGuardarVeterinarioCita
             // 
@@ -508,6 +734,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // veterinarioCita
             // 
@@ -521,10 +748,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Text = "veterinarioCita";
             this.panelVeterinarioCita.ResumeLayout(false);
             this.panelVeterinarioCita.PerformLayout();
-            this.gbxInfoCirugia.ResumeLayout(false);
-            this.gbxInfoCirugia.PerformLayout();
+            this.gbxInfoExamen.ResumeLayout(false);
+            this.gbxInfoExamen.PerformLayout();
+            this.gbxInfoVacuna.ResumeLayout(false);
+            this.gbxInfoVacuna.PerformLayout();
             this.gbxInfoCita.ResumeLayout(false);
             this.gbxInfoCita.PerformLayout();
+            this.gbxInfoCirugia.ResumeLayout(false);
+            this.gbxInfoCirugia.PerformLayout();
             this.gbxaInfoExpediente.ResumeLayout(false);
             this.gbxaInfoExpediente.PerformLayout();
             this.ResumeLayout(false);
@@ -570,13 +801,35 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.GroupBox gbxInfoCirugia;
         private System.Windows.Forms.Label lblTipoCirugia;
         private System.Windows.Forms.Label lblMotiCirugia;
-        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblDescripcionCirugia;
         private System.Windows.Forms.Label lblNotasCirugia;
-        private System.Windows.Forms.Label lblUsaMateriales;
+        private System.Windows.Forms.Label lblUsaMaterialesCirugia;
         private System.Windows.Forms.TextBox txtTipoCirugia;
         private System.Windows.Forms.TextBox txtNotasCirugia;
-        private System.Windows.Forms.TextBox txtUsaMateriales;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtUsaMaterialesCirugia;
+        private System.Windows.Forms.TextBox txtDescripcionCirugia;
         private System.Windows.Forms.TextBox txtMotiCirugia;
+        private System.Windows.Forms.GroupBox gbxInfoVacuna;
+        private System.Windows.Forms.Label lblTipoVacuna;
+        private System.Windows.Forms.Label lblMotiVacuna;
+        private System.Windows.Forms.Label lblDescripcionVacuna;
+        private System.Windows.Forms.Label lblNotasVacuna;
+        private System.Windows.Forms.Label lblUsaMaterialesVacuna;
+        private System.Windows.Forms.TextBox txtNotasVacuna;
+        private System.Windows.Forms.TextBox txtUsaMaterialesVacuna;
+        private System.Windows.Forms.TextBox txtDescripcionVacuna;
+        private System.Windows.Forms.TextBox txtMotiVacuna;
+        private System.Windows.Forms.ComboBox cbxTipoVacuna;
+        private System.Windows.Forms.GroupBox gbxInfoExamen;
+        private System.Windows.Forms.ComboBox cbxTipoExamen;
+        private System.Windows.Forms.Label lblTipoExamen;
+        private System.Windows.Forms.Label lblMotiExamen;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblNotasExamen;
+        private System.Windows.Forms.Label lblUsaMateriaesExamen;
+        private System.Windows.Forms.TextBox txtNotasExamen;
+        private System.Windows.Forms.TextBox txtUsaMateriaesExamen;
+        private System.Windows.Forms.TextBox txtDescripcionExamen;
+        private System.Windows.Forms.TextBox txtMotiExamen;
     }
 }

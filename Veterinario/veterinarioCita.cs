@@ -25,6 +25,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     ///Se añadieron dos GroupBox: 
     ///1. gbxaInfoExpediente para organizar la información del expediente de la mascota.
     ///2. gbxInfoCita para agrupar los detalles de la cita, como sintomas, diagnostico y tratamiento.
+    ///3.gbxInfoCirugia,gbxVacuna,gbxExamen
     /// Se añadieron múltiples TextBox (txt) y Label (lbl) dentro de los GroupBox para gestionar informacion datos de la mascota.
     /// En el formulario 'veterinarioExpediente' se añadieron dos botones: 'btnVolver' para regresar al menú principal
     ///y 'btnIrCita' para acceder directamente a la sección de citas.
@@ -41,6 +42,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             //Aqui se guardar los datos
 
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            //Aqui se cancelara
         }
     }
 }
