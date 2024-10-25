@@ -691,8 +691,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnGuardarUser
             // 
             this.btnGuardarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnGuardarUser.Enabled = false;
             this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarUser.Location = new System.Drawing.Point(216, 368);
+            this.btnGuardarUser.Location = new System.Drawing.Point(335, 368);
             this.btnGuardarUser.Name = "btnGuardarUser";
             this.btnGuardarUser.Size = new System.Drawing.Size(80, 26);
             this.btnGuardarUser.TabIndex = 0;
@@ -703,7 +704,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoUser.Location = new System.Drawing.Point(112, 368);
+            this.btnNuevoUser.Location = new System.Drawing.Point(117, 368);
             this.btnNuevoUser.Name = "btnNuevoUser";
             this.btnNuevoUser.Size = new System.Drawing.Size(80, 26);
             this.btnNuevoUser.TabIndex = 0;
@@ -715,7 +716,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarUser.Location = new System.Drawing.Point(320, 368);
+            this.btnCancelarUser.Location = new System.Drawing.Point(226, 368);
             this.btnCancelarUser.Name = "btnCancelarUser";
             this.btnCancelarUser.Size = new System.Drawing.Size(80, 26);
             this.btnCancelarUser.TabIndex = 0;

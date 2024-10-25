@@ -80,12 +80,24 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         //Metodo del boton btnEditUser que cambia los controles al modo de edicion
         private void btnEditUser_Click(object sender, EventArgs e)
         {
+            //habilita funcion de guardar
+            btnGuardarUser.Enabled = true;
+
+            //desahabilitar funcion de nuevo usuario
+            btnNuevoUser.Enabled = false;
+
             //Habilita la edicion de los campos
             HabilitarEdicion(true);
         }
 
         private void btnNuevoUser_Click(object sender, EventArgs e)
         {
+            //habilita funcion de guardar
+            btnGuardarUser.Enabled = true;
+
+            //desahabilitar funcion de editar
+            btnEditUser.Enabled = false;
+
             //se limpia el comboBox cbxIdUsuarios porque este campo se genera automaticamente
             cbxIdUsuario.Text = null;
 
@@ -142,6 +154,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void btnCancelarUser_Click(object sender, EventArgs e)
         {
+            btnEditUser.Enabled = true;
+            btnNuevoUser.Enabled = true;
+            btnGuardarUser.Enabled = false;
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
 
