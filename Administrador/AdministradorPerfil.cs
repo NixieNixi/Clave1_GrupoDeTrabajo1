@@ -34,6 +34,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtEmail.Text = "galletadecanela2048@gmail.com";
             txtDireccion.Text = "Comunidad Adesco Flores, Sector #3, Casa #44, Ilopango";
 
+            panelInventario.Visible = false;
             panelCitas.Visible = false;
             panelUsuario.Visible = true;
         }
@@ -80,8 +81,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void btnCitas_Click(object sender, EventArgs e)
         {
+            panelInventario.Visible = false;
             panelUsuario.Visible = false;
             panelCitas.Visible = true;
+        }
+
+        private void btnInventario_Click(object sender, EventArgs e)
+        {
+            panelCitas.Visible = false;
+            panelUsuario.Visible = false;
+            panelInventario.Visible = true;
         }
     }
 }
