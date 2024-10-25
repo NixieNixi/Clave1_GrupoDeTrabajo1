@@ -22,29 +22,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.Text = null;
         }
 
-        private void HabilitarEdicion(bool miau)
+        private void HabilitarEdicion(bool Habilitar)
         {
             //Desahibilta cbxIdUsuario
-            cbxIdUsuario.Enabled = !miau;
+            cbxIdUsuario.Enabled = !Habilitar;
 
             //Habilita los controles
-            txtUsuario.Enabled = miau;
-            txtRol.Enabled = miau;
-            txtTelefono.Enabled = miau;
-            txtNombre.Enabled = miau;
-            txtEmail.Enabled = miau;
-            txtDireccion.Enabled = miau;
-            txtContraseña.Enabled = miau;
+            txtUsuario.Enabled = Habilitar;
+            txtRol.Enabled = Habilitar;
+            txtTelefono.Enabled = Habilitar;
+            txtNombre.Enabled = Habilitar;
+            txtEmail.Enabled = Habilitar;
+            txtDireccion.Enabled = Habilitar;
+            txtContraseña.Enabled = Habilitar;
 
             //Permite la edicion del contenido de los controles
-            txtUsuario.ReadOnly = !miau;
-            txtTelefono.ReadOnly = !miau;
-            txtNombre.ReadOnly = !miau;
-            txtEmail.ReadOnly = !miau;
-            txtDireccion.ReadOnly = !miau;
-            txtContraseña.ReadOnly = !miau;
+            txtUsuario.ReadOnly = !Habilitar;
+            txtTelefono.ReadOnly = !Habilitar;
+            txtNombre.ReadOnly = !Habilitar;
+            txtEmail.ReadOnly = !Habilitar;
+            txtDireccion.ReadOnly = !Habilitar;
+            txtContraseña.ReadOnly = !Habilitar;
             //Permite ver la contraseña para editar
-            txtContraseña.UseSystemPasswordChar = !miau;
+            txtContraseña.UseSystemPasswordChar = !Habilitar;
         }
 
         //Metodo del boton btnUsuarios que muestra el panel de usuarios
