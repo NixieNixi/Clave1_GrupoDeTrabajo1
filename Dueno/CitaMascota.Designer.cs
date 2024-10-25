@@ -305,6 +305,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label1);
             this.Name = "CitaMascota";
             this.Text = "CitaMascota";
+            this.Load += new System.EventHandler(this.CitaMascota_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

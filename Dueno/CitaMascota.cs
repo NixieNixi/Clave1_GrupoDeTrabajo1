@@ -25,8 +25,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnPerfilD_Click(object sender, EventArgs e)
         {
-            PerfilDueño VerDueño = new PerfilDueño();
+            //se enlaza conel perfil mediante el boton
+            PerfilDueno VerDueño = new PerfilDueno();
             VerDueño.ShowDialog();
+        }
+
+        private void CitaMascota_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

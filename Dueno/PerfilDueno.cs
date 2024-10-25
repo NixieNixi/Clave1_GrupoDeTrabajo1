@@ -12,27 +12,30 @@ using Clave1_GrupoDeTrabajo1;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
-    public partial class PerfilDueño : Form
+    public partial class PerfilDueno : Form
     {
-        public PerfilDueño()
+        public PerfilDueno()
         {
             InitializeComponent();
         }
 
         private void btnIrTiendaD_Click(object sender, EventArgs e)
         {
+           //se enlaza con la tienda mediantte el boton correspondiente 
             Tienda Comprar = new Tienda();
             Comprar.ShowDialog();
         }
 
         private void btnPerfilMascotaD_Click(object sender, EventArgs e)
         {
+            //se enlaza con el perfil de mascota con su boton correspondiente
             PerfilMascota VerPerMascota = new PerfilMascota();
             VerPerMascota.ShowDialog();
         }
 
         private void btnCitaMascD_Click(object sender, EventArgs e)
         {
+            //se enlaza con su boton a la cita
             CitaMascota VerCitas = new CitaMascota();
             VerCitas.ShowDialog();
         }

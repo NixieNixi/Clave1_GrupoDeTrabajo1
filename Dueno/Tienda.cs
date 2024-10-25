@@ -19,7 +19,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnVolD_Click(object sender, EventArgs e)
         {
-            PerfilDueño Vo = new PerfilDueño();
+            //se enlaza a suboton de perfil
+            PerfilDueno Vo = new PerfilDueno();
             Vo.ShowDialog();
         }
     }

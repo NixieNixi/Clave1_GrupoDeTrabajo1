@@ -64,11 +64,11 @@
     <Compile Include="Dueno\CitaMascota.Designer.cs">
       <DependentUpon>CitaMascota.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dueno\IniciarSesionDueño.cs">
+    <Compile Include="Dueno\IniciarSesionDueno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dueno\IniciarSesionDueño.Designer.cs">
-      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    <Compile Include="Dueno\IniciarSesionDueno.Designer.cs">
+      <DependentUpon>IniciarSesionDueno.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Login.cs">
       <SubType>Form</SubType>
@@ -100,17 +100,17 @@
     <Compile Include="Veterinario\veterinarioVacuna.Designer.cs">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dueno\MenuPrincipalDueño.cs">
+    <Compile Include="Dueno\MenuPrincipalDueno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dueno\MenuPrincipalDueño.Designer.cs">
-      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    <Compile Include="Dueno\MenuPrincipalDueno.Designer.cs">
+      <DependentUpon>MenuPrincipalDueno.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dueno\PerfilDueño.cs">
+    <Compile Include="Dueno\PerfilDueno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dueno\PerfilDueño.Designer.cs">
-      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    <Compile Include="Dueno\PerfilDueno.Designer.cs">
+      <DependentUpon>PerfilDueno.cs</DependentUpon>
     </Compile>
     <Compile Include="Dueno\PerfilMascota.cs">
       <SubType>Form</SubType>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="Dueno\CitaMascota.resx">
       <DependentUpon>CitaMascota.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dueno\IniciarSesionDueño.resx">
-      <DependentUpon>IniciarSesionDueño.cs</DependentUpon>
+    <EmbeddedResource Include="Dueno\IniciarSesionDueno.resx">
+      <DependentUpon>IniciarSesionDueno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -162,11 +162,11 @@
     <EmbeddedResource Include="Veterinario\veterinarioVacuna.resx">
       <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dueno\MenuPrincipalDueño.resx">
-      <DependentUpon>MenuPrincipalDueño.cs</DependentUpon>
+    <EmbeddedResource Include="Dueno\MenuPrincipalDueno.resx">
+      <DependentUpon>MenuPrincipalDueno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dueno\PerfilDueño.resx">
-      <DependentUpon>PerfilDueño.cs</DependentUpon>
+    <EmbeddedResource Include="Dueno\PerfilDueno.resx">
+      <DependentUpon>PerfilDueno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dueno\PerfilMascota.resx">
       <DependentUpon>PerfilMascota.cs</DependentUpon>

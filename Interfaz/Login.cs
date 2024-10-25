@@ -44,7 +44,7 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir el perfil de Dueño
         private void btnDueño_Click(object sender, EventArgs e)
         {
-            PerfilDueño VerDueñoPerfil = new PerfilDueño();
+            PerfilDueno VerDueñoPerfil = new PerfilDueno();
             this.Hide();
             VerDueñoPerfil.ShowDialog();
         }

@@ -19,8 +19,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnIniciarSesionD_Click(object sender, EventArgs e)
         {
-            IniciarSesionDueño IniciarSesion = new IniciarSesionDueño();
+            //se elaza mediante el boton correspondiente
+            IniciarSesionDueno IniciarSesion = new IniciarSesionDueno();
             IniciarSesion.ShowDialog();
+        }
+
+        private void MenuPrincipalDueño_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
