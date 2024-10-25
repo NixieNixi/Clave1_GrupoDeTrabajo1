@@ -73,7 +73,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label8 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtRol = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnEditUser = new System.Windows.Forms.Button();
             this.btnGuardarUser = new System.Windows.Forms.Button();
@@ -85,6 +84,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdUsuario = new System.Windows.Forms.ComboBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.panelUsuario = new System.Windows.Forms.Panel();
+            this.txtRol = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -654,17 +654,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label14.TabIndex = 0;
             this.label14.Text = "Nombre de la mascota";
             // 
-            // txtRol
-            // 
-            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtRol.Enabled = false;
-            this.txtRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(8, 88);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.ReadOnly = true;
-            this.txtRol.Size = new System.Drawing.Size(200, 25);
-            this.txtRol.TabIndex = 1;
-            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
@@ -693,7 +682,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnGuardarUser.Enabled = false;
             this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarUser.Location = new System.Drawing.Point(335, 368);
+            this.btnGuardarUser.Location = new System.Drawing.Point(336, 368);
             this.btnGuardarUser.Name = "btnGuardarUser";
             this.btnGuardarUser.Size = new System.Drawing.Size(80, 26);
             this.btnGuardarUser.TabIndex = 0;
@@ -704,7 +693,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoUser.Location = new System.Drawing.Point(117, 368);
+            this.btnNuevoUser.Location = new System.Drawing.Point(112, 368);
             this.btnNuevoUser.Name = "btnNuevoUser";
             this.btnNuevoUser.Size = new System.Drawing.Size(80, 26);
             this.btnNuevoUser.TabIndex = 0;
@@ -716,7 +705,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarUser.Location = new System.Drawing.Point(226, 368);
+            this.btnCancelarUser.Location = new System.Drawing.Point(224, 368);
             this.btnCancelarUser.Name = "btnCancelarUser";
             this.btnCancelarUser.Size = new System.Drawing.Size(80, 26);
             this.btnCancelarUser.TabIndex = 0;
@@ -784,6 +773,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.panelUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelUsuario.Controls.Add(this.cbxIdMascota);
+            this.panelUsuario.Controls.Add(this.txtRol);
             this.panelUsuario.Controls.Add(this.cbxIdUsuario);
             this.panelUsuario.Controls.Add(this.txtNombreMascota);
             this.panelUsuario.Controls.Add(this.txtDireccion);
@@ -794,7 +784,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.btnEditUser);
             this.panelUsuario.Controls.Add(this.txtEmail);
             this.panelUsuario.Controls.Add(this.txtUsuario);
-            this.panelUsuario.Controls.Add(this.txtRol);
             this.panelUsuario.Controls.Add(this.label14);
             this.panelUsuario.Controls.Add(this.txtContraseña);
             this.panelUsuario.Controls.Add(this.txtNombre);
@@ -812,6 +801,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Size = new System.Drawing.Size(583, 408);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
+            // 
+            // txtRol
+            // 
+            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtRol.Enabled = false;
+            this.txtRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRol.FormattingEnabled = true;
+            this.txtRol.Items.AddRange(new object[] {
+            "Cliente",
+            "Veterinario",
+            "Administrador"});
+            this.txtRol.Location = new System.Drawing.Point(8, 88);
+            this.txtRol.Name = "txtRol";
+            this.txtRol.Size = new System.Drawing.Size(200, 30);
+            this.txtRol.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -1423,7 +1427,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtRol;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnEditUser;
         private System.Windows.Forms.Button btnGuardarUser;
@@ -1478,5 +1481,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox txtRol;
     }
 }

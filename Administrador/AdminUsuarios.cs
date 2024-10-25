@@ -38,7 +38,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //Permite la edicion del contenido de los controles
             txtUsuario.ReadOnly = !miau;
-            txtRol.ReadOnly = !miau;
             txtTelefono.ReadOnly = !miau;
             txtNombre.ReadOnly = !miau;
             txtEmail.ReadOnly = !miau;
@@ -154,8 +153,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void btnCancelarUser_Click(object sender, EventArgs e)
         {
+            //habilitar los botones de editar y nuevo usuario
             btnEditUser.Enabled = true;
             btnNuevoUser.Enabled = true;
+            //deshabilitar el boton de guarda
             btnGuardarUser.Enabled = false;
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
