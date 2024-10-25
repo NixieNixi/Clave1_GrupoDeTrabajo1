@@ -26,7 +26,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            txtIdUsuario.Text = "A10000";
+            cbxIdUsuario.Text = "A10000";
             txtUsuario.Text = "canela.feliz";
             txtRol.Text = "Administrador";
             txtNombre.Text = "Galleta";
@@ -35,6 +35,46 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtDireccion.Text = "Comunidad Adesco Flores, Sector #3, Casa #44, Ilopango";
 
             panelUsuario.Visible = true;
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            txtUsuario.Enabled = true;
+            txtUsuario.ReadOnly = false;
+            txtRol.Enabled = true;
+            txtRol.ReadOnly = false;
+            txtTelefono.Enabled = true;
+            txtTelefono.ReadOnly = false;
+            txtNombre.Enabled = true;
+            txtNombre.ReadOnly = false;
+            txtEmail.Enabled = true;
+            txtEmail.ReadOnly = false;
+            txtDireccion.Enabled = true;
+            txtDireccion.ReadOnly = false;
+        }
+
+        private void btnNuevoUser_Click(object sender, EventArgs e)
+        {
+            txtUsuario.Enabled = true;
+            txtUsuario.ReadOnly = false;
+            txtRol.Enabled = true;
+            txtRol.ReadOnly = false;
+            txtTelefono.Enabled = true;
+            txtTelefono.ReadOnly = false;
+            txtNombre.Enabled = true;
+            txtNombre.ReadOnly = false;
+            txtEmail.Enabled = true;
+            txtEmail.ReadOnly = false;
+            txtDireccion.Enabled = true;
+            txtDireccion.ReadOnly = false;
+
+            cbxIdUsuario.Text = null;
+            txtUsuario.Text = null;
+            txtRol.Text = null;
+            txtTelefono.Text = null;
+            txtNombre.Text = null;
+            txtEmail.Text = null;
+            txtDireccion.Text = null;
         }
     }
 }

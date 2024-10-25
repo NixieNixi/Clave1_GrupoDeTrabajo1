@@ -43,24 +43,28 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panelUsuario = new System.Windows.Forms.Panel();
+            this.cbxIdMascota = new System.Windows.Forms.ComboBox();
+            this.cbxIdUsuario = new System.Windows.Forms.ComboBox();
+            this.txtNombreMascota = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.btnCancelarUser = new System.Windows.Forms.Button();
+            this.btnNuevoUser = new System.Windows.Forms.Button();
+            this.btnGuardarUser = new System.Windows.Forms.Button();
+            this.btnEditUser = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtRol = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtIdUsuario = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtRol = new System.Windows.Forms.TextBox();
-            this.btnEditUser = new System.Windows.Forms.Button();
-            this.btnGuardarUser = new System.Windows.Forms.Button();
-            this.btnCancelarUser = new System.Windows.Forms.Button();
-            this.btnNuevoUser = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelUsuario.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +214,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.AutoScroll = true;
             this.panelUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.panelUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelUsuario.Controls.Add(this.cbxIdMascota);
+            this.panelUsuario.Controls.Add(this.cbxIdUsuario);
+            this.panelUsuario.Controls.Add(this.txtNombreMascota);
             this.panelUsuario.Controls.Add(this.txtUsuario);
             this.panelUsuario.Controls.Add(this.txtDireccion);
             this.panelUsuario.Controls.Add(this.txtTelefono);
@@ -219,24 +226,57 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.btnEditUser);
             this.panelUsuario.Controls.Add(this.txtEmail);
             this.panelUsuario.Controls.Add(this.txtRol);
+            this.panelUsuario.Controls.Add(this.label14);
             this.panelUsuario.Controls.Add(this.txtNombre);
             this.panelUsuario.Controls.Add(this.label8);
             this.panelUsuario.Controls.Add(this.label11);
             this.panelUsuario.Controls.Add(this.label9);
             this.panelUsuario.Controls.Add(this.label12);
             this.panelUsuario.Controls.Add(this.label10);
+            this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.label7);
-            this.panelUsuario.Controls.Add(this.txtIdUsuario);
             this.panelUsuario.Controls.Add(this.label6);
-            this.panelUsuario.Location = new System.Drawing.Point(157, 105);
+            this.panelUsuario.Location = new System.Drawing.Point(157, 88);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(583, 386);
+            this.panelUsuario.Size = new System.Drawing.Size(583, 408);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
+            // 
+            // cbxIdMascota
+            // 
+            this.cbxIdMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.cbxIdMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdMascota.FormattingEnabled = true;
+            this.cbxIdMascota.Location = new System.Drawing.Point(8, 328);
+            this.cbxIdMascota.Name = "cbxIdMascota";
+            this.cbxIdMascota.Size = new System.Drawing.Size(200, 30);
+            this.cbxIdMascota.TabIndex = 2;
+            // 
+            // cbxIdUsuario
+            // 
+            this.cbxIdUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.cbxIdUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdUsuario.FormattingEnabled = true;
+            this.cbxIdUsuario.Location = new System.Drawing.Point(8, 32);
+            this.cbxIdUsuario.Name = "cbxIdUsuario";
+            this.cbxIdUsuario.Size = new System.Drawing.Size(200, 30);
+            this.cbxIdUsuario.TabIndex = 2;
+            // 
+            // txtNombreMascota
+            // 
+            this.txtNombreMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtNombreMascota.Enabled = false;
+            this.txtNombreMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreMascota.Location = new System.Drawing.Point(272, 328);
+            this.txtNombreMascota.Name = "txtNombreMascota";
+            this.txtNombreMascota.ReadOnly = true;
+            this.txtNombreMascota.Size = new System.Drawing.Size(200, 25);
+            this.txtNombreMascota.TabIndex = 1;
             // 
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(272, 32);
             this.txtUsuario.Name = "txtUsuario";
@@ -247,6 +287,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // txtDireccion
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(8, 256);
             this.txtDireccion.Name = "txtDireccion";
@@ -257,6 +298,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(272, 88);
             this.txtTelefono.Name = "txtTelefono";
@@ -264,9 +306,56 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtTelefono.Size = new System.Drawing.Size(200, 25);
             this.txtTelefono.TabIndex = 1;
             // 
+            // btnCancelarUser
+            // 
+            this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarUser.Location = new System.Drawing.Point(320, 368);
+            this.btnCancelarUser.Name = "btnCancelarUser";
+            this.btnCancelarUser.Size = new System.Drawing.Size(80, 26);
+            this.btnCancelarUser.TabIndex = 0;
+            this.btnCancelarUser.Text = "Cancelar";
+            this.btnCancelarUser.UseVisualStyleBackColor = false;
+            // 
+            // btnNuevoUser
+            // 
+            this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoUser.Location = new System.Drawing.Point(112, 368);
+            this.btnNuevoUser.Name = "btnNuevoUser";
+            this.btnNuevoUser.Size = new System.Drawing.Size(80, 26);
+            this.btnNuevoUser.TabIndex = 0;
+            this.btnNuevoUser.Text = "Nuevo";
+            this.btnNuevoUser.UseVisualStyleBackColor = false;
+            this.btnNuevoUser.Click += new System.EventHandler(this.btnNuevoUser_Click);
+            // 
+            // btnGuardarUser
+            // 
+            this.btnGuardarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarUser.Location = new System.Drawing.Point(216, 368);
+            this.btnGuardarUser.Name = "btnGuardarUser";
+            this.btnGuardarUser.Size = new System.Drawing.Size(80, 26);
+            this.btnGuardarUser.TabIndex = 0;
+            this.btnGuardarUser.Text = "Guardar";
+            this.btnGuardarUser.UseVisualStyleBackColor = false;
+            // 
+            // btnEditUser
+            // 
+            this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnEditUser.ForeColor = System.Drawing.Color.White;
+            this.btnEditUser.Location = new System.Drawing.Point(8, 368);
+            this.btnEditUser.Name = "btnEditUser";
+            this.btnEditUser.Size = new System.Drawing.Size(80, 26);
+            this.btnEditUser.TabIndex = 0;
+            this.btnEditUser.Text = "Editar";
+            this.btnEditUser.UseVisualStyleBackColor = false;
+            this.btnEditUser.Click += new System.EventHandler(this.btnEditUser_Click);
+            // 
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(8, 200);
             this.txtEmail.Name = "txtEmail";
@@ -274,9 +363,33 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtEmail.Size = new System.Drawing.Size(460, 25);
             this.txtEmail.TabIndex = 1;
             // 
+            // txtRol
+            // 
+            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtRol.Enabled = false;
+            this.txtRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRol.Location = new System.Drawing.Point(8, 88);
+            this.txtRol.Name = "txtRol";
+            this.txtRol.ReadOnly = true;
+            this.txtRol.Size = new System.Drawing.Size(200, 25);
+            this.txtRol.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
+            this.label14.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(272, 304);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(145, 22);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Nombre de la mascota";
+            // 
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(8, 144);
             this.txtNombre.Name = "txtNombre";
@@ -320,6 +433,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label9.TabIndex = 0;
             this.label9.Text = "Numero de teléfono";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
+            this.label12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 22);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Rol";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -331,6 +456,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label10.Size = new System.Drawing.Size(118, 22);
             this.label10.TabIndex = 0;
             this.label10.Text = "Correo Electrónico";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
+            this.label13.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(8, 304);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(75, 22);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "ID Mascota";
             // 
             // label7
             // 
@@ -344,16 +481,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre";
             // 
-            // txtIdUsuario
-            // 
-            this.txtIdUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtIdUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdUsuario.Location = new System.Drawing.Point(8, 32);
-            this.txtIdUsuario.Name = "txtIdUsuario";
-            this.txtIdUsuario.ReadOnly = true;
-            this.txtIdUsuario.Size = new System.Drawing.Size(200, 25);
-            this.txtIdUsuario.TabIndex = 1;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -365,76 +492,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label6.Size = new System.Drawing.Size(69, 22);
             this.label6.TabIndex = 0;
             this.label6.Text = "ID Usuario";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(8, 64);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 22);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Rol";
-            // 
-            // txtRol
-            // 
-            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.Location = new System.Drawing.Point(8, 88);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.ReadOnly = true;
-            this.txtRol.Size = new System.Drawing.Size(200, 25);
-            this.txtRol.TabIndex = 1;
-            // 
-            // btnEditUser
-            // 
-            this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnEditUser.ForeColor = System.Drawing.Color.White;
-            this.btnEditUser.Location = new System.Drawing.Point(8, 352);
-            this.btnEditUser.Name = "btnEditUser";
-            this.btnEditUser.Size = new System.Drawing.Size(80, 26);
-            this.btnEditUser.TabIndex = 0;
-            this.btnEditUser.Text = "Editar";
-            this.btnEditUser.UseVisualStyleBackColor = false;
-            this.btnEditUser.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnGuardarUser
-            // 
-            this.btnGuardarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarUser.Location = new System.Drawing.Point(216, 352);
-            this.btnGuardarUser.Name = "btnGuardarUser";
-            this.btnGuardarUser.Size = new System.Drawing.Size(80, 26);
-            this.btnGuardarUser.TabIndex = 0;
-            this.btnGuardarUser.Text = "Guardar";
-            this.btnGuardarUser.UseVisualStyleBackColor = false;
-            this.btnGuardarUser.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnCancelarUser
-            // 
-            this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarUser.Location = new System.Drawing.Point(320, 352);
-            this.btnCancelarUser.Name = "btnCancelarUser";
-            this.btnCancelarUser.Size = new System.Drawing.Size(80, 26);
-            this.btnCancelarUser.TabIndex = 0;
-            this.btnCancelarUser.Text = "Cancelar";
-            this.btnCancelarUser.UseVisualStyleBackColor = false;
-            this.btnCancelarUser.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnNuevoUser
-            // 
-            this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoUser.Location = new System.Drawing.Point(112, 352);
-            this.btnNuevoUser.Name = "btnNuevoUser";
-            this.btnNuevoUser.Size = new System.Drawing.Size(80, 26);
-            this.btnNuevoUser.TabIndex = 0;
-            this.btnNuevoUser.Text = "Nuevo";
-            this.btnNuevoUser.UseVisualStyleBackColor = false;
-            this.btnNuevoUser.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // AdministradorPerfil
             // 
@@ -480,23 +537,27 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnInventario;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.TextBox txtIdUsuario;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbxIdMascota;
+        private System.Windows.Forms.ComboBox cbxIdUsuario;
+        private System.Windows.Forms.TextBox txtNombreMascota;
         private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtRol;
-        private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnCancelarUser;
         private System.Windows.Forms.Button btnNuevoUser;
         private System.Windows.Forms.Button btnGuardarUser;
         private System.Windows.Forms.Button btnEditUser;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtRol;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
