@@ -145,6 +145,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
 
+            //dependiendo de la seleccion en cbxIdUsuarios:
+            //Sin seleccion - limpia los campos
+            //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
             cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
         }
     }
