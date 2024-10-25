@@ -31,6 +31,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             this.tabHistorialMedico = new System.Windows.Forms.TabPage();
             this.panelHM = new System.Windows.Forms.Panel();
+            this.lblHistorialCitas = new System.Windows.Forms.Label();
+            this.lblHistorialPaciente = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Cirugias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Examenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,11 +65,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDireccionDueno = new System.Windows.Forms.TextBox();
+            this.txtCorreoDueno = new System.Windows.Forms.TextBox();
+            this.txtNomDueno = new System.Windows.Forms.TextBox();
+            this.txtTelefonoDueno = new System.Windows.Forms.TextBox();
+            this.txtIdDuenoExp = new System.Windows.Forms.TextBox();
             this.gbxDatosMascota = new System.Windows.Forms.GroupBox();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
@@ -81,24 +88,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblNomMascota = new System.Windows.Forms.Label();
             this.tapExpediente = new System.Windows.Forms.TabControl();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblHistorialPaciente = new System.Windows.Forms.Label();
-            this.lblHistorialCitas = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnIrCita = new System.Windows.Forms.Button();
+            this.cbxIdExpedienteMascota = new System.Windows.Forms.ComboBox();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).BeginInit();
             this.tabInformacionGeneral.SuspendLayout();
             this.gbxDatosDueno.SuspendLayout();
             this.gbxDatosMascota.SuspendLayout();
             this.tapExpediente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabHistorialMedico
@@ -107,7 +108,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabHistorialMedico.Location = new System.Drawing.Point(4, 22);
             this.tabHistorialMedico.Name = "tabHistorialMedico";
             this.tabHistorialMedico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistorialMedico.Size = new System.Drawing.Size(906, 621);
+            this.tabHistorialMedico.Size = new System.Drawing.Size(906, 615);
             this.tabHistorialMedico.TabIndex = 2;
             this.tabHistorialMedico.Text = "Historial Medico";
             this.tabHistorialMedico.UseVisualStyleBackColor = true;
@@ -127,6 +128,64 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.Name = "panelHM";
             this.panelHM.Size = new System.Drawing.Size(900, 615);
             this.panelHM.TabIndex = 1;
+            // 
+            // lblHistorialCitas
+            // 
+            this.lblHistorialCitas.AutoSize = true;
+            this.lblHistorialCitas.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialCitas.Location = new System.Drawing.Point(315, 134);
+            this.lblHistorialCitas.Name = "lblHistorialCitas";
+            this.lblHistorialCitas.Size = new System.Drawing.Size(178, 27);
+            this.lblHistorialCitas.TabIndex = 8;
+            this.lblHistorialCitas.Text = "Historial de Citas";
+            // 
+            // lblHistorialPaciente
+            // 
+            this.lblHistorialPaciente.AutoSize = true;
+            this.lblHistorialPaciente.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialPaciente.Location = new System.Drawing.Point(332, 406);
+            this.lblHistorialPaciente.Name = "lblHistorialPaciente";
+            this.lblHistorialPaciente.Size = new System.Drawing.Size(220, 27);
+            this.lblHistorialPaciente.TabIndex = 7;
+            this.lblHistorialPaciente.Text = "Historial del Paciente";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Vacuna,
+            this.FechaAplicacion,
+            this.Motivo,
+            this.ProximaDosis});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 728);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(848, 150);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // Vacuna
+            // 
+            this.Vacuna.HeaderText = "Vacuna";
+            this.Vacuna.Name = "Vacuna";
+            this.Vacuna.ReadOnly = true;
+            // 
+            // FechaAplicacion
+            // 
+            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
+            this.FechaAplicacion.Name = "FechaAplicacion";
+            this.FechaAplicacion.ReadOnly = true;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo";
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            // 
+            // ProximaDosis
+            // 
+            this.ProximaDosis.HeaderText = "Proxima Dosis";
+            this.ProximaDosis.Name = "ProximaDosis";
+            this.ProximaDosis.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -289,11 +348,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosDueno.Controls.Add(this.label6);
             this.gbxDatosDueno.Controls.Add(this.label7);
             this.gbxDatosDueno.Controls.Add(this.label8);
-            this.gbxDatosDueno.Controls.Add(this.textBox1);
-            this.gbxDatosDueno.Controls.Add(this.textBox2);
-            this.gbxDatosDueno.Controls.Add(this.textBox3);
-            this.gbxDatosDueno.Controls.Add(this.textBox4);
-            this.gbxDatosDueno.Controls.Add(this.textBox5);
+            this.gbxDatosDueno.Controls.Add(this.txtDireccionDueno);
+            this.gbxDatosDueno.Controls.Add(this.txtCorreoDueno);
+            this.gbxDatosDueno.Controls.Add(this.txtNomDueno);
+            this.gbxDatosDueno.Controls.Add(this.txtTelefonoDueno);
+            this.gbxDatosDueno.Controls.Add(this.txtIdDuenoExp);
             this.gbxDatosDueno.Location = new System.Drawing.Point(16, 23);
             this.gbxDatosDueno.Name = "gbxDatosDueno";
             this.gbxDatosDueno.Size = new System.Drawing.Size(856, 161);
@@ -346,48 +405,50 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label8.TabIndex = 34;
             this.label8.Text = "ID Dueño";
             // 
-            // textBox1
+            // txtDireccionDueno
             // 
-            this.textBox1.Location = new System.Drawing.Point(714, 91);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 33;
+            this.txtDireccionDueno.Location = new System.Drawing.Point(714, 91);
+            this.txtDireccionDueno.Name = "txtDireccionDueno";
+            this.txtDireccionDueno.ReadOnly = true;
+            this.txtDireccionDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtDireccionDueno.TabIndex = 33;
             // 
-            // textBox2
+            // txtCorreoDueno
             // 
-            this.textBox2.Location = new System.Drawing.Point(554, 91);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 32;
+            this.txtCorreoDueno.Location = new System.Drawing.Point(554, 91);
+            this.txtCorreoDueno.Name = "txtCorreoDueno";
+            this.txtCorreoDueno.ReadOnly = true;
+            this.txtCorreoDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtCorreoDueno.TabIndex = 32;
             // 
-            // textBox3
+            // txtNomDueno
             // 
-            this.textBox3.Location = new System.Drawing.Point(232, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 31;
+            this.txtNomDueno.Location = new System.Drawing.Point(232, 91);
+            this.txtNomDueno.Name = "txtNomDueno";
+            this.txtNomDueno.ReadOnly = true;
+            this.txtNomDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtNomDueno.TabIndex = 31;
             // 
-            // textBox4
+            // txtTelefonoDueno
             // 
-            this.textBox4.Location = new System.Drawing.Point(391, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 30;
+            this.txtTelefonoDueno.Location = new System.Drawing.Point(391, 91);
+            this.txtTelefonoDueno.Name = "txtTelefonoDueno";
+            this.txtTelefonoDueno.ReadOnly = true;
+            this.txtTelefonoDueno.Size = new System.Drawing.Size(100, 20);
+            this.txtTelefonoDueno.TabIndex = 30;
+            this.txtTelefonoDueno.Text = "d ";
             // 
-            // textBox5
+            // txtIdDuenoExp
             // 
-            this.textBox5.Location = new System.Drawing.Point(69, 91);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 29;
+            this.txtIdDuenoExp.Location = new System.Drawing.Point(69, 91);
+            this.txtIdDuenoExp.Name = "txtIdDuenoExp";
+            this.txtIdDuenoExp.ReadOnly = true;
+            this.txtIdDuenoExp.Size = new System.Drawing.Size(100, 20);
+            this.txtIdDuenoExp.TabIndex = 29;
             // 
             // gbxDatosMascota
             // 
+            this.gbxDatosMascota.Controls.Add(this.cbxIdExpedienteMascota);
             this.gbxDatosMascota.Controls.Add(this.txtSexo);
             this.gbxDatosMascota.Controls.Add(this.txtFechaNacimiento);
             this.gbxDatosMascota.Controls.Add(this.txtIdExpediente);
@@ -429,7 +490,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtIdExpediente
             // 
-            this.txtIdExpediente.Location = new System.Drawing.Point(102, 78);
+            this.txtIdExpediente.Location = new System.Drawing.Point(382, 142);
             this.txtIdExpediente.Name = "txtIdExpediente";
             this.txtIdExpediente.ReadOnly = true;
             this.txtIdExpediente.Size = new System.Drawing.Size(100, 20);
@@ -557,64 +618,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tapExpediente.Size = new System.Drawing.Size(914, 641);
             this.tapExpediente.TabIndex = 0;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Vacuna,
-            this.FechaAplicacion,
-            this.Motivo,
-            this.ProximaDosis});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 728);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(848, 150);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // Vacuna
-            // 
-            this.Vacuna.HeaderText = "Vacuna";
-            this.Vacuna.Name = "Vacuna";
-            this.Vacuna.ReadOnly = true;
-            // 
-            // FechaAplicacion
-            // 
-            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
-            this.FechaAplicacion.Name = "FechaAplicacion";
-            this.FechaAplicacion.ReadOnly = true;
-            // 
-            // Motivo
-            // 
-            this.Motivo.HeaderText = "Motivo";
-            this.Motivo.Name = "Motivo";
-            this.Motivo.ReadOnly = true;
-            // 
-            // ProximaDosis
-            // 
-            this.ProximaDosis.HeaderText = "Proxima Dosis";
-            this.ProximaDosis.Name = "ProximaDosis";
-            this.ProximaDosis.ReadOnly = true;
-            // 
-            // lblHistorialPaciente
-            // 
-            this.lblHistorialPaciente.AutoSize = true;
-            this.lblHistorialPaciente.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorialPaciente.Location = new System.Drawing.Point(332, 406);
-            this.lblHistorialPaciente.Name = "lblHistorialPaciente";
-            this.lblHistorialPaciente.Size = new System.Drawing.Size(220, 27);
-            this.lblHistorialPaciente.TabIndex = 7;
-            this.lblHistorialPaciente.Text = "Historial del Paciente";
-            // 
-            // lblHistorialCitas
-            // 
-            this.lblHistorialCitas.AutoSize = true;
-            this.lblHistorialCitas.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorialCitas.Location = new System.Drawing.Point(315, 134);
-            this.lblHistorialCitas.Name = "lblHistorialCitas";
-            this.lblHistorialCitas.Size = new System.Drawing.Size(178, 27);
-            this.lblHistorialCitas.TabIndex = 8;
-            this.lblHistorialCitas.Text = "Historial de Citas";
-            // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(126, 659);
@@ -634,6 +637,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnIrCita.UseVisualStyleBackColor = true;
             this.btnIrCita.Click += new System.EventHandler(this.btnIrCita_Click);
             // 
+            // cbxIdExpedienteMascota
+            // 
+            this.cbxIdExpedienteMascota.FormattingEnabled = true;
+            this.cbxIdExpedienteMascota.Location = new System.Drawing.Point(91, 78);
+            this.cbxIdExpedienteMascota.Name = "cbxIdExpedienteMascota";
+            this.cbxIdExpedienteMascota.Size = new System.Drawing.Size(121, 21);
+            this.cbxIdExpedienteMascota.TabIndex = 23;
+            this.cbxIdExpedienteMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdExpedienteMascota_SelectedIndexChanged);
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -647,6 +659,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabHistorialMedico.ResumeLayout(false);
             this.panelHM.ResumeLayout(false);
             this.panelHM.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).EndInit();
             this.tabInformacionGeneral.ResumeLayout(false);
@@ -655,7 +668,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.ResumeLayout(false);
             this.gbxDatosMascota.PerformLayout();
             this.tapExpediente.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -691,11 +703,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDireccionDueno;
+        private System.Windows.Forms.TextBox txtCorreoDueno;
+        private System.Windows.Forms.TextBox txtNomDueno;
+        private System.Windows.Forms.TextBox txtTelefonoDueno;
+        private System.Windows.Forms.TextBox txtIdDuenoExp;
         private System.Windows.Forms.GroupBox gbxDatosMascota;
         private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.TextBox txtFechaNacimiento;
@@ -723,5 +735,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblHistorialPaciente;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnIrCita;
+        private System.Windows.Forms.ComboBox cbxIdExpedienteMascota;
     }
 }
