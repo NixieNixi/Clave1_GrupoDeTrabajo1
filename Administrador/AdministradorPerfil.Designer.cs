@@ -85,6 +85,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdUsuario = new System.Windows.Forms.ComboBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.panelUsuario = new System.Windows.Forms.Panel();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
@@ -125,9 +128,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCitas.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -721,6 +721,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarUser.TabIndex = 0;
             this.btnCancelarUser.Text = "Cancelar";
             this.btnCancelarUser.UseVisualStyleBackColor = false;
+            this.btnCancelarUser.Click += new System.EventHandler(this.btnCancelarUser_Click);
             // 
             // txtTelefono
             // 
@@ -809,6 +810,42 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Name = "panelUsuario";
             this.panelUsuario.Size = new System.Drawing.Size(583, 408);
             this.panelUsuario.TabIndex = 3;
+            this.panelUsuario.Visible = false;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Location = new System.Drawing.Point(272, 32);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.ReadOnly = true;
+            this.txtUsuario.Size = new System.Drawing.Size(200, 25);
+            this.txtUsuario.TabIndex = 1;
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.txtContraseña.Enabled = false;
+            this.txtContraseña.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Location = new System.Drawing.Point(272, 144);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.ReadOnly = true;
+            this.txtContraseña.Size = new System.Drawing.Size(200, 25);
+            this.txtContraseña.TabIndex = 1;
+            this.txtContraseña.UseSystemPasswordChar = true;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
+            this.label39.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.ForeColor = System.Drawing.Color.White;
+            this.label39.Location = new System.Drawing.Point(272, 120);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(80, 22);
+            this.label39.TabIndex = 0;
+            this.label39.Text = "Contraseña";
             // 
             // label30
             // 
@@ -1301,40 +1338,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label38.Size = new System.Drawing.Size(78, 22);
             this.label38.TabIndex = 0;
             this.label38.Text = "ID Producto";
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtUsuario.Enabled = false;
-            this.txtUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(272, 32);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(200, 25);
-            this.txtUsuario.TabIndex = 1;
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label39.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(272, 120);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(80, 22);
-            this.label39.TabIndex = 0;
-            this.label39.Text = "Contraseña";
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtContraseña.Enabled = false;
-            this.txtContraseña.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(272, 144);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.ReadOnly = true;
-            this.txtContraseña.Size = new System.Drawing.Size(200, 25);
-            this.txtContraseña.TabIndex = 1;
             // 
             // AdministradorPerfil
             // 
