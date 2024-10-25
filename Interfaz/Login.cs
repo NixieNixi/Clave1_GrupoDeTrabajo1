@@ -112,12 +112,11 @@ namespace Clave1_GrupoDeTrabajo1
                                         this.Hide();
                                         break;
 
-                                   /* case "Administrador":
-                                        MenuAdmin menuAdmin = new MenuAdmin();
+                                   case "Administrador":
+                                        AdministradorPerfil menuAdmin = new AdministradorPerfil();
                                         menuAdmin.Show();
                                         this.Hide();
                                         break;
-                                   */
                                     default:
                                         MessageBox.Show("Rol no válido.");
                                         break;
