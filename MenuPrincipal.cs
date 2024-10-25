@@ -43,15 +43,10 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir la ventana de Login
         private void btnIngresoDueno_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD:interfaz/Form1.cs
             //Llamara al formulario donde se podra elegir a uno de los usuarios de la administracion de la veterinaria (Veterinario o Administrador del sistema)
-            LoginAdminSelec LoginAdminSelec = new LoginAdminSelec();
-            LoginAdminSelec.ShowDialog();
-=======
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
->>>>>>> origin/master:MenuPrincipal.cs
         }
     }
 }

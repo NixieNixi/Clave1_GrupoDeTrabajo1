@@ -31,13 +31,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             this.tabHistorialMedico = new System.Windows.Forms.TabPage();
             this.panelHM = new System.Windows.Forms.Panel();
-            this.lblHistorialCitas = new System.Windows.Forms.Label();
-            this.lblHistorialPaciente = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Cirugias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Examenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,24 +81,33 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblNomMascota = new System.Windows.Forms.Label();
             this.tapExpediente = new System.Windows.Forms.TabControl();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHistorialPaciente = new System.Windows.Forms.Label();
+            this.lblHistorialCitas = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnIrCita = new System.Windows.Forms.Button();
+            this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).BeginInit();
             this.tabInformacionGeneral.SuspendLayout();
             this.gbxDatosDueno.SuspendLayout();
             this.gbxDatosMascota.SuspendLayout();
             this.tapExpediente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabHistorialMedico
             // 
+            this.tabHistorialMedico.Controls.Add(this.panelHM);
             this.tabHistorialMedico.Location = new System.Drawing.Point(4, 22);
             this.tabHistorialMedico.Name = "tabHistorialMedico";
             this.tabHistorialMedico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistorialMedico.Size = new System.Drawing.Size(906, 615);
+            this.tabHistorialMedico.Size = new System.Drawing.Size(906, 621);
             this.tabHistorialMedico.TabIndex = 2;
             this.tabHistorialMedico.Text = "Historial Medico";
             this.tabHistorialMedico.UseVisualStyleBackColor = true;
@@ -121,68 +123,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.Controls.Add(this.dgvHM);
             this.panelHM.Controls.Add(this.lblHistorialVacunas);
             this.panelHM.Controls.Add(this.label2);
-            this.panelHM.Location = new System.Drawing.Point(15, 2);
+            this.panelHM.Location = new System.Drawing.Point(0, 0);
             this.panelHM.Name = "panelHM";
-            this.panelHM.Size = new System.Drawing.Size(900, 687);
+            this.panelHM.Size = new System.Drawing.Size(900, 615);
             this.panelHM.TabIndex = 1;
-            // 
-            // lblHistorialCitas
-            // 
-            this.lblHistorialCitas.AutoSize = true;
-            this.lblHistorialCitas.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorialCitas.Location = new System.Drawing.Point(315, 134);
-            this.lblHistorialCitas.Name = "lblHistorialCitas";
-            this.lblHistorialCitas.Size = new System.Drawing.Size(178, 27);
-            this.lblHistorialCitas.TabIndex = 8;
-            this.lblHistorialCitas.Text = "Historial de Citas";
-            // 
-            // lblHistorialPaciente
-            // 
-            this.lblHistorialPaciente.AutoSize = true;
-            this.lblHistorialPaciente.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorialPaciente.Location = new System.Drawing.Point(332, 406);
-            this.lblHistorialPaciente.Name = "lblHistorialPaciente";
-            this.lblHistorialPaciente.Size = new System.Drawing.Size(220, 27);
-            this.lblHistorialPaciente.TabIndex = 7;
-            this.lblHistorialPaciente.Text = "Historial del Paciente";
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Vacuna,
-            this.FechaAplicacion,
-            this.Motivo,
-            this.ProximaDosis});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 728);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(848, 150);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // Vacuna
-            // 
-            this.Vacuna.HeaderText = "Vacuna";
-            this.Vacuna.Name = "Vacuna";
-            this.Vacuna.ReadOnly = true;
-            // 
-            // FechaAplicacion
-            // 
-            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
-            this.FechaAplicacion.Name = "FechaAplicacion";
-            this.FechaAplicacion.ReadOnly = true;
-            // 
-            // Motivo
-            // 
-            this.Motivo.HeaderText = "Motivo";
-            this.Motivo.Name = "Motivo";
-            this.Motivo.ReadOnly = true;
-            // 
-            // ProximaDosis
-            // 
-            this.ProximaDosis.HeaderText = "Proxima Dosis";
-            this.ProximaDosis.Name = "ProximaDosis";
-            this.ProximaDosis.ReadOnly = true;
             // 
             // dataGridView1
             // 
@@ -613,6 +557,64 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tapExpediente.Size = new System.Drawing.Size(914, 641);
             this.tapExpediente.TabIndex = 0;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Vacuna,
+            this.FechaAplicacion,
+            this.Motivo,
+            this.ProximaDosis});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 728);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(848, 150);
+            this.dataGridView2.TabIndex = 6;
+            // 
+            // Vacuna
+            // 
+            this.Vacuna.HeaderText = "Vacuna";
+            this.Vacuna.Name = "Vacuna";
+            this.Vacuna.ReadOnly = true;
+            // 
+            // FechaAplicacion
+            // 
+            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
+            this.FechaAplicacion.Name = "FechaAplicacion";
+            this.FechaAplicacion.ReadOnly = true;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo";
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            // 
+            // ProximaDosis
+            // 
+            this.ProximaDosis.HeaderText = "Proxima Dosis";
+            this.ProximaDosis.Name = "ProximaDosis";
+            this.ProximaDosis.ReadOnly = true;
+            // 
+            // lblHistorialPaciente
+            // 
+            this.lblHistorialPaciente.AutoSize = true;
+            this.lblHistorialPaciente.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialPaciente.Location = new System.Drawing.Point(332, 406);
+            this.lblHistorialPaciente.Name = "lblHistorialPaciente";
+            this.lblHistorialPaciente.Size = new System.Drawing.Size(220, 27);
+            this.lblHistorialPaciente.TabIndex = 7;
+            this.lblHistorialPaciente.Text = "Historial del Paciente";
+            // 
+            // lblHistorialCitas
+            // 
+            this.lblHistorialCitas.AutoSize = true;
+            this.lblHistorialCitas.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialCitas.Location = new System.Drawing.Point(315, 134);
+            this.lblHistorialCitas.Name = "lblHistorialCitas";
+            this.lblHistorialCitas.Size = new System.Drawing.Size(178, 27);
+            this.lblHistorialCitas.TabIndex = 8;
+            this.lblHistorialCitas.Text = "Historial de Citas";
+            // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(126, 659);
@@ -637,15 +639,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(917, 724);
-            this.Controls.Add(this.panelHM);
             this.Controls.Add(this.btnIrCita);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tapExpediente);
             this.Name = "veterinarioExpediente";
             this.Text = "veterinarioExpediente";
+            this.tabHistorialMedico.ResumeLayout(false);
             this.panelHM.ResumeLayout(false);
             this.panelHM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).EndInit();
             this.tabInformacionGeneral.ResumeLayout(false);
@@ -654,6 +655,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.ResumeLayout(false);
             this.gbxDatosMascota.PerformLayout();
             this.tapExpediente.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
