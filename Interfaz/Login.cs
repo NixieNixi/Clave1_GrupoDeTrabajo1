@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clave1_GrupoDeTrabajo1;
+using Clave1_GrupoDeTrabajo1.Administrador;
 using Clave1_GrupoDeTrabajo1.Interfaz;
 
 namespace Clave1_GrupoDeTrabajo1
@@ -46,7 +47,9 @@ namespace Clave1_GrupoDeTrabajo1
         //Metodo para abrir el perfil del Administrador
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-
+            AdministradorPerfil administrador = new AdministradorPerfil();
+            this.Hide();
+            administrador.ShowDialog();
         }
     }
 }
