@@ -30,6 +30,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         public veterinarioPerfil()
         {
             InitializeComponent();
+           // lblNombreVeterinario = ;
         }
 
         private void btnConsultarExpediente_Click(object sender, EventArgs e)

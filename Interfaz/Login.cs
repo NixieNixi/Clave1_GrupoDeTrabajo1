@@ -69,6 +69,7 @@ namespace Clave1_GrupoDeTrabajo1
             // Obtener los valores del formulario
             string usuario = txtLoginUser.Text; // Nombre de usuario
             string contrasena = txtLoginContra.Text; // Contraseña
+            string nombre;
 
             // Consulta para obtener la contraseña y el rol del usuario
             string query = "SELECT contrasena, Rol FROM usuarios WHERE Usuario = @usuario";
@@ -87,6 +88,8 @@ namespace Clave1_GrupoDeTrabajo1
                             // Obtener la contraseña y el rol de la base de datos
                             string storedPassword = reader["Contrasena"].ToString();
                             string rol = reader["Rol"].ToString();
+
+                                 
 
                             // Comparar la contraseña ingresada con la almacenada
                             if (contrasena == storedPassword)
@@ -121,6 +124,9 @@ namespace Clave1_GrupoDeTrabajo1
                             {
                                 MessageBox.Show("Contraseña incorrecta.");
                             }
+
+                            
+
                         }
                         else
                         {
@@ -130,5 +136,8 @@ namespace Clave1_GrupoDeTrabajo1
                 }
             }
         }
+
+        
+
     }
 }
