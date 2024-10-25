@@ -33,11 +33,16 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnVeterinario = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.txtLoginUser = new System.Windows.Forms.TextBox();
+            this.txtLoginContra = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnDueño
             // 
-            this.btnDueño.Location = new System.Drawing.Point(55, 75);
+            this.btnDueño.Location = new System.Drawing.Point(41, 14);
             this.btnDueño.Name = "btnDueño";
             this.btnDueño.Size = new System.Drawing.Size(75, 23);
             this.btnDueño.TabIndex = 0;
@@ -47,7 +52,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             // btnVeterinario
             // 
-            this.btnVeterinario.Location = new System.Drawing.Point(55, 124);
+            this.btnVeterinario.Location = new System.Drawing.Point(41, 63);
             this.btnVeterinario.Name = "btnVeterinario";
             this.btnVeterinario.Size = new System.Drawing.Size(75, 23);
             this.btnVeterinario.TabIndex = 0;
@@ -57,7 +62,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(55, 185);
+            this.btnAdmin.Location = new System.Drawing.Point(41, 124);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 23);
             this.btnAdmin.TabIndex = 0;
@@ -67,7 +72,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(211, 124);
+            this.btnSalir.Location = new System.Drawing.Point(197, 63);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 0;
@@ -75,11 +80,59 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnIngresar
+            // 
+            this.btnIngresar.Location = new System.Drawing.Point(115, 286);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(75, 23);
+            this.btnIngresar.TabIndex = 1;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // txtLoginUser
+            // 
+            this.txtLoginUser.Location = new System.Drawing.Point(134, 184);
+            this.txtLoginUser.Name = "txtLoginUser";
+            this.txtLoginUser.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginUser.TabIndex = 2;
+            // 
+            // txtLoginContra
+            // 
+            this.txtLoginContra.Location = new System.Drawing.Point(134, 235);
+            this.txtLoginContra.Name = "txtLoginContra";
+            this.txtLoginContra.PasswordChar = '*';
+            this.txtLoginContra.Size = new System.Drawing.Size(100, 20);
+            this.txtLoginContra.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Ingrese User";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 242);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Ingrese Contrasena";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(332, 366);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtLoginContra);
+            this.Controls.Add(this.txtLoginUser);
+            this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.btnVeterinario);
@@ -87,6 +140,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.Name = "Login";
             this.Text = "Login";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -96,5 +150,10 @@ namespace Clave1_GrupoDeTrabajo1
         private System.Windows.Forms.Button btnVeterinario;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.TextBox txtLoginUser;
+        private System.Windows.Forms.TextBox txtLoginContra;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
