@@ -26,6 +26,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     ///dentro de Informacion General se agrego lbl y txt que llevaran la informacion del dueno y mascota.
     ///dentro de Historial Medico se agrego DataGrid de historial, citas, Consultas y Vacunas,
     ///En el form veterinarioExpediente se agregaron dos btn: btnVolver y btnIrCita. ()
+    ///
+    /// Modificado Por: NixieNixi
+    /// Fecha de Mpdificacion:25/10/2024
+    /// Descripcion: se agg el cbxIdExpedienteMascota, y segun la opcion que el veterinario selecciones, asi le mostrara
+    /// segun Id del Expediente
     ///</remarks>
 
     public partial class veterinarioExpediente : Form
@@ -68,43 +73,46 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void cbxIdExpedienteMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            // Si no se ha seleccionado una opcion se limpian los controles
+            // Limpia los controles si no se ha seleccionado una opción
             if (cbxIdExpedienteMascota.SelectedIndex == -1)
             {
-                //LimpiarControles();
+                LimpiarControles();
+                return; // Salir del método si no hay selección
             }
-            //Dependiendo de la seleccion se muestra un registro
-            else
+
+            // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
+            string selectedUserId = cbxIdExpedienteMascota.SelectedItem.ToString();
+            CargarDatosMascota(selectedUserId);
+        }
+
+        private void CargarDatosMascota(string selectedUserId)
+        {
+            string query = @"
+                SELECT 
+                    u.Nombre AS NombreUsuario, 
+                    u.Telefono, 
+                    u.Correo, 
+                    u.Direccion, 
+                    m.IdMascota,
+                    m.NombreMascota, 
+                    m.Especie, 
+                    m.Raza, 
+                    m.Sexo, 
+                    m.Peso, 
+                    m.FechaNacimiento 
+                FROM usuarios u
+                JOIN mascotas m ON u.idUsuarios = m.IdUsuario
+                WHERE u.idUsuarios = @idUsuario;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
-                string IDSeleccion = cbxIdExpedienteMascota.SelectedItem.ToString();
-
-                // Cadena de conexión a la base de datos
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    // Consulta SQL para obtener los datos del usuario y de la mascota según el ID seleccionado
-                    string query = @"SELECT 
-                                u.Nombre, 
-                                u.Telefono, 
-                                u.Correo, 
-                                u.Direccion, 
-                                m.IdMascota,
-                                m.NombreMascota, 
-                                m.Especie, 
-                                m.Raza, 
-                                m.Sexo, 
-                                m.Peso, 
-                                m.FechaNacimiento 
-                             FROM usuarios u
-                             JOIN mascotas m ON u.idUsuarios = m.IdUsuario
-                             WHERE u.idUsuarios = @idUsuario;";
+                    command.Parameters.AddWithValue("@idUsuario", selectedUserId);
 
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    try
                     {
-                        command.Parameters.AddWithValue("@idUsuario", IDSeleccion);
                         connection.Open();
-
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
@@ -129,10 +137,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             }
                         }
                     }
+                    catch (Exception ex)
+                    {
+                        // Manejo de errores
+                        MessageBox.Show($"Error al obtener datos: {ex.Message}");
+                    }
                 }
             }
+        }
 
-
+        private void LimpiarControles()
+        {
+            // Lógica para limpiar los controles del formulario
+            txtNomDueno.Clear();
+            txtTelefonoDueno.Clear();
+            txtCorreoDueno.Clear();
+            txtDireccionDueno.Clear();
+            txtIdMascota.Clear();
+            txtNomMascota.Clear();
+            txtEspecie.Clear();
+            txtRaza.Clear();
+            txtSexo.Clear();
+            txtPeso.Clear();
+            txtFechaNacimiento.Clear();
         }
     }
 }
