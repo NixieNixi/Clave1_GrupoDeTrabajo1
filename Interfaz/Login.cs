@@ -27,6 +27,7 @@ namespace Clave1_GrupoDeTrabajo1
     public partial class Login : Form
     {
         string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
+        
 
         public Login()
         {
@@ -72,7 +73,7 @@ namespace Clave1_GrupoDeTrabajo1
             // Obtener los valores del formulario
             string usuario = txtLoginUser.Text; // Nombre de usuario
             string contrasena = txtLoginContra.Text; // Contraseña
-            string nombre;
+            //string nombre;
 
             // Consulta para obtener la contraseña y el rol del usuario
             string query = "SELECT contrasena, Rol FROM usuarios WHERE Usuario = @usuario";
