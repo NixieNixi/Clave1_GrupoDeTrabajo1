@@ -14,7 +14,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
             //Limpia los controles
             txtUsuario.Text = null;
-            txtRol.Text = null;
+            cbxRol.Text = null;
             txtTelefono.Text = null;
             txtNombre.Text = null;
             txtEmail.Text = null;
@@ -22,29 +22,38 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.Text = null;
         }
 
-        private void HabilitarEdicion(bool Habilitar)
+        private void LimpiarControlesMascota()
+        {
+            //se desactivan y limpian los controles de consulta de mascota
+            cbxIdMascota.Enabled = false;
+            cbxIdMascota.Items.Clear();
+            cbxIdMascota.Text = null;
+            txtNombreMascota.Text = null;
+        }
+
+        private void HabilitarEdicion(bool habilitar)
         {
             //Desahibilta cbxIdUsuario
-            cbxIdUsuario.Enabled = !Habilitar;
+            cbxIdUsuario.Enabled = !habilitar;
 
             //Habilita los controles
-            txtUsuario.Enabled = Habilitar;
-            txtRol.Enabled = Habilitar;
-            txtTelefono.Enabled = Habilitar;
-            txtNombre.Enabled = Habilitar;
-            txtEmail.Enabled = Habilitar;
-            txtDireccion.Enabled = Habilitar;
-            txtContraseña.Enabled = Habilitar;
+            txtUsuario.Enabled = habilitar;
+            cbxRol.Enabled = habilitar;
+            txtTelefono.Enabled = habilitar;
+            txtNombre.Enabled = habilitar;
+            txtEmail.Enabled = habilitar;
+            txtDireccion.Enabled = habilitar;
+            txtContraseña.Enabled = habilitar;
 
             //Permite la edicion del contenido de los controles
-            txtUsuario.ReadOnly = !Habilitar;
-            txtTelefono.ReadOnly = !Habilitar;
-            txtNombre.ReadOnly = !Habilitar;
-            txtEmail.ReadOnly = !Habilitar;
-            txtDireccion.ReadOnly = !Habilitar;
-            txtContraseña.ReadOnly = !Habilitar;
+            txtUsuario.ReadOnly = !habilitar;
+            txtTelefono.ReadOnly = !habilitar;
+            txtNombre.ReadOnly = !habilitar;
+            txtEmail.ReadOnly = !habilitar;
+            txtDireccion.ReadOnly = !habilitar;
+            txtContraseña.ReadOnly = !habilitar;
             //Permite ver la contraseña para editar
-            txtContraseña.UseSystemPasswordChar = !Habilitar;
+            txtContraseña.UseSystemPasswordChar = !habilitar;
         }
 
         //Metodo del boton btnUsuarios que muestra el panel de usuarios
@@ -60,7 +69,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 //Consulta la columna idUsuarios de la tabla Usuarios
-                string query = "SELECT idUsuarios FROM usuarios";
+                string query = "SELECT idUsuario FROM usuarios;";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     connection.Open();
@@ -69,7 +78,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         while (reader.Read())
                         {
                             //Inserta los registros de idUsuario en el comboBox cbxUsuario
-                            cbxIdUsuario.Items.Add(reader["idUsuarios"].ToString());
+                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
                         }
                     }
                 }
@@ -87,6 +96,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //Habilita la edicion de los campos
             HabilitarEdicion(true);
+
+            //deshabilita los campos de mascota
+            LimpiarControlesMascota();
         }
 
         private void btnNuevoUser_Click(object sender, EventArgs e)
@@ -102,6 +114,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //limpia los controles
             LimpiarControles();
+            LimpiarControlesMascota();
 
             //habilita edicion
             HabilitarEdicion(true);
@@ -110,10 +123,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         //Metodo de cambio de registro mediante la seleccion de opcion en cbxIdUsuario
         private void cbxIdUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LimpiarControlesMascota();
+
             //Si no se ha seleccionado una opcion se limpian los controles
             if (cbxIdUsuario.SelectedIndex == -1)
             {
                 LimpiarControles();
+                LimpiarControlesMascota();
             }
             //Dependiendo de la seleccion se muestra un registro
             else
@@ -125,7 +141,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 using (MySqlConnection connection = new MySqlConnection(connectionString))
                 {
                     //cadena de consulta DB
-                    string query = "SELECT NombreUsuario, Telefono, correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuarios = @idUsuario;";
+                    string query = "SELECT Nombre, Telefono, Correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuario = @idUsuario;";
                     //Ni idea, esta no me la se
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -138,12 +154,81 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             {
                                 // Cargar los datos obtenidos en los controles correspondientes
                                 txtUsuario.Text = reader["Usuario"].ToString();
-                                txtRol.Text = reader["Rol"].ToString();
+                                cbxRol.Text = reader["Rol"].ToString();
                                 txtTelefono.Text = reader["Telefono"].ToString();
-                                txtNombre.Text = reader["NombreUsuario"].ToString();
+                                txtNombre.Text = reader["Nombre"].ToString();
                                 txtContraseña.Text = reader["Contrasena"].ToString();
-                                txtEmail.Text = reader["correo"].ToString();
+                                txtEmail.Text = reader["Correo"].ToString();
                                 txtDireccion.Text = reader["Direccion"].ToString();
+                            }
+                        }
+                    }
+                }
+                //Si el rol del usuario se muestra como "Dueno"
+                if(cbxRol.Text=="Dueno")
+                {
+                    //se habilita el cbxIdMascota
+                    cbxIdMascota.Enabled = true;
+
+                    //Se consultan en DB los registros de idUsuario en la tabla mascotas que coincidan con el idUsuario seleccionado en cbxIdUsuario
+                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    {
+                        //cadena de consulta
+                        string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@idUsuario", IDSeleccion);
+                            connection.Open();
+                            using (MySqlDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    //cargar los id de las mascotas al comboBox
+                                    cbxIdMascota.Items.Add(reader["idMascota"].ToString());
+                                }
+                            }
+                        }
+                    }
+                }
+                //si el rol no es "Dueno" entonces se deshabilita el comboBox cbxIdMascota
+                else
+                {
+                    LimpiarControlesMascota();
+                }
+            }
+        }
+
+        //Metodo de que cambia la informacion de "Nombre de la mascota" segun el idMascota que se seleccione en el comboBox
+        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Si no se ha seleccionado ninguna opcion se limpian los controles
+            if(cbxIdMascota.SelectedIndex == -1)
+            {
+                LimpiarControlesMascota();
+            }
+            //Dependiendo de la seleccion de idMascota se muestra un nombre
+            else
+            {
+                //guarda el texto de la seleccion en ConsultaIdMascota
+                string ConsultaIdMascota = cbxIdMascota.SelectedItem.ToString();
+
+                //cadena de conexion a DB
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    //cadena de consulta a DB
+                    string query = "SELECT Nombre FROM mascotas WHERE idMascota = @idMascota;";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idMascota", ConsultaIdMascota);
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            //inserta el nombre de la mascota segun la seleccion
+                            if (reader.Read())
+                            {
+                                txtNombreMascota.Text = reader["Nombre"].ToString();
                             }
                         }
                     }
@@ -156,7 +241,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //habilitar los botones de editar y nuevo usuario
             btnEditUser.Enabled = true;
             btnNuevoUser.Enabled = true;
-            //deshabilitar el boton de guarda
+            //deshabilitar el boton de guardar
             btnGuardarUser.Enabled = false;
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
