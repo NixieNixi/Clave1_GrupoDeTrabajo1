@@ -71,6 +71,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtTelefonoDueno = new System.Windows.Forms.TextBox();
             this.txtIdDuenoExp = new System.Windows.Forms.TextBox();
             this.gbxDatosMascota = new System.Windows.Forms.GroupBox();
+            this.cbxIdExpedienteMascota = new System.Windows.Forms.ComboBox();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
             this.txtIdExpediente = new System.Windows.Forms.TextBox();
@@ -90,7 +91,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tapExpediente = new System.Windows.Forms.TabControl();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnIrCita = new System.Windows.Forms.Button();
-            this.cbxIdExpedienteMascota = new System.Windows.Forms.ComboBox();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -436,7 +436,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtTelefonoDueno.ReadOnly = true;
             this.txtTelefonoDueno.Size = new System.Drawing.Size(100, 20);
             this.txtTelefonoDueno.TabIndex = 30;
-            this.txtTelefonoDueno.Text = "d ";
             // 
             // txtIdDuenoExp
             // 
@@ -471,6 +470,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.TabIndex = 23;
             this.gbxDatosMascota.TabStop = false;
             this.gbxDatosMascota.Text = "Datos Mascota";
+            // 
+            // cbxIdExpedienteMascota
+            // 
+            this.cbxIdExpedienteMascota.FormattingEnabled = true;
+            this.cbxIdExpedienteMascota.Location = new System.Drawing.Point(91, 78);
+            this.cbxIdExpedienteMascota.Name = "cbxIdExpedienteMascota";
+            this.cbxIdExpedienteMascota.Size = new System.Drawing.Size(121, 21);
+            this.cbxIdExpedienteMascota.TabIndex = 23;
+            this.cbxIdExpedienteMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdExpedienteMascota_SelectedIndexChanged);
             // 
             // txtSexo
             // 
@@ -636,15 +644,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnIrCita.Text = "Ir Cita";
             this.btnIrCita.UseVisualStyleBackColor = true;
             this.btnIrCita.Click += new System.EventHandler(this.btnIrCita_Click);
-            // 
-            // cbxIdExpedienteMascota
-            // 
-            this.cbxIdExpedienteMascota.FormattingEnabled = true;
-            this.cbxIdExpedienteMascota.Location = new System.Drawing.Point(91, 78);
-            this.cbxIdExpedienteMascota.Name = "cbxIdExpedienteMascota";
-            this.cbxIdExpedienteMascota.Size = new System.Drawing.Size(121, 21);
-            this.cbxIdExpedienteMascota.TabIndex = 23;
-            this.cbxIdExpedienteMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdExpedienteMascota_SelectedIndexChanged);
             // 
             // veterinarioExpediente
             // 
