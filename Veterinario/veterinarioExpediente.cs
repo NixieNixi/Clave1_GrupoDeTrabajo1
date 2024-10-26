@@ -30,7 +30,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado Por: NixieNixi
     /// Fecha de Mpdificacion:25/10/2024
     /// Descripcion: se agg el cbxIdExpedienteMascota, y segun la opcion que el veterinario selecciones, asi le mostrara
-    /// segun Id del Expediente
+    /// segun Id del Expediente(Falta Testeo).
     ///</remarks>
 
     public partial class veterinarioExpediente : Form
@@ -40,6 +40,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// Inicializa los componentes del formulario.
         /// </summary>
 
+        /// <summary>
+        /// Cadena de conexion a la base de datos.
+        /// </summary>
         string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
 
         public veterinarioExpediente()
@@ -83,6 +86,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
             string selectedUserId = cbxIdExpedienteMascota.SelectedItem.ToString();
             CargarDatosMascota(selectedUserId);
+
+            // Llamamos al método para cargar los datos de citas
+            string idMascota = txtIdMascota.Text; // Asegúrate de que este campo tenga el ID correcto
+            CargarDatosCitas(int.Parse(idMascota));
+
         }
 
         private void CargarDatosMascota(string selectedUserId)
@@ -118,11 +126,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             if (reader.Read())
                             {
                                 // Cargar los datos obtenidos en los controles correspondientes
+                                //gbxDatosDueno
                                 txtNomDueno.Text = reader["NombreUsuario"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
 
+                                //gbxDatosMascota
                                 txtIdMascota.Text = reader["IdMascota"].ToString();
                                 txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
@@ -142,9 +152,49 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         // Manejo de errores
                         MessageBox.Show($"Error al obtener datos: {ex.Message}");
                     }
+
+                }
+
+            }
+
+        }
+
+        /// <summary>
+        /// Carga los datos de citas en el DataGridView según el ID de la mascota.
+        /// </summary>
+        private void CargarDatosCitas(int idMascota)
+        {
+            string query = @"
+                SELECT FechaHora, Motivo, Estado
+                FROM citas
+                WHERE idMascota = @idMascota;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idMascota", idMascota);
+
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
+                            // Asigna el DataTable como fuente de datos del DataGridView
+                            dgvHCitas.DataSource = dt;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al obtener datos de citas: {ex.Message}");
+                    }
                 }
             }
         }
+
+
 
         private void LimpiarControles()
         {
@@ -160,6 +210,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtSexo.Clear();
             txtPeso.Clear();
             txtFechaNacimiento.Clear();
+            dgvHCitas.DataSource = null;
         }
     }
 }

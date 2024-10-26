@@ -47,7 +47,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaProximaVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.dgvHM = new System.Windows.Forms.DataGridView();
+            this.dgvHCitas = new System.Windows.Forms.DataGridView();
             this.IdCitaAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotivoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -95,7 +95,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHCitas)).BeginInit();
             this.tabInformacionGeneral.SuspendLayout();
             this.gbxDatosDueno.SuspendLayout();
             this.gbxDatosMascota.SuspendLayout();
@@ -121,7 +121,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.Controls.Add(this.dataGridView2);
             this.panelHM.Controls.Add(this.dataGridView1);
             this.panelHM.Controls.Add(this.dtpFecha);
-            this.panelHM.Controls.Add(this.dgvHM);
+            this.panelHM.Controls.Add(this.dgvHCitas);
             this.panelHM.Controls.Add(this.lblHistorialVacunas);
             this.panelHM.Controls.Add(this.label2);
             this.panelHM.Location = new System.Drawing.Point(0, 0);
@@ -252,11 +252,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 4;
             // 
-            // dgvHM
+            // dgvHCitas
             // 
-            this.dgvHM.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvHM.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHM.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCitaAnterior,
             this.MotivoConsulta,
             this.Sintomas,
@@ -265,10 +265,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Tratamiento,
             this.Medicamentos,
             this.Notas});
-            this.dgvHM.Location = new System.Drawing.Point(12, 203);
-            this.dgvHM.Name = "dgvHM";
-            this.dgvHM.Size = new System.Drawing.Size(848, 161);
-            this.dgvHM.TabIndex = 3;
+            this.dgvHCitas.Location = new System.Drawing.Point(12, 203);
+            this.dgvHCitas.Name = "dgvHCitas";
+            this.dgvHCitas.Size = new System.Drawing.Size(848, 161);
+            this.dgvHCitas.TabIndex = 3;
             // 
             // IdCitaAnterior
             // 
@@ -661,7 +661,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHCitas)).EndInit();
             this.tabInformacionGeneral.ResumeLayout(false);
             this.gbxDatosDueno.ResumeLayout(false);
             this.gbxDatosDueno.PerformLayout();
@@ -685,7 +685,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaProximaVacuna;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.DataGridView dgvHM;
+        private System.Windows.Forms.DataGridView dgvHCitas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCitaAnterior;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotivoConsulta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sintomas;
