@@ -760,6 +760,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdMascota
             // 
             this.cbxIdMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.cbxIdMascota.Enabled = false;
             this.cbxIdMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascota.FormattingEnabled = true;
             this.cbxIdMascota.Location = new System.Drawing.Point(8, 328);

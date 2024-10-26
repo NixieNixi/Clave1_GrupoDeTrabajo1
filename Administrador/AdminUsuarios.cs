@@ -22,6 +22,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.Text = null;
         }
 
+        private void LimpiarControlesMascota()
+        {
+            //se desactivan los controles de consulta de mascota por defecto
+            cbxIdMascota.Enabled = false;
+            cbxIdMascota.Items.Clear();
+            cbxIdMascota.Text = null;
+            txtNombreMascota.Text = null;
+        }
+
         private void HabilitarEdicion(bool habilitar)
         {
             //Desahibilta cbxIdUsuario
@@ -87,6 +96,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //Habilita la edicion de los campos
             HabilitarEdicion(true);
+
+            //deshabilita los campos de mascota
+            LimpiarControlesMascota();
         }
 
         private void btnNuevoUser_Click(object sender, EventArgs e)
@@ -102,6 +114,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //limpia los controles
             LimpiarControles();
+            LimpiarControlesMascota();
 
             //habilita edicion
             HabilitarEdicion(true);
@@ -110,19 +123,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         //Metodo de cambio de registro mediante la seleccion de opcion en cbxIdUsuario
         private void cbxIdUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LimpiarControlesMascota();
+
             //Si no se ha seleccionado una opcion se limpian los controles
             if (cbxIdUsuario.SelectedIndex == -1)
             {
                 LimpiarControles();
+                LimpiarControlesMascota();
             }
             //Dependiendo de la seleccion se muestra un registro
             else
             {
-                //se desactivan los controles de consulta de mascota por defecto
-                cbxIdMascota.Items.Clear();
-                cbxIdMascota.Text = null;
-                txtNombreMascota.Text = null;
-
                 //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
                 string IDSeleccion = cbxIdUsuario.SelectedItem.ToString();
 
@@ -183,7 +194,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //si el rol no es "Dueno" entonces se deshabilita el comboBox cbxIdMascota
                 else
                 {
-                    cbxIdMascota.Enabled = false;
+                    LimpiarControlesMascota();
                 }
             }
         }
