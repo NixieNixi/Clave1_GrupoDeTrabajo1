@@ -33,12 +33,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM = new System.Windows.Forms.Panel();
             this.lblHistorialCitas = new System.Windows.Forms.Label();
             this.lblHistorialPaciente = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvHVacunas = new System.Windows.Forms.DataGridView();
             this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHPaciente = new System.Windows.Forms.DataGridView();
             this.Cirugias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Examenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alergias = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,8 +93,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnIrCita = new System.Windows.Forms.Button();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHVacunas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHPaciente)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCitas)).BeginInit();
             this.tabInformacionGeneral.SuspendLayout();
             this.gbxDatosDueno.SuspendLayout();
@@ -118,8 +118,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelHM.AutoScroll = true;
             this.panelHM.Controls.Add(this.lblHistorialCitas);
             this.panelHM.Controls.Add(this.lblHistorialPaciente);
-            this.panelHM.Controls.Add(this.dataGridView2);
-            this.panelHM.Controls.Add(this.dataGridView1);
+            this.panelHM.Controls.Add(this.dgvHVacunas);
+            this.panelHM.Controls.Add(this.dgvHPaciente);
             this.panelHM.Controls.Add(this.dtpFecha);
             this.panelHM.Controls.Add(this.dgvHCitas);
             this.panelHM.Controls.Add(this.lblHistorialVacunas);
@@ -149,19 +149,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblHistorialPaciente.TabIndex = 7;
             this.lblHistorialPaciente.Text = "Historial del Paciente";
             // 
-            // dataGridView2
+            // dgvHVacunas
             // 
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHVacunas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHVacunas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHVacunas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Vacuna,
             this.FechaAplicacion,
             this.Motivo,
             this.ProximaDosis});
-            this.dataGridView2.Location = new System.Drawing.Point(12, 728);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(848, 150);
-            this.dataGridView2.TabIndex = 6;
+            this.dgvHVacunas.Location = new System.Drawing.Point(12, 728);
+            this.dgvHVacunas.Name = "dgvHVacunas";
+            this.dgvHVacunas.Size = new System.Drawing.Size(848, 150);
+            this.dgvHVacunas.TabIndex = 6;
             // 
             // Vacuna
             // 
@@ -187,12 +187,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.ProximaDosis.Name = "ProximaDosis";
             this.ProximaDosis.ReadOnly = true;
             // 
-            // dataGridView1
+            // dgvHPaciente
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvHPaciente.AllowUserToDeleteRows = false;
+            this.dgvHPaciente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHPaciente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Cirugias,
             this.Examenes,
             this.Alergias,
@@ -200,10 +200,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.UltimaVacuna,
             this.Fecha,
             this.FechaProximaVacuna});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 453);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(848, 150);
-            this.dataGridView1.TabIndex = 5;
+            this.dgvHPaciente.Location = new System.Drawing.Point(12, 453);
+            this.dgvHPaciente.Name = "dgvHPaciente";
+            this.dgvHPaciente.Size = new System.Drawing.Size(848, 150);
+            this.dgvHPaciente.TabIndex = 5;
             // 
             // Cirugias
             // 
@@ -658,8 +658,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabHistorialMedico.ResumeLayout(false);
             this.panelHM.ResumeLayout(false);
             this.panelHM.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHVacunas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHPaciente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHCitas)).EndInit();
             this.tabInformacionGeneral.ResumeLayout(false);
             this.gbxDatosDueno.ResumeLayout(false);
@@ -675,7 +675,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private System.Windows.Forms.TabPage tabHistorialMedico;
         private System.Windows.Forms.Panel panelHM;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHPaciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cirugias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Examenes;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alergias;
@@ -725,7 +725,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblEspecie;
         private System.Windows.Forms.Label lblNomMascota;
         private System.Windows.Forms.TabControl tapExpediente;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvHVacunas;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;

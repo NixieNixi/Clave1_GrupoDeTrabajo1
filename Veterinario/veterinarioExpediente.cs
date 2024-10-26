@@ -46,10 +46,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
 
+
         public veterinarioExpediente()
         {
             InitializeComponent();
         }
+
+
 
         // <summary>
         /// Evento click del botón 'Ir a Cita'. Este evento se activa cuando el usuario hace clic en el btn.
@@ -72,6 +75,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Show();
 
         }
+
+
 
         private void cbxIdExpedienteMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -96,38 +101,36 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
             // Llamamos al método para cargar los datos de citas
             string idMascota = txtIdMascota.Text; // Asegúrate de que este campo tenga el ID correcto
-            SubirDatosCitas(int.Parse(idMascota));
+            SubirHCitas(int.Parse(idMascota)); //Pertene al tap2
 
         }
 
 
-        // Metodo para cargar los datos de la mascota y el dueño según el ID de usuario seleccionado.
+        /// <summary>
+        /// Metodo para cargar los datos de la mascota y el dueño según el ID de usuario seleccionado.
+        /// </summary>
+        /// <param name="selectedUserId"></param>
         private void SubirDatosMascota(string selectedUserId)
         {
 
             // Consulta SQL para obtener los datos del usuario y la mascota asociada.
             //Use este formato, ya que se asemeja a las de sql
-            string query = @"
-                               SELECT 
-                    usuarios.Nombre AS NombreDelUsuario, 
-                    usuarios.Telefono AS TelefonoDelUsuario, 
-                    usuarios.Correo AS CorreoDelUsuario, 
-                    usuarios.Direccion AS DireccionDelUsuario, 
-                    mascotas.IdMascota AS IdDeLaMascota,
-                    mascotas.NombreMascota AS NombreDeLaMascota, 
-                    mascotas.Especie AS EspecieDeLaMascota, 
-                    mascotas.Raza AS RazaDeLaMascota, 
-                    mascotas.Sexo AS SexoDeLaMascota, 
-                    mascotas.Peso AS PesoDeLaMascota, 
-                    mascotas.FechaNacimiento AS FechaDeNacimientoDeLaMascota 
-                FROM usuarios 
-                JOIN mascotas ON usuarios.idUsuarios = mascotas.IdUsuario
-                WHERE usuarios.idUsuarios = @idUsuario;";
-
-
-
-            // Crear una conexión a la base de datos usando la cadena de conexion.
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            string query = @"SELECT 
+                    usuarios.NombreUsuario, 
+                    usuarios.Telefono, 
+                    usuarios.Correo, 
+                    usuarios.Direccion, 
+                    mascotas.IdMascota,
+                    mascotas.Nombre, 
+                    mascotas.Especie, 
+                    mascotas.Raza, 
+                    mascotas.Sexo, 
+                    mascotas.Peso, 
+                    mascotas.FechaNacimiento 
+                 FROM usuarios
+                 JOIN mascotas ON usuarios.idUsuarios = mascotas.IdUsuario
+                 WHERE usuarios.idUsuarios = @idUsuario;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))  // Crear una conexión a la base de datos usando la cadena de conexion.
             {
 
                 // Crear un comando para ejecutar la consulta.
@@ -156,7 +159,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                 //gbxDatosMascota
                                 txtIdMascota.Text = reader["IdMascota"].ToString();
-                                txtNomMascota.Text = reader["NombreMascota"].ToString();
+                                txtNomMascota.Text = reader["Nombre"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
                                 txtSexo.Text = reader["Sexo"].ToString();
@@ -181,17 +184,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
         }
+        //Fin TapInformacionGeneral
 
 
+        //Inicio TapHistorialMedico
         /// <summary>
         /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
-        private void SubirDatosCitas(int idMascota)
+        private void SubirHCitas(int idMascota)
         {
             // Consulta SQL para obtener los datos de las citas de la mascota.
             string query = @"
-                SELECT FechaHora, Motivo, Estado
-                FROM citas
+                SELECT 
+                FROM 
                 WHERE idMascota = @idMascota;";
 
             // Crear una conexion a la base de datos usando la cadena de conexion.
@@ -229,9 +234,89 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
 
-        // Metodo para limpiar los controles del formulario.
+
+      
+
+
+        private void SubirHPaciente(string idMascota)
+        {
+            //Aqui ira para el dgvHPaciente
+            //FALTA PONER LA CONNSULTA SQL
+            string query = @"
+                    SELECT 
+                        
+                    FROM  
+                    WHERE IdMascota = @idMascota;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idMascota", idMascota);
+
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(reader);
+                            // Asigna el DataTable al DataGrid
+                            dgvHPaciente.DataSource = dt;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al cargar el Historial Medico del Paciente: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+
+        private void SubirHVacuna(string idMascota)
+        {
+            //Aqui ira para el dgvHVacuna
+            //FALTA PONER LA CONNSULTA SQL
+            string query = @"
+                    SELECT 
+                        
+                    FROM  
+                    WHERE IdMascota = @idMascota;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idMascota", idMascota);
+
+                    try
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            DataTable dt = new DataTable();
+                            dt.Load(reader);
+                            // Asigna el DataTable al DataGrid
+                            dgvHVacunas.DataSource = dt;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al cargar el Historial de Vacunas del Paciente: {ex.Message}");
+                    }
+                }
+            }
+        }
+
+
+
+        /// <summary>
+        /// Metodo para limpiar los controles del formulario.
+        /// </summary>
         private void LimpiarControles()
         {
+
             // Logica para limpiar los controles del formulario.
             txtNomDueno.Clear(); // Limpiar el nombre del dueño.
             txtTelefonoDueno.Clear(); // Limpiar el telefono del dueño.
@@ -245,6 +330,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtPeso.Clear(); // Limpiar el peso de la mascota.
             txtFechaNacimiento.Clear(); // Limpiar la fecha de nacimiento de la mascota.
             dgvHCitas.DataSource = null; // Limpiar el DataGridView.
+
         }
     }
 }
