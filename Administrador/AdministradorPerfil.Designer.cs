@@ -84,7 +84,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdUsuario = new System.Windows.Forms.ComboBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.panelUsuario = new System.Windows.Forms.Panel();
-            this.txtRol = new System.Windows.Forms.ComboBox();
+            this.cbxRol = new System.Windows.Forms.ComboBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -760,12 +760,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdMascota
             // 
             this.cbxIdMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.cbxIdMascota.Enabled = false;
             this.cbxIdMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascota.FormattingEnabled = true;
             this.cbxIdMascota.Location = new System.Drawing.Point(8, 328);
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(200, 30);
             this.cbxIdMascota.TabIndex = 2;
+            this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
             // panelUsuario
             // 
@@ -773,7 +775,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.panelUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelUsuario.Controls.Add(this.cbxIdMascota);
-            this.panelUsuario.Controls.Add(this.txtRol);
+            this.panelUsuario.Controls.Add(this.cbxRol);
             this.panelUsuario.Controls.Add(this.cbxIdUsuario);
             this.panelUsuario.Controls.Add(this.txtNombreMascota);
             this.panelUsuario.Controls.Add(this.txtDireccion);
@@ -802,20 +804,20 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
             // 
-            // txtRol
+            // cbxRol
             // 
-            this.txtRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.txtRol.Enabled = false;
-            this.txtRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRol.FormattingEnabled = true;
-            this.txtRol.Items.AddRange(new object[] {
+            this.cbxRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.cbxRol.Enabled = false;
+            this.cbxRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRol.FormattingEnabled = true;
+            this.cbxRol.Items.AddRange(new object[] {
             "Cliente",
             "Veterinario",
             "Administrador"});
-            this.txtRol.Location = new System.Drawing.Point(8, 88);
-            this.txtRol.Name = "txtRol";
-            this.txtRol.Size = new System.Drawing.Size(200, 30);
-            this.txtRol.TabIndex = 2;
+            this.cbxRol.Location = new System.Drawing.Point(8, 88);
+            this.cbxRol.Name = "cbxRol";
+            this.cbxRol.Size = new System.Drawing.Size(200, 30);
+            this.cbxRol.TabIndex = 2;
             // 
             // txtUsuario
             // 
@@ -1481,6 +1483,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.ComboBox txtRol;
+        private System.Windows.Forms.ComboBox cbxRol;
     }
 }
