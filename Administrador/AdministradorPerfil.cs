@@ -13,7 +13,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil : Form
     {
-        private string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid=root;Pwd=MIMAMAMEMIMA;";
+        private string connectionString = "Server=localhost; Database=clave1_grupodetrabajodb1; Uid=root;Pwd=MIMAMAMEMIMA;";
 
         public AdministradorPerfil()
         {
