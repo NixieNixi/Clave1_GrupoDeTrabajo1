@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil : Form
     {
+        private string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid=root;Pwd=MIMAMAMEMIMA;";
+
         public AdministradorPerfil()
         {
             InitializeComponent();
@@ -22,61 +25,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             MenuPrincipal menu = new MenuPrincipal();
             this.Hide();
             menu.ShowDialog();
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            cbxIdUsuario.Text = "A10000";
-            txtUsuario.Text = "canela.feliz";
-            txtRol.Text = "Administrador";
-            txtNombre.Text = "Galleta";
-            txtTelefono.Text = "60506482";
-            txtEmail.Text = "galletadecanela2048@gmail.com";
-            txtDireccion.Text = "Comunidad Adesco Flores, Sector #3, Casa #44, Ilopango";
-
-            panelInventario.Visible = false;
-            panelCitas.Visible = false;
-            panelUsuario.Visible = true;
-        }
-
-        private void btnEditUser_Click(object sender, EventArgs e)
-        {
-            txtUsuario.Enabled = true;
-            txtUsuario.ReadOnly = false;
-            txtRol.Enabled = true;
-            txtRol.ReadOnly = false;
-            txtTelefono.Enabled = true;
-            txtTelefono.ReadOnly = false;
-            txtNombre.Enabled = true;
-            txtNombre.ReadOnly = false;
-            txtEmail.Enabled = true;
-            txtEmail.ReadOnly = false;
-            txtDireccion.Enabled = true;
-            txtDireccion.ReadOnly = false;
-        }
-
-        private void btnNuevoUser_Click(object sender, EventArgs e)
-        {
-            txtUsuario.Enabled = true;
-            txtUsuario.ReadOnly = false;
-            txtRol.Enabled = true;
-            txtRol.ReadOnly = false;
-            txtTelefono.Enabled = true;
-            txtTelefono.ReadOnly = false;
-            txtNombre.Enabled = true;
-            txtNombre.ReadOnly = false;
-            txtEmail.Enabled = true;
-            txtEmail.ReadOnly = false;
-            txtDireccion.Enabled = true;
-            txtDireccion.ReadOnly = false;
-
-            cbxIdUsuario.Text = null;
-            txtUsuario.Text = null;
-            txtRol.Text = null;
-            txtTelefono.Text = null;
-            txtNombre.Text = null;
-            txtEmail.Text = null;
-            txtDireccion.Text = null;
         }
 
         private void btnCitas_Click(object sender, EventArgs e)

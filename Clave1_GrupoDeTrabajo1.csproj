@@ -58,6 +58,9 @@
     <Compile Include="Administrador\AdministradorPerfil.Designer.cs">
       <DependentUpon>AdministradorPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\AdminUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Dueno\CitaMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +207,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="sql\clave1_grupodetrabajodb1.condatos.sql" />
     <Content Include="sql\clave1_grupodetrabajodb1.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
