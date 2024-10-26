@@ -24,7 +24,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void LimpiarControlesMascota()
         {
-            //se desactivan los controles de consulta de mascota por defecto
+            //se desactivan y limpian los controles de consulta de mascota
             cbxIdMascota.Enabled = false;
             cbxIdMascota.Items.Clear();
             cbxIdMascota.Text = null;
@@ -202,10 +202,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         //Metodo de que cambia la informacion de "Nombre de la mascota" segun el idMascota que se seleccione en el comboBox
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Si no se ha seleccionado ninguna opcion se limpia el nombre de la mascota
+            //Si no se ha seleccionado ninguna opcion se limpian los controles
             if(cbxIdMascota.SelectedIndex == -1)
             {
-                txtNombreMascota.Text = null;
+                LimpiarControlesMascota();
             }
             //Dependiendo de la seleccion de idMascota se muestra un nombre
             else
@@ -241,7 +241,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //habilitar los botones de editar y nuevo usuario
             btnEditUser.Enabled = true;
             btnNuevoUser.Enabled = true;
-            //deshabilitar el boton de guarda
+            //deshabilitar el boton de guardar
             btnGuardarUser.Enabled = false;
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
