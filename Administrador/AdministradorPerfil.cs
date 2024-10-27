@@ -13,13 +13,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil : Form
     {
-        private string connectionString = "Server=localhost; Database=clave1_grupodetrabajodb1; Uid=root;Pwd=MIMAMAMEMIMA;";
-
         public AdministradorPerfil()
         {
             InitializeComponent();
         }
 
+        //Metodo para cerrar el formulario mediante el boton btnCerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             MenuPrincipal menu = new MenuPrincipal();
@@ -27,6 +26,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             menu.ShowDialog();
         }
 
+        //Metodo para mostrar el panel de citas
         private void btnCitas_Click(object sender, EventArgs e)
         {
             panelInventario.Visible = false;
@@ -34,6 +34,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelCitas.Visible = true;
         }
 
+        //Metodo para mostrar el panel de inventario
         private void btnInventario_Click(object sender, EventArgs e)
         {
             panelCitas.Visible = false;

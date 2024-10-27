@@ -10,6 +10,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     //Clase parcial que se encarga de las funciones de Administracion de usuarios
     public partial class AdministradorPerfil
     {
+        //Metodo para limpiar los controles del panel de la informacion de usuario
         private void LimpiarControles()
         {
             //Limpia los controles
@@ -22,6 +23,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.Text = null;
         }
 
+        //Metodo para limpiar los controles del panel de la informacion de mascota
         private void LimpiarControlesMascota()
         {
             //se desactivan y limpian los controles de consulta de mascota
@@ -31,6 +33,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombreMascota.Text = null;
         }
 
+        //Metodo para habilitar la edicion de los controles de la informacion del usuario
         private void HabilitarEdicion(bool habilitar)
         {
             //Desahibilta cbxIdUsuario
@@ -56,7 +59,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.UseSystemPasswordChar = !habilitar;
         }
 
-        //Metodo del boton btnUsuarios que muestra el panel de usuarios
+        //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
@@ -66,7 +69,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelUsuario.Visible = true;
 
             //Crea una conexion a la DB
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 //Consulta la columna idUsuarios de la tabla Usuarios
                 string query = "SELECT idUsuario FROM usuarios;";
@@ -101,6 +104,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             LimpiarControlesMascota();
         }
 
+        //Metodo del boton btnNuevoUser que limpia los controles y preprara para la edicion y posterior creacion de usuario
         private void btnNuevoUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -138,7 +142,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 string IDSeleccion = cbxIdUsuario.SelectedItem.ToString();
 
                 //cadena de conexion DB
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //cadena de consulta DB
                     string query = "SELECT Nombre, Telefono, Correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuario = @idUsuario;";
@@ -165,13 +169,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     }
                 }
                 //Si el rol del usuario se muestra como "Dueno"
-                if(cbxRol.Text=="Dueno")
+                if(cbxRol.Text=="Dueño")
                 {
                     //se habilita el cbxIdMascota
                     cbxIdMascota.Enabled = true;
 
                     //Se consultan en DB los registros de idUsuario en la tabla mascotas que coincidan con el idUsuario seleccionado en cbxIdUsuario
-                    using (MySqlConnection connection = new MySqlConnection(connectionString))
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         //cadena de consulta
                         string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
@@ -214,7 +218,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 string ConsultaIdMascota = cbxIdMascota.SelectedItem.ToString();
 
                 //cadena de conexion a DB
-                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //cadena de consulta a DB
                     string query = "SELECT Nombre FROM mascotas WHERE idMascota = @idMascota;";
@@ -236,6 +240,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        //Metodo que cancela los cambios en el modo de edicion y recupera al estado anterior
         private void btnCancelarUser_Click(object sender, EventArgs e)
         {
             //habilitar los botones de editar y nuevo usuario
