@@ -29,7 +29,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         //Metodo para mostrar el panel de citas
         private void btnCitas_Click(object sender, EventArgs e)
         {
-            panelInventario.Visible = false;
             panelUsuario.Visible = false;
             panelCitas.Visible = true;
         }
@@ -39,7 +38,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
             panelCitas.Visible = false;
             panelUsuario.Visible = false;
-            panelInventario.Visible = true;
         }
     }
 }

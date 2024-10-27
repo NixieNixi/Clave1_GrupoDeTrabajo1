@@ -63,10 +63,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
-            panelInventario.Visible = false;
-            panelCitas.Visible = false;
+            //panelCitas.Visible = false;
             //Se muestra el panel Usuario
             panelUsuario.Visible = true;
+            //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
+            btnEditUser.Enabled = false;
 
             //Crea una conexion a la DB
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -134,10 +135,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 LimpiarControles();
                 LimpiarControlesMascota();
+                //si no se ha seleccionado una opcion se deshabilita el boton de editar para evitar editar registros vacios
+                btnEditUser.Enabled = false;
             }
             //Dependiendo de la seleccion se muestra un registro
             else
             {
+                //si se selecciona una opcion se habilita el boton editar para editar la informacion
+                btnEditUser.Enabled = true;
+
                 //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
                 string IDSeleccion = cbxIdUsuario.SelectedItem.ToString();
 

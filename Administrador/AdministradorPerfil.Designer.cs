@@ -29,19 +29,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdministradorPerfil));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblNombreAdmin = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnCitas = new System.Windows.Forms.Button();
-            this.btnPagos = new System.Windows.Forms.Button();
-            this.btnUsuarios = new System.Windows.Forms.Button();
-            this.btnInventario = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.panelCitas = new System.Windows.Forms.Panel();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -88,26 +78,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cbxIdProducto = new System.Windows.Forms.ComboBox();
-            this.panelInventario = new System.Windows.Forms.Panel();
             this.PanelPagos = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -128,11 +98,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnInventario = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.btnPagos = new System.Windows.Forms.Button();
+            this.btnCitas = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblNombreAdmin = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelCitas.SuspendLayout();
             this.panelUsuario.SuspendLayout();
-            this.panelInventario.SuspendLayout();
             this.PanelPagos.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -161,126 +141,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(767, 68);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblNombreAdmin
-            // 
-            this.lblNombreAdmin.AutoSize = true;
-            this.lblNombreAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
-            this.lblNombreAdmin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreAdmin.ForeColor = System.Drawing.Color.Black;
-            this.lblNombreAdmin.Location = new System.Drawing.Point(24, 128);
-            this.lblNombreAdmin.Name = "lblNombreAdmin";
-            this.lblNombreAdmin.Size = new System.Drawing.Size(77, 28);
-            this.lblNombreAdmin.TabIndex = 0;
-            this.lblNombreAdmin.Text = "Galleta";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
-            this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(24, 104);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(57, 22);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Nombre";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
-            this.label3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(24, 176);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(113, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "canela.feliz";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
-            this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(24, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 22);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Usuario";
-            // 
-            // btnCitas
-            // 
-            this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCitas.ForeColor = System.Drawing.Color.White;
-            this.btnCitas.Location = new System.Drawing.Point(32, 272);
-            this.btnCitas.Name = "btnCitas";
-            this.btnCitas.Size = new System.Drawing.Size(80, 26);
-            this.btnCitas.TabIndex = 0;
-            this.btnCitas.Text = "Citas";
-            this.btnCitas.UseVisualStyleBackColor = false;
-            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
-            // 
-            // btnPagos
-            // 
-            this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPagos.ForeColor = System.Drawing.Color.White;
-            this.btnPagos.Location = new System.Drawing.Point(32, 336);
-            this.btnPagos.Name = "btnPagos";
-            this.btnPagos.Size = new System.Drawing.Size(80, 26);
-            this.btnPagos.TabIndex = 0;
-            this.btnPagos.Text = "Pagos";
-            this.btnPagos.UseVisualStyleBackColor = false;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarios.Location = new System.Drawing.Point(32, 240);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(80, 26);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Usuarios";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnInventario
-            // 
-            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInventario.ForeColor = System.Drawing.Color.White;
-            this.btnInventario.Location = new System.Drawing.Point(32, 304);
-            this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(80, 26);
-            this.btnInventario.TabIndex = 0;
-            this.btnInventario.Text = "Inventario";
-            this.btnInventario.UseVisualStyleBackColor = false;
-            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(166)))), ((int)(((byte)(124)))));
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(32, 408);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(80, 26);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelCitas
             // 
@@ -307,9 +175,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label20);
             this.panelCitas.Controls.Add(this.label22);
             this.panelCitas.Controls.Add(this.label23);
-            this.panelCitas.Location = new System.Drawing.Point(157, 88);
+            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCitas.Location = new System.Drawing.Point(184, 68);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(583, 408);
+            this.panelCitas.Size = new System.Drawing.Size(583, 447);
             this.panelCitas.TabIndex = 4;
             this.panelCitas.Visible = false;
             // 
@@ -546,7 +415,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(8, 8);
+            this.label6.Location = new System.Drawing.Point(24, 24);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 0;
@@ -558,7 +427,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(8, 120);
+            this.label7.Location = new System.Drawing.Point(24, 136);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 15);
             this.label7.TabIndex = 0;
@@ -570,7 +439,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(8, 304);
+            this.label13.Location = new System.Drawing.Point(24, 320);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(69, 15);
             this.label13.TabIndex = 0;
@@ -582,7 +451,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(8, 176);
+            this.label10.Location = new System.Drawing.Point(24, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(108, 15);
             this.label10.TabIndex = 0;
@@ -594,7 +463,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(8, 64);
+            this.label12.Location = new System.Drawing.Point(24, 80);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 15);
             this.label12.TabIndex = 0;
@@ -606,7 +475,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(272, 64);
+            this.label9.Location = new System.Drawing.Point(288, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(116, 15);
             this.label9.TabIndex = 0;
@@ -618,7 +487,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(8, 232);
+            this.label11.Location = new System.Drawing.Point(24, 248);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(59, 15);
             this.label11.TabIndex = 0;
@@ -630,7 +499,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(272, 8);
+            this.label8.Location = new System.Drawing.Point(288, 24);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 15);
             this.label8.TabIndex = 0;
@@ -641,7 +510,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtNombre.Enabled = false;
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(8, 144);
+            this.txtNombre.Location = new System.Drawing.Point(24, 160);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
             this.txtNombre.Size = new System.Drawing.Size(200, 21);
@@ -653,7 +522,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(272, 304);
+            this.label14.Location = new System.Drawing.Point(288, 320);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(132, 15);
             this.label14.TabIndex = 0;
@@ -664,7 +533,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtEmail.Enabled = false;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(8, 200);
+            this.txtEmail.Location = new System.Drawing.Point(24, 216);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
             this.txtEmail.Size = new System.Drawing.Size(460, 21);
@@ -675,7 +544,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditUser.ForeColor = System.Drawing.Color.White;
-            this.btnEditUser.Location = new System.Drawing.Point(8, 368);
+            this.btnEditUser.Location = new System.Drawing.Point(24, 384);
             this.btnEditUser.Name = "btnEditUser";
             this.btnEditUser.Size = new System.Drawing.Size(80, 26);
             this.btnEditUser.TabIndex = 0;
@@ -689,7 +558,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarUser.Enabled = false;
             this.btnGuardarUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarUser.Location = new System.Drawing.Point(336, 368);
+            this.btnGuardarUser.Location = new System.Drawing.Point(352, 384);
             this.btnGuardarUser.Name = "btnGuardarUser";
             this.btnGuardarUser.Size = new System.Drawing.Size(80, 26);
             this.btnGuardarUser.TabIndex = 0;
@@ -701,7 +570,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnNuevoUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoUser.Location = new System.Drawing.Point(112, 368);
+            this.btnNuevoUser.Location = new System.Drawing.Point(128, 384);
             this.btnNuevoUser.Name = "btnNuevoUser";
             this.btnNuevoUser.Size = new System.Drawing.Size(80, 26);
             this.btnNuevoUser.TabIndex = 0;
@@ -714,7 +583,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnCancelarUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarUser.Location = new System.Drawing.Point(224, 368);
+            this.btnCancelarUser.Location = new System.Drawing.Point(240, 384);
             this.btnCancelarUser.Name = "btnCancelarUser";
             this.btnCancelarUser.Size = new System.Drawing.Size(80, 26);
             this.btnCancelarUser.TabIndex = 0;
@@ -727,7 +596,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtTelefono.Enabled = false;
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(272, 88);
+            this.txtTelefono.Location = new System.Drawing.Point(288, 104);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
             this.txtTelefono.Size = new System.Drawing.Size(200, 21);
@@ -738,7 +607,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtDireccion.Enabled = false;
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(8, 256);
+            this.txtDireccion.Location = new System.Drawing.Point(24, 272);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ReadOnly = true;
             this.txtDireccion.Size = new System.Drawing.Size(460, 21);
@@ -749,7 +618,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtNombreMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtNombreMascota.Enabled = false;
             this.txtNombreMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMascota.Location = new System.Drawing.Point(272, 328);
+            this.txtNombreMascota.Location = new System.Drawing.Point(288, 344);
             this.txtNombreMascota.Name = "txtNombreMascota";
             this.txtNombreMascota.ReadOnly = true;
             this.txtNombreMascota.Size = new System.Drawing.Size(200, 21);
@@ -760,7 +629,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.cbxIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdUsuario.FormattingEnabled = true;
-            this.cbxIdUsuario.Location = new System.Drawing.Point(8, 32);
+            this.cbxIdUsuario.Location = new System.Drawing.Point(24, 48);
             this.cbxIdUsuario.Name = "cbxIdUsuario";
             this.cbxIdUsuario.Size = new System.Drawing.Size(200, 23);
             this.cbxIdUsuario.TabIndex = 2;
@@ -772,7 +641,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascota.Enabled = false;
             this.cbxIdMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascota.FormattingEnabled = true;
-            this.cbxIdMascota.Location = new System.Drawing.Point(8, 328);
+            this.cbxIdMascota.Location = new System.Drawing.Point(24, 344);
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(200, 23);
             this.cbxIdMascota.TabIndex = 2;
@@ -807,9 +676,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.label7);
             this.panelUsuario.Controls.Add(this.label6);
-            this.panelUsuario.Location = new System.Drawing.Point(157, 88);
+            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUsuario.Location = new System.Drawing.Point(184, 68);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(583, 408);
+            this.panelUsuario.Size = new System.Drawing.Size(583, 447);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
             // 
@@ -823,7 +693,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             "Cliente",
             "Veterinario",
             "Administrador"});
-            this.cbxRol.Location = new System.Drawing.Point(8, 88);
+            this.cbxRol.Location = new System.Drawing.Point(24, 104);
             this.cbxRol.Name = "cbxRol";
             this.cbxRol.Size = new System.Drawing.Size(200, 23);
             this.cbxRol.TabIndex = 2;
@@ -833,7 +703,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtUsuario.Enabled = false;
             this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(272, 32);
+            this.txtUsuario.Location = new System.Drawing.Point(288, 48);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
             this.txtUsuario.Size = new System.Drawing.Size(200, 21);
@@ -844,7 +714,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtContraseña.Enabled = false;
             this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(272, 144);
+            this.txtContraseña.Location = new System.Drawing.Point(288, 160);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.ReadOnly = true;
             this.txtContraseña.Size = new System.Drawing.Size(200, 21);
@@ -857,257 +727,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.White;
-            this.label39.Location = new System.Drawing.Point(272, 120);
+            this.label39.Location = new System.Drawing.Point(288, 136);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(70, 15);
             this.label39.TabIndex = 0;
             this.label39.Text = "Contraseña";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label30.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.ForeColor = System.Drawing.Color.White;
-            this.label30.Location = new System.Drawing.Point(8, 8);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(78, 22);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "ID Producto";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label29.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.ForeColor = System.Drawing.Color.White;
-            this.label29.Location = new System.Drawing.Point(8, 120);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(158, 22);
-            this.label29.TabIndex = 0;
-            this.label29.Text = "Descripcion del producto";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label28.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(8, 176);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(131, 22);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Cantidad disponible";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label27.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(8, 64);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(136, 22);
-            this.label27.TabIndex = 0;
-            this.label27.Text = "Nombre del producto";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label26.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(272, 176);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(154, 22);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Fecha de ultimo cambio";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label25.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(272, 64);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(95, 22);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Precio unitario";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label21.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(8, 232);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(44, 22);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Notas";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label15.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(272, 8);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(69, 22);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Categoria";
-            // 
-            // textBox11
-            // 
-            this.textBox11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox11.Enabled = false;
-            this.textBox11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(8, 144);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(464, 25);
-            this.textBox11.TabIndex = 1;
-            // 
-            // textBox10
-            // 
-            this.textBox10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox10.Enabled = false;
-            this.textBox10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(8, 88);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(200, 25);
-            this.textBox10.TabIndex = 1;
-            // 
-            // textBox9
-            // 
-            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox9.Enabled = false;
-            this.textBox9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(8, 200);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(200, 25);
-            this.textBox9.TabIndex = 1;
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(272, 200);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(200, 25);
-            this.textBox8.TabIndex = 1;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(8, 368);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(80, 26);
-            this.button8.TabIndex = 0;
-            this.button8.Text = "Editar";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(216, 368);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(80, 26);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Cancelar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(112, 368);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 26);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Guardar";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox7.Enabled = false;
-            this.textBox7.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(272, 88);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(200, 25);
-            this.textBox7.TabIndex = 1;
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(8, 256);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(460, 25);
-            this.textBox6.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(272, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(200, 25);
-            this.textBox1.TabIndex = 1;
-            // 
-            // cbxIdProducto
-            // 
-            this.cbxIdProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.cbxIdProducto.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdProducto.FormattingEnabled = true;
-            this.cbxIdProducto.Location = new System.Drawing.Point(8, 32);
-            this.cbxIdProducto.Name = "cbxIdProducto";
-            this.cbxIdProducto.Size = new System.Drawing.Size(200, 30);
-            this.cbxIdProducto.TabIndex = 2;
-            // 
-            // panelInventario
-            // 
-            this.panelInventario.AutoScroll = true;
-            this.panelInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.panelInventario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelInventario.Controls.Add(this.cbxIdProducto);
-            this.panelInventario.Controls.Add(this.textBox1);
-            this.panelInventario.Controls.Add(this.textBox6);
-            this.panelInventario.Controls.Add(this.textBox7);
-            this.panelInventario.Controls.Add(this.button6);
-            this.panelInventario.Controls.Add(this.button7);
-            this.panelInventario.Controls.Add(this.button8);
-            this.panelInventario.Controls.Add(this.textBox8);
-            this.panelInventario.Controls.Add(this.textBox9);
-            this.panelInventario.Controls.Add(this.textBox10);
-            this.panelInventario.Controls.Add(this.textBox11);
-            this.panelInventario.Controls.Add(this.label15);
-            this.panelInventario.Controls.Add(this.label21);
-            this.panelInventario.Controls.Add(this.label25);
-            this.panelInventario.Controls.Add(this.label26);
-            this.panelInventario.Controls.Add(this.label27);
-            this.panelInventario.Controls.Add(this.label28);
-            this.panelInventario.Controls.Add(this.label29);
-            this.panelInventario.Controls.Add(this.label30);
-            this.panelInventario.Location = new System.Drawing.Point(157, 88);
-            this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(583, 408);
-            this.panelInventario.TabIndex = 5;
-            this.panelInventario.Visible = false;
             // 
             // PanelPagos
             // 
@@ -1133,9 +757,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.PanelPagos.Controls.Add(this.label36);
             this.PanelPagos.Controls.Add(this.label37);
             this.PanelPagos.Controls.Add(this.label38);
-            this.PanelPagos.Location = new System.Drawing.Point(157, 88);
+            this.PanelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelPagos.Location = new System.Drawing.Point(184, 68);
             this.PanelPagos.Name = "PanelPagos";
-            this.PanelPagos.Size = new System.Drawing.Size(583, 408);
+            this.PanelPagos.Size = new System.Drawing.Size(583, 447);
             this.PanelPagos.TabIndex = 6;
             this.PanelPagos.Visible = false;
             // 
@@ -1355,28 +980,148 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label38.TabIndex = 0;
             this.label38.Text = "ID Producto";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnInventario);
+            this.panel1.Controls.Add(this.btnCerrar);
+            this.panel1.Controls.Add(this.btnUsuarios);
+            this.panel1.Controls.Add(this.btnPagos);
+            this.panel1.Controls.Add(this.btnCitas);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblNombreAdmin);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 68);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(184, 447);
+            this.panel1.TabIndex = 7;
+            // 
+            // btnInventario
+            // 
+            this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInventario.ForeColor = System.Drawing.Color.White;
+            this.btnInventario.Location = new System.Drawing.Point(52, 240);
+            this.btnInventario.Name = "btnInventario";
+            this.btnInventario.Size = new System.Drawing.Size(80, 26);
+            this.btnInventario.TabIndex = 1;
+            this.btnInventario.Text = "Inventario";
+            this.btnInventario.UseVisualStyleBackColor = false;
+            this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(166)))), ((int)(((byte)(124)))));
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(52, 368);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(80, 26);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.Text = "Cerrar";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btnUsuarios.Location = new System.Drawing.Point(52, 176);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(80, 26);
+            this.btnUsuarios.TabIndex = 3;
+            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // btnPagos
+            // 
+            this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPagos.ForeColor = System.Drawing.Color.White;
+            this.btnPagos.Location = new System.Drawing.Point(52, 272);
+            this.btnPagos.Name = "btnPagos";
+            this.btnPagos.Size = new System.Drawing.Size(80, 26);
+            this.btnPagos.TabIndex = 4;
+            this.btnPagos.Text = "Pagos";
+            this.btnPagos.UseVisualStyleBackColor = false;
+            // 
+            // btnCitas
+            // 
+            this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCitas.ForeColor = System.Drawing.Color.White;
+            this.btnCitas.Location = new System.Drawing.Point(52, 208);
+            this.btnCitas.Name = "btnCitas";
+            this.btnCitas.Size = new System.Drawing.Size(80, 26);
+            this.btnCitas.TabIndex = 5;
+            this.btnCitas.Text = "Citas";
+            this.btnCitas.UseVisualStyleBackColor = false;
+            this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
+            this.label5.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(24, 96);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 22);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Usuario";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
+            this.label4.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(24, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(57, 22);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Nombre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
+            this.label3.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(24, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 28);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "canela.feliz";
+            // 
+            // lblNombreAdmin
+            // 
+            this.lblNombreAdmin.AutoSize = true;
+            this.lblNombreAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
+            this.lblNombreAdmin.Font = new System.Drawing.Font("Poppins", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreAdmin.ForeColor = System.Drawing.Color.Black;
+            this.lblNombreAdmin.Location = new System.Drawing.Point(24, 56);
+            this.lblNombreAdmin.Name = "lblNombreAdmin";
+            this.lblNombreAdmin.Size = new System.Drawing.Size(77, 28);
+            this.lblNombreAdmin.TabIndex = 9;
+            this.lblNombreAdmin.Text = "Galleta";
+            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(246)))), ((int)(((byte)(229)))));
             this.ClientSize = new System.Drawing.Size(767, 515);
-            this.Controls.Add(this.btnInventario);
-            this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnUsuarios);
-            this.Controls.Add(this.btnPagos);
-            this.Controls.Add(this.btnCitas);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblNombreAdmin);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.PanelPagos);
-            this.Controls.Add(this.panelInventario);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "AdministradorPerfil";
             this.Text = "AdministradorPerfil";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -1384,10 +1129,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.PerformLayout();
             this.panelUsuario.ResumeLayout(false);
             this.panelUsuario.PerformLayout();
-            this.panelInventario.ResumeLayout(false);
-            this.panelInventario.PerformLayout();
             this.PanelPagos.ResumeLayout(false);
             this.PanelPagos.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1398,15 +1143,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label lblNombreAdmin;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnCitas;
-        private System.Windows.Forms.Button btnPagos;
-        private System.Windows.Forms.Button btnUsuarios;
-        private System.Windows.Forms.Button btnInventario;
-        private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Panel panelCitas;
         private System.Windows.Forms.ComboBox cbxIdCita;
         private System.Windows.Forms.TextBox textBox2;
@@ -1449,26 +1185,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.ComboBox cbxIdUsuario;
         private System.Windows.Forms.ComboBox cbxIdMascota;
         private System.Windows.Forms.Panel panelUsuario;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cbxIdProducto;
-        private System.Windows.Forms.Panel panelInventario;
         private System.Windows.Forms.Panel PanelPagos;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox12;
@@ -1493,5 +1209,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.ComboBox cbxRol;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnInventario;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnUsuarios;
+        private System.Windows.Forms.Button btnPagos;
+        private System.Windows.Forms.Button btnCitas;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNombreAdmin;
     }
 }
