@@ -40,19 +40,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// Constructor del formulario veterinarioExpediente.
         /// Inicializa los componentes del formulario.
         /// </summary>
-
-        /// <summary>
-        /// Cadena de conexion a la base de datos.
-        /// </summary>
-        string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
-
-
         public veterinarioExpediente()
         {
             InitializeComponent();
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta la columna idMascota de la tabla mascotas
+                string query = "SELECT idMascota FROM mascotas;";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //Inserta los registros de idMascota en el comboBox cbxIdMascota
+                            
+                            cbxIdMascota.Items.Add(reader["idMascota"].ToString());
+                        }
+                    }
+                }
+            }
         }
-
-
 
         // <summary>
         /// Evento click del botón 'Ir a Cita'. Este evento se activa cuando el usuario hace clic en el btn.
@@ -73,38 +83,27 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
             // Una vez que se cierra el formulario de veterinarioCita, se vuelve a mostrar el formulario original.
             this.Show();
-
         }
 
-
-
-        private void cbxIdExpedienteMascota_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Limpia los controles si no se ha seleccionado una opción
-            if (cbxIdExpedienteMascota.SelectedIndex == -1)
+            if (cbxIdMascota.SelectedIndex == -1)
             {
                 LimpiarControles();
-                return; // Salir del método si no hay selección
             }
-
-            // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
-            string selectedUserId = cbxIdExpedienteMascota.SelectedItem.ToString();
-
-            // Validar que el ID seleccionado no esté vacío o nulo
-            if (string.IsNullOrWhiteSpace(selectedUserId))
+            else
             {
-                MessageBox.Show("Por favor, seleccione un ID de expediente válido.");
-                return;
+                // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
+                string selectedUserId = cbxIdMascota.SelectedItem.ToString();
+
+                SubirDatosMascota(selectedUserId);
+
+                //// Llamamos al método para cargar los datos de citas
+                //string idMascota = txtIdMascota.Text; // Asegúrate de que este campo tenga el ID correcto
+                //SubirHCitas(int.Parse(idMascota)); //Pertene al tap2
             }
-
-            SubirDatosMascota(selectedUserId);
-
-            // Llamamos al método para cargar los datos de citas
-            string idMascota = txtIdMascota.Text; // Asegúrate de que este campo tenga el ID correcto
-            SubirHCitas(int.Parse(idMascota)); //Pertene al tap2
-
         }
-
 
         /// <summary>
         /// Metodo para cargar los datos de la mascota y el dueño según el ID de usuario seleccionado.
@@ -115,29 +114,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
             // Consulta SQL para obtener los datos del usuario y la mascota asociada.
             //Use este formato, ya que se asemeja a las de sql
-            string query = @"SELECT 
-                    usuarios.NombreUsuario, 
-                    usuarios.Telefono, 
-                    usuarios.Correo, 
-                    usuarios.Direccion, 
-                    mascotas.IdMascota,
-                    mascotas.Nombre, 
-                    mascotas.Especie, 
-                    mascotas.Raza, 
-                    mascotas.Sexo, 
-                    mascotas.Peso, 
-                    mascotas.FechaNacimiento 
-                 FROM usuarios
-                 JOIN mascotas ON usuarios.idUsuarios = mascotas.IdUsuario
-                 WHERE usuarios.idUsuarios = @idUsuario;";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))  // Crear una conexión a la base de datos usando la cadena de conexion.
+            string query = @"SELECT
+            usuarios.idUsuario,
+            usuarios.Nombre,
+            usuarios.Telefono,
+            usuarios.Correo,
+            usuarios.Direccion,
+            mascotas.idMascota,
+            mascotas.Nombre AS NombreMascota,
+            mascotas.Especie,
+            mascotas.Raza,
+            mascotas.Sexo,
+            mascotas.FechaNacimiento
+            FROM usuarios 
+            LEFT JOIN mascotas ON usuarios.idUsuario = mascotas.idUsuario
+            WHERE mascotas.idMascota = @idMascota;";
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))  // Crear una conexión a la base de datos usando la cadena de conexion.
             {
 
                 // Crear un comando para ejecutar la consulta.
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Agregar el parametro de ID de usuario a la consulta.
-                    command.Parameters.AddWithValue("@idUsuario", selectedUserId);
+                    command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
                     try
                     {
@@ -152,18 +151,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             {
                                 // Cargar los datos obtenidos en los controles correspondientes
                                 //gbxDatosDueno
-                                txtNomDueno.Text = reader["NombreUsuario"].ToString();
+                                txtNomDueno.Text = reader["Nombre"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
 
                                 //gbxDatosMascota
                                 txtIdMascota.Text = reader["IdMascota"].ToString();
-                                txtNomMascota.Text = reader["Nombre"].ToString();
+                                txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
                                 txtSexo.Text = reader["Sexo"].ToString();
-                                txtPeso.Text = reader["Peso"].ToString();
+                                //txtPeso.Text = reader["Peso"].ToString();
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
                             }
                             else
@@ -200,7 +199,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 WHERE idMascota = @idMascota;";
 
             // Crear una conexion a la base de datos usando la cadena de conexion.
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 // Crear un comando para ejecutar la consulta.
                 using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -233,11 +232,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-
-
-      
-
-
         private void SubirHPaciente(string idMascota)
         {
             //Aqui ira para el dgvHPaciente
@@ -248,7 +242,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     FROM  
                     WHERE IdMascota = @idMascota;";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -273,7 +267,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-
         private void SubirHVacuna(string idMascota)
         {
             //Aqui ira para el dgvHVacuna
@@ -284,7 +277,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     FROM  
                     WHERE IdMascota = @idMascota;";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
@@ -308,8 +301,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
-
-
 
         /// <summary>
         /// Metodo para limpiar los controles del formulario.
