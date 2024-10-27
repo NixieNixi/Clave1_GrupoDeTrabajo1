@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
@@ -20,7 +21,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.Text = null;
             txtEmail.Text = null;
             txtDireccion.Text = null;
-            txtContraseña.Text = null;
+            txtContrasena.Text = null;
         }
 
         //Metodo para limpiar los controles del panel de la informacion de mascota
@@ -46,7 +47,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.Enabled = habilitar;
             txtEmail.Enabled = habilitar;
             txtDireccion.Enabled = habilitar;
-            txtContraseña.Enabled = habilitar;
+            txtContrasena.Enabled = habilitar;
 
             //Permite la edicion del contenido de los controles
             txtUsuario.ReadOnly = !habilitar;
@@ -54,9 +55,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.ReadOnly = !habilitar;
             txtEmail.ReadOnly = !habilitar;
             txtDireccion.ReadOnly = !habilitar;
-            txtContraseña.ReadOnly = !habilitar;
+            txtContrasena.ReadOnly = !habilitar;
             //Permite ver la contraseña para editar
-            txtContraseña.UseSystemPasswordChar = !habilitar;
+            txtContrasena.UseSystemPasswordChar = !habilitar;
         }
 
         //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
@@ -115,7 +116,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnEditUser.Enabled = false;
 
             //se limpia el comboBox cbxIdUsuarios porque este campo se genera automaticamente
-            cbxIdUsuario.Text = null;
+            cbxIdUsuario.SelectedIndex = -1;
 
             //limpia los controles
             LimpiarControles();
@@ -167,7 +168,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 cbxRol.Text = reader["Rol"].ToString();
                                 txtTelefono.Text = reader["Telefono"].ToString();
                                 txtNombre.Text = reader["Nombre"].ToString();
-                                txtContraseña.Text = reader["Contrasena"].ToString();
+                                txtContrasena.Text = reader["Contrasena"].ToString();
                                 txtEmail.Text = reader["Correo"].ToString();
                                 txtDireccion.Text = reader["Direccion"].ToString();
                             }
@@ -261,6 +262,153 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Sin seleccion - limpia los campos
             //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
             cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
+        }
+
+        //Metodo para guardar los cambios en caso de edicion o creacion de nuevo user
+        private void btnGuardarUser_Click(object sender, EventArgs e)
+        {
+            // Obtener los datos de los controles en el formulario
+            string idUsuario = cbxIdUsuario.Text.ToString();
+            string usuario = txtUsuario.Text;
+            string contrasena = txtContrasena.Text;
+            string nombre = txtNombre.Text.ToString();
+            string rol = cbxRol.SelectedItem.ToString();
+            string telefono = txtTelefono.Text;
+            string correo = txtEmail.Text;
+            string direccion = txtDireccion.Text;
+            
+            //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
+            if(cbxIdUsuario.SelectedIndex == -1)
+            {
+                //Lammada al metodo NuevoUser que guardara la informacion en DB
+                NuevoUser();
+            }
+            //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
+            else
+            {
+                //Llamada al metodo GuardarUser que actualizara la informacion del usuario con el ID correspondiente
+                GuardarUser();
+            }
+           
+        }
+
+        //Metodo de insercion de nuevo usuario a DB
+        private void NuevoUser()
+        {
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta sql para insertar un nuevo usuario
+                string query = @"INSERT INTO usuarios (Usuario, Contrasena, Nombre, Rol, Telefono, Correo, Direccion)
+                     VALUES (@Usuario, @Contrasena, @Nombre, @Rol, @Telefono, @Correo, @Direccion);";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    //Asignar los valores de los controles a los parámetros sql
+                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+
+                    //Intenta insertar nuevo registro a DB
+                    try
+                    {
+                        //Abrir la conexión a la base de datos
+                        connection.Open();
+                        
+                        //variable para comprobar cuantas filas fueron agregadas
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
+                        if (rowsAffected > 0)
+                        {
+                            //Se deshabilita la edicion para evitar ingresar el mismo usuario nuevamente por accidente
+                            HabilitarEdicion(false);
+
+                            MessageBox.Show("Usuario ingresado correctamente.", "Operacion exitosa!");
+                        }
+                        //Si no se cambio ninguna fila mostrar mensaje de error
+                        else
+                        {
+                            MessageBox.Show("Error al ingresar el usuario.", "Error :(");
+                        }
+                    //Si no puede hacer el registro mostrar mensaje de error
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Ha ocurrido un error");
+                    }
+                }
+            }
+        }
+
+        //Metodo de actualizacion de datos de usuario en DB
+        private void GuardarUser()
+        {
+            //Consulta sql para actualizar los datos del usuario
+            string query = @"UPDATE usuarios 
+                     SET Usuario = @Usuario, 
+                         Contrasena = @Contrasena, 
+                         Nombre = @nombre,
+                         Rol = @Rol, 
+                         Telefono = @Telefono, 
+                         Correo = @Correo, 
+                         Direccion = @Direccion
+                     WHERE idUsuario = @idUsuario";
+            //WHERE indica en que registro se hara la actualizacion
+
+            //Realizar la actualización en la base de datos
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // Asignar parámetros con los datos de los controles del formulario
+                    command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario);
+                    command.Parameters.AddWithValue("@Usuario", txtUsuario);
+                    command.Parameters.AddWithValue("@Contrasena", txtContrasena);
+                    command.Parameters.AddWithValue("@Nombre", txtNombre);
+                    command.Parameters.AddWithValue("@Rol", cbxRol);
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono);
+                    command.Parameters.AddWithValue("@Correo", txtEmail);
+                    command.Parameters.AddWithValue("@Direccion", txtDireccion);
+
+                    //Intentar hacer la actualizacion del registro
+                    try
+                    {
+                        //conexion a DB
+                        connection.Open();
+
+                        //variable para comprobar cuantas filas fueron modificadas
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        //Si al menos una fila fue cambiada se muestra el mensaje de exito
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Datos actualizados correctamente", "Operacion exitosa");
+
+                            //Se deshabilita la edicion para evitar actualizar los datos por accidente
+                            HabilitarEdicion(false);
+                            //habilitar los botones de editar y nuevo usuario
+                            btnEditUser.Enabled = true;
+                            btnNuevoUser.Enabled = true;
+                            //deshabilitar el boton de guardar
+                            btnGuardarUser.Enabled = false;
+                        }
+                        //Si no se cambio ninguna fila se muestra un mensaje de error
+                        else
+                        {
+                            MessageBox.Show("No se pudo actualizar el registro.", "Error :(");
+                        }
+                    }
+                    //Si no puede modificar el registro mostrar mensaje de error
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }
