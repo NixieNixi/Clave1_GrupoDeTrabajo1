@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
@@ -20,7 +21,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.Text = null;
             txtEmail.Text = null;
             txtDireccion.Text = null;
-            txtContraseña.Text = null;
+            txtContrasena.Text = null;
         }
 
         //Metodo para limpiar los controles del panel de la informacion de mascota
@@ -46,7 +47,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.Enabled = habilitar;
             txtEmail.Enabled = habilitar;
             txtDireccion.Enabled = habilitar;
-            txtContraseña.Enabled = habilitar;
+            txtContrasena.Enabled = habilitar;
 
             //Permite la edicion del contenido de los controles
             txtUsuario.ReadOnly = !habilitar;
@@ -54,38 +55,22 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombre.ReadOnly = !habilitar;
             txtEmail.ReadOnly = !habilitar;
             txtDireccion.ReadOnly = !habilitar;
-            txtContraseña.ReadOnly = !habilitar;
+            txtContrasena.ReadOnly = !habilitar;
             //Permite ver la contraseña para editar
-            txtContraseña.UseSystemPasswordChar = !habilitar;
+            txtContrasena.UseSystemPasswordChar = !habilitar;
         }
 
         //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
-            panelInventario.Visible = false;
-            panelCitas.Visible = false;
+            //panelCitas.Visible = false;
             //Se muestra el panel Usuario
             panelUsuario.Visible = true;
-
-            //Crea una conexion a la DB
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            {
-                //Consulta la columna idUsuarios de la tabla Usuarios
-                string query = "SELECT idUsuario FROM usuarios;";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            //Inserta los registros de idUsuario en el comboBox cbxUsuario
-                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
-                        }
-                    }
-                }
-            }
+            //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
+            btnEditUser.Enabled = false;
+            //Carga los registros de idUsuario de la DB
+            ActualizarRegistros();
         }
         
         //Metodo del boton btnEditUser que cambia los controles al modo de edicion
@@ -114,7 +99,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnEditUser.Enabled = false;
 
             //se limpia el comboBox cbxIdUsuarios porque este campo se genera automaticamente
-            cbxIdUsuario.Text = null;
+            cbxIdUsuario.SelectedIndex = -1;
 
             //limpia los controles
             LimpiarControles();
@@ -134,10 +119,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 LimpiarControles();
                 LimpiarControlesMascota();
+                //si no se ha seleccionado una opcion se deshabilita el boton de editar para evitar editar registros vacios
+                btnEditUser.Enabled = false;
             }
             //Dependiendo de la seleccion se muestra un registro
             else
             {
+                //si se selecciona una opcion se habilita el boton editar para editar la informacion
+                btnEditUser.Enabled = true;
+
                 //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
                 string IDSeleccion = cbxIdUsuario.SelectedItem.ToString();
 
@@ -161,7 +151,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 cbxRol.Text = reader["Rol"].ToString();
                                 txtTelefono.Text = reader["Telefono"].ToString();
                                 txtNombre.Text = reader["Nombre"].ToString();
-                                txtContraseña.Text = reader["Contrasena"].ToString();
+                                txtContrasena.Text = reader["Contrasena"].ToString();
                                 txtEmail.Text = reader["Correo"].ToString();
                                 txtDireccion.Text = reader["Direccion"].ToString();
                             }
@@ -255,6 +245,171 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Sin seleccion - limpia los campos
             //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
             cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
+        }
+
+        //Metodo para guardar los cambios en caso de edicion o creacion de nuevo user
+        private void btnGuardarUser_Click(object sender, EventArgs e)
+        {   
+            //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
+            if(cbxIdUsuario.SelectedIndex == -1)
+            {
+                //Lammada al metodo NuevoUser que guardara la informacion en DB
+                NuevoUser();
+            }
+            //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
+            else
+            {
+                //Llamada al metodo GuardarUser que actualizara la informacion del usuario con el ID correspondiente
+                GuardarUser();
+            }
+           
+        }
+
+        //Metodo de insercion de nuevo usuario a DB
+        private void NuevoUser()
+        {
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta sql para insertar un nuevo usuario
+                string query = @"INSERT INTO usuarios (Usuario, Contrasena, Nombre, Rol, Telefono, Correo, Direccion)
+                     VALUES (@Usuario, @Contrasena, @Nombre, @Rol, @Telefono, @Correo, @Direccion);";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    //Asignar los valores de los controles a los parámetros sql
+                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedItem.ToString());
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+
+                    //Intenta insertar nuevo registro a DB
+                    try
+                    {
+                        //Abrir la conexión a la base de datos
+                        connection.Open();
+                        
+                        //variable para comprobar cuantas filas fueron agregadas
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
+                        if (rowsAffected > 0)
+                        {
+                            //Se deshabilita la edicion para evitar ingresar el mismo usuario nuevamente por accidente
+                            HabilitarEdicion(false);
+
+                            MessageBox.Show("Usuario ingresado correctamente.", "Operacion exitosa!");
+
+                            ActualizarRegistros();
+                        }
+                        //Si no se cambio ninguna fila mostrar mensaje de error
+                        else
+                        {
+                            MessageBox.Show("Error al ingresar el usuario.", "Error :(");
+                        }
+                    //Si no puede hacer el registro mostrar mensaje de error
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Ha ocurrido un error");
+                    }
+                }
+            }
+        }
+
+        //Metodo de actualizacion de datos de usuario en DB
+        private void GuardarUser()
+        {
+            //Consulta sql para actualizar los datos del usuario
+            string query = @"UPDATE usuarios 
+                     SET Usuario = @Usuario, 
+                         Contrasena = @Contrasena, 
+                         Nombre = @nombre,
+                         Rol = @Rol, 
+                         Telefono = @Telefono, 
+                         Correo = @Correo, 
+                         Direccion = @Direccion
+                     WHERE idUsuario = @idUsuario";
+            //WHERE indica en que registro se hara la actualizacion
+
+            //Realizar la actualización en la base de datos
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    // Asignar parámetros con los datos de los controles del formulario
+                    command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario.Text);
+                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+
+                    //Intentar hacer la actualizacion del registro
+                    try
+                    {
+                        //conexion a DB
+                        connection.Open();
+
+                        //variable para comprobar cuantas filas fueron modificadas
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        //Si al menos una fila fue cambiada se muestra el mensaje de exito
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Datos actualizados correctamente", "Operacion exitosa");
+
+                            //Se deshabilita la edicion para evitar actualizar los datos por accidente
+                            HabilitarEdicion(false);
+                            //habilitar los botones de editar y nuevo usuario
+                            btnEditUser.Enabled = true;
+                            btnNuevoUser.Enabled = true;
+                            //deshabilitar el boton de guardar
+                            btnGuardarUser.Enabled = false;
+                        }
+                        //Si no se cambio ninguna fila se muestra un mensaje de error
+                        else
+                        {
+                            MessageBox.Show("No se pudo actualizar el registro.", "Error :(");
+                        }
+                    }
+                    //Si no puede modificar el registro mostrar mensaje de error
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        //Metodo de actualizacion de registros de DB a comboBox ID Usuario
+        private void ActualizarRegistros()
+        {
+            //Limpia los elementos del comboBox ID Usuario
+            cbxIdUsuario.Items.Clear();
+
+            //Crea una conexion a la DB
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta la columna idUsuarios de la tabla Usuarios
+                string query = "SELECT idUsuario FROM usuarios;";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //Inserta los registros de idUsuario en el comboBox cbxUsuario
+                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
+                        }
+                    }
+                }
+            }
         }
     }
 }
