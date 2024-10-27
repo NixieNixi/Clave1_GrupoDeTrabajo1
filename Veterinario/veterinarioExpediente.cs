@@ -64,7 +64,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-        // <summary>
+        /// <summary>
         /// Evento click del botón 'Ir a Cita'. Este evento se activa cuando el usuario hace clic en el btn.
         /// Oculta el formulario actual y abre el formulario de veterinarioCita.
         /// </summary>
@@ -85,6 +85,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Show();
         }
 
+        /// <summary>
+        /// Metodo cambio de seleccion en el comboBox ID Mascota. Se activa al cambiar la seleccion del comboBox
+        /// Si no se ha seleccionado una opcion se limpian los controles
+        /// Si se ha seleccionado una opcion se llama al metodo CargarDatosMascota con el parametro selecIdMascota
+        /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Limpia los controles si no se ha seleccionado una opción
@@ -95,13 +100,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             else
             {
                 // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
-                string selectedUserId = cbxIdMascota.SelectedItem.ToString();
+                string selecIdMascota = cbxIdMascota.SelectedItem.ToString();
+                // Llamada al metodo CargarDatosMascota;
+                CargarDatosMascota(selecIdMascota);
 
-                SubirDatosMascota(selectedUserId);
-
-                //// Llamamos al método para cargar los datos de citas
-                //string idMascota = txtIdMascota.Text; // Asegúrate de que este campo tenga el ID correcto
-                //SubirHCitas(int.Parse(idMascota)); //Pertene al tap2
             }
         }
 
@@ -109,7 +111,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// Metodo para cargar los datos de la mascota y el dueño según el ID de usuario seleccionado.
         /// </summary>
         /// <param name="selectedUserId"></param>
-        private void SubirDatosMascota(string selectedUserId)
+        /// recibe como parametro de tipo string selectedUserId que guarda la seleccion en el comboBox ID Mascota
+        private void CargarDatosMascota(string selectedUserId)
         {
 
             // Consulta SQL para obtener los datos del usuario y la mascota asociada.
@@ -129,13 +132,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             FROM usuarios 
             LEFT JOIN mascotas ON usuarios.idUsuario = mascotas.idUsuario
             WHERE mascotas.idMascota = @idMascota;";
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))  // Crear una conexión a la base de datos usando la cadena de conexion.
-            {
 
+            // Crear una conexión a la base de datos usando la cadena de conexion.
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
                 // Crear un comando para ejecutar la consulta.
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    // Agregar el parametro de ID de usuario a la consulta.
+                    // Agregar el parametro de ID de mascota a la consulta.
                     command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
                         // Abrir la conexion a la base de datos.
@@ -148,23 +152,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             if (reader.Read())
                             {
                             // Cargar los datos obtenidos en los controles correspondientes
-                            //gbxDatosDueno
+                            //campos del dueño de la mascota
                                 txtIdDuenoExp.Text = reader["idUsuario"].ToString();
                                 txtNomDueno.Text = reader["Nombre"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
-
+                            //campos de la informacion fundamental de la mascota
                                 txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
                                 txtSexo.Text = reader["Sexo"].ToString();
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
-                            }
-                            else
-                            {
-                                // Mostrar un mensaje si no se encuentran datos.
-                                MessageBox.Show("No se encontraron datos para el ID seleccionado.");
                             }
                         }
                 }
@@ -172,6 +171,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
         }
+
+
         //Fin TapInformacionGeneral
 
 
@@ -298,17 +299,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
 
             // Logica para limpiar los controles del formulario.
-            txtNomDueno.Clear(); // Limpiar el nombre del dueño.
-            txtTelefonoDueno.Clear(); // Limpiar el telefono del dueño.
-            txtCorreoDueno.Clear(); // Limpiar el correo del dueño.
-            txtDireccionDueno.Clear(); // Limpiar la dirección del dueño.
-            txtNomMascota.Clear(); // Limpiar el nombre de la mascota.
-            txtEspecie.Clear(); // Limpiar la especie de la mascota.
-            txtRaza.Clear(); // Limpiar la raza de la mascota.
-            txtSexo.Clear(); // Limpiar el sexo de la mascota.
-            txtFechaNacimiento.Clear(); // Limpiar la fecha de nacimiento de la mascota.
-            dgvHCitas.DataSource = null; // Limpiar el DataGridView.
-
+            txtNomDueno.Clear();            // Limpiar el nombre del dueño.
+            txtTelefonoDueno.Clear();       // Limpiar el telefono del dueño.
+            txtCorreoDueno.Clear();         // Limpiar el correo del dueño.
+            txtDireccionDueno.Clear();      // Limpiar la dirección del dueño.
+            txtNomMascota.Clear();          // Limpiar el nombre de la mascota.
+            txtEspecie.Clear();             // Limpiar la especie de la mascota.
+            txtRaza.Clear();                // Limpiar la raza de la mascota.
+            txtSexo.Clear();                // Limpiar el sexo de la mascota.
+            txtFechaNacimiento.Clear();     // Limpiar la fecha de nacimiento de la mascota.
         }
     }
 }

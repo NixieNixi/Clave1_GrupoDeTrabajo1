@@ -208,7 +208,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sql\clave1_grupodetrabajodb1.condatos.sql" />
     <Content Include="sql\clave1_grupodetrabajodb1.sql" />
   </ItemGroup>
   <ItemGroup />

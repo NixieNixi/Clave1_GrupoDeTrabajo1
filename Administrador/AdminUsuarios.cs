@@ -10,6 +10,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     //Clase parcial que se encarga de las funciones de Administracion de usuarios
     public partial class AdministradorPerfil
     {
+        //Metodo para limpiar los controles del panel de la informacion de usuario
         private void LimpiarControles()
         {
             //Limpia los controles
@@ -22,6 +23,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.Text = null;
         }
 
+        //Metodo para limpiar los controles del panel de la informacion de mascota
         private void LimpiarControlesMascota()
         {
             //se desactivan y limpian los controles de consulta de mascota
@@ -31,6 +33,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombreMascota.Text = null;
         }
 
+        //Metodo para habilitar la edicion de los controles de la informacion del usuario
         private void HabilitarEdicion(bool habilitar)
         {
             //Desahibilta cbxIdUsuario
@@ -56,7 +59,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContraseña.UseSystemPasswordChar = !habilitar;
         }
 
-        //Metodo del boton btnUsuarios que muestra el panel de usuarios
+        //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
@@ -101,6 +104,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             LimpiarControlesMascota();
         }
 
+        //Metodo del boton btnNuevoUser que limpia los controles y preprara para la edicion y posterior creacion de usuario
         private void btnNuevoUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -236,6 +240,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        //Metodo que cancela los cambios en el modo de edicion y recupera al estado anterior
         private void btnCancelarUser_Click(object sender, EventArgs e)
         {
             //habilitar los botones de editar y nuevo usuario
