@@ -139,11 +139,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
-            this.label1.Font = new System.Drawing.Font("Poppins", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(16, 8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 23);
+            this.label1.Size = new System.Drawing.Size(126, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Veterinaria Cat-Dog";
             // 
@@ -151,11 +151,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(188)))), ((int)(((byte)(170)))));
-            this.label2.Font = new System.Drawing.Font("Poppins", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(16, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 42);
+            this.label2.Size = new System.Drawing.Size(185, 29);
             this.label2.TabIndex = 0;
             this.label2.Text = "Administracion";
             // 
@@ -221,6 +221,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnCitas
             // 
             this.btnCitas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnCitas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCitas.ForeColor = System.Drawing.Color.White;
             this.btnCitas.Location = new System.Drawing.Point(32, 272);
             this.btnCitas.Name = "btnCitas";
@@ -233,6 +234,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnPagos
             // 
             this.btnPagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnPagos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPagos.ForeColor = System.Drawing.Color.White;
             this.btnPagos.Location = new System.Drawing.Point(32, 336);
             this.btnPagos.Name = "btnPagos";
@@ -244,6 +246,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnUsuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarios.ForeColor = System.Drawing.Color.White;
             this.btnUsuarios.Location = new System.Drawing.Point(32, 240);
             this.btnUsuarios.Name = "btnUsuarios";
@@ -256,6 +259,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnInventario
             // 
             this.btnInventario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnInventario.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInventario.ForeColor = System.Drawing.Color.White;
             this.btnInventario.Location = new System.Drawing.Point(32, 304);
             this.btnInventario.Name = "btnInventario";
@@ -268,6 +272,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(182)))), ((int)(((byte)(166)))), ((int)(((byte)(124)))));
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Location = new System.Drawing.Point(32, 408);
             this.btnCerrar.Name = "btnCerrar";
@@ -539,11 +544,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label6.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(8, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 22);
+            this.label6.Size = new System.Drawing.Size(65, 15);
             this.label6.TabIndex = 0;
             this.label6.Text = "ID Usuario";
             // 
@@ -551,11 +556,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label7.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(8, 120);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 22);
+            this.label7.Size = new System.Drawing.Size(52, 15);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nombre";
             // 
@@ -563,11 +568,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label13.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(8, 304);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 22);
+            this.label13.Size = new System.Drawing.Size(69, 15);
             this.label13.TabIndex = 0;
             this.label13.Text = "ID Mascota";
             // 
@@ -575,11 +580,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label10.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(8, 176);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(118, 22);
+            this.label10.Size = new System.Drawing.Size(108, 15);
             this.label10.TabIndex = 0;
             this.label10.Text = "Correo Electrónico";
             // 
@@ -587,11 +592,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label12.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(8, 64);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 22);
+            this.label12.Size = new System.Drawing.Size(26, 15);
             this.label12.TabIndex = 0;
             this.label12.Text = "Rol";
             // 
@@ -599,11 +604,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label9.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(272, 64);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(127, 22);
+            this.label9.Size = new System.Drawing.Size(116, 15);
             this.label9.TabIndex = 0;
             this.label9.Text = "Numero de teléfono";
             // 
@@ -611,11 +616,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label11.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(8, 232);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 22);
+            this.label11.Size = new System.Drawing.Size(59, 15);
             this.label11.TabIndex = 0;
             this.label11.Text = "Dirección";
             // 
@@ -623,11 +628,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label8.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(272, 8);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(55, 22);
+            this.label8.Size = new System.Drawing.Size(50, 15);
             this.label8.TabIndex = 0;
             this.label8.Text = "Usuario";
             // 
@@ -635,22 +640,22 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.txtNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtNombre.Enabled = false;
-            this.txtNombre.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(8, 144);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.ReadOnly = true;
-            this.txtNombre.Size = new System.Drawing.Size(200, 25);
+            this.txtNombre.Size = new System.Drawing.Size(200, 21);
             this.txtNombre.TabIndex = 1;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label14.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(272, 304);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(145, 22);
+            this.label14.Size = new System.Drawing.Size(132, 15);
             this.label14.TabIndex = 0;
             this.label14.Text = "Nombre de la mascota";
             // 
@@ -658,16 +663,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtEmail.Enabled = false;
-            this.txtEmail.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(8, 200);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(460, 25);
+            this.txtEmail.Size = new System.Drawing.Size(460, 21);
             this.txtEmail.TabIndex = 1;
             // 
             // btnEditUser
             // 
             this.btnEditUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnEditUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditUser.ForeColor = System.Drawing.Color.White;
             this.btnEditUser.Location = new System.Drawing.Point(8, 368);
             this.btnEditUser.Name = "btnEditUser";
@@ -681,6 +687,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.btnGuardarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
             this.btnGuardarUser.Enabled = false;
+            this.btnGuardarUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
             this.btnGuardarUser.Location = new System.Drawing.Point(336, 368);
             this.btnGuardarUser.Name = "btnGuardarUser";
@@ -692,6 +699,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnNuevoUser
             // 
             this.btnNuevoUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnNuevoUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoUser.ForeColor = System.Drawing.Color.White;
             this.btnNuevoUser.Location = new System.Drawing.Point(112, 368);
             this.btnNuevoUser.Name = "btnNuevoUser";
@@ -704,6 +712,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnCancelarUser
             // 
             this.btnCancelarUser.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(182)))), ((int)(((byte)(148)))));
+            this.btnCancelarUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarUser.ForeColor = System.Drawing.Color.White;
             this.btnCancelarUser.Location = new System.Drawing.Point(224, 368);
             this.btnCancelarUser.Name = "btnCancelarUser";
@@ -717,43 +726,43 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtTelefono.Enabled = false;
-            this.txtTelefono.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(272, 88);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.ReadOnly = true;
-            this.txtTelefono.Size = new System.Drawing.Size(200, 25);
+            this.txtTelefono.Size = new System.Drawing.Size(200, 21);
             this.txtTelefono.TabIndex = 1;
             // 
             // txtDireccion
             // 
             this.txtDireccion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtDireccion.Enabled = false;
-            this.txtDireccion.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDireccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDireccion.Location = new System.Drawing.Point(8, 256);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.ReadOnly = true;
-            this.txtDireccion.Size = new System.Drawing.Size(460, 25);
+            this.txtDireccion.Size = new System.Drawing.Size(460, 21);
             this.txtDireccion.TabIndex = 1;
             // 
             // txtNombreMascota
             // 
             this.txtNombreMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtNombreMascota.Enabled = false;
-            this.txtNombreMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreMascota.Location = new System.Drawing.Point(272, 328);
             this.txtNombreMascota.Name = "txtNombreMascota";
             this.txtNombreMascota.ReadOnly = true;
-            this.txtNombreMascota.Size = new System.Drawing.Size(200, 25);
+            this.txtNombreMascota.Size = new System.Drawing.Size(200, 21);
             this.txtNombreMascota.TabIndex = 1;
             // 
             // cbxIdUsuario
             // 
             this.cbxIdUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.cbxIdUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdUsuario.FormattingEnabled = true;
             this.cbxIdUsuario.Location = new System.Drawing.Point(8, 32);
             this.cbxIdUsuario.Name = "cbxIdUsuario";
-            this.cbxIdUsuario.Size = new System.Drawing.Size(200, 30);
+            this.cbxIdUsuario.Size = new System.Drawing.Size(200, 23);
             this.cbxIdUsuario.TabIndex = 2;
             this.cbxIdUsuario.SelectedIndexChanged += new System.EventHandler(this.cbxIdUsuario_SelectedIndexChanged);
             // 
@@ -761,11 +770,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.cbxIdMascota.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.cbxIdMascota.Enabled = false;
-            this.cbxIdMascota.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascota.FormattingEnabled = true;
             this.cbxIdMascota.Location = new System.Drawing.Point(8, 328);
             this.cbxIdMascota.Name = "cbxIdMascota";
-            this.cbxIdMascota.Size = new System.Drawing.Size(200, 30);
+            this.cbxIdMascota.Size = new System.Drawing.Size(200, 23);
             this.cbxIdMascota.TabIndex = 2;
             this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
@@ -808,7 +817,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.cbxRol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.cbxRol.Enabled = false;
-            this.cbxRol.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxRol.FormattingEnabled = true;
             this.cbxRol.Items.AddRange(new object[] {
             "Cliente",
@@ -816,29 +825,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             "Administrador"});
             this.cbxRol.Location = new System.Drawing.Point(8, 88);
             this.cbxRol.Name = "cbxRol";
-            this.cbxRol.Size = new System.Drawing.Size(200, 30);
+            this.cbxRol.Size = new System.Drawing.Size(200, 23);
             this.cbxRol.TabIndex = 2;
             // 
             // txtUsuario
             // 
             this.txtUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(272, 32);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.ReadOnly = true;
-            this.txtUsuario.Size = new System.Drawing.Size(200, 25);
+            this.txtUsuario.Size = new System.Drawing.Size(200, 21);
             this.txtUsuario.TabIndex = 1;
             // 
             // txtContraseña
             // 
             this.txtContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.txtContraseña.Enabled = false;
-            this.txtContraseña.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(272, 144);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.ReadOnly = true;
-            this.txtContraseña.Size = new System.Drawing.Size(200, 25);
+            this.txtContraseña.Size = new System.Drawing.Size(200, 21);
             this.txtContraseña.TabIndex = 1;
             this.txtContraseña.UseSystemPasswordChar = true;
             // 
@@ -846,11 +855,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.label39.AutoSize = true;
             this.label39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(181)))), ((int)(((byte)(151)))));
-            this.label39.Font = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label39.ForeColor = System.Drawing.Color.White;
             this.label39.Location = new System.Drawing.Point(272, 120);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(80, 22);
+            this.label39.Size = new System.Drawing.Size(70, 15);
             this.label39.TabIndex = 0;
             this.label39.Text = "Contraseña";
             // 

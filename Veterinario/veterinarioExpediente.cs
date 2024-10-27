@@ -138,8 +138,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     // Agregar el parametro de ID de usuario a la consulta.
                     command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
-                    try
-                    {
                         // Abrir la conexion a la base de datos.
                         connection.Open();
 
@@ -149,20 +147,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             // Leer los datos devueltos por la consulta.
                             if (reader.Read())
                             {
-                                // Cargar los datos obtenidos en los controles correspondientes
-                                //gbxDatosDueno
+                            // Cargar los datos obtenidos en los controles correspondientes
+                            //gbxDatosDueno
+                                txtIdDuenoExp.Text = reader["idUsuario"].ToString();
                                 txtNomDueno.Text = reader["Nombre"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
 
-                                //gbxDatosMascota
-                                txtIdMascota.Text = reader["IdMascota"].ToString();
                                 txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
                                 txtSexo.Text = reader["Sexo"].ToString();
-                                //txtPeso.Text = reader["Peso"].ToString();
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
                             }
                             else
@@ -171,13 +167,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 MessageBox.Show("No se encontraron datos para el ID seleccionado.");
                             }
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Manejo de errores: mostrar mensaje si ocurre un error al obtener datos.
-                        MessageBox.Show($"Error al obtener datos: {ex.Message}");
-                    }
-
                 }
 
             }
@@ -313,12 +302,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtTelefonoDueno.Clear(); // Limpiar el telefono del dueño.
             txtCorreoDueno.Clear(); // Limpiar el correo del dueño.
             txtDireccionDueno.Clear(); // Limpiar la dirección del dueño.
-            txtIdMascota.Clear(); // Limpiar el ID de la mascota.
             txtNomMascota.Clear(); // Limpiar el nombre de la mascota.
             txtEspecie.Clear(); // Limpiar la especie de la mascota.
             txtRaza.Clear(); // Limpiar la raza de la mascota.
             txtSexo.Clear(); // Limpiar el sexo de la mascota.
-            txtPeso.Clear(); // Limpiar el peso de la mascota.
             txtFechaNacimiento.Clear(); // Limpiar la fecha de nacimiento de la mascota.
             dgvHCitas.DataSource = null; // Limpiar el DataGridView.
 
