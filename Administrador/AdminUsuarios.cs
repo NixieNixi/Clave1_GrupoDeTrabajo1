@@ -69,25 +69,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelUsuario.Visible = true;
             //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
             btnEditUser.Enabled = false;
-
-            //Crea una conexion a la DB
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            {
-                //Consulta la columna idUsuarios de la tabla Usuarios
-                string query = "SELECT idUsuario FROM usuarios;";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    connection.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            //Inserta los registros de idUsuario en el comboBox cbxUsuario
-                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
-                        }
-                    }
-                }
-            }
+            //Carga los registros de idUsuario de la DB
+            ActualizarRegistros();
         }
         
         //Metodo del boton btnEditUser que cambia los controles al modo de edicion
@@ -266,17 +249,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         //Metodo para guardar los cambios en caso de edicion o creacion de nuevo user
         private void btnGuardarUser_Click(object sender, EventArgs e)
-        {
-            // Obtener los datos de los controles en el formulario
-            string idUsuario = cbxIdUsuario.Text.ToString();
-            string usuario = txtUsuario.Text;
-            string contrasena = txtContrasena.Text;
-            string nombre = txtNombre.Text.ToString();
-            string rol = cbxRol.SelectedItem.ToString();
-            string telefono = txtTelefono.Text;
-            string correo = txtEmail.Text;
-            string direccion = txtDireccion.Text;
-            
+        {   
             //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
             if(cbxIdUsuario.SelectedIndex == -1)
             {
@@ -328,6 +301,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             HabilitarEdicion(false);
 
                             MessageBox.Show("Usuario ingresado correctamente.", "Operacion exitosa!");
+
+                            ActualizarRegistros();
                         }
                         //Si no se cambio ninguna fila mostrar mensaje de error
                         else
@@ -365,14 +340,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     // Asignar parámetros con los datos de los controles del formulario
-                    command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario);
-                    command.Parameters.AddWithValue("@Usuario", txtUsuario);
-                    command.Parameters.AddWithValue("@Contrasena", txtContrasena);
-                    command.Parameters.AddWithValue("@Nombre", txtNombre);
-                    command.Parameters.AddWithValue("@Rol", cbxRol);
-                    command.Parameters.AddWithValue("@Telefono", txtTelefono);
-                    command.Parameters.AddWithValue("@Correo", txtEmail);
-                    command.Parameters.AddWithValue("@Direccion", txtDireccion);
+                    command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario.Text);
+                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedIndex.ToString());
+                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
 
                     //Intentar hacer la actualizacion del registro
                     try
@@ -406,6 +381,32 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error al actualizar los datos: " + ex.Message);
+                    }
+                }
+            }
+        }
+
+        //Metodo de actualizacion de registros de DB a comboBox ID Usuario
+        private void ActualizarRegistros()
+        {
+            //Limpia los elementos del comboBox ID Usuario
+            cbxIdUsuario.Items.Clear();
+
+            //Crea una conexion a la DB
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta la columna idUsuarios de la tabla Usuarios
+                string query = "SELECT idUsuario FROM usuarios;";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            //Inserta los registros de idUsuario en el comboBox cbxUsuario
+                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
+                        }
                     }
                 }
             }
