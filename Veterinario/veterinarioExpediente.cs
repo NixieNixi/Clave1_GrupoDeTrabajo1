@@ -36,13 +36,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado por: NixieNixi
     /// Fecha de Modificacion: 27/10/2024
     /// Descripcion: Se agrego el metodo del btnVolver que devuelve al form veterinariPerfil.
-    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa.
+    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa. y se gg comentarios a los distintos metodos
     ///</remarks>
 
+    
     public partial class veterinarioExpediente : Form
     {
         /// <summary>
-        /// Constructor del formulario veterinarioExpediente.
+        ///Constructor del formulario veterinarioExpediente.
         /// Inicializa los componentes del formulario.
         /// </summary>
         public veterinarioExpediente()
@@ -70,9 +71,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Evento click del botón 'Ir a Cita'. Este evento se activa cuando el usuario hace clic en el btn.
+        ///Evento click del botón 'Ir a Cita'. Este evento se activa cuando el usuario hace clic en el btn.
         /// Oculta el formulario actual y abre el formulario de veterinarioCita.
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIrCita_Click(object sender, EventArgs e)
         {
             // Crea una nueva instancia del formulario veterinarioCita.
@@ -95,6 +98,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// Si no se ha seleccionado una opcion se limpian los controles
         /// Si se ha seleccionado una opcion se llama al metodo CargarDatosMascota con el parametro selecIdMascota
         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Limpia los controles si no se ha seleccionado una opción
@@ -183,8 +188,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         //Inicio TapHistorialMedico
         /// <summary>
-        /// Carga los datos de citas en el DataGridView según el ID de la mascota.
+        ///  Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
+        /// <param name="idMascota"></param>
         private void SubirHCitas(int idMascota)
         {
             // Consulta SQL para obtener los datos de las citas de la mascota.
@@ -227,6 +233,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+
+        /// <summary>
+        /// Metodo para subir los datos de la DB al data grid el Historial del paciente
+        /// </summary>
+        /// <param name="idMascota"></param>
         private void SubirHPaciente(string idMascota)
         {
             //Aqui ira para el dgvHPaciente
@@ -262,6 +273,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+
+        /// <summary>
+        /// Metodo para subir los datos de la DB al data grid del historial de vacunas.
+        /// </summary>
+        /// <param name="idMascota"></param>
         private void SubirHVacuna(string idMascota)
         {
             //Aqui ira para el dgvHVacuna
