@@ -36,6 +36,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado por: NixieNixi
     /// Fecha de Modificacion: 27/10/2024
     /// Descripcion: Se agrego el metodo del btnVolver que devuelve al form veterinariPerfil.
+    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa.
     ///</remarks>
 
     public partial class veterinarioExpediente : Form
