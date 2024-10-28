@@ -32,6 +32,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion: se agg el cbxIdExpedienteMascota, y segun la opcion que el veterinario selecciones, asi le mostrara
     /// segun Id del Expediente(Falta Testeo).
     /// se agrego validaciones y se cambio el como hacia la consulta sql, para evitar ambiguedades futuras. 
+    /// 
+    /// Modificado por: NixieNixi
+    /// Fecha de Modificacion: 27/10/2024
+    /// Descripcion: Se agrego el metodo del btnVolver que devuelve al form veterinariPerfil.
+    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa.
     ///</remarks>
 
     public partial class veterinarioExpediente : Form
@@ -308,6 +313,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtRaza.Clear();                // Limpiar la raza de la mascota.
             txtSexo.Clear();                // Limpiar el sexo de la mascota.
             txtFechaNacimiento.Clear();     // Limpiar la fecha de nacimiento de la mascota.
+        }
+
+        /// <summary>
+        /// metodo para volver al form veterinarioPerfil.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
+            this.Hide();
+            veterinarioPerfil.ShowDialog();
         }
     }
 }

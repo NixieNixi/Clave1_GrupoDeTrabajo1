@@ -61,18 +61,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblHistorialVacunas = new System.Windows.Forms.Label();
             this.tabInformacionGeneral = new System.Windows.Forms.TabPage();
             this.gbxDatosDueno = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblNomDueno = new System.Windows.Forms.Label();
+            this.lblTelefono = new System.Windows.Forms.Label();
+            this.lblCorreo = new System.Windows.Forms.Label();
+            this.lblDireccion = new System.Windows.Forms.Label();
+            this.lblIdDueno = new System.Windows.Forms.Label();
             this.txtDireccionDueno = new System.Windows.Forms.TextBox();
             this.txtCorreoDueno = new System.Windows.Forms.TextBox();
             this.txtNomDueno = new System.Windows.Forms.TextBox();
             this.txtTelefonoDueno = new System.Windows.Forms.TextBox();
             this.txtIdDuenoExp = new System.Windows.Forms.TextBox();
             this.gbxDatosMascota = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblIdMascota = new System.Windows.Forms.Label();
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.txtFechaNacimiento = new System.Windows.Forms.TextBox();
@@ -108,6 +108,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnIrCita
             // 
@@ -351,11 +352,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxDatosDueno
             // 
-            this.gbxDatosDueno.Controls.Add(this.label4);
-            this.gbxDatosDueno.Controls.Add(this.label5);
-            this.gbxDatosDueno.Controls.Add(this.label6);
-            this.gbxDatosDueno.Controls.Add(this.label7);
-            this.gbxDatosDueno.Controls.Add(this.label8);
+            this.gbxDatosDueno.Controls.Add(this.lblNomDueno);
+            this.gbxDatosDueno.Controls.Add(this.lblTelefono);
+            this.gbxDatosDueno.Controls.Add(this.lblCorreo);
+            this.gbxDatosDueno.Controls.Add(this.lblDireccion);
+            this.gbxDatosDueno.Controls.Add(this.lblIdDueno);
             this.gbxDatosDueno.Controls.Add(this.txtDireccionDueno);
             this.gbxDatosDueno.Controls.Add(this.txtCorreoDueno);
             this.gbxDatosDueno.Controls.Add(this.txtNomDueno);
@@ -368,50 +369,50 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosDueno.TabStop = false;
             this.gbxDatosDueno.Text = "Datos Dueño";
             // 
-            // label4
+            // lblNomDueno
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(304, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
-            this.label4.TabIndex = 38;
-            this.label4.Text = "Nombre Dueño";
+            this.lblNomDueno.AutoSize = true;
+            this.lblNomDueno.Location = new System.Drawing.Point(304, 32);
+            this.lblNomDueno.Name = "lblNomDueno";
+            this.lblNomDueno.Size = new System.Drawing.Size(79, 13);
+            this.lblNomDueno.TabIndex = 38;
+            this.lblNomDueno.Text = "Nombre Dueño";
             // 
-            // label5
+            // lblTelefono
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(576, 32);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Telefono";
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(576, 32);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 37;
+            this.lblTelefono.Text = "Telefono";
             // 
-            // label6
+            // lblCorreo
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(38, 13);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Correo";
+            this.lblCorreo.AutoSize = true;
+            this.lblCorreo.Location = new System.Drawing.Point(32, 96);
+            this.lblCorreo.Name = "lblCorreo";
+            this.lblCorreo.Size = new System.Drawing.Size(38, 13);
+            this.lblCorreo.TabIndex = 36;
+            this.lblCorreo.Text = "Correo";
             // 
-            // label7
+            // lblDireccion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 160);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(52, 13);
-            this.label7.TabIndex = 35;
-            this.label7.Text = "Direccion";
+            this.lblDireccion.AutoSize = true;
+            this.lblDireccion.Location = new System.Drawing.Point(32, 160);
+            this.lblDireccion.Name = "lblDireccion";
+            this.lblDireccion.Size = new System.Drawing.Size(52, 13);
+            this.lblDireccion.TabIndex = 35;
+            this.lblDireccion.Text = "Direccion";
             // 
-            // label8
+            // lblIdDueno
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(53, 13);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "ID Dueño";
+            this.lblIdDueno.AutoSize = true;
+            this.lblIdDueno.Location = new System.Drawing.Point(32, 32);
+            this.lblIdDueno.Name = "lblIdDueno";
+            this.lblIdDueno.Size = new System.Drawing.Size(53, 13);
+            this.lblIdDueno.TabIndex = 34;
+            this.lblIdDueno.Text = "ID Dueño";
             // 
             // txtDireccionDueno
             // 
@@ -455,7 +456,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxDatosMascota
             // 
-            this.gbxDatosMascota.Controls.Add(this.label1);
+            this.gbxDatosMascota.Controls.Add(this.lblIdMascota);
             this.gbxDatosMascota.Controls.Add(this.txtSexo);
             this.gbxDatosMascota.Controls.Add(this.cbxIdMascota);
             this.gbxDatosMascota.Controls.Add(this.txtFechaNacimiento);
@@ -474,14 +475,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.TabStop = false;
             this.gbxDatosMascota.Text = "Datos Mascota";
             // 
-            // label1
+            // lblIdMascota
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "ID Mascota";
+            this.lblIdMascota.AutoSize = true;
+            this.lblIdMascota.Location = new System.Drawing.Point(32, 32);
+            this.lblIdMascota.Name = "lblIdMascota";
+            this.lblIdMascota.Size = new System.Drawing.Size(62, 13);
+            this.lblIdMascota.TabIndex = 38;
+            this.lblIdMascota.Text = "ID Mascota";
             // 
             // txtSexo
             // 
@@ -686,11 +687,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblHistorialVacunas;
         private System.Windows.Forms.TabPage tabInformacionGeneral;
         private System.Windows.Forms.GroupBox gbxDatosDueno;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNomDueno;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.Label lblCorreo;
+        private System.Windows.Forms.Label lblDireccion;
+        private System.Windows.Forms.Label lblIdDueno;
         private System.Windows.Forms.TextBox txtDireccionDueno;
         private System.Windows.Forms.TextBox txtCorreoDueno;
         private System.Windows.Forms.TextBox txtNomDueno;
@@ -709,7 +710,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblNomMascota;
         private System.Windows.Forms.TabControl tapExpediente;
         private System.Windows.Forms.ComboBox cbxIdMascota;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblIdMascota;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
