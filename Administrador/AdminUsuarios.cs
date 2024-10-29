@@ -67,6 +67,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //panelCitas.Visible = false;
             //Se muestra el panel Usuario
             panelUsuario.Visible = true;
+            panelUsuario.Dock = DockStyle.Fill;
+            panelBtnUsuarios.Visible = true;
             //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
             btnEditUser.Enabled = false;
             //Carga los registros de idUsuario de la DB
@@ -274,6 +276,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 string query = @"INSERT INTO usuarios (Usuario, Contrasena, Nombre, Rol, Telefono, Correo, Direccion)
                      VALUES (@Usuario, @Contrasena, @Nombre, @Rol, @Telefono, @Correo, @Direccion);";
 
+                if(cbxRol.SelectedIndex == -1)
+                {
+
+                }
+
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     //Asignar los valores de los controles a los parámetros sql
@@ -392,23 +399,32 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Limpia los elementos del comboBox ID Usuario
             cbxIdUsuario.Items.Clear();
 
-            //Crea una conexion a la DB
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //Intentar conectar a DB
+            try
             {
-                //Consulta la columna idUsuarios de la tabla Usuarios
-                string query = "SELECT idUsuario FROM usuarios;";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                //Crea una conexion a la DB
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    connection.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    //Consulta la columna idUsuarios de la tabla Usuarios
+                    string query = "SELECT idUsuario FROM usuarios;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            //Inserta los registros de idUsuario en el comboBox cbxUsuario
-                            cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
+                            while (reader.Read())
+                            {
+                                //Inserta los registros de idUsuario en el comboBox cbxUsuario
+                                cbxIdUsuario.Items.Add(reader["idUsuario"].ToString());
+                            }
                         }
                     }
                 }
+            }
+            catch
+            {
+                //Si no puede conectar mostrar mensaje de error
+                MessageBox.Show("Ha ocurrido un error de conexion", "Error :(");
             }
         }
     }
