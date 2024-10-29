@@ -86,6 +86,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.Controls.Add(this.label1);
             this.Name = "MenuPrincipal";
             this.Text = "Menu principal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

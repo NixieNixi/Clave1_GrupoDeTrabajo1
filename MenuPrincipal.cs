@@ -25,7 +25,7 @@ namespace Clave1_GrupoDeTrabajo1
         /// <summary>
         /// Cadena de conexion a la base de datos.
         /// </summary>
-        public const string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
+        public const string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=LaPataCuak38#$;";
 
         //Constructor del formulario principal.
         public MenuPrincipal()
@@ -52,6 +52,11 @@ namespace Clave1_GrupoDeTrabajo1
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
+        }
+
+        private void MenuPrincipal_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
