@@ -11,7 +11,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     //Clase parcial que se encarga de las funciones de Administracion de usuarios
     public partial class AdministradorPerfil
     {
-        //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
+        //Metodo del boton Usuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
@@ -34,58 +34,42 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Carga los registros de idUsuario de la DB
             ActualizarRegistros();
         }
-        //Metodo para limpiar los controles del panel de la informacion de usuario
 
-        private void LimpiarControles()
+        //Metodo del boton Cancelar que cancela los cambios en el modo de edicion y recupera al estado anterior
+        private void btnCancelarUser_Click(object sender, EventArgs e)
         {
-            //Limpia los controles
-            txtUsuario.Text = null;
-            cbxRol.Text = null;
-            txtTelefono.Text = null;
-            txtNombre.Text = null;
-            txtEmail.Text = null;
-            txtDireccion.Text = null;
-            txtContrasena.Text = null;
+            //habilitar los botones de editar y nuevo usuario
+            btnEditUser.Enabled = true;
+            btnNuevoUser.Enabled = true;
+            //deshabilitar el boton de guardar
+            btnGuardarUser.Enabled = false;
+            //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
+            HabilitarEdicion(false);
+
+            //dependiendo de la seleccion en cbxIdUsuarios:
+            //Sin seleccion - limpia los campos
+            //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
+            cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
-        //Metodo para limpiar los controles del panel de la informacion de mascota
-        private void LimpiarControlesMascota()
+        //Metodo del boton Guardar para guardar los cambios en caso de edicion o creacion de nuevo user
+        private void btnGuardarUser_Click(object sender, EventArgs e)
         {
-            //se desactivan y limpian los controles de consulta de mascota
-            cbxIdMascota.Items.Clear();
-            cbxIdMascota.Enabled = false;
-            cbxIdMascota.Text = null;
-            cbxIdMascota.SelectedIndex = -1;
-            txtNombreMascota.Text = null;
+            //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
+            if (cbxIdUsuario.SelectedIndex == -1)
+            {
+                //Lammada al metodo NuevoUser que guardara la informacion en DB
+                NuevoUser();
+            }
+            //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
+            else
+            {
+                //Llamada al metodo GuardarUser que actualizara la informacion del usuario con el ID correspondiente
+                GuardarUser();
+            }
         }
 
-        //Metodo para habilitar la edicion de los controles de la informacion del usuario
-        private void HabilitarEdicion(bool habilitar)
-        {
-            //Desahibilta cbxIdUsuario
-            cbxIdUsuario.Enabled = !habilitar;
-
-            //Habilita los controles
-            txtUsuario.Enabled = habilitar;
-            cbxRol.Enabled = habilitar;
-            txtTelefono.Enabled = habilitar;
-            txtNombre.Enabled = habilitar;
-            txtEmail.Enabled = habilitar;
-            txtDireccion.Enabled = habilitar;
-            txtContrasena.Enabled = habilitar;
-
-            //Permite la edicion del contenido de los controles
-            txtUsuario.ReadOnly = !habilitar;
-            txtTelefono.ReadOnly = !habilitar;
-            txtNombre.ReadOnly = !habilitar;
-            txtEmail.ReadOnly = !habilitar;
-            txtDireccion.ReadOnly = !habilitar;
-            txtContrasena.ReadOnly = !habilitar;
-            //Permite ver la contraseña para editar
-            txtContrasena.UseSystemPasswordChar = !habilitar;
-        }
-        
-        //Metodo del boton btnEditUser que cambia los controles al modo de edicion
+        //Metodo del boton Editar que cambia los controles al modo de edicion
         private void btnEditUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -101,7 +85,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             LimpiarControlesMascota();
         }
 
-        //Metodo del boton btnNuevoUser que limpia los controles y preprara para la edicion y posterior creacion de usuario
+        //Metodo del boton Nuevo que limpia los controles y preprara para la edicion y posterior creacion de usuario
         private void btnNuevoUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -121,7 +105,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             HabilitarEdicion(true);
         }
 
-        //Metodo de cambio de registro mediante la seleccion de opcion en cbxIdUsuario
+        //Metodo del ComboBox ID Usuario de cambio de registro mediante la seleccion de opcion en cbxIdUsuario
         private void cbxIdUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarControlesMascota();
@@ -150,9 +134,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     //cadena de conexion DB
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
-                    //cadena de consulta DB
-                    string query = "SELECT Nombre, Telefono, Correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuario = @idUsuario;";
-                    
+                        //cadena de consulta DB
+                        string query = "SELECT Nombre, Telefono, Correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuario = @idUsuario;";
+
                         using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
                             //Agregar el parametro a la consulta
@@ -244,11 +228,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo de que cambia la informacion de "Nombre de la mascota" segun el idMascota que se seleccione en el comboBox
+        //Metodo del ComboBox ID Mascota de que cambia la informacion segun el idMascota que se seleccione
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
-            if(cbxIdMascota.SelectedIndex == -1)
+            if (cbxIdMascota.SelectedIndex == -1)
             {
                 LimpiarControlesMascota();
             }
@@ -287,48 +271,63 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     }
                 }
                 //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
-                catch(Exception error)
+                catch (Exception error)
                 {
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
             }
         }
 
-        //Metodo que cancela los cambios en el modo de edicion y recupera al estado anterior
-        private void btnCancelarUser_Click(object sender, EventArgs e)
+        //Metodo para habilitar la edicion de los controles de la informacion del usuario
+        private void HabilitarEdicion(bool habilitar)
         {
-            //habilitar los botones de editar y nuevo usuario
-            btnEditUser.Enabled = true;
-            btnNuevoUser.Enabled = true;
-            //deshabilitar el boton de guardar
-            btnGuardarUser.Enabled = false;
-            //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
-            HabilitarEdicion(false);
+            //Desahibilta cbxIdUsuario
+            cbxIdUsuario.Enabled = !habilitar;
 
-            //dependiendo de la seleccion en cbxIdUsuarios:
-            //Sin seleccion - limpia los campos
-            //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
-            cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
+            //Habilita los controles
+            txtUsuario.Enabled = habilitar;
+            cbxRol.Enabled = habilitar;
+            txtTelefono.Enabled = habilitar;
+            txtNombre.Enabled = habilitar;
+            txtEmail.Enabled = habilitar;
+            txtDireccion.Enabled = habilitar;
+            txtContrasena.Enabled = habilitar;
+
+            //Permite la edicion del contenido de los controles
+            txtUsuario.ReadOnly = !habilitar;
+            txtTelefono.ReadOnly = !habilitar;
+            txtNombre.ReadOnly = !habilitar;
+            txtEmail.ReadOnly = !habilitar;
+            txtDireccion.ReadOnly = !habilitar;
+            txtContrasena.ReadOnly = !habilitar;
+            //Permite ver la contraseña para editar
+            txtContrasena.UseSystemPasswordChar = !habilitar;
         }
 
-        //Metodo para guardar los cambios en caso de edicion o creacion de nuevo user
-        private void btnGuardarUser_Click(object sender, EventArgs e)
-        {   
-            //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
-            if(cbxIdUsuario.SelectedIndex == -1)
-            {
-                //Lammada al metodo NuevoUser que guardara la informacion en DB
-                NuevoUser();
-            }
-            //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
-            else
-            {
-                //Llamada al metodo GuardarUser que actualizara la informacion del usuario con el ID correspondiente
-                GuardarUser();
-            }
-           
+        //Metodo para limpiar los controles del panel de la informacion de usuario
+        private void LimpiarControles()
+        {
+            //Limpia los controles
+            txtUsuario.Text = null;
+            cbxRol.Text = null;
+            txtTelefono.Text = null;
+            txtNombre.Text = null;
+            txtEmail.Text = null;
+            txtDireccion.Text = null;
+            txtContrasena.Text = null;
         }
 
+        //Metodo para limpiar los controles del panel de la informacion de mascota
+        private void LimpiarControlesMascota()
+        {
+            //se desactivan y limpian los controles de consulta de mascota
+            cbxIdMascota.Items.Clear();
+            cbxIdMascota.Enabled = false;
+            cbxIdMascota.Text = null;
+            cbxIdMascota.SelectedIndex = -1;
+            txtNombreMascota.Text = null;
+        }
+        
         //Metodo de insercion de nuevo usuario a DB
         private void NuevoUser()
         {
