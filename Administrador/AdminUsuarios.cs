@@ -11,7 +11,31 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     //Clase parcial que se encarga de las funciones de Administracion de usuarios
     public partial class AdministradorPerfil
     {
+        //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            //Se oculta el resto de los paneles
+            panelCitas.Visible = false;
+            PanelPagos.Visible = false;
+            panelMascotas.Visible = false;
+
+            //----------------------------------------------------------------
+            //Esta instruccion hace que el panel usuario ocupe el espacio designado pero se debe remover despues
+            panelUsuario.Dock = DockStyle.Fill;
+            //----------------------------------------------------------------
+
+            //Se muestran los paneles de Usuario
+            panelUsuario.Visible = true;
+            panelBtnUsuarios.Visible = true;
+
+            //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
+            btnEditUser.Enabled = false;
+
+            //Carga los registros de idUsuario de la DB
+            ActualizarRegistros();
+        }
         //Metodo para limpiar los controles del panel de la informacion de usuario
+
         private void LimpiarControles()
         {
             //Limpia los controles
@@ -28,9 +52,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void LimpiarControlesMascota()
         {
             //se desactivan y limpian los controles de consulta de mascota
-            cbxIdMascota.Enabled = false;
             cbxIdMascota.Items.Clear();
+            cbxIdMascota.Enabled = false;
             cbxIdMascota.Text = null;
+            cbxIdMascota.SelectedIndex = -1;
             txtNombreMascota.Text = null;
         }
 
@@ -58,26 +83,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContrasena.ReadOnly = !habilitar;
             //Permite ver la contraseña para editar
             txtContrasena.UseSystemPasswordChar = !habilitar;
-        }
-
-        //Metodo del boton btnUsuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            //Se oculta el resto de los paneles
-            //panelCitas.Visible = false;
-            //Se muestra el panel Usuario
-            panelUsuario.Visible = true;
-
-            //----------------------------------------------------------------
-            //Esta instruccion hace que el panel usuario ocupe el espacio designado pero se debe remover despues
-            panelUsuario.Dock = DockStyle.Fill;
-            //----------------------------------------------------------------
-
-            panelBtnUsuarios.Visible = true;
-            //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
-            btnEditUser.Enabled = false;
-            //Carga los registros de idUsuario de la DB
-            ActualizarRegistros();
         }
         
         //Metodo del boton btnEditUser que cambia los controles al modo de edicion
@@ -126,70 +131,109 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 LimpiarControles();
                 LimpiarControlesMascota();
+
                 //si no se ha seleccionado una opcion se deshabilita el boton de editar para evitar editar registros vacios
                 btnEditUser.Enabled = false;
             }
             //Dependiendo de la seleccion se muestra un registro
             else
             {
-                //si se selecciona una opcion se habilita el boton editar para editar la informacion
+                //si se selecciona una opcion se habilita el boton editar para editar la informacion de ese usuario
                 btnEditUser.Enabled = true;
 
                 //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
-                string IDSeleccion = cbxIdUsuario.SelectedItem.ToString();
+                string IdSeleccion = cbxIdUsuario.SelectedItem.ToString();
 
-                //cadena de conexion DB
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                //Intentar conectar a DB y hacer la consulta de los datos del usuario
+                try
                 {
+                    //cadena de conexion DB
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                    {
                     //cadena de consulta DB
                     string query = "SELECT Nombre, Telefono, Correo, Direccion, Rol, Usuario, Contrasena FROM usuarios WHERE idUsuario = @idUsuario;";
-                    //Ni idea, esta no me la se
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@idUsuario", IDSeleccion);
-                        connection.Open();
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                    
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-                            if (reader.Read())
+                            //Agregar el parametro a la consulta
+                            command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+
+                            //Establecer conexion a DB
+                            connection.Open();
+
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                // Cargar los datos obtenidos en los controles correspondientes
-                                txtUsuario.Text = reader["Usuario"].ToString();
-                                cbxRol.Text = reader["Rol"].ToString();
-                                txtTelefono.Text = reader["Telefono"].ToString();
-                                txtNombre.Text = reader["Nombre"].ToString();
-                                txtContrasena.Text = reader["Contrasena"].ToString();
-                                txtEmail.Text = reader["Correo"].ToString();
-                                txtDireccion.Text = reader["Direccion"].ToString();
+                                if (reader.Read())
+                                {
+                                    // Cargar los datos obtenidos en los controles correspondientes
+                                    txtUsuario.Text = reader["Usuario"].ToString();
+                                    cbxRol.Text = reader["Rol"].ToString();
+                                    txtTelefono.Text = reader["Telefono"].ToString();
+                                    txtNombre.Text = reader["Nombre"].ToString();
+                                    txtContrasena.Text = reader["Contrasena"].ToString();
+                                    txtEmail.Text = reader["Correo"].ToString();
+                                    txtDireccion.Text = reader["Direccion"].ToString();
+                                }
                             }
                         }
                     }
                 }
-                //Si el rol del usuario se muestra como "Dueno"
-                if(cbxRol.Text=="Dueño")
+                //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+                catch (Exception error)
                 {
-                    //se habilita el cbxIdMascota
-                    cbxIdMascota.Enabled = true;
+                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+                }
 
-                    //Se consultan en DB los registros de idUsuario en la tabla mascotas que coincidan con el idUsuario seleccionado en cbxIdUsuario
-                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                //Si el rol del usuario se muestra como "Dueño"
+                if (cbxRol.Text == "Dueño")
+                {
+                    //Intenta conectar a DB y hacer la cosulta de los id de las mascotas registradas a ese usuario
+                    try
                     {
-                        //cadena de consulta
-                        string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
-
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        //cadena de conexion DB
+                        using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                         {
-                            command.Parameters.AddWithValue("@idUsuario", IDSeleccion);
-                            connection.Open();
-                            using (MySqlDataReader reader = command.ExecuteReader())
+                            //cadena de consulta DB
+                            string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
+
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
                             {
-                                while (reader.Read())
+                                //Agregar el parametro a la consulta
+                                command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+
+                                //Establecer conexion a DB
+                                connection.Open();
+
+                                using (MySqlDataReader reader = command.ExecuteReader())
                                 {
-                                    //cargar los id de las mascotas al comboBox
-                                    cbxIdMascota.Items.Add(reader["idMascota"].ToString());
+                                    //Limpiar los controles de mascota por si habia un registro cargado
+                                    LimpiarControlesMascota();
+
+                                    //Si se encuentran mascotas registradas mostrar los idMascota en cbxidMascota
+                                    if (reader.HasRows)
+                                    {
+                                        while (reader.Read())
+                                        {
+                                            //Cargar los idMascota en el comboBox
+                                            cbxIdMascota.Items.Add(reader["idMascota"].ToString());
+                                        }
+                                        //habilitar el comboBox
+                                        cbxIdMascota.Enabled = true;
+                                    }
+                                    else
+                                    {
+                                        //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
+                                        cbxIdMascota.Text = "No se encontraron mascotas";
+                                        cbxIdMascota.Enabled = false;
+                                    }
                                 }
                             }
                         }
+                    }
+                    //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                     }
                 }
                 //si el rol no es "Dueno" entonces se deshabilita el comboBox cbxIdMascota
@@ -214,25 +258,38 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdMascota.SelectedItem.ToString();
 
-                //cadena de conexion a DB
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                //Intentar conectar a DB y hacer la consulta del nombre de la mascota
+                try
                 {
-                    //cadena de consulta a DB
-                    string query = "SELECT Nombre FROM mascotas WHERE idMascota = @idMascota;";
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    //cadena de conexion a DB
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
-                        command.Parameters.AddWithValue("@idMascota", ConsultaIdMascota);
-                        connection.Open();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        //cadena de consulta a DB
+                        string query = "SELECT Nombre FROM mascotas WHERE idMascota = @idMascota;";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-                            //inserta el nombre de la mascota segun la seleccion
-                            if (reader.Read())
+                            //Agregar el parametro a la consulta
+                            command.Parameters.AddWithValue("@idMascota", ConsultaIdMascota);
+
+                            //Conectar a DB
+                            connection.Open();
+
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                txtNombreMascota.Text = reader["Nombre"].ToString();
+                                //inserta el nombre de la mascota segun la seleccion
+                                if (reader.Read())
+                                {
+                                    txtNombreMascota.Text = reader["Nombre"].ToString();
+                                }
                             }
                         }
                     }
+                }
+                //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+                catch(Exception error)
+                {
+                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
             }
         }
@@ -283,14 +340,41 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    //Asignar los valores de los controles a los parámetros sql
-                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
-                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedItem.ToString());
-                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
-                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                    //Intenta asignar los valores de los controles a los parámetros sql
+                    try
+                    {
+                        //si los campos estan vacios mostrar mensaje de error
+                        if(string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
+                        {
+                            MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no se ha seleccionado un rol mostrar mensaje de error
+                        else if(cbxRol.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
+                        else if(!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
+                        {
+                            MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no hay errores en los datos asignar los parametros con los datos del form
+                        else
+                        {
+                        command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                        command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                        command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                        command.Parameters.AddWithValue("@Rol", cbxRol.Text);
+                        command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                        command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                        command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                        }
+                    }
+                    //si se produce otro error
+                    catch(Exception error)
+                    {
+                        MessageBox.Show("Hay un error en los datos: " + error.Message, "Error", MessageBoxButtons.OK);
+                    }
 
                     //Intenta insertar nuevo registro a DB
                     try
@@ -346,15 +430,36 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    // Asignar parámetros con los datos de los controles del formulario
-                    command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario.Text);
-                    command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
-                    command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                    command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                    command.Parameters.AddWithValue("@Rol", cbxRol.SelectedIndex.ToString());
-                    command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                    command.Parameters.AddWithValue("@Correo", txtEmail.Text);
-                    command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                    try
+                    {
+                        //si los campos estan vacios mostrar mensaje de error
+                        if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
+                        {
+                            MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
+                        else if (!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
+                        {
+                            MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no hay errores en los datos asignar los parametros con los datos del form
+                        else
+                        {
+                            command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario.Text);
+                            command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
+                            command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
+                            command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
+                            command.Parameters.AddWithValue("@Rol", cbxRol.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
+                            command.Parameters.AddWithValue("@Correo", txtEmail.Text);
+                            command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                        }
+                    }
+                    //si se produce otro error
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Hay un error en los datos: " + error.Message, "Error", MessageBoxButtons.OK);
+                    }
 
                     //Intentar hacer la actualizacion del registro
                     try
@@ -426,6 +531,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Si no puede conectar mostrar mensaje de error
                 MessageBox.Show("No hay sistema xd", "Error :(");
 
+                //Cerrar menu de administracion de usuarios
                 panelUsuario.Visible = false;
                 panelBtnUsuarios.Visible = false;
             }
