@@ -44,5 +44,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

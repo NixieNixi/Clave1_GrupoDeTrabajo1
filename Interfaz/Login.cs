@@ -141,7 +141,9 @@ namespace Clave1_GrupoDeTrabajo1
             }
         }
 
-        
+        private void Login_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }
