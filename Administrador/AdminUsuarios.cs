@@ -67,7 +67,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //panelCitas.Visible = false;
             //Se muestra el panel Usuario
             panelUsuario.Visible = true;
+
+            //----------------------------------------------------------------
+            //Esta instruccion hace que el panel usuario ocupe el espacio designado pero se debe remover despues
             panelUsuario.Dock = DockStyle.Fill;
+            //----------------------------------------------------------------
+
             panelBtnUsuarios.Visible = true;
             //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
             btnEditUser.Enabled = false;
@@ -276,11 +281,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 string query = @"INSERT INTO usuarios (Usuario, Contrasena, Nombre, Rol, Telefono, Correo, Direccion)
                      VALUES (@Usuario, @Contrasena, @Nombre, @Rol, @Telefono, @Correo, @Direccion);";
 
-                if(cbxRol.SelectedIndex == -1)
-                {
-
-                }
-
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     //Asignar los valores de los controles a los parámetros sql
@@ -320,7 +320,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Ha ocurrido un error");
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Error :(");
                     }
                 }
             }
@@ -387,7 +387,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     //Si no puede modificar el registro mostrar mensaje de error
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Error al actualizar los datos: " + ex.Message);
+                        MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Error :(");
                     }
                 }
             }
@@ -424,7 +424,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             catch
             {
                 //Si no puede conectar mostrar mensaje de error
-                MessageBox.Show("Ha ocurrido un error de conexion", "Error :(");
+                MessageBox.Show("No hay sistema xd", "Error :(");
+
+                panelUsuario.Visible = false;
+                panelBtnUsuarios.Visible = false;
             }
         }
     }

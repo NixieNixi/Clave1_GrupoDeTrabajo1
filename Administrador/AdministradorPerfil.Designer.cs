@@ -1170,9 +1170,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label15);
             this.panelMascotas.Controls.Add(this.textBox1);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Location = new System.Drawing.Point(576, 96);
+            this.panelMascotas.Location = new System.Drawing.Point(456, 80);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(296, 296);
+            this.panelMascotas.Size = new System.Drawing.Size(200, 72);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
