@@ -30,52 +30,55 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         public veterinarioPerfil()
         {
             InitializeComponent();
-           // lblNombreVeterinario = ;
         }
 
+        //Mostrar el form veterinarioExpediente mediante el boton btnConsultarExpediente
         private void btnConsultarExpediente_Click(object sender, EventArgs e)
         {
-            //
+            //instancia de objeto veterinarioExpediente
             veterinarioExpediente veterinarioExpediente = new veterinarioExpediente();
             this.Hide();
             veterinarioExpediente.ShowDialog();
-
             // Vuelve a mostrar el formulario cuando se cierre el otro
             this.Show(); 
             
         }
 
+        //Mostrar el form veterinarioVacuna mediante el boton btnConsultarVacunas
         private void btnConsultarVacunas_Click(object sender, EventArgs e)
         {
-            //
+            //instancia de objeto 
             veterinarioVacuna veterinarioVacuna = new veterinarioVacuna();
-
-            // Oculta el formulario actual
+            //Oculta el formulario actual
             this.Hide();
-
+            //Abre el formulario veterinarioVacuna
             veterinarioVacuna.ShowDialog();
             this.Show();
 
         }
 
+        //Mostrar el form veterinarioCita mediante el boton btnCita
         private void btnCita_Click(object sender, EventArgs e)
         {
-            //
+            //instancia de objeto 
             veterinarioCita veterinarioCita = new veterinarioCita();
+            //Oculta el formulario actual
             this.Hide();
+            //Abre el formulario veterinarioCita
             veterinarioCita.ShowDialog();
             this.Show();
 
         }
 
+        //Mostrar el menu principal mediante el boton btnCerrar
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            // Cerrar sesion y vouelve al menu principal
+            //Cerrar sesion y vouelve al menu principal
             MenuPrincipal menu = new MenuPrincipal();
-
-            this.Hide(); // Ocultar el formulario actual
-
-            menu.Show(); // Mostrar el formulario del menú principal
+            //Ocultar el formulario actual
+            this.Hide();
+            //Mostrar el formulario del menú principal
+            menu.Show();
 
         }
     }

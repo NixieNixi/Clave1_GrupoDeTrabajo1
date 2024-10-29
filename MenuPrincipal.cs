@@ -22,6 +22,11 @@ namespace Clave1_GrupoDeTrabajo1
     //Formulario Principal de la Aplicacion.
     public partial class MenuPrincipal : Form
     {
+        /// <summary>
+        /// Cadena de conexion a la base de datos.
+        /// </summary>
+        public const string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
+
         //Constructor del formulario principal.
         public MenuPrincipal()
         {
