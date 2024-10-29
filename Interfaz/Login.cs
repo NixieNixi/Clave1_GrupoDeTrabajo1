@@ -64,6 +64,7 @@ namespace Clave1_GrupoDeTrabajo1
             AdministradorPerfil administrador = new AdministradorPerfil();
             this.Hide();
             administrador.ShowDialog();
+            this.Show();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
