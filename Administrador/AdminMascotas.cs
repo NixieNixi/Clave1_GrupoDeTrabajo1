@@ -18,5 +18,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
 
         }
+        {
+            this.SuspendLayout();
+            // 
+            // AdministradorPerfil
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "AdministradorPerfil";
+            this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
+            this.ResumeLayout(false);
+
+        }
     }
 }

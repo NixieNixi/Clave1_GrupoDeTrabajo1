@@ -118,7 +118,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelVeterinarioCita.Controls.Add(this.gbxaInfoExpediente);
             this.panelVeterinarioCita.Location = new System.Drawing.Point(2, 51);
             this.panelVeterinarioCita.Name = "panelVeterinarioCita";
-            this.panelVeterinarioCita.Size = new System.Drawing.Size(813, 811);
+            this.panelVeterinarioCita.Size = new System.Drawing.Size(813, 702);
             this.panelVeterinarioCita.TabIndex = 0;
             // 
             // gbxInfoExamen
@@ -740,7 +740,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(815, 858);
+            this.ClientSize = new System.Drawing.Size(815, 749);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.panelVeterinarioCita);
             this.Controls.Add(this.btnGuardarVeterinarioCita);
