@@ -18,18 +18,5 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
 
         }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // AdministradorPerfil
-            // 
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AdministradorPerfil";
-            this.ResumeLayout(false);
-
-        }
     }
 }

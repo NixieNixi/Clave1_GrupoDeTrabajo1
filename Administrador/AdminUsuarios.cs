@@ -535,18 +535,5 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 panelBtnUsuarios.Visible = false;
             }
         }
-
-        private void InitializeComponent()
-        {
-            this.SuspendLayout();
-            // 
-            // AdministradorPerfil
-            // 
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Name = "AdministradorPerfil";
-            this.ResumeLayout(false);
-
-        }
     }
 }

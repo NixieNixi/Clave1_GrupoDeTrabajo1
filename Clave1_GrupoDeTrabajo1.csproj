@@ -147,12 +147,6 @@
     <EmbeddedResource Include="Administrador\AdministradorPerfil.resx">
       <DependentUpon>AdministradorPerfil.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Administrador\AdminMascotas.resx">
-      <DependentUpon>AdminMascotas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Administrador\AdminUsuarios.resx">
-      <DependentUpon>AdminUsuarios.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dueno\CitaMascota.resx">
       <DependentUpon>CitaMascota.cs</DependentUpon>
     </EmbeddedResource>
