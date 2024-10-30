@@ -60,8 +60,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label13 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.txtIDCitaD = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -359,30 +357,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.monthCalendar1.TabIndex = 29;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
             // 
-            // txtIDCitaD
-            // 
-            this.txtIDCitaD.Location = new System.Drawing.Point(113, 97);
-            this.txtIDCitaD.Name = "txtIDCitaD";
-            this.txtIDCitaD.Size = new System.Drawing.Size(100, 20);
-            this.txtIDCitaD.TabIndex = 31;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(37, 98);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(42, 13);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "ID Cita:";
-            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(800, 344);
-            this.Controls.Add(this.txtIDCitaD);
-            this.Controls.Add(this.label14);
             this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
@@ -450,7 +430,5 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
-        private System.Windows.Forms.TextBox txtIDCitaD;
-        private System.Windows.Forms.Label label14;
     }
 }
