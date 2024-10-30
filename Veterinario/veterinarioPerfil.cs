@@ -81,5 +81,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             menu.Show();
 
         }
+
+        private void veterinarioPerfil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

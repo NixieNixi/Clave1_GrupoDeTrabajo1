@@ -38,68 +38,79 @@ namespace Clave1_GrupoDeTrabajo1
             this.txtLoginContra = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // btnDueño
             // 
-            this.btnDueño.Location = new System.Drawing.Point(41, 14);
+            this.btnDueño.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDueño.ForeColor = System.Drawing.Color.White;
+            this.btnDueño.Location = new System.Drawing.Point(75, 65);
             this.btnDueño.Name = "btnDueño";
             this.btnDueño.Size = new System.Drawing.Size(75, 23);
             this.btnDueño.TabIndex = 0;
             this.btnDueño.Text = "Dueño";
-            this.btnDueño.UseVisualStyleBackColor = true;
+            this.btnDueño.UseVisualStyleBackColor = false;
             this.btnDueño.Click += new System.EventHandler(this.btnDueño_Click);
             // 
             // btnVeterinario
             // 
-            this.btnVeterinario.Location = new System.Drawing.Point(41, 63);
+            this.btnVeterinario.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVeterinario.ForeColor = System.Drawing.Color.White;
+            this.btnVeterinario.Location = new System.Drawing.Point(75, 114);
             this.btnVeterinario.Name = "btnVeterinario";
             this.btnVeterinario.Size = new System.Drawing.Size(75, 23);
             this.btnVeterinario.TabIndex = 0;
             this.btnVeterinario.Text = "Veterinario";
-            this.btnVeterinario.UseVisualStyleBackColor = true;
+            this.btnVeterinario.UseVisualStyleBackColor = false;
             this.btnVeterinario.Click += new System.EventHandler(this.btnVeterinario_Click);
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(41, 124);
+            this.btnAdmin.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(75, 175);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 23);
             this.btnAdmin.TabIndex = 0;
             this.btnAdmin.Text = "Admin";
-            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(197, 63);
+            this.btnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(231, 114);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 0;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(115, 286);
+            this.btnIngresar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(149, 337);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 1;
             this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // txtLoginUser
             // 
-            this.txtLoginUser.Location = new System.Drawing.Point(134, 184);
+            this.txtLoginUser.Location = new System.Drawing.Point(168, 235);
             this.txtLoginUser.Name = "txtLoginUser";
             this.txtLoginUser.Size = new System.Drawing.Size(100, 20);
             this.txtLoginUser.TabIndex = 2;
             // 
             // txtLoginContra
             // 
-            this.txtLoginContra.Location = new System.Drawing.Point(134, 235);
+            this.txtLoginContra.Location = new System.Drawing.Point(168, 286);
             this.txtLoginContra.Name = "txtLoginContra";
             this.txtLoginContra.PasswordChar = '*';
             this.txtLoginContra.Size = new System.Drawing.Size(100, 20);
@@ -108,7 +119,9 @@ namespace Clave1_GrupoDeTrabajo1
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 184);
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(57, 235);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -117,17 +130,29 @@ namespace Clave1_GrupoDeTrabajo1
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 242);
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(47, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Ingrese Contrasena";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.Location = new System.Drawing.Point(-6, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(368, 45);
+            this.panel1.TabIndex = 6;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 366);
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClientSize = new System.Drawing.Size(357, 388);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtLoginContra);
@@ -139,6 +164,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.Controls.Add(this.btnDueño);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,5 +181,6 @@ namespace Clave1_GrupoDeTrabajo1
         private System.Windows.Forms.TextBox txtLoginContra;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

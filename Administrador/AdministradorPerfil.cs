@@ -39,5 +39,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelCitas.Visible = false;
             panelUsuario.Visible = false;
         }
+
+        private void AdministradorPerfil_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
