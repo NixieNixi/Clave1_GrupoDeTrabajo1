@@ -43,12 +43,20 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnPerfilMascotaD = new System.Windows.Forms.Button();
             this.btnCitaMascD = new System.Windows.Forms.Button();
             this.btnCerrarSeD = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 43);
+            this.label1.BackColor = System.Drawing.Color.LightCyan;
+            this.label1.Location = new System.Drawing.Point(152, 117);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 0;
@@ -57,7 +65,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 77);
+            this.label2.BackColor = System.Drawing.Color.LightCyan;
+            this.label2.Location = new System.Drawing.Point(152, 151);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
@@ -66,7 +75,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 110);
+            this.label3.BackColor = System.Drawing.Color.LightCyan;
+            this.label3.Location = new System.Drawing.Point(152, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -75,7 +85,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 139);
+            this.label4.BackColor = System.Drawing.Color.LightCyan;
+            this.label4.Location = new System.Drawing.Point(152, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 3;
@@ -84,7 +95,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(62, 174);
+            this.label5.BackColor = System.Drawing.Color.LightCyan;
+            this.label5.Location = new System.Drawing.Point(152, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 4;
@@ -93,7 +105,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDireccD
             // 
             this.lblDireccD.AutoSize = true;
-            this.lblDireccD.Location = new System.Drawing.Point(126, 174);
+            this.lblDireccD.Location = new System.Drawing.Point(216, 248);
             this.lblDireccD.Name = "lblDireccD";
             this.lblDireccD.Size = new System.Drawing.Size(35, 13);
             this.lblDireccD.TabIndex = 9;
@@ -102,7 +114,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCorreoD
             // 
             this.lblCorreoD.AutoSize = true;
-            this.lblCorreoD.Location = new System.Drawing.Point(126, 139);
+            this.lblCorreoD.Location = new System.Drawing.Point(216, 213);
             this.lblCorreoD.Name = "lblCorreoD";
             this.lblCorreoD.Size = new System.Drawing.Size(35, 13);
             this.lblCorreoD.TabIndex = 8;
@@ -111,7 +123,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTelD
             // 
             this.lblTelD.AutoSize = true;
-            this.lblTelD.Location = new System.Drawing.Point(126, 110);
+            this.lblTelD.Location = new System.Drawing.Point(216, 184);
             this.lblTelD.Name = "lblTelD";
             this.lblTelD.Size = new System.Drawing.Size(35, 13);
             this.lblTelD.TabIndex = 7;
@@ -120,7 +132,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsuD
             // 
             this.lblUsuD.AutoSize = true;
-            this.lblUsuD.Location = new System.Drawing.Point(126, 77);
+            this.lblUsuD.Location = new System.Drawing.Point(216, 151);
             this.lblUsuD.Name = "lblUsuD";
             this.lblUsuD.Size = new System.Drawing.Size(35, 13);
             this.lblUsuD.TabIndex = 6;
@@ -129,7 +141,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNomD
             // 
             this.lblNomD.AutoSize = true;
-            this.lblNomD.Location = new System.Drawing.Point(126, 43);
+            this.lblNomD.Location = new System.Drawing.Point(216, 117);
             this.lblNomD.Name = "lblNomD";
             this.lblNomD.Size = new System.Drawing.Size(41, 13);
             this.lblNomD.TabIndex = 5;
@@ -137,52 +149,118 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnIrTiendaD
             // 
-            this.btnIrTiendaD.Location = new System.Drawing.Point(367, 52);
+            this.btnIrTiendaD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnIrTiendaD.ForeColor = System.Drawing.Color.White;
+            this.btnIrTiendaD.Location = new System.Drawing.Point(20, 16);
             this.btnIrTiendaD.Name = "btnIrTiendaD";
-            this.btnIrTiendaD.Size = new System.Drawing.Size(98, 23);
+            this.btnIrTiendaD.Size = new System.Drawing.Size(98, 25);
             this.btnIrTiendaD.TabIndex = 10;
             this.btnIrTiendaD.Text = "Ir a la Tienda";
-            this.btnIrTiendaD.UseVisualStyleBackColor = true;
+            this.btnIrTiendaD.UseVisualStyleBackColor = false;
             this.btnIrTiendaD.Click += new System.EventHandler(this.btnIrTiendaD_Click);
             // 
             // btnPerfilMascotaD
             // 
-            this.btnPerfilMascotaD.Location = new System.Drawing.Point(367, 81);
+            this.btnPerfilMascotaD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnPerfilMascotaD.ForeColor = System.Drawing.Color.White;
+            this.btnPerfilMascotaD.Location = new System.Drawing.Point(163, 16);
             this.btnPerfilMascotaD.Name = "btnPerfilMascotaD";
-            this.btnPerfilMascotaD.Size = new System.Drawing.Size(98, 23);
+            this.btnPerfilMascotaD.Size = new System.Drawing.Size(98, 25);
             this.btnPerfilMascotaD.TabIndex = 11;
             this.btnPerfilMascotaD.Text = "Perfil Mascota";
-            this.btnPerfilMascotaD.UseVisualStyleBackColor = true;
+            this.btnPerfilMascotaD.UseVisualStyleBackColor = false;
             this.btnPerfilMascotaD.Click += new System.EventHandler(this.btnPerfilMascotaD_Click);
             // 
             // btnCitaMascD
             // 
-            this.btnCitaMascD.Location = new System.Drawing.Point(367, 110);
+            this.btnCitaMascD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCitaMascD.ForeColor = System.Drawing.Color.White;
+            this.btnCitaMascD.Location = new System.Drawing.Point(309, 16);
             this.btnCitaMascD.Name = "btnCitaMascD";
-            this.btnCitaMascD.Size = new System.Drawing.Size(98, 23);
+            this.btnCitaMascD.Size = new System.Drawing.Size(98, 25);
             this.btnCitaMascD.TabIndex = 12;
             this.btnCitaMascD.Text = "Cita de Mascota";
-            this.btnCitaMascD.UseVisualStyleBackColor = true;
+            this.btnCitaMascD.UseVisualStyleBackColor = false;
             this.btnCitaMascD.Click += new System.EventHandler(this.btnCitaMascD_Click);
             // 
             // btnCerrarSeD
             // 
-            this.btnCerrarSeD.Location = new System.Drawing.Point(367, 139);
+            this.btnCerrarSeD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCerrarSeD.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSeD.Location = new System.Drawing.Point(461, 16);
             this.btnCerrarSeD.Name = "btnCerrarSeD";
-            this.btnCerrarSeD.Size = new System.Drawing.Size(98, 23);
+            this.btnCerrarSeD.Size = new System.Drawing.Size(98, 25);
             this.btnCerrarSeD.TabIndex = 13;
             this.btnCerrarSeD.Text = "Cerrar Sesión";
-            this.btnCerrarSeD.UseVisualStyleBackColor = true;
+            this.btnCerrarSeD.UseVisualStyleBackColor = false;
             // 
-            // PerfilDueño
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Teal;
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Location = new System.Drawing.Point(-8, -1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(585, 84);
+            this.panel2.TabIndex = 14;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Teal;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(39, 13);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Veterinaria Cat-Dog";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Teal;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(37, 29);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(89, 29);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Dueño";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.btnIrTiendaD);
+            this.panel1.Controls.Add(this.btnPerfilMascotaD);
+            this.panel1.Controls.Add(this.btnCerrarSeD);
+            this.panel1.Controls.Add(this.btnCitaMascD);
+            this.panel1.Location = new System.Drawing.Point(-8, 292);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(626, 55);
+            this.panel1.TabIndex = 15;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(39, 58);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(91, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "> Perfil del Dueño";
+            // 
+            // PerfilDueno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnCerrarSeD);
-            this.Controls.Add(this.btnCitaMascD);
-            this.Controls.Add(this.btnPerfilMascotaD);
-            this.Controls.Add(this.btnIrTiendaD);
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClientSize = new System.Drawing.Size(573, 343);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblDireccD);
             this.Controls.Add(this.lblCorreoD);
             this.Controls.Add(this.lblTelD);
@@ -193,9 +271,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "PerfilDueño";
+            this.Name = "PerfilDueno";
             this.Text = "PerfilDueño";
             this.Load += new System.EventHandler(this.PerfilDueño_Load);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -217,5 +298,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Button btnPerfilMascotaD;
         private System.Windows.Forms.Button btnCitaMascD;
         private System.Windows.Forms.Button btnCerrarSeD;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label8;
     }
 }
