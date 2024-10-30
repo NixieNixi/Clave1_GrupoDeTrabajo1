@@ -72,25 +72,25 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnUsuarios = new System.Windows.Forms.Panel();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelMascotas = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbxIdMascotaMascota = new System.Windows.Forms.ComboBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.cbxIdUsuarioMascota = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.txtSexoMascota = new System.Windows.Forms.TextBox();
+            this.txtEspecieMascota = new System.Windows.Forms.TextBox();
+            this.txtRazaMascota = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtNombreMascotaMascota = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panelBtnMascota = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
-            this.cbxIdMascotaMascota = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.cbxIdUsuarioMascota = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.txtNombreMascotaMascota = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtEspecieMascota = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtRazaMascota = new System.Windows.Forms.TextBox();
-            this.txtSexoMascota = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -656,6 +656,174 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(24, 216);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
+            this.dateTimePicker1.TabIndex = 3;
+            // 
+            // cbxIdMascotaMascota
+            // 
+            this.cbxIdMascotaMascota.BackColor = System.Drawing.Color.White;
+            this.cbxIdMascotaMascota.Enabled = false;
+            this.cbxIdMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdMascotaMascota.FormattingEnabled = true;
+            this.cbxIdMascotaMascota.Location = new System.Drawing.Point(320, 48);
+            this.cbxIdMascotaMascota.Name = "cbxIdMascotaMascota";
+            this.cbxIdMascotaMascota.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdMascotaMascota.TabIndex = 2;
+            this.cbxIdMascotaMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaMascota_SelectedIndexChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label25.Enabled = false;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.ForeColor = System.Drawing.Color.Black;
+            this.label25.Location = new System.Drawing.Point(320, 24);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(76, 16);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "ID Mascota";
+            // 
+            // cbxIdUsuarioMascota
+            // 
+            this.cbxIdUsuarioMascota.BackColor = System.Drawing.Color.White;
+            this.cbxIdUsuarioMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdUsuarioMascota.FormattingEnabled = true;
+            this.cbxIdUsuarioMascota.Location = new System.Drawing.Point(24, 48);
+            this.cbxIdUsuarioMascota.Name = "cbxIdUsuarioMascota";
+            this.cbxIdUsuarioMascota.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdUsuarioMascota.TabIndex = 2;
+            this.cbxIdUsuarioMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdUsuarioMascota_SelectedIndexChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label15.Enabled = false;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(24, 24);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(71, 16);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "ID Usuario";
+            // 
+            // txtSexoMascota
+            // 
+            this.txtSexoMascota.BackColor = System.Drawing.Color.White;
+            this.txtSexoMascota.Enabled = false;
+            this.txtSexoMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSexoMascota.Location = new System.Drawing.Point(320, 160);
+            this.txtSexoMascota.Name = "txtSexoMascota";
+            this.txtSexoMascota.ReadOnly = true;
+            this.txtSexoMascota.Size = new System.Drawing.Size(264, 22);
+            this.txtSexoMascota.TabIndex = 1;
+            // 
+            // txtEspecieMascota
+            // 
+            this.txtEspecieMascota.BackColor = System.Drawing.Color.White;
+            this.txtEspecieMascota.Enabled = false;
+            this.txtEspecieMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEspecieMascota.Location = new System.Drawing.Point(320, 104);
+            this.txtEspecieMascota.Name = "txtEspecieMascota";
+            this.txtEspecieMascota.ReadOnly = true;
+            this.txtEspecieMascota.Size = new System.Drawing.Size(264, 22);
+            this.txtEspecieMascota.TabIndex = 1;
+            // 
+            // txtRazaMascota
+            // 
+            this.txtRazaMascota.BackColor = System.Drawing.Color.White;
+            this.txtRazaMascota.Enabled = false;
+            this.txtRazaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtRazaMascota.Location = new System.Drawing.Point(24, 160);
+            this.txtRazaMascota.Name = "txtRazaMascota";
+            this.txtRazaMascota.ReadOnly = true;
+            this.txtRazaMascota.Size = new System.Drawing.Size(264, 22);
+            this.txtRazaMascota.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label18.Enabled = false;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(320, 136);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 16);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Sexo";
+            // 
+            // txtNombreMascotaMascota
+            // 
+            this.txtNombreMascotaMascota.BackColor = System.Drawing.Color.White;
+            this.txtNombreMascotaMascota.Enabled = false;
+            this.txtNombreMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreMascotaMascota.Location = new System.Drawing.Point(24, 104);
+            this.txtNombreMascotaMascota.Name = "txtNombreMascotaMascota";
+            this.txtNombreMascotaMascota.ReadOnly = true;
+            this.txtNombreMascotaMascota.Size = new System.Drawing.Size(264, 22);
+            this.txtNombreMascotaMascota.TabIndex = 1;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label19.Enabled = false;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Black;
+            this.label19.Location = new System.Drawing.Point(24, 192);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(133, 16);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Fecha de nacimiento";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label17.Enabled = false;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.ForeColor = System.Drawing.Color.Black;
+            this.label17.Location = new System.Drawing.Point(24, 136);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(40, 16);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Raza";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label16.Enabled = false;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(320, 80);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(58, 16);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Especie";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label21.Enabled = false;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.Black;
+            this.label21.Location = new System.Drawing.Point(24, 80);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(145, 16);
+            this.label21.TabIndex = 0;
+            this.label21.Text = "Nombre de la mascota";
+            // 
             // panelBtnMascota
             // 
             this.panelBtnMascota.BackColor = System.Drawing.Color.CadetBlue;
@@ -717,165 +885,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.button11.TabIndex = 0;
             this.button11.Text = "Cancelar";
             this.button11.UseVisualStyleBackColor = false;
-            // 
-            // cbxIdMascotaMascota
-            // 
-            this.cbxIdMascotaMascota.BackColor = System.Drawing.Color.White;
-            this.cbxIdMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdMascotaMascota.FormattingEnabled = true;
-            this.cbxIdMascotaMascota.Location = new System.Drawing.Point(320, 48);
-            this.cbxIdMascotaMascota.Name = "cbxIdMascotaMascota";
-            this.cbxIdMascotaMascota.Size = new System.Drawing.Size(264, 24);
-            this.cbxIdMascotaMascota.TabIndex = 2;
-            this.cbxIdMascotaMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaMascota_SelectedIndexChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(320, 24);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(76, 16);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "ID Mascota";
-            // 
-            // cbxIdUsuarioMascota
-            // 
-            this.cbxIdUsuarioMascota.BackColor = System.Drawing.Color.White;
-            this.cbxIdUsuarioMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdUsuarioMascota.FormattingEnabled = true;
-            this.cbxIdUsuarioMascota.Location = new System.Drawing.Point(24, 48);
-            this.cbxIdUsuarioMascota.Name = "cbxIdUsuarioMascota";
-            this.cbxIdUsuarioMascota.Size = new System.Drawing.Size(264, 24);
-            this.cbxIdUsuarioMascota.TabIndex = 2;
-            this.cbxIdUsuarioMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdUsuarioMascota_SelectedIndexChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(24, 24);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(71, 16);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "ID Usuario";
-            // 
-            // txtNombreMascotaMascota
-            // 
-            this.txtNombreMascotaMascota.BackColor = System.Drawing.Color.White;
-            this.txtNombreMascotaMascota.Enabled = false;
-            this.txtNombreMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMascotaMascota.Location = new System.Drawing.Point(24, 104);
-            this.txtNombreMascotaMascota.Name = "txtNombreMascotaMascota";
-            this.txtNombreMascotaMascota.ReadOnly = true;
-            this.txtNombreMascotaMascota.Size = new System.Drawing.Size(264, 22);
-            this.txtNombreMascotaMascota.TabIndex = 1;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(24, 80);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(145, 16);
-            this.label21.TabIndex = 0;
-            this.label21.Text = "Nombre de la mascota";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(320, 80);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(58, 16);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Especie";
-            // 
-            // txtEspecieMascota
-            // 
-            this.txtEspecieMascota.BackColor = System.Drawing.Color.White;
-            this.txtEspecieMascota.Enabled = false;
-            this.txtEspecieMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEspecieMascota.Location = new System.Drawing.Point(320, 104);
-            this.txtEspecieMascota.Name = "txtEspecieMascota";
-            this.txtEspecieMascota.ReadOnly = true;
-            this.txtEspecieMascota.Size = new System.Drawing.Size(264, 22);
-            this.txtEspecieMascota.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(24, 136);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(40, 16);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Raza";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(320, 136);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 16);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Sexo";
-            // 
-            // txtRazaMascota
-            // 
-            this.txtRazaMascota.BackColor = System.Drawing.Color.White;
-            this.txtRazaMascota.Enabled = false;
-            this.txtRazaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazaMascota.Location = new System.Drawing.Point(24, 160);
-            this.txtRazaMascota.Name = "txtRazaMascota";
-            this.txtRazaMascota.ReadOnly = true;
-            this.txtRazaMascota.Size = new System.Drawing.Size(264, 22);
-            this.txtRazaMascota.TabIndex = 1;
-            // 
-            // txtSexoMascota
-            // 
-            this.txtSexoMascota.BackColor = System.Drawing.Color.White;
-            this.txtSexoMascota.Enabled = false;
-            this.txtSexoMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSexoMascota.Location = new System.Drawing.Point(320, 160);
-            this.txtSexoMascota.Name = "txtSexoMascota";
-            this.txtSexoMascota.ReadOnly = true;
-            this.txtSexoMascota.Size = new System.Drawing.Size(264, 22);
-            this.txtSexoMascota.TabIndex = 1;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.Color.Black;
-            this.label19.Location = new System.Drawing.Point(24, 192);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(133, 16);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Fecha de nacimiento";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 216);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(264, 22);
-            this.dateTimePicker1.TabIndex = 3;
             // 
             // AdministradorPerfil
             // 
