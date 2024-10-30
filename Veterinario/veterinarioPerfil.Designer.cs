@@ -34,8 +34,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnConsultarVacunas = new System.Windows.Forms.Button();
             this.gbVeterinarioPerfil = new System.Windows.Forms.GroupBox();
-            this.lblNombreVeterinario = new System.Windows.Forms.Label();
             this.lblUserVeterinario = new System.Windows.Forms.Label();
+            this.lblNombreVeterinario = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gbVeterinarioPerfil.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,12 +84,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.gbVeterinarioPerfil.Controls.Add(this.lblUserVeterinario);
             this.gbVeterinarioPerfil.Controls.Add(this.lblNombreVeterinario);
-            this.gbVeterinarioPerfil.Location = new System.Drawing.Point(67, 35);
+            this.gbVeterinarioPerfil.Location = new System.Drawing.Point(153, 137);
             this.gbVeterinarioPerfil.Name = "gbVeterinarioPerfil";
             this.gbVeterinarioPerfil.Size = new System.Drawing.Size(420, 100);
             this.gbVeterinarioPerfil.TabIndex = 4;
             this.gbVeterinarioPerfil.TabStop = false;
             this.gbVeterinarioPerfil.Text = "Veterinario Perfil";
+            // 
+            // lblUserVeterinario
+            // 
+            this.lblUserVeterinario.AutoSize = true;
+            this.lblUserVeterinario.Location = new System.Drawing.Point(239, 50);
+            this.lblUserVeterinario.Name = "lblUserVeterinario";
+            this.lblUserVeterinario.Size = new System.Drawing.Size(96, 13);
+            this.lblUserVeterinario.TabIndex = 1;
+            this.lblUserVeterinario.Text = "Usuario Veterinario";
             // 
             // lblNombreVeterinario
             // 
@@ -99,20 +109,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNombreVeterinario.TabIndex = 0;
             this.lblNombreVeterinario.Text = "Nombre Veterinario";
             // 
-            // lblUserVeterinario
+            // panel1
             // 
-            this.lblUserVeterinario.AutoSize = true;
-            this.lblUserVeterinario.Location = new System.Drawing.Point(207, 50);
-            this.lblUserVeterinario.Name = "lblUserVeterinario";
-            this.lblUserVeterinario.Size = new System.Drawing.Size(96, 13);
-            this.lblUserVeterinario.TabIndex = 1;
-            this.lblUserVeterinario.Text = "Usuario Veterinario";
+            this.panel1.Location = new System.Drawing.Point(-8, -6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(811, 74);
+            this.panel1.TabIndex = 5;
             // 
             // veterinarioPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbVeterinarioPerfil);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnConsultarVacunas);
@@ -120,6 +129,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.btnConsultarExpediente);
             this.Name = "veterinarioPerfil";
             this.Text = "veterinarioPerfil";
+            this.Load += new System.EventHandler(this.veterinarioPerfil_Load);
             this.gbVeterinarioPerfil.ResumeLayout(false);
             this.gbVeterinarioPerfil.PerformLayout();
             this.ResumeLayout(false);
@@ -135,5 +145,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.GroupBox gbVeterinarioPerfil;
         private System.Windows.Forms.Label lblUserVeterinario;
         private System.Windows.Forms.Label lblNombreVeterinario;
+        private System.Windows.Forms.Panel panel1;
     }
 }

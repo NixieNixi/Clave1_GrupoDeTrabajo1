@@ -58,6 +58,9 @@
     <Compile Include="Administrador\AdministradorPerfil.Designer.cs">
       <DependentUpon>AdministradorPerfil.cs</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\AdminMascotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Administrador\AdminUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
