@@ -47,7 +47,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 //Consulta sql para insertar un nueva cita
                 string query = @"INSERT INTO citas (idCita, FechaHora, Motivo, Estado, idUsuario, idMascota)
-                     VALUES (@ID Cita, @Fecha y Hora, @Motivo, @Estado, @ID Usuario, @ID Mascota );";
+                     VALUES (@IDCita, @FechayHora, @Motivo, @Estado, @ID Usuario, @IDMascota );";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
