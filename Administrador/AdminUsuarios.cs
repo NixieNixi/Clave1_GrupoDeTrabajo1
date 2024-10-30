@@ -15,18 +15,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
-            panelCitas.Visible = false;
-            PanelPagos.Visible = false;
             panelMascotas.Visible = false;
-
-            //----------------------------------------------------------------
-            //Esta instruccion hace que el panel usuario ocupe el espacio designado pero se debe remover despues
-            panelUsuario.Dock = DockStyle.Fill;
-            //----------------------------------------------------------------
+            panelMascotas.Dock = DockStyle.None;
+            panelBtnMascota.Visible = false;
+            panelBtnMascota.Dock = DockStyle.None;
 
             //Se muestran los paneles de Usuario
-            panelUsuario.Visible = true;
+            panelBtnUsuarios.Dock = DockStyle.Bottom;
             panelBtnUsuarios.Visible = true;
+            panelUsuario.Dock = DockStyle.Fill;
+            panelUsuario.Visible = true;
 
             //se deshabilita por defecto el boton de editar para evitar que se editen registros vacios
             btnEditUser.Enabled = false;
@@ -441,6 +439,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         {
                             MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
                         }
+                        //si no se ha seleccionado un rol mostrar mensaje de error
+                        else if (cbxRol.SelectedIndex == -1)
+                        {
+                            MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                        }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
                         {
@@ -448,7 +451,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
                             command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
                             command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                            command.Parameters.AddWithValue("@Rol", cbxRol.SelectedIndex.ToString());
+                            command.Parameters.AddWithValue("@Rol", cbxRol.SelectedItem.ToString());
                             command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
                             command.Parameters.AddWithValue("@Correo", txtEmail.Text);
                             command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
