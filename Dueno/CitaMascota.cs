@@ -46,18 +46,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 //Consulta sql para insertar un nueva cita
-                string query = @"INSERT INTO citas (idCita, FechaHora, Motivo, Estado, idUsuario, idMascota)
-                     VALUES (@IDCita, @FechayHora, @Motivo, @Estado, @ID Usuario, @IDMascota );";
+                string query = @"INSERT INTO citas (FechaHora, Motivo, Estado, idUsuarios, idMascota)
+                     VALUES (@FechaHora, @Motivo, @Estado, @IDUsuario, @IDMascota);";
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@ID Usuario", txtIDUsuD.Text);
-
-                    command.Parameters.AddWithValue("@ID Mascota", txtIDMascD.Text);
-                    command.Parameters.AddWithValue("@ID Cita", txtIDCitaD.Text);
+                    command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
+                    command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
                     command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
                     command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
-                    command.Parameters.AddWithValue("@Fecha y Hora", txtFeHoCiD.Text);
+                    command.Parameters.AddWithValue("@FechaHora", txtFeHoCiD.Text);
 
                     connection.Open();
 
