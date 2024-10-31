@@ -30,12 +30,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnCitas_Click(object sender, EventArgs e)
         {
             panelUsuario.Visible = false;
+            panelCitas.Visible = true;
         }
 
         //Metodo para mostrar el panel de inventario
         private void btnInventario_Click(object sender, EventArgs e)
         {
+            panelCitas.Visible = false;
             panelUsuario.Visible = false;
+        }
+
+        private void AdministradorPerfil_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
