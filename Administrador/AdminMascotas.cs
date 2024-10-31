@@ -17,11 +17,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
     ///<remarks>
     ///Modificado por: CanelaFeliz
-    ///Fecha de modificacion: 30/10/24
-    ///Descripcion: Sepa dios aqui falta casi todo :c
+    ///Fecha de modificacion: 31/10/24
+    ///Descripcion: Funcio de consulta de informacion completa
+    ///Falta Fuciones de editar, crear y borrar
     ///</remarks>
     public partial class AdministradorPerfil
     {
+        /// <summary>
+        /// Evento Click del boton 'Mascotas'
+        /// Oculta el resto de paneles y los desacopla de la ventana para que los paneles de las funciones de mascotas tomen
+        /// su posicion correctamnte.
+        /// 
+        /// Carga inicial al combobox los idUsuario
+        /// </summary>
         private void btnMascotas_Click(object sender, EventArgs e)
         {
             panelUsuario.Visible = false;
@@ -34,17 +42,33 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelMascotas.Dock = DockStyle.Fill;
             panelMascotas.Visible = true;
 
-            ActualizarRegistrosMascota();
+            ActualizarRegistrosDueno();
         }
 
+        /// <summary>
+        /// Evento de Cambio de Seleccion de Elemento del combobox 'ID Usuario'
+        /// Dependiendo de la seleccion del combobox:
+        /// 
+        /// Sin seleccion: Limpia los controles y deshablita el boton de editar porque no habria mascota seleccionada
+        /// para editar su informacion
+        /// 
+        /// Con seleccion:
+        /// 1. Muestra el nombre de usuario con le id seleccionado
+        /// 2. Verifica si el usuario tiene mascotas registradas. En caso de tenerlas carga sus id en el combobox 'ID Mascota'
+        /// En caso de no tener mascotas deshabilita el combobox y muestra un mensaje
+        /// </summary>
         private void cbxIdDueno_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxIdDueno.SelectedIndex == -1)
             {
-                //cosas
+                //Limpiar controles
+                LimpiarMascota();
+                //Deshablitar la funcion de editar
+                btnEditM.Enabled = false;
             }
             else
             {
+                //convierte el id seleccionado del combobox
                 string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
 
                 try
@@ -79,60 +103,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
 
-                try
-                {
-                    //cadena de conexion DB
-                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                    {
-                        //cadena de consulta DB
-                        string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
-
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
-                        {
-                            //Agregar el parametro a la consulta
-                            command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
-
-                            //Establecer conexion a DB
-                            connection.Open();
-
-                            using (MySqlDataReader reader = command.ExecuteReader())
-                            {
-                                //Limpiar los controles de mascota por si habia un registro cargado
-                                LimpiarMascota();
-
-                                //Si se encuentran mascotas registradas mostrar los idMascota en cbxidMascota
-                                if (reader.HasRows)
-                                {
-                                    while (reader.Read())
-                                    {
-                                        //Cargar los idMascota en el comboBox
-                                        cbxIdMascotaMascota.Items.Add(reader["idMascota"].ToString());
-                                    }
-                                    //habilitar el comboBox
-                                    cbxIdMascotaMascota.Enabled = true;
-                                }
-                                else
-                                {
-                                    //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
-                                    cbxIdMascotaMascota.Text = "No se encontraron mascotas";
-                                    cbxIdMascotaMascota.Enabled = false;
-                                }
-                            }
-                        }
-                    }
-                }
-                //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
-                catch (Exception error)
-                {
-                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
-                }
+                ActualizarRegistrosMascota();
             }
         }
 
+        /// <summary>
+        /// Evento de Cambio de Seleccion de Elemento del combobox 'ID Mascota'
+        /// Dependiendo de la seleccion del combobox:
+        /// 
+        /// Sin seleccion: Limpia los controles.
+        /// Con seleccion: Muestra la informacion de la mascota seleccionada
+        /// </summary>
         private void cbxIdMascotaMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
-            if (cbxIdMascotaMascota.SelectedIndex == -1)
+            if (cbxIdMascotaM.SelectedIndex == -1)
             {
                 LimpiarMascota();
             }
@@ -140,7 +125,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             else
             {
                 //guarda el texto de la seleccion en ConsultaIdMascota
-                string ConsultaIdMascota = cbxIdMascotaMascota.SelectedItem.ToString();
+                string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
 
                 //Intentar conectar a DB y hacer la consulta del nombre de la mascota
                 try
@@ -149,7 +134,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         //cadena de consulta a DB
-                        string query = "SELECT Nombre, Raza, Especie, Sexo FROM mascotas WHERE idMascota = @idMascota;";
+                        string query = "SELECT Nombre, Raza, Especie, Sexo, FechaNacimiento FROM mascotas WHERE idMascota = @idMascota;";
 
                         using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
@@ -161,13 +146,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                             using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                //inserta el nombre de la mascota segun la seleccion
+                                //Inserta la informacion en los controles correspondientes
                                 if (reader.Read())
                                 {
-                                    txtNombreMascotaMascota.Text = reader["Nombre"].ToString();
-                                    txtRazaMascota.Text = reader["Raza"].ToString();
-                                    txtEspecieMascota.Text = reader["Especie"].ToString();
-                                    txtSexoMascota.Text = reader["Sexo"].ToString();
+                                    txtNombreMascotaM.Text = reader["Nombre"].ToString();
+                                    txtRazaM.Text = reader["Raza"].ToString();
+                                    txtEspecieM.Text = reader["Especie"].ToString();
+                                    txtSexoM.Text = reader["Sexo"].ToString();
+                                    dtpFechaNacimiento.Value = Convert.ToDateTime(reader["FechaNacimiento"]);
                                 }
                             }
                         }
@@ -181,7 +167,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        private void ActualizarRegistrosMascota()
+        /// <summary>
+        /// Metodo que carga y actualiza los idUsuario en el combobox al abrir el panel, guardar nueva mascota o editar
+        /// </summary>
+        private void ActualizarRegistrosDueno()
         {
             //Limpia los elementos del comboBox ID Usuario
             cbxIdUsuario.Items.Clear();
@@ -192,7 +181,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Crea una conexion a la DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    //Consulta la columna idUsuarios de la tabla Usuarios
+                    //Consulta la columna idUsuarios de la tabla Usuarios que tengan rol de 'Dueño'
                     string query = "SELECT idUsuario FROM usuarios WHERE rol = 'Dueño';";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -219,14 +208,77 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Metodo que actualiza los idMascota en caso de agregar nueva mascota o editarla
+        /// </summary>
+        private void ActualizarRegistrosMascota()
+        {
+            //convierte el id seleccionado del combobox
+            string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
+
+            try
+            {
+                //cadena de conexion DB
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    //cadena de consulta DB
+                    string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        //Agregar el parametro a la consulta
+                        command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+
+                        //Establecer conexion a DB
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            //Limpiar los controles por si habia un registro cargado
+                            LimpiarMascota();
+
+                            //Si se encuentran mascotas registradas mostrar los idMascota en cbxidMascota
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    //Cargar los idMascota en el comboBox
+                                    cbxIdMascotaM.Items.Add(reader["idMascota"].ToString());
+                                }
+                                //habilitar el comboBox
+                                cbxIdMascotaM.Enabled = true;
+                            }
+                            else
+                            {
+                                //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
+                                cbxIdMascotaM.Text = "No se encontraron mascotas";
+                                cbxIdMascotaM.Enabled = false;
+                            }
+                        }
+                    }
+                }
+            }
+            //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+            }
+        }
+
+        /// <summary>
+        /// Metodo de limpieza de los controles del panel de la informacion de la mascota
+        /// </summary
         private void LimpiarMascota()
         {
-            cbxIdMascotaMascota.Text = null;
-            cbxIdMascotaMascota.Items.Clear();
-            txtNombreMascotaMascota.Text = null;
-            txtRazaMascota.Text = null;
-            txtEspecieMascota.Text = null;
-            txtSexoMascota.Text = null;
+            cbxIdMascotaM.Text = null;
+            cbxIdMascotaM.Items.Clear();
+            txtNombreMascotaM.Text = null;
+            txtRazaM.Text = null;
+            txtEspecieM.Text = null;
+            txtSexoM.Text = null;
+
+            //Como DateTimePicker no tiene un valor vacio se coloca la fecha de hoy
+            dtpFechaNacimiento.Value = DateTime.Now;
         }
     }
 }

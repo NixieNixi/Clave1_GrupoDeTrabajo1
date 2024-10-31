@@ -30,6 +30,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// Evento Click del boton 'Usuarios'
         /// Oculta el resto de paneles y los desacopla de la ventana para que los paneles de las funciones de usuario tomen
         /// su posicion correctamnte.
+        /// 
+        /// Carga inicial de los idUsuario al combobox
         /// </summary>
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
@@ -584,7 +586,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         /// <summary>
-        /// Metodo que carga y actualiza los idUsuario del combobox 'ID Usuario' al abrir el panel, editar usuari
+        /// Metodo que carga y actualiza los idUsuario del combobox 'ID Usuario' al abrir el panel, editar usuario
         /// o crear un usuario nuevo
         /// </summary>
         private void ActualizarRegistros()
