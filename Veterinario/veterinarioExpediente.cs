@@ -154,7 +154,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             LEFT JOIN mascotas ON usuarios.idUsuario = mascotas.idUsuario
             WHERE mascotas.idMascota = @idMascota;";
 
-
+            //Agg el try porque, si
             try
             {
 
@@ -212,20 +212,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             WHERE 
                                 citas.idmascota = @idMascota;";
 
-                DataTable dataTable = new DataTable(); // Crea un DataTable para almacenar los resultados
+                // Crea un DataTable para almacenar los resultados de la conulta realizada
+                DataTable dataTable = new DataTable(); 
 
+                 //Inicia la conexion hacia la DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
+
+                    //crea un comando para ejecutar la consultar
                     using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                     {
-                        command.Parameters.AddWithValue("@idMascota", selectedUserId); // Usa el ID de mascota como parámetro
+                        //Agg el param del idMascota a la consulta
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId); 
+                        //Se abre la conexion a la DB
                         connection.Open();
 
+                        //Se utliza un dataAdapter para llener el DataTable con los resultados de la consulta
                         using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
                         {
                             dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
                             dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
 
+                            
                             // Asegúrate de que las columnas del DataGridView estén configuradas correctamente
                             dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterior"; // Cambia esto si tienes un nombre específico
                             dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
@@ -249,8 +257,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
 
         }
-
-
         //Fin TapInformacionGeneral
 
 
