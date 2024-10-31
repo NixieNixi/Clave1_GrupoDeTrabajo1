@@ -79,7 +79,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         /// <summary>
-        /// Evento del boton 'Guardar'
+        /// Evento Click del boton 'Guardar'
         /// Dependiendo de la seleccion de combobox 'ID Usuario':
         /// Si esta vacio llama al metodo NuevoUser para crear un nuevo usuario
         /// Si tiene seleccion se llama al metodo GuardarUser para modificar el registro del usuario seleccionado
@@ -100,7 +100,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo del boton Editar que cambia los controles al modo de edicion
+        /// <summary>
+        /// Evento Click del boton 'Editar'
+        /// Habilita el boton 'Guardar' para guardar los cambios que se hagan en la informciion del usuario
+        /// Deshailita el boton 'Nuevo' para para evitar que se borre la informacion del usuario por
+        /// accidente al limpiar controles
+        /// 
+        /// Llama a la funcion HabilitarEdicion para habilitar la edicion de la informacion en los controles
+        /// Llama a la funcion LimpiarControlesMascota para limpiar los controles de la mascota
+        /// </summary>
         private void btnEditUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -116,7 +124,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             LimpiarControlesMascota();
         }
 
-        //Metodo del boton Nuevo que limpia los controles y preprara para la edicion y posterior creacion de usuario
+        /// <summary>
+        /// Evento Click del boton 'Nuevo'
+        /// Habilita el boton 'Guardar' para guardar los cambios que se hagan en la informciion del usuario
+        /// Deshailita el boton 'Editar'
+        /// 
+        /// Llama a las funciones LimpiarControles y LimpiarControlesMascota para limpiar todos los controles
+        /// Llama a la funcion HabilitarEdicion para poder ingresar informacion en los controles
+        /// </summary>
         private void btnNuevoUser_Click(object sender, EventArgs e)
         {
             //habilita funcion de guardar
@@ -136,7 +151,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             HabilitarEdicion(true);
         }
 
-        //Metodo del ComboBox ID Usuario de cambio de registro mediante la seleccion de opcion en cbxIdUsuario
+        /// <summary>
+        /// Evento Cambio de Seleccion de Elemento del combobox ´ID Usuario´
+        /// Dependiendo de la seleccion del combobox:
+        /// 
+        /// Sin seleccion: Limpia los controles y deshablita el boton de editar porque no habria usuario seleccionado 
+        /// para editar su informacion
+        /// 
+        /// Con seleccion:
+        /// 1. Consulta la informacion del usuario seleccionado y la muestra en los controles
+        /// 2. Si el rol del usuario seleccionado es "Dueño" entonces carga los id de las mascotas que tenga registradas
+        /// en el combobox 'ID Mascota'. Si el usuaio "Dueño" no tiene mascotas registradas se muestra un mesaje en el combobox
+        /// </summary>
         private void cbxIdUsuario_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarControlesMascota();
@@ -259,7 +285,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo del ComboBox ID Mascota de que cambia la informacion segun el idMascota que se seleccione
+        /// <summary>
+        /// Evento Cambio de Seleccion de Elemento del combobox ´ID Mascota´
+        /// Dependiendo de la seleccion del combobox:
+        /// 
+        /// Sin seleccion: Limpia los controles de mascota
+        /// Con seleccion: muestra el nombre de la mascota con el ID seleccionado
+        /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
@@ -309,7 +341,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo para habilitar la edicion de los controles de la informacion del usuario
+        /// <summary>
+        /// Metodo que habilita la edicion de los controles. Primero deshabilita el cambio de seleccion del combobox 'ID Usuario'
+        /// para evitar la edicion de un registro incorrecto y evitar que se inserte un ID al crear un nuevo usuario
+        /// Recibe el parametro booleano 'habilitar' que decide si se va a usar el metodo para habilitar
+        /// o deshabilitar los controles segun el valor true o false
+        /// 
+        /// Habilita/deshabilita los controles de informacion del usuario
+        /// Habilita/deshabilita la edicion de informacion de los controles
+        /// Habilita/deshabilita la visibilidad del texto de contraseña
+        /// </summary>
+        /// <param name="habilitar"></param>
         private void HabilitarEdicion(bool habilitar)
         {
             //Desahibilta cbxIdUsuario
@@ -335,7 +377,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContrasena.UseSystemPasswordChar = !habilitar;
         }
 
-        //Metodo para limpiar los controles del panel de la informacion de usuario
+        /// <summary>
+        /// Metodo que limpia los controles de la informacion del usuario
+        /// </summary>
         private void LimpiarControles()
         {
             //Limpia los controles
@@ -348,7 +392,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtContrasena.Text = null;
         }
 
-        //Metodo para limpiar los controles del panel de la informacion de mascota
+        /// <summary>
+        /// Metodo que limpia los controles de la informacion de mascotas 
+        /// </summary>
         private void LimpiarControlesMascota()
         {
             //se desactivan y limpian los controles de consulta de mascota
@@ -359,7 +405,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtNombreMascota.Text = null;
         }
         
-        //Metodo de insercion de nuevo usuario a DB
+        /// <summary>
+        /// Metodo que inserta la informacion de los controles a base de datos para la creacion de un nuevo usuario
+        /// </summary>
         private void NuevoUser()
         {
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -440,7 +488,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo de actualizacion de datos de usuario en DB
+        /// <summary>
+        /// Metodo que actualiza la informacion de un registro de usuario con la informacion de los controles
+        /// </summary>
         private void GuardarUser()
         {
             //Consulta sql para actualizar los datos del usuario
@@ -533,7 +583,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
-        //Metodo de actualizacion de registros de DB a comboBox ID Usuario
+        /// <summary>
+        /// Metodo que carga y actualiza los idUsuario del combobox 'ID Usuario' al abrir el panel, editar usuari
+        /// o crear un usuario nuevo
+        /// </summary>
         private void ActualizarRegistros()
         {
             //Limpia los elementos del comboBox ID Usuario
