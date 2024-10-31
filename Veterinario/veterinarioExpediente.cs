@@ -125,6 +125,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
                 SubirHCitas(selecIdMascota);
+                SubirHPaciente(selecIdMascota);
                 
             }
         }
@@ -278,39 +279,47 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de la DB al data grid el Historial del paciente
         /// </summary>
-        /// <param name="idMascota"></param>
-        private void SubirHPaciente(string idMascota)
+        /// <param name="selectedUserId"></param>
+        private void SubirHPaciente(string selectedUserId)
         {
             //Aqui ira para el dgvHPaciente
             //FALTA PONER LA CONNSULTA SQL
-            string query = @"
+            string querypaciente = @"
                     SELECT 
                         
                     FROM  
                     WHERE IdMascota = @idMascota;";
-
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //debe pedir cirugia,examenes,alergia,medicamentos actuales, ultima vacuna,fecha
+            //el tipo de cirugia sale de la tabla cirugia, examenes sale del tipo en la tabla examen,
+            try
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    command.Parameters.AddWithValue("@idMascota", idMascota);
-
-                    try
+                    using (MySqlCommand command = new MySqlCommand(querypaciente, connection))
                     {
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
                         connection.Open();
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-                            // Asigna el DataTable al DataGrid
-                            dgvHPaciente.DataSource = dt;
+                            dgvHPaciente.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                            HashSet<int> addedIds = new HashSet<int>();
+
+                            while (reader.Read())
+                            {
+
+                                dgvHPaciente.Rows.Add(
+                                    //reader
+                                    );
+                            }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al cargar el Historial Medico del Paciente: {ex.Message}");
-                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurro un error al cargar el historial del Paciente: " + ex.Message);
             }
         }
 
