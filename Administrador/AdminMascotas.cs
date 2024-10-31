@@ -18,8 +18,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///<remarks>
     ///Modificado por: CanelaFeliz
     ///Fecha de modificacion: 31/10/24
-    ///Descripcion: Funcion de consulta y crear completas, funcion de editar en proceso
+    ///Descripcion: Funcion de consulta, nuevo y editar completas
     ///Falta Fucion de borrar
+    ///Faltan agregar paneles para terminar funciones
     ///</remarks>
     public partial class AdministradorPerfil
     {
@@ -445,7 +446,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
-                //Consulta sql para insertar un nuevo usuario
+                //Consulta sql para insertar una nueva mascota
                 string query = @"INSERT INTO mascotas (Nombre, FechaNacimiento, Especie, Raza, Sexo, idUsuario)
                      VALUES (@Nombre, @FechaNacimiento, @Especie, @Raza, @Sexo, @idUsuario);";
 
@@ -488,13 +489,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
                         if (rowsAffected > 0)
                         {
-                            //Se deshabilita la edicion para evitar ingresar el mismo usuario nuevamente por accidente
+                            //Se deshabilita la edicion para evitar ingresar la misma mascota nuevamente por accidente
                             HabilitarEdicion(false);
 
                             MessageBox.Show("Nueva mascota registrada ♡", "Operacion exitosa!");
 
+                            //Se actualizan los registros
                             ActualizarRegistrosDueno();
                             ActualizarRegistrosMascota();
+
+                            //Se limpian los campos y se deshabilta el boton cancelar
                             btnCancelarM_Click(this, EventArgs.Empty);
                         }
                         //Si no se cambio ninguna fila mostrar mensaje de error
@@ -503,7 +507,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             MessageBox.Show("Error al ingresar mascota.", "Error :(");
                         }
 
-                        //Si no puede hacer el registro mostrar mensaje de error
+                    //Si no puede hacer el registro mostrar mensaje de error
                     }
                     catch (Exception ex)
                     {
@@ -518,16 +522,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void GuardarMascota()
         {
-            //Consulta sql para actualizar los datos del usuario
-            string query = @"UPDATE usuarios 
-                     SET Usuario = @Usuario, 
-                         Contrasena = @Contrasena, 
-                         Nombre = @nombre,
-                         Rol = @Rol, 
-                         Telefono = @Telefono, 
-                         Correo = @Correo, 
-                         Direccion = @Direccion
-                     WHERE idUsuario = @idUsuario";
+            //Consulta sql para actualizar los datos de la mascota
+            string query = @"UPDATE mascotas 
+                     SET Nombre = @Nombre, 
+                         FechaNacimiento= @FechaNacimiento, 
+                         Especie = @Especie,
+                         Raza = @Raza, 
+                         Sexo = @Sexo, 
+                         idUsuario = @idUsuario
+                     WHERE idMascota = @idMascota;";
             //WHERE indica en que registro se hara la actualizacion
 
             //Realizar la actualización en la base de datos
@@ -538,31 +541,20 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     try
                     {
                         //si los campos estan vacios mostrar mensaje de error
-                        if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
+                        if (string.IsNullOrEmpty(txtNombreMascotaM.Text) || string.IsNullOrEmpty(txtRazaM.Text) || string.IsNullOrEmpty(txtEspecieM.Text) || string.IsNullOrEmpty(txtSexoM.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
-                        }
-                        //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
-                        else if (!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
-                        {
-                            MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
-                        }
-                        //si no se ha seleccionado un rol mostrar mensaje de error
-                        else if (cbxRol.SelectedIndex == -1)
-                        {
-                            MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
                         {
-                            command.Parameters.AddWithValue("@idUsuario", cbxIdUsuario.Text);
-                            command.Parameters.AddWithValue("@Usuario", txtUsuario.Text);
-                            command.Parameters.AddWithValue("@Contrasena", txtContrasena.Text);
-                            command.Parameters.AddWithValue("@Nombre", txtNombre.Text);
-                            command.Parameters.AddWithValue("@Rol", cbxRol.SelectedItem.ToString());
-                            command.Parameters.AddWithValue("@Telefono", txtTelefono.Text);
-                            command.Parameters.AddWithValue("@Correo", txtEmail.Text);
-                            command.Parameters.AddWithValue("@Direccion", txtDireccion.Text);
+                            command.Parameters.AddWithValue("@idMascota", cbxIdMascotaM.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Nombre", txtNombreMascotaM.Text);
+                            command.Parameters.AddWithValue("@FechaNacimiento", dtpFechaNacimiento.Value);
+                            command.Parameters.AddWithValue("@Especie", txtEspecieM.Text);
+                            command.Parameters.AddWithValue("@Raza", txtRazaM.Text);
+                            command.Parameters.AddWithValue("@Sexo", txtSexoM.Text);
+                            command.Parameters.AddWithValue("@idUsuario", cbxIdDueno.SelectedItem.ToString());
                         }
                     }
                     //si se produce otro error
@@ -580,18 +572,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         //variable para comprobar cuantas filas fueron modificadas
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        //Si al menos una fila fue cambiada se muestra el mensaje de exito
+                        //Comprobar si la actualizacion fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue cambiada
                         if (rowsAffected > 0)
                         {
-                            MessageBox.Show("Datos actualizados correctamente", "Operacion exitosa");
-
-                            //Se deshabilita la edicion para evitar actualizar los datos por accidente
+                            //Se deshabilita la edicion para evitar editar la misma mascota nuevamente por accidente
                             HabilitarEdicion(false);
-                            //habilitar los botones de editar y nuevo usuario
-                            btnEditUser.Enabled = true;
-                            btnNuevoUser.Enabled = true;
-                            //deshabilitar el boton de guardar
-                            btnGuardarUser.Enabled = false;
+
+                            MessageBox.Show("Informacion actualizada ♡", "Operacion exitosa!");
+
+                            //se limpian los campos y se deshabilita el boton cancelar
+                            btnCancelarM_Click(this, EventArgs.Empty);
                         }
                         //Si no se cambio ninguna fila se muestra un mensaje de error
                         else

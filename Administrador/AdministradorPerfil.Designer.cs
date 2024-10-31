@@ -654,10 +654,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMascotas.Location = new System.Drawing.Point(240, 70);
+            this.panelMascotas.Location = new System.Drawing.Point(416, 70);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(644, 431);
+            this.panelMascotas.Size = new System.Drawing.Size(150, 100);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -930,8 +929,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.panelBtnMascota);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnUsuarios);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
