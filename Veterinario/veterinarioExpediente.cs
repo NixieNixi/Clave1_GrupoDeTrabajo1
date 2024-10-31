@@ -233,16 +233,26 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
                             dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
 
-                            
-                            // Asegúrate de que las columnas del DataGridView estén configuradas correctamente
-                            dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterior"; // Cambia esto si tienes un nombre específico
-                            dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
-                            dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
-                            dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Fisico";
-                            dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnostico";
-                            dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
-                            dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
-                            dgvHCitas.Columns["Notas"].HeaderText = "Notas";
+
+                            //Aqui verifica que el datatable existan filas 
+                            if (dataTable.Rows.Count > 0)
+                            {
+                                // Asegúrate de que las columnas del DataGridView estén configuradas correctamente
+                                dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterior"; // Cambia esto si tienes un nombre específico
+                                dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
+                                dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
+                                dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Fisico";
+                                dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnostico";
+                                dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
+                                dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
+                                dgvHCitas.Columns["Notas"].HeaderText = "Notas";
+
+                            }
+                            else
+                            {
+                                //si no encuentra el hisotrial de citas
+                                MessageBox.Show("No se encontro citas >C");
+                            }
 
                         }
                     }
