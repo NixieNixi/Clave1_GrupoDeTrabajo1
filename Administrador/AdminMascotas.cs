@@ -50,8 +50,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnEditM_Click(object sender, EventArgs e)
         {
             btnGuardarM.Enabled = true;
+            btnNuevoM.Enabled = false;
             habilitar = true;
             HabilitarEdicionM(true);
+        }
+
+        private void btnNuevoM_Click(object sender, EventArgs e)
+        {
+                btnGuardarM.Enabled = true;
+                btnEditM.Enabled = false;
+                habilitar = true;
+
+                LimpiarMascota();
+                HabilitarEdicionM(true);
         }
 
         /// <summary>
@@ -68,54 +79,56 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void cbxIdDueno_SelectedIndexChanged(object sender, EventArgs e)
         {
-           if(habilitar == false)
+            if (cbxIdDueno.SelectedIndex == -1)
             {
-                if (cbxIdDueno.SelectedIndex == -1)
-                {
-                    //Limpiar controles
-                    LimpiarMascota();
-                    //Deshablitar la funcion de editar
-                    btnEditM.Enabled = false;
-                }
-                else
-                {
-                    //convierte el id seleccionado del combobox
-                    string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
+                //Limpiar controles
+                LimpiarMascota();
 
-                    try
+                //Deshablitar la funcion de editar
+                btnEditM.Enabled = false;
+                btnNuevoM.Enabled = false;
+            }
+            else
+            {
+                btnNuevoM.Enabled = true;
+                //convierte el id seleccionado del combobox
+                string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
+
+                try
+                {
+                    //cadena de conexion DB
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
-                        //cadena de conexion DB
-                        using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                        //cadena de consulta DB
+                        string query = "SELECT Nombre FROM usuarios WHERE idUsuario = @idUsuario;";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-                            //cadena de consulta DB
-                            string query = "SELECT Nombre FROM usuarios WHERE idUsuario = @idUsuario;";
+                            //Agregar el parametro a la consulta
+                            command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
 
-                            using (MySqlCommand command = new MySqlCommand(query, connection))
+                            //Establecer conexion a DB
+                            connection.Open();
+
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                //Agregar el parametro a la consulta
-                                command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
-
-                                //Establecer conexion a DB
-                                connection.Open();
-
-                                using (MySqlDataReader reader = command.ExecuteReader())
+                                if (reader.Read())
                                 {
-                                    if (reader.Read())
-                                    {
-                                        txtNombreDueno.Text = reader["Nombre"].ToString();
-                                    }
+                                    txtNombreDueno.Text = reader["Nombre"].ToString();
                                 }
                             }
                         }
                     }
-                    //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
-                    catch (Exception error)
-                    {
-                        MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
-                    }
-
-                    ActualizarRegistrosMascota();
                 }
+                //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+                }
+            }
+            if (habilitar == false)
+            {
+                ActualizarRegistrosMascota();
             }
         }
 
@@ -136,6 +149,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Dependiendo de la seleccion de idMascota se muestra un nombre
             else
             {
+                btnEditM.Enabled = true;
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
 

@@ -869,6 +869,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnEditM
             // 
             this.btnEditM.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditM.Enabled = false;
             this.btnEditM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditM.ForeColor = System.Drawing.Color.White;
             this.btnEditM.Location = new System.Drawing.Point(16, 16);
@@ -895,6 +896,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnNuevoM
             // 
             this.btnNuevoM.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnNuevoM.Enabled = false;
             this.btnNuevoM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoM.ForeColor = System.Drawing.Color.White;
             this.btnNuevoM.Location = new System.Drawing.Point(120, 16);
@@ -903,6 +905,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNuevoM.TabIndex = 0;
             this.btnNuevoM.Text = "Nuevo";
             this.btnNuevoM.UseVisualStyleBackColor = false;
+            this.btnNuevoM.Click += new System.EventHandler(this.btnNuevoM_Click);
             // 
             // btnCancelarM
             // 
