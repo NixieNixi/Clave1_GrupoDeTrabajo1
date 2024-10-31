@@ -23,7 +23,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///</remarks>
     public partial class AdministradorPerfil
     {
-        bool habilitar = false;
+        bool activar = false;
 
         /// <summary>
         /// Evento Click del boton 'Mascotas'
@@ -49,20 +49,36 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
         private void btnEditM_Click(object sender, EventArgs e)
         {
+            btnCancelarM.Enabled = true;
             btnGuardarM.Enabled = true;
             btnNuevoM.Enabled = false;
-            habilitar = true;
+
+            activar = true;
+            
             HabilitarEdicionM(true);
         }
 
         private void btnNuevoM_Click(object sender, EventArgs e)
         {
-                btnGuardarM.Enabled = true;
-                btnEditM.Enabled = false;
-                habilitar = true;
+            btnCancelarM.Enabled = true;
+            btnGuardarM.Enabled = true;
+            btnEditM.Enabled = false;
 
-                LimpiarMascota();
-                HabilitarEdicionM(true);
+            activar = true;
+
+            LimpiarMascota();
+            HabilitarEdicionM(true);
+        }
+        private void btnCancelarM_Click(object sender, EventArgs e)
+        {
+            btnGuardarM.Enabled = false;
+            btnEditM.Enabled = false;
+            btnNuevoM.Enabled = true;
+
+            HabilitarEdicionM(false);
+            activar = false;
+
+            cbxIdDueno_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
         /// <summary>
@@ -126,7 +142,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
             }
-            if (habilitar == false)
+            if (activar == false)
             {
                 ActualizarRegistrosMascota();
             }
@@ -278,6 +294,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             {
                                 //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
                                 cbxIdMascotaM.Text = "No se encontraron mascotas";
+                                btnEditM.Enabled = false;
                                 cbxIdMascotaM.Enabled = false;
                             }
                         }
@@ -314,7 +331,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //Habilita los controles
             txtUsuario.Enabled = habilitar;
-            cbxIdDueno.Enabled = habilitar;
             txtNombreMascotaM.Enabled = habilitar;
             txtEspecieM.Enabled = habilitar;
             txtRazaM.Enabled = habilitar;

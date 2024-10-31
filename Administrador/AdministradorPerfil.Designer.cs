@@ -910,6 +910,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // btnCancelarM
             // 
             this.btnCancelarM.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelarM.Enabled = false;
             this.btnCancelarM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarM.ForeColor = System.Drawing.Color.White;
             this.btnCancelarM.Location = new System.Drawing.Point(224, 16);
@@ -918,6 +919,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarM.TabIndex = 0;
             this.btnCancelarM.Text = "Cancelar";
             this.btnCancelarM.UseVisualStyleBackColor = false;
+            this.btnCancelarM.Click += new System.EventHandler(this.btnCancelarM_Click);
             // 
             // AdministradorPerfil
             // 
