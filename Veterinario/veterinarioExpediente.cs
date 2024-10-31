@@ -217,7 +217,64 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="idMascota">ID de la mascota para cargar su historial de citas.</param>
         private void SubirHCitas(int idMascota)
         {
-            //se elimino el codigo del metodo SubirHCitas
+            string querycitas = @"
+                SELECT 
+                    citas.idCita, 
+                    citas.Motivo, 
+                    consultas.Sintomas, 
+                    consultas.ExamenFisico, 
+                    consultas.Diagnostico, 
+                    consultas.Tratamiento, 
+                    consultas.Medicamentos, 
+                    consultas.Notas 
+                FROM 
+                    citas 
+                JOIN 
+                    consultas ON citas.idMascota = consultas.idMascota
+                WHERE 
+                    citas.idMascota = @idMascota;";
+
+            // Crea un DataTable para almacenar los resultados de la consulta realizada.
+            DataTable dataTable = new DataTable();
+
+            // Inicia la conexión hacia la base de datos.
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                // Crea un comando para ejecutar la consulta.
+                using (MySqlCommand command = new MySqlCommand(querycitas, connection))
+                {
+                    // Agrega el parámetro del ID de mascota a la consulta.
+                    command.Parameters.AddWithValue("@idMascota", idMascota);
+
+                    // Se abre la conexión a la base de datos.
+                    connection.Open();
+
+                    // Se utiliza un DataAdapter para llenar el DataTable con los resultados de la consulta.
+                    using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
+                    {
+                        dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
+                        dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
+
+                        // Verifica que el DataTable tenga filas y configura los encabezados de las columnas.
+                        if (dataTable.Rows.Count > 0)
+                        {
+                            dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterio AAAA";
+                            dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
+                            dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
+                            dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Físico";
+                            dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnóstico";
+                            dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
+                            dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
+                            dgvHCitas.Columns["Notas"].HeaderText = "Notas";
+                        }
+                        else
+                        {
+                            // Si no encuentra el historial de citas, muestra un mensaje.
+                            MessageBox.Show("No se encontro citas.");
+                        }
+                    }
+                }
+            }
         }
 
 
