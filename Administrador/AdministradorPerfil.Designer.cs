@@ -75,15 +75,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbxIdMascotaMascota = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.cbxIdUsuarioMascota = new System.Windows.Forms.ComboBox();
+            this.cbxIdDueno = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtSexoMascota = new System.Windows.Forms.TextBox();
             this.txtEspecieMascota = new System.Windows.Forms.TextBox();
             this.txtRazaMascota = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
+            this.txtNombreDueno = new System.Windows.Forms.TextBox();
             this.txtNombreMascotaMascota = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.panelBtnMascota = new System.Windows.Forms.Panel();
@@ -639,20 +641,23 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.dateTimePicker1);
             this.panelMascotas.Controls.Add(this.cbxIdMascotaMascota);
             this.panelMascotas.Controls.Add(this.label25);
-            this.panelMascotas.Controls.Add(this.cbxIdUsuarioMascota);
+            this.panelMascotas.Controls.Add(this.cbxIdDueno);
             this.panelMascotas.Controls.Add(this.label15);
             this.panelMascotas.Controls.Add(this.txtSexoMascota);
             this.panelMascotas.Controls.Add(this.txtEspecieMascota);
             this.panelMascotas.Controls.Add(this.txtRazaMascota);
             this.panelMascotas.Controls.Add(this.label18);
+            this.panelMascotas.Controls.Add(this.txtNombreDueno);
             this.panelMascotas.Controls.Add(this.txtNombreMascotaMascota);
             this.panelMascotas.Controls.Add(this.label19);
             this.panelMascotas.Controls.Add(this.label17);
+            this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Location = new System.Drawing.Point(416, 80);
+            this.panelMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMascotas.Location = new System.Drawing.Point(240, 70);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(150, 100);
+            this.panelMascotas.Size = new System.Drawing.Size(644, 431);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -672,7 +677,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascotaMascota.Enabled = false;
             this.cbxIdMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascotaMascota.FormattingEnabled = true;
-            this.cbxIdMascotaMascota.Location = new System.Drawing.Point(320, 48);
+            this.cbxIdMascotaMascota.Location = new System.Drawing.Point(24, 104);
             this.cbxIdMascotaMascota.Name = "cbxIdMascotaMascota";
             this.cbxIdMascotaMascota.Size = new System.Drawing.Size(264, 24);
             this.cbxIdMascotaMascota.TabIndex = 2;
@@ -685,22 +690,22 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label25.Enabled = false;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label25.ForeColor = System.Drawing.Color.Black;
-            this.label25.Location = new System.Drawing.Point(320, 24);
+            this.label25.Location = new System.Drawing.Point(24, 80);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(76, 16);
             this.label25.TabIndex = 0;
             this.label25.Text = "ID Mascota";
             // 
-            // cbxIdUsuarioMascota
+            // cbxIdDueno
             // 
-            this.cbxIdUsuarioMascota.BackColor = System.Drawing.Color.White;
-            this.cbxIdUsuarioMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdUsuarioMascota.FormattingEnabled = true;
-            this.cbxIdUsuarioMascota.Location = new System.Drawing.Point(24, 48);
-            this.cbxIdUsuarioMascota.Name = "cbxIdUsuarioMascota";
-            this.cbxIdUsuarioMascota.Size = new System.Drawing.Size(264, 24);
-            this.cbxIdUsuarioMascota.TabIndex = 2;
-            this.cbxIdUsuarioMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdUsuarioMascota_SelectedIndexChanged);
+            this.cbxIdDueno.BackColor = System.Drawing.Color.White;
+            this.cbxIdDueno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdDueno.FormattingEnabled = true;
+            this.cbxIdDueno.Location = new System.Drawing.Point(24, 48);
+            this.cbxIdDueno.Name = "cbxIdDueno";
+            this.cbxIdDueno.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdDueno.TabIndex = 2;
+            this.cbxIdDueno.SelectedIndexChanged += new System.EventHandler(this.cbxIdDueno_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -720,7 +725,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtSexoMascota.BackColor = System.Drawing.Color.White;
             this.txtSexoMascota.Enabled = false;
             this.txtSexoMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSexoMascota.Location = new System.Drawing.Point(320, 160);
+            this.txtSexoMascota.Location = new System.Drawing.Point(320, 216);
             this.txtSexoMascota.Name = "txtSexoMascota";
             this.txtSexoMascota.ReadOnly = true;
             this.txtSexoMascota.Size = new System.Drawing.Size(264, 22);
@@ -731,7 +736,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtEspecieMascota.BackColor = System.Drawing.Color.White;
             this.txtEspecieMascota.Enabled = false;
             this.txtEspecieMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEspecieMascota.Location = new System.Drawing.Point(320, 104);
+            this.txtEspecieMascota.Location = new System.Drawing.Point(320, 160);
             this.txtEspecieMascota.Name = "txtEspecieMascota";
             this.txtEspecieMascota.ReadOnly = true;
             this.txtEspecieMascota.Size = new System.Drawing.Size(264, 22);
@@ -755,18 +760,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label18.Enabled = false;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(320, 136);
+            this.label18.Location = new System.Drawing.Point(320, 192);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(39, 16);
             this.label18.TabIndex = 0;
             this.label18.Text = "Sexo";
+            // 
+            // txtNombreDueno
+            // 
+            this.txtNombreDueno.BackColor = System.Drawing.Color.White;
+            this.txtNombreDueno.Enabled = false;
+            this.txtNombreDueno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreDueno.Location = new System.Drawing.Point(320, 48);
+            this.txtNombreDueno.Name = "txtNombreDueno";
+            this.txtNombreDueno.ReadOnly = true;
+            this.txtNombreDueno.Size = new System.Drawing.Size(264, 22);
+            this.txtNombreDueno.TabIndex = 1;
             // 
             // txtNombreMascotaMascota
             // 
             this.txtNombreMascotaMascota.BackColor = System.Drawing.Color.White;
             this.txtNombreMascotaMascota.Enabled = false;
             this.txtNombreMascotaMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreMascotaMascota.Location = new System.Drawing.Point(24, 104);
+            this.txtNombreMascotaMascota.Location = new System.Drawing.Point(320, 104);
             this.txtNombreMascotaMascota.Name = "txtNombreMascotaMascota";
             this.txtNombreMascotaMascota.ReadOnly = true;
             this.txtNombreMascotaMascota.Size = new System.Drawing.Size(264, 22);
@@ -798,6 +814,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label17.TabIndex = 0;
             this.label17.Text = "Raza";
             // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label20.Enabled = false;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.Black;
+            this.label20.Location = new System.Drawing.Point(320, 24);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(132, 16);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Nombre del dueño/a";
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -805,7 +834,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label16.Enabled = false;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(320, 80);
+            this.label16.Location = new System.Drawing.Point(320, 136);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 16);
             this.label16.TabIndex = 0;
@@ -818,7 +847,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label21.Enabled = false;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(24, 80);
+            this.label21.Location = new System.Drawing.Point(320, 80);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(145, 16);
             this.label21.TabIndex = 0;
@@ -892,9 +921,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnUsuarios);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
@@ -963,7 +992,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnMascotas;
         private System.Windows.Forms.Label espacio1;
         private System.Windows.Forms.Panel panelMascotas;
-        private System.Windows.Forms.ComboBox cbxIdUsuarioMascota;
+        private System.Windows.Forms.ComboBox cbxIdDueno;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNombreMascotaMascota;
         private System.Windows.Forms.Label label21;
@@ -982,5 +1011,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtNombreDueno;
+        private System.Windows.Forms.Label label20;
     }
 }
