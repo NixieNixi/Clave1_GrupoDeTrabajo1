@@ -346,6 +346,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// <summary>
         /// Metodo que habilita la edicion de los controles. Primero deshabilita el cambio de seleccion del combobox 'ID Usuario'
         /// para evitar la edicion de un registro incorrecto y evitar que se inserte un ID al crear un nuevo usuario
+        /// 
         /// Recibe el parametro booleano 'habilitar' que decide si se va a usar el metodo para habilitar
         /// o deshabilitar los controles segun el valor true o false
         /// 

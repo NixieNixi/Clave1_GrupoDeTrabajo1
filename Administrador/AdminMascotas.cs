@@ -18,11 +18,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///<remarks>
     ///Modificado por: CanelaFeliz
     ///Fecha de modificacion: 31/10/24
-    ///Descripcion: Funcio de consulta de informacion completa
-    ///Falta Fuciones de editar, crear y borrar
+    ///Descripcion: Funcion de consulta, editar y crear completas
+    ///Falta Fuciones guardar y borrar
     ///</remarks>
     public partial class AdministradorPerfil
     {
+        /// <summary>
+        /// Campo que permite activar o desactivar la actualizacion y limpieza de los registros de mascotas
+        /// </summary>
         bool activar = false;
 
         /// <summary>
@@ -47,38 +50,80 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             ActualizarRegistrosDueno();
         }
 
+        /// <summary>
+        /// Este boton solo se activa si hay un usuario y una mascota seleccionada
+        /// 
+        /// Evento Click del boton 'Editar'
+        /// Habilita las funciones de cancelar y guardar.
+        /// Deshabilita la funcion de crear nueva mascota.
+        /// Activa el estado de edicion al cambiar el campo booleano 'activar' a true para permitir el cambio de usuario
+        /// sin limpiar los campos de mascota
+        /// Llama a la funcion HabilitarEdicionM para habilitar la edicion de los controles
+        /// </summary>
         private void btnEditM_Click(object sender, EventArgs e)
         {
+            //habilitar botones
             btnCancelarM.Enabled = true;
             btnGuardarM.Enabled = true;
+            //deshabilitar boton nuevo
             btnNuevoM.Enabled = false;
 
-            activar = true;
-            
+            //activar modo de edicion
+            activar = true;  
             HabilitarEdicionM(true);
         }
 
+        /// <summary>
+        /// Este boton solo se activa si hay un usuario seleccionado
+        /// 
+        /// Evento Click del boton 'Nuevo'
+        /// Habilita las funciones de cancelar y guardar.
+        /// Deshabilita la funcion de Editar
+        /// Activa el estado de edicion al cambiar el campo booleano 'activar' a true para permitir el cambio de usuario
+        /// sin limpiar los campos de mascota
+        /// Llama a la funcion LimpiarMascota para limpiar los controles por si habia un regristro de mascota cargado
+        /// Llama a la funcion HabilitarEdicionM para poder ingresar datos en los controles
+        /// </summary>
         private void btnNuevoM_Click(object sender, EventArgs e)
         {
+            //habilitar botones
             btnCancelarM.Enabled = true;
             btnGuardarM.Enabled = true;
+            //deshabilitar boton editar
             btnEditM.Enabled = false;
 
-            activar = true;
-
+            //limpiar controles
             LimpiarMascota();
+
+            //activar modo de edicion
+            activar = true;
             HabilitarEdicionM(true);
         }
+
+        /// <summary>
+        /// Este boton solo se activa al tener la funcion de editar o nuevo activas
+        /// 
+        /// Evento Click del boton 'Cancelar'
+        /// Deshabilita el boton de guardar para evitar guardar datos vacios o incorrectos
+        /// Habilita el boton nuevo para crear una nueva mascota
+        /// Deshabilita el estado de edicion y limpia los controles
+        /// </summary>
         private void btnCancelarM_Click(object sender, EventArgs e)
         {
+            //Deshabilita el boton de guardar
             btnGuardarM.Enabled = false;
-            btnEditM.Enabled = false;
+            //habilita el boton de nuevo
             btnNuevoM.Enabled = true;
 
-            HabilitarEdicionM(false);
+            //deshabilita el estado de edicion
             activar = false;
+            HabilitarEdicionM(false);
 
+            //vuelve a cargar los idUsuario y los idMasctoa en sus combobox 
             cbxIdDueno_SelectedIndexChanged(this, EventArgs.Empty);
+            
+            //desactiva el boton de cancelar
+            btnCancelarM.Enabled = false;
         }
 
         /// <summary>
@@ -100,13 +145,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Limpiar controles
                 LimpiarMascota();
 
-                //Deshablitar la funcion de editar
+                //Deshablitar la funcion de editar y crear
                 btnEditM.Enabled = false;
                 btnNuevoM.Enabled = false;
             }
             else
             {
+                //Deshabilita la funcion de editar porque no habria ninguna mascota seleccionada
+                btnEditM.Enabled = false;
+                //habilita la creacion de una nueva mascota
                 btnNuevoM.Enabled = true;
+
                 //convierte el id seleccionado del combobox
                 string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
 
@@ -142,6 +191,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
             }
+            //si no se esta en el modo de edicion entonces carga los idMascota en el combobox
             if (activar == false)
             {
                 ActualizarRegistrosMascota();
@@ -165,7 +215,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Dependiendo de la seleccion de idMascota se muestra un nombre
             else
             {
+                //si se ha seleccionado una mascota habilita la funcion de editar
                 btnEditM.Enabled = true;
+
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
 
@@ -313,6 +365,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary
         private void LimpiarMascota()
         {
+            //limpia los controles
             cbxIdMascotaM.Text = null;
             cbxIdMascotaM.Items.Clear();
             txtNombreMascotaM.Text = null;
@@ -324,6 +377,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             dtpFechaNacimiento.Value = DateTime.Now;
         }
 
+        /// <summary>
+        /// Metodo que habilita la edicion de los controles. Primero deshabilita el cambio de seleccion del combobox 'ID Mascota'
+        /// para evitar la edicion de un registro incorrecto y evitar que se inserte un ID al crear una nueva mascota
+        /// 
+        /// Recibe el parametro booleano 'habilitar' que decide si se va a usar el metodo para habilitar
+        /// o deshabilitar los controles segun el valor true o false
+        /// 
+        /// Habilita/deshabilita los controles de informacion de mascota
+        /// Habilita/deshabilita la edicion de informacion de los controles
+        /// </summary>
+        /// <param name="habilitar"></param>
         private void HabilitarEdicionM(bool habilitar)
         {
             //Desahabilta ID Mascota
