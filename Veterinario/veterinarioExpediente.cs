@@ -219,7 +219,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void SubirHCitas(string selectedUserId)
         {
             string querycitas = @"
-                SELECT 
+                SELECT DISTINCT
                     citas.idCita, 
                     citas.Motivo, 
                     consultas.Sintomas, 
@@ -248,6 +248,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                            HashSet<int> addedIds = new HashSet<int>();
 
                             while (reader.Read())
                             {
