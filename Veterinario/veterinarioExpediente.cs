@@ -215,7 +215,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
-        /// <param name="idMascota">ID de la mascota para cargar su historial de citas.</param>
+        /// <param name="selectedUserId">ID de la mascota para cargar su historial de citas.</param>
         private void SubirHCitas(string selectedUserId)
         {
             string querycitas = @"
@@ -251,7 +251,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                             while (reader.Read())
                             {
-                                // Agregar fila manualmente al DataGridView
+                               
                                 dgvHCitas.Rows.Add(
                                     reader["idCita"],
                                     reader["Motivo"],
