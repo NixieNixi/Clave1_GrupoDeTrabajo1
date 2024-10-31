@@ -124,6 +124,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 string selecIdMascota = cbxIdMascota.SelectedItem.ToString();
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
+                SubirHCitas(selecIdMascota);
                 
             }
         }
@@ -215,7 +216,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
         /// <param name="idMascota">ID de la mascota para cargar su historial de citas.</param>
-        private void SubirHCitas(int idMascota)
+        private void SubirHCitas(string selectedUserId)
         {
             string querycitas = @"
                 SELECT 
@@ -244,7 +245,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                 {
                     // Agrega el parámetro del ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", idMascota);
+                    command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
                     // Se abre la conexión a la base de datos.
                     connection.Open();
