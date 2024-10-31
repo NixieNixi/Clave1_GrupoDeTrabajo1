@@ -8,10 +8,29 @@ using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
-    //Clase parcial que se encarga de las funciones de Administracion de usuarios
+    /// <summary>
+    /// Autor: CanelaFeliz
+    /// Fecha: 30/10/24
+    /// Desccripcion: Parte de la clase Administrador perfil que se encarga de las funciones del panel AdminUsuarios donde
+    /// se realizan las operaciones de gestion de usuarios (Consultar, Modificar, Crear y Eliminar usuarios) asi
+    /// como la consulta de sus mascotas (en caso tengan)
+    /// </summary>
+
+    ///<remarks>
+    ///Modificado por: CanelaFeliz
+    ///Fecha de modificacion: 30/10/24
+    ///Descripcion: Manejo de exepciones y correcciones menores
+    ///Falta Funcion de borrar usuario
+    ///Faltan agregar paneles al diseño para terminar funciones
+    ///</remarks>
+   
     public partial class AdministradorPerfil
     {
-        //Metodo del boton Usuarios que muestra el panel de usuarios y carga los registros de idUsuario de DB
+        /// <summary>
+        /// Evento Click del boton 'Usuarios'
+        /// Oculta el resto de paneles y los desacopla de la ventana para que los paneles de las funciones de usuario tomen
+        /// su posicion correctamnte.
+        /// </summary>
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             //Se oculta el resto de los paneles
@@ -33,7 +52,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             ActualizarRegistros();
         }
 
-        //Metodo del boton Cancelar que cancela los cambios en el modo de edicion y recupera al estado anterior
+        /// <summary>
+        /// Evento Click del boton 'Cancelar'
+        /// Habilta los botones 'Editar' y 'Nuevo' para permitir activar la edicion de un usuario (si se ha seleccionado uno)
+        /// o para permitir el ingreso de un nuevo usuario si se hace click en los botones correspondintes.
+        /// 
+        /// Deshabilita los controles del formulario para evitar la edicion de las informacion de los controles
+        /// y deshabilita el boton 'Guardar' para evitar que se guarden cambios por accidente.
+        /// 
+        /// Dependiendo de la seleccion en el combobox 'ID Usuario': 
+        /// Si esta vacio se limpian los controles
+        /// Si tiene seleccion se recupera la informacion de el usuario seleccionado
+        /// </summary>
         private void btnCancelarUser_Click(object sender, EventArgs e)
         {
             //habilitar los botones de editar y nuevo usuario
@@ -44,25 +74,28 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //habilita nuevamente cbxIdUsuario y desahabilita el resto de controles
             HabilitarEdicion(false);
 
-            //dependiendo de la seleccion en cbxIdUsuarios:
-            //Sin seleccion - limpia los campos
-            //Con seleccion - recupera la informacion segun el IdUsuario seleccionado
+            //dependiendo de la seleccion en cbxIdUsuarios limpia los campos o recupera informacion
             cbxIdUsuario_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
-        //Metodo del boton Guardar para guardar los cambios en caso de edicion o creacion de nuevo user
+        /// <summary>
+        /// Evento del boton 'Guardar'
+        /// Dependiendo de la seleccion de combobox 'ID Usuario':
+        /// Si esta vacio llama al metodo NuevoUser para crear un nuevo usuario
+        /// Si tiene seleccion se llama al metodo GuardarUser para modificar el registro del usuario seleccionado
+        /// </summary>
         private void btnGuardarUser_Click(object sender, EventArgs e)
         {
             //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
             if (cbxIdUsuario.SelectedIndex == -1)
             {
-                //Lammada al metodo NuevoUser que guardara la informacion en DB
+                //Lammada al metodo NuevoUser
                 NuevoUser();
             }
             //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
             else
             {
-                //Llamada al metodo GuardarUser que actualizara la informacion del usuario con el ID correspondiente
+                //Llamada al metodo GuardarUser
                 GuardarUser();
             }
         }
