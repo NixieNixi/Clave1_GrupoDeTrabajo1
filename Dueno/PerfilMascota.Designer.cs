@@ -141,9 +141,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(39, 61);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 13);
+            this.label5.Size = new System.Drawing.Size(109, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "> Inicio de Sesión";
+            this.label5.Text = "> Perfil de la Mascota";
             // 
             // label6
             // 

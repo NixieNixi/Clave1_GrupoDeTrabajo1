@@ -18,7 +18,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion: Este formulario maneja la interfaz para los expedientes de veterinarios
     /// en el sistema "Cat-Dog". Proporciona opciones para navegar hacia la sección de citas del veterinario.
     /// </summary>
-    
+
     ///<remarks>
     ///Modificado por: NixieNixi
     ///Fecha de Modificacion:22/10/2024
@@ -36,10 +36,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado por: NixieNixi
     /// Fecha de Modificacion: 27/10/2024
     /// Descripcion: Se agrego el metodo del btnVolver que devuelve al form veterinariPerfil.
-    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa. y se gg comentarios a los distintos metodos
-    ///</remarks>
+    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa.
+    /// y se gg comentarios a los distintos metodos
+    /// 
+    /// Modificado por:
+    /// Fecha de Modificacion:
+    /// Descripcion:
+    /// 
+    /// Modificado por: NixieNixi
+    /// Fecha de Modificacion: 30/10/2024
+    /// Descripcion: Al inicio daba El error CS0246 con el using MySql.Data.MySqlClient, se soluciono con desisntalar 
+    /// el paquete de mysql.data y volverlo a instalar.
+    /// 
+    /// ///</remarks>
 
-    
+
     public partial class veterinarioExpediente : Form
     {
         /// <summary>
@@ -78,7 +89,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void btnIrCita_Click(object sender, EventArgs e)
         {
-            // Crea una nueva instancia del formulario veterinarioCita.
+           // Crea una nueva instancia del formulario veterinarioCita.
             veterinarioCita veterinarioCita = new veterinarioCita();
 
             // Oculta el formulario actual (veterinarioExpediente) para que no esté visible.
@@ -113,7 +124,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 string selecIdMascota = cbxIdMascota.SelectedItem.ToString();
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
-
+                SubirHCitas(selecIdMascota);
+                SubirHPaciente(selecIdMascota);
+                
             }
         }
 
@@ -143,14 +156,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             LEFT JOIN mascotas ON usuarios.idUsuario = mascotas.idUsuario
             WHERE mascotas.idMascota = @idMascota;";
 
-            // Crear una conexión a la base de datos usando la cadena de conexion.
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //Agg el try porque, si
+            try
             {
-                // Crear un comando para ejecutar la consulta.
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+
+
+                // Crear una conexión a la base de datos usando la cadena de conexion.
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    // Agregar el parametro de ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                    // Crear un comando para ejecutar la consulta.
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Agregar el parametro de ID de mascota a la consulta.
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
                         // Abrir la conexion a la base de datos.
                         connection.Open();
@@ -161,14 +179,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             // Leer los datos devueltos por la consulta.
                             if (reader.Read())
                             {
-                            // Cargar los datos obtenidos en los controles correspondientes
-                            //campos del dueño de la mascota
+                                // Cargar los datos obtenidos en los controles correspondientes
+                                //campos del dueño de la mascota
                                 txtIdDuenoExp.Text = reader["idUsuario"].ToString();
                                 txtNomDueno.Text = reader["Nombre"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
-                            //campos de la informacion fundamental de la mascota
+                                //campos de la informacion fundamental de la mascota
                                 txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
@@ -176,60 +194,84 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
                             }
                         }
+                    }
+
                 }
+
+                
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mor da error " + ex.Message);
 
             }
 
+
         }
-
-
         //Fin TapInformacionGeneral
 
 
-        //Inicio TapHistorialMedico
+        /// Inicio TapHistorialMedico
         /// <summary>
-        ///  Carga los datos de citas en el DataGridView según el ID de la mascota.
+        /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
-        /// <param name="idMascota"></param>
-        private void SubirHCitas(int idMascota)
+        /// <param name="selectedUserId">ID de la mascota para cargar su historial de citas.</param>
+        private void SubirHCitas(string selectedUserId)
         {
-            // Consulta SQL para obtener los datos de las citas de la mascota.
-            string query = @"
-                SELECT 
+            string querycitas = @"
+                SELECT DISTINCT
+                    citas.idCita, 
+                    citas.Motivo, 
+                    consultas.Sintomas, 
+                    consultas.ExamenFisico, 
+                    consultas.Diagnostico, 
+                    consultas.Tratamiento, 
+                    consultas.Medicamentos, 
+                    consultas.Notas 
                 FROM 
-                WHERE idMascota = @idMascota;";
+                    citas 
+                JOIN 
+                    consultas ON citas.idMascota = consultas.idMascota
+                WHERE 
+                    citas.idMascota = @idMascota;";
 
-            // Crear una conexion a la base de datos usando la cadena de conexion.
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+
+            try
             {
-                // Crear un comando para ejecutar la consulta.
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    // Agregar el parametro de ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", idMascota);
-
-                    try
+                    using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                     {
-                        // Abrir la conexión a la base de datos.
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
                         connection.Open();
 
-                        // Crear un adaptador para llenar un DataTable con los datos de la consulta.
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            // Crear un nuevo DataTable.
-                            DataTable dt = new DataTable();
-                            // Llenar el DataTable con los datos de la consulta.
-                            adapter.Fill(dt);
-                            // Asigna el DataTable como fuente de datos del DataGridView.
-                            dgvHCitas.DataSource = dt;
+                            dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                            HashSet<int> addedIds = new HashSet<int>();
+
+                            while (reader.Read())
+                            {
+                               
+                                dgvHCitas.Rows.Add(
+                                    reader["idCita"],
+                                    reader["Motivo"],
+                                    reader["Sintomas"],
+                                    reader["ExamenFisico"],
+                                    reader["Diagnostico"],
+                                    reader["Tratamiento"],
+                                    reader["Medicamentos"],
+                                    reader["Notas"]);
+                            }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        // Manejo de errores: mostrar mensaje si ocurre un error al obtener datos.
-                        MessageBox.Show($"Error al obtener datos de citas: {ex.Message}");
-                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
             }
         }
 
@@ -237,39 +279,47 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de la DB al data grid el Historial del paciente
         /// </summary>
-        /// <param name="idMascota"></param>
-        private void SubirHPaciente(string idMascota)
+        /// <param name="selectedUserId"></param>
+        private void SubirHPaciente(string selectedUserId)
         {
             //Aqui ira para el dgvHPaciente
             //FALTA PONER LA CONNSULTA SQL
-            string query = @"
+            string querypaciente = @"
                     SELECT 
                         
                     FROM  
                     WHERE IdMascota = @idMascota;";
-
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //debe pedir cirugia,examenes,alergia,medicamentos actuales, ultima vacuna,fecha
+            //el tipo de cirugia sale de la tabla cirugia, examenes sale del tipo en la tabla examen,
+            try
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    command.Parameters.AddWithValue("@idMascota", idMascota);
-
-                    try
+                    using (MySqlCommand command = new MySqlCommand(querypaciente, connection))
                     {
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
                         connection.Open();
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            DataTable dt = new DataTable();
-                            dt.Load(reader);
-                            // Asigna el DataTable al DataGrid
-                            dgvHPaciente.DataSource = dt;
+                            dgvHPaciente.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                            HashSet<int> addedIds = new HashSet<int>();
+
+                            while (reader.Read())
+                            {
+
+                                dgvHPaciente.Rows.Add(
+                                    //reader
+                                    );
+                            }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Error al cargar el Historial Medico del Paciente: {ex.Message}");
-                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurro un error al cargar el historial del Paciente: " + ex.Message);
             }
         }
 
