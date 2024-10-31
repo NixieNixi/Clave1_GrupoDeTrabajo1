@@ -18,7 +18,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///<remarks>
     ///Modificado por: CanelaFeliz
     ///Fecha de modificacion: 30/10/24
-    ///Descripcion: Sepa dios aqui falta todo :c
+    ///Descripcion: Sepa dios aqui falta casi todo :c
     ///</remarks>
     public partial class AdministradorPerfil
     {
