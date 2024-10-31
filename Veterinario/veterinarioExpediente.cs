@@ -18,7 +18,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion: Este formulario maneja la interfaz para los expedientes de veterinarios
     /// en el sistema "Cat-Dog". Proporciona opciones para navegar hacia la sección de citas del veterinario.
     /// </summary>
-    
+
     ///<remarks>
     ///Modificado por: NixieNixi
     ///Fecha de Modificacion:22/10/2024
@@ -36,10 +36,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado por: NixieNixi
     /// Fecha de Modificacion: 27/10/2024
     /// Descripcion: Se agrego el metodo del btnVolver que devuelve al form veterinariPerfil.
-    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa. y se gg comentarios a los distintos metodos
-    ///</remarks>
+    /// Ademas a los labels del diseno se les nombro segun el rol que desempenan dentro del programa.
+    /// y se gg comentarios a los distintos metodos
+    /// 
+    /// Modificado por:
+    /// Fecha de Modificacion:
+    /// Descripcion:
+    /// 
+    /// Modificado por: NixieNixi
+    /// Fecha de Modificacion: 30/10/2024
+    /// Descripcion: Al inicio daba El error CS0246 con el using MySql.Data.MySqlClient, se soluciono con desisntalar 
+    /// el paquete de mysql.data y volverlo a instalar.
+    /// 
+    /// ///</remarks>
 
-    
+
     public partial class veterinarioExpediente : Form
     {
         /// <summary>
@@ -78,7 +89,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void btnIrCita_Click(object sender, EventArgs e)
         {
-            // Crea una nueva instancia del formulario veterinarioCita.
+           // Crea una nueva instancia del formulario veterinarioCita.
             veterinarioCita veterinarioCita = new veterinarioCita();
 
             // Oculta el formulario actual (veterinarioExpediente) para que no esté visible.
@@ -143,14 +154,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             LEFT JOIN mascotas ON usuarios.idUsuario = mascotas.idUsuario
             WHERE mascotas.idMascota = @idMascota;";
 
-            // Crear una conexión a la base de datos usando la cadena de conexion.
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+
+            try
             {
-                // Crear un comando para ejecutar la consulta.
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+
+
+                // Crear una conexión a la base de datos usando la cadena de conexion.
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    // Agregar el parametro de ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                    // Crear un comando para ejecutar la consulta.
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Agregar el parametro de ID de mascota a la consulta.
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
 
                         // Abrir la conexion a la base de datos.
                         connection.Open();
@@ -161,14 +177,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             // Leer los datos devueltos por la consulta.
                             if (reader.Read())
                             {
-                            // Cargar los datos obtenidos en los controles correspondientes
-                            //campos del dueño de la mascota
+                                // Cargar los datos obtenidos en los controles correspondientes
+                                //campos del dueño de la mascota
                                 txtIdDuenoExp.Text = reader["idUsuario"].ToString();
                                 txtNomDueno.Text = reader["Nombre"].ToString();
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
-                            //campos de la informacion fundamental de la mascota
+                                //campos de la informacion fundamental de la mascota
                                 txtNomMascota.Text = reader["NombreMascota"].ToString();
                                 txtEspecie.Text = reader["Especie"].ToString();
                                 txtRaza.Text = reader["Raza"].ToString();
@@ -176,9 +192,61 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
                             }
                         }
+                    }
+
+                }
+
+                string querycitas = @" SELECT 
+                                citas.idCita, 
+                                citas.Motivo, 
+                                consultas.Sintomas, 
+                                consultas.ExamenFisico, 
+                                consultas.Diagnostico, 
+                                consultas.Tratamiento, 
+                                consultas.Medicamentos, 
+                                consultas.Notas 
+                            FROM 
+                                citas 
+                            JOIN 
+                                 consultas ON citas.idMascota = consultas.idMascota
+                            WHERE 
+                                citas.idmascota = @idMascota;";
+
+                DataTable dataTable = new DataTable(); // Crea un DataTable para almacenar los resultados
+
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    using (MySqlCommand command = new MySqlCommand(querycitas, connection))
+                    {
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId); // Usa el ID de mascota como parámetro
+                        connection.Open();
+
+                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
+                        {
+                            dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
+                            dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
+
+                            // Asegúrate de que las columnas del DataGridView estén configuradas correctamente
+                            dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterior"; // Cambia esto si tienes un nombre específico
+                            dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
+                            dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
+                            dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Fisico";
+                            dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnostico";
+                            dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
+                            dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
+                            dgvHCitas.Columns["Notas"].HeaderText = "Notas";
+
+                        }
+                    }
                 }
 
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Mor da error " + ex.Message);
+
+            }
+
 
         }
 

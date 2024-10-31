@@ -50,14 +50,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.FechaProximaVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dgvHCitas = new System.Windows.Forms.DataGridView();
-            this.IdCitaAnterior = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MotivoConsulta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHistorialVacunas = new System.Windows.Forms.Label();
             this.tabInformacionGeneral = new System.Windows.Forms.TabPage();
             this.gbxDatosDueno = new System.Windows.Forms.GroupBox();
@@ -274,59 +266,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.dgvHCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdCitaAnterior,
-            this.MotivoConsulta,
-            this.Sintomas,
-            this.ExamenFisico,
-            this.Diagnostico,
-            this.Tratamiento,
-            this.Medicamentos,
-            this.Notas});
             this.dgvHCitas.Location = new System.Drawing.Point(12, 203);
             this.dgvHCitas.Name = "dgvHCitas";
+            this.dgvHCitas.ReadOnly = true;
             this.dgvHCitas.Size = new System.Drawing.Size(848, 161);
             this.dgvHCitas.TabIndex = 3;
-            // 
-            // IdCitaAnterior
-            // 
-            this.IdCitaAnterior.HeaderText = "ID Cita Anterior";
-            this.IdCitaAnterior.Name = "IdCitaAnterior";
-            // 
-            // MotivoConsulta
-            // 
-            this.MotivoConsulta.HeaderText = "Motivo Consulta";
-            this.MotivoConsulta.Name = "MotivoConsulta";
-            // 
-            // Sintomas
-            // 
-            this.Sintomas.HeaderText = "Sintomas";
-            this.Sintomas.Name = "Sintomas";
-            // 
-            // ExamenFisico
-            // 
-            this.ExamenFisico.HeaderText = "Examen Fisico";
-            this.ExamenFisico.Name = "ExamenFisico";
-            // 
-            // Diagnostico
-            // 
-            this.Diagnostico.HeaderText = "Diagnostico";
-            this.Diagnostico.Name = "Diagnostico";
-            // 
-            // Tratamiento
-            // 
-            this.Tratamiento.HeaderText = "Traramiento";
-            this.Tratamiento.Name = "Tratamiento";
-            // 
-            // Medicamentos
-            // 
-            this.Medicamentos.HeaderText = "Medicamentos";
-            this.Medicamentos.Name = "Medicamentos";
-            // 
-            // Notas
-            // 
-            this.Notas.HeaderText = "Notas";
-            this.Notas.Name = "Notas";
             // 
             // lblHistorialVacunas
             // 
@@ -676,14 +620,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaProximaVacuna;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DataGridView dgvHCitas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCitaAnterior;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoConsulta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sintomas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamenFisico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diagnostico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Medicamentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
         private System.Windows.Forms.Label lblHistorialVacunas;
         private System.Windows.Forms.TabPage tabInformacionGeneral;
         private System.Windows.Forms.GroupBox gbxDatosDueno;
