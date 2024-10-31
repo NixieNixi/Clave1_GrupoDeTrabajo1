@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -32,6 +33,47 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void CitaMascota_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
+
+        private void btnProgramarCitaD_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta sql para insertar un nueva cita
+                string query = @"INSERT INTO citas (FechaHora, Motivo, Estado, idUsuarios, idMascota)
+                     VALUES (@FechaHora, @Motivo, @Estado, @IDUsuario, @IDMascota);";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
+                    command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
+                    command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
+                    command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
+                    command.Parameters.AddWithValue("@FechaHora", txtFeHoCiD.Text);
+
+                    connection.Open();
+
+                    //variable para comprobar cuantas filas fueron agregadas
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Usuario ingresado correctamente.", "Operacion exitosa!");
+                    }
+                    //Si no se cambio ninguna fila mostrar mensaje de error
+                    else
+                    {
+                        MessageBox.Show("Error al ingresar el usuario.", "Error :(");
+                    }
+                }
+            }
 
         }
     }

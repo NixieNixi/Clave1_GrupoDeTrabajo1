@@ -23,5 +23,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             PerfilDueno Vo = new PerfilDueno();
             Vo.ShowDialog();
         }
+
+        private void btnComprarD_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
