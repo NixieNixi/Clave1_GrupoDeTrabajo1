@@ -670,6 +670,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(264, 22);
             this.dtpFechaNacimiento.TabIndex = 3;
+            this.dtpFechaNacimiento.Value = new System.DateTime(2024, 10, 31, 0, 0, 0, 0);
             // 
             // cbxIdMascotaM
             // 
@@ -892,6 +893,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarM.TabIndex = 0;
             this.btnGuardarM.Text = "Guardar";
             this.btnGuardarM.UseVisualStyleBackColor = false;
+            this.btnGuardarM.Click += new System.EventHandler(this.btnGuardarM_Click);
             // 
             // btnNuevoM
             // 

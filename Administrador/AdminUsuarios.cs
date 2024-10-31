@@ -91,7 +91,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
             if (cbxIdUsuario.SelectedIndex == -1)
             {
-                //Lammada al metodo NuevoUser
+                //Llamada al metodo NuevoUser
                 NuevoUser();
             }
             //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
