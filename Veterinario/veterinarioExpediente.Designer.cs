@@ -36,10 +36,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblHistorialCitas = new System.Windows.Forms.Label();
             this.lblHistorialPaciente = new System.Windows.Forms.Label();
             this.dgvHVacunas = new System.Windows.Forms.DataGridView();
-            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHPaciente = new System.Windows.Forms.DataGridView();
             this.Cirugias = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Examenes = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,6 +76,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MotivoVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHVacunas)).BeginInit();
@@ -166,36 +174,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHVacunas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Vacuna,
             this.FechaAplicacion,
-            this.Motivo,
+            this.MotivoVacuna,
             this.ProximaDosis});
             this.dgvHVacunas.Location = new System.Drawing.Point(12, 728);
             this.dgvHVacunas.Name = "dgvHVacunas";
             this.dgvHVacunas.Size = new System.Drawing.Size(848, 150);
             this.dgvHVacunas.TabIndex = 6;
-            // 
-            // Vacuna
-            // 
-            this.Vacuna.HeaderText = "Vacuna";
-            this.Vacuna.Name = "Vacuna";
-            this.Vacuna.ReadOnly = true;
-            // 
-            // FechaAplicacion
-            // 
-            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
-            this.FechaAplicacion.Name = "FechaAplicacion";
-            this.FechaAplicacion.ReadOnly = true;
-            // 
-            // Motivo
-            // 
-            this.Motivo.HeaderText = "Motivo";
-            this.Motivo.Name = "Motivo";
-            this.Motivo.ReadOnly = true;
-            // 
-            // ProximaDosis
-            // 
-            this.ProximaDosis.HeaderText = "Proxima Dosis";
-            this.ProximaDosis.Name = "ProximaDosis";
-            this.ProximaDosis.ReadOnly = true;
             // 
             // dgvHPaciente
             // 
@@ -266,6 +250,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.dgvHCitas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvHCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idCita,
+            this.Motivo,
+            this.Sintomas,
+            this.ExamenFisico,
+            this.Diagnostico,
+            this.Tratamiento,
+            this.Medicamentos,
+            this.Notas});
             this.dgvHCitas.Location = new System.Drawing.Point(12, 203);
             this.dgvHCitas.Name = "dgvHCitas";
             this.dgvHCitas.ReadOnly = true;
@@ -567,6 +560,78 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // Vacuna
+            // 
+            this.Vacuna.HeaderText = "Vacuna";
+            this.Vacuna.Name = "Vacuna";
+            this.Vacuna.ReadOnly = true;
+            // 
+            // FechaAplicacion
+            // 
+            this.FechaAplicacion.HeaderText = "Fecha de Aplicacion";
+            this.FechaAplicacion.Name = "FechaAplicacion";
+            this.FechaAplicacion.ReadOnly = true;
+            // 
+            // MotivoVacuna
+            // 
+            this.MotivoVacuna.HeaderText = "Motivo";
+            this.MotivoVacuna.Name = "MotivoVacuna";
+            this.MotivoVacuna.ReadOnly = true;
+            // 
+            // ProximaDosis
+            // 
+            this.ProximaDosis.HeaderText = "Proxima Dosis";
+            this.ProximaDosis.Name = "ProximaDosis";
+            this.ProximaDosis.ReadOnly = true;
+            // 
+            // idCita
+            // 
+            this.idCita.HeaderText = "ID Cita Anterior";
+            this.idCita.Name = "idCita";
+            this.idCita.ReadOnly = true;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo Consulta";
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            // 
+            // Sintomas
+            // 
+            this.Sintomas.HeaderText = "Sintomas";
+            this.Sintomas.Name = "Sintomas";
+            this.Sintomas.ReadOnly = true;
+            // 
+            // ExamenFisico
+            // 
+            this.ExamenFisico.HeaderText = "Examen Fisico";
+            this.ExamenFisico.Name = "ExamenFisico";
+            this.ExamenFisico.ReadOnly = true;
+            // 
+            // Diagnostico
+            // 
+            this.Diagnostico.HeaderText = "Diagnostico";
+            this.Diagnostico.Name = "Diagnostico";
+            this.Diagnostico.ReadOnly = true;
+            // 
+            // Tratamiento
+            // 
+            this.Tratamiento.HeaderText = "Tratamiento";
+            this.Tratamiento.Name = "Tratamiento";
+            this.Tratamiento.ReadOnly = true;
+            // 
+            // Medicamentos
+            // 
+            this.Medicamentos.HeaderText = "Medicamentos";
+            this.Medicamentos.Name = "Medicamentos";
+            this.Medicamentos.ReadOnly = true;
+            // 
+            // Notas
+            // 
+            this.Notas.HeaderText = "Notas";
+            this.Notas.Name = "Notas";
+            this.Notas.ReadOnly = true;
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,10 +671,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblHistorialCitas;
         private System.Windows.Forms.Label lblHistorialPaciente;
         private System.Windows.Forms.DataGridView dgvHVacunas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vacuna;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProximaDosis;
         private System.Windows.Forms.DataGridView dgvHPaciente;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cirugias;
         private System.Windows.Forms.DataGridViewTextBoxColumn Examenes;
@@ -619,7 +680,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaProximaVacuna;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.DataGridView dgvHCitas;
         private System.Windows.Forms.Label lblHistorialVacunas;
         private System.Windows.Forms.TabPage tabInformacionGeneral;
         private System.Windows.Forms.GroupBox gbxDatosDueno;
@@ -650,5 +710,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoVacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProximaDosis;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sintomas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExamenFisico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diagnostico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Medicamentos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
+        private System.Windows.Forms.DataGridView dgvHCitas;
     }
 }

@@ -196,67 +196,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 }
 
-                string querycitas = @" SELECT 
-                                citas.idCita, 
-                                citas.Motivo, 
-                                consultas.Sintomas, 
-                                consultas.ExamenFisico, 
-                                consultas.Diagnostico, 
-                                consultas.Tratamiento, 
-                                consultas.Medicamentos, 
-                                consultas.Notas 
-                            FROM 
-                                citas 
-                            JOIN 
-                                 consultas ON citas.idMascota = consultas.idMascota
-                            WHERE 
-                                citas.idmascota = @idMascota;";
-
-                // Crea un DataTable para almacenar los resultados de la conulta realizada
-                DataTable dataTable = new DataTable(); 
-
-                 //Inicia la conexion hacia la DB
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                {
-
-                    //crea un comando para ejecutar la consultar
-                    using (MySqlCommand command = new MySqlCommand(querycitas, connection))
-                    {
-                        //Agg el param del idMascota a la consulta
-                        command.Parameters.AddWithValue("@idMascota", selectedUserId); 
-                        //Se abre la conexion a la DB
-                        connection.Open();
-
-                        //Se utliza un dataAdapter para llener el DataTable con los resultados de la consulta
-                        using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
-                        {
-                            dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
-                            dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
-
-
-                            //Aqui verifica que el datatable existan filas 
-                            if (dataTable.Rows.Count > 0)
-                            {
-                                // Asegúrate de que las columnas del DataGridView estén configuradas correctamente
-                                dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterior"; // Cambia esto si tienes un nombre específico
-                                dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
-                                dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
-                                dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Fisico";
-                                dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnostico";
-                                dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
-                                dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
-                                dgvHCitas.Columns["Notas"].HeaderText = "Notas";
-
-                            }
-                            else
-                            {
-                                //si no encuentra el hisotrial de citas
-                                MessageBox.Show("No se encontro citas >C");
-                            }
-
-                        }
-                    }
-                }
+                
 
             }
             catch (Exception ex)
@@ -270,48 +210,68 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         //Fin TapInformacionGeneral
 
 
-        //Inicio TapHistorialMedico
+        /// Inicio TapHistorialMedico
         /// <summary>
-        ///  Carga los datos de citas en el DataGridView según el ID de la mascota.
+        /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
-        /// <param name="idMascota"></param>
+        /// <param name="idMascota">ID de la mascota para cargar su historial de citas.</param>
         private void SubirHCitas(int idMascota)
         {
-            // Consulta SQL para obtener los datos de las citas de la mascota.
-            string query = @"
+            string querycitas = @"
                 SELECT 
+                    citas.idCita, 
+                    citas.Motivo, 
+                    consultas.Sintomas, 
+                    consultas.ExamenFisico, 
+                    consultas.Diagnostico, 
+                    consultas.Tratamiento, 
+                    consultas.Medicamentos, 
+                    consultas.Notas 
                 FROM 
-                WHERE idMascota = @idMascota;";
+                    citas 
+                JOIN 
+                    consultas ON citas.idMascota = consultas.idMascota
+                WHERE 
+                    citas.idMascota = @idMascota;";
 
-            // Crear una conexion a la base de datos usando la cadena de conexion.
+            // Crea un DataTable para almacenar los resultados de la consulta realizada.
+            DataTable dataTable = new DataTable();
+
+            // Inicia la conexión hacia la base de datos.
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
-                // Crear un comando para ejecutar la consulta.
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                // Crea un comando para ejecutar la consulta.
+                using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                 {
-                    // Agregar el parametro de ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", idMascota);
+                    // Agrega el parámetro del ID de mascota a la consulta.
+                    command.Parameters.AddWithValue("@idMascota", idMascota); // Cambié `selectedUserId` por `idMascota`
 
-                    try
+                    // Se abre la conexión a la base de datos.
+                    connection.Open();
+
+                    // Se utiliza un DataAdapter para llenar el DataTable con los resultados de la consulta.
+                    using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
                     {
-                        // Abrir la conexión a la base de datos.
-                        connection.Open();
+                        dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
+                        dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
 
-                        // Crear un adaptador para llenar un DataTable con los datos de la consulta.
-                        using (MySqlDataAdapter adapter = new MySqlDataAdapter(command))
+                        // Verifica que el DataTable tenga filas y configura los encabezados de las columnas.
+                        if (dataTable.Rows.Count > 0)
                         {
-                            // Crear un nuevo DataTable.
-                            DataTable dt = new DataTable();
-                            // Llenar el DataTable con los datos de la consulta.
-                            adapter.Fill(dt);
-                            // Asigna el DataTable como fuente de datos del DataGridView.
-                            dgvHCitas.DataSource = dt;
+                            dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterio AAAA";
+                            dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
+                            dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
+                            dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Físico";
+                            dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnóstico";
+                            dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
+                            dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
+                            dgvHCitas.Columns["Notas"].HeaderText = "Notas";
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        // Manejo de errores: mostrar mensaje si ocurre un error al obtener datos.
-                        MessageBox.Show($"Error al obtener datos de citas: {ex.Message}");
+                        else
+                        {
+                            // Si no encuentra el historial de citas, muestra un mensaje.
+                            MessageBox.Show("No se encontró citas.");
+                        }
                     }
                 }
             }
