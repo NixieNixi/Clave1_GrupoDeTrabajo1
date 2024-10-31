@@ -124,7 +124,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 string selecIdMascota = cbxIdMascota.SelectedItem.ToString();
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
-
+                
             }
         }
 
@@ -244,7 +244,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                 {
                     // Agrega el parámetro del ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", idMascota); // Cambié `selectedUserId` por `idMascota`
+                    command.Parameters.AddWithValue("@idMascota", idMascota); 
 
                     // Se abre la conexión a la base de datos.
                     connection.Open();
@@ -270,7 +270,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         else
                         {
                             // Si no encuentra el historial de citas, muestra un mensaje.
-                            MessageBox.Show("No se encontró citas.");
+                            MessageBox.Show("No se encontro citas.");
                         }
                     }
                 }
