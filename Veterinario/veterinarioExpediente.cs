@@ -124,6 +124,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 string selecIdMascota = cbxIdMascota.SelectedItem.ToString();
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
+                SubirHCitas(selecIdMascota);
                 
             }
         }
@@ -214,8 +215,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Carga los datos de citas en el DataGridView según el ID de la mascota.
         /// </summary>
-        /// <param name="idMascota">ID de la mascota para cargar su historial de citas.</param>
-        private void SubirHCitas(int idMascota)
+        /// <param name="selectedUserId">ID de la mascota para cargar su historial de citas.</param>
+        private void SubirHCitas(string selectedUserId)
         {
             string querycitas = @"
                 SELECT 
@@ -234,46 +235,40 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 WHERE 
                     citas.idMascota = @idMascota;";
 
-            // Crea un DataTable para almacenar los resultados de la consulta realizada.
-            DataTable dataTable = new DataTable();
 
-            // Inicia la conexión hacia la base de datos.
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            try
             {
-                // Crea un comando para ejecutar la consulta.
-                using (MySqlCommand command = new MySqlCommand(querycitas, connection))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    // Agrega el parámetro del ID de mascota a la consulta.
-                    command.Parameters.AddWithValue("@idMascota", idMascota); 
-
-                    // Se abre la conexión a la base de datos.
-                    connection.Open();
-
-                    // Se utiliza un DataAdapter para llenar el DataTable con los resultados de la consulta.
-                    using (MySqlDataAdapter dataAdapter = new MySqlDataAdapter(command))
+                    using (MySqlCommand command = new MySqlCommand(querycitas, connection))
                     {
-                        dataAdapter.Fill(dataTable); // Llena el DataTable con los resultados
-                        dgvHCitas.DataSource = dataTable; // Asigna el DataTable como fuente de datos del DataGridView
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                        connection.Open();
 
-                        // Verifica que el DataTable tenga filas y configura los encabezados de las columnas.
-                        if (dataTable.Rows.Count > 0)
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            dgvHCitas.Columns["idCita"].HeaderText = "ID Cita Anterio AAAA";
-                            dgvHCitas.Columns["Motivo"].HeaderText = "Motivo Consulta";
-                            dgvHCitas.Columns["Sintomas"].HeaderText = "Síntomas";
-                            dgvHCitas.Columns["ExamenFisico"].HeaderText = "Examen Físico";
-                            dgvHCitas.Columns["Diagnostico"].HeaderText = "Diagnóstico";
-                            dgvHCitas.Columns["Tratamiento"].HeaderText = "Tratamiento";
-                            dgvHCitas.Columns["Medicamentos"].HeaderText = "Medicamentos";
-                            dgvHCitas.Columns["Notas"].HeaderText = "Notas";
-                        }
-                        else
-                        {
-                            // Si no encuentra el historial de citas, muestra un mensaje.
-                            MessageBox.Show("No se encontro citas.");
+                            dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                            while (reader.Read())
+                            {
+                               
+                                dgvHCitas.Rows.Add(
+                                    reader["idCita"],
+                                    reader["Motivo"],
+                                    reader["Sintomas"],
+                                    reader["ExamenFisico"],
+                                    reader["Diagnostico"],
+                                    reader["Tratamiento"],
+                                    reader["Medicamentos"],
+                                    reader["Notas"]);
+                            }
                         }
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
             }
         }
 
