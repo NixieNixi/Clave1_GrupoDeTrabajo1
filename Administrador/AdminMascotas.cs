@@ -8,7 +8,18 @@ using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
-    //Clase parcial que se encarga de las funciones de Administracion de mascotas
+    /// <summary>
+    /// Autor: CanelaFeliz
+    /// Fecha: 30/10/24
+    /// Desccripcion: Parte de la clase Administrador perfil que se encarga de las funciones del panel AdminMascotas donde
+    /// se realizan las operaciones de gestion de mascotas (Consultar, Modificar, Crear y Eliminar mascotas)
+    /// </summary>
+
+    ///<remarks>
+    ///Modificado por: CanelaFeliz
+    ///Fecha de modificacion: 30/10/24
+    ///Descripcion: Sepa dios aqui falta todo :c
+    ///</remarks>
     public partial class AdministradorPerfil
     {
         private void btnMascotas_Click(object sender, EventArgs e)

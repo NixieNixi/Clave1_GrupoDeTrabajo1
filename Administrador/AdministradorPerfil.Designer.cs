@@ -594,10 +594,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.label7);
             this.panelUsuario.Controls.Add(this.label6);
-            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelUsuario.Location = new System.Drawing.Point(240, 70);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(644, 431);
+            this.panelUsuario.Size = new System.Drawing.Size(150, 100);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
             // 
@@ -921,10 +920,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelUsuario);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnUsuarios);
+            this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
