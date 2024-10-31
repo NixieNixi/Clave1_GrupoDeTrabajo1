@@ -23,6 +23,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///</remarks>
     public partial class AdministradorPerfil
     {
+        bool habilitar = false;
+
         /// <summary>
         /// Evento Click del boton 'Mascotas'
         /// Oculta el resto de paneles y los desacopla de la ventana para que los paneles de las funciones de mascotas tomen
@@ -45,6 +47,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             ActualizarRegistrosDueno();
         }
 
+        private void btnEditM_Click(object sender, EventArgs e)
+        {
+            btnGuardarM.Enabled = true;
+            habilitar = true;
+            HabilitarEdicionM(true);
+        }
+
         /// <summary>
         /// Evento de Cambio de Seleccion de Elemento del combobox 'ID Usuario'
         /// Dependiendo de la seleccion del combobox:
@@ -59,51 +68,54 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void cbxIdDueno_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxIdDueno.SelectedIndex == -1)
+           if(habilitar == false)
             {
-                //Limpiar controles
-                LimpiarMascota();
-                //Deshablitar la funcion de editar
-                btnEditM.Enabled = false;
-            }
-            else
-            {
-                //convierte el id seleccionado del combobox
-                string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
-
-                try
+                if (cbxIdDueno.SelectedIndex == -1)
                 {
-                    //cadena de conexion DB
-                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                    //Limpiar controles
+                    LimpiarMascota();
+                    //Deshablitar la funcion de editar
+                    btnEditM.Enabled = false;
+                }
+                else
+                {
+                    //convierte el id seleccionado del combobox
+                    string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
+
+                    try
                     {
-                        //cadena de consulta DB
-                        string query = "SELECT Nombre FROM usuarios WHERE idUsuario = @idUsuario;";
-
-                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        //cadena de conexion DB
+                        using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                         {
-                            //Agregar el parametro a la consulta
-                            command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+                            //cadena de consulta DB
+                            string query = "SELECT Nombre FROM usuarios WHERE idUsuario = @idUsuario;";
 
-                            //Establecer conexion a DB
-                            connection.Open();
-
-                            using (MySqlDataReader reader = command.ExecuteReader())
+                            using (MySqlCommand command = new MySqlCommand(query, connection))
                             {
-                                if (reader.Read())
+                                //Agregar el parametro a la consulta
+                                command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+
+                                //Establecer conexion a DB
+                                connection.Open();
+
+                                using (MySqlDataReader reader = command.ExecuteReader())
                                 {
-                                    txtNombreDueno.Text = reader["Nombre"].ToString();
+                                    if (reader.Read())
+                                    {
+                                        txtNombreDueno.Text = reader["Nombre"].ToString();
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
-                catch (Exception error)
-                {
-                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
-                }
+                    //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+                    }
 
-                ActualizarRegistrosMascota();
+                    ActualizarRegistrosMascota();
+                }
             }
         }
 
@@ -279,6 +291,28 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //Como DateTimePicker no tiene un valor vacio se coloca la fecha de hoy
             dtpFechaNacimiento.Value = DateTime.Now;
+        }
+
+        private void HabilitarEdicionM(bool habilitar)
+        {
+            //Desahabilta ID Mascota
+            cbxIdMascotaM.Enabled = !habilitar;
+
+            //Habilita los controles
+            txtUsuario.Enabled = habilitar;
+            cbxIdDueno.Enabled = habilitar;
+            txtNombreMascotaM.Enabled = habilitar;
+            txtEspecieM.Enabled = habilitar;
+            txtRazaM.Enabled = habilitar;
+            txtSexoM.Enabled = habilitar;
+            dtpFechaNacimiento.Enabled = habilitar;
+
+            //Permite la edicion del contenido de los controles
+            txtUsuario.ReadOnly = !habilitar;
+            txtNombreMascotaM.ReadOnly = !habilitar;
+            txtEspecieM.ReadOnly = !habilitar;
+            txtRazaM.ReadOnly = !habilitar;
+            txtSexoM.ReadOnly = !habilitar;
         }
     }
 }

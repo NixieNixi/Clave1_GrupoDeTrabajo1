@@ -877,6 +877,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnEditM.TabIndex = 0;
             this.btnEditM.Text = "Editar";
             this.btnEditM.UseVisualStyleBackColor = false;
+            this.btnEditM.Click += new System.EventHandler(this.btnEditM_Click);
             // 
             // btnGuardarM
             // 
@@ -921,8 +922,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnUsuarios);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.label1);
