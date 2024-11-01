@@ -128,7 +128,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.btnCita);
             this.Controls.Add(this.btnConsultarExpediente);
             this.Name = "veterinarioPerfil";
-            this.Text = "veterinarioPerfil";
+            this.Text = "Perfil Veterinario";
             this.Load += new System.EventHandler(this.veterinarioPerfil_Load);
             this.gbVeterinarioPerfil.ResumeLayout(false);
             this.gbVeterinarioPerfil.PerformLayout();
