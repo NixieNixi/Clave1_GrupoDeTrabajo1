@@ -64,6 +64,7 @@
     <Compile Include="Administrador\AdminUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Mascota.cs" />
     <Compile Include="Dueno\CitaMascota.cs">
       <SubType>Form</SubType>
     </Compile>
