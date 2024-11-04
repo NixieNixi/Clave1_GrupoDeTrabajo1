@@ -203,8 +203,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                 };
 
-                                // Cargar información de citas si es necesario (opcional)
-                                //CargarCitasPorMascota(mascota.IdMascota); // Cargar citas de la mascota
+                                
 
                                 // Actualizar los controles de la UI con la informacion de la mascota
                                 txtNomMascota.Text = mascota.NombreMascota;
@@ -259,6 +258,45 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     citas.idMascota = @idMascota;";
 
 
+            /*  try
+              {
+                  using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                  {
+                      using (MySqlCommand command = new MySqlCommand(querycitas, connection))
+                      {
+                          command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                          connection.Open();
+
+                          using (MySqlDataReader reader = command.ExecuteReader())
+                          {
+                              dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                              HashSet<int> addedIds = new HashSet<int>();
+
+                              while (reader.Read())
+                              {
+
+                                  dgvHCitas.Rows.Add(
+                                      reader["idCita"],
+                                      reader["Motivo"],
+                                      reader["Sintomas"],
+                                      reader["ExamenFisico"],
+                                      reader["Diagnostico"],
+                                      reader["Tratamiento"],
+                                      reader["Medicamentos"],
+                                      reader["Notas"]);
+                              }
+                          }
+                      }
+                  }
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
+              }
+
+              */
+
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -270,22 +308,42 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+                            // Limpia las filas existentes antes de agregar nuevas
+                            dgvHCitas.Rows.Clear();
 
-                            HashSet<int> addedIds = new HashSet<int>();
+                            // Limpiar la lista de citas antes de llenarla
+                            Mascota selectedMascota = new Mascota(); // Aquí deberías tener una instancia de mascota existente
+                            selectedMascota.Citas.Clear();
 
                             while (reader.Read())
                             {
-                               
+                                // Crear una nueva cita a partir de los datos leídos
+                                Cita Cita = new Cita
+                                {
+                                    IdCita = reader.GetInt32("idCita"),
+                                    Motivo = reader["motivo"].ToString(),
+                                    Sintomas = reader["sintomas"].ToString(),
+                                    ExamenFisico = reader["examenFisico"].ToString(),
+                                    Diagnostico = reader["diagnostico"].ToString(),
+                                    Tratamiento = reader["tratamiento"].ToString(),
+                                    Medicamentos = reader["medicamentos"].ToString(),
+                                    Notas = reader["notas"].ToString()
+                                };
+
+                                // Añadir la cita a la lista de citas de la mascota
+                                selectedMascota.Citas.Add(Cita);
+
+                                // Agregar la cita al DataGridView
                                 dgvHCitas.Rows.Add(
-                                    reader["idCita"],
-                                    reader["Motivo"],
-                                    reader["Sintomas"],
-                                    reader["ExamenFisico"],
-                                    reader["Diagnostico"],
-                                    reader["Tratamiento"],
-                                    reader["Medicamentos"],
-                                    reader["Notas"]);
+                                    Cita.IdCita,
+                                    Cita.Motivo,
+                                    Cita.Sintomas,
+                                    Cita.ExamenFisico,
+                                    Cita.Diagnostico,
+                                    Cita.Tratamiento,
+                                    Cita.Medicamentos,
+                                    Cita.Notas
+                                );
                             }
                         }
                     }
@@ -293,8 +351,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al cargar el historial de citas: " + ex.Message);
             }
+
         }
 
 
