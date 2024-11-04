@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -48,6 +49,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion: Al inicio daba El error CS0246 con el using MySql.Data.MySqlClient, se soluciono con desisntalar 
     /// el paquete de mysql.data y volverlo a instalar.
     /// 
+    /// Modificado por: NixieNixi
+    /// Fecha de Modificacion: 03/11/2024
+    /// Descripcion: Se creo la clase mascota y se cambio parte del funcionamiento para un mejor rendimiento
     /// ///</remarks>
 
 
@@ -186,12 +190,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
-                                //campos de la informacion fundamental de la mascota
-                                txtNomMascota.Text = reader["NombreMascota"].ToString();
-                                txtEspecie.Text = reader["Especie"].ToString();
-                                txtRaza.Text = reader["Raza"].ToString();
-                                txtSexo.Text = reader["Sexo"].ToString();
+                                
+
+                                // Campos de la informacion fundamental de la mascota
+                                Mascota mascota = new Mascota
+                                {
+                                   
+                                    NombreMascota = reader["NombreMascota"].ToString(),
+                                    Especie = reader["Especie"].ToString(), // Ahora como string
+                                    Raza = reader["Raza"].ToString(),
+                                    Sexo = reader["Sexo"].ToString(),
+
+                                };
+
+                                // Cargar información de citas si es necesario (opcional)
+                                //CargarCitasPorMascota(mascota.IdMascota); // Cargar citas de la mascota
+
+                                // Actualizar los controles de la UI con la informacion de la mascota
+                                txtNomMascota.Text = mascota.NombreMascota;
+                                txtEspecie.Text = mascota.Especie; 
+                                txtRaza.Text = mascota.Raza;
+                                txtSexo.Text = mascota.Sexo.ToString();
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
+
+
                             }
                         }
                     }
