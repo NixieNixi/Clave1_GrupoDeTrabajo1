@@ -20,10 +20,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///Modificado por: CanelaFeliz
     ///Fecha de modificacion: 30/10/24
     ///Descripcion: Manejo de exepciones y correcciones menores
-    ///Falta Funcion de borrar usuario
-    ///Faltan agregar paneles al diseño para terminar funciones
+    ///TODO: Falta Funcion de borrar usuario
+    ///TODO: agregar paneles al diseño para terminar funciones
     ///</remarks>
-   
+
     public partial class AdministradorPerfil
     {
         /// <summary>
