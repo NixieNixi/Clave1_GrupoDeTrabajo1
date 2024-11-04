@@ -20,16 +20,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
     ///Modificado por: CanelaFeliz
     ///Fecha de modificacion: 30/10/24
     ///Descripcion: Manejo de exepciones y correcciones menores
-    ///Falta Funcion de borrar usuario
-    ///Faltan agregar paneles al diseño para terminar funciones
+    ///TODO: Falta Funcion de borrar usuario
+    ///TODO: agregar paneles al diseño para terminar funciones
     ///</remarks>
-   
+
     public partial class AdministradorPerfil
     {
         /// <summary>
         /// Evento Click del boton 'Usuarios'
         /// Oculta el resto de paneles y los desacopla de la ventana para que los paneles de las funciones de usuario tomen
         /// su posicion correctamnte.
+        /// 
+        /// Carga inicial de los idUsuario al combobox
         /// </summary>
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
@@ -89,7 +91,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Si no hay seleccion el comboBOx ID Usuario significa que se esta ingresando la informacion de un nuevo usuario
             if (cbxIdUsuario.SelectedIndex == -1)
             {
-                //Lammada al metodo NuevoUser
+                //Llamada al metodo NuevoUser
                 NuevoUser();
             }
             //Si hay seleccion entonces se esta modificando la informacion de el usuario con el ID mostrado en el comboBox
@@ -344,6 +346,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// <summary>
         /// Metodo que habilita la edicion de los controles. Primero deshabilita el cambio de seleccion del combobox 'ID Usuario'
         /// para evitar la edicion de un registro incorrecto y evitar que se inserte un ID al crear un nuevo usuario
+        /// 
         /// Recibe el parametro booleano 'habilitar' que decide si se va a usar el metodo para habilitar
         /// o deshabilitar los controles segun el valor true o false
         /// 
@@ -584,7 +587,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         /// <summary>
-        /// Metodo que carga y actualiza los idUsuario del combobox 'ID Usuario' al abrir el panel, editar usuari
+        /// Metodo que carga y actualiza los idUsuario del combobox 'ID Usuario' al abrir el panel, editar usuario
         /// o crear un usuario nuevo
         /// </summary>
         private void ActualizarRegistros()

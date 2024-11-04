@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -48,6 +49,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion: Al inicio daba El error CS0246 con el using MySql.Data.MySqlClient, se soluciono con desisntalar 
     /// el paquete de mysql.data y volverlo a instalar.
     /// 
+    /// Modificado por: NixieNixi
+    /// Fecha de Modificacion: 03/11/2024
+    /// Descripcion: Se creo la clase mascota y se cambio parte del funcionamiento para un mejor rendimiento
     /// ///</remarks>
 
 
@@ -186,12 +190,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 txtTelefonoDueno.Text = reader["Telefono"].ToString();
                                 txtCorreoDueno.Text = reader["Correo"].ToString();
                                 txtDireccionDueno.Text = reader["Direccion"].ToString();
-                                //campos de la informacion fundamental de la mascota
-                                txtNomMascota.Text = reader["NombreMascota"].ToString();
-                                txtEspecie.Text = reader["Especie"].ToString();
-                                txtRaza.Text = reader["Raza"].ToString();
-                                txtSexo.Text = reader["Sexo"].ToString();
+                                
+
+                                // Campos de la informacion fundamental de la mascota
+                                Mascota mascota = new Mascota
+                                {
+                                   
+                                    NombreMascota = reader["NombreMascota"].ToString(),
+                                    Especie = reader["Especie"].ToString(), // Ahora como string
+                                    Raza = reader["Raza"].ToString(),
+                                    Sexo = reader["Sexo"].ToString(),
+
+                                };
+
+                                
+
+                                // Actualizar los controles de la UI con la informacion de la mascota
+                                txtNomMascota.Text = mascota.NombreMascota;
+                                txtEspecie.Text = mascota.Especie; 
+                                txtRaza.Text = mascota.Raza;
+                                txtSexo.Text = mascota.Sexo.ToString();
                                 txtFechaNacimiento.Text = Convert.ToDateTime(reader["FechaNacimiento"]).ToString("dd/MM/yyyy");
+
+
                             }
                         }
                     }
@@ -237,6 +258,45 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     citas.idMascota = @idMascota;";
 
 
+            /*  try
+              {
+                  using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                  {
+                      using (MySqlCommand command = new MySqlCommand(querycitas, connection))
+                      {
+                          command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                          connection.Open();
+
+                          using (MySqlDataReader reader = command.ExecuteReader())
+                          {
+                              dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+
+                              HashSet<int> addedIds = new HashSet<int>();
+
+                              while (reader.Read())
+                              {
+
+                                  dgvHCitas.Rows.Add(
+                                      reader["idCita"],
+                                      reader["Motivo"],
+                                      reader["Sintomas"],
+                                      reader["ExamenFisico"],
+                                      reader["Diagnostico"],
+                                      reader["Tratamiento"],
+                                      reader["Medicamentos"],
+                                      reader["Notas"]);
+                              }
+                          }
+                      }
+                  }
+              }
+              catch (Exception ex)
+              {
+                  MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
+              }
+
+              */
+
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -248,22 +308,42 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
+                            // Limpia las filas existentes antes de agregar nuevas
+                            dgvHCitas.Rows.Clear();
 
-                            HashSet<int> addedIds = new HashSet<int>();
+                            // Limpiar la lista de citas antes de llenarla
+                            Mascota selectedMascota = new Mascota(); // Aquí deberías tener una instancia de mascota existente
+                            selectedMascota.Citas.Clear();
 
                             while (reader.Read())
                             {
-                               
+                                // Crear una nueva cita a partir de los datos leídos
+                                Cita Cita = new Cita
+                                {
+                                    IdCita = reader.GetInt32("idCita"),
+                                    Motivo = reader["motivo"].ToString(),
+                                    Sintomas = reader["sintomas"].ToString(),
+                                    ExamenFisico = reader["examenFisico"].ToString(),
+                                    Diagnostico = reader["diagnostico"].ToString(),
+                                    Tratamiento = reader["tratamiento"].ToString(),
+                                    Medicamentos = reader["medicamentos"].ToString(),
+                                    Notas = reader["notas"].ToString()
+                                };
+
+                                // Añadir la cita a la lista de citas de la mascota
+                                selectedMascota.Citas.Add(Cita);
+
+                                // Agregar la cita al DataGridView
                                 dgvHCitas.Rows.Add(
-                                    reader["idCita"],
-                                    reader["Motivo"],
-                                    reader["Sintomas"],
-                                    reader["ExamenFisico"],
-                                    reader["Diagnostico"],
-                                    reader["Tratamiento"],
-                                    reader["Medicamentos"],
-                                    reader["Notas"]);
+                                    Cita.IdCita,
+                                    Cita.Motivo,
+                                    Cita.Sintomas,
+                                    Cita.ExamenFisico,
+                                    Cita.Diagnostico,
+                                    Cita.Tratamiento,
+                                    Cita.Medicamentos,
+                                    Cita.Notas
+                                );
                             }
                         }
                     }
@@ -271,8 +351,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
+                MessageBox.Show("Ocurrió un error al cargar el historial de citas: " + ex.Message);
             }
+
         }
 
 
