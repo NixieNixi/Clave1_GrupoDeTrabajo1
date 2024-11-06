@@ -72,7 +72,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblDescripcionCirugia = new System.Windows.Forms.Label();
             this.lblNotasCirugia = new System.Windows.Forms.Label();
             this.lblUsaMaterialesCirugia = new System.Windows.Forms.Label();
-            this.txtTipoCirugia = new System.Windows.Forms.TextBox();
             this.txtNotasCirugia = new System.Windows.Forms.TextBox();
             this.txtUsaMaterialesCirugia = new System.Windows.Forms.TextBox();
             this.txtDescripcionCirugia = new System.Windows.Forms.TextBox();
@@ -96,6 +95,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.cbxTipoCirugia = new System.Windows.Forms.ComboBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -143,10 +143,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // cbxTipoExamen
             // 
             this.cbxTipoExamen.FormattingEnabled = true;
+            this.cbxTipoExamen.Items.AddRange(new object[] {
+            "Sangre",
+            "Sida felino",
+            "Leucemia felino",
+            "Radiografia",
+            "Ultrasonido"});
             this.cbxTipoExamen.Location = new System.Drawing.Point(130, 39);
             this.cbxTipoExamen.Name = "cbxTipoExamen";
             this.cbxTipoExamen.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoExamen.TabIndex = 18;
+            this.cbxTipoExamen.SelectedIndexChanged += new System.EventHandler(this.cbxTipoExamen_SelectedIndexChanged);
             // 
             // lblTipoExamen
             // 
@@ -243,10 +250,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // cbxTipoVacuna
             // 
             this.cbxTipoVacuna.FormattingEnabled = true;
+            this.cbxTipoVacuna.Items.AddRange(new object[] {
+            "Perro Moquillo",
+            "Perro Parvovirus",
+            "Perro Hepatitis",
+            "Perro Leptospirosis",
+            "Gato Leucemia",
+            "Gato Calicivirus",
+            "Gato Herpesvirus",
+            "Gato Panleucopenia",
+            "Rabia"});
             this.cbxTipoVacuna.Location = new System.Drawing.Point(130, 39);
             this.cbxTipoVacuna.Name = "cbxTipoVacuna";
             this.cbxTipoVacuna.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoVacuna.TabIndex = 18;
+            this.cbxTipoVacuna.SelectedIndexChanged += new System.EventHandler(this.cbxTipoVacuna_SelectedIndexChanged);
             // 
             // lblTipoVacuna
             // 
@@ -449,12 +467,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxInfoCirugia
             // 
+            this.gbxInfoCirugia.Controls.Add(this.cbxTipoCirugia);
             this.gbxInfoCirugia.Controls.Add(this.lblTipoCirugia);
             this.gbxInfoCirugia.Controls.Add(this.lblMotiCirugia);
             this.gbxInfoCirugia.Controls.Add(this.lblDescripcionCirugia);
             this.gbxInfoCirugia.Controls.Add(this.lblNotasCirugia);
             this.gbxInfoCirugia.Controls.Add(this.lblUsaMaterialesCirugia);
-            this.gbxInfoCirugia.Controls.Add(this.txtTipoCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtNotasCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtUsaMaterialesCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtDescripcionCirugia);
@@ -510,13 +528,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblUsaMaterialesCirugia.Size = new System.Drawing.Size(94, 13);
             this.lblUsaMaterialesCirugia.TabIndex = 11;
             this.lblUsaMaterialesCirugia.Text = "Materiales Usados";
-            // 
-            // txtTipoCirugia
-            // 
-            this.txtTipoCirugia.Location = new System.Drawing.Point(130, 43);
-            this.txtTipoCirugia.Name = "txtTipoCirugia";
-            this.txtTipoCirugia.Size = new System.Drawing.Size(121, 20);
-            this.txtTipoCirugia.TabIndex = 2;
             // 
             // txtNotasCirugia
             // 
@@ -607,6 +618,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdExpediente.Name = "cbxIdExpediente";
             this.cbxIdExpediente.Size = new System.Drawing.Size(175, 21);
             this.cbxIdExpediente.TabIndex = 1;
+            this.cbxIdExpediente.SelectedIndexChanged += new System.EventHandler(this.cbxIdExpediente_SelectedIndexChanged);
             // 
             // lblIdMascota
             // 
@@ -736,6 +748,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // cbxTipoCirugia
+            // 
+            this.cbxTipoCirugia.FormattingEnabled = true;
+            this.cbxTipoCirugia.Items.AddRange(new object[] {
+            "Castracion",
+            "Extraccion de objeto",
+            "Absceso",
+            "Lavado gastrico",
+            "Cesarea"});
+            this.cbxTipoCirugia.Location = new System.Drawing.Point(130, 46);
+            this.cbxTipoCirugia.Name = "cbxTipoCirugia";
+            this.cbxTipoCirugia.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoCirugia.TabIndex = 18;
+            this.cbxTipoCirugia.SelectedIndexChanged += new System.EventHandler(this.cbxTipoCirugia_SelectedIndexChanged);
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -804,7 +831,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblDescripcionCirugia;
         private System.Windows.Forms.Label lblNotasCirugia;
         private System.Windows.Forms.Label lblUsaMaterialesCirugia;
-        private System.Windows.Forms.TextBox txtTipoCirugia;
         private System.Windows.Forms.TextBox txtNotasCirugia;
         private System.Windows.Forms.TextBox txtUsaMaterialesCirugia;
         private System.Windows.Forms.TextBox txtDescripcionCirugia;
@@ -831,5 +857,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtUsaMateriaesExamen;
         private System.Windows.Forms.TextBox txtDescripcionExamen;
         private System.Windows.Forms.TextBox txtMotiExamen;
+        private System.Windows.Forms.ComboBox cbxTipoCirugia;
     }
 }

@@ -52,7 +52,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Modificado por: NixieNixi
     /// Fecha de Modificacion: 03/11/2024
     /// Descripcion: Se creo la clase mascota y se cambio parte del funcionamiento para un mejor rendimiento
-    /// ///</remarks>
+    /// 
+    ///  
+    /// Modificado por: NxieNixi
+    /// Fecha de Modificacion: 05/11/2024
+    /// Descripcion: Se elimino el metodo de Subir Historial y en su lugar se crearon dos nuevos metodos, el de SubirHCirugia,SubirHExame
+    /// y se les agrego su respectiva funcion, se realizo testeo de manera basica.
+    ///</remarks>
 
 
     public partial class veterinarioExpediente : Form
@@ -322,7 +328,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de cirugias de cada mascota
         /// </summary>
-        /// <param name="selectedUserId"></param>
+        /// <param name="selectedUserId">ID de la mascota seleccionada</param>
         private void SubirHCirugia(string selectedUserId)
         {
             string queryCirugias = @"
@@ -391,7 +397,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de la DB al data grid del historial de vacunas.
         /// </summary>
-        /// <param name="selectedUserId"></param>
+        /// <param name="selectedUserId">ID de la mascota seleccionada</param>
         private void SubirHVacuna(string selectedUserId)
         {
            
@@ -454,7 +460,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de exámenes de la mascota al DataGridView
         /// </summary>
-        /// <param name="selectedUserId"></param>
+        /// <param name="selectedUserId">ID de la mascota seleccionada</param>
         private void SubirHExamen(string selectedUserId)
         {
             string queryExamenes = @"
@@ -462,8 +468,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         examen.idExamen, 
                         examen.Tipo, 
                         examen.Descripcion, 
-                        examen.Motivo, 
-                        examen.Materiales 
+                        examen.Motivo
                     FROM 
                         examen 
                     WHERE 
@@ -502,8 +507,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     examen.IdExamen,
                                     examen.Tipo,
                                     examen.Descripcion,
-                                    examen.Motivo,
-                                    examen.Materiales
+                                    examen.Motivo
                                 );
                             }
                         }
