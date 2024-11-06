@@ -18,7 +18,23 @@ namespace Clave1_GrupoDeTrabajo1.Clases
             public string Descripcion { get; set; }
             public string Motivo { get; set; }
             public string Materiales { get; set; }
-        }
+
+            
+
+            public Cirugia() { }
+            
+            public Cirugia(int idCirugia, int idMascota, string tipo,
+                string descripcion, string motivo, string materiales)
+            {
+                IdCirugia = idCirugia;
+                IdMascota = idMascota;
+                Tipo = tipo;
+                Descripcion = descripcion;
+                Motivo = motivo;
+                Materiales = materiales;
+            }
+
+    }
 
 
     

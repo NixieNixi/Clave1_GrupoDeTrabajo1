@@ -271,7 +271,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             dgvHCitas.Rows.Clear();
 
                             // Limpiar la lista de citas antes de llenarla
-                            Mascota selectedMascota = new Mascota(); // Aquí deberías tener una instancia de mascota existente
+                            Mascota selectedMascota = new Mascota(); 
                             selectedMascota.Citas.Clear();
 
                             while (reader.Read())
@@ -321,7 +321,63 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="selectedUserId"></param>
         private void SubirHCirugia(string selectedUserId)
         {
+            string queryCirugias = @"
+                    SELECT DISTINCT
+                        cirugia.idCirugia, 
+                        cirugia.Tipo, 
+                        cirugia.Descripcion, 
+                        cirugia.Motivo, 
+                        cirugia.Materiales 
+                    FROM 
+                        cirugia 
+                    WHERE 
+                        cirugia.idMascota = @idMascota;";
 
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    using (MySqlCommand command = new MySqlCommand(queryCirugias, connection))
+                    {
+                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            dgvHCirugia.Rows.Clear();
+
+                            Mascota selectedMascota = new Mascota();
+                            selectedMascota.Cirugia.Clear();
+
+                            while (reader.Read())
+                            {
+                                Cirugia cirugia = new Cirugia
+                                {
+                                    IdCirugia = reader.GetInt32("idCirugia"),
+                                    Tipo = reader["Tipo"].ToString(),
+                                    Descripcion = reader["Descripcion"].ToString(),
+                                    Motivo = reader["Motivo"].ToString(),
+                                    Materiales = reader["Materiales"].ToString()
+                                };
+
+                                selectedMascota.Cirugia.Add(cirugia);
+
+                                dgvHCirugia.Rows.Add(
+                                    cirugia.IdCirugia,
+                                    cirugia.Tipo,
+                                    cirugia.Descripcion,
+                                    cirugia.Motivo,
+                                    cirugia.Materiales
+                                );
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al cargar el historial de cirugías: " + ex.Message);
+            }
         }
 
 

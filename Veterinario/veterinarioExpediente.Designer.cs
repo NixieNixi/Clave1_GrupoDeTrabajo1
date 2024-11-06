@@ -34,7 +34,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabHistorialMedico = new System.Windows.Forms.TabPage();
             this.panelHM = new System.Windows.Forms.Panel();
             this.lblHistorialCitas = new System.Windows.Forms.Label();
-            this.lblHistorialPaciente = new System.Windows.Forms.Label();
+            this.lblHistorialCirugias = new System.Windows.Forms.Label();
             this.dgvHVacunas = new System.Windows.Forms.DataGridView();
             this.Vacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -132,7 +132,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.panelHM.AutoScroll = true;
             this.panelHM.Controls.Add(this.lblHistorialCitas);
-            this.panelHM.Controls.Add(this.lblHistorialPaciente);
+            this.panelHM.Controls.Add(this.lblHistorialCirugias);
             this.panelHM.Controls.Add(this.dgvHVacunas);
             this.panelHM.Controls.Add(this.dgvHCirugia);
             this.panelHM.Controls.Add(this.dtpFecha);
@@ -154,15 +154,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblHistorialCitas.TabIndex = 8;
             this.lblHistorialCitas.Text = "Historial de Citas";
             // 
-            // lblHistorialPaciente
+            // lblHistorialCirugias
             // 
-            this.lblHistorialPaciente.AutoSize = true;
-            this.lblHistorialPaciente.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorialPaciente.Location = new System.Drawing.Point(332, 406);
-            this.lblHistorialPaciente.Name = "lblHistorialPaciente";
-            this.lblHistorialPaciente.Size = new System.Drawing.Size(220, 27);
-            this.lblHistorialPaciente.TabIndex = 7;
-            this.lblHistorialPaciente.Text = "Historial del Paciente";
+            this.lblHistorialCirugias.AutoSize = true;
+            this.lblHistorialCirugias.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialCirugias.Location = new System.Drawing.Point(332, 406);
+            this.lblHistorialCirugias.Name = "lblHistorialCirugias";
+            this.lblHistorialCirugias.Size = new System.Drawing.Size(210, 27);
+            this.lblHistorialCirugias.TabIndex = 7;
+            this.lblHistorialCirugias.Text = "Historial de Cirugias";
             // 
             // dgvHVacunas
             // 
@@ -647,7 +647,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TabPage tabHistorialMedico;
         private System.Windows.Forms.Panel panelHM;
         private System.Windows.Forms.Label lblHistorialCitas;
-        private System.Windows.Forms.Label lblHistorialPaciente;
+        private System.Windows.Forms.Label lblHistorialCirugias;
         private System.Windows.Forms.DataGridView dgvHVacunas;
         private System.Windows.Forms.DataGridView dgvHCirugia;
         private System.Windows.Forms.DateTimePicker dtpFecha;
