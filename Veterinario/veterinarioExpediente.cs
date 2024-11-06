@@ -256,47 +256,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     consultas ON citas.idMascota = consultas.idMascota
                 WHERE 
                     citas.idMascota = @idMascota;";
-
-
-            /*  try
-              {
-                  using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                  {
-                      using (MySqlCommand command = new MySqlCommand(querycitas, connection))
-                      {
-                          command.Parameters.AddWithValue("@idMascota", selectedUserId);
-                          connection.Open();
-
-                          using (MySqlDataReader reader = command.ExecuteReader())
-                          {
-                              dgvHCitas.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
-
-                              HashSet<int> addedIds = new HashSet<int>();
-
-                              while (reader.Read())
-                              {
-
-                                  dgvHCitas.Rows.Add(
-                                      reader["idCita"],
-                                      reader["Motivo"],
-                                      reader["Sintomas"],
-                                      reader["ExamenFisico"],
-                                      reader["Diagnostico"],
-                                      reader["Tratamiento"],
-                                      reader["Medicamentos"],
-                                      reader["Notas"]);
-                              }
-                          }
-                      }
-                  }
-              }
-              catch (Exception ex)
-              {
-                  MessageBox.Show("Ocurro un error al cargar el historial de citas: " + ex.Message);
-              }
-
-              */
-
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -356,53 +315,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-
         /// <summary>
-        /// Metodo para subir los datos de la DB al data grid el Historial del paciente
+        /// Metodo para subir los datos de cirugias de cada mascota
         /// </summary>
-        /// <param name="selectedUserId"></param>
-        private void SubirHPaciente(string selectedUserId)
+        /// <param name="idMascota"></param>
+       private void SubirHCirugia(string idMascota)
         {
-            //Aqui ira para el dgvHPaciente
-            //FALTA PONER LA CONNSULTA SQL
-            string querypaciente = @"
-                    SELECT 
-                        
-                    FROM  
-                    WHERE IdMascota = @idMascota;";
-            //debe pedir cirugia,examenes,alergia,medicamentos actuales, ultima vacuna,fecha
-            //el tipo de cirugia sale de la tabla cirugia, examenes sale del tipo en la tabla examen,
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                {
-                    using (MySqlCommand command = new MySqlCommand(querypaciente, connection))
-                    {
-                        command.Parameters.AddWithValue("@idMascota", selectedUserId);
-                        connection.Open();
 
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            dgvHPaciente.Rows.Clear(); // Limpia las filas existentes antes de agregar nuevas
-
-                            HashSet<int> addedIds = new HashSet<int>();
-
-                            while (reader.Read())
-                            {
-
-                                dgvHPaciente.Rows.Add(
-                                    //reader
-                                    );
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Ocurro un error al cargar el historial del Paciente: " + ex.Message);
-            }
         }
+
+
+
+
 
 
         /// <summary>
