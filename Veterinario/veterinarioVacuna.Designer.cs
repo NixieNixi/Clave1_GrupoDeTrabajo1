@@ -117,7 +117,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "veterinarioVacuna";
-            this.Text = "veterinarioVacuna";
+            this.Text = "Historial de vacunas";
             this.ResumeLayout(false);
             this.PerformLayout();
 

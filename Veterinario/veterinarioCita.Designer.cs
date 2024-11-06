@@ -745,7 +745,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panelVeterinarioCita);
             this.Controls.Add(this.btnGuardarVeterinarioCita);
             this.Name = "veterinarioCita";
-            this.Text = "veterinarioCita";
+            this.Text = "Agenda de Citas";
             this.panelVeterinarioCita.ResumeLayout(false);
             this.panelVeterinarioCita.PerformLayout();
             this.gbxInfoExamen.ResumeLayout(false);
