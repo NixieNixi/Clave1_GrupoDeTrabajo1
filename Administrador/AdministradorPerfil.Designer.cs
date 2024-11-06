@@ -94,16 +94,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNuevoM = new System.Windows.Forms.Button();
             this.btnCancelarM = new System.Windows.Forms.Button();
             this.panelCitas = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panelBtnCitas = new System.Windows.Forms.Panel();
@@ -112,9 +115,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.label34 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -972,6 +972,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.Enabled = false;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dueño",
+            "Veterinario",
+            "Administrador"});
+            this.comboBox1.Location = new System.Drawing.Point(320, 104);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(264, 24);
+            this.comboBox1.TabIndex = 2;
+            // 
             // cbxIdMascotaC
             // 
             this.cbxIdMascotaC.BackColor = System.Drawing.Color.White;
@@ -1031,6 +1046,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.textBox6.TabIndex = 1;
             this.textBox6.UseSystemPasswordChar = true;
             // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(320, 160);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(264, 22);
+            this.textBox8.TabIndex = 1;
+            // 
             // textBox7
             // 
             this.textBox7.BackColor = System.Drawing.Color.White;
@@ -1089,6 +1115,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label30.Size = new System.Drawing.Size(145, 16);
             this.label30.TabIndex = 0;
             this.label30.Text = "Nombre de la mascota";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(320, 136);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 16);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Hora";
             // 
             // label32
             // 
@@ -1190,59 +1228,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.ForeColor = System.Drawing.Color.Black;
-            this.label34.Location = new System.Drawing.Point(320, 136);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(38, 16);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Hora";
-            // 
-            // textBox8
-            // 
-            this.textBox8.BackColor = System.Drawing.Color.White;
-            this.textBox8.Enabled = false;
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(320, 160);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(264, 22);
-            this.textBox8.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.Enabled = false;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dueño",
-            "Veterinario",
-            "Administrador"});
-            this.comboBox1.Location = new System.Drawing.Point(320, 104);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(264, 24);
-            this.comboBox1.TabIndex = 2;
-            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnUsuarios);
+            this.Controls.Add(this.panelBtnCitas);
+            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.panelBtnCitas);
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Administración";

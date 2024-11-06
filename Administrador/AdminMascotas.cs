@@ -42,6 +42,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelUsuario.Dock = DockStyle.None;
             panelBtnUsuarios.Visible = false;
             panelBtnUsuarios.Dock = DockStyle.None;
+            panelCitas.Visible = false;
+            panelCitas.Dock = DockStyle.None;
+            panelBtnCitas.Visible = false;
+            panelBtnCitas.Dock = DockStyle.None;
 
             panelBtnMascota.Dock = DockStyle.Bottom;
             panelBtnMascota.Visible = true;

@@ -26,12 +26,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             menu.ShowDialog();
         }
 
-        //Metodo para mostrar el panel de citas
-        private void btnCitas_Click(object sender, EventArgs e)
-        {
-            panelUsuario.Visible = false;
-        }
-
         //Metodo para mostrar el panel de inventario
         private void btnInventario_Click(object sender, EventArgs e)
         {
