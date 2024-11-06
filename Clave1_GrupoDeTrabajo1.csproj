@@ -67,9 +67,11 @@
     <Compile Include="Administrador\AdminUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Clases\Cirugia.cs" />
     <Compile Include="Clases\Cita.cs" />
-    <Compile Include="Clases\HistorialMascota.cs" />
+    <Compile Include="Clases\Examen.cs" />
     <Compile Include="Clases\Mascota.cs" />
+    <Compile Include="Clases\Vacuna.cs" />
     <Compile Include="Dueno\CitaMascota.cs">
       <SubType>Form</SubType>
     </Compile>

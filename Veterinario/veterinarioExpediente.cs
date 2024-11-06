@@ -129,7 +129,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 // Llamada al metodo CargarDatosMascota;
                 CargarDatosMascota(selecIdMascota);
                 SubirHCitas(selecIdMascota);
-                SubirHPaciente(selecIdMascota);
+                SubirHCirugia(selecIdMascota);
                 
             }
         }
@@ -318,8 +318,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo para subir los datos de cirugias de cada mascota
         /// </summary>
-        /// <param name="idMascota"></param>
-       private void SubirHCirugia(string idMascota)
+        /// <param name="selectedUserId"></param>
+        private void SubirHCirugia(string selectedUserId)
         {
 
         }
