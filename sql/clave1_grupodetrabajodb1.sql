@@ -54,14 +54,15 @@ DROP TABLE IF EXISTS `citas`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `citas` (
   `idCita` int NOT NULL AUTO_INCREMENT,
-  `FechaHora` datetime NOT NULL,
-  `Motivo` varchar(255) NOT NULL,
-  `Estado` enum('Programada','Cancelada','Reprogramada') NOT NULL,
   `idMascota` int NOT NULL,
+  `Motivo` varchar(255) NOT NULL,
+  `Estado` enum('Programada','Cancelada','Finalizada') NOT NULL,
+  `Fecha` date NOT NULL,
+  `Hora` time NOT NULL,
   PRIMARY KEY (`idCita`),
   KEY `idMascota_Citas` (`idMascota`),
   CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +71,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,'2030-10-24 00:00:00','coos','Programada',1),(2,'2024-02-02 00:00:00','sadsad','Programada',1);
+INSERT INTO `citas` VALUES (1,1,'Examen','Programada','2024-11-12','10:30:00'),(2,1,'vacuna','Programada','2023-11-21','10:00:00'),(3,4,'Parto','Programada','2023-12-24','13:00:00'),(4,2,'Vacuna','Programada','2024-11-14','00:00:00'),(5,11,'Castracion','Programada','2024-11-22','21:29:37'),(6,8,'adsasdas','Programada','2024-11-25','08:30:06'),(7,10,'Esterilización','Programada','2024-12-10','09:00:16'),(8,10,'Control','Programada','2025-01-08','14:30:56'),(9,9,'Control','Programada','2024-11-18','11:44:29'),(10,12,'Desparacitacion','Programada','2025-02-17','11:00:02'),(11,7,'Vacuna de la rabia','Programada','2024-11-19','15:00:17'),(12,7,'Coso epico','Programada','2024-11-27','12:51:54'),(13,6,'Motivos tiene','Programada','2024-11-14','14:20:15'),(14,1,'Control de salud','Cancelada','2025-03-04','15:12:48'),(15,2,'porbablementoe','Programada','2024-11-20','11:32:15');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -204,7 +205,7 @@ CREATE TABLE `mascotas` (
 
 LOCK TABLES `mascotas` WRITE;
 /*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
-INSERT INTO `mascotas` VALUES (1,'Misi','2022-02-10','Gato','Curl Americano','F',7),(2,'Misty','2022-04-26','Gato','American Wirehair','F',7),(3,'Raúl','2020-03-25','Gato','Sin raza','M',8),(4,'Bonnie','2021-03-15','Gato','Americano Pelo Corto','M',5),(5,'Canelo','2015-06-14','Perro','Nureongi','M',5),(6,'Tanathos','2021-10-07','Gato','Chartreux','M',6),(7,'Pandora','2023-08-07','Gato','Fold','F',6),(8,'Luis','2021-06-12','Iguana','runoceconte','M',8),(9,'Marlen','2023-09-20','Pez','Payaso','M',8),(10,'Gaxi','2024-10-30','Gato','American Wirehair','F',5),(11,'Naranja','2024-02-15','Gato','American Wirehair','M',7),(12,'Max','2024-01-24','Perro','Salchicha','M',7),(13,'Dogger','2014-04-14','Perro','Continental','M',7);
+INSERT INTO `mascotas` VALUES (1,'Misi','2022-02-10','Gato','Curl Americano','F',7),(2,'Misty','2022-04-26','Gato','American Wirehair','F',7),(3,'Raúl','2020-03-25','Gato','Sin raza','M',8),(4,'Bonnie','2021-03-15','Gato','Americano Pelo Corto','M',5),(5,'Canelo','2015-06-14','Perro','Nureongi','M',5),(6,'Tanathos','2021-10-07','Gato','Chartreux','M',6),(7,'Pandora','2023-08-07','Gato','Fold','F',6),(8,'Luis','2021-06-12','Iguana','runoceconte','M',8),(9,'Marlen','2023-09-20','Pez','Payaso','M',8),(10,'Gaxi','2024-10-30','Gato','American Wirehair','F',7),(11,'Naranja','2024-02-15','Gato','American Wirehair','M',7),(12,'Max','2024-01-24','Perro','Salchicha','M',7),(13,'Dogger','2014-04-14','Perro','Continental','M',7);
 /*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -364,4 +365,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-05 23:25:11
+-- Dump completed on 2024-11-06 16:46:08

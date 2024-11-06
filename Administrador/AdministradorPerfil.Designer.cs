@@ -113,7 +113,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnGuardarC = new System.Windows.Forms.Button();
             this.btnNueva = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnCancelarC = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -977,7 +977,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxEstado.FormattingEnabled = true;
             this.cbxEstado.Items.AddRange(new object[] {
             "Programada",
-            "Cancelada"});
+            "Cancelada",
+            "Finalizada"});
             this.cbxEstado.Location = new System.Drawing.Point(320, 104);
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(264, 24);
@@ -1146,7 +1147,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnCitas.Controls.Add(this.btnDeshacer);
             this.panelBtnCitas.Controls.Add(this.btnGuardarC);
             this.panelBtnCitas.Controls.Add(this.btnNueva);
-            this.panelBtnCitas.Controls.Add(this.btnCancelar);
+            this.panelBtnCitas.Controls.Add(this.btnCancelarC);
             this.panelBtnCitas.Location = new System.Drawing.Point(248, 432);
             this.panelBtnCitas.Name = "panelBtnCitas";
             this.panelBtnCitas.Size = new System.Drawing.Size(592, 60);
@@ -1209,18 +1210,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNueva.UseVisualStyleBackColor = false;
             this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
-            // btnCancelar
+            // btnCancelarC
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(248, 16);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
-            this.btnCancelar.TabIndex = 0;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelarC.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelarC.Enabled = false;
+            this.btnCancelarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarC.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarC.Location = new System.Drawing.Point(248, 16);
+            this.btnCancelarC.Name = "btnCancelarC";
+            this.btnCancelarC.Size = new System.Drawing.Size(80, 30);
+            this.btnCancelarC.TabIndex = 0;
+            this.btnCancelarC.Text = "Cancelar";
+            this.btnCancelarC.UseVisualStyleBackColor = false;
+            this.btnCancelarC.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // AdministradorPerfil
             // 
@@ -1340,7 +1342,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnReprogramar;
         private System.Windows.Forms.Button btnGuardarC;
         private System.Windows.Forms.Button btnNueva;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnCancelarC;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpHora;
