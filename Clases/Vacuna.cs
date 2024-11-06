@@ -15,7 +15,7 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public string Motivo { get; set; }
         public string Materiales { get; set; }
 
-
+        public Vacuna() { }
         public Vacuna(int idVacuna, int idMascota, string tipo, 
             string descripcion, string motivo, string materiales)
         {

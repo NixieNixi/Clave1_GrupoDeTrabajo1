@@ -85,6 +85,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.TipoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DescripcionCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvHExamenes = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblHistorialExamenes = new System.Windows.Forms.Label();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHVacunas)).BeginInit();
@@ -95,6 +101,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.SuspendLayout();
             this.tapExpediente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).BeginInit();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -131,6 +138,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // panelHM
             // 
             this.panelHM.AutoScroll = true;
+            this.panelHM.Controls.Add(this.dgvHExamenes);
+            this.panelHM.Controls.Add(this.lblHistorialExamenes);
             this.panelHM.Controls.Add(this.lblHistorialCitas);
             this.panelHM.Controls.Add(this.lblHistorialCirugias);
             this.panelHM.Controls.Add(this.dgvHVacunas);
@@ -610,6 +619,54 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.MotivoCirugia.Name = "MotivoCirugia";
             this.MotivoCirugia.ReadOnly = true;
             // 
+            // dgvHExamenes
+            // 
+            this.dgvHExamenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHExamenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHExamenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dgvHExamenes.Location = new System.Drawing.Point(12, 1005);
+            this.dgvHExamenes.Name = "dgvHExamenes";
+            this.dgvHExamenes.Size = new System.Drawing.Size(848, 150);
+            this.dgvHExamenes.TabIndex = 10;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Vacuna";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha de Aplicacion";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Motivo";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Proxima Dosis";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // lblHistorialExamenes
+            // 
+            this.lblHistorialExamenes.AutoSize = true;
+            this.lblHistorialExamenes.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorialExamenes.Location = new System.Drawing.Point(332, 951);
+            this.lblHistorialExamenes.Name = "lblHistorialExamenes";
+            this.lblHistorialExamenes.Size = new System.Drawing.Size(228, 27);
+            this.lblHistorialExamenes.TabIndex = 9;
+            this.lblHistorialExamenes.Text = "Historial de Examenes";
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -636,6 +693,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxDatosMascota.PerformLayout();
             this.tapExpediente.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -698,5 +756,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCirugia;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionCirugia;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotivoCirugia;
+        private System.Windows.Forms.DataGridView dgvHExamenes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label lblHistorialExamenes;
     }
 }
