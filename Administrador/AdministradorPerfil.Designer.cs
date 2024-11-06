@@ -32,13 +32,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
+            this.btnCerrar = new System.Windows.Forms.Button();
             this.btnInventario = new System.Windows.Forms.Button();
             this.btnMascotas = new System.Windows.Forms.Button();
             this.btnUsuarios = new System.Windows.Forms.Button();
             this.btnPagos = new System.Windows.Forms.Button();
             this.btnCitas = new System.Windows.Forms.Button();
-            this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnCerrar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -97,22 +97,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panelBtnCitas = new System.Windows.Forms.Panel();
@@ -121,7 +115,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -176,6 +169,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Size = new System.Drawing.Size(240, 431);
             this.panelBotones.TabIndex = 7;
+            // 
+            // panelMenu
+            // 
+            this.panelMenu.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelMenu.Controls.Add(this.btnCerrar);
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelMenu.Location = new System.Drawing.Point(0, 371);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(240, 60);
+            this.panelMenu.TabIndex = 11;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(16, 16);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(80, 30);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.Text = "Menu";
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnInventario
             // 
@@ -240,29 +256,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCitas.Text = "Citas";
             this.btnCitas.UseVisualStyleBackColor = false;
             this.btnCitas.Click += new System.EventHandler(this.btnCitas_Click);
-            // 
-            // panelMenu
-            // 
-            this.panelMenu.BackColor = System.Drawing.Color.CadetBlue;
-            this.panelMenu.Controls.Add(this.btnCerrar);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelMenu.Location = new System.Drawing.Point(0, 371);
-            this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(240, 60);
-            this.panelMenu.TabIndex = 11;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(16, 16);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(80, 30);
-            this.btnCerrar.TabIndex = 2;
-            this.btnCerrar.Text = "Menu";
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // label5
             // 
@@ -958,32 +951,24 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelCitas.AutoScroll = true;
             this.panelCitas.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panelCitas.Controls.Add(this.dateTimePicker1);
             this.panelCitas.Controls.Add(this.comboBox1);
             this.panelCitas.Controls.Add(this.cbxIdMascotaC);
             this.panelCitas.Controls.Add(this.cbxIdCita);
-            this.panelCitas.Controls.Add(this.textBox1);
-            this.panelCitas.Controls.Add(this.textBox2);
-            this.panelCitas.Controls.Add(this.textBox3);
             this.panelCitas.Controls.Add(this.textBox4);
             this.panelCitas.Controls.Add(this.label22);
-            this.panelCitas.Controls.Add(this.textBox5);
-            this.panelCitas.Controls.Add(this.label23);
             this.panelCitas.Controls.Add(this.textBox6);
+            this.panelCitas.Controls.Add(this.textBox8);
             this.panelCitas.Controls.Add(this.textBox7);
-            this.panelCitas.Controls.Add(this.label24);
-            this.panelCitas.Controls.Add(this.label26);
             this.panelCitas.Controls.Add(this.label27);
             this.panelCitas.Controls.Add(this.label28);
             this.panelCitas.Controls.Add(this.label29);
             this.panelCitas.Controls.Add(this.label30);
-            this.panelCitas.Controls.Add(this.label31);
+            this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCitas.Location = new System.Drawing.Point(240, 70);
+            this.panelCitas.Location = new System.Drawing.Point(584, 80);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(644, 431);
+            this.panelCitas.Size = new System.Drawing.Size(120, 154);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -993,11 +978,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.comboBox1.Enabled = false;
             this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(24, 344);
+            this.comboBox1.Items.AddRange(new object[] {
+            "Dueño",
+            "Veterinario",
+            "Administrador"});
+            this.comboBox1.Location = new System.Drawing.Point(320, 104);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(264, 24);
             this.comboBox1.TabIndex = 2;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
             // cbxIdMascotaC
             // 
@@ -1024,39 +1012,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdCita.Size = new System.Drawing.Size(264, 24);
             this.cbxIdCita.TabIndex = 2;
             // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(320, 344);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(264, 22);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(24, 272);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(560, 22);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(320, 160);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(264, 22);
-            this.textBox3.TabIndex = 1;
-            // 
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.Color.White;
@@ -1079,40 +1034,28 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label22.Size = new System.Drawing.Size(0, 16);
             this.label22.TabIndex = 7;
             // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.Color.White;
-            this.textBox5.Enabled = false;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(88, 480);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(264, 22);
-            this.textBox5.TabIndex = 1;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(320, 320);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(145, 16);
-            this.label23.TabIndex = 0;
-            this.label23.Text = "Nombre de la mascota";
-            // 
             // textBox6
             // 
             this.textBox6.BackColor = System.Drawing.Color.White;
             this.textBox6.Enabled = false;
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(320, 104);
+            this.textBox6.Location = new System.Drawing.Point(24, 104);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(264, 22);
             this.textBox6.TabIndex = 1;
             this.textBox6.UseSystemPasswordChar = true;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.White;
+            this.textBox8.Enabled = false;
+            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox8.Location = new System.Drawing.Point(320, 160);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(264, 22);
+            this.textBox8.TabIndex = 1;
             // 
             // textBox7
             // 
@@ -1125,41 +1068,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.textBox7.Size = new System.Drawing.Size(264, 22);
             this.textBox7.TabIndex = 1;
             // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.ForeColor = System.Drawing.Color.Black;
-            this.label24.Location = new System.Drawing.Point(88, 456);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(55, 16);
-            this.label24.TabIndex = 0;
-            this.label24.Text = "Usuario";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(24, 248);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(65, 16);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "Dirección";
-            // 
             // label27
             // 
             this.label27.AutoSize = true;
             this.label27.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.ForeColor = System.Drawing.Color.Black;
-            this.label27.Location = new System.Drawing.Point(320, 136);
+            this.label27.Location = new System.Drawing.Point(320, 80);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(126, 16);
+            this.label27.Size = new System.Drawing.Size(51, 16);
             this.label27.TabIndex = 0;
-            this.label27.Text = "Numero de teléfono";
+            this.label27.Text = "Estado";
             // 
             // label28
             // 
@@ -1181,9 +1100,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label29.ForeColor = System.Drawing.Color.Black;
             this.label29.Location = new System.Drawing.Point(24, 192);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(119, 16);
+            this.label29.Size = new System.Drawing.Size(48, 16);
             this.label29.TabIndex = 0;
-            this.label29.Text = "Correo Electrónico";
+            this.label29.Text = "Motivo";
             // 
             // label30
             // 
@@ -1191,23 +1110,23 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label30.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label30.ForeColor = System.Drawing.Color.Black;
-            this.label30.Location = new System.Drawing.Point(320, 80);
+            this.label30.Location = new System.Drawing.Point(24, 80);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(77, 16);
+            this.label30.Size = new System.Drawing.Size(145, 16);
             this.label30.TabIndex = 0;
-            this.label30.Text = "Contraseña";
+            this.label30.Text = "Nombre de la mascota";
             // 
-            // label31
+            // label34
             // 
-            this.label31.AutoSize = true;
-            this.label31.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.ForeColor = System.Drawing.Color.Black;
-            this.label31.Location = new System.Drawing.Point(24, 320);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(76, 16);
-            this.label31.TabIndex = 0;
-            this.label31.Text = "ID Mascota";
+            this.label34.AutoSize = true;
+            this.label34.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.ForeColor = System.Drawing.Color.Black;
+            this.label34.Location = new System.Drawing.Point(320, 136);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(38, 16);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Hora";
             // 
             // label32
             // 
@@ -1217,9 +1136,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label32.ForeColor = System.Drawing.Color.Black;
             this.label32.Location = new System.Drawing.Point(24, 136);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(57, 16);
+            this.label32.Size = new System.Drawing.Size(46, 16);
             this.label32.TabIndex = 0;
-            this.label32.Text = "Nombre";
+            this.label32.Text = "Fecha";
             // 
             // label33
             // 
@@ -1308,14 +1227,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.button4.TabIndex = 0;
             this.button4.Text = "Cancelar";
             this.button4.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 88);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 8;
             // 
             // AdministradorPerfil
             // 
@@ -1421,25 +1332,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.TextBox txtNombreDueno;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panelCitas;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox cbxIdMascotaC;
         private System.Windows.Forms.ComboBox cbxIdCita;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panelBtnCitas;
@@ -1448,6 +1350,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Label label34;
     }
 }

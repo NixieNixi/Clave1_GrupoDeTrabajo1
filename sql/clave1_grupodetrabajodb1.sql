@@ -57,13 +57,10 @@ CREATE TABLE `citas` (
   `FechaHora` datetime NOT NULL,
   `Motivo` varchar(255) NOT NULL,
   `Estado` enum('Programada','Cancelada','Reprogramada') NOT NULL,
-  `idUsuarios` int NOT NULL,
   `idMascota` int NOT NULL,
   PRIMARY KEY (`idCita`),
-  KEY `idUsuario_Citas_idx` (`idUsuarios`),
   KEY `idMascota_Citas` (`idMascota`),
-  CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`),
-  CONSTRAINT `idUsuario_Citas` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuario`)
+  CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -73,7 +70,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,'2030-10-24 00:00:00','coos','Programada',7,1),(2,'2024-02-02 00:00:00','sadsad','Programada',7,1);
+INSERT INTO `citas` VALUES (1,'2030-10-24 00:00:00','coos','Programada',1),(2,'2024-02-02 00:00:00','sadsad','Programada',1);
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -367,4 +364,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-31 14:05:28
+-- Dump completed on 2024-11-05 23:25:11
