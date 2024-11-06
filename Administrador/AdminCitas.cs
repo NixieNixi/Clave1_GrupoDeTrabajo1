@@ -229,12 +229,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Dependiendo de la seleccion de idCita se muestra la informacion
             else
             {
-                //guarda el texto de la seleccion en ConsultaIdCita
-                string ConsultaIdCita = cbxIdCita.SelectedItem.ToString();
-
                 //Intentar conectar a DB y hacer la consulta del nombre de la mascota
                 try
                 {
+                    //guarda el texto de la seleccion en ConsultaIdCita
+                    string ConsultaIdCita = cbxIdCita.SelectedItem.ToString();
+
                     //cadena de conexion a DB
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
@@ -342,11 +342,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void ActualizarCitas()
         {
-            //convierte el id seleccionado del combobox
-            string IdSeleccion = cbxIdMascotaC.SelectedItem.ToString();
-
             try
             {
+                //convierte el id seleccionado del combobox
+                string IdSeleccion = cbxIdMascotaC.SelectedItem.ToString();
+
                 //cadena de conexion DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
