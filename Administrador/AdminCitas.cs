@@ -345,7 +345,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             try
             {
                 //convierte el id seleccionado del combobox
-                string IdSeleccion = cbxIdMascotaC.SelectedItem.ToString();
+                string IdSeleccion = cbxIdMascotaC.Text;
 
                 //cadena de conexion DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -548,7 +548,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         else
                         {
                             command.Parameters.AddWithValue("@idMascota", cbxIdMascotaC.SelectedItem.ToString());
-                            command.Parameters.AddWithValue("@Estado", cbxEstado.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Estado", "Programada");
                             command.Parameters.AddWithValue("@Fecha", dtpFecha.Value.Date);
                             command.Parameters.AddWithValue("@Hora", dtpHora.Value.TimeOfDay);
                             command.Parameters.AddWithValue("@Motivo", txtMotivo.Text);

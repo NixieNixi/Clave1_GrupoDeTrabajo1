@@ -558,6 +558,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdUsuario
             // 
             this.cbxIdUsuario.BackColor = System.Drawing.Color.White;
+            this.cbxIdUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdUsuario.FormattingEnabled = true;
             this.cbxIdUsuario.Location = new System.Drawing.Point(24, 48);
@@ -569,6 +570,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxRol
             // 
             this.cbxRol.BackColor = System.Drawing.Color.White;
+            this.cbxRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxRol.Enabled = false;
             this.cbxRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxRol.FormattingEnabled = true;
@@ -584,6 +586,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdMascota
             // 
             this.cbxIdMascota.BackColor = System.Drawing.Color.White;
+            this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascota.Enabled = false;
             this.cbxIdMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascota.FormattingEnabled = true;
@@ -678,9 +681,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Location = new System.Drawing.Point(416, 80);
+            this.panelMascotas.Location = new System.Drawing.Point(432, 96);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(150, 100);
+            this.panelMascotas.Size = new System.Drawing.Size(136, 104);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -698,6 +701,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdMascotaM
             // 
             this.cbxIdMascotaM.BackColor = System.Drawing.Color.White;
+            this.cbxIdMascotaM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascotaM.Enabled = false;
             this.cbxIdMascotaM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascotaM.FormattingEnabled = true;
@@ -723,6 +727,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdDueno
             // 
             this.cbxIdDueno.BackColor = System.Drawing.Color.White;
+            this.cbxIdDueno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdDueno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdDueno.FormattingEnabled = true;
             this.cbxIdDueno.Location = new System.Drawing.Point(24, 48);
@@ -964,14 +969,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
+            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCitas.Location = new System.Drawing.Point(240, 70);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(644, 354);
+            this.panelCitas.Size = new System.Drawing.Size(644, 431);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
             // cbxEstado
             // 
+            this.cbxEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxEstado.Enabled = false;
             this.cbxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxEstado.FormattingEnabled = true;
@@ -1001,7 +1008,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.dtpHora.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.dtpHora.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
-            this.dtpHora.CustomFormat = "hh:mm tt";
+            this.dtpHora.CustomFormat = "HH:mm";
             this.dtpHora.Enabled = false;
             this.dtpHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
@@ -1014,6 +1021,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdMascotaC
             // 
             this.cbxIdMascotaC.BackColor = System.Drawing.Color.White;
+            this.cbxIdMascotaC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascotaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdMascotaC.FormattingEnabled = true;
             this.cbxIdMascotaC.Location = new System.Drawing.Point(24, 48);
@@ -1025,6 +1033,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdCita
             // 
             this.cbxIdCita.BackColor = System.Drawing.Color.White;
+            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdCita.Enabled = false;
             this.cbxIdCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdCita.FormattingEnabled = true;
@@ -1231,11 +1240,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
             this.Controls.Add(this.panelCitas);
+            this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnUsuarios);
             this.Controls.Add(this.panelBtnCitas);
-            this.Controls.Add(this.panelMascotas);
-            this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
