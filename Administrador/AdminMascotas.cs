@@ -27,7 +27,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// <summary>
         /// Campo que permite activar o desactivar la actualizacion y limpieza de los registros de mascotas
         /// </summary>
-        bool activar = false;
+        bool activarM = false;
 
         /// <summary>
         /// Evento Click del boton 'Mascotas'
@@ -77,7 +77,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnNuevoM.Enabled = false;
 
             //activar modo de edicion
-            activar = true;  
+            activarM = true;  
             HabilitarEdicionM(true);
         }
 
@@ -107,7 +107,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             LimpiarMascota();
 
             //activar modo de edicion
-            activar = true;
+            activarM = true;
             HabilitarEdicionM(true);
         }
 
@@ -130,7 +130,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnNuevoM.Enabled = true;
 
             //deshabilita el estado de edicion
-            activar = false;
+            activarM = false;
             HabilitarEdicionM(false);
 
             //vuelve a cargar los idUsuario y los idMasctoa en sus combobox 
@@ -226,7 +226,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 }
             }
             //si no se esta en el modo de edicion entonces carga los idMascota en el combobox
-            if (activar == false)
+            if (activarM == false)
             {
                 ActualizarRegistrosMascota();
             }

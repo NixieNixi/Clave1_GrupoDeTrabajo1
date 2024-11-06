@@ -94,9 +94,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNuevoM = new System.Windows.Forms.Button();
             this.btnCancelarM = new System.Windows.Forms.Button();
             this.panelCitas = new System.Windows.Forms.Panel();
+            this.cbxEstado = new System.Windows.Forms.ComboBox();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
-            this.cbxEstadoC = new System.Windows.Forms.ComboBox();
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.txtMotivo = new System.Windows.Forms.TextBox();
@@ -109,11 +109,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.panelBtnCitas = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnReprogramar = new System.Windows.Forms.Button();
+            this.btnDeshacer = new System.Windows.Forms.Button();
+            this.btnGuardarC = new System.Windows.Forms.Button();
+            this.btnNueva = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -642,7 +642,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnUsuarios.Controls.Add(this.btnGuardarUser);
             this.panelBtnUsuarios.Controls.Add(this.btnNuevoUser);
             this.panelBtnUsuarios.Controls.Add(this.btnCancelarUser);
-            this.panelBtnUsuarios.Location = new System.Drawing.Point(248, 368);
+            this.panelBtnUsuarios.Location = new System.Drawing.Point(248, 296);
             this.panelBtnUsuarios.Name = "panelBtnUsuarios";
             this.panelBtnUsuarios.Size = new System.Drawing.Size(432, 60);
             this.panelBtnUsuarios.TabIndex = 11;
@@ -884,7 +884,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnMascota.Controls.Add(this.btnGuardarM);
             this.panelBtnMascota.Controls.Add(this.btnNuevoM);
             this.panelBtnMascota.Controls.Add(this.btnCancelarM);
-            this.panelBtnMascota.Location = new System.Drawing.Point(248, 432);
+            this.panelBtnMascota.Location = new System.Drawing.Point(248, 360);
             this.panelBtnMascota.Name = "panelBtnMascota";
             this.panelBtnMascota.Size = new System.Drawing.Size(432, 60);
             this.panelBtnMascota.TabIndex = 12;
@@ -950,9 +950,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelCitas.AutoScroll = true;
             this.panelCitas.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelCitas.Controls.Add(this.cbxEstado);
             this.panelCitas.Controls.Add(this.dtpFecha);
             this.panelCitas.Controls.Add(this.dtpHora);
-            this.panelCitas.Controls.Add(this.cbxEstadoC);
             this.panelCitas.Controls.Add(this.cbxIdMascotaC);
             this.panelCitas.Controls.Add(this.cbxIdCita);
             this.panelCitas.Controls.Add(this.txtMotivo);
@@ -964,12 +964,24 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCitas.Location = new System.Drawing.Point(240, 70);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(644, 431);
+            this.panelCitas.Size = new System.Drawing.Size(644, 354);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
+            // 
+            // cbxEstado
+            // 
+            this.cbxEstado.Enabled = false;
+            this.cbxEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstado.FormattingEnabled = true;
+            this.cbxEstado.Items.AddRange(new object[] {
+            "Programada",
+            "Cancelada"});
+            this.cbxEstado.Location = new System.Drawing.Point(320, 104);
+            this.cbxEstado.Name = "cbxEstado";
+            this.cbxEstado.Size = new System.Drawing.Size(264, 24);
+            this.cbxEstado.TabIndex = 10;
             // 
             // dtpFecha
             // 
@@ -977,6 +989,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dtpFecha.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.dtpFecha.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.dtpFecha.CustomFormat = "dd/MM/yyyy";
+            this.dtpFecha.Enabled = false;
             this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFecha.Location = new System.Drawing.Point(24, 160);
             this.dtpFecha.Name = "dtpFecha";
@@ -988,6 +1001,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dtpHora.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.dtpHora.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
             this.dtpHora.CustomFormat = "hh:mm tt";
+            this.dtpHora.Enabled = false;
             this.dtpHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpHora.Location = new System.Drawing.Point(176, 160);
@@ -995,19 +1009,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dtpHora.ShowUpDown = true;
             this.dtpHora.Size = new System.Drawing.Size(96, 22);
             this.dtpHora.TabIndex = 9;
-            // 
-            // cbxEstadoC
-            // 
-            this.cbxEstadoC.BackColor = System.Drawing.Color.White;
-            this.cbxEstadoC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxEstadoC.FormattingEnabled = true;
-            this.cbxEstadoC.Items.AddRange(new object[] {
-            "Programada",
-            "Cancelada"});
-            this.cbxEstadoC.Location = new System.Drawing.Point(320, 104);
-            this.cbxEstadoC.Name = "cbxEstadoC";
-            this.cbxEstadoC.Size = new System.Drawing.Size(264, 24);
-            this.cbxEstadoC.TabIndex = 2;
             // 
             // cbxIdMascotaC
             // 
@@ -1023,6 +1024,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // cbxIdCita
             // 
             this.cbxIdCita.BackColor = System.Drawing.Color.White;
+            this.cbxIdCita.Enabled = false;
             this.cbxIdCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdCita.FormattingEnabled = true;
             this.cbxIdCita.Location = new System.Drawing.Point(24, 104);
@@ -1140,78 +1142,85 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // panelBtnCitas
             // 
             this.panelBtnCitas.BackColor = System.Drawing.Color.CadetBlue;
-            this.panelBtnCitas.Controls.Add(this.button1);
-            this.panelBtnCitas.Controls.Add(this.button5);
-            this.panelBtnCitas.Controls.Add(this.button2);
-            this.panelBtnCitas.Controls.Add(this.button3);
-            this.panelBtnCitas.Controls.Add(this.button4);
-            this.panelBtnCitas.Location = new System.Drawing.Point(248, 304);
+            this.panelBtnCitas.Controls.Add(this.btnReprogramar);
+            this.panelBtnCitas.Controls.Add(this.btnDeshacer);
+            this.panelBtnCitas.Controls.Add(this.btnGuardarC);
+            this.panelBtnCitas.Controls.Add(this.btnNueva);
+            this.panelBtnCitas.Controls.Add(this.btnCancelar);
+            this.panelBtnCitas.Location = new System.Drawing.Point(248, 432);
             this.panelBtnCitas.Name = "panelBtnCitas";
             this.panelBtnCitas.Size = new System.Drawing.Size(592, 60);
             this.panelBtnCitas.TabIndex = 11;
             this.panelBtnCitas.Visible = false;
             // 
-            // button1
+            // btnReprogramar
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Reprogramar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnReprogramar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnReprogramar.Enabled = false;
+            this.btnReprogramar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReprogramar.ForeColor = System.Drawing.Color.White;
+            this.btnReprogramar.Location = new System.Drawing.Point(16, 16);
+            this.btnReprogramar.Name = "btnReprogramar";
+            this.btnReprogramar.Size = new System.Drawing.Size(104, 30);
+            this.btnReprogramar.TabIndex = 0;
+            this.btnReprogramar.Text = "Reprogramar";
+            this.btnReprogramar.UseVisualStyleBackColor = false;
+            this.btnReprogramar.Click += new System.EventHandler(this.btnReprogramar_Click);
             // 
-            // button5
+            // btnDeshacer
             // 
-            this.button5.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button5.Enabled = false;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(456, 16);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 30);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Guardar";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnDeshacer.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnDeshacer.Enabled = false;
+            this.btnDeshacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeshacer.ForeColor = System.Drawing.Color.White;
+            this.btnDeshacer.Location = new System.Drawing.Point(456, 16);
+            this.btnDeshacer.Name = "btnDeshacer";
+            this.btnDeshacer.Size = new System.Drawing.Size(80, 30);
+            this.btnDeshacer.TabIndex = 0;
+            this.btnDeshacer.Text = "Deshacer";
+            this.btnDeshacer.UseVisualStyleBackColor = false;
+            this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
             // 
-            // button2
+            // btnGuardarC
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(352, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGuardarC.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnGuardarC.Enabled = false;
+            this.btnGuardarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarC.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarC.Location = new System.Drawing.Point(352, 16);
+            this.btnGuardarC.Name = "btnGuardarC";
+            this.btnGuardarC.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardarC.TabIndex = 0;
+            this.btnGuardarC.Text = "Guardar";
+            this.btnGuardarC.UseVisualStyleBackColor = false;
+            this.btnGuardarC.Click += new System.EventHandler(this.btnGuardarC_Click);
             // 
-            // button3
+            // btnNueva
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(144, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Nueva";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnNueva.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnNueva.Enabled = false;
+            this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNueva.ForeColor = System.Drawing.Color.White;
+            this.btnNueva.Location = new System.Drawing.Point(144, 16);
+            this.btnNueva.Name = "btnNueva";
+            this.btnNueva.Size = new System.Drawing.Size(80, 30);
+            this.btnNueva.TabIndex = 0;
+            this.btnNueva.Text = "Nueva";
+            this.btnNueva.UseVisualStyleBackColor = false;
+            this.btnNueva.Click += new System.EventHandler(this.btnNueva_Click);
             // 
-            // button4
+            // btnCancelar
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(248, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(248, 16);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 30);
+            this.btnCancelar.TabIndex = 0;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
             // 
             // AdministradorPerfil
             // 
@@ -1328,14 +1337,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Panel panelBtnCitas;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.ComboBox cbxEstadoC;
+        private System.Windows.Forms.Button btnReprogramar;
+        private System.Windows.Forms.Button btnGuardarC;
+        private System.Windows.Forms.Button btnNueva;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpHora;
+        private System.Windows.Forms.Button btnDeshacer;
+        private System.Windows.Forms.ComboBox cbxEstado;
     }
 }

@@ -10,6 +10,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil
     {
+        bool activarC = false;
+
         //Metodo para mostrar el panel de citas
         private void btnCitas_Click(object sender, EventArgs e)
         {
@@ -32,14 +34,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             ActualizarMascotas();
         }
 
+
         private void cbxIdMascotaC_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             if (cbxIdMascotaC.SelectedIndex == -1)
             {
-
+                cbxIdCita.Enabled = false;
             }
             else
             {
+                cbxIdCita.Enabled = true;
+                btnNueva.Enabled = true;
                 //convierte el id seleccionado del combobox
                 string IdSeleccion = cbxIdMascotaC.SelectedItem.ToString();
 
@@ -75,7 +81,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
             }
-            ActualizarCitas();
+
+            if (activarC == false)
+            {
+                ActualizarCitas();
+            }
         }
 
         private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
@@ -84,10 +94,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             if (cbxIdCita.SelectedIndex == -1)
             {
                 LimpiarCita();
+                btnReprogramar.Enabled = false;
             }
             //Dependiendo de la seleccion de idMascota se muestra un nombre
             else
             {
+                btnReprogramar.Enabled = true;
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdCita.SelectedItem.ToString();
 
@@ -113,7 +125,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 //Inserta la informacion en los controles correspondientes
                                 if (reader.Read())
                                 {
-                                    cbxEstadoC.Text = reader["Estado"].ToString();
+                                    cbxEstado.Text = reader["Estado"].ToString();
                                     dtpFecha.Value = (DateTime)reader["Fecha"];
                                     TimeSpan horaDB = (TimeSpan)reader["Hora"];
                                     DateTime hora = new DateTime(2020, 3, 25).Add(horaDB);
@@ -129,6 +141,44 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 {
                     MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
                 }
+            }
+        }
+
+        private void btnNueva_Click(object sender, EventArgs e)
+        {
+            btnGuardarC.Enabled = true;
+            btnDeshacer.Enabled = true;
+            btnReprogramar.Enabled = false;
+            cbxEstado.SelectedIndex = 0;
+
+            LimpiarCita();
+            dtpFecha.MinDate = DateTime.Today.AddDays(1);
+            activarC = true;
+            HabilitarEdicionC(true);
+        }
+
+        private void btnReprogramar_Click(object sender, EventArgs e)
+        {
+            //habilitar botones
+            btnDeshacer.Enabled = true;
+            btnGuardarC.Enabled = true;
+            //deshabilitar boton nuevo
+            btnNueva.Enabled = false;
+
+            //activar modo de edicion
+            activarC = true;
+            HabilitarEdicionC(true);
+        }
+
+        private void btnGuardarC_Click(object sender, EventArgs e)
+        {
+            if(cbxIdCita.SelectedIndex == -1)
+            {
+                NuevaCita();
+            }
+            else
+            {
+                ReprogramarCita();
             }
         }
 
@@ -170,6 +220,27 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        private void btnDeshacer_Click(object sender, EventArgs e)
+        {
+            //Se reestablece el limite para el control
+            dtpFecha.MinDate = Convert.ToDateTime("01/01/1753");
+
+            //Deshabilita el boton de guardar
+            btnGuardarC.Enabled = false;
+            //habilita el boton de nuevo
+            btnNueva.Enabled = true;
+
+            //deshabilita el estado de edicion
+            activarC = false;
+            HabilitarEdicionC(false);
+
+            //vuelve a cargar los idUsuario y los idMasctoa en sus combobox 
+            cbxIdMascotaC_SelectedIndexChanged(this, EventArgs.Empty);
+
+            //desactiva el boton de cancelar
+            btnDeshacer.Enabled = false;
+        }
+
         private void ActualizarCitas()
         {
             //convierte el id seleccionado del combobox
@@ -209,6 +280,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             {
                                 //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
                                 cbxIdCita.Text = "No se encontraron citas";
+                                cbxIdCita.Enabled = false;
                             }
                         }
                     }
@@ -225,10 +297,179 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         {
             cbxIdCita.Text = null;
             cbxIdCita.Items.Clear();
-            cbxEstadoC.Text = null;
             dtpFecha.Value = DateTime.Now;
+            dtpFecha.MinDate = Convert.ToDateTime("01/01/1753");
             dtpHora.Value = DateTime.Now;
             txtMotivo.Text = null;
+        }
+
+        private void HabilitarEdicionC(bool habilitar)
+        {
+            cbxIdCita.Enabled = !habilitar;
+
+            txtMotivo.Enabled = habilitar;
+            dtpFecha.Enabled = habilitar;
+            dtpHora.Enabled = habilitar;
+
+            txtMotivo.ReadOnly = !habilitar;
+        }
+
+        private void ReprogramarCita()
+        {
+            dtpFecha.MinDate = DateTime.Today.AddDays(1);
+            //Consulta sql para actualizar los datos de la mascota
+            string query = @"UPDATE citas 
+                     SET Fecha = @Fecha, 
+                         Hora= @Hora, 
+                         Motivo= @Motivo
+                     WHERE idCita = @idCita;";
+                //WHERE indica en que registro se hara la actualizacion
+
+                //Realizar la actualización en la base de datos
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        try
+                        {
+                        TimeSpan horaIngresada = dtpHora.Value.TimeOfDay;
+                        TimeSpan cierre = new TimeSpan(8, 0, 0);
+                        TimeSpan abrir = new TimeSpan(16, 0, 0);
+
+                       if (horaIngresada > abrir || horaIngresada < cierre)
+                        {
+                            MessageBox.Show("ingrese una hora valida entre\n8:00 a.m. y 4:00 p.m.", "Error", MessageBoxButtons.OK);
+                        }
+                        else
+                            {
+                            command.Parameters.AddWithValue("idCita", cbxIdCita.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Fecha", dtpFecha.Value.Date);
+                            command.Parameters.AddWithValue("@Hora", dtpHora.Value.TimeOfDay);
+                            command.Parameters.AddWithValue("@Motivo", txtMotivo.Text);
+                        }
+                        }
+                        //si se produce otro error
+                        catch (Exception error)
+                        {
+                            MessageBox.Show("Hay un error en los datos: " + error.Message, "Error", MessageBoxButtons.OK);
+                        }
+
+                        //Intentar hacer la actualizacion del registro
+                        try
+                        {
+                            //conexion a DB
+                            connection.Open();
+
+                            //variable para comprobar cuantas filas fueron modificadas
+                            int rowsAffected = command.ExecuteNonQuery();
+
+                            //Comprobar si la actualizacion fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue cambiada
+                            if (rowsAffected > 0)
+                            {
+                                //Se deshabilita la edicion para evitar editar la misma mascota nuevamente por accidente
+                                HabilitarEdicionC(false);
+
+                                MessageBox.Show("Informacion actualizada ♡", "Operacion exitosa!");
+
+                            //Se limpian los campos y se deshabilta el boton deshacer
+                            btnDeshacer_Click(this, EventArgs.Empty);
+                        }
+                            //Si no se cambio ninguna fila se muestra un mensaje de error
+                            else
+                            {
+                                MessageBox.Show("No se pudo actualizar el registro.", "Error :(");
+                            }
+                        }
+                        //Si no puede modificar el registro mostrar mensaje de error
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Error :(");
+                        }
+                    }
+                }
+        }
+
+        private void NuevaCita()
+        {
+            dtpFecha.MinDate = DateTime.Today.AddDays(1);
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                //Consulta sql para insertar una nueva mascota
+                string query = @"INSERT INTO citas (idMascota, Estado, Fecha, Hora, Motivo)
+                     VALUES (@idMascota, @Estado, @Fecha, @Hora, @Motivo);";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    //Intenta asignar los valores de los controles a los parámetros sql
+                    try
+                    {
+                        TimeSpan horaIngresada = dtpHora.Value.TimeOfDay;
+                        TimeSpan cierre = new TimeSpan(8,0,0);
+                        TimeSpan abrir = new TimeSpan(16, 0, 0);
+
+                        //si los campos estan vacios mostrar mensaje de error
+                        if (string.IsNullOrEmpty(txtMotivo.Text))
+                        {
+                            MessageBox.Show("Ingrese un motivo para la cita", "Error", MessageBoxButtons.OK);
+                        }
+                        else if(horaIngresada > abrir || horaIngresada < cierre)
+                        {
+                            MessageBox.Show("ingrese una hora valida entre\n8:00 a.m. y 4:00 p.m.", "Error", MessageBoxButtons.OK);
+                        }
+                        //si no hay errores en los datos asignar los parametros con los datos del form
+                        else
+                        {
+                            command.Parameters.AddWithValue("@idMascota", cbxIdMascotaC.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Estado", cbxEstado.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Fecha", dtpFecha.Value.Date);
+                            command.Parameters.AddWithValue("@Hora", dtpHora.Value.TimeOfDay);
+                            command.Parameters.AddWithValue("@Motivo", txtMotivo.Text);
+                        }
+                    }
+                    //si se produce otro error
+                    catch (Exception error)
+                    {
+                        MessageBox.Show("Hay un error en los datos: " + error.Message, "Error", MessageBoxButtons.OK);
+                    }
+
+                    //Intenta insertar nuevo registro a DB
+                    try
+                    {
+                        //Abrir la conexión a la base de datos
+                        connection.Open();
+
+                        //variable para comprobar cuantas filas fueron agregadas
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
+                        if (rowsAffected > 0)
+                        {
+                            //Se deshabilita la edicion para evitar ingresar la misma mascota nuevamente por accidente
+                            HabilitarEdicionC(false);
+
+                            MessageBox.Show("Cita programada, por favor sea puntual", "Operacion exitosa!");
+
+                            //Se limpian los campos y se deshabilta el boton deshacer
+                            btnDeshacer_Click(this, EventArgs.Empty);
+
+                            //Se actualizan los registros
+                            ActualizarCitas();
+                            ActualizarMascotas();
+                        }
+                        //Si no se cambio ninguna fila mostrar mensaje de error
+                        else
+                        {
+                            MessageBox.Show("Error al ingresar mascota.", "Error :(");
+                        }
+
+                        //Si no puede hacer el registro mostrar mensaje de error
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al insertar los datos: " + ex.Message, "Error :(");
+                    }
+                }
+            }
         }
     }
 }
