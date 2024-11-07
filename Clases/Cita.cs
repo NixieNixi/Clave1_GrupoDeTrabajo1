@@ -16,10 +16,12 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public string Diagnostico { get; set; }
         public string Tratamiento { get; set; }
         public string ExamenFisico { get; set; }
-
+        public double Peso { get; set; }
         public string Medicamentos { get; set; }
         public string Notas { get; set; }
-
+        public Mascota Mascota { get; set; }
+        public string Estado { get; set; }
+        public string Hora { get; set; }
 
         public Cita() { }
 

@@ -645,7 +645,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnUsuarios.Controls.Add(this.btnGuardarUser);
             this.panelBtnUsuarios.Controls.Add(this.btnNuevoUser);
             this.panelBtnUsuarios.Controls.Add(this.btnCancelarUser);
-            this.panelBtnUsuarios.Location = new System.Drawing.Point(248, 296);
+            this.panelBtnUsuarios.Location = new System.Drawing.Point(248, 192);
             this.panelBtnUsuarios.Name = "panelBtnUsuarios";
             this.panelBtnUsuarios.Size = new System.Drawing.Size(432, 60);
             this.panelBtnUsuarios.TabIndex = 11;
@@ -681,9 +681,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Location = new System.Drawing.Point(432, 96);
+            this.panelMascotas.Location = new System.Drawing.Point(416, 80);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(136, 104);
+            this.panelMascotas.Size = new System.Drawing.Size(150, 100);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -889,7 +889,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnMascota.Controls.Add(this.btnGuardarM);
             this.panelBtnMascota.Controls.Add(this.btnNuevoM);
             this.panelBtnMascota.Controls.Add(this.btnCancelarM);
-            this.panelBtnMascota.Location = new System.Drawing.Point(248, 360);
+            this.panelBtnMascota.Location = new System.Drawing.Point(248, 256);
             this.panelBtnMascota.Name = "panelBtnMascota";
             this.panelBtnMascota.Size = new System.Drawing.Size(432, 60);
             this.panelBtnMascota.TabIndex = 12;
@@ -969,10 +969,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCitas.Location = new System.Drawing.Point(240, 70);
+            this.panelCitas.Location = new System.Drawing.Point(584, 80);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(644, 431);
+            this.panelCitas.Size = new System.Drawing.Size(150, 100);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1157,7 +1156,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnCitas.Controls.Add(this.btnGuardarC);
             this.panelBtnCitas.Controls.Add(this.btnNueva);
             this.panelBtnCitas.Controls.Add(this.btnCancelarC);
-            this.panelBtnCitas.Location = new System.Drawing.Point(248, 432);
+            this.panelBtnCitas.Location = new System.Drawing.Point(248, 320);
             this.panelBtnCitas.Name = "panelBtnCitas";
             this.panelBtnCitas.Size = new System.Drawing.Size(592, 60);
             this.panelBtnCitas.TabIndex = 11;
