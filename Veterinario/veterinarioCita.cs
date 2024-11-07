@@ -32,20 +32,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// En el formulario 'veterinarioExpediente' se añadieron dos botones: 'btnVolver' para regresar al menú principal
     ///y 'btnIrCita' para acceder directamente a la sección de citas.
     /// 
-    /// NixieNixi
-    /// Agregue la conexion a la DB y cree los metodos de los cbx de vacuna y id Expeidnete, examen,ciruagia, ademas de los metodos d elimpiar. 
+    /// Autor:NixieNixi
+    /// Fecha de Modificacion: 05/11/2024
+    /// Descrpcion:
+    /// Agregue la conexion a la DB y cree los metodos de los cbx de vacuna y id Expeidnete, examen,ciruagia, ademas de los metodos de limpiar.
+    /// 
+    /// Autor: NixieNixi
+    /// Fecha de Modificacion: 06/11/2024
+    /// Descripcion:
+    /// Se agrego el metodo de Cargar datos la cita y mascota asociada.
     /// 
     ///</remarks>
     ///
 
     
-
+   
     public partial class veterinarioCita : Form
     {
         public veterinarioCita()
         {
             InitializeComponent();
 
+            // Cargar los IDs de citas al ComboBox cbxIdCita al inicializar el formulario
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 string query = "SELECT idCita FROM citas;";
@@ -64,25 +72,39 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
 
-        // Evento para cuando cambia la selección del ComboBox
+        /// <summary>
+        /// Evento para cuando cambia la selección del ComboBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            // Verifica si no hay una selección (índice -1) y limpia los controles
             if (cbxIdCita.SelectedIndex == -1)
             {
                 LimpiarControles();
             }
             else
             {
-                // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
+                // Obtiene el ID de cita seleccionado como cadena de texto
                 string selectedCitaId = cbxIdCita.SelectedItem.ToString();
-                // Llamada al metodos;
+              
+
+                // Muestra un mensaje con el ID de cita seleccionado
                 MessageBox.Show("ID de Cita Seleccionado: " + selectedCitaId);
+
+                // Llama al método CargarDatos para obtener los datos de la cita seleccionada
                 CargarDatos(selectedCitaId);
             }
         }
 
-        // Función para cargar los datos de la cita y la mascota asociada
+
+
+
+        /// <summary>
+        /// Función para cargar los datos de la cita y la mascota asociada
+        /// </summary>
+        /// <param name="selectedCitaId">ID de la cita seleccionada en el ComboBox</param>
         private void CargarDatos(string selectedCitaId)
         {
             
@@ -118,6 +140,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     {
                                         if (reader.Read())
                                         {
+                                            // Asigna cada valor obtenido a los controles del formulario
+
                                             txtEstadoCita.Text = reader["Estado"].ToString();
                                    
                                             txtMotiConsulta.Text = reader["Motivo"].ToString();
@@ -125,7 +149,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                             txtNomMascota.Text = reader["NombreMascota"].ToString();
 
                                             txtEspecie.Text = reader["Especie"].ToString();
-
+                                            txtFechaCita.Text = reader["Fecha"].ToString();
                                         }
                                 
                                     }
@@ -134,13 +158,20 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ocurrió un error al cargar los datos de la cita: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Muestra un mensaje de error si ocurre alguna excepción
+                    MessageBox.Show("Ocurrió un error al cargar los datos de la cita: " + ex.Message, "Error", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
                 }
             
         }
 
+
+        /// <summary>
+        /// Metodo que limpia los controles del formulario veterinarioCita
+        /// </summary>
         private void LimpiarControles()
         {
+            // Limpia los campos de texto relacionados con los datos de la cita y la mascota
             txtEstadoCita.Clear();
             txtMotiConsulta.Clear();
             txtNomMascota.Clear();

@@ -19,7 +19,9 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public double Peso { get; set; }
         public string Medicamentos { get; set; }
         public string Notas { get; set; }
-
+        public Mascota Mascota { get; set; }
+        public string Estado { get; set; }
+        public string Hora { get; set; }
 
         public Cita() { }
 
