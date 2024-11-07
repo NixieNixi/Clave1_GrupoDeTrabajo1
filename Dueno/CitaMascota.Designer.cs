@@ -51,7 +51,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotCiD = new System.Windows.Forms.TextBox();
             this.btnProgramarCitaD = new System.Windows.Forms.Button();
             this.btnRepreogramarCitaD = new System.Windows.Forms.Button();
-            this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.btnCancelarCita = new System.Windows.Forms.Button();
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -239,7 +238,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnProgramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnProgramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnProgramarCitaD.Location = new System.Drawing.Point(189, 20);
+            this.btnProgramarCitaD.Location = new System.Drawing.Point(249, 20);
             this.btnProgramarCitaD.Name = "btnProgramarCitaD";
             this.btnProgramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnProgramarCitaD.TabIndex = 22;
@@ -251,40 +250,31 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnRepreogramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnRepreogramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(546, 20);
+            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(390, 20);
             this.btnRepreogramarCitaD.Name = "btnRepreogramarCitaD";
             this.btnRepreogramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardarCitaD
-            // 
-            this.btnGuardarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnGuardarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCitaD.Location = new System.Drawing.Point(364, 20);
-            this.btnGuardarCitaD.Name = "btnGuardarCitaD";
-            this.btnGuardarCitaD.Size = new System.Drawing.Size(86, 23);
-            this.btnGuardarCitaD.TabIndex = 24;
-            this.btnGuardarCitaD.Text = "Guardar";
-            this.btnGuardarCitaD.UseVisualStyleBackColor = false;
+            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
             // 
             // btnCancelarCita
             // 
             this.btnCancelarCita.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCancelarCita.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCita.Location = new System.Drawing.Point(698, 20);
+            this.btnCancelarCita.Location = new System.Drawing.Point(536, 20);
             this.btnCancelarCita.Name = "btnCancelarCita";
             this.btnCancelarCita.Size = new System.Drawing.Size(86, 23);
             this.btnCancelarCita.TabIndex = 25;
             this.btnCancelarCita.Text = "Cancelar";
             this.btnCancelarCita.UseVisualStyleBackColor = false;
+            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
             // 
             // btnPerfilD
             // 
             this.btnPerfilD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnPerfilD.ForeColor = System.Drawing.Color.White;
-            this.btnPerfilD.Location = new System.Drawing.Point(14, 20);
+            this.btnPerfilD.Location = new System.Drawing.Point(103, 20);
             this.btnPerfilD.Name = "btnPerfilD";
             this.btnPerfilD.Size = new System.Drawing.Size(86, 23);
             this.btnPerfilD.TabIndex = 26;
@@ -341,7 +331,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.btnPerfilD);
-            this.panel1.Controls.Add(this.btnGuardarCitaD);
             this.panel1.Controls.Add(this.btnCancelarCita);
             this.panel1.Controls.Add(this.btnProgramarCitaD);
             this.panel1.Controls.Add(this.btnRepreogramarCitaD);
@@ -421,7 +410,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtMotCiD;
         private System.Windows.Forms.Button btnProgramarCitaD;
         private System.Windows.Forms.Button btnRepreogramarCitaD;
-        private System.Windows.Forms.Button btnGuardarCitaD;
         private System.Windows.Forms.Button btnCancelarCita;
         private System.Windows.Forms.Button btnPerfilD;
         private System.Windows.Forms.Panel panel2;
