@@ -85,7 +85,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblIdMascota = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
-            this.lblFechaHora = new System.Windows.Forms.Label();
+            this.lblEstadoCita = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEspecie = new System.Windows.Forms.TextBox();
@@ -96,6 +96,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtEstadoCita = new System.Windows.Forms.TextBox();
             this.txtFechaCita = new System.Windows.Forms.TextBox();
             this.txtHoraCita = new System.Windows.Forms.TextBox();
+            this.lblFechaCita = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -571,6 +573,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxaInfoExpediente
             // 
+            this.gbxaInfoExpediente.Controls.Add(this.label1);
+            this.gbxaInfoExpediente.Controls.Add(this.lblFechaCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtHoraCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtFechaCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtEstadoCita);
@@ -581,7 +585,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.Controls.Add(this.lblIdMascota);
             this.gbxaInfoExpediente.Controls.Add(this.lblEspecie);
             this.gbxaInfoExpediente.Controls.Add(this.lblPeso);
-            this.gbxaInfoExpediente.Controls.Add(this.lblFechaHora);
+            this.gbxaInfoExpediente.Controls.Add(this.lblEstadoCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtPeso);
             this.gbxaInfoExpediente.Controls.Add(this.label9);
             this.gbxaInfoExpediente.Controls.Add(this.txtEspecie);
@@ -609,7 +613,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(175, 21);
             this.cbxIdMascota.TabIndex = 18;
-            this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
+           
             // 
             // txtMotiConsulta
             // 
@@ -663,16 +667,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblPeso.TabIndex = 13;
             this.lblPeso.Text = "Peso";
             // 
-            // lblFechaHora
+            // lblEstadoCita
             // 
-            this.lblFechaHora.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.lblEstadoCita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblFechaHora.AutoSize = true;
-            this.lblFechaHora.Location = new System.Drawing.Point(6, 148);
-            this.lblFechaHora.Name = "lblFechaHora";
-            this.lblFechaHora.Size = new System.Drawing.Size(71, 13);
-            this.lblFechaHora.TabIndex = 16;
-            this.lblFechaHora.Text = "Fecha y Hora";
+            this.lblEstadoCita.AutoSize = true;
+            this.lblEstadoCita.Location = new System.Drawing.Point(6, 148);
+            this.lblEstadoCita.Name = "lblEstadoCita";
+            this.lblEstadoCita.Size = new System.Drawing.Size(40, 13);
+            this.lblEstadoCita.TabIndex = 16;
+            this.lblEstadoCita.Text = "Estado";
             // 
             // txtPeso
             // 
@@ -759,6 +763,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtHoraCita.Size = new System.Drawing.Size(100, 20);
             this.txtHoraCita.TabIndex = 22;
             // 
+            // lblFechaCita
+            // 
+            this.lblFechaCita.AutoSize = true;
+            this.lblFechaCita.Location = new System.Drawing.Point(9, 198);
+            this.lblFechaCita.Name = "lblFechaCita";
+            this.lblFechaCita.Size = new System.Drawing.Size(58, 13);
+            this.lblFechaCita.TabIndex = 23;
+            this.lblFechaCita.Text = "Fecha Cita";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Hora Cita";
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -796,7 +818,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtEspecie;
         private System.Windows.Forms.TextBox txtNomMascota;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblFechaHora;
+        private System.Windows.Forms.Label lblEstadoCita;
         private System.Windows.Forms.Label lblIdMascota;
         private System.Windows.Forms.Label lblMotiConsulta;
         private System.Windows.Forms.Label lblPeso;
@@ -854,5 +876,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtHoraCita;
         private System.Windows.Forms.TextBox txtFechaCita;
         private System.Windows.Forms.TextBox txtEstadoCita;
+        private System.Windows.Forms.Label lblFechaCita;
+        private System.Windows.Forms.Label label1;
     }
 }

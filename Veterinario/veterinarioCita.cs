@@ -46,24 +46,106 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             InitializeComponent();
 
-
-
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                string query = "SELECT idCita FROM citas;";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            cbxIdCita.Items.Add(reader["idCita"].ToString());
+                        }
+                    }
+                }
+            }
         }
 
 
-        // Evento cuando cambia la selección de mascota en el ComboBox**
-        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
-       
-
-        // Evento cuando cambia la selección de cita en el ComboBox
+        // Evento para cuando cambia la selección del ComboBox
         private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            if (cbxIdCita.SelectedIndex == -1)
+            {
+                LimpiarControles();
+            }
+            else
+            {
+                // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
+                string selectedCitaId = cbxIdCita.SelectedItem.ToString();
+                // Llamada al metodos;
+                MessageBox.Show("ID de Cita Seleccionado: " + selectedCitaId);
+                CargarDatos(selectedCitaId);
+            }
+        }
+
+        // Función para cargar los datos de la cita y la mascota asociada
+        private void CargarDatos(string selectedCitaId)
+        {
+            
+                                string query = @"
+                                SELECT 
+                                    citas.Estado, 
+                                    citas.Fecha, 
+                                    citas.Hora, 
+                                    citas.Motivo, 
+                                    mascotas.Nombre AS NombreMascota,
+                                    mascotas.Especie,
+                                FROM 
+                                    citas 
+                                LEFT JOIN 
+                                    mascotas  ON citas.idMascota = mascotas.idMascota
+                                WHERE 
+                                    citas.idCita = @idCita;";
+
+                try
+                {
+
+
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                    {
+
+                                using (MySqlCommand command = new MySqlCommand(query, connection))
+                                {
+                                    command.Parameters.AddWithValue("@idCita", selectedCitaId);
+
+                                    connection.Open();
+
+                                    using (MySqlDataReader reader = command.ExecuteReader())
+                                    {
+                                        if (reader.Read())
+                                        {
+                                            txtEstadoCita.Text = reader["Estado"].ToString();
+                                   
+                                            txtMotiConsulta.Text = reader["Motivo"].ToString();
+
+                                            txtNomMascota.Text = reader["NombreMascota"].ToString();
+
+                                            txtEspecie.Text = reader["Especie"].ToString();
+
+                                        }
+                                
+                                    }
+                                }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error al cargar los datos de la cita: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             
         }
 
+        private void LimpiarControles()
+        {
+            txtEstadoCita.Clear();
+            txtMotiConsulta.Clear();
+            txtNomMascota.Clear();
+            txtEspecie.Clear();
+        }
 
     }
 }
