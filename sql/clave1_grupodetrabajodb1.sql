@@ -62,7 +62,7 @@ CREATE TABLE `citas` (
   PRIMARY KEY (`idCita`),
   KEY `idMascota_Citas` (`idMascota`),
   CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +71,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,1,'Examen','Programada','2024-11-12','10:30:00'),(2,1,'vacuna','Programada','2023-11-21','10:00:00'),(3,4,'Parto','Programada','2023-12-24','13:00:00'),(4,2,'Vacuna','Programada','2024-11-14','00:00:00'),(5,11,'Castracion','Programada','2024-11-22','21:29:37'),(6,8,'adsasdas','Programada','2024-11-25','08:30:06'),(7,10,'Esterilización','Programada','2024-12-10','09:00:16'),(8,10,'Control','Programada','2025-01-08','14:30:56'),(9,9,'Control','Programada','2024-11-18','11:44:29'),(10,12,'Desparacitacion','Programada','2025-02-17','11:00:02'),(11,7,'Vacuna de la rabia','Programada','2024-11-19','15:00:17'),(12,7,'Coso epico','Programada','2024-11-27','12:51:54'),(13,6,'Motivos tiene','Programada','2024-11-14','14:20:15'),(14,1,'Control de salud','Cancelada','2025-03-04','15:12:48'),(15,2,'porbablementoe','Programada','2024-11-20','11:32:15');
+INSERT INTO `citas` VALUES (1,1,'Examen','Programada','2024-11-12','10:30:00'),(2,1,'vacuna','Programada','2023-11-21','10:00:00'),(3,4,'Parto','Programada','2023-12-24','13:00:00'),(4,2,'Vacuna','Programada','2024-11-14','00:00:00'),(5,11,'Castracion','Programada','2024-11-22','21:29:37'),(6,8,'adsasdas','Programada','2024-11-25','08:30:06'),(7,10,'Esterilización','Programada','2024-12-10','09:00:16'),(8,10,'Control','Programada','2025-01-08','14:30:56'),(9,9,'Control','Programada','2024-11-18','11:44:29'),(10,12,'Desparacitacion','Programada','2025-02-17','11:00:02'),(11,7,'Vacuna de la rabia','Programada','2024-11-19','15:00:17'),(12,7,'Coso epico','Programada','2024-11-27','12:51:54'),(13,6,'Motivos tiene','Programada','2024-11-14','14:20:15'),(14,1,'Control de salud','Cancelada','2025-03-04','15:12:48'),(15,2,'porbablementoe','Programada','2024-11-20','11:32:15'),(16,2,'Motivo epico','Programada','2024-11-07','14:44:38'),(17,1,'Hueso quebrado','Programada','2024-11-07','13:46:41'),(18,4,'Control de salud','Cancelada','2024-11-09','14:47:22');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -218,22 +218,16 @@ DROP TABLE IF EXISTS `pagos`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `pagos` (
   `idPago` int NOT NULL AUTO_INCREMENT,
-  `Estado` varchar(45) NOT NULL,
-  `PrecioServicios` decimal(10,2) NOT NULL,
-  `PrecioProductos` decimal(10,2) NOT NULL,
-  `Total` decimal(10,2) NOT NULL,
-  `TipoPago` enum('Efectivo','Bitcoin','Tarjeta') NOT NULL,
-  `CantidadEfectivo` decimal(10,2) DEFAULT NULL,
-  `InformacionTarjeta` varchar(100) DEFAULT NULL,
-  `DUI` varchar(10) DEFAULT NULL,
   `idUsuarios` int NOT NULL,
-  `IdExpediente` int NOT NULL,
+  `Fecha` date NOT NULL,
+  `Estado` enum('Pendiente','Pagado') NOT NULL,
+  `Total` decimal(10,2) NOT NULL,
+  `TipoPago` enum('Efectivo','Bitcoin','Tarjeta','Sin pagar') NOT NULL,
+  `TipoServicio` enum('Cita','Producto') NOT NULL,
   PRIMARY KEY (`idPago`),
   KEY `idUsuarios_ipagos` (`idUsuarios`),
-  KEY `idExpedientes_Pagos_idx` (`IdExpediente`),
-  CONSTRAINT `idExpedientes_Pagos` FOREIGN KEY (`IdExpediente`) REFERENCES `expedientes` (`idExpediente`),
   CONSTRAINT `idUsuarios_pagos` FOREIGN KEY (`idUsuarios`) REFERENCES `usuarios` (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -365,4 +359,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-06 16:46:08
+-- Dump completed on 2024-11-07 17:33:38
