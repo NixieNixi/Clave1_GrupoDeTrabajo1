@@ -46,7 +46,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 connection.Open();
 
                 //Consulta la columna idExpediente de la tabla expedientes
-                string query = "SELECT idExpediente FROM expedientes;";
+                string query = "SELECT idMascota FROM Mascotas;";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                    
@@ -56,7 +56,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         {
                             //Inserta los registros de idMascota en el comboBox cbxIdMascota
 
-                            cbxIdExpediente.Items.Add(reader["idExpediente"].ToString());
+                            cbxIdMascota.Items.Add(reader["idMascota"].ToString());
                         }
                     }
                 }
@@ -65,6 +65,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
 
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
@@ -77,27 +99,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             //Aqui se cancelara
         }
 
-        private void cbxIdExpediente_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Limpia los controles si no se ha seleccionado una opción
-            if (cbxIdExpediente.SelectedIndex == -1)
-            {
-                LimpiarControles();
-            }
-            else
-            {
-                // Convierte la selección de cbxIdExpedienteMascota a string y la guarda en selectedUserId
-                string selecIdExpediente = cbxIdExpediente.SelectedItem.ToString();
-            }
-        }
-
-        private void LimpiarControles()
-        {
-            txtNomMascota.Clear();
-            txtIdMascota.Clear();
-            txtIDCita.Clear();
-
-        }
+       
 
         /// <summary>
         /// 
@@ -117,6 +119,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             txtDescripcionCirugia.Clear();
         }
+
+
+
         /// <summary>
         /// 
         /// </summary>
@@ -170,7 +175,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-
-
+        
     }
 }
