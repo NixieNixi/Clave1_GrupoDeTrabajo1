@@ -93,7 +93,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     citas.Hora, 
                                     citas.Motivo, 
                                     mascotas.Nombre AS NombreMascota,
-                                    mascotas.Especie,
+                                    mascotas.Especie
                                 FROM 
                                     citas 
                                 LEFT JOIN 

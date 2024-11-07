@@ -78,6 +78,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtDescripcionCirugia = new System.Windows.Forms.TextBox();
             this.txtMotiCirugia = new System.Windows.Forms.TextBox();
             this.gbxaInfoExpediente = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblFechaCita = new System.Windows.Forms.Label();
+            this.txtHoraCita = new System.Windows.Forms.TextBox();
+            this.txtFechaCita = new System.Windows.Forms.TextBox();
+            this.txtEstadoCita = new System.Windows.Forms.TextBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.txtMotiConsulta = new System.Windows.Forms.TextBox();
@@ -93,11 +98,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.txtEstadoCita = new System.Windows.Forms.TextBox();
-            this.txtFechaCita = new System.Windows.Forms.TextBox();
-            this.txtHoraCita = new System.Windows.Forms.TextBox();
-            this.lblFechaCita = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -598,6 +598,45 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.TabStop = false;
             this.gbxaInfoExpediente.Text = "Informacion de La Mascota";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 241);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "Hora Cita";
+            // 
+            // lblFechaCita
+            // 
+            this.lblFechaCita.AutoSize = true;
+            this.lblFechaCita.Location = new System.Drawing.Point(9, 198);
+            this.lblFechaCita.Name = "lblFechaCita";
+            this.lblFechaCita.Size = new System.Drawing.Size(58, 13);
+            this.lblFechaCita.TabIndex = 23;
+            this.lblFechaCita.Text = "Fecha Cita";
+            // 
+            // txtHoraCita
+            // 
+            this.txtHoraCita.Location = new System.Drawing.Point(106, 241);
+            this.txtHoraCita.Name = "txtHoraCita";
+            this.txtHoraCita.Size = new System.Drawing.Size(100, 20);
+            this.txtHoraCita.TabIndex = 22;
+            // 
+            // txtFechaCita
+            // 
+            this.txtFechaCita.Location = new System.Drawing.Point(106, 196);
+            this.txtFechaCita.Name = "txtFechaCita";
+            this.txtFechaCita.Size = new System.Drawing.Size(175, 20);
+            this.txtFechaCita.TabIndex = 21;
+            // 
+            // txtEstadoCita
+            // 
+            this.txtEstadoCita.Location = new System.Drawing.Point(106, 150);
+            this.txtEstadoCita.Name = "txtEstadoCita";
+            this.txtEstadoCita.Size = new System.Drawing.Size(175, 20);
+            this.txtEstadoCita.TabIndex = 20;
+            // 
             // cbxIdCita
             // 
             this.cbxIdCita.FormattingEnabled = true;
@@ -605,6 +644,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdCita.Name = "cbxIdCita";
             this.cbxIdCita.Size = new System.Drawing.Size(175, 21);
             this.cbxIdCita.TabIndex = 19;
+            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // cbxIdMascota
             // 
@@ -613,7 +653,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(175, 21);
             this.cbxIdMascota.TabIndex = 18;
-           
             // 
             // txtMotiConsulta
             // 
@@ -741,45 +780,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // txtEstadoCita
-            // 
-            this.txtEstadoCita.Location = new System.Drawing.Point(106, 150);
-            this.txtEstadoCita.Name = "txtEstadoCita";
-            this.txtEstadoCita.Size = new System.Drawing.Size(175, 20);
-            this.txtEstadoCita.TabIndex = 20;
-            // 
-            // txtFechaCita
-            // 
-            this.txtFechaCita.Location = new System.Drawing.Point(106, 196);
-            this.txtFechaCita.Name = "txtFechaCita";
-            this.txtFechaCita.Size = new System.Drawing.Size(175, 20);
-            this.txtFechaCita.TabIndex = 21;
-            // 
-            // txtHoraCita
-            // 
-            this.txtHoraCita.Location = new System.Drawing.Point(106, 241);
-            this.txtHoraCita.Name = "txtHoraCita";
-            this.txtHoraCita.Size = new System.Drawing.Size(100, 20);
-            this.txtHoraCita.TabIndex = 22;
-            // 
-            // lblFechaCita
-            // 
-            this.lblFechaCita.AutoSize = true;
-            this.lblFechaCita.Location = new System.Drawing.Point(9, 198);
-            this.lblFechaCita.Name = "lblFechaCita";
-            this.lblFechaCita.Size = new System.Drawing.Size(58, 13);
-            this.lblFechaCita.TabIndex = 23;
-            this.lblFechaCita.Text = "Fecha Cita";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 241);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Hora Cita";
             // 
             // veterinarioCita
             // 
