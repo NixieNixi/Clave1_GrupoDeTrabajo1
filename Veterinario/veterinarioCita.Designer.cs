@@ -93,6 +93,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtEstadoCita = new System.Windows.Forms.TextBox();
+            this.txtFechaCita = new System.Windows.Forms.TextBox();
+            this.txtHoraCita = new System.Windows.Forms.TextBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -150,7 +153,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxTipoExamen.Name = "cbxTipoExamen";
             this.cbxTipoExamen.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoExamen.TabIndex = 18;
-            this.cbxTipoExamen.SelectedIndexChanged += new System.EventHandler(this.cbxTipoExamen_SelectedIndexChanged);
             // 
             // lblTipoExamen
             // 
@@ -261,7 +263,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxTipoVacuna.Name = "cbxTipoVacuna";
             this.cbxTipoVacuna.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoVacuna.TabIndex = 18;
-            this.cbxTipoVacuna.SelectedIndexChanged += new System.EventHandler(this.cbxTipoVacuna_SelectedIndexChanged);
             // 
             // lblTipoVacuna
             // 
@@ -494,7 +495,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxTipoCirugia.Name = "cbxTipoCirugia";
             this.cbxTipoCirugia.Size = new System.Drawing.Size(121, 21);
             this.cbxTipoCirugia.TabIndex = 18;
-            this.cbxTipoCirugia.SelectedIndexChanged += new System.EventHandler(this.cbxTipoCirugia_SelectedIndexChanged);
             // 
             // lblTipoCirugia
             // 
@@ -571,6 +571,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxaInfoExpediente
             // 
+            this.gbxaInfoExpediente.Controls.Add(this.txtHoraCita);
+            this.gbxaInfoExpediente.Controls.Add(this.txtFechaCita);
+            this.gbxaInfoExpediente.Controls.Add(this.txtEstadoCita);
             this.gbxaInfoExpediente.Controls.Add(this.cbxIdCita);
             this.gbxaInfoExpediente.Controls.Add(this.cbxIdMascota);
             this.gbxaInfoExpediente.Controls.Add(this.txtMotiConsulta);
@@ -598,7 +601,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdCita.Name = "cbxIdCita";
             this.cbxIdCita.Size = new System.Drawing.Size(175, 21);
             this.cbxIdCita.TabIndex = 19;
-            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // cbxIdMascota
             // 
@@ -726,7 +728,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarVeterinarioCita.TabIndex = 1;
             this.btnGuardarVeterinarioCita.Text = "Guardar Datos";
             this.btnGuardarVeterinarioCita.UseVisualStyleBackColor = true;
-            this.btnGuardarVeterinarioCita.Click += new System.EventHandler(this.btnGuardarVeterinarioCita_Click);
             // 
             // btnCancelar
             // 
@@ -736,7 +737,27 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // txtEstadoCita
+            // 
+            this.txtEstadoCita.Location = new System.Drawing.Point(106, 150);
+            this.txtEstadoCita.Name = "txtEstadoCita";
+            this.txtEstadoCita.Size = new System.Drawing.Size(175, 20);
+            this.txtEstadoCita.TabIndex = 20;
+            // 
+            // txtFechaCita
+            // 
+            this.txtFechaCita.Location = new System.Drawing.Point(106, 196);
+            this.txtFechaCita.Name = "txtFechaCita";
+            this.txtFechaCita.Size = new System.Drawing.Size(175, 20);
+            this.txtFechaCita.TabIndex = 21;
+            // 
+            // txtHoraCita
+            // 
+            this.txtHoraCita.Location = new System.Drawing.Point(106, 241);
+            this.txtHoraCita.Name = "txtHoraCita";
+            this.txtHoraCita.Size = new System.Drawing.Size(100, 20);
+            this.txtHoraCita.TabIndex = 22;
             // 
             // veterinarioCita
             // 
@@ -830,5 +851,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.ComboBox cbxTipoCirugia;
         private System.Windows.Forms.ComboBox cbxIdCita;
         private System.Windows.Forms.ComboBox cbxIdMascota;
+        private System.Windows.Forms.TextBox txtHoraCita;
+        private System.Windows.Forms.TextBox txtFechaCita;
+        private System.Windows.Forms.TextBox txtEstadoCita;
     }
 }

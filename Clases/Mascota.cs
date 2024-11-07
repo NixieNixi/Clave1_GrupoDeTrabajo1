@@ -24,11 +24,13 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public string Especie { get; set; } 
         public string Raza { get; set; }
         public int Edad { get; set; }
+
         public string Sexo { get; set; }
         public List<Cita> Citas { get; set; } // Lista de citas medicas
         public List<Cirugia> Cirugia { get; set; } = new List<Cirugia>();
         public List<Vacuna> Vacuna { get; set; } = new List<Vacuna>();
         public List<Examen> Examene { get; set; } = new List<Examen>();
+        
 
         // Constructor 
         public Mascota()
