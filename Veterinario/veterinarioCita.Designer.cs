@@ -771,6 +771,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarVeterinarioCita.TabIndex = 1;
             this.btnGuardarVeterinarioCita.Text = "Guardar Datos";
             this.btnGuardarVeterinarioCita.UseVisualStyleBackColor = true;
+            this.btnGuardarVeterinarioCita.Click += new System.EventHandler(this.btnGuardarVeterinarioCita_Click);
             // 
             // btnCancelar
             // 
@@ -780,6 +781,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // Si no está presente, agrégalo en la inicialización del botón:
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // veterinarioCita
             // 

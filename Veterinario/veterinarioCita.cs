@@ -178,5 +178,71 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtEspecie.Clear();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+       
+
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
+        {
+            //using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //{
+                
+
+            //    // Solo insertar en la base de datos si se han ingresado datos en el formulario
+            //    if (IsDataValid())
+            //    {
+            //        string query = "INSERT INTO Examenes (TipoExamen, MotiExamen, DescripcionExamen, UsaMaterialesExamen, NotasExamen) " +
+            //                       "VALUES (@TipoExamen, @MotiExamen, @DescripcionExamen, @UsaMaterialesExamen, @NotasExamen)";
+
+            //        // Usar MySqlCommand para ejecutar la consulta
+            //        using (MySqlCommand command = new MySqlCommand(query, connection))
+            //        {
+            //            // Solo añadir valores que no sean vacíos
+            //            command.Parameters.AddWithValue("@TipoExamen", cbxTipoExamen.SelectedItem?.ToString() ?? (object)DBNull.Value);
+            //            command.Parameters.AddWithValue("@MotiExamen", string.IsNullOrEmpty(txtMotiExamen.Text) ? (object)DBNull.Value : txtMotiExamen.Text);
+            //            command.Parameters.AddWithValue("@DescripcionExamen", string.IsNullOrEmpty(txtDescripcionExamen.Text) ? (object)DBNull.Value : txtDescripcionExamen.Text);
+            //            command.Parameters.AddWithValue("@UsaMaterialesExamen", string.IsNullOrEmpty(txtUsaMateriaesExamen.Text) ? (object)DBNull.Value : txtUsaMateriaesExamen.Text);
+            //            command.Parameters.AddWithValue("@NotasExamen", string.IsNullOrEmpty(txtNotasExamen.Text) ? (object)DBNull.Value : txtNotasExamen.Text);
+
+            //            // Abrir la conexión y ejecutar el comando
+            //            connection.Open();
+            //            command.ExecuteNonQuery(); // Ejecutar la consulta
+            //        }
+            //        MessageBox.Show("Datos guardados exitosamente.");
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Por favor, ingrese al menos un dato.");
+            //    }
+            //}
+        }
+
+        // Verifica si hay datos ingresados en los campos
+        private bool IsDataValid()
+        {
+            return !string.IsNullOrEmpty(txtMotiExamen.Text) ||
+                   !string.IsNullOrEmpty(txtDescripcionExamen.Text) ||
+                   !string.IsNullOrEmpty(txtUsaMateriaesExamen.Text) ||
+                   !string.IsNullOrEmpty(txtNotasExamen.Text) ||
+                   cbxTipoExamen.SelectedItem != null;
+        }
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // Aquí va el código para cancelar la operación, por ejemplo:
+            this.Close(); // Cerrar el formulario
+        }
+
+
     }
 }
