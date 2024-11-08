@@ -150,7 +150,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                             txtNomMascota.Text = reader["NombreMascota"].ToString();
 
                                             txtEspecie.Text = reader["Especie"].ToString();
-                                            txtFechaCita.Text = reader["Fecha"].ToString();
+                                            dtpFechaHora.Text = reader["Fecha"].ToString();
 
                                         }
                                 
@@ -218,7 +218,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             MessageBox.Show("La información se ha guardado correctamente.");
         }
 
-
+        /// <summary>
+        /// Metodo que guarda en la DB la consulta de la mascota
+        /// </summary>
         private void GuardarConsulta()
         {
             
@@ -229,44 +231,87 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text);
-                    command.Parameters.AddWithValue("@sintomas", txtSintomas.Text);
-                    command.Parameters.AddWithValue("@examenfisico",txtExamFisico.Text);
-                    command.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text);
-                    command.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text);
-                    command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text);
-                    command.Parameters.AddWithValue("@descripcion", txtMotiConsulta.Text); 
-                    command.Parameters.AddWithValue("@notas", txtNotasCita.Text);
 
-                    // convierte  el valor de MaskedTextBox a decimal (hasta dos decimales) y lo valida
-                    if (decimal.TryParse(mtxtPeso.Text, out decimal peso) && peso <= 999.99m)
+                     
+                    if (string.IsNullOrWhiteSpace(mtxtPeso.Text))
                     {
-                        command.Parameters.AddWithValue("@peso", Math.Round(peso, 2)); // lo redondea
-                    }
-                    else
-                    {
-                        MessageBox.Show("Por favor, introduce un valor de peso válido (máximo 999.99).");
+                        MessageBox.Show("Por favor, introduce un valor de peso.");
                         return; 
                     }
-                    command.Parameters.AddWithValue("@fechahora", dtpFechaHora.Value);
-                    command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text);
 
-                    connection.Open();
-                    command.ExecuteNonQuery();
+                    if (!decimal.TryParse(mtxtPeso.Text, out decimal peso) || peso <= 0 || peso > 999.99m)
+                    {
+                        MessageBox.Show("Por favor, introduce un valor de peso válido (mayor que 0 y hasta 999.99).");
+                        return; 
+                    }
+
+                    
+                    if (string.IsNullOrWhiteSpace(txtIdMascota.Text))
+                    {
+                        MessageBox.Show("Por favor, introduce un valor de ID.");
+                        return; 
+                    }
+
+                   
+                    DateTime fechaHora = dtpFechaHora.Value;
+                   //Que se evite elejir fechas que son futuras
+                    if (fechaHora > DateTime.Now)
+                    {
+                        MessageBox.Show("La fecha no puede ser futura.");
+                        return; 
+                    }
+
+
+                    command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                    command.Parameters.AddWithValue("@peso", Math.Round(peso, 2));
+                    command.Parameters.AddWithValue("@sintomas", txtSintomas.Text.Trim());
+                    command.Parameters.AddWithValue("@examenfisico", txtExamFisico.Text.Trim());
+                    command.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text.Trim());
+                    command.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text.Trim());
+                    command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text.Trim());
+                    command.Parameters.AddWithValue("@notas", txtNotasCita.Text.Trim());
+                    command.Parameters.AddWithValue("@fechaHora", fechaHora);
+                    command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
+
+                    
+                    
+                    // Aquí ejecutas el comando para insertar en la base de datos
+                    try
+                    {
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        MessageBox.Show("Registro de Consulta guardado con éxito.");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al guardar el registro: " + ex.Message);
+                    }
                 }
             }
         }
 
+        /// <summary>
+        /// Metodo que guarda las vacunas que se suministren
+        /// </summary>
         private void GuardarVacuna()
         {
-            string tipoVacuna = cbxTipoVacuna.Text;
-            string descripcion = txtDescripcionVacuna.Text;
-            string notas = txtNotasVacuna.Text;
-            string usaMateriales = txtUsaMaterialesVacuna.Text;
-            string motivo = txtMotiVacuna.Text;
+            string query = @"
+            INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
 
-            // Código de inserción en la base de datos para vacuna
-            // string query = "INSERT INTO Vacunas (Tipo, Descripcion, Notas, UsaMateriales, Motivo) VALUES (@tipo, @descripcion, @notas, @usaMateriales, @motivo)";
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesVacuna.Text.Trim());
+
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
         }
 
         private void GuardarExamen()
