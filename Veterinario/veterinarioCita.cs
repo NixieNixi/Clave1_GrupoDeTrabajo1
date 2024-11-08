@@ -115,7 +115,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     citas.Hora, 
                                     citas.Motivo, 
                                     mascotas.Nombre AS NombreMascota,
-                                    mascotas.Especie
+                                    mascotas.Especie,
+                                    citas.idMascota
                                 FROM 
                                     citas 
                                 LEFT JOIN 
@@ -139,9 +140,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     using (MySqlDataReader reader = command.ExecuteReader())
                                     {
                                         if (reader.Read())
-                                        {
+                                                    {
                                             // Asigna cada valor obtenido a los controles del formulario
-
+                                            txtIdMascota.Text = reader["idMascota"].ToString();
                                             txtEstadoCita.Text = reader["Estado"].ToString();
                                    
                                             txtMotiConsulta.Text = reader["Motivo"].ToString();
@@ -150,6 +151,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                             txtEspecie.Text = reader["Especie"].ToString();
                                             txtFechaCita.Text = reader["Fecha"].ToString();
+
                                         }
                                 
                                     }
@@ -220,21 +222,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void GuardarConsulta()
         {
             
-            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas) VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas)";
+            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas,FechaHora) " +
+                "VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas,@fechahora)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    //command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text);
+                    command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text);
                     command.Parameters.AddWithValue("@sintomas", txtSintomas.Text);
                     command.Parameters.AddWithValue("@examenfisico",txtExamFisico.Text);
-
-
-
+                    command.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text);
+                    command.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text);
+                    command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text);
                     command.Parameters.AddWithValue("@descripcion", txtMotiConsulta.Text); 
                     command.Parameters.AddWithValue("@notas", txtNotasCita.Text);
                     
+                    command.Parameters.AddWithValue("@fechahora", dtpFechaHora.Value);
+
 
                     connection.Open();
                     command.ExecuteNonQuery();
