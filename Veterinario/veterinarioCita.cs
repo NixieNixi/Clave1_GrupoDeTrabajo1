@@ -193,8 +193,80 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Jauaryou brother");
+            // Guardar siempre la consulta
+            GuardarConsulta();
+
+            // Guardar otros servicios si están seleccionados
+            if (Vacuna)
+            {
+                GuardarVacuna();
+            }
+
+            if (Examen)
+            {
+                GuardarExamen();
+            }
+
+            //if (Cirugia)
+            //{
+            //    GuardarCirugia();
+            //}
+
+            // Mensaje de confirmación
+            MessageBox.Show("La información se ha guardado correctamente.");
         }
+
+
+        private void GuardarConsulta()
+        {
+            
+            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas) VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    //command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text);
+                    command.Parameters.AddWithValue("@sintomas", txtSintomas.Text);
+                    command.Parameters.AddWithValue("@examenfisico",txtExamFisico.Text);
+
+
+
+                    command.Parameters.AddWithValue("@descripcion", txtMotiConsulta.Text); 
+                    command.Parameters.AddWithValue("@notas", txtNotasCita.Text);
+                    
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void GuardarVacuna()
+        {
+            string tipoVacuna = cbxTipoVacuna.Text;
+            string descripcion = txtDescripcionVacuna.Text;
+            string notas = txtNotasVacuna.Text;
+            string usaMateriales = txtUsaMaterialesVacuna.Text;
+            string motivo = txtMotiVacuna.Text;
+
+            // Código de inserción en la base de datos para vacuna
+            // string query = "INSERT INTO Vacunas (Tipo, Descripcion, Notas, UsaMateriales, Motivo) VALUES (@tipo, @descripcion, @notas, @usaMateriales, @motivo)";
+        }
+
+        private void GuardarExamen()
+        {
+            // Código para insertar datos en la tabla de exámenes
+        }
+
+        private void GuardarCirugia()
+        {
+            // Código para insertar datos en la tabla de cirugía
+        }
+
+        //FIN FUNCIONE DE BTNGUARDAR
+
+
 
         // Verifica si hay datos ingresados en los campos
         private bool IsDataValid()
