@@ -222,8 +222,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void GuardarConsulta()
         {
             
-            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas,FechaHora) " +
-                "VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas,@fechahora)";
+            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas,FechaHora,Peso,Motivo) " +
+                "VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas,@fechahora,@peso,@motivo)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
@@ -237,9 +237,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text);
                     command.Parameters.AddWithValue("@descripcion", txtMotiConsulta.Text); 
                     command.Parameters.AddWithValue("@notas", txtNotasCita.Text);
-                    
-                    command.Parameters.AddWithValue("@fechahora", dtpFechaHora.Value);
 
+                    // convierte  el valor de MaskedTextBox a decimal (hasta dos decimales) y lo valida
+                    if (decimal.TryParse(mtxtPeso.Text, out decimal peso) && peso <= 999.99m)
+                    {
+                        command.Parameters.AddWithValue("@peso", Math.Round(peso, 2)); // lo redondea
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, introduce un valor de peso válido (máximo 999.99).");
+                        return; 
+                    }
+                    command.Parameters.AddWithValue("@fechahora", dtpFechaHora.Value);
+                    command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text);
 
                     connection.Open();
                     command.ExecuteNonQuery();

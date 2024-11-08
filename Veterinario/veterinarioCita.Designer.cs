@@ -88,7 +88,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.lblEstadoCita = new System.Windows.Forms.Label();
-            this.txtPeso = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtEspecie = new System.Windows.Forms.TextBox();
             this.lblNomMascota = new System.Windows.Forms.Label();
@@ -101,6 +100,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.chkConsulta = new System.Windows.Forms.CheckBox();
             this.txtIdMascota = new System.Windows.Forms.TextBox();
             this.dtpFechaHora = new System.Windows.Forms.DateTimePicker();
+            this.mtxtPeso = new System.Windows.Forms.MaskedTextBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -367,6 +367,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxInfoConsulta
             // 
+            this.gbxInfoConsulta.Controls.Add(this.mtxtPeso);
             this.gbxInfoConsulta.Controls.Add(this.lblSintomas);
             this.gbxInfoConsulta.Controls.Add(this.lblExamFisico);
             this.gbxInfoConsulta.Controls.Add(this.lblDiagnostico);
@@ -377,6 +378,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoConsulta.Controls.Add(this.txtNotasCita);
             this.gbxInfoConsulta.Controls.Add(this.txtMedicamentos);
             this.gbxInfoConsulta.Controls.Add(this.txtTratamiento);
+            this.gbxInfoConsulta.Controls.Add(this.lblPeso);
             this.gbxInfoConsulta.Controls.Add(this.txtDiagnostico);
             this.gbxInfoConsulta.Controls.Add(this.txtExamFisico);
             this.gbxInfoConsulta.Location = new System.Drawing.Point(40, 398);
@@ -407,7 +409,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDiagnostico
             // 
             this.lblDiagnostico.AutoSize = true;
-            this.lblDiagnostico.Location = new System.Drawing.Point(25, 166);
+            this.lblDiagnostico.Location = new System.Drawing.Point(25, 152);
             this.lblDiagnostico.Name = "lblDiagnostico";
             this.lblDiagnostico.Size = new System.Drawing.Size(63, 13);
             this.lblDiagnostico.TabIndex = 15;
@@ -470,7 +472,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDiagnostico
             // 
-            this.txtDiagnostico.Location = new System.Drawing.Point(130, 159);
+            this.txtDiagnostico.Location = new System.Drawing.Point(130, 145);
             this.txtDiagnostico.Name = "txtDiagnostico";
             this.txtDiagnostico.Size = new System.Drawing.Size(121, 20);
             this.txtDiagnostico.TabIndex = 8;
@@ -600,9 +602,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.Controls.Add(this.lblMotiConsulta);
             this.gbxaInfoExpediente.Controls.Add(this.lblIdMascota);
             this.gbxaInfoExpediente.Controls.Add(this.lblEspecie);
-            this.gbxaInfoExpediente.Controls.Add(this.lblPeso);
             this.gbxaInfoExpediente.Controls.Add(this.lblEstadoCita);
-            this.gbxaInfoExpediente.Controls.Add(this.txtPeso);
             this.gbxaInfoExpediente.Controls.Add(this.label9);
             this.gbxaInfoExpediente.Controls.Add(this.txtEspecie);
             this.gbxaInfoExpediente.Controls.Add(this.lblNomMascota);
@@ -692,7 +692,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(371, 148);
+            this.lblPeso.Location = new System.Drawing.Point(26, 201);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
             this.lblPeso.TabIndex = 13;
@@ -708,14 +708,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEstadoCita.Size = new System.Drawing.Size(40, 13);
             this.lblEstadoCita.TabIndex = 16;
             this.lblEstadoCita.Text = "Estado";
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(483, 151);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.ReadOnly = true;
-            this.txtPeso.Size = new System.Drawing.Size(175, 20);
-            this.txtPeso.TabIndex = 5;
             // 
             // label9
             // 
@@ -834,6 +826,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dtpFechaHora.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaHora.TabIndex = 26;
             // 
+            // mtxtPeso
+            // 
+            this.mtxtPeso.Location = new System.Drawing.Point(130, 198);
+            this.mtxtPeso.Mask = "000.00";
+            this.mtxtPeso.Name = "mtxtPeso";
+            this.mtxtPeso.Size = new System.Drawing.Size(121, 20);
+            this.mtxtPeso.TabIndex = 18;
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -867,7 +867,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Button btnGuardarVeterinarioCita;
         private System.Windows.Forms.GroupBox gbxaInfoExpediente;
         private System.Windows.Forms.TextBox txtMotiConsulta;
-        private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtEspecie;
         private System.Windows.Forms.TextBox txtNomMascota;
         private System.Windows.Forms.Label label9;
@@ -934,5 +933,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.CheckBox chkConsulta;
         private System.Windows.Forms.TextBox txtIdMascota;
         private System.Windows.Forms.DateTimePicker dtpFechaHora;
+        private System.Windows.Forms.MaskedTextBox mtxtPeso;
     }
 }
