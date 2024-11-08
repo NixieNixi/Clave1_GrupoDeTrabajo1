@@ -8,6 +8,11 @@ using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
+    /// <summary>
+    /// Autor: CanelaFeliz
+    /// Fecha: 07/11/24
+    /// Desccripcion: Parte de la clase AdministradorPerfil que se encarga de las funciones del panel
+    /// </summary>
     public partial class AdministradorPerfil
     {
         private void btnPagos_Click(object sender, EventArgs e)
@@ -26,7 +31,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelBtnUsuarios.Visible = false;
             panelBtnUsuarios.Dock = DockStyle.None;
 
-            //Se muestran los paneles de Usuario
+            //Se muestran los paneles de Pagos
             panelBtnPagos.Dock = DockStyle.Bottom;
             panelBtnPagos.Visible = true;
             panelPagos.Dock = DockStyle.Fill;

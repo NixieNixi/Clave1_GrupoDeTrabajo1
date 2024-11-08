@@ -122,6 +122,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdPago = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
+            this.txtTipoServicio = new System.Windows.Forms.TextBox();
+            this.txtTotalP = new System.Windows.Forms.TextBox();
             this.txtNombreP = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -129,8 +131,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label26 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.txtTotalP = new System.Windows.Forms.TextBox();
-            this.txtTipoServicio = new System.Windows.Forms.TextBox();
             this.panelBtnPagos = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -1372,6 +1372,28 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label37.TabIndex = 0;
             this.label37.Text = "Tipo de servicio";
             // 
+            // txtTipoServicio
+            // 
+            this.txtTipoServicio.BackColor = System.Drawing.Color.White;
+            this.txtTipoServicio.Enabled = false;
+            this.txtTipoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTipoServicio.Location = new System.Drawing.Point(24, 216);
+            this.txtTipoServicio.Name = "txtTipoServicio";
+            this.txtTipoServicio.ReadOnly = true;
+            this.txtTipoServicio.Size = new System.Drawing.Size(264, 22);
+            this.txtTipoServicio.TabIndex = 1;
+            // 
+            // txtTotalP
+            // 
+            this.txtTotalP.BackColor = System.Drawing.Color.White;
+            this.txtTotalP.Enabled = false;
+            this.txtTotalP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalP.Location = new System.Drawing.Point(320, 216);
+            this.txtTotalP.Name = "txtTotalP";
+            this.txtTotalP.ReadOnly = true;
+            this.txtTotalP.Size = new System.Drawing.Size(264, 22);
+            this.txtTotalP.TabIndex = 1;
+            // 
             // txtNombreP
             // 
             this.txtNombreP.BackColor = System.Drawing.Color.White;
@@ -1454,28 +1476,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label36.Size = new System.Drawing.Size(57, 16);
             this.label36.TabIndex = 0;
             this.label36.Text = "ID Pago";
-            // 
-            // txtTotalP
-            // 
-            this.txtTotalP.BackColor = System.Drawing.Color.White;
-            this.txtTotalP.Enabled = false;
-            this.txtTotalP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalP.Location = new System.Drawing.Point(320, 216);
-            this.txtTotalP.Name = "txtTotalP";
-            this.txtTotalP.ReadOnly = true;
-            this.txtTotalP.Size = new System.Drawing.Size(264, 22);
-            this.txtTotalP.TabIndex = 1;
-            // 
-            // txtTipoServicio
-            // 
-            this.txtTipoServicio.BackColor = System.Drawing.Color.White;
-            this.txtTipoServicio.Enabled = false;
-            this.txtTipoServicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipoServicio.Location = new System.Drawing.Point(24, 216);
-            this.txtTipoServicio.Name = "txtTipoServicio";
-            this.txtTipoServicio.ReadOnly = true;
-            this.txtTipoServicio.Size = new System.Drawing.Size(264, 22);
-            this.txtTipoServicio.TabIndex = 1;
             // 
             // panelBtnPagos
             // 
