@@ -57,32 +57,124 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     ///</remarks>
     ///
 
-    
-   
     public partial class veterinarioCita : Form
     {
         public veterinarioCita()
         {
             InitializeComponent();
+            CargarMascotas();
+        }
 
-            // Cargar los IDs de citas al ComboBox cbxIdCita al inicializar el formulario
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
+            try
             {
-                string query = "SELECT idCita FROM citas;";
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    connection.Open();
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT Nombre, Especie FROM mascotas WHERE idMascota = @idMascota;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        command.Parameters.AddWithValue("@idMascota", IdSeleccion);
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            cbxIdCita.Items.Add(reader["idCita"].ToString());
+                            if (reader.HasRows)
+                            {
+                                cbxIdCita.Enabled = true;
+                                if (reader.Read())
+                                {
+                                    txtNomMascota.Text = reader["Nombre"].ToString();
+                                    txtEspecie.Text = reader["Especie"].ToString();
+                                }
+                            }
+                            else
+                            {
+                                cbxIdCita.Enabled = false;
+                            }
                         }
                     }
                 }
             }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+            }
+            CargarIdCita();
         }
 
+        private void CargarIdCita()
+        {
+            cbxIdCita.Items.Clear();
+            string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    string query = "SELECT idCita FROM citas WHERE idMascota = @idMascota";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idMascota", IdSeleccion);
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    cbxIdCita.Text = null;
+                                    cbxIdCita.Items.Add(reader["idCita"].ToString());
+                                }
+                            }
+                            else
+                            {
+                                cbxIdCita.Text = "No se encontraron citas";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+            }
+        }
+
+        private void CargarMascotas()
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC;";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.HasRows)
+                            {
+                                while (reader.Read())
+                                {
+                                    cbxIdMascota.Items.Add(reader["idMascota"].ToString());
+                                }
+                                cbxIdMascota.Enabled = true;
+                            }
+                            else
+                            {
+                                cbxIdMascota.Text = "No se encontraron mascotas";
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+            }
+        }
 
         /// <summary>
         /// Evento para cuando cambia la selección del ComboBox
@@ -100,7 +192,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 // Obtiene el ID de cita seleccionado como cadena de texto
                 string selectedCitaId = cbxIdCita.SelectedItem.ToString();
-              
+
 
                 // Muestra un mensaje con el ID de cita seleccionado
                 MessageBox.Show("ID de Cita Seleccionado: " + selectedCitaId);
@@ -119,8 +211,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="selectedCitaId">ID de la cita seleccionada en el ComboBox</param>
         private void CargarDatos(string selectedCitaId)
         {
-            
-                                string query = @"
+
+            string query = @"
                                 SELECT 
                                     citas.Estado, 
                                     citas.Fecha, 
@@ -136,47 +228,47 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 WHERE 
                                     citas.idCita = @idCita;";
 
-                try
+            try
+            {
+
+
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
 
-
-                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
+                        command.Parameters.AddWithValue("@idCita", selectedCitaId);
 
-                                using (MySqlCommand command = new MySqlCommand(query, connection))
-                                {
-                                    command.Parameters.AddWithValue("@idCita", selectedCitaId);
+                        connection.Open();
 
-                                    connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                // Asigna cada valor obtenido a los controles del formulario
+                                cbxIdMascota.Text = reader["idMascota"].ToString();
+                                txtEstadoCita.Text = reader["Estado"].ToString();
 
-                                    using (MySqlDataReader reader = command.ExecuteReader())
-                                    {
-                                        if (reader.Read())
-                                                    {
-                                            // Asigna cada valor obtenido a los controles del formulario
-                                            txtIdMascota.Text = reader["idMascota"].ToString();
-                                            txtEstadoCita.Text = reader["Estado"].ToString();
-                                   
-                                            txtMotiConsulta.Text = reader["Motivo"].ToString();
+                                txtMotiConsulta.Text = reader["Motivo"].ToString();
 
-                                            txtNomMascota.Text = reader["NombreMascota"].ToString();
+                                txtNomMascota.Text = reader["NombreMascota"].ToString();
 
-                                            txtEspecie.Text = reader["Especie"].ToString();
-                                            dtpFechaHora.Text = reader["Fecha"].ToString();
+                                txtEspecie.Text = reader["Especie"].ToString();
+                                dtpFechaHora.Text = reader["Fecha"].ToString();
 
-                                        }
-                                
-                                    }
-                                }
+                            }
+
+                        }
                     }
                 }
-                catch (Exception ex)
-                {
-                    // Muestra un mensaje de error si ocurre alguna excepción
-                    MessageBox.Show("Ocurrió un error al cargar los datos de la cita: " + ex.Message, "Error", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
-            
+            }
+            catch (Exception ex)
+            {
+                // Muestra un mensaje de error si ocurre alguna excepción
+                MessageBox.Show("Ocurrió un error al cargar los datos de la cita: " + ex.Message, "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+
         }
 
 
@@ -197,7 +289,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-       
+
 
 
         /// <summary>
@@ -235,7 +327,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarConsulta()
         {
-            
+
             string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas,FechaHora,Peso,Motivo) " +
                 "VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas,@fechahora,@peso,@motivo)";
 
@@ -244,37 +336,37 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
 
-                     
+
                     if (string.IsNullOrWhiteSpace(mtxtPeso.Text))
                     {
                         MessageBox.Show("Por favor, introduce un valor de peso.");
-                        return; 
+                        return;
                     }
 
                     if (!decimal.TryParse(mtxtPeso.Text, out decimal peso) || peso <= 0 || peso > 999.99m)
                     {
                         MessageBox.Show("Por favor, introduce un valor de peso válido (mayor que 0 y hasta 999.99).");
-                        return; 
+                        return;
                     }
 
-                    
-                    if (string.IsNullOrWhiteSpace(txtIdMascota.Text))
+
+                    if (string.IsNullOrWhiteSpace(cbxIdMascota.Text))
                     {
                         MessageBox.Show("Por favor, introduce un valor de ID.");
-                        return; 
+                        return;
                     }
 
-                   
+
                     DateTime fechaHora = dtpFechaHora.Value;
-                   //Que se evite elejir fechas que son futuras
+                    //Que se evite elejir fechas que son futuras
                     if (fechaHora > DateTime.Now)
                     {
                         MessageBox.Show("La fecha no puede ser futura.");
-                        return; 
+                        return;
                     }
 
 
-                    command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                    command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                     command.Parameters.AddWithValue("@peso", Math.Round(peso, 2));
                     command.Parameters.AddWithValue("@sintomas", txtSintomas.Text.Trim());
                     command.Parameters.AddWithValue("@examenfisico", txtExamFisico.Text.Trim());
@@ -285,8 +377,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     command.Parameters.AddWithValue("@fechaHora", fechaHora);
                     command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
 
-                    
-                    
+
+
                     // Aquí ejecutas el comando para insertar en la base de datos
                     try
                     {
@@ -308,14 +400,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarVacuna()
         {
-                
-                if (string.IsNullOrWhiteSpace(txtIdMascota.Text) ||string.IsNullOrWhiteSpace(cbxTipoVacuna.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiVacuna.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesVacuna.Text))
-                {
-                    MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la vacuna.",
-                        "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoVacuna.Text) ||
+            string.IsNullOrWhiteSpace(txtMotiVacuna.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesVacuna.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la vacuna.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             string query = @"
             INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
@@ -324,7 +416,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                 command.Parameters.AddWithValue("@tipo", cbxTipoVacuna.Text.Trim());
 
                 //No se agrego validacion para la descripcion, ya que segun la Db es un dato no obligatorio
@@ -347,8 +439,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void GuardarExamen()
         {
-            
-            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
                 string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
             {
                 MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
@@ -364,7 +456,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                 command.Parameters.AddWithValue("@tipo", cbxTipoExamen.Text.Trim());
                 command.Parameters.AddWithValue("@descripcion", txtDescripcionExamen.Text.Trim());
                 command.Parameters.AddWithValue("@motivo", txtMotiExamen.Text.Trim());
@@ -385,9 +477,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void GuardarCirugia()
         {
-            
-            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) ||string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
             {
                 MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
                     "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -401,7 +493,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                 command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
                 command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
                 command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
@@ -491,7 +583,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void LimpiarControlesVacuna()
         {
-            cbxTipoVacuna.SelectedIndex = -1; 
+            cbxTipoVacuna.SelectedIndex = -1;
             txtMotiVacuna.Clear();
             txtUsaMaterialesVacuna.Clear();
             txtDescripcionVacuna.Clear();
