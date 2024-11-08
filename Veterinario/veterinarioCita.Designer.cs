@@ -38,7 +38,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNotasExamen = new System.Windows.Forms.Label();
             this.lblUsaMateriaesExamen = new System.Windows.Forms.Label();
             this.txtNotasExamen = new System.Windows.Forms.TextBox();
-            this.txtUsaMateriaesExamen = new System.Windows.Forms.TextBox();
+            this.txtUsaMaterialesExamen = new System.Windows.Forms.TextBox();
             this.txtDescripcionExamen = new System.Windows.Forms.TextBox();
             this.txtMotiExamen = new System.Windows.Forms.TextBox();
             this.gbxInfoVacuna = new System.Windows.Forms.GroupBox();
@@ -140,7 +140,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoExamen.Controls.Add(this.lblNotasExamen);
             this.gbxInfoExamen.Controls.Add(this.lblUsaMateriaesExamen);
             this.gbxInfoExamen.Controls.Add(this.txtNotasExamen);
-            this.gbxInfoExamen.Controls.Add(this.txtUsaMateriaesExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtUsaMaterialesExamen);
             this.gbxInfoExamen.Controls.Add(this.txtDescripcionExamen);
             this.gbxInfoExamen.Controls.Add(this.txtMotiExamen);
             this.gbxInfoExamen.Location = new System.Drawing.Point(40, 1308);
@@ -218,13 +218,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNotasExamen.Size = new System.Drawing.Size(121, 20);
             this.txtNotasExamen.TabIndex = 6;
             // 
-            // txtUsaMateriaesExamen
+            // txtUsaMaterialesExamen
             // 
-            this.txtUsaMateriaesExamen.Enabled = false;
-            this.txtUsaMateriaesExamen.Location = new System.Drawing.Point(559, 39);
-            this.txtUsaMateriaesExamen.Name = "txtUsaMateriaesExamen";
-            this.txtUsaMateriaesExamen.Size = new System.Drawing.Size(121, 20);
-            this.txtUsaMateriaesExamen.TabIndex = 7;
+            this.txtUsaMaterialesExamen.Enabled = false;
+            this.txtUsaMaterialesExamen.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesExamen.Name = "txtUsaMaterialesExamen";
+            this.txtUsaMaterialesExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesExamen.TabIndex = 7;
             // 
             // txtDescripcionExamen
             // 
@@ -443,6 +443,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSintomas
             // 
+            this.txtSintomas.Enabled = false;
             this.txtSintomas.Location = new System.Drawing.Point(130, 43);
             this.txtSintomas.Name = "txtSintomas";
             this.txtSintomas.Size = new System.Drawing.Size(121, 20);
@@ -931,7 +932,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblNotasExamen;
         private System.Windows.Forms.Label lblUsaMateriaesExamen;
         private System.Windows.Forms.TextBox txtNotasExamen;
-        private System.Windows.Forms.TextBox txtUsaMateriaesExamen;
+        private System.Windows.Forms.TextBox txtUsaMaterialesExamen;
         private System.Windows.Forms.TextBox txtDescripcionExamen;
         private System.Windows.Forms.TextBox txtMotiExamen;
         private System.Windows.Forms.ComboBox cbxTipoCirugia;

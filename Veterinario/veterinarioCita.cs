@@ -193,37 +193,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            {
-                
-
-                // Solo insertar en la base de datos si se han ingresado datos en el formulario
-                if (IsDataValid())
-               {
-                    string query = "INSERT INTO Examenes (TipoExamen, MotiExamen, DescripcionExamen, UsaMaterialesExamen, NotasExamen) " +
-                                   "VALUES (@TipoExamen, @MotiExamen, @DescripcionExamen, @UsaMaterialesExamen, @NotasExamen)";
-
-                    // Usar MySqlCommand para ejecutar la consulta
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                  {
-                       // Solo añadir valores que no sean vacíos
-                        command.Parameters.AddWithValue("@TipoExamen", cbxTipoExamen.SelectedItem?.ToString() ?? (object)DBNull.Value);
-                        command.Parameters.AddWithValue("@MotiExamen", string.IsNullOrEmpty(txtMotiExamen.Text) ? (object)DBNull.Value : txtMotiExamen.Text);
-                        command.Parameters.AddWithValue("@DescripcionExamen", string.IsNullOrEmpty(txtDescripcionExamen.Text) ? (object)DBNull.Value : txtDescripcionExamen.Text);
-                        command.Parameters.AddWithValue("@UsaMaterialesExamen", string.IsNullOrEmpty(txtUsaMateriaesExamen.Text) ? (object)DBNull.Value : txtUsaMateriaesExamen.Text);
-                        command.Parameters.AddWithValue("@NotasExamen", string.IsNullOrEmpty(txtNotasExamen.Text) ? (object)DBNull.Value : txtNotasExamen.Text);
-
-                         //Abrir la conexión y ejecutar el comando
-                        connection.Open();
-                        command.ExecuteNonQuery(); // Ejecutar la consulta
-                    }
-                    MessageBox.Show("Datos guardados exitosamente.");
-                }
-               else
-                {
-                    MessageBox.Show("Por favor, ingrese al menos un dato.");
-                }
-            }
+            MessageBox.Show("Jauaryou brother");
         }
 
         // Verifica si hay datos ingresados en los campos
@@ -231,7 +201,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             return !string.IsNullOrEmpty(txtMotiExamen.Text) ||
                    !string.IsNullOrEmpty(txtDescripcionExamen.Text) ||
-                   !string.IsNullOrEmpty(txtUsaMateriaesExamen.Text) ||
+                   !string.IsNullOrEmpty(txtUsaMaterialesExamen.Text) ||
                    !string.IsNullOrEmpty(txtNotasExamen.Text) ||
                    cbxTipoExamen.SelectedItem != null;
         }
@@ -244,23 +214,66 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
 
+        // Variable global para indicar si hay vacuna
+        private bool Vacuna = false;
+
         /// <summary>
-        /// 
+        /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void chkVacuna_CheckedChanged(object sender, EventArgs e)
         {
-            // Activar o desactivar controles relacionados con vacuna
-            bool isVacunaChecked = chkVacuna.Checked;
-            cbxTipoVacuna.Enabled = isVacunaChecked;
-            txtDescripcionVacuna.Enabled = isVacunaChecked;
-            txtNotasVacuna.Enabled = isVacunaChecked;
-            txtUsaMaterialesVacuna.Enabled = isVacunaChecked;
-            txtMotiVacuna.Enabled = isVacunaChecked;
+            if (chkVacuna.Checked)
+            {
+                // Activar controles
+                ActivarControlesVacuna(true);
 
+                // Cambiar el valor de la variable
+                Vacuna = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesVacuna(false);
 
+                LimpiarControlesVacuna();
+
+                // Cambiar el valor de la variable
+                Vacuna = false;
+            }
         }
+
+
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la vacuna
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesVacuna(bool estado)
+        {
+            cbxTipoVacuna.Enabled = estado;
+            txtMotiVacuna.Enabled = estado;
+            txtUsaMaterialesVacuna.Enabled = estado;
+            txtDescripcionVacuna.Enabled = estado;
+            txtNotasVacuna.Enabled = estado;
+        }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la vacuna
+        /// </summary>
+        private void LimpiarControlesVacuna()
+        {
+            cbxTipoVacuna.SelectedIndex = -1; 
+            txtMotiVacuna.Clear();
+            txtUsaMaterialesVacuna.Clear();
+            txtDescripcionVacuna.Clear();
+            txtNotasVacuna.Clear();
+        }
+
+
+
+        // Variable global para indicar si hay Examen
+        private bool Examen = false;
 
         /// <summary>
         /// 
@@ -269,14 +282,52 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void chkExamen_CheckedChanged(object sender, EventArgs e)
         {
-            bool isExamenChecked = chkExamen.Checked;
-            cbxTipoExamen.Enabled = isExamenChecked;
-            txtDescripcionExamen.Enabled = isExamenChecked;
-            txtNotasExamen.Enabled = isExamenChecked;
-            txtNotasExamen.Enabled = isExamenChecked;
-            txtUsaMateriaesExamen.Enabled = isExamenChecked;
-            txtMotiExamen.Enabled = isExamenChecked;
+            //bool isExamenChecked = chkExamen.Checked;
+            //cbxTipoExamen.Enabled = isExamenChecked;
+            //txtDescripcionExamen.Enabled = isExamenChecked;
+            //txtNotasExamen.Enabled = isExamenChecked;
+            //txtNotasExamen.Enabled = isExamenChecked;
+            //txtUsaMateriaesExamen.Enabled = isExamenChecked;
+            //txtMotiExamen.Enabled = isExamenChecked;
+
+            if (chkExamen.Checked)
+            {
+                // Activar controles
+                ActivarControlesExamen(true);
+
+                // Cambiar el valor de la variable
+                Vacuna = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesExamen(false);
+
+                //LimpiarControlesExamen();
+
+                // Cambiar el valor de la variable
+                Examen = false;
+            }
+
+
         }
+
+        //Hace falta el metodo de LimpiarControlesExamen
+
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la vacuna
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesExamen(bool estado)
+        {
+            cbxTipoExamen.Enabled = estado;
+            txtMotiExamen.Enabled = estado;
+            txtUsaMaterialesExamen.Enabled = estado;
+            txtDescripcionExamen.Enabled = estado;
+            txtNotasExamen.Enabled = estado;
+        }
+
+
 
         /// <summary>
         /// 
@@ -285,8 +336,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void chkCirugia_CheckedChanged(object sender, EventArgs e)
         {
-            bool isCirugiaChecked = chkCirugia.Checked;
-            cbxTipoCirugia.Enabled = isCirugiaChecked;
+            //bool isCirugiaChecked = chkCirugia.Checked;
+            //cbxTipoCirugia.Enabled = isCirugiaChecked;
 
         }
 
@@ -297,8 +348,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void chkConsulta_CheckedChanged(object sender, EventArgs e)
         {
-            bool isConsultaCheked = chkConsulta.Checked;
-            txtMotiConsulta.Enabled = isConsultaCheked;
+            //bool isConsultaCheked = chkConsulta.Checked;
+            //txtMotiConsulta.Enabled = isConsultaCheked;
         }
     }
 }
