@@ -56,7 +56,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtUsaMaterialesVacuna = new System.Windows.Forms.TextBox();
             this.txtDescripcionVacuna = new System.Windows.Forms.TextBox();
             this.txtMotiVacuna = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.gbxInfoConsulta = new System.Windows.Forms.GroupBox();
             this.mtxtPeso = new System.Windows.Forms.MaskedTextBox();
             this.lblSintomas = new System.Windows.Forms.Label();
@@ -120,19 +119,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoExamen);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoVacuna);
-            this.panelVeterinarioCita.Controls.Add(this.label7);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoConsulta);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoCirugia);
             this.panelVeterinarioCita.Controls.Add(this.gbxaInfoExpediente);
             this.panelVeterinarioCita.Location = new System.Drawing.Point(0, 48);
             this.panelVeterinarioCita.Name = "panelVeterinarioCita";
-            this.panelVeterinarioCita.Size = new System.Drawing.Size(816, 583);
+            this.panelVeterinarioCita.Size = new System.Drawing.Size(816, 584);
             this.panelVeterinarioCita.TabIndex = 0;
             // 
             // chkConsulta
             // 
             this.chkConsulta.AutoSize = true;
-            this.chkConsulta.Location = new System.Drawing.Point(24, 200);
+            this.chkConsulta.Location = new System.Drawing.Point(24, 201);
             this.chkConsulta.Name = "chkConsulta";
             this.chkConsulta.Size = new System.Drawing.Size(181, 17);
             this.chkConsulta.TabIndex = 28;
@@ -143,7 +141,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // chkCirugia
             // 
             this.chkCirugia.AutoSize = true;
-            this.chkCirugia.Location = new System.Drawing.Point(40, 663);
+            this.chkCirugia.Location = new System.Drawing.Point(24, 414);
             this.chkCirugia.Name = "chkCirugia";
             this.chkCirugia.Size = new System.Drawing.Size(172, 17);
             this.chkCirugia.TabIndex = 27;
@@ -154,7 +152,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // chkExamen
             // 
             this.chkExamen.AutoSize = true;
-            this.chkExamen.Location = new System.Drawing.Point(40, 1285);
+            this.chkExamen.Location = new System.Drawing.Point(24, 768);
             this.chkExamen.Name = "chkExamen";
             this.chkExamen.Size = new System.Drawing.Size(178, 17);
             this.chkExamen.TabIndex = 26;
@@ -165,7 +163,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // chkVacuna
             // 
             this.chkVacuna.AutoSize = true;
-            this.chkVacuna.Location = new System.Drawing.Point(40, 976);
+            this.chkVacuna.Location = new System.Drawing.Point(24, 590);
             this.chkVacuna.Name = "chkVacuna";
             this.chkVacuna.Size = new System.Drawing.Size(177, 17);
             this.chkVacuna.TabIndex = 25;
@@ -185,9 +183,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoExamen.Controls.Add(this.txtUsaMaterialesExamen);
             this.gbxInfoExamen.Controls.Add(this.txtDescripcionExamen);
             this.gbxInfoExamen.Controls.Add(this.txtMotiExamen);
-            this.gbxInfoExamen.Location = new System.Drawing.Point(40, 1308);
+            this.gbxInfoExamen.Location = new System.Drawing.Point(24, 800);
             this.gbxInfoExamen.Name = "gbxInfoExamen";
-            this.gbxInfoExamen.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoExamen.Size = new System.Drawing.Size(760, 136);
             this.gbxInfoExamen.TabIndex = 19;
             this.gbxInfoExamen.TabStop = false;
             this.gbxInfoExamen.Text = "Informacion de el Examen";
@@ -202,15 +200,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             "Leucemia felino",
             "Radiografia",
             "Ultrasonido"});
-            this.cbxTipoExamen.Location = new System.Drawing.Point(130, 39);
+            this.cbxTipoExamen.Location = new System.Drawing.Point(144, 32);
             this.cbxTipoExamen.Name = "cbxTipoExamen";
-            this.cbxTipoExamen.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoExamen.Size = new System.Drawing.Size(200, 21);
             this.cbxTipoExamen.TabIndex = 18;
             // 
             // lblTipoExamen
             // 
             this.lblTipoExamen.AutoSize = true;
-            this.lblTipoExamen.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoExamen.Location = new System.Drawing.Point(24, 32);
             this.lblTipoExamen.Name = "lblTipoExamen";
             this.lblTipoExamen.Size = new System.Drawing.Size(69, 13);
             this.lblTipoExamen.TabIndex = 17;
@@ -219,7 +217,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMotiExamen
             // 
             this.lblMotiExamen.AutoSize = true;
-            this.lblMotiExamen.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiExamen.Location = new System.Drawing.Point(24, 64);
             this.lblMotiExamen.Name = "lblMotiExamen";
             this.lblMotiExamen.Size = new System.Drawing.Size(80, 13);
             this.lblMotiExamen.TabIndex = 16;
@@ -228,7 +226,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(444, 106);
+            this.lblDescripcion.Location = new System.Drawing.Point(392, 64);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcion.TabIndex = 15;
@@ -237,7 +235,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasExamen
             // 
             this.lblNotasExamen.AutoSize = true;
-            this.lblNotasExamen.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasExamen.Location = new System.Drawing.Point(24, 96);
             this.lblNotasExamen.Name = "lblNotasExamen";
             this.lblNotasExamen.Size = new System.Drawing.Size(35, 13);
             this.lblNotasExamen.TabIndex = 12;
@@ -246,7 +244,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsaMateriaesExamen
             // 
             this.lblUsaMateriaesExamen.AutoSize = true;
-            this.lblUsaMateriaesExamen.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMateriaesExamen.Location = new System.Drawing.Point(392, 32);
             this.lblUsaMateriaesExamen.Name = "lblUsaMateriaesExamen";
             this.lblUsaMateriaesExamen.Size = new System.Drawing.Size(94, 13);
             this.lblUsaMateriaesExamen.TabIndex = 11;
@@ -255,33 +253,33 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // txtNotasExamen
             // 
             this.txtNotasExamen.Enabled = false;
-            this.txtNotasExamen.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasExamen.Location = new System.Drawing.Point(144, 96);
             this.txtNotasExamen.Name = "txtNotasExamen";
-            this.txtNotasExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasExamen.Size = new System.Drawing.Size(552, 20);
             this.txtNotasExamen.TabIndex = 6;
             // 
             // txtUsaMaterialesExamen
             // 
             this.txtUsaMaterialesExamen.Enabled = false;
-            this.txtUsaMaterialesExamen.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesExamen.Location = new System.Drawing.Point(496, 32);
             this.txtUsaMaterialesExamen.Name = "txtUsaMaterialesExamen";
-            this.txtUsaMaterialesExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesExamen.Size = new System.Drawing.Size(200, 20);
             this.txtUsaMaterialesExamen.TabIndex = 7;
             // 
             // txtDescripcionExamen
             // 
             this.txtDescripcionExamen.Enabled = false;
-            this.txtDescripcionExamen.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionExamen.Location = new System.Drawing.Point(496, 64);
             this.txtDescripcionExamen.Name = "txtDescripcionExamen";
-            this.txtDescripcionExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionExamen.Size = new System.Drawing.Size(200, 20);
             this.txtDescripcionExamen.TabIndex = 8;
             // 
             // txtMotiExamen
             // 
             this.txtMotiExamen.Enabled = false;
-            this.txtMotiExamen.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiExamen.Location = new System.Drawing.Point(144, 64);
             this.txtMotiExamen.Name = "txtMotiExamen";
-            this.txtMotiExamen.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiExamen.Size = new System.Drawing.Size(200, 20);
             this.txtMotiExamen.TabIndex = 9;
             // 
             // gbxInfoVacuna
@@ -296,9 +294,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoVacuna.Controls.Add(this.txtUsaMaterialesVacuna);
             this.gbxInfoVacuna.Controls.Add(this.txtDescripcionVacuna);
             this.gbxInfoVacuna.Controls.Add(this.txtMotiVacuna);
-            this.gbxInfoVacuna.Location = new System.Drawing.Point(40, 999);
+            this.gbxInfoVacuna.Location = new System.Drawing.Point(24, 614);
             this.gbxInfoVacuna.Name = "gbxInfoVacuna";
-            this.gbxInfoVacuna.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoVacuna.Size = new System.Drawing.Size(760, 136);
             this.gbxInfoVacuna.TabIndex = 15;
             this.gbxInfoVacuna.TabStop = false;
             this.gbxInfoVacuna.Text = "Informacion de la Vacuna";
@@ -317,15 +315,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             "Gato Herpesvirus",
             "Gato Panleucopenia",
             "Rabia"});
-            this.cbxTipoVacuna.Location = new System.Drawing.Point(130, 39);
+            this.cbxTipoVacuna.Location = new System.Drawing.Point(144, 32);
             this.cbxTipoVacuna.Name = "cbxTipoVacuna";
-            this.cbxTipoVacuna.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoVacuna.Size = new System.Drawing.Size(200, 21);
             this.cbxTipoVacuna.TabIndex = 18;
             // 
             // lblTipoVacuna
             // 
             this.lblTipoVacuna.AutoSize = true;
-            this.lblTipoVacuna.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoVacuna.Location = new System.Drawing.Point(24, 32);
             this.lblTipoVacuna.Name = "lblTipoVacuna";
             this.lblTipoVacuna.Size = new System.Drawing.Size(68, 13);
             this.lblTipoVacuna.TabIndex = 17;
@@ -334,7 +332,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMotiVacuna
             // 
             this.lblMotiVacuna.AutoSize = true;
-            this.lblMotiVacuna.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiVacuna.Location = new System.Drawing.Point(24, 64);
             this.lblMotiVacuna.Name = "lblMotiVacuna";
             this.lblMotiVacuna.Size = new System.Drawing.Size(79, 13);
             this.lblMotiVacuna.TabIndex = 16;
@@ -343,7 +341,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDescripcionVacuna
             // 
             this.lblDescripcionVacuna.AutoSize = true;
-            this.lblDescripcionVacuna.Location = new System.Drawing.Point(444, 106);
+            this.lblDescripcionVacuna.Location = new System.Drawing.Point(392, 64);
             this.lblDescripcionVacuna.Name = "lblDescripcionVacuna";
             this.lblDescripcionVacuna.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcionVacuna.TabIndex = 15;
@@ -352,7 +350,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasVacuna
             // 
             this.lblNotasVacuna.AutoSize = true;
-            this.lblNotasVacuna.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasVacuna.Location = new System.Drawing.Point(24, 96);
             this.lblNotasVacuna.Name = "lblNotasVacuna";
             this.lblNotasVacuna.Size = new System.Drawing.Size(35, 13);
             this.lblNotasVacuna.TabIndex = 12;
@@ -361,7 +359,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsaMaterialesVacuna
             // 
             this.lblUsaMaterialesVacuna.AutoSize = true;
-            this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(392, 32);
             this.lblUsaMaterialesVacuna.Name = "lblUsaMaterialesVacuna";
             this.lblUsaMaterialesVacuna.Size = new System.Drawing.Size(94, 13);
             this.lblUsaMaterialesVacuna.TabIndex = 11;
@@ -370,43 +368,34 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // txtNotasVacuna
             // 
             this.txtNotasVacuna.Enabled = false;
-            this.txtNotasVacuna.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasVacuna.Location = new System.Drawing.Point(144, 96);
             this.txtNotasVacuna.Name = "txtNotasVacuna";
-            this.txtNotasVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasVacuna.Size = new System.Drawing.Size(552, 20);
             this.txtNotasVacuna.TabIndex = 6;
             // 
             // txtUsaMaterialesVacuna
             // 
             this.txtUsaMaterialesVacuna.Enabled = false;
-            this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(496, 32);
             this.txtUsaMaterialesVacuna.Name = "txtUsaMaterialesVacuna";
-            this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(200, 20);
             this.txtUsaMaterialesVacuna.TabIndex = 7;
             // 
             // txtDescripcionVacuna
             // 
             this.txtDescripcionVacuna.Enabled = false;
-            this.txtDescripcionVacuna.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionVacuna.Location = new System.Drawing.Point(496, 64);
             this.txtDescripcionVacuna.Name = "txtDescripcionVacuna";
-            this.txtDescripcionVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionVacuna.Size = new System.Drawing.Size(200, 20);
             this.txtDescripcionVacuna.TabIndex = 8;
             // 
             // txtMotiVacuna
             // 
             this.txtMotiVacuna.Enabled = false;
-            this.txtMotiVacuna.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiVacuna.Location = new System.Drawing.Point(144, 64);
             this.txtMotiVacuna.Name = "txtMotiVacuna";
-            this.txtMotiVacuna.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiVacuna.Size = new System.Drawing.Size(200, 20);
             this.txtMotiVacuna.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 1618);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 13);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "label7";
             // 
             // gbxInfoConsulta
             // 
@@ -426,23 +415,23 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoConsulta.Controls.Add(this.txtExamFisico);
             this.gbxInfoConsulta.Location = new System.Drawing.Point(24, 224);
             this.gbxInfoConsulta.Name = "gbxInfoConsulta";
-            this.gbxInfoConsulta.Size = new System.Drawing.Size(760, 224);
+            this.gbxInfoConsulta.Size = new System.Drawing.Size(760, 176);
             this.gbxInfoConsulta.TabIndex = 11;
             this.gbxInfoConsulta.TabStop = false;
             this.gbxInfoConsulta.Text = "Informacion de la Consulta";
             // 
             // mtxtPeso
             // 
-            this.mtxtPeso.Location = new System.Drawing.Point(130, 198);
+            this.mtxtPeso.Location = new System.Drawing.Point(496, 96);
             this.mtxtPeso.Mask = "000.00";
             this.mtxtPeso.Name = "mtxtPeso";
-            this.mtxtPeso.Size = new System.Drawing.Size(121, 20);
+            this.mtxtPeso.Size = new System.Drawing.Size(56, 20);
             this.mtxtPeso.TabIndex = 18;
             // 
             // lblSintomas
             // 
             this.lblSintomas.AutoSize = true;
-            this.lblSintomas.Location = new System.Drawing.Point(25, 46);
+            this.lblSintomas.Location = new System.Drawing.Point(24, 32);
             this.lblSintomas.Name = "lblSintomas";
             this.lblSintomas.Size = new System.Drawing.Size(50, 13);
             this.lblSintomas.TabIndex = 17;
@@ -451,7 +440,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblExamFisico
             // 
             this.lblExamFisico.AutoSize = true;
-            this.lblExamFisico.Location = new System.Drawing.Point(25, 106);
+            this.lblExamFisico.Location = new System.Drawing.Point(24, 64);
             this.lblExamFisico.Name = "lblExamFisico";
             this.lblExamFisico.Size = new System.Drawing.Size(75, 13);
             this.lblExamFisico.TabIndex = 16;
@@ -460,7 +449,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDiagnostico
             // 
             this.lblDiagnostico.AutoSize = true;
-            this.lblDiagnostico.Location = new System.Drawing.Point(25, 152);
+            this.lblDiagnostico.Location = new System.Drawing.Point(24, 96);
             this.lblDiagnostico.Name = "lblDiagnostico";
             this.lblDiagnostico.Size = new System.Drawing.Size(63, 13);
             this.lblDiagnostico.TabIndex = 15;
@@ -469,7 +458,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasCita
             // 
             this.lblNotasCita.AutoSize = true;
-            this.lblNotasCita.Location = new System.Drawing.Point(462, 148);
+            this.lblNotasCita.Location = new System.Drawing.Point(24, 128);
             this.lblNotasCita.Name = "lblNotasCita";
             this.lblNotasCita.Size = new System.Drawing.Size(35, 13);
             this.lblNotasCita.TabIndex = 13;
@@ -478,7 +467,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMedicamentos
             // 
             this.lblMedicamentos.AutoSize = true;
-            this.lblMedicamentos.Location = new System.Drawing.Point(462, 99);
+            this.lblMedicamentos.Location = new System.Drawing.Point(392, 64);
             this.lblMedicamentos.Name = "lblMedicamentos";
             this.lblMedicamentos.Size = new System.Drawing.Size(76, 13);
             this.lblMedicamentos.TabIndex = 12;
@@ -487,7 +476,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTratamiento
             // 
             this.lblTratamiento.AutoSize = true;
-            this.lblTratamiento.Location = new System.Drawing.Point(462, 46);
+            this.lblTratamiento.Location = new System.Drawing.Point(392, 32);
             this.lblTratamiento.Name = "lblTratamiento";
             this.lblTratamiento.Size = new System.Drawing.Size(63, 13);
             this.lblTratamiento.TabIndex = 11;
@@ -495,30 +484,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSintomas
             // 
-            this.txtSintomas.Location = new System.Drawing.Point(130, 43);
+            this.txtSintomas.Location = new System.Drawing.Point(144, 24);
             this.txtSintomas.Name = "txtSintomas";
-            this.txtSintomas.Size = new System.Drawing.Size(121, 20);
+            this.txtSintomas.Size = new System.Drawing.Size(200, 20);
             this.txtSintomas.TabIndex = 2;
             // 
             // txtNotasCita
             // 
-            this.txtNotasCita.Location = new System.Drawing.Point(559, 148);
+            this.txtNotasCita.Location = new System.Drawing.Point(144, 128);
             this.txtNotasCita.Name = "txtNotasCita";
-            this.txtNotasCita.Size = new System.Drawing.Size(100, 20);
+            this.txtNotasCita.Size = new System.Drawing.Size(552, 20);
             this.txtNotasCita.TabIndex = 5;
             // 
             // txtMedicamentos
             // 
-            this.txtMedicamentos.Location = new System.Drawing.Point(559, 92);
+            this.txtMedicamentos.Location = new System.Drawing.Point(496, 64);
             this.txtMedicamentos.Name = "txtMedicamentos";
-            this.txtMedicamentos.Size = new System.Drawing.Size(100, 20);
+            this.txtMedicamentos.Size = new System.Drawing.Size(200, 20);
             this.txtMedicamentos.TabIndex = 6;
             // 
             // txtTratamiento
             // 
-            this.txtTratamiento.Location = new System.Drawing.Point(559, 39);
+            this.txtTratamiento.Location = new System.Drawing.Point(496, 32);
             this.txtTratamiento.Name = "txtTratamiento";
-            this.txtTratamiento.Size = new System.Drawing.Size(100, 20);
+            this.txtTratamiento.Size = new System.Drawing.Size(200, 20);
             this.txtTratamiento.TabIndex = 7;
             // 
             // lblPeso
@@ -526,7 +515,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(26, 201);
+            this.lblPeso.Location = new System.Drawing.Point(392, 96);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
             this.lblPeso.TabIndex = 13;
@@ -534,16 +523,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDiagnostico
             // 
-            this.txtDiagnostico.Location = new System.Drawing.Point(130, 145);
+            this.txtDiagnostico.Location = new System.Drawing.Point(144, 96);
             this.txtDiagnostico.Name = "txtDiagnostico";
-            this.txtDiagnostico.Size = new System.Drawing.Size(121, 20);
+            this.txtDiagnostico.Size = new System.Drawing.Size(200, 20);
             this.txtDiagnostico.TabIndex = 8;
             // 
             // txtExamFisico
             // 
-            this.txtExamFisico.Location = new System.Drawing.Point(130, 99);
+            this.txtExamFisico.Location = new System.Drawing.Point(144, 64);
             this.txtExamFisico.Name = "txtExamFisico";
-            this.txtExamFisico.Size = new System.Drawing.Size(121, 20);
+            this.txtExamFisico.Size = new System.Drawing.Size(200, 20);
             this.txtExamFisico.TabIndex = 9;
             // 
             // gbxInfoCirugia
@@ -558,9 +547,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoCirugia.Controls.Add(this.txtUsaMaterialesCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtDescripcionCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtMotiCirugia);
-            this.gbxInfoCirugia.Location = new System.Drawing.Point(40, 686);
+            this.gbxInfoCirugia.Location = new System.Drawing.Point(24, 436);
             this.gbxInfoCirugia.Name = "gbxInfoCirugia";
-            this.gbxInfoCirugia.Size = new System.Drawing.Size(709, 248);
+            this.gbxInfoCirugia.Size = new System.Drawing.Size(760, 136);
             this.gbxInfoCirugia.TabIndex = 13;
             this.gbxInfoCirugia.TabStop = false;
             this.gbxInfoCirugia.Text = "Informacion de la Cirugia";
@@ -574,15 +563,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             "Absceso",
             "Lavado gastrico",
             "Cesarea"});
-            this.cbxTipoCirugia.Location = new System.Drawing.Point(130, 46);
+            this.cbxTipoCirugia.Location = new System.Drawing.Point(144, 32);
             this.cbxTipoCirugia.Name = "cbxTipoCirugia";
-            this.cbxTipoCirugia.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipoCirugia.Size = new System.Drawing.Size(200, 21);
             this.cbxTipoCirugia.TabIndex = 18;
             // 
             // lblTipoCirugia
             // 
             this.lblTipoCirugia.AutoSize = true;
-            this.lblTipoCirugia.Location = new System.Drawing.Point(25, 46);
+            this.lblTipoCirugia.Location = new System.Drawing.Point(24, 32);
             this.lblTipoCirugia.Name = "lblTipoCirugia";
             this.lblTipoCirugia.Size = new System.Drawing.Size(63, 13);
             this.lblTipoCirugia.TabIndex = 17;
@@ -591,7 +580,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMotiCirugia
             // 
             this.lblMotiCirugia.AutoSize = true;
-            this.lblMotiCirugia.Location = new System.Drawing.Point(25, 106);
+            this.lblMotiCirugia.Location = new System.Drawing.Point(24, 64);
             this.lblMotiCirugia.Name = "lblMotiCirugia";
             this.lblMotiCirugia.Size = new System.Drawing.Size(74, 13);
             this.lblMotiCirugia.TabIndex = 16;
@@ -600,7 +589,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDescripcionCirugia
             // 
             this.lblDescripcionCirugia.AutoSize = true;
-            this.lblDescripcionCirugia.Location = new System.Drawing.Point(444, 106);
+            this.lblDescripcionCirugia.Location = new System.Drawing.Point(392, 64);
             this.lblDescripcionCirugia.Name = "lblDescripcionCirugia";
             this.lblDescripcionCirugia.Size = new System.Drawing.Size(63, 13);
             this.lblDescripcionCirugia.TabIndex = 15;
@@ -609,7 +598,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasCirugia
             // 
             this.lblNotasCirugia.AutoSize = true;
-            this.lblNotasCirugia.Location = new System.Drawing.Point(25, 171);
+            this.lblNotasCirugia.Location = new System.Drawing.Point(24, 96);
             this.lblNotasCirugia.Name = "lblNotasCirugia";
             this.lblNotasCirugia.Size = new System.Drawing.Size(35, 13);
             this.lblNotasCirugia.TabIndex = 12;
@@ -618,7 +607,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsaMaterialesCirugia
             // 
             this.lblUsaMaterialesCirugia.AutoSize = true;
-            this.lblUsaMaterialesCirugia.Location = new System.Drawing.Point(444, 46);
+            this.lblUsaMaterialesCirugia.Location = new System.Drawing.Point(392, 32);
             this.lblUsaMaterialesCirugia.Name = "lblUsaMaterialesCirugia";
             this.lblUsaMaterialesCirugia.Size = new System.Drawing.Size(94, 13);
             this.lblUsaMaterialesCirugia.TabIndex = 11;
@@ -626,30 +615,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNotasCirugia
             // 
-            this.txtNotasCirugia.Location = new System.Drawing.Point(130, 164);
+            this.txtNotasCirugia.Location = new System.Drawing.Point(144, 96);
             this.txtNotasCirugia.Name = "txtNotasCirugia";
-            this.txtNotasCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtNotasCirugia.Size = new System.Drawing.Size(552, 20);
             this.txtNotasCirugia.TabIndex = 6;
             // 
             // txtUsaMaterialesCirugia
             // 
-            this.txtUsaMaterialesCirugia.Location = new System.Drawing.Point(559, 39);
+            this.txtUsaMaterialesCirugia.Location = new System.Drawing.Point(496, 32);
             this.txtUsaMaterialesCirugia.Name = "txtUsaMaterialesCirugia";
-            this.txtUsaMaterialesCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtUsaMaterialesCirugia.Size = new System.Drawing.Size(200, 20);
             this.txtUsaMaterialesCirugia.TabIndex = 7;
             // 
             // txtDescripcionCirugia
             // 
-            this.txtDescripcionCirugia.Location = new System.Drawing.Point(559, 106);
+            this.txtDescripcionCirugia.Location = new System.Drawing.Point(496, 64);
             this.txtDescripcionCirugia.Name = "txtDescripcionCirugia";
-            this.txtDescripcionCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtDescripcionCirugia.Size = new System.Drawing.Size(200, 20);
             this.txtDescripcionCirugia.TabIndex = 8;
             // 
             // txtMotiCirugia
             // 
-            this.txtMotiCirugia.Location = new System.Drawing.Point(130, 99);
+            this.txtMotiCirugia.Location = new System.Drawing.Point(144, 64);
             this.txtMotiCirugia.Name = "txtMotiCirugia";
-            this.txtMotiCirugia.Size = new System.Drawing.Size(121, 20);
+            this.txtMotiCirugia.Size = new System.Drawing.Size(200, 20);
             this.txtMotiCirugia.TabIndex = 9;
             // 
             // gbxaInfoExpediente
@@ -704,6 +693,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdCita
             // 
+            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdCita.Enabled = false;
             this.cbxIdCita.FormattingEnabled = true;
             this.cbxIdCita.Location = new System.Drawing.Point(496, 32);
@@ -827,6 +817,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdMascota
             // 
+            this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascota.FormattingEnabled = true;
             this.cbxIdMascota.Location = new System.Drawing.Point(144, 32);
             this.cbxIdMascota.Name = "cbxIdMascota";
@@ -890,7 +881,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtTratamiento;
         private System.Windows.Forms.TextBox txtDiagnostico;
         private System.Windows.Forms.TextBox txtExamFisico;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.GroupBox gbxInfoCirugia;
         private System.Windows.Forms.Label lblTipoCirugia;
         private System.Windows.Forms.Label lblMotiCirugia;
