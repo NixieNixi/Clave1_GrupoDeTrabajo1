@@ -42,6 +42,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Descripcion:
     /// Se agrego el metodo de Cargar datos la cita y mascota asociada.
     /// 
+    /// Autor:NixeNixi
+    /// Fecha de Mpdificacion: 07/11/2024
+    /// Descripcion:
+    /// Se agregaron los metodos de guardar vacunas,consulta,examen cirugia.
+    /// se les agrego funciones a los metodos al btn guadar y se le agrego funcion a los metodo de guardar consulta y vacuna.
+    /// Se agrego try-cacht para la captacion de errores y asi poder corregirlos.
+    /// se agrego checkbbox a vacuna,examen,cirugia, solo vacuna tiene su funcionamiento completo, en las demas falta implementarlo
+    /// 
+    /// Autor:NixieNixi
+    /// Fecha de Modificacion: 08/11/2024
+    /// Descripcion:
+    /// Se le agrego validaciones a los metodos de guardar, vacuna,citas,examen y cirugia, FALTA TESTEO
     ///</remarks>
     ///
 
@@ -296,6 +308,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarVacuna()
         {
+                
+                if (string.IsNullOrWhiteSpace(txtIdMascota.Text) ||string.IsNullOrWhiteSpace(cbxTipoVacuna.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiVacuna.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesVacuna.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la vacuna.",
+                        "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
             string query = @"
             INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
@@ -305,6 +326,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
                 command.Parameters.AddWithValue("@tipo", cbxTipoVacuna.Text.Trim());
+
+                //No se agrego validacion para la descripcion, ya que segun la Db es un dato no obligatorio
                 command.Parameters.AddWithValue("@descripcion", txtDescripcionVacuna.Text.Trim());
                 command.Parameters.AddWithValue("@motivo", txtMotiVacuna.Text.Trim());
                 command.Parameters.AddWithValue("@materiales", txtUsaMaterialesVacuna.Text.Trim());
