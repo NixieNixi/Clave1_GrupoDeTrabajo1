@@ -352,6 +352,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void GuardarCirugia()
         {
+            
+            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) ||
+                string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             string query = @"
             INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
