@@ -98,6 +98,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chkVacuna = new System.Windows.Forms.CheckBox();
+            this.chkExamen = new System.Windows.Forms.CheckBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -112,6 +114,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
+            this.panelVeterinarioCita.Controls.Add(this.chkExamen);
+            this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoExamen);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoVacuna);
             this.panelVeterinarioCita.Controls.Add(this.label7);
@@ -781,8 +785,29 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            // Si no está presente, agrégalo en la inicialización del botón:
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // chkVacuna
+            // 
+            this.chkVacuna.AutoSize = true;
+            this.chkVacuna.Location = new System.Drawing.Point(40, 976);
+            this.chkVacuna.Name = "chkVacuna";
+            this.chkVacuna.Size = new System.Drawing.Size(177, 17);
+            this.chkVacuna.TabIndex = 25;
+            this.chkVacuna.Text = "Ingresar Informacion de Vacuna";
+            this.chkVacuna.UseVisualStyleBackColor = true;
+            this.chkVacuna.CheckedChanged += new System.EventHandler(this.chkVacuna_CheckedChanged);
+            // 
+            // chkExamen
+            // 
+            this.chkExamen.AutoSize = true;
+            this.chkExamen.Location = new System.Drawing.Point(40, 1285);
+            this.chkExamen.Name = "chkExamen";
+            this.chkExamen.Size = new System.Drawing.Size(178, 17);
+            this.chkExamen.TabIndex = 26;
+            this.chkExamen.Text = "Ingresar Informacion de Examen";
+            this.chkExamen.UseVisualStyleBackColor = true;
+            this.chkExamen.CheckedChanged += new System.EventHandler(this.chkExamen_CheckedChanged);
             // 
             // veterinarioCita
             // 
@@ -881,5 +906,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtEstadoCita;
         private System.Windows.Forms.Label lblFechaCita;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkVacuna;
+        private System.Windows.Forms.CheckBox chkExamen;
     }
 }
