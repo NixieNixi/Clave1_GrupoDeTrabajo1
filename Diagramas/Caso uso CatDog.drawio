@@ -8,7 +8,7 @@
           <mxGeometry x="30" y="990" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dgyW9kuO3diISS2v6ji--6" value="Dueño" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
-          <mxGeometry x="30" y="300" width="30" height="60" as="geometry" />
+          <mxGeometry x="40" y="300" width="30" height="60" as="geometry" />
         </mxCell>
         <mxCell id="dgyW9kuO3diISS2v6ji--15" value="Administrador" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="30" y="525" width="30" height="60" as="geometry" />
