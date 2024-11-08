@@ -54,7 +54,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
                     command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
                     command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
-                    command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);;
+                    command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
                     command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
                     command.Parameters.AddWithValue("@Hora", dtpCitaHora.Value.TimeOfDay);
 

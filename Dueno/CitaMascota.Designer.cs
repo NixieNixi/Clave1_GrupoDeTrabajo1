@@ -373,6 +373,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dtpCitaHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dtpCitaHora.Location = new System.Drawing.Point(113, 243);
             this.dtpCitaHora.Name = "dtpCitaHora";
+            this.dtpCitaHora.ShowUpDown = true;
             this.dtpCitaHora.Size = new System.Drawing.Size(200, 20);
             this.dtpCitaHora.TabIndex = 33;
             // 
