@@ -114,6 +114,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarC = new System.Windows.Forms.Button();
             this.btnNueva = new System.Windows.Forms.Button();
             this.btnCancelarC = new System.Windows.Forms.Button();
+            this.panelPagos = new System.Windows.Forms.Panel();
+            this.cbxEstadoP = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.cbxIdDuenoP = new System.Windows.Forms.ComboBox();
+            this.cbxIdPago = new System.Windows.Forms.ComboBox();
+            this.txtNombreP = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.cbxTipoPago = new System.Windows.Forms.ComboBox();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -123,6 +136,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnMascota.SuspendLayout();
             this.panelCitas.SuspendLayout();
             this.panelBtnCitas.SuspendLayout();
+            this.panelPagos.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -242,6 +256,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnPagos.TabIndex = 4;
             this.btnPagos.Text = "Pagos";
             this.btnPagos.UseVisualStyleBackColor = false;
+            this.btnPagos.Click += new System.EventHandler(this.btnPagos_Click);
             // 
             // btnCitas
             // 
@@ -681,7 +696,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Location = new System.Drawing.Point(416, 80);
+            this.panelMascotas.Location = new System.Drawing.Point(408, 80);
             this.panelMascotas.Name = "panelMascotas";
             this.panelMascotas.Size = new System.Drawing.Size(150, 100);
             this.panelMascotas.TabIndex = 12;
@@ -969,7 +984,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Location = new System.Drawing.Point(584, 80);
+            this.panelCitas.Location = new System.Drawing.Point(568, 80);
             this.panelCitas.Name = "panelCitas";
             this.panelCitas.Size = new System.Drawing.Size(150, 100);
             this.panelCitas.TabIndex = 3;
@@ -1232,12 +1247,186 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarC.UseVisualStyleBackColor = false;
             this.btnCancelarC.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // panelPagos
+            // 
+            this.panelPagos.AutoScroll = true;
+            this.panelPagos.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panelPagos.Controls.Add(this.cbxTipoPago);
+            this.panelPagos.Controls.Add(this.cbxEstadoP);
+            this.panelPagos.Controls.Add(this.dateTimePicker1);
+            this.panelPagos.Controls.Add(this.cbxIdDuenoP);
+            this.panelPagos.Controls.Add(this.cbxIdPago);
+            this.panelPagos.Controls.Add(this.label24);
+            this.panelPagos.Controls.Add(this.txtNombreP);
+            this.panelPagos.Controls.Add(this.label22);
+            this.panelPagos.Controls.Add(this.label23);
+            this.panelPagos.Controls.Add(this.label26);
+            this.panelPagos.Controls.Add(this.label35);
+            this.panelPagos.Controls.Add(this.label36);
+            this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPagos.Location = new System.Drawing.Point(240, 70);
+            this.panelPagos.Name = "panelPagos";
+            this.panelPagos.Size = new System.Drawing.Size(644, 431);
+            this.panelPagos.TabIndex = 3;
+            this.panelPagos.Visible = false;
+            // 
+            // cbxEstadoP
+            // 
+            this.cbxEstadoP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxEstadoP.Enabled = false;
+            this.cbxEstadoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxEstadoP.FormattingEnabled = true;
+            this.cbxEstadoP.Items.AddRange(new object[] {
+            "Programada",
+            "Cancelada",
+            "Finalizada"});
+            this.cbxEstadoP.Location = new System.Drawing.Point(320, 104);
+            this.cbxEstadoP.Name = "cbxEstadoP";
+            this.cbxEstadoP.Size = new System.Drawing.Size(264, 24);
+            this.cbxEstadoP.TabIndex = 10;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.dateTimePicker1.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(229)))), ((int)(((byte)(203)))));
+            this.dateTimePicker1.CustomFormat = "";
+            this.dateTimePicker1.Enabled = false;
+            this.dateTimePicker1.Location = new System.Drawing.Point(24, 160);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(264, 20);
+            this.dateTimePicker1.TabIndex = 8;
+            // 
+            // cbxIdDuenoP
+            // 
+            this.cbxIdDuenoP.BackColor = System.Drawing.Color.White;
+            this.cbxIdDuenoP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIdDuenoP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdDuenoP.FormattingEnabled = true;
+            this.cbxIdDuenoP.Location = new System.Drawing.Point(24, 48);
+            this.cbxIdDuenoP.Name = "cbxIdDuenoP";
+            this.cbxIdDuenoP.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdDuenoP.TabIndex = 2;
+            this.cbxIdDuenoP.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaC_SelectedIndexChanged);
+            // 
+            // cbxIdPago
+            // 
+            this.cbxIdPago.BackColor = System.Drawing.Color.White;
+            this.cbxIdPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIdPago.Enabled = false;
+            this.cbxIdPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdPago.FormattingEnabled = true;
+            this.cbxIdPago.Location = new System.Drawing.Point(24, 104);
+            this.cbxIdPago.Name = "cbxIdPago";
+            this.cbxIdPago.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdPago.TabIndex = 2;
+            this.cbxIdPago.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
+            // 
+            // txtNombreP
+            // 
+            this.txtNombreP.BackColor = System.Drawing.Color.White;
+            this.txtNombreP.Enabled = false;
+            this.txtNombreP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreP.Location = new System.Drawing.Point(320, 48);
+            this.txtNombreP.Name = "txtNombreP";
+            this.txtNombreP.ReadOnly = true;
+            this.txtNombreP.Size = new System.Drawing.Size(264, 22);
+            this.txtNombreP.TabIndex = 1;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.Black;
+            this.label22.Location = new System.Drawing.Point(320, 80);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(51, 16);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Estado";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(24, 24);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(64, 16);
+            this.label23.TabIndex = 0;
+            this.label23.Text = "ID Dueño";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(320, 24);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(57, 16);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "Nombre";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.ForeColor = System.Drawing.Color.Black;
+            this.label35.Location = new System.Drawing.Point(24, 136);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(46, 16);
+            this.label35.TabIndex = 0;
+            this.label35.Text = "Fecha";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.ForeColor = System.Drawing.Color.Black;
+            this.label36.Location = new System.Drawing.Point(24, 80);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(57, 16);
+            this.label36.TabIndex = 0;
+            this.label36.Text = "ID Pago";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.ForeColor = System.Drawing.Color.Black;
+            this.label24.Location = new System.Drawing.Point(320, 136);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(90, 16);
+            this.label24.TabIndex = 0;
+            this.label24.Text = "Tipo de pago";
+            // 
+            // cbxTipoPago
+            // 
+            this.cbxTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxTipoPago.Enabled = false;
+            this.cbxTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTipoPago.FormattingEnabled = true;
+            this.cbxTipoPago.Items.AddRange(new object[] {
+            "Programada",
+            "Cancelada",
+            "Finalizada"});
+            this.cbxTipoPago.Location = new System.Drawing.Point(320, 160);
+            this.cbxTipoPago.Name = "cbxTipoPago";
+            this.cbxTipoPago.Size = new System.Drawing.Size(264, 24);
+            this.cbxTipoPago.TabIndex = 10;
+            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
+            this.Controls.Add(this.panelPagos);
             this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelMascotas);
@@ -1264,6 +1453,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.ResumeLayout(false);
             this.panelCitas.PerformLayout();
             this.panelBtnCitas.ResumeLayout(false);
+            this.panelPagos.ResumeLayout(false);
+            this.panelPagos.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1356,5 +1547,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.Button btnDeshacer;
         private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.Panel panelPagos;
+        private System.Windows.Forms.ComboBox cbxEstadoP;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.ComboBox cbxIdDuenoP;
+        private System.Windows.Forms.ComboBox cbxIdPago;
+        private System.Windows.Forms.TextBox txtNombreP;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox cbxTipoPago;
+        private System.Windows.Forms.Label label24;
     }
 }

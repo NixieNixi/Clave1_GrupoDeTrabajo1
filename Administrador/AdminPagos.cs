@@ -8,6 +8,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil
     {
+        private void btnPagos_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
