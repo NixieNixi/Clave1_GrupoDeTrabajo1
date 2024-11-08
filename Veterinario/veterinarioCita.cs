@@ -277,5 +277,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtUsaMateriaesExamen.Enabled = isExamenChecked;
             txtMotiExamen.Enabled = isExamenChecked;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isCirugiaChecked = chkCirugia.Checked;
+            cbxTipoCirugia.Enabled = isCirugiaChecked;
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkConsulta_CheckedChanged(object sender, EventArgs e)
+        {
+            bool isConsultaCheked = chkConsulta.Checked;
+            txtMotiConsulta.Enabled = isConsultaCheked;
+        }
     }
 }

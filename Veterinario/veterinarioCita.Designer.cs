@@ -100,6 +100,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar = new System.Windows.Forms.Button();
             this.chkVacuna = new System.Windows.Forms.CheckBox();
             this.chkExamen = new System.Windows.Forms.CheckBox();
+            this.chkCirugia = new System.Windows.Forms.CheckBox();
+            this.chkConsulta = new System.Windows.Forms.CheckBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -114,6 +116,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
+            this.panelVeterinarioCita.Controls.Add(this.chkConsulta);
+            this.panelVeterinarioCita.Controls.Add(this.chkCirugia);
             this.panelVeterinarioCita.Controls.Add(this.chkExamen);
             this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoExamen);
@@ -208,6 +212,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNotasExamen
             // 
+            this.txtNotasExamen.Enabled = false;
             this.txtNotasExamen.Location = new System.Drawing.Point(130, 164);
             this.txtNotasExamen.Name = "txtNotasExamen";
             this.txtNotasExamen.Size = new System.Drawing.Size(121, 20);
@@ -215,6 +220,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtUsaMateriaesExamen
             // 
+            this.txtUsaMateriaesExamen.Enabled = false;
             this.txtUsaMateriaesExamen.Location = new System.Drawing.Point(559, 39);
             this.txtUsaMateriaesExamen.Name = "txtUsaMateriaesExamen";
             this.txtUsaMateriaesExamen.Size = new System.Drawing.Size(121, 20);
@@ -222,6 +228,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDescripcionExamen
             // 
+            this.txtDescripcionExamen.Enabled = false;
             this.txtDescripcionExamen.Location = new System.Drawing.Point(559, 106);
             this.txtDescripcionExamen.Name = "txtDescripcionExamen";
             this.txtDescripcionExamen.Size = new System.Drawing.Size(121, 20);
@@ -229,6 +236,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtMotiExamen
             // 
+            this.txtMotiExamen.Enabled = false;
             this.txtMotiExamen.Location = new System.Drawing.Point(130, 99);
             this.txtMotiExamen.Name = "txtMotiExamen";
             this.txtMotiExamen.Size = new System.Drawing.Size(121, 20);
@@ -255,6 +263,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoVacuna
             // 
+            this.cbxTipoVacuna.Enabled = false;
             this.cbxTipoVacuna.FormattingEnabled = true;
             this.cbxTipoVacuna.Items.AddRange(new object[] {
             "Perro Moquillo",
@@ -318,6 +327,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNotasVacuna
             // 
+            this.txtNotasVacuna.Enabled = false;
             this.txtNotasVacuna.Location = new System.Drawing.Point(130, 164);
             this.txtNotasVacuna.Name = "txtNotasVacuna";
             this.txtNotasVacuna.Size = new System.Drawing.Size(121, 20);
@@ -325,6 +335,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtUsaMaterialesVacuna
             // 
+            this.txtUsaMaterialesVacuna.Enabled = false;
             this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(559, 39);
             this.txtUsaMaterialesVacuna.Name = "txtUsaMaterialesVacuna";
             this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(121, 20);
@@ -332,6 +343,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDescripcionVacuna
             // 
+            this.txtDescripcionVacuna.Enabled = false;
             this.txtDescripcionVacuna.Location = new System.Drawing.Point(559, 106);
             this.txtDescripcionVacuna.Name = "txtDescripcionVacuna";
             this.txtDescripcionVacuna.Size = new System.Drawing.Size(121, 20);
@@ -339,6 +351,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtMotiVacuna
             // 
+            this.txtMotiVacuna.Enabled = false;
             this.txtMotiVacuna.Location = new System.Drawing.Point(130, 99);
             this.txtMotiVacuna.Name = "txtMotiVacuna";
             this.txtMotiVacuna.Size = new System.Drawing.Size(121, 20);
@@ -810,6 +823,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.chkExamen.UseVisualStyleBackColor = true;
             this.chkExamen.CheckedChanged += new System.EventHandler(this.chkExamen_CheckedChanged);
             // 
+            // chkCirugia
+            // 
+            this.chkCirugia.AutoSize = true;
+            this.chkCirugia.Location = new System.Drawing.Point(40, 663);
+            this.chkCirugia.Name = "chkCirugia";
+            this.chkCirugia.Size = new System.Drawing.Size(177, 17);
+            this.chkCirugia.TabIndex = 27;
+            this.chkCirugia.Text = "Ingresar Informacion de Vacuna";
+            this.chkCirugia.UseVisualStyleBackColor = true;
+            this.chkCirugia.CheckedChanged += new System.EventHandler(this.chkCirugia_CheckedChanged);
+            // 
+            // chkConsulta
+            // 
+            this.chkConsulta.AutoSize = true;
+            this.chkConsulta.Location = new System.Drawing.Point(41, 375);
+            this.chkConsulta.Name = "chkConsulta";
+            this.chkConsulta.Size = new System.Drawing.Size(181, 17);
+            this.chkConsulta.TabIndex = 28;
+            this.chkConsulta.Text = "Ingresar Informacion de Consulta";
+            this.chkConsulta.UseVisualStyleBackColor = true;
+            this.chkConsulta.CheckedChanged += new System.EventHandler(this.chkConsulta_CheckedChanged);
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -909,5 +944,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox chkVacuna;
         private System.Windows.Forms.CheckBox chkExamen;
+        private System.Windows.Forms.CheckBox chkCirugia;
+        private System.Windows.Forms.CheckBox chkConsulta;
     }
 }
