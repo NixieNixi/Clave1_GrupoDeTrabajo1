@@ -324,6 +324,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void GuardarExamen()
         {
+            
+            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
             string query = @"
             INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
@@ -353,10 +363,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void GuardarCirugia()
         {
             
-            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) ||
-                string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+            if (string.IsNullOrWhiteSpace(txtIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) ||string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
             {
                 MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
                     "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
