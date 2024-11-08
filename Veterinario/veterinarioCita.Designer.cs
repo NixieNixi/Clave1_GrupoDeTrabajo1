@@ -79,7 +79,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotiCirugia = new System.Windows.Forms.TextBox();
             this.gbxaInfoExpediente = new System.Windows.Forms.GroupBox();
             this.lblFechaCita = new System.Windows.Forms.Label();
-            this.txtFechaCita = new System.Windows.Forms.TextBox();
             this.txtEstadoCita = new System.Windows.Forms.TextBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.txtMotiConsulta = new System.Windows.Forms.TextBox();
@@ -595,7 +594,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.Controls.Add(this.dtpFechaHora);
             this.gbxaInfoExpediente.Controls.Add(this.txtIdMascota);
             this.gbxaInfoExpediente.Controls.Add(this.lblFechaCita);
-            this.gbxaInfoExpediente.Controls.Add(this.txtFechaCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtEstadoCita);
             this.gbxaInfoExpediente.Controls.Add(this.cbxIdCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtMotiConsulta);
@@ -622,13 +620,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblFechaCita.Size = new System.Drawing.Size(58, 13);
             this.lblFechaCita.TabIndex = 23;
             this.lblFechaCita.Text = "Fecha Cita";
-            // 
-            // txtFechaCita
-            // 
-            this.txtFechaCita.Location = new System.Drawing.Point(106, 196);
-            this.txtFechaCita.Name = "txtFechaCita";
-            this.txtFechaCita.Size = new System.Drawing.Size(175, 20);
-            this.txtFechaCita.TabIndex = 21;
             // 
             // txtEstadoCita
             // 
@@ -794,9 +785,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.chkCirugia.AutoSize = true;
             this.chkCirugia.Location = new System.Drawing.Point(40, 663);
             this.chkCirugia.Name = "chkCirugia";
-            this.chkCirugia.Size = new System.Drawing.Size(177, 17);
+            this.chkCirugia.Size = new System.Drawing.Size(172, 17);
             this.chkCirugia.TabIndex = 27;
-            this.chkCirugia.Text = "Ingresar Informacion de Vacuna";
+            this.chkCirugia.Text = "Ingresar Informacion de Cirugia";
             this.chkCirugia.UseVisualStyleBackColor = true;
             this.chkCirugia.CheckedChanged += new System.EventHandler(this.chkCirugia_CheckedChanged);
             // 
@@ -821,7 +812,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // dtpFechaHora
             // 
             this.dtpFechaHora.CustomFormat = "dd/MM/yyyy HH:mm";
-            this.dtpFechaHora.Location = new System.Drawing.Point(106, 223);
+            this.dtpFechaHora.Location = new System.Drawing.Point(95, 199);
             this.dtpFechaHora.Name = "dtpFechaHora";
             this.dtpFechaHora.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaHora.TabIndex = 26;
@@ -924,7 +915,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtMotiExamen;
         private System.Windows.Forms.ComboBox cbxTipoCirugia;
         private System.Windows.Forms.ComboBox cbxIdCita;
-        private System.Windows.Forms.TextBox txtFechaCita;
         private System.Windows.Forms.TextBox txtEstadoCita;
         private System.Windows.Forms.Label lblFechaCita;
         private System.Windows.Forms.CheckBox chkVacuna;

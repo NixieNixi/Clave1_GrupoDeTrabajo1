@@ -309,19 +309,73 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 command.Parameters.AddWithValue("@motivo", txtMotiVacuna.Text.Trim());
                 command.Parameters.AddWithValue("@materiales", txtUsaMaterialesVacuna.Text.Trim());
 
-                connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Vacuna guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar la vacuna: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
         private void GuardarExamen()
         {
-            // Código para insertar datos en la tabla de exámenes
+            string query = @"
+            INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoExamen.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionExamen.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiExamen.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesExamen.Text.Trim());
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Examen guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar el Examen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void GuardarCirugia()
         {
-            // Código para insertar datos en la tabla de cirugía
+            string query = @"
+            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", txtIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Cirugia guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         //FIN FUNCIONE DE BTNGUARDAR
