@@ -243,6 +243,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Close(); // Cerrar el formulario
         }
 
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chkVacuna_CheckedChanged(object sender, EventArgs e)
         {
             // Activar o desactivar controles relacionados con vacuna
@@ -256,12 +262,20 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void chkExamen_CheckedChanged(object sender, EventArgs e)
         {
             bool isExamenChecked = chkExamen.Checked;
             cbxTipoExamen.Enabled = isExamenChecked;
             txtDescripcionExamen.Enabled = isExamenChecked;
-
+            txtNotasExamen.Enabled = isExamenChecked;
+            txtNotasExamen.Enabled = isExamenChecked;
+            txtUsaMateriaesExamen.Enabled = isExamenChecked;
+            txtMotiExamen.Enabled = isExamenChecked;
         }
     }
 }

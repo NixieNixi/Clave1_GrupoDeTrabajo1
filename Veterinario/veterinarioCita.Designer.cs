@@ -148,6 +148,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoExamen
             // 
+            this.cbxTipoExamen.Enabled = false;
             this.cbxTipoExamen.FormattingEnabled = true;
             this.cbxTipoExamen.Items.AddRange(new object[] {
             "Sangre",
