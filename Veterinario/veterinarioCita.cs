@@ -372,6 +372,101 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+
+        //INICIO CIRUGIA
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
+        {
+            //bool isCirugiaChecked = chkCirugia.Checked;
+            //cbxTipoCirugia.Enabled = isCirugiaChecked;
+
+        }
+
+        private void GuardarCirugia()
+        {
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string query = @"
+            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Cirugia guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+        //FIN CIRUGIA
+        //FIN FUNCIONE DE BTNGUARDAR
+
+
+
+        
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            // Aquí va el código para cancelar la operación, por ejemplo:
+            this.Close(); // Cerrar el formulario
+        }
+
+
+        
+        //INICIO VACUNA
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void chkVacuna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkVacuna.Checked)
+            {
+                // Activar controles
+                ActivarControlesVacuna(true);
+
+                // Cambiar el valor de la variable
+                Vacuna = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesVacuna(false);
+
+                LimpiarControlesVacuna();
+
+                // Cambiar el valor de la variable
+                Vacuna = false;
+            }
+        }
+
+
         /// <summary>
         /// Metodo que guarda las vacunas que se suministren
         /// </summary>
@@ -413,133 +508,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
-
-        private void GuardarExamen()
-        {
-
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-
-            string query = @"
-            INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
-
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            using (MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoExamen.Text.Trim());
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionExamen.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiExamen.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesExamen.Text.Trim());
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Examen guardada con éxito.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al guardar el Examen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        private void GuardarCirugia()
-        {
-
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = @"
-            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
-
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            using (MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Cirugia guardada con éxito.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
-
-        //FIN FUNCIONE DE BTNGUARDAR
-
-
-
-        // Verifica si hay datos ingresados en los campos
-        private bool IsDataValid()
-        {
-            return !string.IsNullOrEmpty(txtMotiExamen.Text) ||
-                   !string.IsNullOrEmpty(txtDescripcionExamen.Text) ||
-                   !string.IsNullOrEmpty(txtUsaMaterialesExamen.Text) ||
-                   !string.IsNullOrEmpty(txtNotasExamen.Text) ||
-                   cbxTipoExamen.SelectedItem != null;
-        }
-
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            // Aquí va el código para cancelar la operación, por ejemplo:
-            this.Close(); // Cerrar el formulario
-        }
-
-
-        
-
-        /// <summary>
-        /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkVacuna_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkVacuna.Checked)
-            {
-                // Activar controles
-                ActivarControlesVacuna(true);
-
-                // Cambiar el valor de la variable
-                Vacuna = true;
-            }
-            else
-            {
-                // Desactivar controles y limpia los campos
-                ActivarControlesVacuna(false);
-
-                LimpiarControlesVacuna();
-
-                // Cambiar el valor de la variable
-                Vacuna = false;
-            }
-        }
-
 
         /// <summary>
         ///Función para activar y desactivar controles relacionados con la vacuna
@@ -598,7 +566,44 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-        //Hace falta el metodo de LimpiarControlesExamen
+
+        private void GuardarExamen()
+        {
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            string query = @"
+            INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoExamen.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionExamen.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiExamen.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesExamen.Text.Trim());
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Examen guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar el Examen: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
 
         /// <summary>
         /// // Función para limpiar los campos relacionados con la vacuna
@@ -633,12 +638,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
-        {
-            //bool isCirugiaChecked = chkCirugia.Checked;
-            //cbxTipoCirugia.Enabled = isCirugiaChecked;
-
-        }
+       
 
         
     }
