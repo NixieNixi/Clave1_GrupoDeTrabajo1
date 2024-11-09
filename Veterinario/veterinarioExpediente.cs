@@ -74,7 +74,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 //Consulta la columna idMascota de la tabla mascotas
-                string query = "SELECT idMascota FROM mascotas;";
+                string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC;";
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     connection.Open();
