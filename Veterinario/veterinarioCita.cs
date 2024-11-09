@@ -54,17 +54,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Fecha de Modificacion: 08/11/2024
     /// Descripcion:
     /// Se le agrego validaciones a los metodos de guardar, vacuna,citas,examen y cirugia, FALTA TESTEO
+    /// 
+    /// Autor: CanelaFeliz
+    /// Fecha: 08/11/2024
+    /// Descripcion: Se cambio el diseño del formulario y se agregaron funciones para cargar los idMascota e idCita
     ///</remarks>
-    ///
 
     public partial class veterinarioCita : Form
     {
         public veterinarioCita()
         {
             InitializeComponent();
+            //Cargar los idMascota en el combobox
             CargarMascotas();
         }
 
+        /// <summary>
+        /// Evento de cambio de seleccion de idMascota que carga la info de la mascota seleccionada y si tiene citas carga los idCita
+        /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
@@ -103,24 +110,31 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             CargarIdCita();
         }
 
+        /// <summary>
+        /// Funcion para cargar los idCita en el combobox
+        /// </summary>
         private void CargarIdCita()
         {
             cbxIdCita.Items.Clear();
+
             string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
             try
             {
+                DateTime fechaHoy = DateTime.Today;
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    string query = "SELECT idCita FROM citas WHERE idMascota = @idMascota";
+                    string query = "SELECT idCita FROM citas WHERE idMascota = @idMascota AND Estado = 'Programada' AND Fecha >= @fechaHoy;";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@idMascota", IdSeleccion);
+                        command.Parameters.AddWithValue("@fechaHoy", fechaHoy.Date);
                         connection.Open();
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.HasRows)
                             {
+                                cbxIdCita.Enabled = true;
                                 while (reader.Read())
                                 {
                                     cbxIdCita.Text = null;
@@ -129,6 +143,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             }
                             else
                             {
+                                cbxIdCita.Enabled = false;
                                 cbxIdCita.Text = "No se encontraron citas";
                             }
                         }
@@ -141,6 +156,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+        /// <summary>
+        /// Funcion para cargar los idMascota en le combobox
+        /// </summary>
         private void CargarMascotas()
         {
             try
@@ -179,8 +197,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Evento para cuando cambia la selección del ComboBox
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Verifica si no hay una selección (índice -1) y limpia los controles

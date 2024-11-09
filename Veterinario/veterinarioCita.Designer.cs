@@ -83,10 +83,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtDescripcionCirugia = new System.Windows.Forms.TextBox();
             this.txtMotiCirugia = new System.Windows.Forms.TextBox();
             this.gbxaInfoExpediente = new System.Windows.Forms.GroupBox();
+            this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.dtpFechaHora = new System.Windows.Forms.DateTimePicker();
             this.lblFechaCita = new System.Windows.Forms.Label();
             this.txtEstadoCita = new System.Windows.Forms.TextBox();
-            this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.txtMotiConsulta = new System.Windows.Forms.TextBox();
             this.lblMotiConsulta = new System.Windows.Forms.Label();
             this.lblIdMascota = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbxIdMascota = new System.Windows.Forms.ComboBox();
+            this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -643,11 +643,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxaInfoExpediente
             // 
+            this.gbxaInfoExpediente.Controls.Add(this.cbxIdCita);
             this.gbxaInfoExpediente.Controls.Add(this.cbxIdMascota);
             this.gbxaInfoExpediente.Controls.Add(this.dtpFechaHora);
             this.gbxaInfoExpediente.Controls.Add(this.lblFechaCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtEstadoCita);
-            this.gbxaInfoExpediente.Controls.Add(this.cbxIdCita);
             this.gbxaInfoExpediente.Controls.Add(this.txtMotiConsulta);
             this.gbxaInfoExpediente.Controls.Add(this.lblMotiConsulta);
             this.gbxaInfoExpediente.Controls.Add(this.lblIdMascota);
@@ -663,6 +663,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.TabIndex = 10;
             this.gbxaInfoExpediente.TabStop = false;
             this.gbxaInfoExpediente.Text = "Informacion de La Mascota";
+            // 
+            // cbxIdMascota
+            // 
+            this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIdMascota.FormattingEnabled = true;
+            this.cbxIdMascota.Location = new System.Drawing.Point(144, 32);
+            this.cbxIdMascota.Name = "cbxIdMascota";
+            this.cbxIdMascota.Size = new System.Drawing.Size(200, 21);
+            this.cbxIdMascota.TabIndex = 27;
+            this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
             // dtpFechaHora
             // 
@@ -690,17 +700,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtEstadoCita.ReadOnly = true;
             this.txtEstadoCita.Size = new System.Drawing.Size(200, 20);
             this.txtEstadoCita.TabIndex = 20;
-            // 
-            // cbxIdCita
-            // 
-            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdCita.Enabled = false;
-            this.cbxIdCita.FormattingEnabled = true;
-            this.cbxIdCita.Location = new System.Drawing.Point(496, 32);
-            this.cbxIdCita.Name = "cbxIdCita";
-            this.cbxIdCita.Size = new System.Drawing.Size(200, 21);
-            this.cbxIdCita.TabIndex = 19;
-            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // txtMotiConsulta
             // 
@@ -815,15 +814,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // cbxIdMascota
+            // cbxIdCita
             // 
-            this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdMascota.FormattingEnabled = true;
-            this.cbxIdMascota.Location = new System.Drawing.Point(144, 32);
-            this.cbxIdMascota.Name = "cbxIdMascota";
-            this.cbxIdMascota.Size = new System.Drawing.Size(200, 21);
-            this.cbxIdMascota.TabIndex = 27;
-            this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
+            this.cbxIdCita.Enabled = false;
+            this.cbxIdCita.FormattingEnabled = true;
+            this.cbxIdCita.Location = new System.Drawing.Point(496, 32);
+            this.cbxIdCita.Name = "cbxIdCita";
+            this.cbxIdCita.Size = new System.Drawing.Size(200, 21);
+            this.cbxIdCita.TabIndex = 28;
+            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // veterinarioCita
             // 
@@ -914,7 +913,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtDescripcionExamen;
         private System.Windows.Forms.TextBox txtMotiExamen;
         private System.Windows.Forms.ComboBox cbxTipoCirugia;
-        private System.Windows.Forms.ComboBox cbxIdCita;
         private System.Windows.Forms.TextBox txtEstadoCita;
         private System.Windows.Forms.Label lblFechaCita;
         private System.Windows.Forms.CheckBox chkVacuna;
@@ -924,5 +922,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DateTimePicker dtpFechaHora;
         private System.Windows.Forms.MaskedTextBox mtxtPeso;
         private System.Windows.Forms.ComboBox cbxIdMascota;
+        private System.Windows.Forms.ComboBox cbxIdCita;
     }
 }
