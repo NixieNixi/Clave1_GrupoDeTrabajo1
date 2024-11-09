@@ -31,16 +31,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             VerDueño.ShowDialog();
         }
 
-        private void CitaMascota_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
         private void btnProgramarCitaD_Click(object sender, EventArgs e)
         {
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -52,7 +42,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
-                    command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
                     command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
                     command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
                     command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
@@ -88,10 +77,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 // Asigna los valores nuevos
                 command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
-                command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
                 command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
                 command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
-                command.Parameters.AddWithValue("@FechaHora", txtFeHoCiD.Text);
 
                 int rowsAffected = command.ExecuteNonQuery();
 
@@ -105,16 +92,5 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
-
-        private void btnCancelarCita_Click(object sender, EventArgs e)
-        {
-            txtEsCiD.Text = "";
-            txtFeHoCiD.Text = "";
-            txtIDMascD.Text = "";
-            txtIDUsuD.Text = "";
-            txtMotCiD.Text = "";
-
-        }
     }
-
-    }
+}

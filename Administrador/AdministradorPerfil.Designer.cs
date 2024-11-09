@@ -993,9 +993,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Location = new System.Drawing.Point(568, 80);
+            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCitas.Location = new System.Drawing.Point(240, 70);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(150, 100);
+            this.panelCitas.Size = new System.Drawing.Size(644, 431);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1531,8 +1532,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelPagos);
             this.Controls.Add(this.panelCitas);
+            this.Controls.Add(this.panelPagos);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
