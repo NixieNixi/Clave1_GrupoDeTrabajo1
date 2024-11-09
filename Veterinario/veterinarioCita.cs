@@ -69,6 +69,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             CargarMascotas();
         }
 
+
+        /// <summary>
+        /// Variables que se utilizan para los distintos metodos
+        /// </summary>
         private bool Cirugia = false;
         private bool Vacuna = false;
         private bool Examen = false;
@@ -274,6 +278,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             dtpFechaHora.Value = DateTime.Now;
         }
 
+        /// <summary>
+        /// Metodo que guarda, GuardarConsulta por defecto, y si el check de algun groupbox esta activado, entonces lo guarda
+        /// siempre y cuando los datos sena validos, si no da errror.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
             // Guardar siempre la consulta
@@ -371,7 +381,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
-
+        //FIN CONSULTA
 
         //INICIO CIRUGIA
         /// <summary>
@@ -381,11 +391,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void chkCirugia_CheckedChanged(object sender, EventArgs e)
         {
-            //bool isCirugiaChecked = chkCirugia.Checked;
-            //cbxTipoCirugia.Enabled = isCirugiaChecked;
+            if (chkCirugia.Checked)
+            {
+                // Activar controles
+                ActivarControlesCirugia(true);
+
+                // Cambiar el valor de la variable
+                Cirugia = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesCirugia(false);
+
+                LimpiarControlesCirugia();
+
+                // Cambiar el valor de la variable
+                Cirugia = false;
+            }
 
         }
 
+        /// <summary>
+        /// Metodo que guarda los datos de cirugia que se ingresen, siempre y cuando cumplan con las validaciones
+        /// </summary>
         private void GuardarCirugia()
         {
 
@@ -421,13 +450,43 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+
         }
+
+
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la Cirugia
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesCirugia(bool estado)
+        {
+            cbxTipoCirugia.Enabled = estado;
+            txtMotiCirugia.Enabled = estado;
+            txtUsaMaterialesCirugia.Enabled = estado;
+            txtDescripcionCirugia.Enabled = estado;
+            txtNotasCirugia.Enabled = estado;
+        }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la Cirugia
+        /// </summary>
+        private void LimpiarControlesCirugia()
+        {
+            cbxTipoCirugia.SelectedIndex = -1;
+            txtMotiVacuna.Clear();
+            txtUsaMaterialesCirugia.Clear();
+            txtDescripcionCirugia.Clear();
+            txtNotasCirugia.Clear();
+        }
+
         //FIN CIRUGIA
         //FIN FUNCIONE DE BTNGUARDAR
 
 
 
-        
+
 
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -533,6 +592,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtDescripcionVacuna.Clear();
             txtNotasVacuna.Clear();
         }
+        //FIN VACUNA
+
+
 
         //Inicio Examen
         /// <summary>
@@ -632,12 +694,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
         //FIN EXAMEN
 
-        //INICIO CIRUGIA
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+        
        
 
         
