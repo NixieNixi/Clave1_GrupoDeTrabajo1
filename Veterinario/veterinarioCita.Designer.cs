@@ -543,6 +543,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoCirugia
             // 
+            this.cbxTipoCirugia.Enabled = false;
             this.cbxTipoCirugia.FormattingEnabled = true;
             this.cbxTipoCirugia.Items.AddRange(new object[] {
             "Castracion",
@@ -602,6 +603,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNotasCirugia
             // 
+            this.txtNotasCirugia.Enabled = false;
             this.txtNotasCirugia.Location = new System.Drawing.Point(144, 96);
             this.txtNotasCirugia.Name = "txtNotasCirugia";
             this.txtNotasCirugia.Size = new System.Drawing.Size(552, 20);
@@ -609,6 +611,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtUsaMaterialesCirugia
             // 
+            this.txtUsaMaterialesCirugia.Enabled = false;
             this.txtUsaMaterialesCirugia.Location = new System.Drawing.Point(496, 32);
             this.txtUsaMaterialesCirugia.Name = "txtUsaMaterialesCirugia";
             this.txtUsaMaterialesCirugia.Size = new System.Drawing.Size(200, 20);
@@ -616,6 +619,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDescripcionCirugia
             // 
+            this.txtDescripcionCirugia.Enabled = false;
             this.txtDescripcionCirugia.Location = new System.Drawing.Point(496, 64);
             this.txtDescripcionCirugia.Name = "txtDescripcionCirugia";
             this.txtDescripcionCirugia.Size = new System.Drawing.Size(200, 20);
@@ -623,6 +627,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtMotiCirugia
             // 
+            this.txtMotiCirugia.Enabled = false;
             this.txtMotiCirugia.Location = new System.Drawing.Point(144, 64);
             this.txtMotiCirugia.Name = "txtMotiCirugia";
             this.txtMotiCirugia.Size = new System.Drawing.Size(200, 20);
