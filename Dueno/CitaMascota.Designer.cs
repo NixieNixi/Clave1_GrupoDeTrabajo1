@@ -29,16 +29,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblHoraCitaD = new System.Windows.Forms.Label();
-            this.lblFechaCitaD = new System.Windows.Forms.Label();
-            this.lblMotCitaD = new System.Windows.Forms.Label();
-            this.lblIDMascD = new System.Windows.Forms.Label();
-            this.lblIDUsuD = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -60,109 +50,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtpCitaHora = new System.Windows.Forms.DateTimePicker();
-            this.txtIDUsuD = new System.Windows.Forms.TextBox();
             this.cbxIDMascD = new System.Windows.Forms.ComboBox();
             this.cbxIDCitaD = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNomUsuD = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtNomMascD = new System.Windows.Forms.TextBox();
+            this.cbxIDUsuD = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(360, 120);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "ID Usuario:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "ID Mascota:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(360, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Hora:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(360, 169);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Fecha:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(360, 216);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Motivo:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
-            // lblHoraCitaD
-            // 
-            this.lblHoraCitaD.AutoSize = true;
-            this.lblHoraCitaD.Location = new System.Drawing.Point(434, 194);
-            this.lblHoraCitaD.Name = "lblHoraCitaD";
-            this.lblHoraCitaD.Size = new System.Drawing.Size(35, 13);
-            this.lblHoraCitaD.TabIndex = 11;
-            this.lblHoraCitaD.Text = "label6";
-            // 
-            // lblFechaCitaD
-            // 
-            this.lblFechaCitaD.AutoSize = true;
-            this.lblFechaCitaD.Location = new System.Drawing.Point(434, 169);
-            this.lblFechaCitaD.Name = "lblFechaCitaD";
-            this.lblFechaCitaD.Size = new System.Drawing.Size(35, 13);
-            this.lblFechaCitaD.TabIndex = 10;
-            this.lblFechaCitaD.Text = "label7";
-            // 
-            // lblMotCitaD
-            // 
-            this.lblMotCitaD.AutoSize = true;
-            this.lblMotCitaD.Location = new System.Drawing.Point(434, 216);
-            this.lblMotCitaD.Name = "lblMotCitaD";
-            this.lblMotCitaD.Size = new System.Drawing.Size(35, 13);
-            this.lblMotCitaD.TabIndex = 9;
-            this.lblMotCitaD.Text = "label8";
-            // 
-            // lblIDMascD
-            // 
-            this.lblIDMascD.AutoSize = true;
-            this.lblIDMascD.Location = new System.Drawing.Point(434, 145);
-            this.lblIDMascD.Name = "lblIDMascD";
-            this.lblIDMascD.Size = new System.Drawing.Size(35, 13);
-            this.lblIDMascD.TabIndex = 8;
-            this.lblIDMascD.Text = "label9";
-            // 
-            // lblIDUsuD
-            // 
-            this.lblIDUsuD.AutoSize = true;
-            this.lblIDUsuD.Location = new System.Drawing.Point(434, 120);
-            this.lblIDUsuD.Name = "lblIDUsuD";
-            this.lblIDUsuD.Size = new System.Drawing.Size(41, 13);
-            this.lblIDUsuD.TabIndex = 7;
-            this.lblIDUsuD.Text = "label10";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 208);
+            this.label6.Location = new System.Drawing.Point(304, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 16;
@@ -171,7 +74,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 272);
+            this.label7.Location = new System.Drawing.Point(32, 208);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 15;
@@ -206,16 +109,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtEsCiD
             // 
-            this.txtEsCiD.Location = new System.Drawing.Point(104, 208);
+            this.txtEsCiD.Location = new System.Drawing.Point(376, 176);
             this.txtEsCiD.Name = "txtEsCiD";
-            this.txtEsCiD.Size = new System.Drawing.Size(201, 20);
+            this.txtEsCiD.Size = new System.Drawing.Size(152, 20);
             this.txtEsCiD.TabIndex = 18;
             // 
             // txtMotCiD
             // 
             this.txtMotCiD.Location = new System.Drawing.Point(104, 240);
             this.txtMotCiD.Name = "txtMotCiD";
-            this.txtMotCiD.Size = new System.Drawing.Size(201, 20);
+            this.txtMotCiD.Size = new System.Drawing.Size(424, 20);
             this.txtMotCiD.TabIndex = 21;
             // 
             // panel2
@@ -224,9 +127,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.Controls.Add(this.label11);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(-2, -1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(810, 81);
+            this.panel2.Size = new System.Drawing.Size(853, 81);
             this.panel2.TabIndex = 27;
             // 
             // label11
@@ -265,14 +169,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // monthCalendar1
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(504, 112);
+            this.monthCalendar1.Location = new System.Drawing.Point(576, 104);
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 29;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(32, 304);
+            this.label14.Location = new System.Drawing.Point(304, 208);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(33, 13);
             this.label14.TabIndex = 30;
@@ -280,9 +184,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // dtpCitaFecha
             // 
-            this.dtpCitaFecha.Location = new System.Drawing.Point(104, 272);
+            this.dtpCitaFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpCitaFecha.Location = new System.Drawing.Point(104, 208);
             this.dtpCitaFecha.Name = "dtpCitaFecha";
-            this.dtpCitaFecha.Size = new System.Drawing.Size(201, 20);
+            this.dtpCitaFecha.Size = new System.Drawing.Size(152, 20);
             this.dtpCitaFecha.TabIndex = 32;
             // 
             // btnRepreogramarCitaD
@@ -350,33 +255,26 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Controls.Add(this.btnProgramarCitaD);
             this.panel1.Controls.Add(this.btnRepreogramarCitaD);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 369);
+            this.panel1.Location = new System.Drawing.Point(0, 286);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 62);
+            this.panel1.Size = new System.Drawing.Size(853, 62);
             this.panel1.TabIndex = 28;
             // 
             // dtpCitaHora
             // 
             this.dtpCitaHora.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dtpCitaHora.Location = new System.Drawing.Point(104, 304);
+            this.dtpCitaHora.Location = new System.Drawing.Point(376, 208);
             this.dtpCitaHora.Name = "dtpCitaHora";
             this.dtpCitaHora.ShowUpDown = true;
-            this.dtpCitaHora.Size = new System.Drawing.Size(200, 20);
+            this.dtpCitaHora.Size = new System.Drawing.Size(152, 20);
             this.dtpCitaHora.TabIndex = 33;
-            // 
-            // txtIDUsuD
-            // 
-            this.txtIDUsuD.Location = new System.Drawing.Point(104, 112);
-            this.txtIDUsuD.Name = "txtIDUsuD";
-            this.txtIDUsuD.Size = new System.Drawing.Size(201, 20);
-            this.txtIDUsuD.TabIndex = 17;
             // 
             // cbxIDMascD
             // 
             this.cbxIDMascD.FormattingEnabled = true;
             this.cbxIDMascD.Location = new System.Drawing.Point(104, 144);
             this.cbxIDMascD.Name = "cbxIDMascD";
-            this.cbxIDMascD.Size = new System.Drawing.Size(200, 21);
+            this.cbxIDMascD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDMascD.TabIndex = 34;
             // 
             // cbxIDCitaD
@@ -384,7 +282,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDCitaD.FormattingEnabled = true;
             this.cbxIDCitaD.Location = new System.Drawing.Point(104, 176);
             this.cbxIDCitaD.Name = "cbxIDCitaD";
-            this.cbxIDCitaD.Size = new System.Drawing.Size(200, 21);
+            this.cbxIDCitaD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDCitaD.TabIndex = 34;
             // 
             // label15
@@ -396,13 +294,54 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label15.TabIndex = 13;
             this.label15.Text = "ID Cita";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(304, 112);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "ID Usuario:";
+            // 
+            // txtNomUsuD
+            // 
+            this.txtNomUsuD.Location = new System.Drawing.Point(376, 112);
+            this.txtNomUsuD.Name = "txtNomUsuD";
+            this.txtNomUsuD.Size = new System.Drawing.Size(152, 20);
+            this.txtNomUsuD.TabIndex = 17;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(304, 144);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Mascota";
+            // 
+            // txtNomMascD
+            // 
+            this.txtNomMascD.Location = new System.Drawing.Point(376, 144);
+            this.txtNomMascD.Name = "txtNomMascD";
+            this.txtNomMascD.Size = new System.Drawing.Size(152, 20);
+            this.txtNomMascD.TabIndex = 18;
+            // 
+            // cbxIDUsuD
+            // 
+            this.cbxIDUsuD.FormattingEnabled = true;
+            this.cbxIDUsuD.Location = new System.Drawing.Point(104, 112);
+            this.cbxIDUsuD.Name = "cbxIDUsuD";
+            this.cbxIDUsuD.Size = new System.Drawing.Size(152, 21);
+            this.cbxIDUsuD.TabIndex = 34;
+            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(800, 431);
+            this.ClientSize = new System.Drawing.Size(853, 348);
             this.Controls.Add(this.cbxIDCitaD);
+            this.Controls.Add(this.cbxIDUsuD);
             this.Controls.Add(this.cbxIDMascD);
             this.Controls.Add(this.dtpCitaHora);
             this.Controls.Add(this.dtpCitaFecha);
@@ -411,25 +350,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtMotCiD);
+            this.Controls.Add(this.txtNomMascD);
             this.Controls.Add(this.txtEsCiD);
-            this.Controls.Add(this.txtIDUsuD);
+            this.Controls.Add(this.txtNomUsuD);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label15);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.lblHoraCitaD);
-            this.Controls.Add(this.lblFechaCitaD);
-            this.Controls.Add(this.lblMotCitaD);
-            this.Controls.Add(this.lblIDMascD);
-            this.Controls.Add(this.lblIDUsuD);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "CitaMascota";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -440,17 +373,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblHoraCitaD;
-        private System.Windows.Forms.Label lblFechaCitaD;
-        private System.Windows.Forms.Label lblMotCitaD;
-        private System.Windows.Forms.Label lblIDMascD;
-        private System.Windows.Forms.Label lblIDUsuD;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -472,9 +394,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Button btnPerfilD;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dtpCitaHora;
-        private System.Windows.Forms.TextBox txtIDUsuD;
         private System.Windows.Forms.ComboBox cbxIDMascD;
         private System.Windows.Forms.ComboBox cbxIDCitaD;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNomUsuD;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtNomMascD;
+        private System.Windows.Forms.ComboBox cbxIDUsuD;
     }
 }

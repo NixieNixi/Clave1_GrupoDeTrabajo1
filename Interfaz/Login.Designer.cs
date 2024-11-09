@@ -45,7 +45,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             this.btnDueño.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnDueño.ForeColor = System.Drawing.Color.White;
-            this.btnDueño.Location = new System.Drawing.Point(75, 65);
+            this.btnDueño.Location = new System.Drawing.Point(80, 72);
             this.btnDueño.Name = "btnDueño";
             this.btnDueño.Size = new System.Drawing.Size(75, 23);
             this.btnDueño.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             this.btnVeterinario.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVeterinario.ForeColor = System.Drawing.Color.White;
-            this.btnVeterinario.Location = new System.Drawing.Point(75, 114);
+            this.btnVeterinario.Location = new System.Drawing.Point(80, 104);
             this.btnVeterinario.Name = "btnVeterinario";
             this.btnVeterinario.Size = new System.Drawing.Size(75, 23);
             this.btnVeterinario.TabIndex = 0;
@@ -69,7 +69,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             this.btnAdmin.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(75, 175);
+            this.btnAdmin.Location = new System.Drawing.Point(80, 136);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(75, 23);
             this.btnAdmin.TabIndex = 0;
@@ -81,7 +81,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             this.btnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
-            this.btnSalir.Location = new System.Drawing.Point(231, 114);
+            this.btnSalir.Location = new System.Drawing.Point(224, 96);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 0;
@@ -93,7 +93,7 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(149, 337);
+            this.btnIngresar.Location = new System.Drawing.Point(136, 288);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 1;
@@ -103,14 +103,14 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             // txtLoginUser
             // 
-            this.txtLoginUser.Location = new System.Drawing.Point(168, 235);
+            this.txtLoginUser.Location = new System.Drawing.Point(177, 190);
             this.txtLoginUser.Name = "txtLoginUser";
             this.txtLoginUser.Size = new System.Drawing.Size(100, 20);
             this.txtLoginUser.TabIndex = 2;
             // 
             // txtLoginContra
             // 
-            this.txtLoginContra.Location = new System.Drawing.Point(168, 286);
+            this.txtLoginContra.Location = new System.Drawing.Point(177, 241);
             this.txtLoginContra.Name = "txtLoginContra";
             this.txtLoginContra.PasswordChar = '*';
             this.txtLoginContra.Size = new System.Drawing.Size(100, 20);
@@ -121,7 +121,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(57, 235);
+            this.label1.Location = new System.Drawing.Point(66, 190);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 4;
@@ -132,7 +132,7 @@ namespace Clave1_GrupoDeTrabajo1
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(47, 293);
+            this.label2.Location = new System.Drawing.Point(56, 248);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 5;
@@ -141,17 +141,18 @@ namespace Clave1_GrupoDeTrabajo1
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel1.Location = new System.Drawing.Point(-6, -3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(368, 45);
-            this.panel1.TabIndex = 6;
+            this.panel1.Size = new System.Drawing.Size(354, 48);
+            this.panel1.TabIndex = 7;
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(357, 388);
+            this.ClientSize = new System.Drawing.Size(354, 338);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -165,7 +166,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
