@@ -31,30 +31,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             this.panelVeterinarioCita = new System.Windows.Forms.Panel();
             this.chkCirugia = new System.Windows.Forms.CheckBox();
-            this.chkExamen = new System.Windows.Forms.CheckBox();
-            this.chkVacuna = new System.Windows.Forms.CheckBox();
-            this.gbxInfoExamen = new System.Windows.Forms.GroupBox();
-            this.cbxTipoExamen = new System.Windows.Forms.ComboBox();
-            this.lblTipoExamen = new System.Windows.Forms.Label();
-            this.lblMotiExamen = new System.Windows.Forms.Label();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblNotasExamen = new System.Windows.Forms.Label();
-            this.lblUsaMateriaesExamen = new System.Windows.Forms.Label();
-            this.txtNotasExamen = new System.Windows.Forms.TextBox();
-            this.txtUsaMaterialesExamen = new System.Windows.Forms.TextBox();
-            this.txtDescripcionExamen = new System.Windows.Forms.TextBox();
-            this.txtMotiExamen = new System.Windows.Forms.TextBox();
-            this.gbxInfoVacuna = new System.Windows.Forms.GroupBox();
-            this.cbxTipoVacuna = new System.Windows.Forms.ComboBox();
-            this.lblTipoVacuna = new System.Windows.Forms.Label();
-            this.lblMotiVacuna = new System.Windows.Forms.Label();
-            this.lblDescripcionVacuna = new System.Windows.Forms.Label();
-            this.lblNotasVacuna = new System.Windows.Forms.Label();
-            this.lblUsaMaterialesVacuna = new System.Windows.Forms.Label();
-            this.txtNotasVacuna = new System.Windows.Forms.TextBox();
-            this.txtUsaMaterialesVacuna = new System.Windows.Forms.TextBox();
-            this.txtDescripcionVacuna = new System.Windows.Forms.TextBox();
-            this.txtMotiVacuna = new System.Windows.Forms.TextBox();
             this.gbxInfoConsulta = new System.Windows.Forms.GroupBox();
             this.mtxtPeso = new System.Windows.Forms.MaskedTextBox();
             this.lblSintomas = new System.Windows.Forms.Label();
@@ -98,12 +74,36 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.chkExamen = new System.Windows.Forms.CheckBox();
+            this.chkVacuna = new System.Windows.Forms.CheckBox();
+            this.gbxInfoExamen = new System.Windows.Forms.GroupBox();
+            this.cbxTipoExamen = new System.Windows.Forms.ComboBox();
+            this.lblTipoExamen = new System.Windows.Forms.Label();
+            this.lblMotiExamen = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblNotasExamen = new System.Windows.Forms.Label();
+            this.lblUsaMateriaesExamen = new System.Windows.Forms.Label();
+            this.txtNotasExamen = new System.Windows.Forms.TextBox();
+            this.txtUsaMaterialesExamen = new System.Windows.Forms.TextBox();
+            this.txtDescripcionExamen = new System.Windows.Forms.TextBox();
+            this.txtMotiExamen = new System.Windows.Forms.TextBox();
+            this.gbxInfoVacuna = new System.Windows.Forms.GroupBox();
+            this.cbxTipoVacuna = new System.Windows.Forms.ComboBox();
+            this.lblTipoVacuna = new System.Windows.Forms.Label();
+            this.lblMotiVacuna = new System.Windows.Forms.Label();
+            this.lblDescripcionVacuna = new System.Windows.Forms.Label();
+            this.lblNotasVacuna = new System.Windows.Forms.Label();
+            this.lblUsaMaterialesVacuna = new System.Windows.Forms.Label();
+            this.txtNotasVacuna = new System.Windows.Forms.TextBox();
+            this.txtUsaMaterialesVacuna = new System.Windows.Forms.TextBox();
+            this.txtDescripcionVacuna = new System.Windows.Forms.TextBox();
+            this.txtMotiVacuna = new System.Windows.Forms.TextBox();
             this.panelVeterinarioCita.SuspendLayout();
-            this.gbxInfoExamen.SuspendLayout();
-            this.gbxInfoVacuna.SuspendLayout();
             this.gbxInfoConsulta.SuspendLayout();
             this.gbxInfoCirugia.SuspendLayout();
             this.gbxaInfoExpediente.SuspendLayout();
+            this.gbxInfoExamen.SuspendLayout();
+            this.gbxInfoVacuna.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelVeterinarioCita
@@ -112,11 +112,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
-            this.panelVeterinarioCita.Controls.Add(this.chkCirugia);
             this.panelVeterinarioCita.Controls.Add(this.chkExamen);
             this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoExamen);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoVacuna);
+            this.panelVeterinarioCita.Controls.Add(this.chkCirugia);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoConsulta);
             this.panelVeterinarioCita.Controls.Add(this.gbxInfoCirugia);
             this.panelVeterinarioCita.Controls.Add(this.gbxaInfoExpediente);
@@ -128,261 +128,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // chkCirugia
             // 
             this.chkCirugia.AutoSize = true;
-            this.chkCirugia.Location = new System.Drawing.Point(24, 414);
+            this.chkCirugia.Location = new System.Drawing.Point(32, 797);
             this.chkCirugia.Name = "chkCirugia";
             this.chkCirugia.Size = new System.Drawing.Size(172, 17);
             this.chkCirugia.TabIndex = 27;
             this.chkCirugia.Text = "Ingresar Informacion de Cirugia";
             this.chkCirugia.UseVisualStyleBackColor = true;
             this.chkCirugia.CheckedChanged += new System.EventHandler(this.chkCirugia_CheckedChanged);
-            // 
-            // chkExamen
-            // 
-            this.chkExamen.AutoSize = true;
-            this.chkExamen.Location = new System.Drawing.Point(24, 768);
-            this.chkExamen.Name = "chkExamen";
-            this.chkExamen.Size = new System.Drawing.Size(178, 17);
-            this.chkExamen.TabIndex = 26;
-            this.chkExamen.Text = "Ingresar Informacion de Examen";
-            this.chkExamen.UseVisualStyleBackColor = true;
-            this.chkExamen.CheckedChanged += new System.EventHandler(this.chkExamen_CheckedChanged);
-            // 
-            // chkVacuna
-            // 
-            this.chkVacuna.AutoSize = true;
-            this.chkVacuna.Location = new System.Drawing.Point(24, 590);
-            this.chkVacuna.Name = "chkVacuna";
-            this.chkVacuna.Size = new System.Drawing.Size(177, 17);
-            this.chkVacuna.TabIndex = 25;
-            this.chkVacuna.Text = "Ingresar Informacion de Vacuna";
-            this.chkVacuna.UseVisualStyleBackColor = true;
-            this.chkVacuna.CheckedChanged += new System.EventHandler(this.chkVacuna_CheckedChanged);
-            // 
-            // gbxInfoExamen
-            // 
-            this.gbxInfoExamen.Controls.Add(this.cbxTipoExamen);
-            this.gbxInfoExamen.Controls.Add(this.lblTipoExamen);
-            this.gbxInfoExamen.Controls.Add(this.lblMotiExamen);
-            this.gbxInfoExamen.Controls.Add(this.lblDescripcion);
-            this.gbxInfoExamen.Controls.Add(this.lblNotasExamen);
-            this.gbxInfoExamen.Controls.Add(this.lblUsaMateriaesExamen);
-            this.gbxInfoExamen.Controls.Add(this.txtNotasExamen);
-            this.gbxInfoExamen.Controls.Add(this.txtUsaMaterialesExamen);
-            this.gbxInfoExamen.Controls.Add(this.txtDescripcionExamen);
-            this.gbxInfoExamen.Controls.Add(this.txtMotiExamen);
-            this.gbxInfoExamen.Location = new System.Drawing.Point(24, 800);
-            this.gbxInfoExamen.Name = "gbxInfoExamen";
-            this.gbxInfoExamen.Size = new System.Drawing.Size(760, 136);
-            this.gbxInfoExamen.TabIndex = 19;
-            this.gbxInfoExamen.TabStop = false;
-            this.gbxInfoExamen.Text = "Informacion de el Examen";
-            // 
-            // cbxTipoExamen
-            // 
-            this.cbxTipoExamen.Enabled = false;
-            this.cbxTipoExamen.FormattingEnabled = true;
-            this.cbxTipoExamen.Items.AddRange(new object[] {
-            "Sangre",
-            "Sida felino",
-            "Leucemia felino",
-            "Radiografia",
-            "Ultrasonido"});
-            this.cbxTipoExamen.Location = new System.Drawing.Point(144, 32);
-            this.cbxTipoExamen.Name = "cbxTipoExamen";
-            this.cbxTipoExamen.Size = new System.Drawing.Size(200, 21);
-            this.cbxTipoExamen.TabIndex = 18;
-            // 
-            // lblTipoExamen
-            // 
-            this.lblTipoExamen.AutoSize = true;
-            this.lblTipoExamen.Location = new System.Drawing.Point(24, 32);
-            this.lblTipoExamen.Name = "lblTipoExamen";
-            this.lblTipoExamen.Size = new System.Drawing.Size(69, 13);
-            this.lblTipoExamen.TabIndex = 17;
-            this.lblTipoExamen.Text = "Tipo Examen";
-            // 
-            // lblMotiExamen
-            // 
-            this.lblMotiExamen.AutoSize = true;
-            this.lblMotiExamen.Location = new System.Drawing.Point(24, 64);
-            this.lblMotiExamen.Name = "lblMotiExamen";
-            this.lblMotiExamen.Size = new System.Drawing.Size(80, 13);
-            this.lblMotiExamen.TabIndex = 16;
-            this.lblMotiExamen.Text = "Motivo Examen";
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(392, 64);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 15;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // lblNotasExamen
-            // 
-            this.lblNotasExamen.AutoSize = true;
-            this.lblNotasExamen.Location = new System.Drawing.Point(24, 96);
-            this.lblNotasExamen.Name = "lblNotasExamen";
-            this.lblNotasExamen.Size = new System.Drawing.Size(35, 13);
-            this.lblNotasExamen.TabIndex = 12;
-            this.lblNotasExamen.Text = "Notas";
-            // 
-            // lblUsaMateriaesExamen
-            // 
-            this.lblUsaMateriaesExamen.AutoSize = true;
-            this.lblUsaMateriaesExamen.Location = new System.Drawing.Point(392, 32);
-            this.lblUsaMateriaesExamen.Name = "lblUsaMateriaesExamen";
-            this.lblUsaMateriaesExamen.Size = new System.Drawing.Size(94, 13);
-            this.lblUsaMateriaesExamen.TabIndex = 11;
-            this.lblUsaMateriaesExamen.Text = "Materiales Usados";
-            // 
-            // txtNotasExamen
-            // 
-            this.txtNotasExamen.Enabled = false;
-            this.txtNotasExamen.Location = new System.Drawing.Point(144, 96);
-            this.txtNotasExamen.Name = "txtNotasExamen";
-            this.txtNotasExamen.Size = new System.Drawing.Size(552, 20);
-            this.txtNotasExamen.TabIndex = 6;
-            // 
-            // txtUsaMaterialesExamen
-            // 
-            this.txtUsaMaterialesExamen.Enabled = false;
-            this.txtUsaMaterialesExamen.Location = new System.Drawing.Point(496, 32);
-            this.txtUsaMaterialesExamen.Name = "txtUsaMaterialesExamen";
-            this.txtUsaMaterialesExamen.Size = new System.Drawing.Size(200, 20);
-            this.txtUsaMaterialesExamen.TabIndex = 7;
-            // 
-            // txtDescripcionExamen
-            // 
-            this.txtDescripcionExamen.Enabled = false;
-            this.txtDescripcionExamen.Location = new System.Drawing.Point(496, 64);
-            this.txtDescripcionExamen.Name = "txtDescripcionExamen";
-            this.txtDescripcionExamen.Size = new System.Drawing.Size(200, 20);
-            this.txtDescripcionExamen.TabIndex = 8;
-            // 
-            // txtMotiExamen
-            // 
-            this.txtMotiExamen.Enabled = false;
-            this.txtMotiExamen.Location = new System.Drawing.Point(144, 64);
-            this.txtMotiExamen.Name = "txtMotiExamen";
-            this.txtMotiExamen.Size = new System.Drawing.Size(200, 20);
-            this.txtMotiExamen.TabIndex = 9;
-            // 
-            // gbxInfoVacuna
-            // 
-            this.gbxInfoVacuna.Controls.Add(this.cbxTipoVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.lblTipoVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.lblMotiVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.lblDescripcionVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.lblNotasVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.lblUsaMaterialesVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.txtNotasVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.txtUsaMaterialesVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.txtDescripcionVacuna);
-            this.gbxInfoVacuna.Controls.Add(this.txtMotiVacuna);
-            this.gbxInfoVacuna.Location = new System.Drawing.Point(24, 614);
-            this.gbxInfoVacuna.Name = "gbxInfoVacuna";
-            this.gbxInfoVacuna.Size = new System.Drawing.Size(760, 136);
-            this.gbxInfoVacuna.TabIndex = 15;
-            this.gbxInfoVacuna.TabStop = false;
-            this.gbxInfoVacuna.Text = "Informacion de la Vacuna";
-            // 
-            // cbxTipoVacuna
-            // 
-            this.cbxTipoVacuna.Enabled = false;
-            this.cbxTipoVacuna.FormattingEnabled = true;
-            this.cbxTipoVacuna.Items.AddRange(new object[] {
-            "Perro Moquillo",
-            "Perro Parvovirus",
-            "Perro Hepatitis",
-            "Perro Leptospirosis",
-            "Gato Leucemia",
-            "Gato Calicivirus",
-            "Gato Herpesvirus",
-            "Gato Panleucopenia",
-            "Rabia"});
-            this.cbxTipoVacuna.Location = new System.Drawing.Point(144, 32);
-            this.cbxTipoVacuna.Name = "cbxTipoVacuna";
-            this.cbxTipoVacuna.Size = new System.Drawing.Size(200, 21);
-            this.cbxTipoVacuna.TabIndex = 18;
-            // 
-            // lblTipoVacuna
-            // 
-            this.lblTipoVacuna.AutoSize = true;
-            this.lblTipoVacuna.Location = new System.Drawing.Point(24, 32);
-            this.lblTipoVacuna.Name = "lblTipoVacuna";
-            this.lblTipoVacuna.Size = new System.Drawing.Size(68, 13);
-            this.lblTipoVacuna.TabIndex = 17;
-            this.lblTipoVacuna.Text = "Tipo Vacuna";
-            // 
-            // lblMotiVacuna
-            // 
-            this.lblMotiVacuna.AutoSize = true;
-            this.lblMotiVacuna.Location = new System.Drawing.Point(24, 64);
-            this.lblMotiVacuna.Name = "lblMotiVacuna";
-            this.lblMotiVacuna.Size = new System.Drawing.Size(79, 13);
-            this.lblMotiVacuna.TabIndex = 16;
-            this.lblMotiVacuna.Text = "Motivo Vacuna";
-            // 
-            // lblDescripcionVacuna
-            // 
-            this.lblDescripcionVacuna.AutoSize = true;
-            this.lblDescripcionVacuna.Location = new System.Drawing.Point(392, 64);
-            this.lblDescripcionVacuna.Name = "lblDescripcionVacuna";
-            this.lblDescripcionVacuna.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcionVacuna.TabIndex = 15;
-            this.lblDescripcionVacuna.Text = "Descripcion";
-            // 
-            // lblNotasVacuna
-            // 
-            this.lblNotasVacuna.AutoSize = true;
-            this.lblNotasVacuna.Location = new System.Drawing.Point(24, 96);
-            this.lblNotasVacuna.Name = "lblNotasVacuna";
-            this.lblNotasVacuna.Size = new System.Drawing.Size(35, 13);
-            this.lblNotasVacuna.TabIndex = 12;
-            this.lblNotasVacuna.Text = "Notas";
-            // 
-            // lblUsaMaterialesVacuna
-            // 
-            this.lblUsaMaterialesVacuna.AutoSize = true;
-            this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(392, 32);
-            this.lblUsaMaterialesVacuna.Name = "lblUsaMaterialesVacuna";
-            this.lblUsaMaterialesVacuna.Size = new System.Drawing.Size(94, 13);
-            this.lblUsaMaterialesVacuna.TabIndex = 11;
-            this.lblUsaMaterialesVacuna.Text = "Materiales Usados";
-            // 
-            // txtNotasVacuna
-            // 
-            this.txtNotasVacuna.Enabled = false;
-            this.txtNotasVacuna.Location = new System.Drawing.Point(144, 96);
-            this.txtNotasVacuna.Name = "txtNotasVacuna";
-            this.txtNotasVacuna.Size = new System.Drawing.Size(552, 20);
-            this.txtNotasVacuna.TabIndex = 6;
-            // 
-            // txtUsaMaterialesVacuna
-            // 
-            this.txtUsaMaterialesVacuna.Enabled = false;
-            this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(496, 32);
-            this.txtUsaMaterialesVacuna.Name = "txtUsaMaterialesVacuna";
-            this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(200, 20);
-            this.txtUsaMaterialesVacuna.TabIndex = 7;
-            // 
-            // txtDescripcionVacuna
-            // 
-            this.txtDescripcionVacuna.Enabled = false;
-            this.txtDescripcionVacuna.Location = new System.Drawing.Point(496, 64);
-            this.txtDescripcionVacuna.Name = "txtDescripcionVacuna";
-            this.txtDescripcionVacuna.Size = new System.Drawing.Size(200, 20);
-            this.txtDescripcionVacuna.TabIndex = 8;
-            // 
-            // txtMotiVacuna
-            // 
-            this.txtMotiVacuna.Enabled = false;
-            this.txtMotiVacuna.Location = new System.Drawing.Point(144, 64);
-            this.txtMotiVacuna.Name = "txtMotiVacuna";
-            this.txtMotiVacuna.Size = new System.Drawing.Size(200, 20);
-            this.txtMotiVacuna.TabIndex = 9;
             // 
             // gbxInfoConsulta
             // 
@@ -534,7 +286,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoCirugia.Controls.Add(this.txtUsaMaterialesCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtDescripcionCirugia);
             this.gbxInfoCirugia.Controls.Add(this.txtMotiCirugia);
-            this.gbxInfoCirugia.Location = new System.Drawing.Point(24, 436);
+            this.gbxInfoCirugia.Location = new System.Drawing.Point(32, 819);
             this.gbxInfoCirugia.Name = "gbxInfoCirugia";
             this.gbxInfoCirugia.Size = new System.Drawing.Size(760, 136);
             this.gbxInfoCirugia.TabIndex = 13;
@@ -818,6 +570,252 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // chkExamen
+            // 
+            this.chkExamen.AutoSize = true;
+            this.chkExamen.Location = new System.Drawing.Point(24, 602);
+            this.chkExamen.Name = "chkExamen";
+            this.chkExamen.Size = new System.Drawing.Size(178, 17);
+            this.chkExamen.TabIndex = 31;
+            this.chkExamen.Text = "Ingresar Informacion de Examen";
+            this.chkExamen.UseVisualStyleBackColor = true;
+            // 
+            // chkVacuna
+            // 
+            this.chkVacuna.AutoSize = true;
+            this.chkVacuna.Location = new System.Drawing.Point(24, 424);
+            this.chkVacuna.Name = "chkVacuna";
+            this.chkVacuna.Size = new System.Drawing.Size(177, 17);
+            this.chkVacuna.TabIndex = 30;
+            this.chkVacuna.Text = "Ingresar Informacion de Vacuna";
+            this.chkVacuna.UseVisualStyleBackColor = true;
+            // 
+            // gbxInfoExamen
+            // 
+            this.gbxInfoExamen.Controls.Add(this.cbxTipoExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblTipoExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblMotiExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblDescripcion);
+            this.gbxInfoExamen.Controls.Add(this.lblNotasExamen);
+            this.gbxInfoExamen.Controls.Add(this.lblUsaMateriaesExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtNotasExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtUsaMaterialesExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtDescripcionExamen);
+            this.gbxInfoExamen.Controls.Add(this.txtMotiExamen);
+            this.gbxInfoExamen.Location = new System.Drawing.Point(24, 634);
+            this.gbxInfoExamen.Name = "gbxInfoExamen";
+            this.gbxInfoExamen.Size = new System.Drawing.Size(760, 136);
+            this.gbxInfoExamen.TabIndex = 29;
+            this.gbxInfoExamen.TabStop = false;
+            this.gbxInfoExamen.Text = "Informacion de el Examen";
+            // 
+            // cbxTipoExamen
+            // 
+            this.cbxTipoExamen.Enabled = false;
+            this.cbxTipoExamen.FormattingEnabled = true;
+            this.cbxTipoExamen.Items.AddRange(new object[] {
+            "Sangre",
+            "Sida felino",
+            "Leucemia felino",
+            "Radiografia",
+            "Ultrasonido"});
+            this.cbxTipoExamen.Location = new System.Drawing.Point(144, 32);
+            this.cbxTipoExamen.Name = "cbxTipoExamen";
+            this.cbxTipoExamen.Size = new System.Drawing.Size(200, 21);
+            this.cbxTipoExamen.TabIndex = 18;
+            // 
+            // lblTipoExamen
+            // 
+            this.lblTipoExamen.AutoSize = true;
+            this.lblTipoExamen.Location = new System.Drawing.Point(24, 32);
+            this.lblTipoExamen.Name = "lblTipoExamen";
+            this.lblTipoExamen.Size = new System.Drawing.Size(69, 13);
+            this.lblTipoExamen.TabIndex = 17;
+            this.lblTipoExamen.Text = "Tipo Examen";
+            // 
+            // lblMotiExamen
+            // 
+            this.lblMotiExamen.AutoSize = true;
+            this.lblMotiExamen.Location = new System.Drawing.Point(24, 64);
+            this.lblMotiExamen.Name = "lblMotiExamen";
+            this.lblMotiExamen.Size = new System.Drawing.Size(80, 13);
+            this.lblMotiExamen.TabIndex = 16;
+            this.lblMotiExamen.Text = "Motivo Examen";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(392, 64);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 15;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // lblNotasExamen
+            // 
+            this.lblNotasExamen.AutoSize = true;
+            this.lblNotasExamen.Location = new System.Drawing.Point(24, 96);
+            this.lblNotasExamen.Name = "lblNotasExamen";
+            this.lblNotasExamen.Size = new System.Drawing.Size(35, 13);
+            this.lblNotasExamen.TabIndex = 12;
+            this.lblNotasExamen.Text = "Notas";
+            // 
+            // lblUsaMateriaesExamen
+            // 
+            this.lblUsaMateriaesExamen.AutoSize = true;
+            this.lblUsaMateriaesExamen.Location = new System.Drawing.Point(392, 32);
+            this.lblUsaMateriaesExamen.Name = "lblUsaMateriaesExamen";
+            this.lblUsaMateriaesExamen.Size = new System.Drawing.Size(94, 13);
+            this.lblUsaMateriaesExamen.TabIndex = 11;
+            this.lblUsaMateriaesExamen.Text = "Materiales Usados";
+            // 
+            // txtNotasExamen
+            // 
+            this.txtNotasExamen.Enabled = false;
+            this.txtNotasExamen.Location = new System.Drawing.Point(144, 96);
+            this.txtNotasExamen.Name = "txtNotasExamen";
+            this.txtNotasExamen.Size = new System.Drawing.Size(552, 20);
+            this.txtNotasExamen.TabIndex = 6;
+            // 
+            // txtUsaMaterialesExamen
+            // 
+            this.txtUsaMaterialesExamen.Enabled = false;
+            this.txtUsaMaterialesExamen.Location = new System.Drawing.Point(496, 32);
+            this.txtUsaMaterialesExamen.Name = "txtUsaMaterialesExamen";
+            this.txtUsaMaterialesExamen.Size = new System.Drawing.Size(200, 20);
+            this.txtUsaMaterialesExamen.TabIndex = 7;
+            // 
+            // txtDescripcionExamen
+            // 
+            this.txtDescripcionExamen.Enabled = false;
+            this.txtDescripcionExamen.Location = new System.Drawing.Point(496, 64);
+            this.txtDescripcionExamen.Name = "txtDescripcionExamen";
+            this.txtDescripcionExamen.Size = new System.Drawing.Size(200, 20);
+            this.txtDescripcionExamen.TabIndex = 8;
+            // 
+            // txtMotiExamen
+            // 
+            this.txtMotiExamen.Enabled = false;
+            this.txtMotiExamen.Location = new System.Drawing.Point(144, 64);
+            this.txtMotiExamen.Name = "txtMotiExamen";
+            this.txtMotiExamen.Size = new System.Drawing.Size(200, 20);
+            this.txtMotiExamen.TabIndex = 9;
+            // 
+            // gbxInfoVacuna
+            // 
+            this.gbxInfoVacuna.Controls.Add(this.cbxTipoVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblTipoVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblMotiVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblDescripcionVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblNotasVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.lblUsaMaterialesVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtNotasVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtUsaMaterialesVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtDescripcionVacuna);
+            this.gbxInfoVacuna.Controls.Add(this.txtMotiVacuna);
+            this.gbxInfoVacuna.Location = new System.Drawing.Point(24, 448);
+            this.gbxInfoVacuna.Name = "gbxInfoVacuna";
+            this.gbxInfoVacuna.Size = new System.Drawing.Size(760, 136);
+            this.gbxInfoVacuna.TabIndex = 28;
+            this.gbxInfoVacuna.TabStop = false;
+            this.gbxInfoVacuna.Text = "Informacion de la Vacuna";
+            // 
+            // cbxTipoVacuna
+            // 
+            this.cbxTipoVacuna.Enabled = false;
+            this.cbxTipoVacuna.FormattingEnabled = true;
+            this.cbxTipoVacuna.Items.AddRange(new object[] {
+            "Perro Moquillo",
+            "Perro Parvovirus",
+            "Perro Hepatitis",
+            "Perro Leptospirosis",
+            "Gato Leucemia",
+            "Gato Calicivirus",
+            "Gato Herpesvirus",
+            "Gato Panleucopenia",
+            "Rabia"});
+            this.cbxTipoVacuna.Location = new System.Drawing.Point(144, 32);
+            this.cbxTipoVacuna.Name = "cbxTipoVacuna";
+            this.cbxTipoVacuna.Size = new System.Drawing.Size(200, 21);
+            this.cbxTipoVacuna.TabIndex = 18;
+            // 
+            // lblTipoVacuna
+            // 
+            this.lblTipoVacuna.AutoSize = true;
+            this.lblTipoVacuna.Location = new System.Drawing.Point(24, 32);
+            this.lblTipoVacuna.Name = "lblTipoVacuna";
+            this.lblTipoVacuna.Size = new System.Drawing.Size(68, 13);
+            this.lblTipoVacuna.TabIndex = 17;
+            this.lblTipoVacuna.Text = "Tipo Vacuna";
+            // 
+            // lblMotiVacuna
+            // 
+            this.lblMotiVacuna.AutoSize = true;
+            this.lblMotiVacuna.Location = new System.Drawing.Point(24, 64);
+            this.lblMotiVacuna.Name = "lblMotiVacuna";
+            this.lblMotiVacuna.Size = new System.Drawing.Size(79, 13);
+            this.lblMotiVacuna.TabIndex = 16;
+            this.lblMotiVacuna.Text = "Motivo Vacuna";
+            // 
+            // lblDescripcionVacuna
+            // 
+            this.lblDescripcionVacuna.AutoSize = true;
+            this.lblDescripcionVacuna.Location = new System.Drawing.Point(392, 64);
+            this.lblDescripcionVacuna.Name = "lblDescripcionVacuna";
+            this.lblDescripcionVacuna.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcionVacuna.TabIndex = 15;
+            this.lblDescripcionVacuna.Text = "Descripcion";
+            // 
+            // lblNotasVacuna
+            // 
+            this.lblNotasVacuna.AutoSize = true;
+            this.lblNotasVacuna.Location = new System.Drawing.Point(24, 96);
+            this.lblNotasVacuna.Name = "lblNotasVacuna";
+            this.lblNotasVacuna.Size = new System.Drawing.Size(35, 13);
+            this.lblNotasVacuna.TabIndex = 12;
+            this.lblNotasVacuna.Text = "Notas";
+            // 
+            // lblUsaMaterialesVacuna
+            // 
+            this.lblUsaMaterialesVacuna.AutoSize = true;
+            this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(392, 32);
+            this.lblUsaMaterialesVacuna.Name = "lblUsaMaterialesVacuna";
+            this.lblUsaMaterialesVacuna.Size = new System.Drawing.Size(94, 13);
+            this.lblUsaMaterialesVacuna.TabIndex = 11;
+            this.lblUsaMaterialesVacuna.Text = "Materiales Usados";
+            // 
+            // txtNotasVacuna
+            // 
+            this.txtNotasVacuna.Enabled = false;
+            this.txtNotasVacuna.Location = new System.Drawing.Point(144, 96);
+            this.txtNotasVacuna.Name = "txtNotasVacuna";
+            this.txtNotasVacuna.Size = new System.Drawing.Size(552, 20);
+            this.txtNotasVacuna.TabIndex = 6;
+            // 
+            // txtUsaMaterialesVacuna
+            // 
+            this.txtUsaMaterialesVacuna.Enabled = false;
+            this.txtUsaMaterialesVacuna.Location = new System.Drawing.Point(496, 32);
+            this.txtUsaMaterialesVacuna.Name = "txtUsaMaterialesVacuna";
+            this.txtUsaMaterialesVacuna.Size = new System.Drawing.Size(200, 20);
+            this.txtUsaMaterialesVacuna.TabIndex = 7;
+            // 
+            // txtDescripcionVacuna
+            // 
+            this.txtDescripcionVacuna.Enabled = false;
+            this.txtDescripcionVacuna.Location = new System.Drawing.Point(496, 64);
+            this.txtDescripcionVacuna.Name = "txtDescripcionVacuna";
+            this.txtDescripcionVacuna.Size = new System.Drawing.Size(200, 20);
+            this.txtDescripcionVacuna.TabIndex = 8;
+            // 
+            // txtMotiVacuna
+            // 
+            this.txtMotiVacuna.Enabled = false;
+            this.txtMotiVacuna.Location = new System.Drawing.Point(144, 64);
+            this.txtMotiVacuna.Name = "txtMotiVacuna";
+            this.txtMotiVacuna.Size = new System.Drawing.Size(200, 20);
+            this.txtMotiVacuna.TabIndex = 9;
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -831,16 +829,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Text = "Agenda de Citas";
             this.panelVeterinarioCita.ResumeLayout(false);
             this.panelVeterinarioCita.PerformLayout();
-            this.gbxInfoExamen.ResumeLayout(false);
-            this.gbxInfoExamen.PerformLayout();
-            this.gbxInfoVacuna.ResumeLayout(false);
-            this.gbxInfoVacuna.PerformLayout();
             this.gbxInfoConsulta.ResumeLayout(false);
             this.gbxInfoConsulta.PerformLayout();
             this.gbxInfoCirugia.ResumeLayout(false);
             this.gbxInfoCirugia.PerformLayout();
             this.gbxaInfoExpediente.ResumeLayout(false);
             this.gbxaInfoExpediente.PerformLayout();
+            this.gbxInfoExamen.ResumeLayout(false);
+            this.gbxInfoExamen.PerformLayout();
+            this.gbxInfoVacuna.ResumeLayout(false);
+            this.gbxInfoVacuna.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -884,17 +882,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtUsaMaterialesCirugia;
         private System.Windows.Forms.TextBox txtDescripcionCirugia;
         private System.Windows.Forms.TextBox txtMotiCirugia;
-        private System.Windows.Forms.GroupBox gbxInfoVacuna;
-        private System.Windows.Forms.Label lblTipoVacuna;
-        private System.Windows.Forms.Label lblMotiVacuna;
-        private System.Windows.Forms.Label lblDescripcionVacuna;
-        private System.Windows.Forms.Label lblNotasVacuna;
-        private System.Windows.Forms.Label lblUsaMaterialesVacuna;
-        private System.Windows.Forms.TextBox txtNotasVacuna;
-        private System.Windows.Forms.TextBox txtUsaMaterialesVacuna;
-        private System.Windows.Forms.TextBox txtDescripcionVacuna;
-        private System.Windows.Forms.TextBox txtMotiVacuna;
-        private System.Windows.Forms.ComboBox cbxTipoVacuna;
+        private System.Windows.Forms.ComboBox cbxTipoCirugia;
+        private System.Windows.Forms.TextBox txtEstadoCita;
+        private System.Windows.Forms.Label lblFechaCita;
+        private System.Windows.Forms.CheckBox chkCirugia;
+        private System.Windows.Forms.DateTimePicker dtpFechaHora;
+        private System.Windows.Forms.MaskedTextBox mtxtPeso;
+        private System.Windows.Forms.ComboBox cbxIdMascota;
+        private System.Windows.Forms.ComboBox cbxIdCita;
+        private System.Windows.Forms.CheckBox chkExamen;
+        private System.Windows.Forms.CheckBox chkVacuna;
         private System.Windows.Forms.GroupBox gbxInfoExamen;
         private System.Windows.Forms.ComboBox cbxTipoExamen;
         private System.Windows.Forms.Label lblTipoExamen;
@@ -906,15 +903,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtUsaMaterialesExamen;
         private System.Windows.Forms.TextBox txtDescripcionExamen;
         private System.Windows.Forms.TextBox txtMotiExamen;
-        private System.Windows.Forms.ComboBox cbxTipoCirugia;
-        private System.Windows.Forms.TextBox txtEstadoCita;
-        private System.Windows.Forms.Label lblFechaCita;
-        private System.Windows.Forms.CheckBox chkVacuna;
-        private System.Windows.Forms.CheckBox chkExamen;
-        private System.Windows.Forms.CheckBox chkCirugia;
-        private System.Windows.Forms.DateTimePicker dtpFechaHora;
-        private System.Windows.Forms.MaskedTextBox mtxtPeso;
-        private System.Windows.Forms.ComboBox cbxIdMascota;
-        private System.Windows.Forms.ComboBox cbxIdCita;
+        private System.Windows.Forms.GroupBox gbxInfoVacuna;
+        private System.Windows.Forms.ComboBox cbxTipoVacuna;
+        private System.Windows.Forms.Label lblTipoVacuna;
+        private System.Windows.Forms.Label lblMotiVacuna;
+        private System.Windows.Forms.Label lblDescripcionVacuna;
+        private System.Windows.Forms.Label lblNotasVacuna;
+        private System.Windows.Forms.Label lblUsaMaterialesVacuna;
+        private System.Windows.Forms.TextBox txtNotasVacuna;
+        private System.Windows.Forms.TextBox txtUsaMaterialesVacuna;
+        private System.Windows.Forms.TextBox txtDescripcionVacuna;
+        private System.Windows.Forms.TextBox txtMotiVacuna;
     }
 }

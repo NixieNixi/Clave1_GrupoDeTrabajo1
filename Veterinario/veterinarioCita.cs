@@ -60,6 +60,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Autor: CanelaFeliz
     /// Fecha: 08/11/2024
     /// Descripcion: Se cambio el diseño del formulario y se agregaron funciones para cargar los idMascota e idCita
+    /// 
+    /// Autor: CanelaFeliz
+    /// Fecha: 09/11/2024
+    /// Descripcion: Se agrego funcion para limpiar los controles de consulta, se agrego comportamiento de limmpiar todos los controles si se cambia el
+    /// idMascota. se reorganizo el codigo por funciones
     ///</remarks>
 
     public partial class veterinarioCita : Form
@@ -71,7 +76,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             CargarMascotas();
         }
 
-
         /// <summary>
         /// Variables que se utilizan para los distintos metodos
         /// </summary>
@@ -79,12 +83,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private bool Vacuna = false;
         private bool Examen = false;
 
+        //INICIO INFORMACION DE LA MASCOTA
         /// <summary>
         /// Evento de cambio de seleccion de idMascota que carga la info de la mascota seleccionada y si tiene citas carga los idCita
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarControlesMascota();
+            LimpiarControlesConsulta();
+            LimpiarControlesVacuna();
+            LimpiarControlesExamen();
+            LimpiarControlesCirugia();
 
             string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
             try
@@ -123,7 +132,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Funcion para cargar los idCita en el combobox
+        /// Evento para cuando cambia la selección del ComboBox
+        /// </summary>
+        private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica si no hay una selección (índice -1) y limpia los controles
+            if (cbxIdCita.SelectedIndex == -1)
+            {
+                LimpiarControlesMascota();
+            }
+            else
+            {
+
+                // Obtiene el ID de cita seleccionado como cadena de texto
+                string selectedCitaId = cbxIdCita.SelectedItem.ToString();
+
+                // Llama al método CargarDatos para obtener los datos de la cita seleccionada
+                CargarDatos(selectedCitaId);
+            }
+        }
+
+        /// <summary>
+        /// Funcion para cargar los idCita en el combobox si la mascota tiene citas programadas
         /// </summary>
         private void CargarIdCita()
         {
@@ -208,26 +238,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Evento para cuando cambia la selección del ComboBox
-        /// </summary>
-        private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Verifica si no hay una selección (índice -1) y limpia los controles
-            if (cbxIdCita.SelectedIndex == -1)
-            {
-                LimpiarControlesMascota();
-            }
-            else
-            {
-                // Obtiene el ID de cita seleccionado como cadena de texto
-                string selectedCitaId = cbxIdCita.SelectedItem.ToString();
-
-                // Llama al método CargarDatos para obtener los datos de la cita seleccionada
-                CargarDatos(selectedCitaId);
-            }
-        }
-
-        /// <summary>
         /// Función para cargar los datos de la cita y la mascota asociada
         /// </summary>
         /// <param name="selectedCitaId">ID de la cita seleccionada en el ComboBox</param>
@@ -268,7 +278,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-
         /// <summary>
         /// Metodo que limpia los controles del formulario veterinarioCita de la informacion de mascota
         /// </summary>
@@ -288,12 +297,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             mtxtPeso.Clear();
         }
 
+        //FIN INFORMACION DE LA MASCOTA
+
         /// <summary>
         /// Metodo que guarda, GuardarConsulta por defecto, y si el check de algun groupbox esta activado, entonces lo guarda
         /// siempre y cuando los datos sena validos, si no da errror.
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
             // Guardar siempre la consulta
@@ -318,6 +327,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // Mensaje de confirmación
             MessageBox.Show("La información se ha guardado correctamente.");
         }
+
+        /// <summary>
+        /// Metodo que cancela el ingreso de citas
+        /// </summary>
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //INICIO CONSULTA
 
         /// <summary>
         /// Metodo que guarda en la DB la consulta de la mascota
@@ -346,22 +365,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         return;
                     }
 
-
                     if (string.IsNullOrWhiteSpace(cbxIdMascota.Text))
                     {
                         MessageBox.Show("Por favor, introduce un valor de ID.");
                         return;
                     }
 
-
                     DateTime fechaHora = dtpFechaHora.Value;
-                    //Que se evite elejir fechas que son futuras
+                    //Que se evite elegir fechas que son futuras
                     if (fechaHora > DateTime.Now)
                     {
                         MessageBox.Show("La fecha no puede ser futura.");
                         return;
                     }
-
 
                     command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                     command.Parameters.AddWithValue("@peso", Math.Round(peso, 2));
@@ -374,9 +390,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     command.Parameters.AddWithValue("@fechaHora", fechaHora);
                     command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
 
-
-
-                    
                     try
                     {
 
@@ -391,132 +404,25 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
+
+        private void LimpiarControlesConsulta()
+        {
+            txtSintomas.Clear();
+            txtTratamiento.Clear();
+            txtExamFisico.Clear();
+            txtMedicamentos.Clear();
+            txtDiagnostico.Clear();
+            mtxtPeso.Clear();
+            txtNotasCita.Clear();
+        }
+
         //FIN CONSULTA
 
-        //INICIO CIRUGIA
-        /// <summary>
-        /// Evento que se ejecuta cuando se marca o desmarca el chkCirugia
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkCirugia.Checked)
-            {
-                // Activar controles
-                ActivarControlesCirugia(true);
-
-                // Cambiar el valor de la variable
-                Cirugia = true;
-            }
-            else
-            {
-                // Desactivar controles y limpia los campos
-                ActivarControlesCirugia(false);
-
-                LimpiarControlesCirugia();
-
-                // Cambiar el valor de la variable
-                Cirugia = false;
-            }
-
-        }
-
-        /// <summary>
-        /// Metodo que guarda los datos de cirugia que se ingresen, siempre y cuando cumplan con las validaciones
-        /// </summary>
-        private void GuardarCirugia()
-        {
-
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = @"
-            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
-
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            using (MySqlCommand command = new MySqlCommand(query, connection))
-            {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
-
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                    MessageBox.Show("Cirugia guardada con éxito.");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-
-
-
-        }
-
-
-        /// <summary>
-        ///Función para activar y desactivar controles relacionados con la Cirugia
-        /// </summary>
-        /// <param name="estado"></param>
-        private void ActivarControlesCirugia(bool estado)
-        {
-            cbxTipoCirugia.Enabled = estado;
-            txtMotiCirugia.Enabled = estado;
-            txtUsaMaterialesCirugia.Enabled = estado;
-            txtDescripcionCirugia.Enabled = estado;
-            txtNotasCirugia.Enabled = estado;
-        }
-
-        /// <summary>
-        /// // Función para limpiar los campos relacionados con la Cirugia
-        /// </summary>
-        private void LimpiarControlesCirugia()
-        {
-            cbxTipoCirugia.SelectedIndex = -1;
-            txtMotiVacuna.Clear();
-            txtUsaMaterialesCirugia.Clear();
-            txtDescripcionCirugia.Clear();
-            txtNotasCirugia.Clear();
-        }
-
-        //FIN CIRUGIA
-        //FIN FUNCIONE DE BTNGUARDAR
-
-
-
-
-
-        /// <summary>
-        /// Metodo que cancela el ingreso de citas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-           
-            this.Close(); 
-        }
-
-
-        
         //INICIO VACUNA
+
         /// <summary>
         /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void chkVacuna_CheckedChanged(object sender, EventArgs e)
         {
             if (chkVacuna.Checked)
@@ -538,7 +444,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 Vacuna = false;
             }
         }
-
 
         /// <summary>
         /// Metodo que guarda las vacunas que se suministren
@@ -606,20 +511,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtDescripcionVacuna.Clear();
             txtNotasVacuna.Clear();
         }
+
         //FIN VACUNA
 
+        //INICIO EXAMEN
 
-
-        //Inicio Examen
         /// <summary>
         /// metodo que activa y desactiva los controles del examen
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void chkExamen_CheckedChanged(object sender, EventArgs e)
         {
-            
-
             if (chkExamen.Checked)
             {
                 // Activar controles
@@ -647,7 +548,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarExamen()
         {
-
             if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
                 string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
             {
@@ -655,7 +555,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
 
             string query = @"
             INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
@@ -684,19 +583,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// // Función para limpiar los campos relacionados con la vacuna
-        /// </summary>
-        private void LimpiarControlesExamen()
-        {
-            cbxTipoExamen.SelectedIndex = -1;
-            txtMotiExamen.Clear();
-            txtUsaMaterialesExamen.Clear();
-            txtDescripcionExamen.Clear();
-            txtNotasExamen.Clear();
-        }
-        
-
-        /// <summary>
         ///Función para activar y desactivar controles relacionados con la vacuna
         /// </summary>
         /// <param name="estado"></param>
@@ -708,11 +594,117 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtDescripcionExamen.Enabled = estado;
             txtNotasExamen.Enabled = estado;
         }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la vacuna
+        /// </summary>
+        private void LimpiarControlesExamen()
+        {
+            cbxTipoExamen.SelectedIndex = -1;
+            txtMotiExamen.Clear();
+            txtUsaMaterialesExamen.Clear();
+            txtDescripcionExamen.Clear();
+            txtNotasExamen.Clear();
+        }
+
         //FIN EXAMEN
 
-        
-       
+        //INICIO CIRUGIA
 
-        
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkCirugia
+        /// </summary>
+        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCirugia.Checked)
+            {
+                // Activar controles
+                ActivarControlesCirugia(true);
+
+                // Cambiar el valor de la variable
+                Cirugia = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesCirugia(false);
+
+                LimpiarControlesCirugia();
+
+                // Cambiar el valor de la variable
+                Cirugia = false;
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que guarda los datos de cirugia que se ingresen, siempre y cuando cumplan con las validaciones
+        /// </summary>
+        private void GuardarCirugia()
+        {
+
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+            {
+                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
+                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string query = @"
+            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
+            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            using (MySqlCommand command = new MySqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
+
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Cirugia guardada con éxito.");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+
+
+        }
+
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la Cirugia
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesCirugia(bool estado)
+        {
+            cbxTipoCirugia.Enabled = estado;
+            txtMotiCirugia.Enabled = estado;
+            txtUsaMaterialesCirugia.Enabled = estado;
+            txtDescripcionCirugia.Enabled = estado;
+            txtNotasCirugia.Enabled = estado;
+        }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la Cirugia
+        /// </summary>
+        private void LimpiarControlesCirugia()
+        {
+            cbxTipoCirugia.SelectedIndex = -1;
+            txtMotiVacuna.Clear();
+            txtUsaMaterialesCirugia.Clear();
+            txtDescripcionCirugia.Clear();
+            txtNotasCirugia.Clear();
+        }
+
+        //FIN CIRUGIA
     }
 }
