@@ -77,5 +77,44 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
         }
+
+        private void btnRepreogramarCitaD_Click(object sender, EventArgs e)
+        {
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(@"INSERT INTO citas (FechaHora, Motivo, Estado, idUsuarios, idMascota)
+                     VALUES (@FechaHora, @Motivo, @Estado, @IDUsuario, @IDMascota)", connection);
+
+                // Asigna los valores nuevos
+                command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
+                command.Parameters.AddWithValue("@IDMascota", txtIDMascD.Text);
+                command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
+                command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
+                command.Parameters.AddWithValue("@FechaHora", txtFeHoCiD.Text);
+
+                int rowsAffected = command.ExecuteNonQuery();
+
+                if (rowsAffected > 0)
+                {
+                    MessageBox.Show("Cita reprogramada exitosamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al reprogramar la cita.");
+                }
+            }
+        }
+
+        private void btnCancelarCita_Click(object sender, EventArgs e)
+        {
+            txtEsCiD.Text = "";
+            txtFeHoCiD.Text = "";
+            txtIDMascD.Text = "";
+            txtIDUsuD.Text = "";
+            txtMotCiD.Text = "";
+
+        }
     }
-}
+
+    }

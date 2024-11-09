@@ -359,7 +359,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.btnPerfilD);
-            this.panel1.Controls.Add(this.btnGuardarCitaD);
             this.panel1.Controls.Add(this.btnCancelarCita);
             this.panel1.Controls.Add(this.btnProgramarCitaD);
             this.panel1.Controls.Add(this.btnRepreogramarCitaD);
