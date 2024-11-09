@@ -254,6 +254,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 SELECT DISTINCT
                     citas.idCita, 
                     citas.Motivo, 
+                    citas.Fecha,
                     consultas.Sintomas, 
                     consultas.ExamenFisico, 
                     consultas.Diagnostico, 
@@ -284,12 +285,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             Mascota selectedMascota = new Mascota(); 
                             selectedMascota.Citas.Clear();
 
+                            
+
                             while (reader.Read())
                             {
                                 // Crear una nueva cita a partir de los datos leídos
                                 Cita Cita = new Cita
                                 {
+                                    
+
                                     IdCita = reader.GetInt32("idCita"),
+                                    Fecha = reader.GetDateTime("Fecha"),
                                     Motivo = reader["motivo"].ToString(),
                                     Sintomas = reader["sintomas"].ToString(),
                                     ExamenFisico = reader["examenFisico"].ToString(),
@@ -305,6 +311,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 // Agregar la cita al DataGridView
                                 dgvHCitas.Rows.Add(
                                     Cita.IdCita,
+                                    Cita.Fecha,
                                     Cita.Motivo,
                                     Cita.Sintomas,
                                     Cita.ExamenFisico,

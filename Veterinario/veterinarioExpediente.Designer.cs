@@ -53,14 +53,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dgvHCitas = new System.Windows.Forms.DataGridView();
-            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHistorialVacunas = new System.Windows.Forms.Label();
             this.tabInformacionGeneral = new System.Windows.Forms.TabPage();
             this.gbxDatosDueno = new System.Windows.Forms.GroupBox();
@@ -91,6 +83,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).BeginInit();
@@ -311,6 +312,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHCitas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idCita,
+            this.FechaHora,
             this.Motivo,
             this.Sintomas,
             this.ExamenFisico,
@@ -318,59 +320,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Tratamiento,
             this.Medicamentos,
             this.Notas});
-            this.dgvHCitas.Location = new System.Drawing.Point(12, 203);
+            this.dgvHCitas.Location = new System.Drawing.Point(3, 203);
             this.dgvHCitas.Name = "dgvHCitas";
             this.dgvHCitas.ReadOnly = true;
-            this.dgvHCitas.Size = new System.Drawing.Size(848, 161);
+            this.dgvHCitas.Size = new System.Drawing.Size(883, 161);
             this.dgvHCitas.TabIndex = 3;
-            // 
-            // idCita
-            // 
-            this.idCita.HeaderText = "ID Cita Anterior";
-            this.idCita.Name = "idCita";
-            this.idCita.ReadOnly = true;
-            // 
-            // Motivo
-            // 
-            this.Motivo.HeaderText = "Motivo Consulta";
-            this.Motivo.Name = "Motivo";
-            this.Motivo.ReadOnly = true;
-            // 
-            // Sintomas
-            // 
-            this.Sintomas.HeaderText = "Sintomas";
-            this.Sintomas.Name = "Sintomas";
-            this.Sintomas.ReadOnly = true;
-            // 
-            // ExamenFisico
-            // 
-            this.ExamenFisico.HeaderText = "Examen Fisico";
-            this.ExamenFisico.Name = "ExamenFisico";
-            this.ExamenFisico.ReadOnly = true;
-            // 
-            // Diagnostico
-            // 
-            this.Diagnostico.HeaderText = "Diagnostico";
-            this.Diagnostico.Name = "Diagnostico";
-            this.Diagnostico.ReadOnly = true;
-            // 
-            // Tratamiento
-            // 
-            this.Tratamiento.HeaderText = "Tratamiento";
-            this.Tratamiento.Name = "Tratamiento";
-            this.Tratamiento.ReadOnly = true;
-            // 
-            // Medicamentos
-            // 
-            this.Medicamentos.HeaderText = "Medicamentos";
-            this.Medicamentos.Name = "Medicamentos";
-            this.Medicamentos.ReadOnly = true;
-            // 
-            // Notas
-            // 
-            this.Notas.HeaderText = "Notas";
-            this.Notas.Name = "Notas";
-            this.Notas.ReadOnly = true;
             // 
             // lblHistorialVacunas
             // 
@@ -667,6 +621,60 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Size = new System.Drawing.Size(917, 72);
             this.panel1.TabIndex = 5;
             // 
+            // idCita
+            // 
+            this.idCita.HeaderText = "ID Cita Anterior";
+            this.idCita.Name = "idCita";
+            this.idCita.ReadOnly = true;
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "Fecha y Hora";
+            this.FechaHora.Name = "FechaHora";
+            this.FechaHora.ReadOnly = true;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo Consulta";
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            // 
+            // Sintomas
+            // 
+            this.Sintomas.HeaderText = "Sintomas";
+            this.Sintomas.Name = "Sintomas";
+            this.Sintomas.ReadOnly = true;
+            // 
+            // ExamenFisico
+            // 
+            this.ExamenFisico.HeaderText = "Examen Fisico";
+            this.ExamenFisico.Name = "ExamenFisico";
+            this.ExamenFisico.ReadOnly = true;
+            // 
+            // Diagnostico
+            // 
+            this.Diagnostico.HeaderText = "Diagnostico";
+            this.Diagnostico.Name = "Diagnostico";
+            this.Diagnostico.ReadOnly = true;
+            // 
+            // Tratamiento
+            // 
+            this.Tratamiento.HeaderText = "Tratamiento";
+            this.Tratamiento.Name = "Tratamiento";
+            this.Tratamiento.ReadOnly = true;
+            // 
+            // Medicamentos
+            // 
+            this.Medicamentos.HeaderText = "Medicamentos";
+            this.Medicamentos.Name = "Medicamentos";
+            this.Medicamentos.ReadOnly = true;
+            // 
+            // Notas
+            // 
+            this.Notas.HeaderText = "Notas";
+            this.Notas.Name = "Notas";
+            this.Notas.ReadOnly = true;
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,14 +749,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotivoVacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProximaDosis;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Sintomas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ExamenFisico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Diagnostico;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Medicamentos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
         private System.Windows.Forms.DataGridView dgvHCitas;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCirugia;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoCirugia;
@@ -761,5 +761,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label lblHistorialExamenes;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sintomas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ExamenFisico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diagnostico;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Medicamentos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
     }
 }
