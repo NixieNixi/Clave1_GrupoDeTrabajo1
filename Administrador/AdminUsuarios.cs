@@ -610,7 +610,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //Consulta la columna idUsuarios de la tabla Usuarios
-                    string query = "SELECT idUsuario FROM usuarios;";
+                    string query = "SELECT idUsuario FROM usuarios ORDER BY idUsuario ASC;;";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         connection.Open();

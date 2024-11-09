@@ -57,7 +57,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotiVacuna = new System.Windows.Forms.TextBox();
             this.chkCirugia = new System.Windows.Forms.CheckBox();
             this.gbxInfoConsulta = new System.Windows.Forms.GroupBox();
-            this.mtxtPeso = new System.Windows.Forms.MaskedTextBox();
             this.lblSintomas = new System.Windows.Forms.Label();
             this.lblExamFisico = new System.Windows.Forms.Label();
             this.lblDiagnostico = new System.Windows.Forms.Label();
@@ -102,6 +101,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -403,7 +403,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // gbxInfoConsulta
             // 
             this.gbxInfoConsulta.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.gbxInfoConsulta.Controls.Add(this.mtxtPeso);
+            this.gbxInfoConsulta.Controls.Add(this.txtPeso);
             this.gbxInfoConsulta.Controls.Add(this.lblSintomas);
             this.gbxInfoConsulta.Controls.Add(this.lblExamFisico);
             this.gbxInfoConsulta.Controls.Add(this.lblDiagnostico);
@@ -423,14 +423,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoConsulta.TabIndex = 11;
             this.gbxInfoConsulta.TabStop = false;
             this.gbxInfoConsulta.Text = "Informacion de la Consulta";
-            // 
-            // mtxtPeso
-            // 
-            this.mtxtPeso.Location = new System.Drawing.Point(496, 96);
-            this.mtxtPeso.Mask = "000.00";
-            this.mtxtPeso.Name = "mtxtPeso";
-            this.mtxtPeso.Size = new System.Drawing.Size(56, 20);
-            this.mtxtPeso.TabIndex = 18;
             // 
             // lblSintomas
             // 
@@ -488,7 +480,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSintomas
             // 
-            this.txtSintomas.Location = new System.Drawing.Point(144, 24);
+            this.txtSintomas.Location = new System.Drawing.Point(144, 32);
             this.txtSintomas.Name = "txtSintomas";
             this.txtSintomas.Size = new System.Drawing.Size(200, 20);
             this.txtSintomas.TabIndex = 2;
@@ -874,6 +866,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2.TabIndex = 3;
             this.label2.Text = "Veterinaria Cat-Dog";
             // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(496, 96);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(80, 20);
+            this.txtPeso.TabIndex = 18;
+            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -946,7 +945,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblFechaCita;
         private System.Windows.Forms.CheckBox chkCirugia;
         private System.Windows.Forms.DateTimePicker dtpFechaHora;
-        private System.Windows.Forms.MaskedTextBox mtxtPeso;
         private System.Windows.Forms.ComboBox cbxIdMascota;
         private System.Windows.Forms.ComboBox cbxIdCita;
         private System.Windows.Forms.CheckBox chkExamen;
@@ -977,5 +975,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPeso;
     }
 }

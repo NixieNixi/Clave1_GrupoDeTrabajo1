@@ -77,7 +77,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Variables que se utilizan para los distintos metodos
+        /// Variables que se utilizan para los comprobar si se debe o no llamar a metodos especificos
         /// </summary>
         private bool Cirugia = false;
         private bool Vacuna = false;
@@ -89,6 +89,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Limpieza de todos los controles del form
             LimpiarControlesMascota();
             LimpiarControlesConsulta();
             LimpiarControlesVacuna();
@@ -294,7 +295,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtMedicamentos.Clear();
             txtExamFisico.Clear();
             txtNotasCita.Clear();
-            mtxtPeso.Clear();
+            txtPeso.Clear();
         }
 
         //FIN INFORMACION DE LA MASCOTA
@@ -305,27 +306,109 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
-            // Guardar siempre la consulta
-            GuardarConsulta();
+            if(!ValidarDatos())
+            {
+                MessageBox.Show("Hay un error en los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-            // Guardar otros servicios si están seleccionados
+            try
+            {
+                // Guardar siempre la consulta
+                GuardarConsulta();
+
+                // Guardar otros servicios si están seleccionados
+                if (Vacuna)
+                {
+                    GuardarVacuna();
+                }
+
+                if (Examen)
+                {
+                    GuardarExamen();
+                }
+
+                if (Cirugia)
+                {
+                    GuardarCirugia();
+                }
+
+                MessageBox.Show("La información se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //Limpieza de todos los controles del form
+                LimpiarControlesMascota();
+                LimpiarControlesConsulta();
+                LimpiarControlesVacuna();
+                LimpiarControlesExamen();
+                LimpiarControlesCirugia();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar la información: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Metodo de validaciones de los campos de consulta, vacuna, examen y cirugia
+        /// </summary>
+        /// <returns>
+        /// Retorna false si hay un error en algun dato
+        /// </returns>
+        private bool ValidarDatos()
+        {
+            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text))
+            {
+                MessageBox.Show("Por favor, introduce un valor de ID Mascota.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPeso.Text))
+            {
+                MessageBox.Show("Por favor, introduce un valor de peso.");
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPeso.Text, out decimal peso) || peso <= 0 || peso > 999.99m)
+            {
+                MessageBox.Show("Por favor, introduce un valor de peso válido (mayor que 0 y hasta 999.99).");
+                return false;
+            }
+
             if (Vacuna)
             {
-                GuardarVacuna();
+                if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoVacuna.Text) ||
+                    string.IsNullOrWhiteSpace(txtMotiVacuna.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesVacuna.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la vacuna.",
+                                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
 
             if (Examen)
             {
-                GuardarExamen();
+                if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
+                    string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
+                                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
 
             if (Cirugia)
             {
-                GuardarCirugia();
+                if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
+                    string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
+                {
+                    MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
+                                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
 
-            // Mensaje de confirmación
-            MessageBox.Show("La información se ha guardado correctamente.");
+            return true;
         }
 
         /// <summary>
@@ -351,48 +434,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-
-
-                    if (string.IsNullOrWhiteSpace(mtxtPeso.Text))
-                    {
-                        MessageBox.Show("Por favor, introduce un valor de peso.");
-                        return;
-                    }
-
-                    if (!decimal.TryParse(mtxtPeso.Text, out decimal peso) || peso <= 0 || peso > 999.99m)
-                    {
-                        MessageBox.Show("Por favor, introduce un valor de peso válido (mayor que 0 y hasta 999.99).");
-                        return;
-                    }
-
-                    if (string.IsNullOrWhiteSpace(cbxIdMascota.Text))
-                    {
-                        MessageBox.Show("Por favor, introduce un valor de ID.");
-                        return;
-                    }
-
-                    DateTime fechaHora = dtpFechaHora.Value;
-                    //Que se evite elegir fechas que son futuras
-                    if (fechaHora > DateTime.Now)
-                    {
-                        MessageBox.Show("La fecha no puede ser futura.");
-                        return;
-                    }
-
                     command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                    command.Parameters.AddWithValue("@peso", Math.Round(peso, 2));
+                    command.Parameters.AddWithValue("@peso", Math.Round(Convert.ToDecimal(txtPeso.Text), 2));
                     command.Parameters.AddWithValue("@sintomas", txtSintomas.Text.Trim());
                     command.Parameters.AddWithValue("@examenfisico", txtExamFisico.Text.Trim());
                     command.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text.Trim());
                     command.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text.Trim());
                     command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text.Trim());
                     command.Parameters.AddWithValue("@notas", txtNotasCita.Text.Trim());
-                    command.Parameters.AddWithValue("@fechaHora", fechaHora);
+                    command.Parameters.AddWithValue("@fechaHora", dtpFechaHora.Value);
                     command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
 
                     try
                     {
-
                         connection.Open();
                         command.ExecuteNonQuery();
                         MessageBox.Show("Registro de Consulta guardado con éxito.");
@@ -405,6 +459,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+        /// <summary>
+        /// Metodo para limpiar los controles de la informacion de consulta
+        /// </summary>
         private void LimpiarControlesConsulta()
         {
             txtSintomas.Clear();
@@ -412,7 +469,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtExamFisico.Clear();
             txtMedicamentos.Clear();
             txtDiagnostico.Clear();
-            mtxtPeso.Clear();
+            txtPeso.Clear();
             txtNotasCita.Clear();
         }
 
@@ -450,18 +507,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarVacuna()
         {
-
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoVacuna.Text) ||
-            string.IsNullOrWhiteSpace(txtMotiVacuna.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesVacuna.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la vacuna.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = @"
-            INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -527,7 +574,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 ActivarControlesExamen(true);
 
                 // Cambiar el valor de la variable
-                Vacuna = true;
+                Examen = true;
             }
             else
             {
@@ -548,17 +595,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarExamen()
         {
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar el examen.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = @"
-            INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -642,18 +680,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarCirugia()
         {
-
-            if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoCirugia.Text) ||
-                string.IsNullOrWhiteSpace(txtMotiCirugia.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesCirugia.Text))
-            {
-                MessageBox.Show("Por favor complete todos los campos obligatorios antes de guardar la cirugía.",
-                    "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            string query = @"
-            INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
-            VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))

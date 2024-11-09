@@ -32,7 +32,7 @@ CREATE TABLE `cirugia` (
   PRIMARY KEY (`idCirugia`),
   KEY `fk_idMascotaCirugia_idx` (`idMascota`),
   CONSTRAINT `idMascotaCirugia` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,6 @@ CREATE TABLE `cirugia` (
 
 LOCK TABLES `cirugia` WRITE;
 /*!40000 ALTER TABLE `cirugia` DISABLE KEYS */;
-INSERT INTO `cirugia` VALUES (1,1,'Castracion','Esteriliazcion Misi','Motivo valido','Material1');
 /*!40000 ALTER TABLE `cirugia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -62,7 +61,7 @@ CREATE TABLE `citas` (
   PRIMARY KEY (`idCita`),
   KEY `idMascota_Citas` (`idMascota`),
   CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,7 +70,6 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,1,'Examen','Programada','2024-11-12','10:30:00'),(2,1,'vacuna','Programada','2023-11-21','10:00:00'),(3,4,'Parto','Programada','2023-12-24','13:00:00'),(4,2,'Vacuna','Programada','2024-11-14','00:00:00'),(5,11,'Castracion','Programada','2024-11-22','21:29:37'),(6,8,'adsasdas','Programada','2024-11-25','08:30:06'),(7,10,'Esterilización','Programada','2024-12-10','09:00:16'),(8,10,'Control','Programada','2025-01-08','14:30:56'),(9,9,'Control','Programada','2024-11-18','11:44:29'),(10,12,'Desparacitacion','Programada','2025-02-17','11:00:02'),(11,7,'Vacuna de la rabia','Programada','2024-11-19','15:00:17'),(12,7,'Coso epico','Programada','2024-11-27','12:51:54'),(13,6,'Motivos tiene','Programada','2024-11-14','14:20:15'),(14,1,'Control de salud','Cancelada','2025-03-04','15:12:48'),(15,2,'porbablementoe','Programada','2024-11-20','11:32:15'),(16,2,'Motivo epico','Programada','2024-11-07','14:44:38'),(17,1,'Hueso quebrado','Programada','2024-11-07','13:46:41'),(18,4,'Control de salud','Cancelada','2024-11-09','14:47:22');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -97,7 +95,7 @@ CREATE TABLE `consultas` (
   PRIMARY KEY (`idConsulta`),
   KEY `idMascotaConsulta_idx` (`idMascota`),
   CONSTRAINT `idMascotaConsulta` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,7 +104,6 @@ CREATE TABLE `consultas` (
 
 LOCK TABLES `consultas` WRITE;
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
-INSERT INTO `consultas` VALUES (1,1,'2024-01-30 15:00:00',2.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(2,1,'2024-09-12 10:00:00',2.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(4,1,'2024-02-12 07:00:00',2.00,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,7 +124,7 @@ CREATE TABLE `examen` (
   PRIMARY KEY (`idExamen`),
   KEY `idMascotaExamen_idx` (`idMascota`),
   CONSTRAINT `idMascotaExamen` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,46 +133,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (1,1,'Sangre','Examen de sangre','Estudio','Material3');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `expedientes`
---
-
-DROP TABLE IF EXISTS `expedientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `expedientes` (
-  `idExpediente` int NOT NULL AUTO_INCREMENT,
-  `idMascota` int NOT NULL,
-  `idConsulta` int NOT NULL,
-  `idExamen` int DEFAULT NULL,
-  `idVacuna` int DEFAULT NULL,
-  `idCirugia` int DEFAULT NULL,
-  PRIMARY KEY (`idExpediente`),
-  KEY `idCirugia_idx` (`idCirugia`),
-  KEY `idVacuna_idx` (`idVacuna`),
-  KEY `idExamen_idx` (`idExamen`),
-  KEY `idMascota_idx` (`idMascota`),
-  KEY `idConsulta_idx` (`idConsulta`),
-  CONSTRAINT `idCirugia` FOREIGN KEY (`idCirugia`) REFERENCES `cirugia` (`idCirugia`),
-  CONSTRAINT `idConsulta` FOREIGN KEY (`idConsulta`) REFERENCES `consultas` (`idConsulta`),
-  CONSTRAINT `idExamen` FOREIGN KEY (`idExamen`) REFERENCES `examen` (`idExamen`),
-  CONSTRAINT `idMascota` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`),
-  CONSTRAINT `idVacuna` FOREIGN KEY (`idVacuna`) REFERENCES `vacuna` (`idVacuna`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `expedientes`
---
-
-LOCK TABLES `expedientes` WRITE;
-/*!40000 ALTER TABLE `expedientes` DISABLE KEYS */;
-INSERT INTO `expedientes` VALUES (1,1,1,NULL,NULL,1),(2,1,2,NULL,1,NULL),(3,1,4,1,NULL,NULL);
-/*!40000 ALTER TABLE `expedientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -306,8 +264,9 @@ CREATE TABLE `usuarios` (
   `Rol` enum('Administrador','Veterinario','Dueño') NOT NULL,
   `Usuario` varchar(50) NOT NULL,
   `Contrasena` varchar(255) NOT NULL,
-  PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`idUsuario`),
+  UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -316,7 +275,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Dr. Gabriela Bautista','77548926','gabriela.bautista@gmail.com','Cojutepeque, Cuscatlan','Veterinario','GaBau','MeBa'),(2,'Dr. Roberto Alfaro','98765432','robert.alfa@gmail.com','San Juan Opico, La libertad','Veterinario','Rob','Alfa'),(3,'Dr. Cristian Vasquez','45678912','cristian.vasquez@gmail.com','Ilopango, San Salvador','Veterinario','Cris','Vas'),(4,'Dr. Esmeralda Castellanos','96385274','esmeralda.castellanos@gmail.com','San Marcos, San Salvador','Veterinario','Esme','Cas'),(5,'Maria Mejia','74185296','maria.mejia@gmail.com','Sta Cruz Michapa, Cuscatlan','Dueño','NixieNixi','wangxian'),(6,'Rafael Ramos','85296374','rafael.ramos@gmail.com','Santa Ana, Santa Ana','Dueño','Raff','RarMustis'),(7,'Mauricio Hernandez','12305678','mauricio.hernan@gmail.com','San Miguel Tepezontes,La Paz','Dueño','Mau2','Canela1'),(8,'Odeth Perez','75342189','odeth.perez@gmail.com','Sierra Morena,San Salvador','Dueño','Ruby','Ruby1'),(9,'Luis Escobar','12345678','luis.escobar@ues.edu.sv','San Salvador,San Salvador','Administrador','LuisEsco','Escobar12'),(10,'Nombre','12345678','correo@gmail.com','Mi casa','Dueño','usar','contraseña123'),(11,'Julio','12345678','correo@correo.com','Casa de Julio','Dueño','Panquesito','123edfg'),(12,'José','12345678','jose@correo.com','casa de jose','Dueño','js123','23eddf3'),(13,'Marcos','12345678','correo.mc@gmail.com','Madriguera de ninguna parte','Dueño','mc123','123asd');
+INSERT INTO `usuarios` VALUES (1,'Dr. Gabriela Bautista','77548926','gabriela.bautista@gmail.com','Cojutepeque, Cuscatlan','Veterinario','GaBau','MeBa'),(2,'Dr. Roberto Alfaro','98765432','robert.alfa@gmail.com','San Juan Opico, La libertad','Veterinario','Rob','Alfa'),(3,'Dr. Cristian Vasquez','45678912','cristian.vasquez@gmail.com','Ilopango, San Salvador','Veterinario','Cris','Vas'),(4,'Dr. Esmeralda Castellanos','96385274','esmeralda.castellanos@gmail.com','San Marcos, San Salvador','Veterinario','Esme','Cas'),(5,'Maria Mejia','74185296','maria.mejia@gmail.com','Sta Cruz Michapa, Cuscatlan','Dueño','NixieNixi','wangxian'),(6,'Rafael Ramos','85296374','rafael.ramos@gmail.com','Santa Ana, Santa Ana','Dueño','Raff','RarMustis'),(7,'Mauricio Hernandez','12305678','mauricio.hernan@gmail.com','San Miguel Tepezontes,La Paz','Dueño','Mau2','Canela1'),(8,'Odeth Perez','75342189','odeth.perez@gmail.com','Sierra Morena,San Salvador','Dueño','Ruby','Ruby1'),(9,'Luis Escobar','12345678','luis.escobar@ues.edu.sv','San Salvador,San Salvador','Administrador','LuisEsco','Escobar12'),(10,'Nombre','12345678','correo@gmail.com','Mi casa','Dueño','usar','contraseña123'),(11,'Julio','12345678','correo@correo.com','Casa de Julio','Dueño','Panquesito','123edfg'),(12,'José','12345678','jose@correo.com','casa de jose','Dueño','js123','23eddf3'),(13,'Marcos','12345678','correo.mc@gmail.com','Madriguera de ninguna parte','Dueño','mc123','123asd'),(14,'Galleta','12345678','galletadecanela2048@gmail.com','mi casa','Administrador','canela.feliz','1234');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -337,7 +296,7 @@ CREATE TABLE `vacuna` (
   PRIMARY KEY (`idVacuna`),
   KEY `idMascotaVacuna_idx` (`idMascota`),
   CONSTRAINT `idMascotaVacuna` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -346,7 +305,6 @@ CREATE TABLE `vacuna` (
 
 LOCK TABLES `vacuna` WRITE;
 /*!40000 ALTER TABLE `vacuna` DISABLE KEYS */;
-INSERT INTO `vacuna` VALUES (1,1,'Rabia',NULL,'Prevencion','Material1, Material2'),(4,9,'Rabia','vacuna rabia','si','vacuna');
 /*!40000 ALTER TABLE `vacuna` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -359,4 +317,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-07 17:33:38
+-- Dump completed on 2024-11-09 13:41:37

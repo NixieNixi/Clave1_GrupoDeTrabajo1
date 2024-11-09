@@ -1544,7 +1544,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
             this.Name = "AdministradorPerfil";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";
             this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
             this.panelBotones.ResumeLayout(false);
