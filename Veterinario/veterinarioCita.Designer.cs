@@ -30,7 +30,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void InitializeComponent()
         {
             this.panelVeterinarioCita = new System.Windows.Forms.Panel();
-            this.chkConsulta = new System.Windows.Forms.CheckBox();
             this.chkCirugia = new System.Windows.Forms.CheckBox();
             this.chkExamen = new System.Windows.Forms.CheckBox();
             this.chkVacuna = new System.Windows.Forms.CheckBox();
@@ -83,6 +82,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtDescripcionCirugia = new System.Windows.Forms.TextBox();
             this.txtMotiCirugia = new System.Windows.Forms.TextBox();
             this.gbxaInfoExpediente = new System.Windows.Forms.GroupBox();
+            this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.cbxIdMascota = new System.Windows.Forms.ComboBox();
             this.dtpFechaHora = new System.Windows.Forms.DateTimePicker();
             this.lblFechaCita = new System.Windows.Forms.Label();
@@ -98,7 +98,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascota = new System.Windows.Forms.TextBox();
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -113,7 +112,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
-            this.panelVeterinarioCita.Controls.Add(this.chkConsulta);
             this.panelVeterinarioCita.Controls.Add(this.chkCirugia);
             this.panelVeterinarioCita.Controls.Add(this.chkExamen);
             this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
@@ -126,17 +124,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelVeterinarioCita.Name = "panelVeterinarioCita";
             this.panelVeterinarioCita.Size = new System.Drawing.Size(816, 584);
             this.panelVeterinarioCita.TabIndex = 0;
-            // 
-            // chkConsulta
-            // 
-            this.chkConsulta.AutoSize = true;
-            this.chkConsulta.Location = new System.Drawing.Point(24, 201);
-            this.chkConsulta.Name = "chkConsulta";
-            this.chkConsulta.Size = new System.Drawing.Size(181, 17);
-            this.chkConsulta.TabIndex = 28;
-            this.chkConsulta.Text = "Ingresar Informacion de Consulta";
-            this.chkConsulta.UseVisualStyleBackColor = true;
-            this.chkConsulta.CheckedChanged += new System.EventHandler(this.chkConsulta_CheckedChanged);
             // 
             // chkCirugia
             // 
@@ -664,6 +651,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxaInfoExpediente.TabStop = false;
             this.gbxaInfoExpediente.Text = "Informacion de La Mascota";
             // 
+            // cbxIdCita
+            // 
+            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIdCita.Enabled = false;
+            this.cbxIdCita.FormattingEnabled = true;
+            this.cbxIdCita.Location = new System.Drawing.Point(496, 32);
+            this.cbxIdCita.Name = "cbxIdCita";
+            this.cbxIdCita.Size = new System.Drawing.Size(200, 21);
+            this.cbxIdCita.TabIndex = 28;
+            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
+            // 
             // cbxIdMascota
             // 
             this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -815,17 +813,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // cbxIdCita
-            // 
-            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdCita.Enabled = false;
-            this.cbxIdCita.FormattingEnabled = true;
-            this.cbxIdCita.Location = new System.Drawing.Point(496, 32);
-            this.cbxIdCita.Name = "cbxIdCita";
-            this.cbxIdCita.Size = new System.Drawing.Size(200, 21);
-            this.cbxIdCita.TabIndex = 28;
-            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
-            // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -920,7 +907,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.CheckBox chkVacuna;
         private System.Windows.Forms.CheckBox chkExamen;
         private System.Windows.Forms.CheckBox chkCirugia;
-        private System.Windows.Forms.CheckBox chkConsulta;
         private System.Windows.Forms.DateTimePicker dtpFechaHora;
         private System.Windows.Forms.MaskedTextBox mtxtPeso;
         private System.Windows.Forms.ComboBox cbxIdMascota;

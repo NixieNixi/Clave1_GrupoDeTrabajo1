@@ -69,6 +69,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             CargarMascotas();
         }
 
+        private bool Cirugia = false;
+        private bool Vacuna = false;
+        private bool Examen = false;
+
         /// <summary>
         /// Evento de cambio de seleccion de idMascota que carga la info de la mascota seleccionada y si tiene citas carga los idCita
         /// </summary>
@@ -286,10 +290,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 GuardarExamen();
             }
 
-            //if (Cirugia)
-            //{
-            //    GuardarCirugia();
-            //}
+            if (Cirugia)
+            {
+                GuardarCirugia();
+            }
 
             // Mensaje de confirmación
             MessageBox.Show("La información se ha guardado correctamente.");
@@ -507,8 +511,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
 
-        // Variable global para indicar si hay vacuna
-        private bool Vacuna = false;
+        
 
         /// <summary>
         /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
@@ -563,11 +566,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtNotasVacuna.Clear();
         }
 
-
-
-        // Variable global para indicar si hay Examen
-        private bool Examen = false;
-
+        //Inicio Examen
         /// <summary>
         /// 
         /// </summary>
@@ -575,13 +574,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void chkExamen_CheckedChanged(object sender, EventArgs e)
         {
-            //bool isExamenChecked = chkExamen.Checked;
-            //cbxTipoExamen.Enabled = isExamenChecked;
-            //txtDescripcionExamen.Enabled = isExamenChecked;
-            //txtNotasExamen.Enabled = isExamenChecked;
-            //txtNotasExamen.Enabled = isExamenChecked;
-            //txtUsaMateriaesExamen.Enabled = isExamenChecked;
-            //txtMotiExamen.Enabled = isExamenChecked;
+            
 
             if (chkExamen.Checked)
             {
@@ -596,7 +589,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 // Desactivar controles y limpia los campos
                 ActivarControlesExamen(false);
 
-                //LimpiarControlesExamen();
+                LimpiarControlesExamen();
 
                 // Cambiar el valor de la variable
                 Examen = false;
@@ -606,6 +599,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         //Hace falta el metodo de LimpiarControlesExamen
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la vacuna
+        /// </summary>
+        private void LimpiarControlesExamen()
+        {
+            cbxTipoExamen.SelectedIndex = -1;
+            txtMotiExamen.Clear();
+            txtUsaMaterialesExamen.Clear();
+            txtDescripcionExamen.Clear();
+            txtNotasExamen.Clear();
+        }
+        
 
         /// <summary>
         ///Función para activar y desactivar controles relacionados con la vacuna
@@ -619,9 +625,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtDescripcionExamen.Enabled = estado;
             txtNotasExamen.Enabled = estado;
         }
+        //FIN EXAMEN
 
-
-
+        //INICIO CIRUGIA
         /// <summary>
         /// 
         /// </summary>
@@ -634,15 +640,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkConsulta_CheckedChanged(object sender, EventArgs e)
-        {
-            //bool isConsultaCheked = chkConsulta.Checked;
-            //txtMotiConsulta.Enabled = isConsultaCheked;
-        }
+        
     }
 }
