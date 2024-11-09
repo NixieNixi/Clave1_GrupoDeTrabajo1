@@ -55,7 +55,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Fecha de Modificacion: 08/11/2024
     /// Descripcion:
     /// Se le agrego validaciones a los metodos de guardar, vacuna,citas,examen y cirugia, FALTA TESTEO
-    /// Se reordeno, en backend para un mejor entendienmiento, se agrego funcion a cirugia.
+    /// Se reordeno, en backend para un mejor entendienmiento, se agrego funcion a cirugia. y se agrego el la funcion faltante de LimpiarControlesMascota
     /// 
     /// Autor: CanelaFeliz
     /// Fecha: 08/11/2024
@@ -395,7 +395,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         //INICIO CIRUGIA
         /// <summary>
-        /// 
+        /// Evento que se ejecuta cuando se marca o desmarca el chkCirugia
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -498,11 +498,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
 
 
-
+        /// <summary>
+        /// Metodo que cancela el ingreso de citas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            // Aquí va el código para cancelar la operación, por ejemplo:
-            this.Close(); // Cerrar el formulario
+           
+            this.Close(); 
         }
 
 
@@ -608,7 +612,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         //Inicio Examen
         /// <summary>
-        /// 
+        /// metodo que activa y desactiva los controles del examen
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -638,7 +642,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkExamen
+        /// </summary>
         private void GuardarExamen()
         {
 
