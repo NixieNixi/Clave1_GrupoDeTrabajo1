@@ -306,7 +306,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
-            if(!ValidarDatos())
+            if (!ValidarDatos())
             {
                 MessageBox.Show("Hay un error en los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -412,6 +412,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
+        /// Metodo que anula la cita una vez se paso consulta
+        /// </summary>
+
+        /// <summary>
         /// Metodo que cancela el ingreso de citas
         /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -427,23 +431,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void GuardarConsulta()
         {
 
-            string query = "INSERT INTO Consultas (idMascota,Sintomas,ExamenFisico,Diagnostico,Tratamiento,Medicamentos,Notas,FechaHora,Peso,Motivo) " +
-                "VALUES (@idmascota,@sintomas,@examenfisico,@diagnostico,@tratamiento,@medicamentos, @notas,@fechahora,@peso,@motivo)";
+            string query = @"INSERT INTO Consultas (idMascota, idCita, FechaHora, Peso, Motivo, Sintomas, ExamenFisico, Diagnostico, Tratamiento, Medicamentos, Notas)
+                             VALUES (@idMascota, @idCita, @FechaHora, @Peso, @Motivo, @Sintomas, @ExamenFisico, @Diagnostico, @Tratamiento, @Medicamentos, @Notas)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                    command.Parameters.AddWithValue("@peso", Math.Round(Convert.ToDecimal(txtPeso.Text), 2));
-                    command.Parameters.AddWithValue("@sintomas", txtSintomas.Text.Trim());
-                    command.Parameters.AddWithValue("@examenfisico", txtExamFisico.Text.Trim());
-                    command.Parameters.AddWithValue("@diagnostico", txtDiagnostico.Text.Trim());
-                    command.Parameters.AddWithValue("@tratamiento", txtTratamiento.Text.Trim());
-                    command.Parameters.AddWithValue("@medicamentos", txtMedicamentos.Text.Trim());
-                    command.Parameters.AddWithValue("@notas", txtNotasCita.Text.Trim());
-                    command.Parameters.AddWithValue("@fechaHora", dtpFechaHora.Value);
-                    command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
+                    command.Parameters.AddWithValue("@idMascota", cbxIdMascota.Text.Trim());
+                    command.Parameters.AddWithValue("@idCita", cbxIdCita.Text.Trim());
+                    command.Parameters.AddWithValue("@FechaHora", DateTime.Now);
+                    command.Parameters.AddWithValue("@Peso", Math.Round(Convert.ToDecimal(txtPeso.Text), 2));
+                    command.Parameters.AddWithValue("@Motivo", txtMotiConsulta.Text.Trim());
+                    command.Parameters.AddWithValue("@Sintomas", txtSintomas.Text.Trim());
+                    command.Parameters.AddWithValue("@ExamenFisico", txtExamFisico.Text.Trim());
+                    command.Parameters.AddWithValue("@Diagnostico", txtDiagnostico.Text.Trim());
+                    command.Parameters.AddWithValue("@Tratamiento", txtTratamiento.Text.Trim());
+                    command.Parameters.AddWithValue("@Medicamentos", txtMedicamentos.Text.Trim());
+                    command.Parameters.AddWithValue("@Notas", txtNotasCita.Text.Trim());
 
                     try
                     {
@@ -454,6 +459,26 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     catch (Exception ex)
                     {
                         MessageBox.Show("Error al guardar el registro: " + ex.Message);
+                    }
+                }
+            }
+
+            query = @"UPDATE citas SET Estado = 'Finalizada' WHERE idCita = @idCita;";
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("idCita", cbxIdCita.SelectedItem.ToString());
+
+                    try
+                    {
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error al actualizar el estado de cita " + ex.Message, "Error :(");
                     }
                 }
             }
@@ -507,19 +532,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarVacuna()
         {
-            string query = @"INSERT INTO vacuna (idMascota, Tipo, Descripcion, Motivo, Materiales)
-                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO vacuna (idMascota, idCita, FechaHora, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idMascota, @idCita, @FechaHora, @Tipo, @Descripcion, @Motivo, @Materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@idMascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idCita", cbxIdCita.Text.Trim());
+                command.Parameters.AddWithValue("@FechaHora", DateTime.Now);
+                command.Parameters.AddWithValue("@Tipo", cbxTipoVacuna.Text.Trim());
 
                 //No se agrego validacion para la descripcion, ya que segun la Db es un dato no obligatorio
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionVacuna.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiVacuna.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@Descripcion", txtDescripcionVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@Motivo", txtMotiVacuna.Text.Trim());
+                command.Parameters.AddWithValue("@Materiales", txtUsaMaterialesVacuna.Text.Trim());
 
                 try
                 {
@@ -595,17 +622,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarExamen()
         {
-            string query = @"INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
-                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO examen (idMascota, idCita, FechaHora, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idMascota, @idCita, @FechaHora, @Tipo, @Descripcion, @Motivo, @Materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoExamen.Text.Trim());
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionExamen.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiExamen.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesExamen.Text.Trim());
+                command.Parameters.AddWithValue("@idMascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idCita", cbxIdCita.Text.Trim());
+                command.Parameters.AddWithValue("@FechaHora", DateTime.Now);
+                command.Parameters.AddWithValue("@Tipo", cbxTipoExamen.Text.Trim());
+                command.Parameters.AddWithValue("@Descripcion", txtDescripcionExamen.Text.Trim());
+                command.Parameters.AddWithValue("@Motivo", txtMotiExamen.Text.Trim());
+                command.Parameters.AddWithValue("@Materiales", txtUsaMaterialesExamen.Text.Trim());
 
                 try
                 {
@@ -680,17 +709,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void GuardarCirugia()
         {
-            string query = @"INSERT INTO cirugia (idMascota, Tipo, Descripcion, Motivo, Materiales)
-                             VALUES (@idmascota, @tipo, @descripcion, @motivo, @materiales)";
+            string query = @"INSERT INTO cirugia (idMascota, idCita, FechaHora, Tipo, Descripcion, Motivo, Materiales)
+                             VALUES (@idMascota, @idCita, @FechaHora, @Tipo, @Descripcion, @Motivo, @Materiales)";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             using (MySqlCommand command = new MySqlCommand(query, connection))
             {
-                command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
-                command.Parameters.AddWithValue("@tipo", cbxTipoCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@descripcion", txtDescripcionCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@motivo", txtMotiCirugia.Text.Trim());
-                command.Parameters.AddWithValue("@materiales", txtUsaMaterialesCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@idMascota", cbxIdMascota.Text.Trim());
+                command.Parameters.AddWithValue("@idCita", cbxIdCita.Text.Trim());
+                command.Parameters.AddWithValue("@FechaHora", DateTime.Now);
+                command.Parameters.AddWithValue("@Tipo", cbxTipoCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@Descripcion", txtDescripcionCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@Motivo", txtMotiCirugia.Text.Trim());
+                command.Parameters.AddWithValue("@Materiales", txtUsaMaterialesCirugia.Text.Trim());
 
                 try
                 {
