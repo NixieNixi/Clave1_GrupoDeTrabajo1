@@ -64,20 +64,18 @@ namespace Clave1_GrupoDeTrabajo1
             AdministradorPerfil administrador = new AdministradorPerfil();
             this.Hide();
             administrador.ShowDialog();
-            this.Show();
+            //this.Show();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-
-            // Obtener los valores del formulario
             // Obtener los valores del formulario
             string usuario = txtLoginUser.Text; // Nombre de usuario
             string contrasena = txtLoginContra.Text; // Contraseña
             //string nombre;
 
             // Consulta para obtener la contraseña y el rol del usuario
-            string query = "SELECT contrasena, Rol FROM usuarios WHERE Usuario = @usuario";
+            string query = "SELECT Contrasena, Rol, Nombre FROM usuarios WHERE Usuario = @usuario";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -93,8 +91,7 @@ namespace Clave1_GrupoDeTrabajo1
                             // Obtener la contraseña y el rol de la base de datos
                             string storedPassword = reader["Contrasena"].ToString();
                             string rol = reader["Rol"].ToString();
-
-                                 
+                            string nombre = reader["Nombre"].ToString();
 
                             // Comparar la contraseña ingresada con la almacenada
                             if (contrasena == storedPassword)
@@ -108,42 +105,32 @@ namespace Clave1_GrupoDeTrabajo1
                                         this.Hide();
                                         break;
 
-                                    case "Dueno":
-                                        PerfilDueno perfilDueno = new PerfilDueno();
+                                    case "Dueño":
+                                        PerfilDueno perfilDueno = new PerfilDueno(); 
                                         perfilDueno.Show();
                                         this.Hide();
                                         break;
 
                                    case "Administrador":
                                         AdministradorPerfil menuAdmin = new AdministradorPerfil();
-                                        menuAdmin.Show();
                                         this.Hide();
-                                        break;
-                                    default:
-                                        MessageBox.Show("Rol no válido.");
+                                        menuAdmin.InfoUser(nombre, usuario);
+                                        menuAdmin.Show();
                                         break;
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Contraseña incorrecta.");
+                                MessageBox.Show("Contraseña incorrecta", "Error :(");
                             }
-
-                            
-
                         }
                         else
                         {
-                            MessageBox.Show("Usuario no encontrado.");
+                            MessageBox.Show("Usuario no encontrado", "Error :(");
                         }
                     }
                 }
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

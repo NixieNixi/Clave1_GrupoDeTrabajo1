@@ -53,10 +53,5 @@ namespace Clave1_GrupoDeTrabajo1
             this.Hide();
             login.ShowDialog();
         }
-
-        private void MenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

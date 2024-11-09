@@ -41,7 +41,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCitas = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblUserAdmin = new System.Windows.Forms.Label();
             this.lblNombreAdmin = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -184,7 +184,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBotones.Controls.Add(this.btnCitas);
             this.panelBotones.Controls.Add(this.label5);
             this.panelBotones.Controls.Add(this.label4);
-            this.panelBotones.Controls.Add(this.label3);
+            this.panelBotones.Controls.Add(this.lblUserAdmin);
             this.panelBotones.Controls.Add(this.lblNombreAdmin);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBotones.Location = new System.Drawing.Point(0, 70);
@@ -304,17 +304,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label4.TabIndex = 7;
             this.label4.Text = "Nombre";
             // 
-            // label3
+            // lblUserAdmin
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.PowderBlue;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(24, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 20);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "canela.feliz";
+            this.lblUserAdmin.AutoSize = true;
+            this.lblUserAdmin.BackColor = System.Drawing.Color.PowderBlue;
+            this.lblUserAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserAdmin.ForeColor = System.Drawing.Color.Black;
+            this.lblUserAdmin.Location = new System.Drawing.Point(24, 88);
+            this.lblUserAdmin.Name = "lblUserAdmin";
+            this.lblUserAdmin.Size = new System.Drawing.Size(27, 20);
+            this.lblUserAdmin.TabIndex = 8;
+            this.lblUserAdmin.Text = "---";
             // 
             // lblNombreAdmin
             // 
@@ -324,9 +324,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.lblNombreAdmin.ForeColor = System.Drawing.Color.Black;
             this.lblNombreAdmin.Location = new System.Drawing.Point(24, 32);
             this.lblNombreAdmin.Name = "lblNombreAdmin";
-            this.lblNombreAdmin.Size = new System.Drawing.Size(67, 20);
+            this.lblNombreAdmin.Size = new System.Drawing.Size(27, 20);
             this.lblNombreAdmin.TabIndex = 9;
-            this.lblNombreAdmin.Text = "Galleta";
+            this.lblNombreAdmin.Text = "---";
             // 
             // label6
             // 
@@ -1546,6 +1546,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Administración";
+            this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -1580,7 +1581,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnCitas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblUserAdmin;
         private System.Windows.Forms.Label lblNombreAdmin;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

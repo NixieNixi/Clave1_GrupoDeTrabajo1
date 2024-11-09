@@ -13,9 +13,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil : Form
     {
+        string nombreUser;
+        string user;
+
         public AdministradorPerfil()
         {
             InitializeComponent();
+        }
+
+        public void InfoUser(string nombreadmin, string useradmin)
+        {
+            nombreUser = nombreadmin;
+            user = useradmin;
+
+            lblNombreAdmin.Text = nombreUser;
+            lblUserAdmin.Text = user;
         }
 
         //Metodo para cerrar el formulario mediante el boton btnCerrar
@@ -30,6 +42,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnInventario_Click(object sender, EventArgs e)
         {
             panelUsuario.Visible = false;
+        }
+
+        private void AdministradorPerfil_Load(object sender, EventArgs e)
+        {
+            Login ventana = new Login();
+            ventana.Close();
         }
     }
 }

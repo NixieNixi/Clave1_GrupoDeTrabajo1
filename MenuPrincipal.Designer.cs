@@ -87,7 +87,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
-            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
