@@ -57,6 +57,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotiVacuna = new System.Windows.Forms.TextBox();
             this.chkCirugia = new System.Windows.Forms.CheckBox();
             this.gbxInfoConsulta = new System.Windows.Forms.GroupBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.lblSintomas = new System.Windows.Forms.Label();
             this.lblExamFisico = new System.Windows.Forms.Label();
             this.lblDiagnostico = new System.Windows.Forms.Label();
@@ -90,9 +91,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotiConsulta = new System.Windows.Forms.TextBox();
             this.lblMotiConsulta = new System.Windows.Forms.Label();
             this.lblIdMascota = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.lblEspecie = new System.Windows.Forms.Label();
             this.lblEstadoCita = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtEspecie = new System.Windows.Forms.TextBox();
             this.lblNomMascota = new System.Windows.Forms.Label();
             this.txtNomMascota = new System.Windows.Forms.TextBox();
@@ -101,9 +104,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtPeso = new System.Windows.Forms.TextBox();
-            this.txtSexo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -185,6 +185,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoExamen
             // 
+            this.cbxTipoExamen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoExamen.Enabled = false;
             this.cbxTipoExamen.FormattingEnabled = true;
             this.cbxTipoExamen.Items.AddRange(new object[] {
@@ -297,6 +298,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoVacuna
             // 
+            this.cbxTipoVacuna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoVacuna.Enabled = false;
             this.cbxTipoVacuna.FormattingEnabled = true;
             this.cbxTipoVacuna.Items.AddRange(new object[] {
@@ -425,6 +427,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoConsulta.TabIndex = 11;
             this.gbxInfoConsulta.TabStop = false;
             this.gbxInfoConsulta.Text = "Informacion de la Consulta";
+            // 
+            // txtPeso
+            // 
+            this.txtPeso.Location = new System.Drawing.Point(496, 96);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(80, 20);
+            this.txtPeso.TabIndex = 18;
             // 
             // lblSintomas
             // 
@@ -555,6 +564,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxTipoCirugia
             // 
+            this.cbxTipoCirugia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoCirugia.Enabled = false;
             this.cbxTipoCirugia.FormattingEnabled = true;
             this.cbxTipoCirugia.Items.AddRange(new object[] {
@@ -751,6 +761,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblIdMascota.TabIndex = 15;
             this.lblIdMascota.Text = "ID Mascota";
             // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Sexo";
+            // 
             // lblEspecie
             // 
             this.lblEspecie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -783,6 +804,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label9.Size = new System.Drawing.Size(39, 13);
             this.label9.TabIndex = 17;
             this.label9.Text = "ID Cita";
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.Enabled = false;
+            this.txtSexo.Location = new System.Drawing.Point(144, 128);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.ReadOnly = true;
+            this.txtSexo.Size = new System.Drawing.Size(96, 20);
+            this.txtSexo.TabIndex = 6;
             // 
             // txtEspecie
             // 
@@ -869,33 +899,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Veterinaria Cat-Dog";
-            // 
-            // txtPeso
-            // 
-            this.txtPeso.Location = new System.Drawing.Point(496, 96);
-            this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(80, 20);
-            this.txtPeso.TabIndex = 18;
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Enabled = false;
-            this.txtSexo.Location = new System.Drawing.Point(144, 128);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.ReadOnly = true;
-            this.txtSexo.Size = new System.Drawing.Size(96, 20);
-            this.txtSexo.TabIndex = 6;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Sexo";
             // 
             // veterinarioCita
             // 
