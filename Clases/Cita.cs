@@ -26,7 +26,7 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public Cita() { }
 
         public Cita(int idCita,  string motivo, string sintomas, string diagnostico,
-            string tratamiento, string examenFisico, string notas, string medicamentos)
+            string tratamiento, string examenFisico, string notas, string medicamentos, DateTime fecha)
         {
             IdCita = idCita;
             Motivo = motivo;
@@ -36,6 +36,7 @@ namespace Clave1_GrupoDeTrabajo1.Clases
             Tratamiento = tratamiento;
             Medicamentos = medicamentos;
             Notas = notas;
+            Fecha = fecha;
 
         }
 

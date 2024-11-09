@@ -47,10 +47,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.MotivoVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHCirugia = new System.Windows.Forms.DataGridView();
-            this.IdCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dgvHCitas = new System.Windows.Forms.DataGridView();
             this.lblHistorialVacunas = new System.Windows.Forms.Label();
@@ -92,6 +88,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHoraCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).BeginInit();
@@ -267,6 +268,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCirugia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHCirugia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdCirugia,
+            this.FechaHoraCirugia,
             this.TipoCirugia,
             this.DescripcionCirugia,
             this.MotivoCirugia});
@@ -274,30 +276,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCirugia.Name = "dgvHCirugia";
             this.dgvHCirugia.Size = new System.Drawing.Size(848, 150);
             this.dgvHCirugia.TabIndex = 5;
-            // 
-            // IdCirugia
-            // 
-            this.IdCirugia.HeaderText = "ID Cirugia";
-            this.IdCirugia.Name = "IdCirugia";
-            this.IdCirugia.ReadOnly = true;
-            // 
-            // TipoCirugia
-            // 
-            this.TipoCirugia.HeaderText = "Tipo de Cirugia";
-            this.TipoCirugia.Name = "TipoCirugia";
-            this.TipoCirugia.ReadOnly = true;
-            // 
-            // DescripcionCirugia
-            // 
-            this.DescripcionCirugia.HeaderText = "Descripcion de Cirugia";
-            this.DescripcionCirugia.Name = "DescripcionCirugia";
-            this.DescripcionCirugia.ReadOnly = true;
-            // 
-            // MotivoCirugia
-            // 
-            this.MotivoCirugia.HeaderText = "Motivo de Cirugia";
-            this.MotivoCirugia.Name = "MotivoCirugia";
-            this.MotivoCirugia.ReadOnly = true;
             // 
             // dtpFecha
             // 
@@ -675,6 +653,36 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Notas.Name = "Notas";
             this.Notas.ReadOnly = true;
             // 
+            // IdCirugia
+            // 
+            this.IdCirugia.HeaderText = "ID Cirugia";
+            this.IdCirugia.Name = "IdCirugia";
+            this.IdCirugia.ReadOnly = true;
+            // 
+            // FechaHoraCirugia
+            // 
+            this.FechaHoraCirugia.HeaderText = "Fecha y Hora";
+            this.FechaHoraCirugia.Name = "FechaHoraCirugia";
+            this.FechaHoraCirugia.ReadOnly = true;
+            // 
+            // TipoCirugia
+            // 
+            this.TipoCirugia.HeaderText = "Tipo de Cirugia";
+            this.TipoCirugia.Name = "TipoCirugia";
+            this.TipoCirugia.ReadOnly = true;
+            // 
+            // DescripcionCirugia
+            // 
+            this.DescripcionCirugia.HeaderText = "Descripcion de Cirugia";
+            this.DescripcionCirugia.Name = "DescripcionCirugia";
+            this.DescripcionCirugia.ReadOnly = true;
+            // 
+            // MotivoCirugia
+            // 
+            this.MotivoCirugia.HeaderText = "Motivo de Cirugia";
+            this.MotivoCirugia.Name = "MotivoCirugia";
+            this.MotivoCirugia.ReadOnly = true;
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -750,10 +758,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn MotivoVacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProximaDosis;
         private System.Windows.Forms.DataGridView dgvHCitas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCirugia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCirugia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionCirugia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoCirugia;
         private System.Windows.Forms.DataGridView dgvHExamenes;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -770,5 +774,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn Tratamiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn Medicamentos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Notas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaHoraCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionCirugia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoCirugia;
     }
 }

@@ -254,7 +254,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 SELECT DISTINCT
                     citas.idCita, 
                     citas.Motivo, 
-                    citas.Fecha,
+                    consultas.FechaHora,
                     consultas.Sintomas, 
                     consultas.ExamenFisico, 
                     consultas.Diagnostico, 
@@ -295,7 +295,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     
 
                                     IdCita = reader.GetInt32("idCita"),
-                                    Fecha = reader.GetDateTime("Fecha"),
+                                    Fecha = reader.GetDateTime("FechaHora"),
                                     Motivo = reader["motivo"].ToString(),
                                     Sintomas = reader["sintomas"].ToString(),
                                     ExamenFisico = reader["examenFisico"].ToString(),
@@ -343,7 +343,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         cirugia.idCirugia, 
                         cirugia.Tipo, 
                         cirugia.Descripcion, 
-                        cirugia.Motivo
+                        cirugia.Motivo,
+                        cirugia.Fecha
                     FROM 
                         cirugia 
                     WHERE 
@@ -370,6 +371,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 Cirugia cirugia = new Cirugia
                                 {
                                     IdCirugia = reader.GetInt32("idCirugia"),
+                                    FechaHoraCirugia = reader.GetDateTime("fechaHora"),
                                     Tipo = reader["Tipo"].ToString(),
                                     Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()
@@ -380,6 +382,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                 dgvHCirugia.Rows.Add(
                                     cirugia.IdCirugia,
+                                    cirugia.FechaHoraCirugia,
                                     cirugia.Tipo,
                                     cirugia.Descripcion,
                                     cirugia.Motivo
