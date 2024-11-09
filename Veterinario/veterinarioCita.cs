@@ -13,6 +13,7 @@ using Clave1_GrupoDeTrabajo1.Clases;
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
     /// Autor: NixieNixi
+    /// Co-Autores: RaRMustis,CanelaFeliz,Esmeralda
     /// Fecha creacion: 21/10/2024
     /// Version: 1.0.0
     /// Descripcion: Este formulario maneja la interfaz para los citas de veterinarios
@@ -54,6 +55,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Fecha de Modificacion: 08/11/2024
     /// Descripcion:
     /// Se le agrego validaciones a los metodos de guardar, vacuna,citas,examen y cirugia, FALTA TESTEO
+    /// Se reordeno, en backend para un mejor entendienmiento, se agrego funcion a cirugia.
     /// 
     /// Autor: CanelaFeliz
     /// Fecha: 08/11/2024
@@ -276,6 +278,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtEstadoCita.Clear();
             txtMotiConsulta.Clear();
             dtpFechaHora.Value = DateTime.Now;
+            txtMotiConsulta.Clear();
+            txtSintomas.Clear();
+            txtDiagnostico.Clear();
+            txtTratamiento.Clear();
+            txtMedicamentos.Clear();
+            txtExamFisico.Clear();
+            txtNotasCita.Clear();
+            mtxtPeso.Clear();
         }
 
         /// <summary>
@@ -366,7 +376,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
 
 
-                    // Aquí ejecutas el comando para insertar en la base de datos
+                    
                     try
                     {
 
