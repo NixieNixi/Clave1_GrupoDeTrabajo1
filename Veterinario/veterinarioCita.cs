@@ -101,7 +101,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    string query = "SELECT Nombre, Especie FROM mascotas WHERE idMascota = @idMascota;";
+                    string query = "SELECT Nombre, Especie, Sexo FROM mascotas WHERE idMascota = @idMascota;";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@idMascota", IdSeleccion);
@@ -115,6 +115,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 {
                                     txtNomMascota.Text = reader["Nombre"].ToString();
                                     txtEspecie.Text = reader["Especie"].ToString();
+                                    txtSexo.Text = reader["Sexo"].ToString();
                                 }
                             }
                             else
@@ -288,7 +289,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtEstadoCita.Clear();
             txtMotiConsulta.Clear();
             dtpFechaHora.Value = DateTime.Now;
-            txtMotiConsulta.Clear();
             txtSintomas.Clear();
             txtDiagnostico.Clear();
             txtTratamiento.Clear();
