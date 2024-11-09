@@ -371,7 +371,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 Cirugia cirugia = new Cirugia
                                 {
                                     IdCirugia = reader.GetInt32("idCirugia"),
-                                    FechaHoraCirugia = reader.GetDateTime("fechaHora"),
+                                    FechaHoraCirugia = reader.GetDateTime("Fecha"),
                                     Tipo = reader["Tipo"].ToString(),
                                     Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()
