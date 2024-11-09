@@ -31,6 +31,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             this.panelVeterinarioCita = new System.Windows.Forms.Panel();
             this.chkExamen = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.chkVacuna = new System.Windows.Forms.CheckBox();
             this.gbxInfoExamen = new System.Windows.Forms.GroupBox();
             this.cbxTipoExamen = new System.Windows.Forms.ComboBox();
@@ -101,7 +102,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -140,6 +140,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.chkExamen.TabIndex = 31;
             this.chkExamen.Text = "Ingresar Informacion de Examen";
             this.chkExamen.UseVisualStyleBackColor = true;
+            this.chkExamen.CheckedChanged += new System.EventHandler(this.chkExamen_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(0, 962);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.TabIndex = 17;
             // 
             // chkVacuna
             // 
@@ -150,6 +159,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.chkVacuna.TabIndex = 30;
             this.chkVacuna.Text = "Ingresar Informacion de Vacuna";
             this.chkVacuna.UseVisualStyleBackColor = true;
+            this.chkVacuna.CheckedChanged += new System.EventHandler(this.chkVacuna_CheckedChanged);
             // 
             // gbxInfoExamen
             // 
@@ -863,14 +873,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 3;
             this.label2.Text = "Veterinaria Cat-Dog";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(0, 962);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
-            this.label1.TabIndex = 17;
             // 
             // veterinarioCita
             // 
