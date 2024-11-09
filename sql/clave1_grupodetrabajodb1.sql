@@ -25,12 +25,16 @@ DROP TABLE IF EXISTS `cirugia`;
 CREATE TABLE `cirugia` (
   `idCirugia` int NOT NULL AUTO_INCREMENT,
   `idMascota` int NOT NULL,
+  `idCita` int NOT NULL,
+  `FechaHora` datetime NOT NULL,
   `Tipo` enum('Castracion','Extraccion de objeto','Absceso','Lavado gastrico','Cesarea') NOT NULL,
   `Descripcion` longtext NOT NULL,
   `Motivo` varchar(255) NOT NULL,
   `Materiales` longtext NOT NULL,
   PRIMARY KEY (`idCirugia`),
   KEY `fk_idMascotaCirugia_idx` (`idMascota`),
+  KEY `idCItaCirugia_idx` (`idCita`),
+  CONSTRAINT `idCItaCirugia` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
   CONSTRAINT `idMascotaCirugia` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -83,6 +87,7 @@ DROP TABLE IF EXISTS `consultas`;
 CREATE TABLE `consultas` (
   `idConsulta` int NOT NULL AUTO_INCREMENT,
   `idMascota` int NOT NULL,
+  `idCita` int NOT NULL,
   `FechaHora` datetime NOT NULL,
   `Peso` decimal(5,2) NOT NULL,
   `Motivo` varchar(255) DEFAULT NULL,
@@ -94,6 +99,8 @@ CREATE TABLE `consultas` (
   `Notas` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`idConsulta`),
   KEY `idMascotaConsulta_idx` (`idMascota`),
+  KEY `idcitaconsulta_idx` (`idCita`),
+  CONSTRAINT `idcitaconsulta` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
   CONSTRAINT `idMascotaConsulta` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -117,12 +124,16 @@ DROP TABLE IF EXISTS `examen`;
 CREATE TABLE `examen` (
   `idExamen` int NOT NULL AUTO_INCREMENT,
   `idMascota` int NOT NULL,
+  `idCita` int NOT NULL,
+  `FechaHora` datetime NOT NULL,
   `Tipo` enum('Sangre','Sida felino','Leucemia felino','Radiografia','Ultrasonido') NOT NULL,
   `Descripcion` longtext NOT NULL,
   `Motivo` varchar(255) NOT NULL,
   `Materiales` mediumtext NOT NULL,
   PRIMARY KEY (`idExamen`),
   KEY `idMascotaExamen_idx` (`idMascota`),
+  KEY `idCita_idx` (`idCita`),
+  CONSTRAINT `idCita` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
   CONSTRAINT `idMascotaExamen` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -289,12 +300,16 @@ DROP TABLE IF EXISTS `vacuna`;
 CREATE TABLE `vacuna` (
   `idVacuna` int NOT NULL AUTO_INCREMENT,
   `idMascota` int NOT NULL,
+  `idCita` int NOT NULL,
+  `FechaHora` datetime NOT NULL,
   `Tipo` enum('Perro Moquillo','Perro Parvovirus','Perro Hepatitis','Perro Leptospirosis','Gato Leucemia','Gato Calicivirus','Gato Herpesvirus','Gato Panleucopenia','Rabia') NOT NULL,
   `Descripcion` longtext,
   `Motivo` varchar(255) NOT NULL,
   `Materiales` mediumtext NOT NULL,
   PRIMARY KEY (`idVacuna`),
   KEY `idMascotaVacuna_idx` (`idMascota`),
+  KEY `idCitaVacuna_idx` (`idCita`),
+  CONSTRAINT `idCitaVacuna` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
   CONSTRAINT `idMascotaVacuna` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -317,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-09 13:41:37
+-- Dump completed on 2024-11-09 15:16:03
