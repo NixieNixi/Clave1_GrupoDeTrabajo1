@@ -16,19 +16,49 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         public CitaMascota()
         {
             InitializeComponent();
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-            //Aca no era perdón
+            ActualizarMascotas();
         }
 
         private void btnPerfilD_Click(object sender, EventArgs e)
         {
             //se enlaza conel perfil mediante el boton
             PerfilDueno VerDueño = new PerfilDueno();
+            this.Hide();
             VerDueño.ShowDialog();
+        }
+
+        private void ActualizarMascotas()
+        {
+            //Limpia los elementos del comboBox ID Mascota
+            cbxIDMascD.Items.Clear();
+
+            //Intentar conectar a DB
+            try
+            {
+                //Crea una conexion a la DB
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    //Consulta la columna idMascota de la tabla mascotas y ordena los resultados por orden acendente
+                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        connection.Open();
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                //Inserta los registros de idMascota en el comboBox ID Mascota
+                                cbxIDMascD.Items.Add(reader["idMascota"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                //Si no puede conectar mostrar mensaje de error
+                MessageBox.Show("Error de conexion a Base de Datos", "Error :(");
+            }
         }
 
         private void btnProgramarCitaD_Click(object sender, EventArgs e)
@@ -41,7 +71,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 using (MySqlCommand command = new MySqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
+                    command.Parameters.AddWithValue("@IDUsuario", txtNomUsuD.Text);
                     command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
                     command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
                     command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
@@ -76,7 +106,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                      VALUES (@FechaHora, @Motivo, @Estado, @IDUsuario, @IDMascota)", connection);
 
                 // Asigna los valores nuevos
-                command.Parameters.AddWithValue("@IDUsuario", txtIDUsuD.Text);
+                command.Parameters.AddWithValue("@IDUsuario", txtNomUsuD.Text);
                 command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
                 command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
 

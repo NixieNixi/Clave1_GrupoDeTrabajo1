@@ -23,6 +23,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
            //se enlaza con la tienda mediantte el boton correspondiente 
             Tienda Comprar = new Tienda();
+            this.Hide();
             Comprar.ShowDialog();
         }
 
@@ -30,6 +31,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             //se enlaza con el perfil de mascota con su boton correspondiente
             PerfilMascota VerPerMascota = new PerfilMascota();
+            this.Hide();
             VerPerMascota.ShowDialog();
         }
 
@@ -37,22 +39,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             //se enlaza con su boton a la cita
             CitaMascota VerCitas = new CitaMascota();
+            this.Hide();
             VerCitas.ShowDialog();
-        }
-
-        private void PerfilDueño_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

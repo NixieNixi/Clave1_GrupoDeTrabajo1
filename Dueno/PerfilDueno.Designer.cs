@@ -204,7 +204,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(585, 84);
             this.panel2.TabIndex = 14;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // label6
             // 
@@ -241,7 +240,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(626, 55);
             this.panel1.TabIndex = 15;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label8
             // 
@@ -273,7 +271,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label1);
             this.Name = "PerfilDueno";
             this.Text = "PerfilDueño";
-            this.Load += new System.EventHandler(this.PerfilDueño_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
