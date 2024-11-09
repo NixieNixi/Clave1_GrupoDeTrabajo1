@@ -8,6 +8,18 @@ using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
+    /// <summary>
+    /// Autor: CanelaFeliz
+    /// Fecha: 06/11/2024
+    /// Descripcion: Parte de la clase AdministradorPerfil que se encarga de las funciones del panel AdminCitas donde se
+    /// realizan las funciones para la gestion de citas (Programar, Reprogramar, Cancelar)
+    /// </summary>
+
+    ///<remarks>
+    ///Modificado por: CanelaFeliz
+    ///Fecha de modificacion: 07/10/24
+    ///Aparentemente esta completo
+    ///</remarks>
     public partial class AdministradorPerfil
     {
         /// <summary>
@@ -29,6 +41,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelUsuario.Dock = DockStyle.None;
             panelBtnUsuarios.Visible = false;
             panelBtnUsuarios.Dock = DockStyle.None;
+            panelPagos.Visible = false;
+            panelPagos.Dock = DockStyle.None;
+            panelBtnPagos.Visible = false;
+            panelBtnPagos.Dock = DockStyle.None;
 
             //Se muestran los paneles de Usuario
             panelBtnCitas.Dock = DockStyle.Bottom;
