@@ -13,6 +13,7 @@ using Clave1_GrupoDeTrabajo1.Clases;
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
     /// Autor: NixieNixi
+    /// Co-Autores: RaRMustis,CanelaFeliz,Esmeralda
     /// Fecha creacion: 21/10/2024
     /// Version: 1.0.0
     /// Descripcion: Este formulario maneja la interfaz para los citas de veterinarios
@@ -54,10 +55,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Fecha de Modificacion: 08/11/2024
     /// Descripcion:
     /// Se le agrego validaciones a los metodos de guardar, vacuna,citas,examen y cirugia, FALTA TESTEO
+    /// Se reordeno, en backend para un mejor entendienmiento, se agrego funcion a cirugia. y se agrego el la funcion faltante de LimpiarControlesMascota
     /// 
     /// Autor: CanelaFeliz
     /// Fecha: 08/11/2024
     /// Descripcion: Se cambio el diseño del formulario y se agregaron funciones para cargar los idMascota e idCita
+    /// 
+    /// Autor: CanelaFeliz
+    /// Fecha: 09/11/2024
+    /// Descripcion: Se agrego funcion para limpiar los controles de consulta, se agrego comportamiento de limmpiar todos los controles si se cambia el
+    /// idMascota. se reorganizo el codigo por funciones
     ///</remarks>
 
     public partial class veterinarioCita : Form
@@ -70,11 +77,23 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
+        /// Variables que se utilizan para los distintos metodos
+        /// </summary>
+        private bool Cirugia = false;
+        private bool Vacuna = false;
+        private bool Examen = false;
+
+        //INICIO INFORMACION DE LA MASCOTA
+        /// <summary>
         /// Evento de cambio de seleccion de idMascota que carga la info de la mascota seleccionada y si tiene citas carga los idCita
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             LimpiarControlesMascota();
+            LimpiarControlesConsulta();
+            LimpiarControlesVacuna();
+            LimpiarControlesExamen();
+            LimpiarControlesCirugia();
 
             string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
             try
@@ -113,7 +132,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Funcion para cargar los idCita en el combobox
+        /// Evento para cuando cambia la selección del ComboBox
+        /// </summary>
+        private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Verifica si no hay una selección (índice -1) y limpia los controles
+            if (cbxIdCita.SelectedIndex == -1)
+            {
+                LimpiarControlesMascota();
+            }
+            else
+            {
+
+                // Obtiene el ID de cita seleccionado como cadena de texto
+                string selectedCitaId = cbxIdCita.SelectedItem.ToString();
+
+                // Llama al método CargarDatos para obtener los datos de la cita seleccionada
+                CargarDatos(selectedCitaId);
+            }
+        }
+
+        /// <summary>
+        /// Funcion para cargar los idCita en el combobox si la mascota tiene citas programadas
         /// </summary>
         private void CargarIdCita()
         {
@@ -198,26 +238,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Evento para cuando cambia la selección del ComboBox
-        /// </summary>
-        private void cbxIdCita_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Verifica si no hay una selección (índice -1) y limpia los controles
-            if (cbxIdCita.SelectedIndex == -1)
-            {
-                LimpiarControlesMascota();
-            }
-            else
-            {
-                // Obtiene el ID de cita seleccionado como cadena de texto
-                string selectedCitaId = cbxIdCita.SelectedItem.ToString();
-
-                // Llama al método CargarDatos para obtener los datos de la cita seleccionada
-                CargarDatos(selectedCitaId);
-            }
-        }
-
-        /// <summary>
         /// Función para cargar los datos de la cita y la mascota asociada
         /// </summary>
         /// <param name="selectedCitaId">ID de la cita seleccionada en el ComboBox</param>
@@ -258,7 +278,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         }
 
-
         /// <summary>
         /// Metodo que limpia los controles del formulario veterinarioCita de la informacion de mascota
         /// </summary>
@@ -268,8 +287,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             txtEstadoCita.Clear();
             txtMotiConsulta.Clear();
             dtpFechaHora.Value = DateTime.Now;
+            txtMotiConsulta.Clear();
+            txtSintomas.Clear();
+            txtDiagnostico.Clear();
+            txtTratamiento.Clear();
+            txtMedicamentos.Clear();
+            txtExamFisico.Clear();
+            txtNotasCita.Clear();
+            mtxtPeso.Clear();
         }
 
+        //FIN INFORMACION DE LA MASCOTA
+
+        /// <summary>
+        /// Metodo que guarda, GuardarConsulta por defecto, y si el check de algun groupbox esta activado, entonces lo guarda
+        /// siempre y cuando los datos sena validos, si no da errror.
+        /// </summary>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
             // Guardar siempre la consulta
@@ -286,14 +319,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 GuardarExamen();
             }
 
-            //if (Cirugia)
-            //{
-            //    GuardarCirugia();
-            //}
+            if (Cirugia)
+            {
+                GuardarCirugia();
+            }
 
             // Mensaje de confirmación
             MessageBox.Show("La información se ha guardado correctamente.");
         }
+
+        /// <summary>
+        /// Metodo que cancela el ingreso de citas
+        /// </summary>
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        //INICIO CONSULTA
 
         /// <summary>
         /// Metodo que guarda en la DB la consulta de la mascota
@@ -322,22 +365,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         return;
                     }
 
-
                     if (string.IsNullOrWhiteSpace(cbxIdMascota.Text))
                     {
                         MessageBox.Show("Por favor, introduce un valor de ID.");
                         return;
                     }
 
-
                     DateTime fechaHora = dtpFechaHora.Value;
-                    //Que se evite elejir fechas que son futuras
+                    //Que se evite elegir fechas que son futuras
                     if (fechaHora > DateTime.Now)
                     {
                         MessageBox.Show("La fecha no puede ser futura.");
                         return;
                     }
-
 
                     command.Parameters.AddWithValue("@idmascota", cbxIdMascota.Text.Trim());
                     command.Parameters.AddWithValue("@peso", Math.Round(peso, 2));
@@ -350,9 +390,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     command.Parameters.AddWithValue("@fechaHora", fechaHora);
                     command.Parameters.AddWithValue("@motivo", txtMotiConsulta.Text.Trim());
 
-
-
-                    // Aquí ejecutas el comando para insertar en la base de datos
                     try
                     {
 
@@ -365,6 +402,46 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         MessageBox.Show("Error al guardar el registro: " + ex.Message);
                     }
                 }
+            }
+        }
+
+        private void LimpiarControlesConsulta()
+        {
+            txtSintomas.Clear();
+            txtTratamiento.Clear();
+            txtExamFisico.Clear();
+            txtMedicamentos.Clear();
+            txtDiagnostico.Clear();
+            mtxtPeso.Clear();
+            txtNotasCita.Clear();
+        }
+
+        //FIN CONSULTA
+
+        //INICIO VACUNA
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
+        /// </summary>
+        private void chkVacuna_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkVacuna.Checked)
+            {
+                // Activar controles
+                ActivarControlesVacuna(true);
+
+                // Cambiar el valor de la variable
+                Vacuna = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesVacuna(false);
+
+                LimpiarControlesVacuna();
+
+                // Cambiar el valor de la variable
+                Vacuna = false;
             }
         }
 
@@ -410,9 +487,67 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la vacuna
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesVacuna(bool estado)
+        {
+            cbxTipoVacuna.Enabled = estado;
+            txtMotiVacuna.Enabled = estado;
+            txtUsaMaterialesVacuna.Enabled = estado;
+            txtDescripcionVacuna.Enabled = estado;
+            txtNotasVacuna.Enabled = estado;
+        }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la vacuna
+        /// </summary>
+        private void LimpiarControlesVacuna()
+        {
+            cbxTipoVacuna.SelectedIndex = -1;
+            txtMotiVacuna.Clear();
+            txtUsaMaterialesVacuna.Clear();
+            txtDescripcionVacuna.Clear();
+            txtNotasVacuna.Clear();
+        }
+
+        //FIN VACUNA
+
+        //INICIO EXAMEN
+
+        /// <summary>
+        /// metodo que activa y desactiva los controles del examen
+        /// </summary>
+        private void chkExamen_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkExamen.Checked)
+            {
+                // Activar controles
+                ActivarControlesExamen(true);
+
+                // Cambiar el valor de la variable
+                Vacuna = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesExamen(false);
+
+                LimpiarControlesExamen();
+
+                // Cambiar el valor de la variable
+                Examen = false;
+            }
+
+
+        }
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkExamen
+        /// </summary>
         private void GuardarExamen()
         {
-
             if (string.IsNullOrWhiteSpace(cbxIdMascota.Text) || string.IsNullOrWhiteSpace(cbxTipoExamen.Text) ||
                 string.IsNullOrWhiteSpace(txtMotiExamen.Text) || string.IsNullOrWhiteSpace(txtUsaMaterialesExamen.Text))
             {
@@ -420,7 +555,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
 
             string query = @"
             INSERT INTO examen (idMascota, Tipo, Descripcion, Motivo, Materiales)
@@ -448,6 +582,64 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+        /// <summary>
+        ///Función para activar y desactivar controles relacionados con la vacuna
+        /// </summary>
+        /// <param name="estado"></param>
+        private void ActivarControlesExamen(bool estado)
+        {
+            cbxTipoExamen.Enabled = estado;
+            txtMotiExamen.Enabled = estado;
+            txtUsaMaterialesExamen.Enabled = estado;
+            txtDescripcionExamen.Enabled = estado;
+            txtNotasExamen.Enabled = estado;
+        }
+
+        /// <summary>
+        /// // Función para limpiar los campos relacionados con la vacuna
+        /// </summary>
+        private void LimpiarControlesExamen()
+        {
+            cbxTipoExamen.SelectedIndex = -1;
+            txtMotiExamen.Clear();
+            txtUsaMaterialesExamen.Clear();
+            txtDescripcionExamen.Clear();
+            txtNotasExamen.Clear();
+        }
+
+        //FIN EXAMEN
+
+        //INICIO CIRUGIA
+
+        /// <summary>
+        /// Evento que se ejecuta cuando se marca o desmarca el chkCirugia
+        /// </summary>
+        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkCirugia.Checked)
+            {
+                // Activar controles
+                ActivarControlesCirugia(true);
+
+                // Cambiar el valor de la variable
+                Cirugia = true;
+            }
+            else
+            {
+                // Desactivar controles y limpia los campos
+                ActivarControlesCirugia(false);
+
+                LimpiarControlesCirugia();
+
+                // Cambiar el valor de la variable
+                Cirugia = false;
+            }
+
+        }
+
+        /// <summary>
+        /// Metodo que guarda los datos de cirugia que se ingresen, siempre y cuando cumplan con las validaciones
+        /// </summary>
         private void GuardarCirugia()
         {
 
@@ -483,166 +675,36 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     MessageBox.Show("Error al guardar la Cirugia: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+
+
         }
-
-        //FIN FUNCIONE DE BTNGUARDAR
-
-
-
-        // Verifica si hay datos ingresados en los campos
-        private bool IsDataValid()
-        {
-            return !string.IsNullOrEmpty(txtMotiExamen.Text) ||
-                   !string.IsNullOrEmpty(txtDescripcionExamen.Text) ||
-                   !string.IsNullOrEmpty(txtUsaMaterialesExamen.Text) ||
-                   !string.IsNullOrEmpty(txtNotasExamen.Text) ||
-                   cbxTipoExamen.SelectedItem != null;
-        }
-
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            // Aquí va el código para cancelar la operación, por ejemplo:
-            this.Close(); // Cerrar el formulario
-        }
-
-
-        // Variable global para indicar si hay vacuna
-        private bool Vacuna = false;
 
         /// <summary>
-        /// Evento que se ejecuta cuando se marca o desmarca el chkVacuna
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkVacuna_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkVacuna.Checked)
-            {
-                // Activar controles
-                ActivarControlesVacuna(true);
-
-                // Cambiar el valor de la variable
-                Vacuna = true;
-            }
-            else
-            {
-                // Desactivar controles y limpia los campos
-                ActivarControlesVacuna(false);
-
-                LimpiarControlesVacuna();
-
-                // Cambiar el valor de la variable
-                Vacuna = false;
-            }
-        }
-
-
-        /// <summary>
-        ///Función para activar y desactivar controles relacionados con la vacuna
+        ///Función para activar y desactivar controles relacionados con la Cirugia
         /// </summary>
         /// <param name="estado"></param>
-        private void ActivarControlesVacuna(bool estado)
+        private void ActivarControlesCirugia(bool estado)
         {
-            cbxTipoVacuna.Enabled = estado;
-            txtMotiVacuna.Enabled = estado;
-            txtUsaMaterialesVacuna.Enabled = estado;
-            txtDescripcionVacuna.Enabled = estado;
-            txtNotasVacuna.Enabled = estado;
+            cbxTipoCirugia.Enabled = estado;
+            txtMotiCirugia.Enabled = estado;
+            txtUsaMaterialesCirugia.Enabled = estado;
+            txtDescripcionCirugia.Enabled = estado;
+            txtNotasCirugia.Enabled = estado;
         }
 
         /// <summary>
-        /// // Función para limpiar los campos relacionados con la vacuna
+        /// // Función para limpiar los campos relacionados con la Cirugia
         /// </summary>
-        private void LimpiarControlesVacuna()
+        private void LimpiarControlesCirugia()
         {
-            cbxTipoVacuna.SelectedIndex = -1;
+            cbxTipoCirugia.SelectedIndex = -1;
             txtMotiVacuna.Clear();
-            txtUsaMaterialesVacuna.Clear();
-            txtDescripcionVacuna.Clear();
-            txtNotasVacuna.Clear();
+            txtUsaMaterialesCirugia.Clear();
+            txtDescripcionCirugia.Clear();
+            txtNotasCirugia.Clear();
         }
 
-
-
-        // Variable global para indicar si hay Examen
-        private bool Examen = false;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkExamen_CheckedChanged(object sender, EventArgs e)
-        {
-            //bool isExamenChecked = chkExamen.Checked;
-            //cbxTipoExamen.Enabled = isExamenChecked;
-            //txtDescripcionExamen.Enabled = isExamenChecked;
-            //txtNotasExamen.Enabled = isExamenChecked;
-            //txtNotasExamen.Enabled = isExamenChecked;
-            //txtUsaMateriaesExamen.Enabled = isExamenChecked;
-            //txtMotiExamen.Enabled = isExamenChecked;
-
-            if (chkExamen.Checked)
-            {
-                // Activar controles
-                ActivarControlesExamen(true);
-
-                // Cambiar el valor de la variable
-                Vacuna = true;
-            }
-            else
-            {
-                // Desactivar controles y limpia los campos
-                ActivarControlesExamen(false);
-
-                //LimpiarControlesExamen();
-
-                // Cambiar el valor de la variable
-                Examen = false;
-            }
-
-
-        }
-
-        //Hace falta el metodo de LimpiarControlesExamen
-
-        /// <summary>
-        ///Función para activar y desactivar controles relacionados con la vacuna
-        /// </summary>
-        /// <param name="estado"></param>
-        private void ActivarControlesExamen(bool estado)
-        {
-            cbxTipoExamen.Enabled = estado;
-            txtMotiExamen.Enabled = estado;
-            txtUsaMaterialesExamen.Enabled = estado;
-            txtDescripcionExamen.Enabled = estado;
-            txtNotasExamen.Enabled = estado;
-        }
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkCirugia_CheckedChanged(object sender, EventArgs e)
-        {
-            //bool isCirugiaChecked = chkCirugia.Checked;
-            //cbxTipoCirugia.Enabled = isCirugiaChecked;
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void chkConsulta_CheckedChanged(object sender, EventArgs e)
-        {
-            //bool isConsultaCheked = chkConsulta.Checked;
-            //txtMotiConsulta.Enabled = isConsultaCheked;
-        }
+        //FIN CIRUGIA
     }
 }
