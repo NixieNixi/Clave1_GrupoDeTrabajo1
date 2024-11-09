@@ -676,8 +676,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // dtpFechaHora
             // 
-            this.dtpFechaHora.CustomFormat = "dd/MM/yyyy HH:mm";
+            this.dtpFechaHora.CustomFormat = "dd MMMM yyyy -- HH:mm";
             this.dtpFechaHora.Enabled = false;
+            this.dtpFechaHora.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpFechaHora.Location = new System.Drawing.Point(496, 96);
             this.dtpFechaHora.Name = "dtpFechaHora";
             this.dtpFechaHora.Size = new System.Drawing.Size(200, 20);
@@ -717,9 +718,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblMotiConsulta.AutoSize = true;
             this.lblMotiConsulta.Location = new System.Drawing.Point(408, 128);
             this.lblMotiConsulta.Name = "lblMotiConsulta";
-            this.lblMotiConsulta.Size = new System.Drawing.Size(80, 13);
+            this.lblMotiConsulta.Size = new System.Drawing.Size(83, 13);
             this.lblMotiConsulta.TabIndex = 14;
-            this.lblMotiConsulta.Text = "MotivoConsulta";
+            this.lblMotiConsulta.Text = "Motivo Consulta";
             // 
             // lblIdMascota
             // 
@@ -816,6 +817,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdCita
             // 
+            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdCita.Enabled = false;
             this.cbxIdCita.FormattingEnabled = true;
             this.cbxIdCita.Location = new System.Drawing.Point(496, 32);

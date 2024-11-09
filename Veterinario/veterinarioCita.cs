@@ -74,6 +74,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
+            LimpiarControlesMascota();
+
             string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
             try
             {
@@ -144,7 +146,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             else
                             {
                                 cbxIdCita.Enabled = false;
-                                cbxIdCita.Text = "No se encontraron citas";
+                                cbxIdCita.Items.Add("No se encontraron citas");
+                                cbxIdCita.SelectedIndex = 0;
                             }
                         }
                     }
@@ -202,24 +205,17 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // Verifica si no hay una selección (índice -1) y limpia los controles
             if (cbxIdCita.SelectedIndex == -1)
             {
-                LimpiarControles();
+                LimpiarControlesMascota();
             }
             else
             {
                 // Obtiene el ID de cita seleccionado como cadena de texto
                 string selectedCitaId = cbxIdCita.SelectedItem.ToString();
 
-
-                // Muestra un mensaje con el ID de cita seleccionado
-                MessageBox.Show("ID de Cita Seleccionado: " + selectedCitaId);
-
                 // Llama al método CargarDatos para obtener los datos de la cita seleccionada
                 CargarDatos(selectedCitaId);
             }
         }
-
-
-
 
         /// <summary>
         /// Función para cargar los datos de la cita y la mascota asociada
@@ -227,50 +223,25 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="selectedCitaId">ID de la cita seleccionada en el ComboBox</param>
         private void CargarDatos(string selectedCitaId)
         {
-
-            string query = @"
-                                SELECT 
-                                    citas.Estado, 
-                                    citas.Fecha, 
-                                    citas.Hora, 
-                                    citas.Motivo, 
-                                    mascotas.Nombre AS NombreMascota,
-                                    mascotas.Especie,
-                                    citas.idMascota
-                                FROM 
-                                    citas 
-                                LEFT JOIN 
-                                    mascotas  ON citas.idMascota = mascotas.idMascota
-                                WHERE 
-                                    citas.idCita = @idCita;";
-
+            string query = "SELECT Estado, Fecha, Hora, Motivo FROM citas WHERE idCita = @idCita;";
             try
             {
-
-
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@idCita", selectedCitaId);
-
                         connection.Open();
-
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
                             if (reader.Read())
                             {
                                 // Asigna cada valor obtenido a los controles del formulario
-                                cbxIdMascota.Text = reader["idMascota"].ToString();
                                 txtEstadoCita.Text = reader["Estado"].ToString();
-
                                 txtMotiConsulta.Text = reader["Motivo"].ToString();
-
-                                txtNomMascota.Text = reader["NombreMascota"].ToString();
-
-                                txtEspecie.Text = reader["Especie"].ToString();
-                                dtpFechaHora.Text = reader["Fecha"].ToString();
+                                DateTime fecha = (DateTime)reader["Fecha"];
+                                TimeSpan hora = (TimeSpan)reader["Hora"];
+                                dtpFechaHora.Value = fecha.Add(hora);
 
                             }
 
@@ -289,30 +260,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
 
         /// <summary>
-        /// Metodo que limpia los controles del formulario veterinarioCita
+        /// Metodo que limpia los controles del formulario veterinarioCita de la informacion de mascota
         /// </summary>
-        private void LimpiarControles()
+        private void LimpiarControlesMascota()
         {
             // Limpia los campos de texto relacionados con los datos de la cita y la mascota
             txtEstadoCita.Clear();
             txtMotiConsulta.Clear();
-            txtNomMascota.Clear();
-            txtEspecie.Clear();
+            dtpFechaHora.Value = DateTime.Now;
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnGuardarVeterinarioCita_Click(object sender, EventArgs e)
         {
             // Guardar siempre la consulta
