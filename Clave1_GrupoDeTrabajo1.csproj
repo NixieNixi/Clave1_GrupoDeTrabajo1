@@ -111,12 +111,6 @@
     <Compile Include="Veterinario\veterinarioPerfil.Designer.cs">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Veterinario\veterinarioVacuna.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Veterinario\veterinarioVacuna.Designer.cs">
-      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dueno\MenuPrincipalDueno.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,9 +169,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Veterinario\veterinarioPerfil.resx">
       <DependentUpon>veterinarioPerfil.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Veterinario\veterinarioVacuna.resx">
-      <DependentUpon>veterinarioVacuna.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dueno\MenuPrincipalDueno.resx">
       <DependentUpon>MenuPrincipalDueno.cs</DependentUpon>

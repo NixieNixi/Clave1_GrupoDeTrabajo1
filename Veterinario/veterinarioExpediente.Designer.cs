@@ -47,8 +47,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.MotivoVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProximaDosis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvHCirugia = new System.Windows.Forms.DataGridView();
+            this.IdCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHoraCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dgvHCitas = new System.Windows.Forms.DataGridView();
+            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHistorialVacunas = new System.Windows.Forms.Label();
             this.tabInformacionGeneral = new System.Windows.Forms.TabPage();
             this.gbxDatosDueno = new System.Windows.Forms.GroupBox();
@@ -79,20 +93,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.idCita = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Sintomas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ExamenFisico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Diagnostico = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tratamiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Medicamentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaHoraCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TipoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MotivoCirugia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).BeginInit();
@@ -277,6 +277,36 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCirugia.Size = new System.Drawing.Size(848, 150);
             this.dgvHCirugia.TabIndex = 5;
             // 
+            // IdCirugia
+            // 
+            this.IdCirugia.HeaderText = "ID Cirugia";
+            this.IdCirugia.Name = "IdCirugia";
+            this.IdCirugia.ReadOnly = true;
+            // 
+            // FechaHoraCirugia
+            // 
+            this.FechaHoraCirugia.HeaderText = "Fecha y Hora";
+            this.FechaHoraCirugia.Name = "FechaHoraCirugia";
+            this.FechaHoraCirugia.ReadOnly = true;
+            // 
+            // TipoCirugia
+            // 
+            this.TipoCirugia.HeaderText = "Tipo de Cirugia";
+            this.TipoCirugia.Name = "TipoCirugia";
+            this.TipoCirugia.ReadOnly = true;
+            // 
+            // DescripcionCirugia
+            // 
+            this.DescripcionCirugia.HeaderText = "Descripcion de Cirugia";
+            this.DescripcionCirugia.Name = "DescripcionCirugia";
+            this.DescripcionCirugia.ReadOnly = true;
+            // 
+            // MotivoCirugia
+            // 
+            this.MotivoCirugia.HeaderText = "Motivo de Cirugia";
+            this.MotivoCirugia.Name = "MotivoCirugia";
+            this.MotivoCirugia.ReadOnly = true;
+            // 
             // dtpFecha
             // 
             this.dtpFecha.Location = new System.Drawing.Point(680, 13);
@@ -303,6 +333,60 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCitas.ReadOnly = true;
             this.dgvHCitas.Size = new System.Drawing.Size(883, 161);
             this.dgvHCitas.TabIndex = 3;
+            // 
+            // idCita
+            // 
+            this.idCita.HeaderText = "ID Cita Anterior";
+            this.idCita.Name = "idCita";
+            this.idCita.ReadOnly = true;
+            // 
+            // FechaHora
+            // 
+            this.FechaHora.HeaderText = "Fecha y Hora";
+            this.FechaHora.Name = "FechaHora";
+            this.FechaHora.ReadOnly = true;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo Consulta";
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            // 
+            // Sintomas
+            // 
+            this.Sintomas.HeaderText = "Sintomas";
+            this.Sintomas.Name = "Sintomas";
+            this.Sintomas.ReadOnly = true;
+            // 
+            // ExamenFisico
+            // 
+            this.ExamenFisico.HeaderText = "Examen Fisico";
+            this.ExamenFisico.Name = "ExamenFisico";
+            this.ExamenFisico.ReadOnly = true;
+            // 
+            // Diagnostico
+            // 
+            this.Diagnostico.HeaderText = "Diagnostico";
+            this.Diagnostico.Name = "Diagnostico";
+            this.Diagnostico.ReadOnly = true;
+            // 
+            // Tratamiento
+            // 
+            this.Tratamiento.HeaderText = "Tratamiento";
+            this.Tratamiento.Name = "Tratamiento";
+            this.Tratamiento.ReadOnly = true;
+            // 
+            // Medicamentos
+            // 
+            this.Medicamentos.HeaderText = "Medicamentos";
+            this.Medicamentos.Name = "Medicamentos";
+            this.Medicamentos.ReadOnly = true;
+            // 
+            // Notas
+            // 
+            this.Notas.HeaderText = "Notas";
+            this.Notas.Name = "Notas";
+            this.Notas.ReadOnly = true;
             // 
             // lblHistorialVacunas
             // 
@@ -596,98 +680,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(917, 72);
+            this.panel1.Size = new System.Drawing.Size(909, 72);
             this.panel1.TabIndex = 5;
-            // 
-            // idCita
-            // 
-            this.idCita.HeaderText = "ID Cita Anterior";
-            this.idCita.Name = "idCita";
-            this.idCita.ReadOnly = true;
-            // 
-            // FechaHora
-            // 
-            this.FechaHora.HeaderText = "Fecha y Hora";
-            this.FechaHora.Name = "FechaHora";
-            this.FechaHora.ReadOnly = true;
-            // 
-            // Motivo
-            // 
-            this.Motivo.HeaderText = "Motivo Consulta";
-            this.Motivo.Name = "Motivo";
-            this.Motivo.ReadOnly = true;
-            // 
-            // Sintomas
-            // 
-            this.Sintomas.HeaderText = "Sintomas";
-            this.Sintomas.Name = "Sintomas";
-            this.Sintomas.ReadOnly = true;
-            // 
-            // ExamenFisico
-            // 
-            this.ExamenFisico.HeaderText = "Examen Fisico";
-            this.ExamenFisico.Name = "ExamenFisico";
-            this.ExamenFisico.ReadOnly = true;
-            // 
-            // Diagnostico
-            // 
-            this.Diagnostico.HeaderText = "Diagnostico";
-            this.Diagnostico.Name = "Diagnostico";
-            this.Diagnostico.ReadOnly = true;
-            // 
-            // Tratamiento
-            // 
-            this.Tratamiento.HeaderText = "Tratamiento";
-            this.Tratamiento.Name = "Tratamiento";
-            this.Tratamiento.ReadOnly = true;
-            // 
-            // Medicamentos
-            // 
-            this.Medicamentos.HeaderText = "Medicamentos";
-            this.Medicamentos.Name = "Medicamentos";
-            this.Medicamentos.ReadOnly = true;
-            // 
-            // Notas
-            // 
-            this.Notas.HeaderText = "Notas";
-            this.Notas.Name = "Notas";
-            this.Notas.ReadOnly = true;
-            // 
-            // IdCirugia
-            // 
-            this.IdCirugia.HeaderText = "ID Cirugia";
-            this.IdCirugia.Name = "IdCirugia";
-            this.IdCirugia.ReadOnly = true;
-            // 
-            // FechaHoraCirugia
-            // 
-            this.FechaHoraCirugia.HeaderText = "Fecha y Hora";
-            this.FechaHoraCirugia.Name = "FechaHoraCirugia";
-            this.FechaHoraCirugia.ReadOnly = true;
-            // 
-            // TipoCirugia
-            // 
-            this.TipoCirugia.HeaderText = "Tipo de Cirugia";
-            this.TipoCirugia.Name = "TipoCirugia";
-            this.TipoCirugia.ReadOnly = true;
-            // 
-            // DescripcionCirugia
-            // 
-            this.DescripcionCirugia.HeaderText = "Descripcion de Cirugia";
-            this.DescripcionCirugia.Name = "DescripcionCirugia";
-            this.DescripcionCirugia.ReadOnly = true;
-            // 
-            // MotivoCirugia
-            // 
-            this.MotivoCirugia.HeaderText = "Motivo de Cirugia";
-            this.MotivoCirugia.Name = "MotivoCirugia";
-            this.MotivoCirugia.ReadOnly = true;
             // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(917, 628);
+            this.ClientSize = new System.Drawing.Size(909, 640);
             this.Controls.Add(this.btnIrCita);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.tapExpediente);

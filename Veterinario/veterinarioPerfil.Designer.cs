@@ -32,7 +32,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnConsultarExpediente = new System.Windows.Forms.Button();
             this.btnCita = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.btnConsultarVacunas = new System.Windows.Forms.Button();
             this.gbVeterinarioPerfil = new System.Windows.Forms.GroupBox();
             this.lblUserVeterinario = new System.Windows.Forms.Label();
             this.lblNombreVeterinario = new System.Windows.Forms.Label();
@@ -42,9 +41,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnConsultarExpediente
             // 
-            this.btnConsultarExpediente.Location = new System.Drawing.Point(56, 335);
+            this.btnConsultarExpediente.Location = new System.Drawing.Point(30, 499);
             this.btnConsultarExpediente.Name = "btnConsultarExpediente";
-            this.btnConsultarExpediente.Size = new System.Drawing.Size(129, 39);
+            this.btnConsultarExpediente.Size = new System.Drawing.Size(280, 94);
             this.btnConsultarExpediente.TabIndex = 0;
             this.btnConsultarExpediente.Text = "Consultar Expediente";
             this.btnConsultarExpediente.UseVisualStyleBackColor = true;
@@ -52,9 +51,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnCita
             // 
-            this.btnCita.Location = new System.Drawing.Point(393, 335);
+            this.btnCita.Location = new System.Drawing.Point(329, 499);
             this.btnCita.Name = "btnCita";
-            this.btnCita.Size = new System.Drawing.Size(75, 39);
+            this.btnCita.Size = new System.Drawing.Size(280, 94);
             this.btnCita.TabIndex = 1;
             this.btnCita.Text = "Cita";
             this.btnCita.UseVisualStyleBackColor = true;
@@ -62,23 +61,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(526, 335);
+            this.btnCerrar.Location = new System.Drawing.Point(615, 499);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(78, 39);
+            this.btnCerrar.Size = new System.Drawing.Size(280, 94);
             this.btnCerrar.TabIndex = 3;
             this.btnCerrar.Text = "Cerrar Sesion";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // btnConsultarVacunas
-            // 
-            this.btnConsultarVacunas.Location = new System.Drawing.Point(220, 335);
-            this.btnConsultarVacunas.Name = "btnConsultarVacunas";
-            this.btnConsultarVacunas.Size = new System.Drawing.Size(129, 39);
-            this.btnConsultarVacunas.TabIndex = 2;
-            this.btnConsultarVacunas.Text = "Consultar Vacuna";
-            this.btnConsultarVacunas.UseVisualStyleBackColor = true;
-            this.btnConsultarVacunas.Click += new System.EventHandler(this.btnConsultarVacunas_Click);
             // 
             // gbVeterinarioPerfil
             // 
@@ -120,11 +109,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(898, 632);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gbVeterinarioPerfil);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnConsultarVacunas);
             this.Controls.Add(this.btnCita);
             this.Controls.Add(this.btnConsultarExpediente);
             this.Name = "veterinarioPerfil";
@@ -142,7 +130,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Button btnConsultarExpediente;
         private System.Windows.Forms.Button btnCita;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnConsultarVacunas;
         private System.Windows.Forms.GroupBox gbVeterinarioPerfil;
         private System.Windows.Forms.Label lblUserVeterinario;
         private System.Windows.Forms.Label lblNombreVeterinario;
