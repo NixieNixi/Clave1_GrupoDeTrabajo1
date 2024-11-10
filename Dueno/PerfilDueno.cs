@@ -83,5 +83,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Hide();
             VerCitas.ShowDialog();
         }
+
+        private void PerfilDueno_Load(object sender, EventArgs e)
+        {
+            lblNomD.Text = Usuario.Nombre;  // Muestra el nombre del usuario
+            lblUsuD.Text = Usuario.IdUsuario.ToString();
+        }
     }
 }
