@@ -43,10 +43,5 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             Login ventana = new Login();
             ventana.Close();
         }
-
-        private void btnBorrarMascota_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

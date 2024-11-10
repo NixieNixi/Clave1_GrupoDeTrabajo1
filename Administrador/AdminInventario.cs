@@ -43,11 +43,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         /// <summary>
-        /// Funcion que carga los idUsuario con rol de Dueño en el combobox
+        /// Funcion que carga los idProducto en el combobox ID producto
         /// </summary>
         private void CargarProductos()
         {
-            //Limpia los elementos del comboBox ID Dueño
+            //Limpia los elementos del comboBox
             cbxIdProducto.Items.Clear();
 
             //Intentar conectar a DB
@@ -56,7 +56,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Crea una conexion a la DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    //Consulta la columna idUsuarios de la tabla Usuarios que tengan rol de 'Dueño'
+                    //Consulta a la tabla productos
                     string query = "SELECT idProductos FROM productos";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
@@ -65,7 +65,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         {
                             while (reader.Read())
                             {
-                                //Inserta los registros de idUsuario en el comboBox cbxUsuario
+                                //Inserta los registros en el comboBox cbxUsuario
                                 cbxIdProducto.Items.Add(reader["idProductos"].ToString());
                             }
                         }
@@ -83,6 +83,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Evento del combobox que cambia la informacion segun el id del producto seleccionado
+        /// </summary>
         private void cbxIdProducto_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
@@ -90,13 +93,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 LimpiarProducto();
             }
-            //Dependiendo de la seleccion de pago
+            //Dependiendo de la seleccion de producto
             else
             {
                 //guarda el texto de la seleccion en consultaIDPago
                 string consultaIDPago = cbxIdProducto.SelectedItem.ToString();
 
-                //Intentar conectar a DB y hacer la consulta del nombre de la mascota
+                //Intentar conectar a DB
                 try
                 {
                     //cadena de conexion a DB
@@ -117,7 +120,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             {
                                 if (reader.HasRows)
                                 {
-                                    //si se ha seleccionado un pago habilita el boton registrar
+                                    //si se ha seleccionado un producto se habilita el boton editar para editar la informacion del producto
                                     btnEditI.Enabled = true;
 
                                     //Inserta la informacion en los controles correspondientes
@@ -131,7 +134,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 }
                                 else
                                 {
-                                    //si no hay registro se deshabilita el boton registrar
+                                    //si no hay registro se deshabilita el boton editar
                                     btnEditI.Enabled = false;
                                 }
                             }
@@ -146,6 +149,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Funcion para limpiar los campos
+        /// </summary>
         private void LimpiarProducto()
         {
             txtProducto.Clear();
@@ -154,6 +160,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtDescripcion.Clear();
         }
 
+        /// <summary>
+        /// Funcion que activa o desativa los controles
+        /// </summary>
+        /// <param name="activar">Segun el valor que reciba activa o desactiva los controles</param>
         private void EditProducto(bool activar)
         {
             cbxIdProducto.Enabled = !activar;
@@ -171,17 +181,26 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             txtDescripcion.ReadOnly = !activar;
         }
 
+        /// <summary>
+        /// Evento del boton editar que llama a la funcion para activar la edicion los controles
+        /// </summary>
         private void btnEditI_Click(object sender, EventArgs e)
         {
             EditProducto(true);
         }
 
+        /// <summary>
+        /// Evento del boton cancelar que deshace los cambios en la informacion de los controles y desactiva la edicion
+        /// </summary>
         private void btnCancelarI_Click(object sender, EventArgs e)
         {
             EditProducto(false);
             cbxIdProducto_SelectedIndexChanged(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Evento del boton guardar que actualiza la informacion del producto seleccionado
+        /// </summary>
         private void btnGuardarI_Click(object sender, EventArgs e)
         {
             //Consulta sql para actualizar los datos de la mascota
@@ -199,17 +218,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 {
                     try
                     {
+                        //Verificaciones de los datos
                         if (string.IsNullOrEmpty(txtProducto.Text) || string.IsNullOrEmpty(txtPrecio.Text) || string.IsNullOrEmpty(txtCantidad.Text) || string.IsNullOrEmpty(txtDescripcion.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                         else if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
                         {
                             MessageBox.Show("Ingrese una cantidad valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                         else if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
                         {
                             MessageBox.Show("Ingrese un precio valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
@@ -239,10 +262,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         //Comprobar si la actualizacion fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue cambiada
                         if (rowsAffected > 0)
                         {
-                            //Se deshabilita la edicion para evitar editar la misma mascota nuevamente por accidente
+                            //Se deshabilita la edicion
                             EditProducto(false);
 
-                            MessageBox.Show("Pago completo", "Operacion exitosa!");
+                            MessageBox.Show("Informacion de producto actualizado", "Operacion exitosa!");
 
                             //se limpian los campos y se deshabilita el boton cancelar
                             cbxIdProducto_SelectedIndexChanged(this, EventArgs.Empty);
@@ -262,6 +285,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Evento del boton Ver todos que muestra un panel con un DataGridView con la informacion de todos los productos
+        /// </summary>
         private void btnVerTodosI_Click(object sender, EventArgs e)
         {
             CargarInventario();
@@ -317,6 +343,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Evento del boton Ocultar que oculta el panel de dgvInventario 
+        /// </summary>
         private void btnOcultar_Click(object sender, EventArgs e)
         {
             paneldgvInventario.Visible = false;

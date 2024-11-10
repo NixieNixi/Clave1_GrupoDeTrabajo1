@@ -534,16 +534,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
                         else if (!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
                         {
                             MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no se ha seleccionado un rol mostrar mensaje de error
                         else if (cbxRol.SelectedIndex == -1)
                         {
                             MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
@@ -643,14 +646,20 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Evento del boton borrar que elimina el registro de usuario y todos los relacionados. Primero verifica que no sea el admin con sesion iniciada
+        /// que si es dueño no tenga pagos pendientes y luego borra el registro
+        /// </summary>
         private void btnBorrarUser_Click(object sender, EventArgs e)
         {
+            //verifica que el usuario admin activo no pueda borrar su propio registro
             if(user==txtUsuario.Text)
             {
                 MessageBox.Show("No puedes borrar tu propio usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
             
+            // Si el rol es "Dueño" verifica si tiene cuentas pendientes
             if(cbxRol.SelectedItem.ToString() == "Dueño")
             {
                 try
@@ -658,6 +667,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         connection.Open();
+
                         string query = "SELECT COUNT(*) FROM Pagos WHERE IdUsuario = @IdUsuario AND Estado = 'Pendiente'";
 
                         using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -666,6 +676,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                             int count = Convert.ToInt32(command.ExecuteScalar());
 
+                            //si existen cuentas pendientes muestra un mensaje y no continua con la operacion
                             if (count > 0)
                             {
                                 MessageBox.Show($"Existen {count} pagos pendientes para este usuario.");
@@ -681,7 +692,37 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 }
             }
 
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    connection.Open();
 
+                    string query = "DELETE FROM Usuarios WHERE IdUsuario = @IdUsuario";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Parámetro para identificar al usuario que se va a eliminar
+                        command.Parameters.AddWithValue("@IdUsuario", cbxIdUsuario.SelectedItem.ToString());
+
+                        // Ejecutar la consulta
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Validar si la eliminación fue exitosa
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Usuario eliminado correctamente.");
+                            cbxIdUsuario.SelectedIndex = -1;
+                            ActualizarRegistros();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al borrar " + ex.Message, "Error", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 
