@@ -153,7 +153,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnGuardarM_Click(object sender, EventArgs e)
         {
             //Si no hay seleccion de ID Mascota significa que se esta guardando una nueva mascota
-            if(cbxIdPago.SelectedIndex == -1)
+            if(cbxIdMascotaM.SelectedIndex == -1)
             {
                 NuevaMascota();
             }
@@ -243,10 +243,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// Sin seleccion: Limpia los controles.
         /// Con seleccion: Muestra la informacion de la mascota seleccionada
         /// </summary>
-        private void cbxIdMascotaMascota_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxIdMascotaM_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
-            if (cbxIdPago.SelectedIndex == -1)
+            if (cbxIdMascotaM.SelectedIndex == -1)
             {
                 LimpiarMascota();
             }
@@ -257,7 +257,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 btnEditM.Enabled = true;
 
                 //guarda el texto de la seleccion en ConsultaIdMascota
-                string ConsultaIdMascota = cbxIdPago.SelectedItem.ToString();
+                string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
 
                 //Intentar conectar a DB y hacer la consulta del nombre de la mascota
                 try
@@ -305,7 +305,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void ActualizarRegistrosDueno()
         {
             //Limpia los elementos del comboBox ID Usuario
-            cbxIdUsuario.Items.Clear();
+            cbxIdDueno.Items.Clear();
 
             //Intentar conectar a DB
             try
@@ -375,17 +375,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 while (reader.Read())
                                 {
                                     //Cargar los idMascota en el comboBox
-                                    cbxIdPago.Items.Add(reader["idMascota"].ToString());
+                                    cbxIdMascotaM.Items.Add(reader["idMascota"].ToString());
                                 }
                                 //habilitar el comboBox
-                                cbxIdPago.Enabled = true;
+                                cbxIdMascotaM.Enabled = true;
                             }
                             else
                             {
                                 //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
-                                cbxIdPago.Text = "No se encontraron mascotas";
+                                cbxIdMascotaM.Text = "No se encontraron mascotas";
                                 btnEditM.Enabled = false;
-                                cbxIdPago.Enabled = false;
+                                cbxIdMascotaM.Enabled = false;
                             }
                         }
                     }
@@ -404,8 +404,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void LimpiarMascota()
         {
             //limpia los controles
-            cbxIdPago.Text = null;
-            cbxIdPago.Items.Clear();
+            cbxIdMascotaM.Text = null;
+            cbxIdMascotaM.Items.Clear();
             txtNombreMascotaM.Text = null;
             txtRazaM.Text = null;
             txtEspecieM.Text = null;
@@ -429,7 +429,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void HabilitarEdicionM(bool habilitar)
         {
             //Desahabilta ID Mascota
-            cbxIdPago.Enabled = !habilitar;
+            cbxIdMascotaM.Enabled = !habilitar;
 
             //Habilita los controles
             txtUsuario.Enabled = habilitar;
@@ -556,7 +556,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
                         {
-                            command.Parameters.AddWithValue("@idMascota", cbxIdPago.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@idMascota", cbxIdMascotaM.SelectedItem.ToString());
                             command.Parameters.AddWithValue("@Nombre", txtNombreMascotaM.Text);
                             command.Parameters.AddWithValue("@FechaNacimiento", dtpFechaNacimiento.Value);
                             command.Parameters.AddWithValue("@Especie", txtEspecieM.Text);

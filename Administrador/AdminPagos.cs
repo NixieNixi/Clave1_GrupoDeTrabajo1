@@ -92,7 +92,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
             else
             {
-                btnRegistrarP.Enabled = true;
 
                 //convierte el id seleccionado del combobox
                 string IdSeleccion = cbxIdDuenoP.SelectedItem.ToString();
@@ -191,6 +190,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //limpia los controles
             cbxIdPago.Text = null;
             cbxIdPago.Items.Clear();
+            cbxEstadoP.SelectedIndex = -1;
             cbxEstado.SelectedIndex = -1;
             dtpFechaP.Value = DateTime.Now;
             cbxFormaPago.SelectedIndex = -1;
@@ -204,13 +204,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             //Si no se ha seleccionado ninguna opcion se limpian los controles
             if (cbxIdPago.SelectedIndex == -1)
             {
-                LimpiarMascota();
+                LimpiarPagos();
             }
             //Dependiendo de la seleccion de idMascota se muestra un nombre
             else
             {
                 //si se ha seleccionado una mascota habilita la funcion de editar
-                btnEditM.Enabled = true;
+                btnRegistrarP.Enabled = true;
 
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdPago.SelectedItem.ToString();
@@ -222,12 +222,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         //cadena de consulta a DB
-                        string query = "SELECT Nombre, Raza, Especie, Sexo, FechaNacimiento FROM mascotas WHERE idMascota = @idMascota;";
+                        string query = "SELECT Fecha, Estado, Total, TipoPago, TipoServicio FROM pagos WHERE idPago = @idPago;";
 
                         using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
                             //Agregar el parametro a la consulta
-                            command.Parameters.AddWithValue("@idMascota", ConsultaIdMascota);
+                            command.Parameters.AddWithValue("@idPago", ConsultaIdMascota);
 
                             //Conectar a DB
                             connection.Open();
@@ -237,11 +237,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 //Inserta la informacion en los controles correspondientes
                                 if (reader.Read())
                                 {
-                                    txtNombreMascotaM.Text = reader["Nombre"].ToString();
-                                    txtRazaM.Text = reader["Raza"].ToString();
-                                    txtEspecieM.Text = reader["Especie"].ToString();
-                                    txtSexoM.Text = reader["Sexo"].ToString();
-                                    dtpFechaNacimiento.Value = Convert.ToDateTime(reader["FechaNacimiento"]);
+                                    dtpFechaP.Value = (DateTime)reader["Fecha"];
+                                    string estado = reader["Estado"].ToString();
+                                    if(estado == "Pendiente")
+                                    {
+                                        cbxEstadoP.SelectedIndex = 0;
+                                    }
+                                    txtTotalP.Text = "$" + reader["Total"].ToString();
+                                    string formaPago = reader["TipoPago"].ToString();
+                                    if(formaPago == "Sin pagar")
+                                    {
+                                        cbxFormaPago.SelectedIndex = 0;
+                                    }
+                                    txtTipoServicio.Text = reader["TipoServicio"].ToString();
                                 }
                             }
                         }
