@@ -89,48 +89,62 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Limpieza de todos los controles del form
-            LimpiarControlesMascota();
-            LimpiarControlesConsulta();
-            LimpiarControlesVacuna();
-            LimpiarControlesExamen();
-            LimpiarControlesCirugia();
-
-            string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
-            try
+            if(cbxIdMascota.SelectedIndex==-1)
             {
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                txtNomMascota.Clear();
+                txtEspecie.Clear();
+                txtSexo.Clear();
+                cbxIdCita.SelectedIndex = -1; ;
+                LimpiarControlesConsulta();
+                chkVacuna.Checked = false;
+                chkExamen.Checked = false;
+                chkCirugia.Checked = false;
+            }
+            else
+            {
+                //Limpieza de todos los controles del form
+                LimpiarControlesCita();
+                LimpiarControlesConsulta();
+                chkVacuna.Checked = false;
+                chkExamen.Checked = false;
+                chkCirugia.Checked = false;
+
+                string IdSeleccion = cbxIdMascota.SelectedItem.ToString();
+                try
                 {
-                    string query = "SELECT Nombre, Especie, Sexo FROM mascotas WHERE idMascota = @idMascota;";
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
-                        command.Parameters.AddWithValue("@idMascota", IdSeleccion);
-                        connection.Open();
-                        using (MySqlDataReader reader = command.ExecuteReader())
+                        string query = "SELECT Nombre, Especie, Sexo FROM mascotas WHERE idMascota = @idMascota;";
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
                         {
-                            if (reader.HasRows)
+                            command.Parameters.AddWithValue("@idMascota", IdSeleccion);
+                            connection.Open();
+                            using (MySqlDataReader reader = command.ExecuteReader())
                             {
-                                cbxIdCita.Enabled = true;
-                                if (reader.Read())
+                                if (reader.HasRows)
                                 {
-                                    txtNomMascota.Text = reader["Nombre"].ToString();
-                                    txtEspecie.Text = reader["Especie"].ToString();
-                                    txtSexo.Text = reader["Sexo"].ToString();
+                                    cbxIdCita.Enabled = true;
+                                    if (reader.Read())
+                                    {
+                                        txtNomMascota.Text = reader["Nombre"].ToString();
+                                        txtEspecie.Text = reader["Especie"].ToString();
+                                        txtSexo.Text = reader["Sexo"].ToString();
+                                    }
                                 }
-                            }
-                            else
-                            {
-                                cbxIdCita.Enabled = false;
+                                else
+                                {
+                                    cbxIdCita.Enabled = false;
+                                }
                             }
                         }
                     }
                 }
+                catch (Exception error)
+                {
+                    MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+                }
+                CargarIdCita();
             }
-            catch (Exception error)
-            {
-                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
-            }
-            CargarIdCita();
         }
 
         /// <summary>
@@ -141,7 +155,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // Verifica si no hay una selección (índice -1) y limpia los controles
             if (cbxIdCita.SelectedIndex == -1)
             {
-                LimpiarControlesMascota();
+                LimpiarControlesCita();
             }
             else
             {
@@ -283,7 +297,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <summary>
         /// Metodo que limpia los controles del formulario veterinarioCita de la informacion de mascota
         /// </summary>
-        private void LimpiarControlesMascota()
+        private void LimpiarControlesCita()
         {
             // Limpia los campos de texto relacionados con los datos de la cita y la mascota
             txtEstadoCita.Clear();
@@ -336,11 +350,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 MessageBox.Show("La información se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 //Limpieza de todos los controles del form
-                LimpiarControlesMascota();
+                cbxIdMascota.SelectedIndex = -1;
+                cbxIdCita.SelectedIndex = -1;
                 LimpiarControlesConsulta();
-                LimpiarControlesVacuna();
-                LimpiarControlesExamen();
-                LimpiarControlesCirugia();
+                chkVacuna.Checked = false;
+                chkExamen.Checked = false;
+                chkCirugia.Checked = false;
 
             }
             catch (Exception ex)
@@ -412,10 +427,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         /// <summary>
-        /// Metodo que anula la cita una vez se paso consulta
-        /// </summary>
-
-        /// <summary>
         /// Metodo que cancela el ingreso de citas
         /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -454,7 +465,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     {
                         connection.Open();
                         command.ExecuteNonQuery();
-                        MessageBox.Show("Registro de Consulta guardado con éxito.");
                     }
                     catch (Exception ex)
                     {
@@ -463,6 +473,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
 
+            //Cambiar el estado de la cita despues de guardar el registro
             query = @"UPDATE citas SET Estado = 'Finalizada' WHERE idCita = @idCita;";
 
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -552,7 +563,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Vacuna guardada con éxito.");
                 }
                 catch (Exception ex)
                 {
@@ -640,7 +650,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Examen guardada con éxito.");
                 }
                 catch (Exception ex)
                 {
@@ -727,7 +736,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
-                    MessageBox.Show("Cirugia guardada con éxito.");
                 }
                 catch (Exception ex)
                 {
