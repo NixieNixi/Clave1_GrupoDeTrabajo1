@@ -617,6 +617,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// Evento del boton borrar que borra el registro de la mascota seleccionada
+        /// </summary>
         private void btnBorrarMascota_Click(object sender, EventArgs e)
         {
             try
@@ -635,7 +638,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         // Ejecutar la consulta
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        // Opcional: Validar si la eliminación fue exitosa
+                        // Validar si la eliminación fue exitosa
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Mascota eliminada correctamente.");

@@ -647,16 +647,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         /// <summary>
-        /// 
+        /// Evento del boton borrar que elimina el registro de usuario y todos los relacionados. Primero verifica que no sea el admin con sesion iniciada
+        /// que si es dueño no tenga pagos pendientes y luego borra el registro
         /// </summary>
         private void btnBorrarUser_Click(object sender, EventArgs e)
         {
+            //verifica que el usuario admin activo no pueda borrar su propio registro
             if(user==txtUsuario.Text)
             {
                 MessageBox.Show("No puedes borrar tu propio usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
             
+            // Si el rol es "Dueño" verifica si tiene cuentas pendientes
             if(cbxRol.SelectedItem.ToString() == "Dueño")
             {
                 try
@@ -664,6 +667,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         connection.Open();
+
                         string query = "SELECT COUNT(*) FROM Pagos WHERE IdUsuario = @IdUsuario AND Estado = 'Pendiente'";
 
                         using (MySqlCommand command = new MySqlCommand(query, connection))
@@ -672,6 +676,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                             int count = Convert.ToInt32(command.ExecuteScalar());
 
+                            //si existen cuentas pendientes muestra un mensaje y no continua con la operacion
                             if (count > 0)
                             {
                                 MessageBox.Show($"Existen {count} pagos pendientes para este usuario.");
@@ -703,7 +708,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         // Ejecutar la consulta
                         int rowsAffected = command.ExecuteNonQuery();
 
-                        // Opcional: Validar si la eliminación fue exitosa
+                        // Validar si la eliminación fue exitosa
                         if (rowsAffected > 0)
                         {
                             MessageBox.Show("Usuario eliminado correctamente.");
