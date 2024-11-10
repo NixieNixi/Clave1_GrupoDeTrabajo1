@@ -318,7 +318,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// Evento del boton que registra el pago cambiando su estado y forma de pago
         /// </summary>
         private void btnGuardarP_Click(object sender, EventArgs e)
-
         {
             //Consulta sql para actualizar los datos de la mascota
             string query = @"UPDATE pagos

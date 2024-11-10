@@ -135,7 +135,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnRegistrarP = new System.Windows.Forms.Button();
             this.btnCancelarP = new System.Windows.Forms.Button();
             this.btnGuardarP = new System.Windows.Forms.Button();
-            this.btnVerTodosP = new System.Windows.Forms.Button();
+            this.btnVerTodosI = new System.Windows.Forms.Button();
             this.panelInventario = new System.Windows.Forms.Panel();
             this.cbxIdProducto = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
@@ -143,15 +143,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtProducto = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.panelBtnInventario = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEditI = new System.Windows.Forms.Button();
+            this.btnGuardarI = new System.Windows.Forms.Button();
+            this.btnCancelarI = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -1552,17 +1551,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarP.UseVisualStyleBackColor = false;
             this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
             // 
-            // btnVerTodosP
+            // btnVerTodosI
             // 
-            this.btnVerTodosP.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnVerTodosP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTodosP.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodosP.Location = new System.Drawing.Point(432, 16);
-            this.btnVerTodosP.Name = "btnVerTodosP";
-            this.btnVerTodosP.Size = new System.Drawing.Size(80, 30);
-            this.btnVerTodosP.TabIndex = 0;
-            this.btnVerTodosP.Text = "Ver todos";
-            this.btnVerTodosP.UseVisualStyleBackColor = false;
+            this.btnVerTodosI.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVerTodosI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTodosI.ForeColor = System.Drawing.Color.White;
+            this.btnVerTodosI.Location = new System.Drawing.Point(328, 16);
+            this.btnVerTodosI.Name = "btnVerTodosI";
+            this.btnVerTodosI.Size = new System.Drawing.Size(80, 30);
+            this.btnVerTodosI.TabIndex = 0;
+            this.btnVerTodosI.Text = "Ver todos";
+            this.btnVerTodosI.UseVisualStyleBackColor = false;
             // 
             // panelInventario
             // 
@@ -1574,13 +1573,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelInventario.Controls.Add(this.txtCantidad);
             this.panelInventario.Controls.Add(this.txtPrecio);
             this.panelInventario.Controls.Add(this.label40);
-            this.panelInventario.Controls.Add(this.textBox4);
+            this.panelInventario.Controls.Add(this.txtProducto);
             this.panelInventario.Controls.Add(this.label42);
             this.panelInventario.Controls.Add(this.label43);
             this.panelInventario.Controls.Add(this.label44);
-            this.panelInventario.Location = new System.Drawing.Point(752, 368);
+            this.panelInventario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelInventario.Location = new System.Drawing.Point(240, 70);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(132, 73);
+            this.panelInventario.Size = new System.Drawing.Size(644, 371);
             this.panelInventario.TabIndex = 12;
             this.panelInventario.Visible = false;
             // 
@@ -1594,6 +1594,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdProducto.Name = "cbxIdProducto";
             this.cbxIdProducto.Size = new System.Drawing.Size(264, 24);
             this.cbxIdProducto.TabIndex = 2;
+            this.cbxIdProducto.SelectedIndexChanged += new System.EventHandler(this.cbxIdProducto_SelectedIndexChanged);
             // 
             // label38
             // 
@@ -1654,16 +1655,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label40.TabIndex = 0;
             this.label40.Text = "Descripcion";
             // 
-            // textBox4
+            // txtProducto
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(320, 48);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(264, 22);
-            this.textBox4.TabIndex = 1;
+            this.txtProducto.BackColor = System.Drawing.Color.White;
+            this.txtProducto.Enabled = false;
+            this.txtProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProducto.Location = new System.Drawing.Point(320, 48);
+            this.txtProducto.Name = "txtProducto";
+            this.txtProducto.ReadOnly = true;
+            this.txtProducto.Size = new System.Drawing.Size(264, 22);
+            this.txtProducto.TabIndex = 1;
             // 
             // label42
             // 
@@ -1707,68 +1708,58 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // panelBtnInventario
             // 
             this.panelBtnInventario.BackColor = System.Drawing.Color.CadetBlue;
-            this.panelBtnInventario.Controls.Add(this.button1);
-            this.panelBtnInventario.Controls.Add(this.button2);
-            this.panelBtnInventario.Controls.Add(this.button3);
-            this.panelBtnInventario.Controls.Add(this.btnVerTodosP);
-            this.panelBtnInventario.Controls.Add(this.button4);
+            this.panelBtnInventario.Controls.Add(this.btnEditI);
+            this.panelBtnInventario.Controls.Add(this.btnGuardarI);
+            this.panelBtnInventario.Controls.Add(this.btnVerTodosI);
+            this.panelBtnInventario.Controls.Add(this.btnCancelarI);
+            this.panelBtnInventario.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBtnInventario.Location = new System.Drawing.Point(240, 441);
             this.panelBtnInventario.Name = "panelBtnInventario";
             this.panelBtnInventario.Size = new System.Drawing.Size(644, 60);
             this.panelBtnInventario.TabIndex = 12;
             this.panelBtnInventario.Visible = false;
             // 
-            // button1
+            // btnEditI
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Enabled = false;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEditI.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnEditI.Enabled = false;
+            this.btnEditI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditI.ForeColor = System.Drawing.Color.White;
+            this.btnEditI.Location = new System.Drawing.Point(16, 16);
+            this.btnEditI.Name = "btnEditI";
+            this.btnEditI.Size = new System.Drawing.Size(80, 30);
+            this.btnEditI.TabIndex = 0;
+            this.btnEditI.Text = "Editar";
+            this.btnEditI.UseVisualStyleBackColor = false;
+            this.btnEditI.Click += new System.EventHandler(this.btnEditI_Click);
             // 
-            // button2
+            // btnGuardarI
             // 
-            this.button2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Enabled = false;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(328, 16);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(80, 30);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGuardarI.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnGuardarI.Enabled = false;
+            this.btnGuardarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarI.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarI.Location = new System.Drawing.Point(224, 16);
+            this.btnGuardarI.Name = "btnGuardarI";
+            this.btnGuardarI.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardarI.TabIndex = 0;
+            this.btnGuardarI.Text = "Guardar";
+            this.btnGuardarI.UseVisualStyleBackColor = false;
+            this.btnGuardarI.Click += new System.EventHandler(this.btnGuardarI_Click);
             // 
-            // button3
+            // btnCancelarI
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Enabled = false;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(120, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Nuevo";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.Enabled = false;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(224, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Cancelar";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnCancelarI.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelarI.Enabled = false;
+            this.btnCancelarI.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarI.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarI.Location = new System.Drawing.Point(120, 16);
+            this.btnCancelarI.Name = "btnCancelarI";
+            this.btnCancelarI.Size = new System.Drawing.Size(80, 30);
+            this.btnCancelarI.TabIndex = 0;
+            this.btnCancelarI.Text = "Cancelar";
+            this.btnCancelarI.UseVisualStyleBackColor = false;
+            this.btnCancelarI.Click += new System.EventHandler(this.btnCancelarI_Click);
             // 
             // AdministradorPerfil
             // 
@@ -1924,7 +1915,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Panel panelBtnPagos;
         private System.Windows.Forms.Button btnRegistrarP;
         private System.Windows.Forms.Button btnGuardarP;
-        private System.Windows.Forms.Button btnVerTodosP;
+        private System.Windows.Forms.Button btnVerTodosI;
         private System.Windows.Forms.ComboBox cbxIdMascotaM;
         private System.Windows.Forms.Button btnCancelarP;
         private System.Windows.Forms.Panel panelInventario;
@@ -1934,14 +1925,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtProducto;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Panel panelBtnInventario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEditI;
+        private System.Windows.Forms.Button btnGuardarI;
+        private System.Windows.Forms.Button btnCancelarI;
     }
 }
