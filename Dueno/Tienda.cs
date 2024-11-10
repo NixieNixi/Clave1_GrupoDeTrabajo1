@@ -23,7 +23,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     ///</remarks>
     public partial class Tienda : Form
     {
-        // Lista para almacenar los productos
+        
         private List<Producto> productos = new List<Producto>();
         private CarritoCompras carrito;
 
@@ -34,7 +34,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             carrito = new CarritoCompras();
         }
 
-        // Método para cargar productos desde la base de datos
+        
         private void CargarProductos()
         {
             string query = "SELECT idProductos, Nombre, Precio, Descripcion, Cantidad FROM productos";
@@ -48,10 +48,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
-                        // Limpia los productos antes de agregar nuevos
+                        
                         dgvProductos.Rows.Clear();
 
-                        // Itera a través de los productos en la base de datos
+                       
                         while (reader.Read())
                         {
                             Producto producto = new Producto
@@ -83,10 +83,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-        // Evento para el botón "Comprar"
+        
         private void btnComprarD_Click(object sender, EventArgs e)
         {
-            // Verificar si se ha seleccionado un producto
+            
             if (dgvProductos.SelectedRows.Count > 0)
             {
                 int idProducto = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["IdProducto"].Value);
@@ -94,14 +94,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 if (productoSeleccionado != null && productoSeleccionado.Cantidad > 0)
                 {
-                    // Mostrar el total
+                    
                     decimal totalCompra = productoSeleccionado.Precio;
                     lblTotal.Text = "Total: $" + totalCompra.ToString("F2");
 
-                    // Actualizar la cantidad disponible del producto
+                    
                     productoSeleccionado.Cantidad -= 1;
 
-                    // Actualizar el DataGridView
+                    
                     dgvProductos.SelectedRows[0].Cells["CantidadDisponible"].Value = productoSeleccionado.Cantidad;
                 }
                 else
@@ -114,10 +114,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         // Evento para el botón "Volver a Perfil"
         private void btnVolD_Click(object sender, EventArgs e)
         {
-            // Regresar al formulario del perfil del dueño
+            
             PerfilDueno perfil = new PerfilDueno();
             perfil.ShowDialog();
-            this.Close();  // Cierra el formulario actual
+            this.Close();  
         }
 
 
@@ -128,15 +128,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) // Asegurarse de que no se haga clic en los encabezados
+            if (e.RowIndex >= 0) 
             {
-                // Obtener el producto de la fila seleccionada
+                
                 var productoSeleccionado = (Producto)dgvProductos.Rows[e.RowIndex].DataBoundItem;
 
                 // Agregar el producto al carrito
                 carrito.AgregarProducto(productoSeleccionado);
 
-                // Mostrar los productos seleccionados en un DataGridView o en un Label (opcional)
                 MostrarCarrito();
             }
         }
@@ -160,13 +159,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             try
             {
-                // Crear el pago
+                
                 decimal totalPago = carrito.CalcularTotal();
-                DateTime fechaPago = DateTime.Now;  // Fecha actual del pago
-                string tipoPago = "Efectivo";  // Aquí puedes permitir que el usuario elija el tipo de pago
+                DateTime fechaPago = DateTime.Now;  
+                string tipoPago = "Efectivo"; 
 
-                // Suponiendo que tienes el ID del usuario en alguna variable
-                int idUsuario = 1;  // Aquí va el ID del dueño que realiza el pago
+                
+                int idUsuario = 1;  
 
                 // Insertar el pago en la base de datos
                 string queryPago = "INSERT INTO pagos (Total, Fecha, TipoPago, IdUsuario) VALUES (@Total, @Fecha, @TipoPago, @IdUsuario)";
@@ -182,10 +181,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     cmd.ExecuteNonQuery();
                 }
 
-                // Obtener el ID del pago recién creado (si se necesita)
-                int idPago = ObtenerUltimoIdPago();  // Debes crear esta función que obtiene el ID del último pago insertado
+                
+                int idPago = ObtenerUltimoIdPago();  
 
-                // Asociar los productos comprados al pago
+               
                 foreach (var producto in carrito.ProductosSeleccionados)
                 {
                     string queryDetallePago = "INSERT INTO detalle_pagos (IdPago, IdProducto, Cantidad, PrecioUnitario) VALUES (@IdPago, @IdProducto, @Cantidad, @PrecioUnitario)";
