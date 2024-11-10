@@ -55,12 +55,6 @@
     <Compile Include="Administrador\AdminCitas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Administrador\AdminInventario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Administrador\AdminInventario.Designer.cs">
-      <DependentUpon>AdminInventario.cs</DependentUpon>
-    </Compile>
     <Compile Include="Administrador\AdministradorPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,9 +152,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Administrador\AdminInventario.resx">
-      <DependentUpon>AdminInventario.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Administrador\AdministradorPerfil.resx">
       <DependentUpon>AdministradorPerfil.cs</DependentUpon>
     </EmbeddedResource>
