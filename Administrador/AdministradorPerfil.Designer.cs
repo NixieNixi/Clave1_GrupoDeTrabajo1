@@ -137,7 +137,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarP = new System.Windows.Forms.Button();
             this.btnVerTodosI = new System.Windows.Forms.Button();
             this.panelInventario = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.paneldgvInventario = new System.Windows.Forms.Panel();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxIdProducto = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -152,12 +158,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnEditI = new System.Windows.Forms.Button();
             this.btnGuardarI = new System.Windows.Forms.Button();
             this.btnCancelarI = new System.Windows.Forms.Button();
-            this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -170,9 +170,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelPagos.SuspendLayout();
             this.panelBtnPagos.SuspendLayout();
             this.panelInventario.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panelBtnInventario.SuspendLayout();
+            this.paneldgvInventario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
+            this.panelBtnInventario.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -1577,7 +1577,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelInventario.AutoScroll = true;
             this.panelInventario.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panelInventario.Controls.Add(this.panel1);
+            this.panelInventario.Controls.Add(this.paneldgvInventario);
             this.panelInventario.Controls.Add(this.cbxIdProducto);
             this.panelInventario.Controls.Add(this.label38);
             this.panelInventario.Controls.Add(this.txtDescripcion);
@@ -1595,14 +1595,59 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelInventario.TabIndex = 12;
             this.panelInventario.Visible = false;
             // 
-            // panel1
+            // paneldgvInventario
             // 
-            this.panel1.Controls.Add(this.dgvInventario);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(644, 371);
-            this.panel1.TabIndex = 3;
+            this.paneldgvInventario.Controls.Add(this.dgvInventario);
+            this.paneldgvInventario.Location = new System.Drawing.Point(488, 232);
+            this.paneldgvInventario.Name = "paneldgvInventario";
+            this.paneldgvInventario.Size = new System.Drawing.Size(148, 131);
+            this.paneldgvInventario.TabIndex = 3;
+            this.paneldgvInventario.Visible = false;
+            // 
+            // dgvInventario
+            // 
+            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.NombreProducto,
+            this.PrecioProducto,
+            this.CantidadProducto,
+            this.DescripcionProducto});
+            this.dgvInventario.Location = new System.Drawing.Point(8, 48);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.Size = new System.Drawing.Size(624, 312);
+            this.dgvInventario.TabIndex = 1;
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // PrecioProducto
+            // 
+            this.PrecioProducto.HeaderText = "Precio Producto";
+            this.PrecioProducto.Name = "PrecioProducto";
+            this.PrecioProducto.ReadOnly = true;
+            // 
+            // CantidadProducto
+            // 
+            this.CantidadProducto.HeaderText = "Cantidad Producto";
+            this.CantidadProducto.Name = "CantidadProducto";
+            this.CantidadProducto.ReadOnly = true;
+            // 
+            // DescripcionProducto
+            // 
+            this.DescripcionProducto.HeaderText = "Descripcion Producto";
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
             // 
             // cbxIdProducto
             // 
@@ -1781,51 +1826,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarI.UseVisualStyleBackColor = false;
             this.btnCancelarI.Click += new System.EventHandler(this.btnCancelarI_Click);
             // 
-            // dgvInventario
-            // 
-            this.dgvInventario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdProducto,
-            this.NombreProducto,
-            this.PrecioProducto,
-            this.CantidadProducto,
-            this.DescripcionProducto});
-            this.dgvInventario.Location = new System.Drawing.Point(8, 48);
-            this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(624, 312);
-            this.dgvInventario.TabIndex = 1;
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "ID Producto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "Nombre Producto";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
-            // 
-            // PrecioProducto
-            // 
-            this.PrecioProducto.HeaderText = "Precio Producto";
-            this.PrecioProducto.Name = "PrecioProducto";
-            this.PrecioProducto.ReadOnly = true;
-            // 
-            // CantidadProducto
-            // 
-            this.CantidadProducto.HeaderText = "Cantidad Producto";
-            this.CantidadProducto.Name = "CantidadProducto";
-            this.CantidadProducto.ReadOnly = true;
-            // 
-            // DescripcionProducto
-            // 
-            this.DescripcionProducto.HeaderText = "Descripcion Producto";
-            this.DescripcionProducto.Name = "DescripcionProducto";
-            this.DescripcionProducto.ReadOnly = true;
-            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1868,9 +1868,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnPagos.ResumeLayout(false);
             this.panelInventario.ResumeLayout(false);
             this.panelInventario.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panelBtnInventario.ResumeLayout(false);
+            this.paneldgvInventario.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
+            this.panelBtnInventario.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2000,7 +2000,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnEditI;
         private System.Windows.Forms.Button btnGuardarI;
         private System.Windows.Forms.Button btnCancelarI;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel paneldgvInventario;
         private System.Windows.Forms.DataGridView dgvInventario;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;

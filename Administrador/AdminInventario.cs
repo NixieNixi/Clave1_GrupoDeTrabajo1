@@ -264,6 +264,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnVerTodosI_Click(object sender, EventArgs e)
         {
             CargarInventario();
+            paneldgvInventario.Dock = DockStyle.Fill;
+            paneldgvInventario.Visible = true;
         }
 
         /// <summary>
