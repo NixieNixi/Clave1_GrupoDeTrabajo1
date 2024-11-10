@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Clave1_GrupoDeTrabajo1.Clases;
@@ -61,10 +54,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// Fecha: 08/11/2024
     /// Descripcion: Se cambio el diseño del formulario y se agregaron funciones para cargar los idMascota e idCita
     /// 
+    /// 
     /// Autor: CanelaFeliz
     /// Fecha: 09/11/2024
     /// Descripcion: Se agrego funcion para limpiar los controles de consulta, se agrego comportamiento de limmpiar todos los controles si se cambia el
     /// idMascota. se reorganizo el codigo por funciones
+    /// 
+    /// Autor: NixieNixi
+    /// Fecha de Modificacion: 10/11/2024
+    /// Descripcion: Se arreglo distinto errores de los datagrid, se arreglo los metodos de subir vacuna,cirugia,examen. se mejoro un poco el front-end
     ///</remarks>
 
     public partial class veterinarioCita : Form
@@ -91,14 +89,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             if(cbxIdMascota.SelectedIndex==-1)
             {
-                txtNomMascota.Clear();
-                txtEspecie.Clear();
-                txtSexo.Clear();
-                cbxIdCita.SelectedIndex = -1; ;
-                LimpiarControlesConsulta();
-                chkVacuna.Checked = false;
-                chkExamen.Checked = false;
-                chkCirugia.Checked = false;
+                LimpiarControlesMascota();
             }
             else
             {
@@ -293,6 +284,23 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
         }
+
+
+        /// <summary>
+        /// Limpia los controles relacionados con la información de la mascota.
+        /// </summary>
+        private void LimpiarControlesMascota()
+        {
+            txtNomMascota.Clear();
+            txtEspecie.Clear();
+            txtSexo.Clear();
+            cbxIdCita.SelectedIndex = -1;
+            LimpiarControlesConsulta();
+            chkVacuna.Checked = false;
+            chkExamen.Checked = false;
+            chkCirugia.Checked = false;
+        }
+
 
         /// <summary>
         /// Metodo que limpia los controles del formulario veterinarioCita de la informacion de mascota
