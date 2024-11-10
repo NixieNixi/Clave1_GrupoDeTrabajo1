@@ -1562,6 +1562,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnVerTodosI.TabIndex = 0;
             this.btnVerTodosI.Text = "Ver todos";
             this.btnVerTodosI.UseVisualStyleBackColor = false;
+            this.btnVerTodosI.Click += new System.EventHandler(this.btnVerTodosI_Click);
             // 
             // panelInventario
             // 

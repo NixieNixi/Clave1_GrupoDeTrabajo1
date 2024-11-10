@@ -182,13 +182,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         }
 
         private void btnGuardarI_Click(object sender, EventArgs e)
-
         {
             //Consulta sql para actualizar los datos de la mascota
-            string query = @"UPDATE pagos
-                            SET Estado = 'Pagado', 
-                                TipoPago = @TipoPago
-                          WHERE idPago = @idPago;";
+            string query = @"UPDATE productos
+                            SET Nombre = @Nombre,
+                                Precio = @Precio,
+                                Cantidad = @Cantidad,
+                                Descripcion = @Descripcion
+                          WHERE idProductos = @idProductos;";
 
             //Realizar la actualización en la base de datos
             using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -197,15 +198,26 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 {
                     try
                     {
-                        if (cbxFormaPago.SelectedIndex == 0)
+                        if (string.IsNullOrEmpty(txtProducto.Text) || string.IsNullOrEmpty(txtPrecio.Text) || string.IsNullOrEmpty(txtCantidad.Text) || string.IsNullOrEmpty(txtDescripcion.Text))
                         {
-                            MessageBox.Show("Seleccione un tipo de pago", "Error", MessageBoxButtons.OK);
+                            MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
+                        {
+                            MessageBox.Show("Ingrese una cantidad valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+                        {
+                            MessageBox.Show("Ingrese un precio valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
                         {
-                            command.Parameters.AddWithValue("@idPago", cbxIdPago.SelectedItem.ToString());
-                            command.Parameters.AddWithValue("@TipoPago", cbxFormaPago.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@Nombre", txtProducto.Text);
+                            command.Parameters.AddWithValue("@Precio", txtPrecio.Text);
+                            command.Parameters.AddWithValue("@Cantidad", txtCantidad.Text);
+                            command.Parameters.AddWithValue("@Descripcion", txtDescripcion.Text);
+                            command.Parameters.AddWithValue("@idProductos", cbxIdProducto.SelectedItem.ToString());
                         }
                     }
                     //si se produce otro error
@@ -227,12 +239,12 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (rowsAffected > 0)
                         {
                             //Se deshabilita la edicion para evitar editar la misma mascota nuevamente por accidente
-                            PagosEdicion(false);
+                            EditProducto(false);
 
                             MessageBox.Show("Pago completo", "Operacion exitosa!");
 
                             //se limpian los campos y se deshabilita el boton cancelar
-                            cbxIdDuenoP_SelectedIndexChanged(this, EventArgs.Empty);
+                            cbxIdProducto_SelectedIndexChanged(this, EventArgs.Empty);
                         }
                         //Si no se cambio ninguna fila se muestra un mensaje de error
                         else
@@ -247,6 +259,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     }
                 }
             }
+        }
+
+        private void btnVerTodosI_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
