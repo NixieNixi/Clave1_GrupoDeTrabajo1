@@ -26,15 +26,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         
         private List<Producto> productos = new List<Producto>();
         private CarritoCompras carrito;
-
-        public Tienda()
-        {
-            InitializeComponent();
-            CargarProductos();
-            carrito = new CarritoCompras();
-        }
-
         
+        
+            private int IdUsuario;  // Variable para almacenar el id del usuario logueado
+
+            // Constructor que acepta un idUsuario
+            public Tienda(int idUsuario)
+            {
+                InitializeComponent();
+                IdUsuario = idUsuario;   // Asigna el id del usuario a la variable privada
+                CargarProductos();
+                carrito = new CarritoCompras();
+            }
+
+            
+
         private void CargarProductos()
         {
             string query = "SELECT idProductos, Nombre, Precio, Descripcion, Cantidad FROM productos";
@@ -128,17 +134,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// <param name="e"></param>
         private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0) 
+            if (e.RowIndex >= 0)
             {
-                
-                var productoSeleccionado = (Producto)dgvProductos.Rows[e.RowIndex].DataBoundItem;
+                var productoSeleccionado = productos[e.RowIndex]; // Asume que `productos` está sincronizado con `dgvProductos`
 
-                // Agregar el producto al carrito
-                carrito.AgregarProducto(productoSeleccionado);
-
-                MostrarCarrito();
+                if (productoSeleccionado != null)
+                {
+                    carrito.AgregarProducto(productoSeleccionado);
+                    MostrarCarrito();
+                }
             }
         }
+
 
         /// <summary>
         /// Metodo que muestra en el data grid, los productos que el dueno elejio
@@ -149,23 +156,23 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
             foreach (var producto in carrito.ProductosSeleccionados)
             {
-                dgvCarritoCompras.Rows.Add(producto.IdProductos, producto.Nombre, producto.Precio);
+                if (producto != null)  
+                {
+                    dgvCarritoCompras.Rows.Add(producto.IdProductos, producto.Nombre, producto.Precio);
+                }
             }
 
             lblTotal.Text = "Total: $" + carrito.CalcularTotal().ToString("F2");
         }
 
+
         private void ProcesarPago()
         {
             try
             {
-                
                 decimal totalPago = carrito.CalcularTotal();
-                DateTime fechaPago = DateTime.Now;  
-                string tipoPago = "Efectivo"; 
-
-                
-                int idUsuario = 1;  
+                DateTime fechaPago = DateTime.Now;
+                string tipoPago = "Efectivo";
 
                 // Insertar el pago en la base de datos
                 string queryPago = "INSERT INTO pagos (Total, Fecha, TipoPago, IdUsuario) VALUES (@Total, @Fecha, @TipoPago, @IdUsuario)";
@@ -176,17 +183,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     cmd.Parameters.AddWithValue("@Total", totalPago);
                     cmd.Parameters.AddWithValue("@Fecha", fechaPago);
                     cmd.Parameters.AddWithValue("@TipoPago", tipoPago);
-                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@IdUsuario", this.IdUsuario);
 
                     cmd.ExecuteNonQuery();
                 }
 
-                
-                int idPago = ObtenerUltimoIdPago();  
+                int idPago = ObtenerUltimoIdPago();
 
-               
                 foreach (var producto in carrito.ProductosSeleccionados)
                 {
+                    // Insertar detalles del pago en la tabla `detalle_pagos`
                     string queryDetallePago = "INSERT INTO detalle_pagos (IdPago, IdProducto, Cantidad, PrecioUnitario) VALUES (@IdPago, @IdProducto, @Cantidad, @PrecioUnitario)";
                     using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                     {
@@ -194,18 +200,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         MySqlCommand cmdDetalle = new MySqlCommand(queryDetallePago, conexion);
                         cmdDetalle.Parameters.AddWithValue("@IdPago", idPago);
                         cmdDetalle.Parameters.AddWithValue("@IdProducto", producto.IdProductos);
-                        cmdDetalle.Parameters.AddWithValue("@Cantidad", 1);  
+                        cmdDetalle.Parameters.AddWithValue("@Cantidad", producto.CantidadSeleccionada);
                         cmdDetalle.Parameters.AddWithValue("@PrecioUnitario", producto.Precio);
 
                         cmdDetalle.ExecuteNonQuery();
                     }
 
-                   
-                    string queryActualizarCantidad = "UPDATE productos SET Cantidad = Cantidad - 1 WHERE IdProductos = @IdProducto";
+                    // Actualizar el inventario de productos restando la cantidad comprada
+                    string queryActualizarCantidad = "UPDATE productos SET Cantidad = Cantidad - @CantidadComprada WHERE IdProductos = @IdProducto";
                     using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         conexion.Open();
                         MySqlCommand cmdActualizar = new MySqlCommand(queryActualizarCantidad, conexion);
+                        cmdActualizar.Parameters.AddWithValue("@CantidadComprada", producto.CantidadSeleccionada);
                         cmdActualizar.Parameters.AddWithValue("@IdProducto", producto.IdProductos);
 
                         cmdActualizar.ExecuteNonQuery();
@@ -213,9 +220,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
 
                 MessageBox.Show("Pago procesado con éxito.");
-                carrito.VaciarCarrito();  
-                MostrarCarrito();  
-
+                carrito.VaciarCarrito();
+                MostrarCarrito();
             }
             catch (Exception ex)
             {
@@ -223,41 +229,35 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+
+
         private void btnFinCompra_Click(object sender, EventArgs e)
         {
-            //ProcesarPago();
+            ProcesarPago();
         }
 
 
-        private int ObtenerUltimoIdPago()
+        public int ObtenerUltimoIdPago()
         {
-            int ultimoId = 0;
-
-            try
+            int idPago = 0;
+            string query = "SELECT LAST_INSERT_ID()"; // Obtiene el último ID insertado
+            using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
             {
-                
-                string query = "SELECT MAX(IdPago) FROM pagos";
-
-                using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
+                conexion.Open();
+                using (MySqlCommand cmd = new MySqlCommand(query, conexion))
                 {
-                    conexion.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conexion);
-                    object resultado = cmd.ExecuteScalar();
-
-                    if (resultado != DBNull.Value)
-                    {
-                        ultimoId = Convert.ToInt32(resultado);
-                    }
+                    idPago = Convert.ToInt32(cmd.ExecuteScalar());
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al obtener el último ID de pago: " + ex.Message);
-            }
-
-            return ultimoId;
+            return idPago;
         }
+       
 
 
+        private void dgvCarritoCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+
+        }
     }
 }

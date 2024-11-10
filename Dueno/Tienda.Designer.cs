@@ -43,6 +43,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFinCompra = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,7 +51,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotal = new System.Windows.Forms.Label();
             this.dgvCarritoCompras = new System.Windows.Forms.DataGridView();
-            this.btnFinCompra = new System.Windows.Forms.Button();
+            this.IdProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
@@ -194,6 +197,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Size = new System.Drawing.Size(807, 54);
             this.panel1.TabIndex = 16;
             // 
+            // btnFinCompra
+            // 
+            this.btnFinCompra.Location = new System.Drawing.Point(604, 14);
+            this.btnFinCompra.Name = "btnFinCompra";
+            this.btnFinCompra.Size = new System.Drawing.Size(75, 23);
+            this.btnFinCompra.TabIndex = 9;
+            this.btnFinCompra.Text = "Finalizar Compra";
+            this.btnFinCompra.UseVisualStyleBackColor = true;
+            this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
+            // 
             // dgvProductos
             // 
             this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -246,20 +259,33 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // dgvCarritoCompras
             // 
             this.dgvCarritoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarritoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProductoCarrito,
+            this.NombreProductoCarrito,
+            this.PrecioProductoCarrito});
             this.dgvCarritoCompras.Location = new System.Drawing.Point(12, 238);
             this.dgvCarritoCompras.Name = "dgvCarritoCompras";
             this.dgvCarritoCompras.Size = new System.Drawing.Size(691, 126);
             this.dgvCarritoCompras.TabIndex = 19;
+            this.dgvCarritoCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarritoCompras_CellContentClick);
             // 
-            // btnFinCompra
+            // IdProductoCarrito
             // 
-            this.btnFinCompra.Location = new System.Drawing.Point(604, 14);
-            this.btnFinCompra.Name = "btnFinCompra";
-            this.btnFinCompra.Size = new System.Drawing.Size(75, 23);
-            this.btnFinCompra.TabIndex = 9;
-            this.btnFinCompra.Text = "Finalizar Compra";
-            this.btnFinCompra.UseVisualStyleBackColor = true;
-            this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
+            this.IdProductoCarrito.HeaderText = "ID Producto";
+            this.IdProductoCarrito.Name = "IdProductoCarrito";
+            this.IdProductoCarrito.ReadOnly = true;
+            // 
+            // NombreProductoCarrito
+            // 
+            this.NombreProductoCarrito.HeaderText = "Nombre Producto";
+            this.NombreProductoCarrito.Name = "NombreProductoCarrito";
+            this.NombreProductoCarrito.ReadOnly = true;
+            // 
+            // PrecioProductoCarrito
+            // 
+            this.PrecioProductoCarrito.HeaderText = "Precio Producto";
+            this.PrecioProductoCarrito.Name = "PrecioProductoCarrito";
+            this.PrecioProductoCarrito.ReadOnly = true;
             // 
             // Tienda
             // 
@@ -314,5 +340,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView dgvCarritoCompras;
         private System.Windows.Forms.Button btnFinCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProductoCarrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProductoCarrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProductoCarrito;
     }
 }

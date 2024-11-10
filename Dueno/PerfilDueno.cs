@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Clave1_GrupoDeTrabajo1;
+using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Clases;
+
 
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
@@ -21,11 +24,49 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnIrTiendaD_Click(object sender, EventArgs e)
         {
-           //se enlaza con la tienda mediantte el boton correspondiente 
-            Tienda Comprar = new Tienda();
-            this.Hide();
-            Comprar.ShowDialog();
+            int idUsuario = ObtenerIdUsuarioActual();
+            Tienda tienda = new Tienda(idUsuario);
+            tienda.ShowDialog();
         }
+
+        private int ObtenerIdUsuarioActual()
+        {
+            int idUsuario = 0;
+            string nombreUsuario = "nombreUsuarioActual"; // Reemplaza con la variable que almacena el nombre de usuario logueado.
+
+            string query = "SELECT idUsuario FROM usuarios WHERE Nombre = @Nombre";
+
+            try
+            {
+                using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    conexion.Open();
+                    using (MySqlCommand cmd = new MySqlCommand(query, conexion))
+                    {
+                        cmd.Parameters.AddWithValue("@Nombre", nombreUsuario);
+                        object resultado = cmd.ExecuteScalar();
+
+                        if (resultado != null && resultado != DBNull.Value)
+                        {
+                            idUsuario = Convert.ToInt32(resultado);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No se encontró el ID del usuario.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el ID del usuario: " + ex.Message);
+            }
+
+            return idUsuario;
+        }
+
+        
+
 
         private void btnPerfilMascotaD_Click(object sender, EventArgs e)
         {

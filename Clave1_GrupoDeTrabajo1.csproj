@@ -80,6 +80,7 @@
     <Compile Include="Clases\Mascota.cs" />
     <Compile Include="Clases\Pago.cs" />
     <Compile Include="Clases\Producto.cs" />
+    <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\Vacuna.cs" />
     <Compile Include="Dueno\CitaMascota.cs">
       <SubType>Form</SubType>

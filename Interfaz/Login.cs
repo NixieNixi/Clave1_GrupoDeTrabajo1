@@ -11,6 +11,7 @@ using Clave1_GrupoDeTrabajo1;
 using Clave1_GrupoDeTrabajo1.Administrador;
 using Clave1_GrupoDeTrabajo1.Interfaz;
 using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1
 {
@@ -27,7 +28,7 @@ namespace Clave1_GrupoDeTrabajo1
     public partial class Login : Form
     {
         string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
-        
+        public static int IdUsuario { get; set; }
 
         public Login()
         {
@@ -75,7 +76,7 @@ namespace Clave1_GrupoDeTrabajo1
             //string nombre;
 
             // Consulta para obtener la contraseña y el rol del usuario
-            string query = "SELECT Contrasena, Rol, Nombre FROM usuarios WHERE Usuario = @usuario";
+            string query = "SELECT Contrasena, Rol, Nombre, IdUsuario FROM usuarios WHERE Usuario = @usuario";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -89,6 +90,7 @@ namespace Clave1_GrupoDeTrabajo1
                         if (reader.Read())
                         {
                             // Obtener la contraseña y el rol de la base de datos
+                            int idUsuario = Convert.ToInt32(reader["IdUsuario"]);
                             string storedPassword = reader["Contrasena"].ToString();
                             string rol = reader["Rol"].ToString();
                             string nombre = reader["Nombre"].ToString();
@@ -96,6 +98,11 @@ namespace Clave1_GrupoDeTrabajo1
                             // Comparar la contraseña ingresada con la almacenada
                             if (contrasena == storedPassword)
                             {
+
+                                Usuario.IdUsuario = idUsuario;
+                                Usuario.Nombre = nombre;
+                                Usuario.UsuarioInicio = usuario;
+
                                 // Redirigir según el rol del usuario
                                 switch (rol)
                                 {
