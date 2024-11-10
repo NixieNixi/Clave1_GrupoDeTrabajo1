@@ -38,46 +38,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             menu.ShowDialog();
         }
 
-        //Metodo para mostrar el panel de inventario
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            panelUsuario.Visible = false;
-        }
-
         private void AdministradorPerfil_Load(object sender, EventArgs e)
         {
             Login ventana = new Login();
             ventana.Close();
-        }
-
-        private void cbxIdMascotaMascota_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbxIdDueno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnEditM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardarM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnNuevoM_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelarM_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

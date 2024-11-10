@@ -55,6 +55,9 @@
     <Compile Include="Administrador\AdminCitas.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Administrador\AdminInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Administrador\AdministradorPerfil.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -39,6 +39,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelUsuario.Dock = DockStyle.None;
             panelBtnUsuarios.Visible = false;
             panelBtnUsuarios.Dock = DockStyle.None;
+            panelInventario.Visible = false;
+            panelInventario.Dock = DockStyle.None;
+            panelBtnInventario.Visible = false;
+            panelBtnInventario.Dock = DockStyle.None;
 
             //Se muestran los paneles de Pagos
             panelBtnPagos.Dock = DockStyle.Bottom;

@@ -1504,10 +1504,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnPagos.Controls.Add(this.btnRegistrarP);
             this.panelBtnPagos.Controls.Add(this.btnCancelarP);
             this.panelBtnPagos.Controls.Add(this.btnGuardarP);
-            this.panelBtnPagos.Controls.Add(this.btnVerTodosP);
             this.panelBtnPagos.Location = new System.Drawing.Point(248, 368);
             this.panelBtnPagos.Name = "panelBtnPagos";
-            this.panelBtnPagos.Size = new System.Drawing.Size(440, 60);
+            this.panelBtnPagos.Size = new System.Drawing.Size(328, 60);
             this.panelBtnPagos.TabIndex = 11;
             this.panelBtnPagos.Visible = false;
             // 
@@ -1558,7 +1557,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnVerTodosP.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVerTodosP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodosP.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodosP.Location = new System.Drawing.Point(328, 16);
+            this.btnVerTodosP.Location = new System.Drawing.Point(432, 16);
             this.btnVerTodosP.Name = "btnVerTodosP";
             this.btnVerTodosP.Size = new System.Drawing.Size(80, 30);
             this.btnVerTodosP.TabIndex = 0;
@@ -1579,9 +1578,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelInventario.Controls.Add(this.label42);
             this.panelInventario.Controls.Add(this.label43);
             this.panelInventario.Controls.Add(this.label44);
-            this.panelInventario.Location = new System.Drawing.Point(744, 80);
+            this.panelInventario.Location = new System.Drawing.Point(752, 368);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(112, 88);
+            this.panelInventario.Size = new System.Drawing.Size(132, 73);
             this.panelInventario.TabIndex = 12;
             this.panelInventario.Visible = false;
             // 
@@ -1711,10 +1710,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnInventario.Controls.Add(this.button1);
             this.panelBtnInventario.Controls.Add(this.button2);
             this.panelBtnInventario.Controls.Add(this.button3);
+            this.panelBtnInventario.Controls.Add(this.btnVerTodosP);
             this.panelBtnInventario.Controls.Add(this.button4);
-            this.panelBtnInventario.Location = new System.Drawing.Point(248, 432);
+            this.panelBtnInventario.Location = new System.Drawing.Point(240, 441);
             this.panelBtnInventario.Name = "panelBtnInventario";
-            this.panelBtnInventario.Size = new System.Drawing.Size(432, 60);
+            this.panelBtnInventario.Size = new System.Drawing.Size(644, 60);
             this.panelBtnInventario.TabIndex = 12;
             this.panelBtnInventario.Visible = false;
             // 
@@ -1785,10 +1785,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Controls.Add(this.panelBtnPagos);
             this.Controls.Add(this.panelBtnUsuarios);
             this.Controls.Add(this.panelBtnCitas);
+            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
-            this.Controls.Add(this.panelMascotas);
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";

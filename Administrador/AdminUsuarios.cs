@@ -48,6 +48,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelPagos.Dock = DockStyle.None;
             panelBtnPagos.Visible = false;
             panelBtnPagos.Dock = DockStyle.None;
+            panelInventario.Visible = false;
+            panelInventario.Dock = DockStyle.None;
+            panelBtnInventario.Visible = false;
+            panelBtnInventario.Dock = DockStyle.None;
 
             //Se muestran los paneles de Usuario
             panelBtnUsuarios.Dock = DockStyle.Bottom;
@@ -628,7 +632,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             catch
             {
                 //Si no puede conectar mostrar mensaje de error
-                MessageBox.Show("No hay sistema xd", "Error :(");
+                MessageBox.Show("Error de conexion a la base de datos", "Error :(");
 
                 //Cerrar menu de administracion de usuarios
                 panelUsuario.Visible = false;
