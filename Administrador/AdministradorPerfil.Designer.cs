@@ -133,6 +133,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label36 = new System.Windows.Forms.Label();
             this.panelBtnPagos = new System.Windows.Forms.Panel();
             this.btnRegistrarP = new System.Windows.Forms.Button();
+            this.btnCancelarP = new System.Windows.Forms.Button();
             this.btnGuardarP = new System.Windows.Forms.Button();
             this.btnVerTodosP = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
@@ -705,10 +706,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMascotas.Location = new System.Drawing.Point(240, 70);
+            this.panelMascotas.Location = new System.Drawing.Point(408, 80);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(644, 371);
+            this.panelMascotas.Size = new System.Drawing.Size(144, 96);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -746,7 +746,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascotaM.Name = "cbxIdMascotaM";
             this.cbxIdMascotaM.Size = new System.Drawing.Size(264, 24);
             this.cbxIdMascotaM.TabIndex = 2;
-            this.cbxIdMascotaM.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaM_SelectedIndexChanged);
+            this.cbxIdMascotaM.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaMascota_SelectedIndexChanged);
             // 
             // cbxIdDueno
             // 
@@ -1290,9 +1290,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelPagos.Controls.Add(this.label26);
             this.panelPagos.Controls.Add(this.label35);
             this.panelPagos.Controls.Add(this.label36);
-            this.panelPagos.Location = new System.Drawing.Point(752, 144);
+            this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPagos.Location = new System.Drawing.Point(240, 70);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(132, 297);
+            this.panelPagos.Size = new System.Drawing.Size(644, 371);
             this.panelPagos.TabIndex = 3;
             this.panelPagos.Visible = false;
             // 
@@ -1484,6 +1485,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelBtnPagos.BackColor = System.Drawing.Color.CadetBlue;
             this.panelBtnPagos.Controls.Add(this.btnRegistrarP);
+            this.panelBtnPagos.Controls.Add(this.btnCancelarP);
             this.panelBtnPagos.Controls.Add(this.btnGuardarP);
             this.panelBtnPagos.Controls.Add(this.btnVerTodosP);
             this.panelBtnPagos.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1505,6 +1507,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnRegistrarP.TabIndex = 0;
             this.btnRegistrarP.Text = "Registrar";
             this.btnRegistrarP.UseVisualStyleBackColor = false;
+            this.btnRegistrarP.Click += new System.EventHandler(this.btnRegistrarP_Click);
+            // 
+            // btnCancelarP
+            // 
+            this.btnCancelarP.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelarP.Enabled = false;
+            this.btnCancelarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarP.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarP.Location = new System.Drawing.Point(224, 16);
+            this.btnCancelarP.Name = "btnCancelarP";
+            this.btnCancelarP.Size = new System.Drawing.Size(80, 30);
+            this.btnCancelarP.TabIndex = 0;
+            this.btnCancelarP.Text = "Cancelar";
+            this.btnCancelarP.UseVisualStyleBackColor = false;
+            this.btnCancelarP.Click += new System.EventHandler(this.btnCancelarP_Click);
             // 
             // btnGuardarP
             // 
@@ -1518,13 +1535,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarP.TabIndex = 0;
             this.btnGuardarP.Text = "Guardar";
             this.btnGuardarP.UseVisualStyleBackColor = false;
+            this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
             // 
             // btnVerTodosP
             // 
             this.btnVerTodosP.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVerTodosP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTodosP.ForeColor = System.Drawing.Color.White;
-            this.btnVerTodosP.Location = new System.Drawing.Point(224, 16);
+            this.btnVerTodosP.Location = new System.Drawing.Point(328, 16);
             this.btnVerTodosP.Name = "btnVerTodosP";
             this.btnVerTodosP.Size = new System.Drawing.Size(80, 30);
             this.btnVerTodosP.TabIndex = 0;
@@ -1537,7 +1555,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelPagos);
             this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelUsuario);
@@ -1548,6 +1565,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
+            this.Controls.Add(this.panelMascotas);
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";
@@ -1682,5 +1700,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Button btnGuardarP;
         private System.Windows.Forms.Button btnVerTodosP;
         private System.Windows.Forms.ComboBox cbxIdMascotaM;
+        private System.Windows.Forms.Button btnCancelarP;
     }
 }
