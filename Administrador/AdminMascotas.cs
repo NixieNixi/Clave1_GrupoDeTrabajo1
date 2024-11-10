@@ -153,7 +153,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnGuardarM_Click(object sender, EventArgs e)
         {
             //Si no hay seleccion de ID Mascota significa que se esta guardando una nueva mascota
-            if(cbxIdMascotaM.SelectedIndex == -1)
+            if(cbxIdPago.SelectedIndex == -1)
             {
                 NuevaMascota();
             }
@@ -246,7 +246,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void cbxIdMascotaMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
             //Si no se ha seleccionado ninguna opcion se limpian los controles
-            if (cbxIdMascotaM.SelectedIndex == -1)
+            if (cbxIdPago.SelectedIndex == -1)
             {
                 LimpiarMascota();
             }
@@ -257,7 +257,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 btnEditM.Enabled = true;
 
                 //guarda el texto de la seleccion en ConsultaIdMascota
-                string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
+                string ConsultaIdMascota = cbxIdPago.SelectedItem.ToString();
 
                 //Intentar conectar a DB y hacer la consulta del nombre de la mascota
                 try
@@ -375,17 +375,17 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 while (reader.Read())
                                 {
                                     //Cargar los idMascota en el comboBox
-                                    cbxIdMascotaM.Items.Add(reader["idMascota"].ToString());
+                                    cbxIdPago.Items.Add(reader["idMascota"].ToString());
                                 }
                                 //habilitar el comboBox
-                                cbxIdMascotaM.Enabled = true;
+                                cbxIdPago.Enabled = true;
                             }
                             else
                             {
                                 //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
-                                cbxIdMascotaM.Text = "No se encontraron mascotas";
+                                cbxIdPago.Text = "No se encontraron mascotas";
                                 btnEditM.Enabled = false;
-                                cbxIdMascotaM.Enabled = false;
+                                cbxIdPago.Enabled = false;
                             }
                         }
                     }
@@ -404,8 +404,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void LimpiarMascota()
         {
             //limpia los controles
-            cbxIdMascotaM.Text = null;
-            cbxIdMascotaM.Items.Clear();
+            cbxIdPago.Text = null;
+            cbxIdPago.Items.Clear();
             txtNombreMascotaM.Text = null;
             txtRazaM.Text = null;
             txtEspecieM.Text = null;
@@ -429,7 +429,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void HabilitarEdicionM(bool habilitar)
         {
             //Desahabilta ID Mascota
-            cbxIdMascotaM.Enabled = !habilitar;
+            cbxIdPago.Enabled = !habilitar;
 
             //Habilita los controles
             txtUsuario.Enabled = habilitar;
@@ -556,7 +556,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
                         {
-                            command.Parameters.AddWithValue("@idMascota", cbxIdMascotaM.SelectedItem.ToString());
+                            command.Parameters.AddWithValue("@idMascota", cbxIdPago.SelectedItem.ToString());
                             command.Parameters.AddWithValue("@Nombre", txtNombreMascotaM.Text);
                             command.Parameters.AddWithValue("@FechaNacimiento", dtpFechaNacimiento.Value);
                             command.Parameters.AddWithValue("@Especie", txtEspecieM.Text);

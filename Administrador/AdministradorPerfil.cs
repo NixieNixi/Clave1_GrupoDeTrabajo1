@@ -49,5 +49,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             Login ventana = new Login();
             ventana.Close();
         }
+
+
     }
 }

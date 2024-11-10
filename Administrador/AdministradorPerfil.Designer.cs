@@ -73,7 +73,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelMascotas = new System.Windows.Forms.Panel();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.cbxIdMascotaM = new System.Windows.Forms.ComboBox();
+            this.cbxIdPago = new System.Windows.Forms.ComboBox();
             this.label25 = new System.Windows.Forms.Label();
             this.cbxIdDueno = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -115,11 +115,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnNueva = new System.Windows.Forms.Button();
             this.btnCancelarC = new System.Windows.Forms.Button();
             this.panelPagos = new System.Windows.Forms.Panel();
-            this.cbxTipoPago = new System.Windows.Forms.ComboBox();
+            this.cbxFormaPago = new System.Windows.Forms.ComboBox();
             this.cbxEstadoP = new System.Windows.Forms.ComboBox();
             this.dtpFechaP = new System.Windows.Forms.DateTimePicker();
             this.cbxIdDuenoP = new System.Windows.Forms.ComboBox();
-            this.cbxIdPago = new System.Windows.Forms.ComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.txtTipoServicio = new System.Windows.Forms.TextBox();
@@ -132,9 +131,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.panelBtnPagos = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnRegistrarP = new System.Windows.Forms.Button();
+            this.btnGuardarP = new System.Windows.Forms.Button();
+            this.btnVerTodosP = new System.Windows.Forms.Button();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -690,7 +689,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.AutoScroll = true;
             this.panelMascotas.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelMascotas.Controls.Add(this.dtpFechaNacimiento);
-            this.panelMascotas.Controls.Add(this.cbxIdMascotaM);
             this.panelMascotas.Controls.Add(this.label25);
             this.panelMascotas.Controls.Add(this.cbxIdDueno);
             this.panelMascotas.Controls.Add(this.label15);
@@ -722,18 +720,18 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dtpFechaNacimiento.TabIndex = 3;
             this.dtpFechaNacimiento.Value = new System.DateTime(2024, 10, 31, 0, 0, 0, 0);
             // 
-            // cbxIdMascotaM
+            // cbxIdPago
             // 
-            this.cbxIdMascotaM.BackColor = System.Drawing.Color.White;
-            this.cbxIdMascotaM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdMascotaM.Enabled = false;
-            this.cbxIdMascotaM.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdMascotaM.FormattingEnabled = true;
-            this.cbxIdMascotaM.Location = new System.Drawing.Point(24, 104);
-            this.cbxIdMascotaM.Name = "cbxIdMascotaM";
-            this.cbxIdMascotaM.Size = new System.Drawing.Size(264, 24);
-            this.cbxIdMascotaM.TabIndex = 2;
-            this.cbxIdMascotaM.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaMascota_SelectedIndexChanged);
+            this.cbxIdPago.BackColor = System.Drawing.Color.White;
+            this.cbxIdPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxIdPago.Enabled = false;
+            this.cbxIdPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxIdPago.FormattingEnabled = true;
+            this.cbxIdPago.Location = new System.Drawing.Point(24, 104);
+            this.cbxIdPago.Name = "cbxIdPago";
+            this.cbxIdPago.Size = new System.Drawing.Size(264, 24);
+            this.cbxIdPago.TabIndex = 2;
+            this.cbxIdPago.SelectedIndexChanged += new System.EventHandler(this.cbxIdPago_SelectedIndexChanged);
             // 
             // label25
             // 
@@ -1261,7 +1259,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelPagos.AutoScroll = true;
             this.panelPagos.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.panelPagos.Controls.Add(this.cbxTipoPago);
+            this.panelPagos.Controls.Add(this.cbxFormaPago);
             this.panelPagos.Controls.Add(this.cbxEstadoP);
             this.panelPagos.Controls.Add(this.dtpFechaP);
             this.panelPagos.Controls.Add(this.cbxIdDuenoP);
@@ -1280,24 +1278,24 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPagos.Location = new System.Drawing.Point(240, 70);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(644, 431);
+            this.panelPagos.Size = new System.Drawing.Size(644, 371);
             this.panelPagos.TabIndex = 3;
             this.panelPagos.Visible = false;
             // 
-            // cbxTipoPago
+            // cbxFormaPago
             // 
-            this.cbxTipoPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxTipoPago.Enabled = false;
-            this.cbxTipoPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxTipoPago.FormattingEnabled = true;
-            this.cbxTipoPago.Items.AddRange(new object[] {
+            this.cbxFormaPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxFormaPago.Enabled = false;
+            this.cbxFormaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxFormaPago.FormattingEnabled = true;
+            this.cbxFormaPago.Items.AddRange(new object[] {
             "Efectivo",
             "Tarjeta",
             "Bitcoin"});
-            this.cbxTipoPago.Location = new System.Drawing.Point(320, 160);
-            this.cbxTipoPago.Name = "cbxTipoPago";
-            this.cbxTipoPago.Size = new System.Drawing.Size(264, 24);
-            this.cbxTipoPago.TabIndex = 10;
+            this.cbxFormaPago.Location = new System.Drawing.Point(320, 160);
+            this.cbxFormaPago.Name = "cbxFormaPago";
+            this.cbxFormaPago.Size = new System.Drawing.Size(264, 24);
+            this.cbxFormaPago.TabIndex = 10;
             // 
             // cbxEstadoP
             // 
@@ -1338,18 +1336,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdDuenoP.TabIndex = 2;
             this.cbxIdDuenoP.SelectedIndexChanged += new System.EventHandler(this.cbxIdDuenoP_SelectedIndexChanged);
             // 
-            // cbxIdPago
-            // 
-            this.cbxIdPago.BackColor = System.Drawing.Color.White;
-            this.cbxIdPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxIdPago.FormattingEnabled = true;
-            this.cbxIdPago.Location = new System.Drawing.Point(24, 104);
-            this.cbxIdPago.Name = "cbxIdPago";
-            this.cbxIdPago.Size = new System.Drawing.Size(264, 24);
-            this.cbxIdPago.TabIndex = 2;
-            this.cbxIdPago.SelectedIndexChanged += new System.EventHandler(this.cbxIdPago_SelectedIndexChanged);
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -1358,9 +1344,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.label24.ForeColor = System.Drawing.Color.Black;
             this.label24.Location = new System.Drawing.Point(320, 136);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(90, 16);
+            this.label24.Size = new System.Drawing.Size(101, 16);
             this.label24.TabIndex = 0;
-            this.label24.Text = "Tipo de pago";
+            this.label24.Text = "Forma de pago";
             // 
             // label37
             // 
@@ -1482,50 +1468,53 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // panelBtnPagos
             // 
             this.panelBtnPagos.BackColor = System.Drawing.Color.CadetBlue;
-            this.panelBtnPagos.Controls.Add(this.button1);
-            this.panelBtnPagos.Controls.Add(this.button3);
-            this.panelBtnPagos.Controls.Add(this.button4);
-            this.panelBtnPagos.Location = new System.Drawing.Point(248, 384);
+            this.panelBtnPagos.Controls.Add(this.btnRegistrarP);
+            this.panelBtnPagos.Controls.Add(this.btnGuardarP);
+            this.panelBtnPagos.Controls.Add(this.btnVerTodosP);
+            this.panelBtnPagos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBtnPagos.Location = new System.Drawing.Point(240, 441);
             this.panelBtnPagos.Name = "panelBtnPagos";
-            this.panelBtnPagos.Size = new System.Drawing.Size(328, 60);
+            this.panelBtnPagos.Size = new System.Drawing.Size(644, 60);
             this.panelBtnPagos.TabIndex = 11;
             this.panelBtnPagos.Visible = false;
             // 
-            // button1
+            // btnRegistrarP
             // 
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(16, 16);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 30);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Registrar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRegistrarP.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnRegistrarP.Enabled = false;
+            this.btnRegistrarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrarP.ForeColor = System.Drawing.Color.White;
+            this.btnRegistrarP.Location = new System.Drawing.Point(16, 16);
+            this.btnRegistrarP.Name = "btnRegistrarP";
+            this.btnRegistrarP.Size = new System.Drawing.Size(80, 30);
+            this.btnRegistrarP.TabIndex = 0;
+            this.btnRegistrarP.Text = "Registrar";
+            this.btnRegistrarP.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnGuardarP
             // 
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(120, 16);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 30);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Guardar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnGuardarP.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnGuardarP.Enabled = false;
+            this.btnGuardarP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarP.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarP.Location = new System.Drawing.Point(120, 16);
+            this.btnGuardarP.Name = "btnGuardarP";
+            this.btnGuardarP.Size = new System.Drawing.Size(80, 30);
+            this.btnGuardarP.TabIndex = 0;
+            this.btnGuardarP.Text = "Guardar";
+            this.btnGuardarP.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnVerTodosP
             // 
-            this.button4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(224, 16);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(80, 30);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Ver todos";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnVerTodosP.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVerTodosP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTodosP.ForeColor = System.Drawing.Color.White;
+            this.btnVerTodosP.Location = new System.Drawing.Point(224, 16);
+            this.btnVerTodosP.Name = "btnVerTodosP";
+            this.btnVerTodosP.Size = new System.Drawing.Size(80, 30);
+            this.btnVerTodosP.TabIndex = 0;
+            this.btnVerTodosP.Text = "Ver todos";
+            this.btnVerTodosP.UseVisualStyleBackColor = false;
             // 
             // AdministradorPerfil
             // 
@@ -1619,7 +1608,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtNombreMascotaM;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbxIdMascotaM;
+        private System.Windows.Forms.ComboBox cbxIdPago;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Panel panelBtnMascota;
         private System.Windows.Forms.Button btnEditM;
@@ -1661,22 +1650,21 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.ComboBox cbxEstadoP;
         private System.Windows.Forms.DateTimePicker dtpFechaP;
         private System.Windows.Forms.ComboBox cbxIdDuenoP;
-        private System.Windows.Forms.ComboBox cbxIdPago;
         private System.Windows.Forms.TextBox txtNombreP;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.ComboBox cbxTipoPago;
+        private System.Windows.Forms.ComboBox cbxFormaPago;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.TextBox txtTotalP;
         private System.Windows.Forms.TextBox txtTipoServicio;
         private System.Windows.Forms.Panel panelBtnPagos;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnRegistrarP;
+        private System.Windows.Forms.Button btnGuardarP;
+        private System.Windows.Forms.Button btnVerTodosP;
     }
 }
