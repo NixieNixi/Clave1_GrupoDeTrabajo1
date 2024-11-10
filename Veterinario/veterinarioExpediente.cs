@@ -252,8 +252,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // Consulta SQL que obtiene información de las citas de la mascota
             string querycitas = @"
                 SELECT DISTINCT
-                    citas.idCita, 
-                    citas.Motivo, 
+                    consultas.idCita, 
+                    consultas.Motivo, 
                     consultas.FechaHora,
                     consultas.Sintomas, 
                     consultas.ExamenFisico, 
@@ -262,11 +262,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     consultas.Medicamentos, 
                     consultas.Notas 
                 FROM 
-                    citas 
-                JOIN 
-                    consultas ON citas.idMascota = consultas.idMascota
+                    consultas 
                 WHERE 
-                    citas.idMascota = @idMascota;";
+                    consultas.idMascota = @idMascota;";
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
