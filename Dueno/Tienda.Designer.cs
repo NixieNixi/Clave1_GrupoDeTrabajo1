@@ -32,7 +32,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnComprarD = new System.Windows.Forms.Button();
+            this.btnComprarProducto = new System.Windows.Forms.Button();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
@@ -43,14 +43,24 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.dgvCarritoCompras = new System.Windows.Forms.DataGridView();
+            this.btnFinCompra = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompras)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 138);
+            this.label1.Location = new System.Drawing.Point(153, 484);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 0;
@@ -59,7 +69,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(319, 138);
+            this.label2.Location = new System.Drawing.Point(300, 484);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 1;
@@ -68,26 +78,26 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(453, 138);
+            this.label3.Location = new System.Drawing.Point(434, 484);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Accesorios:";
             // 
-            // btnComprarD
+            // btnComprarProducto
             // 
-            this.btnComprarD.Location = new System.Drawing.Point(279, 15);
-            this.btnComprarD.Name = "btnComprarD";
-            this.btnComprarD.Size = new System.Drawing.Size(75, 23);
-            this.btnComprarD.TabIndex = 3;
-            this.btnComprarD.Text = "Comprar";
-            this.btnComprarD.UseVisualStyleBackColor = true;
-            this.btnComprarD.Click += new System.EventHandler(this.btnComprarD_Click);
+            this.btnComprarProducto.Location = new System.Drawing.Point(279, 15);
+            this.btnComprarProducto.Name = "btnComprarProducto";
+            this.btnComprarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnComprarProducto.TabIndex = 3;
+            this.btnComprarProducto.Text = "Comprar";
+            this.btnComprarProducto.UseVisualStyleBackColor = true;
+            this.btnComprarProducto.Click += new System.EventHandler(this.btnComprarD_Click);
             // 
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(128, 154);
+            this.checkedListBox1.Location = new System.Drawing.Point(109, 500);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox1.TabIndex = 4;
@@ -95,7 +105,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // checkedListBox2
             // 
             this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(277, 154);
+            this.checkedListBox2.Location = new System.Drawing.Point(258, 500);
             this.checkedListBox2.Name = "checkedListBox2";
             this.checkedListBox2.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox2.TabIndex = 5;
@@ -103,7 +113,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // checkedListBox3
             // 
             this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(426, 154);
+            this.checkedListBox3.Location = new System.Drawing.Point(407, 500);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(120, 94);
             this.checkedListBox3.TabIndex = 6;
@@ -175,7 +185,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.Controls.Add(this.btnComprarD);
+            this.panel1.Controls.Add(this.btnFinCompra);
+            this.panel1.Controls.Add(this.btnComprarProducto);
             this.panel1.Controls.Add(this.btnVolD);
             this.panel1.Controls.Add(this.btnCanceD);
             this.panel1.Location = new System.Drawing.Point(-2, 370);
@@ -183,12 +194,82 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Size = new System.Drawing.Size(807, 54);
             this.panel1.TabIndex = 16;
             // 
+            // dgvProductos
+            // 
+            this.dgvProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.NombreProducto,
+            this.PrecioProducto,
+            this.CantidadDisponible});
+            this.dgvProductos.Location = new System.Drawing.Point(12, 82);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvProductos.Size = new System.Drawing.Size(691, 150);
+            this.dgvProductos.TabIndex = 17;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre Producto";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // PrecioProducto
+            // 
+            this.PrecioProducto.HeaderText = "Precio Producto";
+            this.PrecioProducto.Name = "PrecioProducto";
+            this.PrecioProducto.ReadOnly = true;
+            // 
+            // CantidadDisponible
+            // 
+            this.CantidadDisponible.HeaderText = "Cantidad Disponible";
+            this.CantidadDisponible.Name = "CantidadDisponible";
+            this.CantidadDisponible.ReadOnly = true;
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(846, 299);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(31, 13);
+            this.lblTotal.TabIndex = 18;
+            this.lblTotal.Text = "Total";
+            // 
+            // dgvCarritoCompras
+            // 
+            this.dgvCarritoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCarritoCompras.Location = new System.Drawing.Point(12, 238);
+            this.dgvCarritoCompras.Name = "dgvCarritoCompras";
+            this.dgvCarritoCompras.Size = new System.Drawing.Size(691, 126);
+            this.dgvCarritoCompras.TabIndex = 19;
+            // 
+            // btnFinCompra
+            // 
+            this.btnFinCompra.Location = new System.Drawing.Point(604, 14);
+            this.btnFinCompra.Name = "btnFinCompra";
+            this.btnFinCompra.Size = new System.Drawing.Size(75, 23);
+            this.btnFinCompra.TabIndex = 9;
+            this.btnFinCompra.Text = "Finalizar Compra";
+            this.btnFinCompra.UseVisualStyleBackColor = true;
+            this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
+            // 
             // Tienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(610, 420);
+            this.ClientSize = new System.Drawing.Size(1181, 632);
+            this.Controls.Add(this.dgvCarritoCompras);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.checkedListBox3);
@@ -202,6 +283,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -212,7 +295,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnComprarD;
+        private System.Windows.Forms.Button btnComprarProducto;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.CheckedListBox checkedListBox2;
         private System.Windows.Forms.CheckedListBox checkedListBox3;
@@ -223,5 +306,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.DataGridView dgvCarritoCompras;
+        private System.Windows.Forms.Button btnFinCompra;
     }
 }
