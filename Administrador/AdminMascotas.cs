@@ -50,6 +50,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             panelPagos.Dock = DockStyle.None;
             panelBtnPagos.Visible = false;
             panelBtnPagos.Dock = DockStyle.None;
+            panelInventario.Visible = false;
+            panelInventario.Dock = DockStyle.None;
+            panelBtnInventario.Visible = false;
+            panelBtnInventario.Dock = DockStyle.None;
 
             panelBtnMascota.Dock = DockStyle.Bottom;
             panelBtnMascota.Visible = true;
@@ -81,7 +85,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnNuevoM.Enabled = false;
 
             //activar modo de edicion
-            activarM = true;  
+            activarM = true;
             HabilitarEdicionM(true);
         }
 
@@ -139,7 +143,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //vuelve a cargar los idUsuario y los idMasctoa en sus combobox 
             cbxIdDueno_SelectedIndexChanged(this, EventArgs.Empty);
-            
+
             //desactiva el boton de cancelar
             btnCancelarM.Enabled = false;
         }
@@ -153,7 +157,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnGuardarM_Click(object sender, EventArgs e)
         {
             //Si no hay seleccion de ID Mascota significa que se esta guardando una nueva mascota
-            if(cbxIdMascotaM.SelectedIndex == -1)
+            if (cbxIdMascotaM.SelectedIndex == -1)
             {
                 NuevaMascota();
             }
@@ -332,7 +336,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             catch
             {
                 //Si no puede conectar mostrar mensaje de error
-                MessageBox.Show("No hay sistema xd", "Error :(");
+                MessageBox.Show("Error de conexion a la base de datos", "Error :(");
 
                 //Cerrar menu de administracion de usuarios
                 panelMascotas.Visible = false;
@@ -515,7 +519,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                             MessageBox.Show("Error al ingresar mascota.", "Error :(");
                         }
 
-                    //Si no puede hacer el registro mostrar mensaje de error
+                        //Si no puede hacer el registro mostrar mensaje de error
                     }
                     catch (Exception ex)
                     {

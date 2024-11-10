@@ -38,19 +38,15 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             menu.ShowDialog();
         }
 
-        //Metodo para mostrar el panel de inventario
-        private void btnInventario_Click(object sender, EventArgs e)
-        {
-            panelUsuario.Visible = false;
-            AdminInventario adminInventario = new AdminInventario();
-            this.Hide();
-            adminInventario.ShowDialog();
-        }
-
         private void AdministradorPerfil_Load(object sender, EventArgs e)
         {
             Login ventana = new Login();
             ventana.Close();
+        }
+
+        private void btnBorrarMascota_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
