@@ -108,9 +108,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnVolver
             // 
-            this.btnVolver.Location = new System.Drawing.Point(198, 560);
+            this.btnVolver.Location = new System.Drawing.Point(12, 554);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(125, 49);
+            this.btnVolver.Size = new System.Drawing.Size(327, 79);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
@@ -118,9 +118,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnIrCita
             // 
-            this.btnIrCita.Location = new System.Drawing.Point(576, 560);
+            this.btnIrCita.Location = new System.Drawing.Point(573, 554);
             this.btnIrCita.Name = "btnIrCita";
-            this.btnIrCita.Size = new System.Drawing.Size(125, 49);
+            this.btnIrCita.Size = new System.Drawing.Size(327, 79);
             this.btnIrCita.TabIndex = 2;
             this.btnIrCita.Text = "Ir Cita";
             this.btnIrCita.UseVisualStyleBackColor = true;
@@ -331,7 +331,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHCitas.Location = new System.Drawing.Point(3, 203);
             this.dgvHCitas.Name = "dgvHCitas";
             this.dgvHCitas.ReadOnly = true;
-            this.dgvHCitas.Size = new System.Drawing.Size(883, 161);
+            this.dgvHCitas.Size = new System.Drawing.Size(877, 161);
             this.dgvHCitas.TabIndex = 3;
             // 
             // idCita

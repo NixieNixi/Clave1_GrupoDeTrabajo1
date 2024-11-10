@@ -344,7 +344,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         cirugia.Tipo, 
                         cirugia.Descripcion, 
                         cirugia.Motivo,
-                        cirugia.Fecha
+                        cirugia.FechaHora
                     FROM 
                         cirugia 
                     WHERE 
@@ -371,7 +371,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 Cirugia cirugia = new Cirugia
                                 {
                                     IdCirugia = reader.GetInt32("idCirugia"),
-                                    FechaHoraCirugia = reader.GetDateTime("Fecha"),
+                                    FechaHoraCirugia = reader.GetDateTime("FechaHora"),
                                     Tipo = reader["Tipo"].ToString(),
                                     Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()

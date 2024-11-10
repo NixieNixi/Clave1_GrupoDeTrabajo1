@@ -44,18 +44,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             
         }
 
-        //Mostrar el form veterinarioVacuna mediante el boton btnConsultarVacunas
-        private void btnConsultarVacunas_Click(object sender, EventArgs e)
-        {
-            //instancia de objeto 
-            veterinarioVacuna veterinarioVacuna = new veterinarioVacuna();
-            //Oculta el formulario actual
-            this.Hide();
-            //Abre el formulario veterinarioVacuna
-            veterinarioVacuna.ShowDialog();
-            this.Show();
-
-        }
+    
+       
 
         //Mostrar el form veterinarioCita mediante el boton btnCita
         private void btnCita_Click(object sender, EventArgs e)
