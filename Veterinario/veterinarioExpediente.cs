@@ -416,6 +416,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     vacuna.idVacuna, 
                     vacuna.Tipo, 
                     vacuna.Descripcion, 
+                    vacuna.FechaHora,
                     vacuna.Motivo
                 FROM 
                     vacuna 
@@ -443,8 +444,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 Vacuna vacuna = new Vacuna
                                 {
                                     IdVacuna = reader.GetInt32("idVacuna"),
+                                    FechaHora = reader.GetDateTime("FechaHora"),
                                     Tipo = reader["Tipo"].ToString(),
-                                    Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()
                                 };
 
@@ -452,8 +453,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                 dgvHVacunas.Rows.Add(
                                     vacuna.IdVacuna,
+                                    vacuna.FechaHora,
                                     vacuna.Tipo,
-                                    vacuna.Descripcion,
                                     vacuna.Motivo
                                 );
                             }
