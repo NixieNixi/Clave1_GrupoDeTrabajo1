@@ -479,7 +479,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         examen.idExamen, 
                         examen.Tipo, 
                         examen.Descripcion, 
-                        examen.Motivo
+                        examen.Motivo,
+                        examen.FechaHora
                     FROM 
                         examen 
                     WHERE 
@@ -506,6 +507,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                 Examen examen = new Examen
                                 {
                                     IdExamen = reader.GetInt32("idExamen"),
+                                    FechaHora = reader.GetDateTime("FechaHora"),
                                     Tipo = reader["Tipo"].ToString(),
                                     Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()
@@ -516,8 +518,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                                 dgvHExamenes.Rows.Add(
                                     examen.IdExamen,
+                                    examen.FechaHora,
                                     examen.Tipo,
-                                    examen.Descripcion,
                                     examen.Motivo
                                 );
                             }

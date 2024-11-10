@@ -14,6 +14,7 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public string Descripcion { get; set; }
         public string Motivo { get; set; }
         public string Materiales { get; set; }
+        public DateTime FechaHora { get; set; }
         public Examen() { }
         public Examen(int idExamen, int idMascota, string tipo,
             string descripcion, string motivo, string materiales)

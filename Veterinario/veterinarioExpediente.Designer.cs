@@ -34,10 +34,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabHistorialMedico = new System.Windows.Forms.TabPage();
             this.panelHM = new System.Windows.Forms.Panel();
             this.dgvHExamenes = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblHistorialExamenes = new System.Windows.Forms.Label();
             this.lblHistorialCitas = new System.Windows.Forms.Label();
             this.lblHistorialCirugias = new System.Windows.Forms.Label();
@@ -93,6 +89,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.FechaAplicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotivoVacuna = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TipoExamen = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MotivoExamen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabHistorialMedico.SuspendLayout();
             this.panelHM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHExamenes)).BeginInit();
@@ -162,36 +162,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvHExamenes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4});
+            this.TipoExamen,
+            this.MotivoExamen});
             this.dgvHExamenes.Location = new System.Drawing.Point(12, 1005);
             this.dgvHExamenes.Name = "dgvHExamenes";
             this.dgvHExamenes.Size = new System.Drawing.Size(848, 150);
             this.dgvHExamenes.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Vacuna";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha de Aplicacion";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Motivo";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Proxima Dosis";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // lblHistorialExamenes
             // 
@@ -683,6 +659,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.MotivoVacuna.Name = "MotivoVacuna";
             this.MotivoVacuna.ReadOnly = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Vacuna";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha de Aplicacion";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // TipoExamen
+            // 
+            this.TipoExamen.HeaderText = "Tipo Examen";
+            this.TipoExamen.Name = "TipoExamen";
+            this.TipoExamen.ReadOnly = true;
+            // 
+            // MotivoExamen
+            // 
+            this.MotivoExamen.HeaderText = "Motivo Examen";
+            this.MotivoExamen.Name = "MotivoExamen";
+            this.MotivoExamen.ReadOnly = true;
+            // 
             // veterinarioExpediente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,10 +755,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvHCitas;
         private System.Windows.Forms.DataGridView dgvHExamenes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label lblHistorialExamenes;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCita;
@@ -779,5 +775,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaAplicacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn TipoVacuna;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotivoVacuna;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoExamen;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MotivoExamen;
     }
 }
