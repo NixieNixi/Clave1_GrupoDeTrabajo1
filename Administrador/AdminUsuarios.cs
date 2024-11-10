@@ -130,6 +130,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
             //desahabilitar funcion de nuevo usuario
             btnNuevoUser.Enabled = false;
+            btnBorrarUser.Enabled = false;
 
             //Habilita la edicion de los campos
             HabilitarEdicion(true);
@@ -189,12 +190,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                 //si no se ha seleccionado una opcion se deshabilita el boton de editar para evitar editar registros vacios
                 btnEditUser.Enabled = false;
+                btnBorrarUser.Enabled = false;
             }
             //Dependiendo de la seleccion se muestra un registro
             else
             {
                 //si se selecciona una opcion se habilita el boton editar para editar la informacion de ese usuario
                 btnEditUser.Enabled = true;
+                btnBorrarUser.Enabled = true;
 
                 //convierte la seleccion de cbxIdUsuario a string y la guarda en IDSeleccion
                 string IdSeleccion = cbxIdUsuario.SelectedItem.ToString();
@@ -639,5 +642,47 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 panelBtnUsuarios.Visible = false;
             }
         }
+
+        private void btnBorrarUser_Click(object sender, EventArgs e)
+        {
+            if(user==txtUsuario.Text)
+            {
+                MessageBox.Show("No puedes borrar tu propio usuario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
+            
+            if(cbxRol.SelectedItem.ToString() == "Dueño")
+            {
+                try
+                {
+                    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                    {
+                        connection.Open();
+                        string query = "SELECT COUNT(*) FROM Pagos WHERE IdUsuario = @IdUsuario AND Estado = 'Pendiente'";
+
+                        using (MySqlCommand command = new MySqlCommand(query, connection))
+                        {
+                            command.Parameters.AddWithValue("@IdUsuario", cbxIdUsuario.SelectedItem.ToString());
+
+                            int count = Convert.ToInt32(command.ExecuteScalar());
+
+                            if (count > 0)
+                            {
+                                MessageBox.Show($"Existen {count} pagos pendientes para este usuario.");
+                                return;
+                            }
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Ha ocurrido un error " + ex.Message, "Error", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+
+
+        }
     }
+
 }

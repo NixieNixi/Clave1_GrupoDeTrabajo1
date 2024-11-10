@@ -70,6 +70,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario = new System.Windows.Forms.Panel();
             this.espacio1 = new System.Windows.Forms.Label();
             this.panelBtnUsuarios = new System.Windows.Forms.Panel();
+            this.btnBorrarUser = new System.Windows.Forms.Button();
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.panelMascotas = new System.Windows.Forms.Panel();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
@@ -91,6 +92,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdPago = new System.Windows.Forms.ComboBox();
             this.panelBtnMascota = new System.Windows.Forms.Panel();
             this.btnEditM = new System.Windows.Forms.Button();
+            this.btnBorrarMascota = new System.Windows.Forms.Button();
             this.btnGuardarM = new System.Windows.Forms.Button();
             this.btnNuevoM = new System.Windows.Forms.Button();
             this.btnCancelarM = new System.Windows.Forms.Button();
@@ -139,6 +141,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelInventario = new System.Windows.Forms.Panel();
             this.paneldgvInventario = new System.Windows.Forms.Panel();
             this.dgvInventario = new System.Windows.Forms.DataGridView();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbxIdProducto = new System.Windows.Forms.ComboBox();
             this.label38 = new System.Windows.Forms.Label();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
@@ -154,11 +161,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarI = new System.Windows.Forms.Button();
             this.btnOcultar = new System.Windows.Forms.Button();
             this.btnCancelarI = new System.Windows.Forms.Button();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CantidadProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -694,14 +696,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelBtnUsuarios.BackColor = System.Drawing.Color.CadetBlue;
             this.panelBtnUsuarios.Controls.Add(this.btnEditUser);
+            this.panelBtnUsuarios.Controls.Add(this.btnBorrarUser);
             this.panelBtnUsuarios.Controls.Add(this.btnGuardarUser);
             this.panelBtnUsuarios.Controls.Add(this.btnNuevoUser);
             this.panelBtnUsuarios.Controls.Add(this.btnCancelarUser);
             this.panelBtnUsuarios.Location = new System.Drawing.Point(248, 176);
             this.panelBtnUsuarios.Name = "panelBtnUsuarios";
-            this.panelBtnUsuarios.Size = new System.Drawing.Size(432, 60);
+            this.panelBtnUsuarios.Size = new System.Drawing.Size(552, 60);
             this.panelBtnUsuarios.TabIndex = 11;
             this.panelBtnUsuarios.Visible = false;
+            // 
+            // btnBorrarUser
+            // 
+            this.btnBorrarUser.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBorrarUser.Enabled = false;
+            this.btnBorrarUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarUser.ForeColor = System.Drawing.Color.White;
+            this.btnBorrarUser.Location = new System.Drawing.Point(432, 16);
+            this.btnBorrarUser.Name = "btnBorrarUser";
+            this.btnBorrarUser.Size = new System.Drawing.Size(80, 30);
+            this.btnBorrarUser.TabIndex = 0;
+            this.btnBorrarUser.Text = "Borrar";
+            this.btnBorrarUser.UseVisualStyleBackColor = false;
+            this.btnBorrarUser.Click += new System.EventHandler(this.btnBorrarUser_Click);
             // 
             // panelTitulo
             // 
@@ -950,12 +967,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             // 
             this.panelBtnMascota.BackColor = System.Drawing.Color.CadetBlue;
             this.panelBtnMascota.Controls.Add(this.btnEditM);
+            this.panelBtnMascota.Controls.Add(this.btnBorrarMascota);
             this.panelBtnMascota.Controls.Add(this.btnGuardarM);
             this.panelBtnMascota.Controls.Add(this.btnNuevoM);
             this.panelBtnMascota.Controls.Add(this.btnCancelarM);
             this.panelBtnMascota.Location = new System.Drawing.Point(248, 240);
             this.panelBtnMascota.Name = "panelBtnMascota";
-            this.panelBtnMascota.Size = new System.Drawing.Size(432, 60);
+            this.panelBtnMascota.Size = new System.Drawing.Size(552, 60);
             this.panelBtnMascota.TabIndex = 12;
             this.panelBtnMascota.Visible = false;
             // 
@@ -972,6 +990,20 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnEditM.Text = "Editar";
             this.btnEditM.UseVisualStyleBackColor = false;
             this.btnEditM.Click += new System.EventHandler(this.btnEditM_Click);
+            // 
+            // btnBorrarMascota
+            // 
+            this.btnBorrarMascota.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnBorrarMascota.Enabled = false;
+            this.btnBorrarMascota.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrarMascota.ForeColor = System.Drawing.Color.White;
+            this.btnBorrarMascota.Location = new System.Drawing.Point(432, 16);
+            this.btnBorrarMascota.Name = "btnBorrarMascota";
+            this.btnBorrarMascota.Size = new System.Drawing.Size(80, 30);
+            this.btnBorrarMascota.TabIndex = 0;
+            this.btnBorrarMascota.Text = "Borrar";
+            this.btnBorrarMascota.UseVisualStyleBackColor = false;
+            this.btnBorrarMascota.Click += new System.EventHandler(this.btnBorrarMascota_Click);
             // 
             // btnGuardarM
             // 
@@ -1623,6 +1655,36 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.dgvInventario.Size = new System.Drawing.Size(100, 100);
             this.dgvInventario.TabIndex = 1;
             // 
+            // IdProducto
+            // 
+            this.IdProducto.HeaderText = "ID Producto";
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            // 
+            // NombreProducto
+            // 
+            this.NombreProducto.HeaderText = "Nombre";
+            this.NombreProducto.Name = "NombreProducto";
+            this.NombreProducto.ReadOnly = true;
+            // 
+            // PrecioProducto
+            // 
+            this.PrecioProducto.HeaderText = "Precio";
+            this.PrecioProducto.Name = "PrecioProducto";
+            this.PrecioProducto.ReadOnly = true;
+            // 
+            // CantidadProducto
+            // 
+            this.CantidadProducto.HeaderText = "Cantidad";
+            this.CantidadProducto.Name = "CantidadProducto";
+            this.CantidadProducto.ReadOnly = true;
+            // 
+            // DescripcionProducto
+            // 
+            this.DescripcionProducto.HeaderText = "Descripcion";
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
+            // 
             // cbxIdProducto
             // 
             this.cbxIdProducto.BackColor = System.Drawing.Color.White;
@@ -1814,36 +1876,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarI.UseVisualStyleBackColor = false;
             this.btnCancelarI.Click += new System.EventHandler(this.btnCancelarI_Click);
             // 
-            // IdProducto
-            // 
-            this.IdProducto.HeaderText = "ID Producto";
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            // 
-            // NombreProducto
-            // 
-            this.NombreProducto.HeaderText = "Nombre";
-            this.NombreProducto.Name = "NombreProducto";
-            this.NombreProducto.ReadOnly = true;
-            // 
-            // PrecioProducto
-            // 
-            this.PrecioProducto.HeaderText = "Precio";
-            this.PrecioProducto.Name = "PrecioProducto";
-            this.PrecioProducto.ReadOnly = true;
-            // 
-            // CantidadProducto
-            // 
-            this.CantidadProducto.HeaderText = "Cantidad";
-            this.CantidadProducto.Name = "CantidadProducto";
-            this.CantidadProducto.ReadOnly = true;
-            // 
-            // DescripcionProducto
-            // 
-            this.DescripcionProducto.HeaderText = "Descripcion";
-            this.DescripcionProducto.Name = "DescripcionProducto";
-            this.DescripcionProducto.ReadOnly = true;
-            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2026,5 +2058,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
+        private System.Windows.Forms.Button btnBorrarUser;
+        private System.Windows.Forms.Button btnBorrarMascota;
     }
 }
