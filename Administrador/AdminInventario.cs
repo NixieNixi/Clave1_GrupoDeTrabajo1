@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1.Administrador
 {
@@ -264,6 +265,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void btnVerTodosI_Click(object sender, EventArgs e)
         {
             CargarInventario();
+            btnVerTodosI.Visible = false;
+            btnOcultar.Visible = true;
             paneldgvInventario.Dock = DockStyle.Fill;
             paneldgvInventario.Visible = true;
         }
@@ -302,8 +305,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                                 productos.Add(producto);
 
-                                dgvInventario.Rows.Add(producto.IdProductos, producto.Nombre, producto.Precio, producto.Descripcion, producto.Cantidad
-                                );
+                                dgvInventario.Rows.Add(producto.IdProductos, producto.Nombre, producto.Precio, producto.Cantidad, producto.Descripcion);
                             }
                         }
                     }
@@ -313,6 +315,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 MessageBox.Show("Error de conexion a base de datos " + ex.Message);
             }
+        }
+
+        private void btnOcultar_Click(object sender, EventArgs e)
+        {
+            paneldgvInventario.Visible = false;
+            btnOcultar.Visible = false;
+            btnVerTodosI.Visible = true;
         }
     }
 }
