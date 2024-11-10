@@ -509,7 +509,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                                     IdExamen = reader.GetInt32("idExamen"),
                                     FechaHora = reader.GetDateTime("FechaHora"),
                                     Tipo = reader["Tipo"].ToString(),
-                                    Descripcion = reader["Descripcion"].ToString(),
                                     Motivo = reader["Motivo"].ToString()
                                    
                                 };
@@ -541,15 +540,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
 
             // Logica para limpiar los controles del formulario.
-            txtNomDueno.Clear();            // Limpiar el nombre del dueño.
-            txtTelefonoDueno.Clear();       // Limpiar el telefono del dueño.
-            txtCorreoDueno.Clear();         // Limpiar el correo del dueño.
-            txtDireccionDueno.Clear();      // Limpiar la dirección del dueño.
-            txtNomMascota.Clear();          // Limpiar el nombre de la mascota.
-            txtEspecie.Clear();             // Limpiar la especie de la mascota.
-            txtRaza.Clear();                // Limpiar la raza de la mascota.
-            txtSexo.Clear();                // Limpiar el sexo de la mascota.
-            txtFechaNacimiento.Clear();     // Limpiar la fecha de nacimiento de la mascota.
+            txtNomDueno.Clear();           
+            txtTelefonoDueno.Clear();      
+            txtCorreoDueno.Clear();         
+            txtDireccionDueno.Clear();      
+            txtNomMascota.Clear();          
+            txtEspecie.Clear();            
+            txtRaza.Clear();                
+            txtSexo.Clear();                
+            txtFechaNacimiento.Clear();    
         }
 
         /// <summary>
