@@ -993,10 +993,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCitas.Location = new System.Drawing.Point(240, 70);
+            this.panelCitas.Location = new System.Drawing.Point(568, 80);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(644, 431);
+            this.panelCitas.Size = new System.Drawing.Size(128, 90);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1278,9 +1277,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelPagos.Controls.Add(this.label26);
             this.panelPagos.Controls.Add(this.label35);
             this.panelPagos.Controls.Add(this.label36);
-            this.panelPagos.Location = new System.Drawing.Point(736, 80);
+            this.panelPagos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPagos.Location = new System.Drawing.Point(240, 70);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(144, 96);
+            this.panelPagos.Size = new System.Drawing.Size(644, 431);
             this.panelPagos.TabIndex = 3;
             this.panelPagos.Visible = false;
             // 
@@ -1336,18 +1336,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdDuenoP.Name = "cbxIdDuenoP";
             this.cbxIdDuenoP.Size = new System.Drawing.Size(264, 24);
             this.cbxIdDuenoP.TabIndex = 2;
+            this.cbxIdDuenoP.SelectedIndexChanged += new System.EventHandler(this.cbxIdDuenoP_SelectedIndexChanged);
             // 
             // cbxIdPago
             // 
             this.cbxIdPago.BackColor = System.Drawing.Color.White;
             this.cbxIdPago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbxIdPago.Enabled = false;
             this.cbxIdPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxIdPago.FormattingEnabled = true;
             this.cbxIdPago.Location = new System.Drawing.Point(24, 104);
             this.cbxIdPago.Name = "cbxIdPago";
             this.cbxIdPago.Size = new System.Drawing.Size(264, 24);
             this.cbxIdPago.TabIndex = 2;
+            this.cbxIdPago.SelectedIndexChanged += new System.EventHandler(this.cbxIdPago_SelectedIndexChanged);
             // 
             // label24
             // 
@@ -1532,8 +1533,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelPagos);
+            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.panelBtnMascota);
