@@ -83,6 +83,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnGuardarM.Enabled = true;
             //deshabilitar boton nuevo
             btnNuevoM.Enabled = false;
+            btnBorrarMascota.Enabled = false;
 
             //activar modo de edicion
             activarM = true;
@@ -110,6 +111,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             btnGuardarM.Enabled = true;
             //deshabilitar boton editar
             btnEditM.Enabled = false;
+            btnBorrarMascota.Enabled = false;
+            btnBorrarMascota.Enabled = false;
 
             //limpiar controles
             LimpiarMascota();
@@ -190,11 +193,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Deshablitar la funcion de editar y crear
                 btnEditM.Enabled = false;
                 btnNuevoM.Enabled = false;
+                btnBorrarMascota.Enabled = false;
             }
             else
             {
                 //Deshabilita la funcion de editar porque no habria ninguna mascota seleccionada
                 btnEditM.Enabled = false;
+                btnBorrarMascota.Enabled = false;
                 //habilita la creacion de una nueva mascota
                 btnNuevoM.Enabled = true;
 
@@ -259,6 +264,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 //si se ha seleccionado una mascota habilita la funcion de editar
                 btnEditM.Enabled = true;
+                btnBorrarMascota.Enabled = true;
 
                 //guarda el texto de la seleccion en ConsultaIdMascota
                 string ConsultaIdMascota = cbxIdMascotaM.SelectedItem.ToString();
@@ -389,6 +395,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                                 //Si no hay mascotas se deshabilita el comboBox y se muestra un mensaje
                                 cbxIdMascotaM.Text = "No se encontraron mascotas";
                                 btnEditM.Enabled = false;
+                                btnBorrarMascota.Enabled = false;
                                 cbxIdMascotaM.Enabled = false;
                             }
                         }
@@ -607,6 +614,42 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         MessageBox.Show("Error al actualizar los datos: " + ex.Message, "Error :(");
                     }
                 }
+            }
+        }
+
+        private void btnBorrarMascota_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    connection.Open();
+
+                    string query = "DELETE FROM mascotas WHERE idMascota = @idMascota";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Parámetro para identificar al usuario que se va a eliminar
+                        command.Parameters.AddWithValue("@idMascota", cbxIdMascotaM.SelectedItem.ToString());
+
+                        // Ejecutar la consulta
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Opcional: Validar si la eliminación fue exitosa
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Mascota eliminada correctamente.");
+                            cbxIdUsuario.SelectedIndex = -1;
+                            ActualizarRegistrosMascota();
+                            btnCancelarM_Click(this, EventArgs.Empty);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al borrar " + ex.Message, "Error", MessageBoxButtons.OK);
+                return;
             }
         }
     }

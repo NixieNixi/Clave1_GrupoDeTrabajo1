@@ -534,16 +534,19 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
                         else if (!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
                         {
                             MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no se ha seleccionado un rol mostrar mensaje de error
                         else if (cbxRol.SelectedIndex == -1)
                         {
                             MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
@@ -643,6 +646,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
         private void btnBorrarUser_Click(object sender, EventArgs e)
         {
             if(user==txtUsuario.Text)
@@ -681,7 +687,37 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 }
             }
 
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    connection.Open();
 
+                    string query = "DELETE FROM Usuarios WHERE IdUsuario = @IdUsuario";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Parámetro para identificar al usuario que se va a eliminar
+                        command.Parameters.AddWithValue("@IdUsuario", cbxIdUsuario.SelectedItem.ToString());
+
+                        // Ejecutar la consulta
+                        int rowsAffected = command.ExecuteNonQuery();
+
+                        // Opcional: Validar si la eliminación fue exitosa
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Usuario eliminado correctamente.");
+                            cbxIdUsuario.SelectedIndex = -1;
+                            ActualizarRegistros();
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error al borrar " + ex.Message, "Error", MessageBoxButtons.OK);
+                return;
+            }
         }
     }
 
