@@ -30,12 +30,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnIniciarSesionD = new System.Windows.Forms.Button();
             this.btnCerrarD = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,6 +50,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(527, 84);
             this.panel2.TabIndex = 8;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(40, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(86, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "> Menú Principal";
             // 
             // label4
             // 
@@ -107,16 +117,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCerrarD.Text = "Cerrar";
             this.btnCerrarD.UseVisualStyleBackColor = false;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(40, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "> Menú Principal";
-            // 
             // MenuPrincipalDueño
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -126,6 +126,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "MenuPrincipalDueño";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipalDueño";
             this.Load += new System.EventHandler(this.MenuPrincipalDueño_Load);
             this.panel2.ResumeLayout(false);

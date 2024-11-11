@@ -22,9 +22,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnPerfilD_Click(object sender, EventArgs e)
         {
             //se enlaza conel perfil mediante el boton
-            PerfilDueno VerDueño = new PerfilDueno();
+            PerfilDueno VerDueno = new PerfilDueno();
             this.Hide();
-            VerDueño.ShowDialog();
+            VerDueno.ShowDialog();
         }
 
         private void ActualizarMascotas()

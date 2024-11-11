@@ -271,6 +271,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.lblUserUsuario);
             this.Name = "PerfilDueno";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PerfilDueño";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilDueno_FormClosing);
             this.Load += new System.EventHandler(this.PerfilDueno_Load);

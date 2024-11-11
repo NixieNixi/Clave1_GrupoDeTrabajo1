@@ -218,6 +218,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "PerfilMascota";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PerfilMascota";
             this.Load += new System.EventHandler(this.PerfilMascota_Load);
             this.panel2.ResumeLayout(false);

@@ -295,6 +295,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "Tienda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tienda_FormClosing);
             this.panel2.ResumeLayout(false);
