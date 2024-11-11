@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using Clave1_GrupoDeTrabajo1.Interfaz;
+using Clave1_GrupoDeTrabajo1.Clases;
+using Clave1_GrupoDeTrabajo1.Administrador;
+
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -63,70 +67,152 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnProgramarCitaD_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            {
-                //Consulta sql para insertar un nueva cita
-                string query = @"INSERT INTO citas (Fecha, Hora , Motivo, Estado, idUsuarios, idMascota)
-                     VALUES (@Fecha, @Hora, @Motivo, @Estado, @IDUsuario, @IDMascota);";
 
-                using (MySqlCommand command = new MySqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@IDUsuario", txtNomUsuD.Text);
-                    command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
-                    command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
-                    command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
-                    command.Parameters.AddWithValue("@Hora", dtpCitaHora.Value.TimeOfDay);
+            MessageBox.Show("No sirve, Ya vio", "No siga intenado, A menos que lo arregle");
+            // Verificamos si el ID de mascota y los campos necesarios están seleccionados o llenados
+            //if (cbxIDMascD.SelectedItem == null || string.IsNullOrEmpty(txtMotCiD.Text) || string.IsNullOrEmpty(txtEsCiD.Text))
+            //{
+            //    MessageBox.Show("Por favor, complete todos los campos.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
 
-                    connection.Open();
+            //// Obtener el ID de la mascota seleccionada desde el ComboBox
+            //int idMascota = Convert.ToInt32(cbxIDMascD.SelectedItem.ToString());
 
-                    //variable para comprobar cuantas filas fueron agregadas
-                    int rowsAffected = command.ExecuteNonQuery();
+            //// Usamos el idUsuario estático que ya se ha guardado
+            //int idUsuario = Usuario.IdUsuario;
 
-                    //Comprobar si la inserción fue exitosa, si rowsAffected es mayor que 0 significa que al menos una fila fue agregada
-                    if (rowsAffected > 0)
-                    {
-                        MessageBox.Show("Usuario ingresado correctamente.", "Operacion exitosa!");
-                    }
-                    //Si no se cambio ninguna fila mostrar mensaje de error
-                    else
-                    {
-                        MessageBox.Show("Error al ingresar el usuario.", "Error :(");
-                    }
-                }
-            }
+            //// Intentamos realizar la conexión a la base de datos
+            //using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //{
+            //    // Consultamos si la mascota seleccionada pertenece al usuario actual
+            //    string checkQuery = "SELECT COUNT(*) FROM mascotas WHERE idMascota = @IDMascota ;";
 
+            //    using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection))
+            //    {
+            //        checkCommand.Parameters.AddWithValue("@IDMascota", idMascota);
+            //        //checkCommand.Parameters.AddWithValue("@IDUsuario", idUsuario);
+
+            //        connection.Open();
+            //        int count = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+            //        // Si la mascota no pertenece al usuario, mostramos un mensaje de error
+            //        if (count == 0)
+            //        {
+            //            MessageBox.Show("No tienes permiso para programar una cita para esta mascota.", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //            return;
+            //        }
+            //    }
+
+            //    // Si la mascota pertenece al usuario, insertamos la cita en la base de datos
+            //    string query = @"INSERT INTO citas (Fecha, Hora, Motivo, Estado, idMascota)
+            //             VALUES (@Fecha, @Hora, @Motivo, @Estado, @IDMascota);";
+
+            //    using (MySqlCommand command = new MySqlCommand(query, connection))
+            //    {
+            //        command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
+            //        command.Parameters.AddWithValue("@Hora", dtpCitaHora.Value.TimeOfDay);
+            //        command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
+            //        command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
+            //        //command.Parameters.AddWithValue("@IDUsuario", idUsuario);
+            //        command.Parameters.AddWithValue("@IDMascota", idMascota);
+
+            //        int rowsAffected = command.ExecuteNonQuery();
+
+            //        // Verificamos si la cita se insertó correctamente
+            //        if (rowsAffected > 0)
+            //        {
+            //            MessageBox.Show("Cita programada correctamente.", "Operación exitosa!");
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("Error al programar la cita.", "Error :(");
+            //        }
+            //    }
+            //}
         }
 
-        private void btnRepreogramarCitaD_Click(object sender, EventArgs e)
+
+
+        private void btnReprogramarCitaD_Click(object sender, EventArgs e)
         {
-            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-            {
-                connection.Open();
-                MySqlCommand command = new MySqlCommand(@"INSERT INTO citas (FechaHora, Motivo, Estado, idUsuarios, idMascota)
-                     VALUES (@FechaHora, @Motivo, @Estado, @IDUsuario, @IDMascota)", connection);
 
-                // Asigna los valores nuevos
-                command.Parameters.AddWithValue("@IDUsuario", txtNomUsuD.Text);
-                command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
-                command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
+            MessageBox.Show("No sirve, Ya vio", "No siga intenado, A menos que lo arregle");
+            //    // Verificamos si los campos necesarios están completos
+            //    if (cbxIDMascD.SelectedItem == null || cbxIDCitaD.SelectedItem == null ||
+            //        string.IsNullOrEmpty(txtMotCiD.Text) || string.IsNullOrEmpty(txtEsCiD.Text))
+            //    {
+            //        MessageBox.Show("Por favor, complete todos los campos.", "Error de entrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        return;
+            //    }
 
-                int rowsAffected = command.ExecuteNonQuery();
+            //    // Obtener el ID de la mascota seleccionada desde el ComboBox
+            //    int idMascota = Convert.ToInt32(cbxIDMascD.SelectedItem.ToString());
+            //    int idCita = Convert.ToInt32(cbxIDCitaD.SelectedItem.ToString());
 
-                if (rowsAffected > 0)
-                {
-                    MessageBox.Show("Cita reprogramada exitosamente.");
-                }
-                else
-                {
-                    MessageBox.Show("Error al reprogramar la cita.");
-                }
-            }
+            //    // Intentamos realizar la conexión a la base de datos
+            //    using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            //    {
+            //        // Consultamos si la cita y la mascota pertenecen a la base de datos
+            //        string checkQuery = "SELECT COUNT(*) FROM citas WHERE idCita = @IDCita AND idMascota = @IDMascota;";
+
+            //        using (MySqlCommand checkCommand = new MySqlCommand(checkQuery, connection))
+            //        {
+            //            checkCommand.Parameters.AddWithValue("@IDMascota", idMascota);
+            //            checkCommand.Parameters.AddWithValue("@IDCita", idCita);
+
+            //            connection.Open();
+            //            int count = Convert.ToInt32(checkCommand.ExecuteScalar());
+
+            //            // Si la cita no pertenece a la mascota, mostramos un mensaje de error
+            //            if (count == 0)
+            //            {
+            //                MessageBox.Show("Esta cita no pertenece a la mascota seleccionada.", "Error de acceso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //                return;
+            //            }
+            //        }
+
+            //        // Si la cita y la mascota están correctas, actualizamos la cita
+            //        string updateQuery = @"UPDATE citas SET Fecha = @Fecha, Hora = @Hora, Motivo = @Motivo, Estado = @Estado
+            //                       WHERE idCita = @IDCita AND idMascota = @IDMascota;";
+
+            //        using (MySqlCommand updateCommand = new MySqlCommand(updateQuery, connection))
+            //        {
+            //            // Agregamos los parámetros para los nuevos valores
+            //            updateCommand.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
+            //            updateCommand.Parameters.AddWithValue("@Hora", dtpCitaHora.Value.TimeOfDay);
+            //            updateCommand.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
+            //            updateCommand.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
+            //            updateCommand.Parameters.AddWithValue("@IDCita", idCita);
+            //            updateCommand.Parameters.AddWithValue("@IDMascota", idMascota);
+
+            //            int rowsAffected = updateCommand.ExecuteNonQuery();
+
+            //            // Verificamos si la cita se actualizó correctamente
+            //            if (rowsAffected > 0)
+            //            {
+            //                MessageBox.Show("Cita reprogramada correctamente.", "Operación exitosa!");
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Error al reprogramar la cita.", "Error :(");
+            //            }
+            //        }
+            //    }
         }
+
+
+
 
         private void CitaMascota_FormClosing(object sender, FormClosingEventArgs e)
         {
             //Al presionar X en la ventana, finalizara la ejecucion total del progrma
             Application.Exit();
+        }
+
+        private void btnCancelarCita_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("No sirve, Ya vio", "No siga intenado, A menos que lo arregle");
         }
     }
 }

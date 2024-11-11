@@ -53,7 +53,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private int ObtenerIdUsuarioActual()
         {
             int idUsuario = 0;
-            string nombreUsuario = Usuario.Nombre; // Obtén el nombre del usuario logueado desde UsuarioSesion
+            string nombreUsuario = Usuario.Nombre; 
 
             string query = "SELECT idUsuario FROM usuarios WHERE Nombre = @Nombre";
 

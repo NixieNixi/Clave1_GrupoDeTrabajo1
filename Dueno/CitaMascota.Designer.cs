@@ -58,6 +58,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomMascD = new System.Windows.Forms.TextBox();
             this.cbxIDUsuD = new System.Windows.Forms.ComboBox();
+            this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -200,6 +201,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
+            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -223,6 +225,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelarCita.TabIndex = 25;
             this.btnCancelarCita.Text = "Cancelar";
             this.btnCancelarCita.UseVisualStyleBackColor = false;
+            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
             // 
             // btnGuardarCitaD
             // 
@@ -334,12 +337,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDUsuD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDUsuD.TabIndex = 34;
             // 
+            // lblNombreUsuario
+            // 
+            this.lblNombreUsuario.AutoSize = true;
+            this.lblNombreUsuario.Location = new System.Drawing.Point(104, 88);
+            this.lblNombreUsuario.Name = "lblNombreUsuario";
+            this.lblNombreUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblNombreUsuario.TabIndex = 35;
+            this.lblNombreUsuario.Text = "label3";
+            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(853, 348);
+            this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.cbxIDCitaD);
             this.Controls.Add(this.cbxIDUsuD);
             this.Controls.Add(this.cbxIDMascD);
@@ -403,5 +416,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNomMascD;
         private System.Windows.Forms.ComboBox cbxIDUsuD;
+        private System.Windows.Forms.Label lblNombreUsuario;
     }
 }
