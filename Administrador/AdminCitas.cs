@@ -479,6 +479,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (horaIngresada > abrir || horaIngresada < cierre)
                         {
                             MessageBox.Show("ingrese una hora valida entre\n8:00 a.m. y 4:00 p.m.", "Error", MessageBoxButtons.OK);
+                            tool.Show("Ingrese una hora valida", dtpHora, 0, -20, 3000);
                         }
                         else
                             {
@@ -558,11 +559,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (string.IsNullOrEmpty(txtMotivo.Text))
                         {
                             MessageBox.Show("Ingrese un motivo para la cita", "Error", MessageBoxButtons.OK);
+                            tool.Show("Ingrese un motivo", txtMotivo, 0, -20, 3000);
                         }
                         //si la hora esta fuera del horario de antencion mostrar un mensaje
                         else if(horaIngresada > abrir || horaIngresada < cierre)
                         {
                             MessageBox.Show("ingrese una hora valida entre\n8:00 a.m. y 4:00 p.m.", "Error", MessageBoxButtons.OK);
+                            tool.Show("Ingrese una hora valida", dtpHora, 0, -20, 3000);
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else

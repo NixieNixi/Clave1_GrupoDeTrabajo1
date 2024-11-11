@@ -227,11 +227,13 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         else if (!int.TryParse(txtCantidad.Text, out int cantidad) || cantidad <= 0)
                         {
                             MessageBox.Show("Ingrese una cantidad valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            tool.Show("Ingrese una cantidad", txtCantidad, 0, -20, 3000);
                             return;
                         }
                         else if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
                         {
                             MessageBox.Show("Ingrese un precio valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            tool.Show("Ingrese un precio", cbxFormaPago, 0, -20, 3000);
                             return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form

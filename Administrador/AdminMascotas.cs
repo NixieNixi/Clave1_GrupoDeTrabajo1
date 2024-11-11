@@ -478,6 +478,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (string.IsNullOrEmpty(txtNombreMascotaM.Text) || string.IsNullOrEmpty(txtRazaM.Text) || string.IsNullOrEmpty(txtEspecieM.Text) || string.IsNullOrEmpty(txtSexoM.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
@@ -563,6 +564,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (string.IsNullOrEmpty(txtNombreMascotaM.Text) || string.IsNullOrEmpty(txtRazaM.Text) || string.IsNullOrEmpty(txtEspecieM.Text) || string.IsNullOrEmpty(txtSexoM.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else

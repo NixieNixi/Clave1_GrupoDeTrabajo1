@@ -443,16 +443,20 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if(string.IsNullOrEmpty(txtUsuario.Text) || string.IsNullOrEmpty(txtContrasena.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtTelefono.Text) || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtDireccion.Text))
                         {
                             MessageBox.Show("Por favor llene los campos", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no se ha seleccionado un rol mostrar mensaje de error
                         else if(cbxRol.SelectedIndex == -1)
                         {
                             MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                            tool.Show("Seleccione un rol", cbxRol, 0, -20, 3000);
+                            return;
                         }
                         //si no se ha ingresado un numero entero o el numero no es de 8 digitos mostrar mesaje de error
                         else if(!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
                         {
-                            MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                            MessageBox.Show("Ingrese un numero de telefono valido\nEl numero debe tener 8 digitos", "Error", MessageBoxButtons.OK);
+                            tool.Show("Ingrese un numero valido", txtTelefono, 0, -20, 3000);
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
@@ -540,12 +544,14 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         else if (!int.TryParse(txtTelefono.Text, out _) || txtTelefono.Text.Length != 8)
                         {
                             MessageBox.Show("Ingrese un numero de telefono valido", "Error", MessageBoxButtons.OK);
+                            tool.Show("Ingrese un numero valido", txtTelefono, 0, -20, 3000);
                             return;
                         }
                         //si no se ha seleccionado un rol mostrar mensaje de error
                         else if (cbxRol.SelectedIndex == -1)
                         {
                             MessageBox.Show("Seleccione un rol", "Error", MessageBoxButtons.OK);
+                            tool.Show("Seleccione un rol", cbxRol, 0, -20, 3000);
                             return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form

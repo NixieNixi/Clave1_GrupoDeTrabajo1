@@ -335,6 +335,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                         if (cbxFormaPago.SelectedIndex == 0)
                         {
                             MessageBox.Show("Seleccione un tipo de pago", "Error", MessageBoxButtons.OK);
+                            tool.Show("Por favor seleccione una forma de pago.", cbxFormaPago, 0, -20, 3000);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else

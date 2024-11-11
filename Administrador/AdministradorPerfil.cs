@@ -13,6 +13,8 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 {
     public partial class AdministradorPerfil : Form
     {
+        //isntancia de objeto para mostrar mesajes en los controles el caso de errores
+        ToolTip tool = new ToolTip();
         string nombreUser;
         string user;
 

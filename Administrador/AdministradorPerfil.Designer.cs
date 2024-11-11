@@ -29,6 +29,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelBotones = new System.Windows.Forms.Panel();
@@ -161,6 +162,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnGuardarI = new System.Windows.Forms.Button();
             this.btnOcultar = new System.Windows.Forms.Button();
             this.btnCancelarI = new System.Windows.Forms.Button();
+            this.tpAdministracion = new System.Windows.Forms.ToolTip(this.components);
             this.panelBotones.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelUsuario.SuspendLayout();
@@ -619,6 +621,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdUsuario.Name = "cbxIdUsuario";
             this.cbxIdUsuario.Size = new System.Drawing.Size(264, 24);
             this.cbxIdUsuario.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdUsuario, "Seleccione un idUsuario");
             this.cbxIdUsuario.SelectedIndexChanged += new System.EventHandler(this.cbxIdUsuario_SelectedIndexChanged);
             // 
             // cbxRol
@@ -648,6 +651,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(264, 24);
             this.cbxIdMascota.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdMascota, "Seleccione un idMascota");
             this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
             // panelUsuario
@@ -675,9 +679,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.label7);
             this.panelUsuario.Controls.Add(this.label6);
-            this.panelUsuario.Location = new System.Drawing.Point(248, 80);
+            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelUsuario.Location = new System.Drawing.Point(240, 70);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(128, 88);
+            this.panelUsuario.Size = new System.Drawing.Size(644, 431);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
             // 
@@ -790,6 +795,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascotaM.Name = "cbxIdMascotaM";
             this.cbxIdMascotaM.Size = new System.Drawing.Size(264, 24);
             this.cbxIdMascotaM.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdMascotaM, "Seleccione un idMascota");
             this.cbxIdMascotaM.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaMascota_SelectedIndexChanged);
             // 
             // cbxIdDueno
@@ -802,6 +808,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdDueno.Name = "cbxIdDueno";
             this.cbxIdDueno.Size = new System.Drawing.Size(264, 24);
             this.cbxIdDueno.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdDueno, "Seleccione un idDueño");
             this.cbxIdDueno.SelectedIndexChanged += new System.EventHandler(this.cbxIdDueno_SelectedIndexChanged);
             // 
             // label15
@@ -961,6 +968,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdPago.Name = "cbxIdPago";
             this.cbxIdPago.Size = new System.Drawing.Size(264, 24);
             this.cbxIdPago.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdPago, "Seleccione un idPago");
             this.cbxIdPago.SelectedIndexChanged += new System.EventHandler(this.cbxIdPago_SelectedIndexChanged);
             // 
             // panelBtnMascota
@@ -1067,7 +1075,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label33);
             this.panelCitas.Location = new System.Drawing.Point(520, 80);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(96, 88);
+            this.panelCitas.Size = new System.Drawing.Size(100, 80);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1124,6 +1132,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdMascotaC.Name = "cbxIdMascotaC";
             this.cbxIdMascotaC.Size = new System.Drawing.Size(264, 24);
             this.cbxIdMascotaC.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdMascotaC, "Seleccione un idMascota");
             this.cbxIdMascotaC.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascotaC_SelectedIndexChanged);
             // 
             // cbxIdCita
@@ -1137,6 +1146,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdCita.Name = "cbxIdCita";
             this.cbxIdCita.Size = new System.Drawing.Size(264, 24);
             this.cbxIdCita.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdCita, "Seleccione una idCita para reprogramar o cancelar");
             this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // txtMotivo
@@ -1149,6 +1159,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.txtMotivo.ReadOnly = true;
             this.txtMotivo.Size = new System.Drawing.Size(560, 22);
             this.txtMotivo.TabIndex = 1;
+            this.tpAdministracion.SetToolTip(this.txtMotivo, "Escriba un motivo para la cita");
             // 
             // txtNombreMascotaC
             // 
@@ -1351,7 +1362,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelPagos.Controls.Add(this.label36);
             this.panelPagos.Location = new System.Drawing.Point(632, 80);
             this.panelPagos.Name = "panelPagos";
-            this.panelPagos.Size = new System.Drawing.Size(96, 88);
+            this.panelPagos.Size = new System.Drawing.Size(96, 80);
             this.panelPagos.TabIndex = 3;
             this.panelPagos.Visible = false;
             // 
@@ -1370,6 +1381,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxFormaPago.Name = "cbxFormaPago";
             this.cbxFormaPago.Size = new System.Drawing.Size(264, 24);
             this.cbxFormaPago.TabIndex = 10;
+            this.tpAdministracion.SetToolTip(this.cbxFormaPago, "Seleccione una forma de pago");
             // 
             // cbxEstadoP
             // 
@@ -1408,6 +1420,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdDuenoP.Name = "cbxIdDuenoP";
             this.cbxIdDuenoP.Size = new System.Drawing.Size(264, 24);
             this.cbxIdDuenoP.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdDuenoP, "Seleccione un idDueño");
             this.cbxIdDuenoP.SelectedIndexChanged += new System.EventHandler(this.cbxIdDuenoP_SelectedIndexChanged);
             // 
             // label24
@@ -1623,7 +1636,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelInventario.Controls.Add(this.label44);
             this.panelInventario.Location = new System.Drawing.Point(744, 80);
             this.panelInventario.Name = "panelInventario";
-            this.panelInventario.Size = new System.Drawing.Size(112, 88);
+            this.panelInventario.Size = new System.Drawing.Size(104, 72);
             this.panelInventario.TabIndex = 12;
             this.panelInventario.Visible = false;
             // 
@@ -1695,6 +1708,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.cbxIdProducto.Name = "cbxIdProducto";
             this.cbxIdProducto.Size = new System.Drawing.Size(264, 24);
             this.cbxIdProducto.TabIndex = 2;
+            this.tpAdministracion.SetToolTip(this.cbxIdProducto, "Seleccione un idProducto");
             this.cbxIdProducto.SelectedIndexChanged += new System.EventHandler(this.cbxIdProducto_SelectedIndexChanged);
             // 
             // label38
@@ -1876,22 +1890,29 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.btnCancelarI.UseVisualStyleBackColor = false;
             this.btnCancelarI.Click += new System.EventHandler(this.btnCancelarI_Click);
             // 
+            // tpAdministracion
+            // 
+            this.tpAdministracion.AutomaticDelay = 0;
+            this.tpAdministracion.AutoPopDelay = 0;
+            this.tpAdministracion.InitialDelay = 0;
+            this.tpAdministracion.ReshowDelay = 0;
+            // 
             // AdministradorPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
-            this.Controls.Add(this.panelInventario);
-            this.Controls.Add(this.panelPagos);
-            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelUsuario);
+            this.Controls.Add(this.panelMascotas);
+            this.Controls.Add(this.panelCitas);
+            this.Controls.Add(this.panelPagos);
+            this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelBtnInventario);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnPagos);
             this.Controls.Add(this.panelBtnUsuarios);
             this.Controls.Add(this.panelBtnCitas);
-            this.Controls.Add(this.panelMascotas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
@@ -2060,5 +2081,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
         private System.Windows.Forms.Button btnBorrarUser;
         private System.Windows.Forms.Button btnBorrarMascota;
+        private System.Windows.Forms.ToolTip tpAdministracion;
     }
 }
