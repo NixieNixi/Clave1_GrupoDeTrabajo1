@@ -59,6 +59,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascD = new System.Windows.Forms.TextBox();
             this.cbxIDUsuD = new System.Windows.Forms.ComboBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
+            this.lblUsuarioUser = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -201,7 +202,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
+            //this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -213,7 +214,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnProgramarCitaD.TabIndex = 22;
             this.btnProgramarCitaD.Text = "Programar";
             this.btnProgramarCitaD.UseVisualStyleBackColor = false;
-            this.btnProgramarCitaD.Click += new System.EventHandler(this.btnProgramarCitaD_Click);
+            //this.btnProgramarCitaD.Click += new System.EventHandler(this.btnProgramarCitaD_Click);
             // 
             // btnCancelarCita
             // 
@@ -225,7 +226,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelarCita.TabIndex = 25;
             this.btnCancelarCita.Text = "Cancelar";
             this.btnCancelarCita.UseVisualStyleBackColor = false;
-            this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
+           // this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
             // 
             // btnGuardarCitaD
             // 
@@ -279,6 +280,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDMascD.Name = "cbxIDMascD";
             this.cbxIDMascD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDMascD.TabIndex = 34;
+            this.cbxIDMascD.SelectedIndexChanged += new System.EventHandler(this.cbxIDMascD_SelectedIndexChanged);
             // 
             // cbxIDCitaD
             // 
@@ -346,12 +348,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNombreUsuario.TabIndex = 35;
             this.lblNombreUsuario.Text = "label3";
             // 
+            // lblUsuarioUser
+            // 
+            this.lblUsuarioUser.AutoSize = true;
+            this.lblUsuarioUser.Location = new System.Drawing.Point(307, 88);
+            this.lblUsuarioUser.Name = "lblUsuarioUser";
+            this.lblUsuarioUser.Size = new System.Drawing.Size(35, 13);
+            this.lblUsuarioUser.TabIndex = 36;
+            this.lblUsuarioUser.Text = "label3";
+            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(853, 348);
+            this.Controls.Add(this.lblUsuarioUser);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.cbxIDCitaD);
             this.Controls.Add(this.cbxIDUsuD);
@@ -378,6 +390,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
+            this.Load += new System.EventHandler(this.CitaMascota_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -417,5 +430,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtNomMascD;
         private System.Windows.Forms.ComboBox cbxIDUsuD;
         private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Label lblUsuarioUser;
     }
 }

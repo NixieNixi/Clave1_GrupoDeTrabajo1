@@ -25,8 +25,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnCitasMascD_Click(object sender, EventArgs e)
         {
             //se enlaza con cita de la mascota con su boton
-            CitaMascota Cita = new CitaMascota();
-            Cita.ShowDialog();
+            //CitaMascota Cita = new CitaMascota();
+           // Cita.ShowDialog();
 
         }
 

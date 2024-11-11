@@ -99,10 +99,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnCitaMascD_Click(object sender, EventArgs e)
         {
-            //se enlaza con su boton a la cita
-            CitaMascota VerCitas = new CitaMascota();
-            this.Hide();
-            VerCitas.ShowDialog();
+
+            int idUsuario = Usuario.IdUsuario;
+
+            if (idUsuario != 0)
+            {
+
+                //se enlaza con su boton a la cita
+                CitaMascota cita = new CitaMascota(idUsuario);
+                this.Hide();
+                cita.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("El ID del usuario no fue encontrado. Asegúrate de estar logueado correctamente.", "Error");
+            }
+           
         }
 
         private void PerfilDueno_Load(object sender, EventArgs e)
