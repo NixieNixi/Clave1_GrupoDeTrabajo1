@@ -34,7 +34,7 @@ CREATE TABLE `cirugia` (
   PRIMARY KEY (`idCirugia`),
   KEY `fk_idMascotaCirugia_idx` (`idMascota`),
   KEY `idCItaCirugia_idx` (`idCita`),
-  CONSTRAINT `idCItaCirugia` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
+  CONSTRAINT `idCItaCirugia` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaCirugia` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -45,7 +45,6 @@ CREATE TABLE `cirugia` (
 
 LOCK TABLES `cirugia` WRITE;
 /*!40000 ALTER TABLE `cirugia` DISABLE KEYS */;
-INSERT INTO `cirugia` VALUES (1,1,1,'2024-11-10 06:27:11','Cesarea','asdasd','sdasd','dasd'),(2,2,2,'2024-11-10 06:49:59','Castracion','fghj','cvbnm','cvbnm'),(3,4,3,'2024-11-10 06:52:49','Castracion','asdasd','sadsd','asdad');
 /*!40000 ALTER TABLE `cirugia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -66,7 +65,7 @@ CREATE TABLE `citas` (
   PRIMARY KEY (`idCita`),
   KEY `idMascota_Citas` (`idMascota`),
   CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,7 +74,7 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,1,'tiene hambre','Finalizada','2024-11-11','09:25:31'),(2,2,'papaps','Finalizada','2024-11-11','08:48:27'),(3,4,'pinche gato','Finalizada','2024-11-11','10:51:03');
+INSERT INTO `citas` VALUES (1,1,'Consulta general','Programada','2024-11-15','08:00:00'),(2,1,'Vacunació','Programada','2024-11-16','09:00:00'),(3,3,'Control de peso','Programada','2024-11-17','10:00:00'),(4,4,'Chequeo Gestante','Programada','2024-11-18','11:00:00'),(5,5,'Problemas digestivos','Programada','2024-11-19','12:00:00'),(6,6,'Consulta general','Programada','2024-11-20','13:00:00'),(7,7,'Vacunació','Programada','2024-11-21','14:00:00'),(8,8,'Chequeo mensual','Programada','2024-11-22','15:00:00'),(9,9,'Cirugía programad','Programada','2024-11-23','08:30:00'),(10,10,'Revisión de herida','Programada','2024-11-24','09:30:00'),(11,11,'Chequeo general','Programada','2024-11-25','10:30:00'),(12,12,'Control post-operatorio','Programada','2024-11-26','11:30:00'),(13,13,'Desparasitació','Programada','2024-11-27','12:30:00'),(14,14,'Consulta de emergencia','Programada','2024-11-28','13:30:00');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -102,7 +101,7 @@ CREATE TABLE `consultas` (
   PRIMARY KEY (`idConsulta`),
   KEY `idMascotaConsulta_idx` (`idMascota`),
   KEY `idcitaconsulta_idx` (`idCita`),
-  CONSTRAINT `idcitaconsulta` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
+  CONSTRAINT `idcitaconsulta` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaConsulta` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -113,7 +112,6 @@ CREATE TABLE `consultas` (
 
 LOCK TABLES `consultas` WRITE;
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
-INSERT INTO `consultas` VALUES (1,1,1,'2024-11-10 06:27:07',3.00,'tiene hambre','','','','','','notas'),(2,2,2,'2024-11-10 06:49:59',3.00,'papaps','pasoda','a','asasdas','asd','asd','asd'),(3,4,3,'2024-11-10 06:52:49',5.00,'pinche gato','ad','','','','','');
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -136,7 +134,7 @@ CREATE TABLE `examen` (
   PRIMARY KEY (`idExamen`),
   KEY `idMascotaExamen_idx` (`idMascota`),
   KEY `idCita_idx` (`idCita`),
-  CONSTRAINT `idCita` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
+  CONSTRAINT `idCita` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaExamen` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -147,7 +145,6 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (1,1,1,'2024-11-10 06:27:10','Sangre','d','sd','sd'),(2,2,2,'2024-11-10 06:49:59','Sangre','bnm','fgh','vbn'),(3,4,3,'2024-11-10 06:52:49','Sida felino','asdasd','dsad','asdasd');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -200,7 +197,7 @@ CREATE TABLE `pagos` (
   PRIMARY KEY (`idPago`),
   KEY `idUsuarios_ipagos` (`idUsuario`),
   CONSTRAINT `idUsuarios_pagos` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -209,7 +206,7 @@ CREATE TABLE `pagos` (
 
 LOCK TABLES `pagos` WRITE;
 /*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
-INSERT INTO `pagos` VALUES (1,5,'2022-03-14','Pagado',20.00,'Efectivo','Cita'),(2,6,'2022-04-14','Pagado',40.00,'Efectivo','Producto'),(3,7,'2022-03-13','Pagado',23.00,'Tarjeta','Cita'),(4,8,'2022-04-14','Pendiente',123.00,'Sin pagar','Producto'),(5,5,'2022-08-11','Pendiente',124.50,'Sin pagar','Cita'),(6,6,'2023-09-04','Pendiente',153.70,'Sin pagar','Producto'),(7,7,'2023-11-14','Pagado',182.90,'Bitcoin','Cita'),(8,8,'2023-12-25','Pendiente',212.10,'Sin pagar','Producto');
+INSERT INTO `pagos` VALUES (1,5,'2022-03-14','Pagado',20.00,'Efectivo','Cita'),(2,6,'2022-04-14','Pagado',40.00,'Efectivo','Producto'),(3,7,'2022-03-13','Pagado',23.00,'Tarjeta','Cita'),(4,8,'2022-04-14','Pendiente',123.00,'Sin pagar','Producto'),(5,5,'2022-08-11','Pagado',124.50,'Efectivo','Cita'),(6,6,'2023-09-04','Pagado',153.70,'Efectivo','Producto'),(7,7,'2023-11-14','Pagado',182.90,'Bitcoin','Cita'),(8,8,'2023-12-25','Pendiente',212.10,'Sin pagar','Producto'),(10,5,'2024-11-10','Pendiente',35.00,'Efectivo','Cita');
 /*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -236,7 +233,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Alimiau',1.00,'1 lb Comida para gato',20),(2,'CatChips',12.00,'1 lb Comida para gato',20),(3,'Gati',5.00,'1 kg Comida para gato',20),(4,'Rufo',2.00,'1 kg Comida para perro',20),(5,'Pedigree',10.00,'2 kg Comida para perro',20),(6,'Nutripet',4.00,'2.3 kg Comida para cachorro',20),(7,'PetGround',5.00,'c/u Cesped para gato',20),(8,'HappyCat',5.00,'5 lb Arena para gato sin aroma',20),(9,'Yes!pH',10.00,' 250 ml Champú para perros y gato',20);
+INSERT INTO `productos` VALUES (1,'Alimiau',1.00,'1 lb Comida para gato',19),(2,'CatChips',12.00,'1 lb Comida para gato',19),(3,'Gati',5.00,'1 kg Comida para gato',16),(4,'Rufo',2.00,'1 kg Comida para perro',19),(5,'Pedigree',10.00,'2 kg Comida para perro',20),(6,'Nutripet',4.00,'2.3 kg Comida para cachorro',20),(7,'PetGround',5.00,'c/u Cesped para gato',20),(8,'HappyCat',5.00,'5 lb Arena para gato sin aroma',20),(9,'Yes!pH',10.00,' 250 ml Champú para perros y gato',20);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -306,7 +303,7 @@ DROP TABLE IF EXISTS `vacuna`;
 CREATE TABLE `vacuna` (
   `idVacuna` int NOT NULL AUTO_INCREMENT,
   `idMascota` int NOT NULL,
-  `idCita` int NOT NULL,
+  `idCita` int DEFAULT NULL,
   `FechaHora` datetime NOT NULL,
   `Tipo` enum('Perro Moquillo','Perro Parvovirus','Perro Hepatitis','Perro Leptospirosis','Gato Leucemia','Gato Calicivirus','Gato Herpesvirus','Gato Panleucopenia','Rabia') NOT NULL,
   `Descripcion` longtext,
@@ -315,7 +312,7 @@ CREATE TABLE `vacuna` (
   PRIMARY KEY (`idVacuna`),
   KEY `idMascotaVacuna_idx` (`idMascota`),
   KEY `idCitaVacuna_idx` (`idCita`),
-  CONSTRAINT `idCitaVacuna` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`),
+  CONSTRAINT `idCitaVacuna` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaVacuna` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -326,7 +323,6 @@ CREATE TABLE `vacuna` (
 
 LOCK TABLES `vacuna` WRITE;
 /*!40000 ALTER TABLE `vacuna` DISABLE KEYS */;
-INSERT INTO `vacuna` VALUES (1,1,1,'2024-11-10 06:27:09','Rabia','j','d','si'),(2,2,2,'2024-11-10 06:49:59','Rabia','cvbj','cvbn','vbnm'),(3,4,3,'2024-11-10 06:52:49','Perro Moquillo','sdasda','asdas','ads');
 /*!40000 ALTER TABLE `vacuna` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -339,4 +335,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-10 14:55:11
+-- Dump completed on 2024-11-10 21:48:34
