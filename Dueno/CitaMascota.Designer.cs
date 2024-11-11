@@ -49,6 +49,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnGuardarCita = new System.Windows.Forms.Button();
             this.dtpCitaHora = new System.Windows.Forms.DateTimePicker();
             this.cbxIDMascD = new System.Windows.Forms.ComboBox();
             this.cbxIDCitaD = new System.Windows.Forms.ComboBox();
@@ -58,6 +59,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascD = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioUser = new System.Windows.Forms.Label();
+            this.btnEditarCita = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -194,19 +196,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnRepreogramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnRepreogramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(347, 16);
+            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(418, 15);
             this.btnRepreogramarCitaD.Name = "btnRepreogramarCitaD";
             this.btnRepreogramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-         // this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
+            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
             this.btnProgramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnProgramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnProgramarCitaD.Location = new System.Drawing.Point(192, 16);
+            this.btnProgramarCitaD.Location = new System.Drawing.Point(205, 15);
             this.btnProgramarCitaD.Name = "btnProgramarCitaD";
             this.btnProgramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnProgramarCitaD.TabIndex = 22;
@@ -218,7 +220,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnCancelarEdicionCita.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCancelarEdicionCita.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEdicionCita.Location = new System.Drawing.Point(483, 16);
+            this.btnCancelarEdicionCita.Location = new System.Drawing.Point(544, 16);
             this.btnCancelarEdicionCita.Name = "btnCancelarEdicionCita";
             this.btnCancelarEdicionCita.Size = new System.Drawing.Size(150, 23);
             this.btnCancelarEdicionCita.TabIndex = 25;
@@ -247,11 +249,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnPerfilD.TabIndex = 26;
             this.btnPerfilD.Text = "Perfil";
             this.btnPerfilD.UseVisualStyleBackColor = false;
-            //this.btnPerfilD.Click += new System.EventHandler(this.btnPerfilD_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.btnEditarCita);
+            this.panel1.Controls.Add(this.btnGuardarCita);
             this.panel1.Controls.Add(this.btnPerfilD);
             this.panel1.Controls.Add(this.btnCancelarEdicionCita);
             this.panel1.Controls.Add(this.btnProgramarCitaD);
@@ -261,6 +264,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 62);
             this.panel1.TabIndex = 28;
+            // 
+            // btnGuardarCita
+            // 
+            this.btnGuardarCita.Location = new System.Drawing.Point(116, 15);
+            this.btnGuardarCita.Name = "btnGuardarCita";
+            this.btnGuardarCita.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarCita.TabIndex = 27;
+            this.btnGuardarCita.Text = "Guadar cita";
+            this.btnGuardarCita.UseVisualStyleBackColor = true;
+            this.btnGuardarCita.Click += new System.EventHandler(this.btnGuardarCita_Click);
             // 
             // dtpCitaHora
             // 
@@ -341,6 +354,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblUsuarioUser.TabIndex = 36;
             this.lblUsuarioUser.Text = "label3";
             // 
+            // btnEditarCita
+            // 
+            this.btnEditarCita.Location = new System.Drawing.Point(318, 15);
+            this.btnEditarCita.Name = "btnEditarCita";
+            this.btnEditarCita.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarCita.TabIndex = 28;
+            this.btnEditarCita.Text = "Editar Cita";
+            this.btnEditarCita.UseVisualStyleBackColor = true;
+            this.btnEditarCita.Click += new System.EventHandler(this.btnEditarCita_Click);
+            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,8 +394,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
-           //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
-            //this.Load += new System.EventHandler(this.CitaMascota_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -411,5 +432,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtNomMascD;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label lblUsuarioUser;
+        private System.Windows.Forms.Button btnGuardarCita;
+        private System.Windows.Forms.Button btnEditarCita;
     }
 }
