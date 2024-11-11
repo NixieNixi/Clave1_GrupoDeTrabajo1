@@ -105,7 +105,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void PerfilDueno_Load(object sender, EventArgs e)
         {
             lblNomD.Text = Usuario.Nombre;  // Muestra el nombre del usuario
-            lblUsuD.Text = Usuario.IdUsuario.ToString();
+            lblIduser.Text = Usuario.IdUsuario.ToString();
+        }
+
+        private void btnCerrarSeD_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
         }
     }
 }

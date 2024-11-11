@@ -181,7 +181,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
 
             
-            lblTotal.Text = "Total: $" + total.ToString("F2");
+            lblMostrarTotalCompra.Text = "Total: $" + total.ToString("F2");
         }
 
 
@@ -204,13 +204,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     cmd.Parameters.AddWithValue("@TipoPago", tipoPago);
                     cmd.Parameters.AddWithValue("@IdUsuario", this.IdUsuario);
 
-                    cmd.ExecuteNonQuery(); // Ejecuta la inserción
+                    cmd.ExecuteNonQuery(); 
                 }
 
-                // Una vez registrado el pago, actualizamos la cantidad de los productos comprados
                 foreach (var producto in carrito.ProductosSeleccionados)
                 {
-                    // Actualizar el inventario de productos restando la cantidad comprada
                     string queryActualizarCantidad = "UPDATE productos SET Cantidad = Cantidad - @CantidadComprada WHERE idProductos = @IdProducto";
                     using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                     {
@@ -219,13 +217,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         cmdActualizar.Parameters.AddWithValue("@CantidadComprada", producto.CantidadSeleccionada);
                         cmdActualizar.Parameters.AddWithValue("@IdProducto", producto.IdProductos);
 
-                        cmdActualizar.ExecuteNonQuery(); // Ejecuta la actualización
+                        cmdActualizar.ExecuteNonQuery(); 
                     }
                 }
 
                 MessageBox.Show("Pago procesado con éxito.");
-                carrito.VaciarCarrito();  // Vaciar el carrito después del pago
-                MostrarCarrito();  // Mostrar el carrito vacío
+                carrito.VaciarCarrito();  
+                MostrarCarrito();  
             }
             catch (Exception ex)
             {
@@ -245,7 +243,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         public int ObtenerUltimoIdPago()
         {
             int idPago = 0;
-            string query = "SELECT LAST_INSERT_ID()"; // Obtiene el último ID insertado
+            string query = "SELECT LAST_INSERT_ID()"; 
             using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 conexion.Open();
@@ -256,13 +254,44 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
             return idPago;
         }
-       
 
-
-        private void dgvCarritoCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCanceD_Click(object sender, EventArgs e)
         {
+            if (dgvCarritoCompras.SelectedRows.Count > 0)
+            {
+                var selectedRow = dgvCarritoCompras.SelectedRows[0];
 
+               
+                int idProducto = Convert.ToInt32(selectedRow.Cells["IdProductoCarrito"].Value);
 
+                var productoParaCancelar = carrito.ProductosSeleccionados.FirstOrDefault(p => p.IdProductos == idProducto);
+
+                if (productoParaCancelar != null)
+                {
+                    // Remover el producto del carrito
+                    carrito.ProductosSeleccionados.Remove(productoParaCancelar);
+
+                    // Remover la fila seleccionada del DataGridView
+                    dgvCarritoCompras.Rows.Remove(selectedRow);
+
+                    // Recalcular el total del carrito
+                    MostrarCarrito();
+
+                    MessageBox.Show("Producto cancelado con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("Producto no encontrado en el carrito.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un producto para cancelar.");
+            }
         }
+
+
     }
+
 }
+
