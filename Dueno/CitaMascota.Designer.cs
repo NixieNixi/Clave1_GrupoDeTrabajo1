@@ -202,7 +202,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-            //this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -214,7 +213,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnProgramarCitaD.TabIndex = 22;
             this.btnProgramarCitaD.Text = "Programar";
             this.btnProgramarCitaD.UseVisualStyleBackColor = false;
-            //this.btnProgramarCitaD.Click += new System.EventHandler(this.btnProgramarCitaD_Click);
             // 
             // btnCancelarCita
             // 
@@ -226,7 +224,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelarCita.TabIndex = 25;
             this.btnCancelarCita.Text = "Cancelar";
             this.btnCancelarCita.UseVisualStyleBackColor = false;
-           // this.btnCancelarCita.Click += new System.EventHandler(this.btnCancelarCita_Click);
             // 
             // btnGuardarCitaD
             // 
@@ -289,6 +286,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDCitaD.Name = "cbxIDCitaD";
             this.cbxIDCitaD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDCitaD.TabIndex = 34;
+            this.cbxIDCitaD.SelectedIndexChanged += new System.EventHandler(this.cbxIDCitaD_SelectedIndexChanged);
             // 
             // label15
             // 

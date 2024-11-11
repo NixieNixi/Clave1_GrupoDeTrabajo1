@@ -909,7 +909,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panelVeterinarioCita);
             this.Name = "veterinarioCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Agenda de Citas";
+            this.Text = "7";
             this.panelVeterinarioCita.ResumeLayout(false);
             this.panelVeterinarioCita.PerformLayout();
             this.gbxInfoExamen.ResumeLayout(false);

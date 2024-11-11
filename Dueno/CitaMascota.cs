@@ -15,6 +15,13 @@ using Clave1_GrupoDeTrabajo1.Administrador;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
+
+    /// <summary>
+    /// Autor: NixieNixi
+    /// Descripcion: 
+    /// Este form a sido creado para la parte del dueño, donde podra manejar la inforacion de sus mascotas y sus citas.
+    /// 
+    /// </summary>
     public partial class CitaMascota : Form
     {
         private int IdUsuario;
@@ -23,7 +30,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             InitializeComponent();
             IdUsuario = idUsuario;
-            ActualizarMascotas(); // Cargar las mascotas del usuario al inicio
+            ActualizarMascotas(); 
         }
 
         // Método para actualizar el ComboBox de mascotas del usuario específico
@@ -43,11 +50,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            bool hasData = false; // Variable para verificar si se obtuvieron datos
+                            bool hasData = false; 
                             while (reader.Read())
                             {
                                 cbxIDMascD.Items.Add(reader["idMascota"].ToString());
-                                hasData = true; // Si se obtienen datos, cambiar a verdadero
+                                hasData = true; 
                             }
                             if (!hasData)
                             {
@@ -80,15 +87,56 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            bool hasData = false; // Variable para verificar si se obtuvieron datos
+                            bool hasData = false; 
                             while (reader.Read())
                             {
                                 cbxIDCitaD.Items.Add(reader["idCita"].ToString());
-                                hasData = true; // Si se obtienen datos, cambiar a verdadero
+                                hasData = true; 
                             }
                             if (!hasData)
                             {
                                 MessageBox.Show("No se encontraron citas para la mascota seleccionada.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión a Base de Datos: " + ex.Message, "Error :(");
+            }
+        }
+
+        // Método para cargar los detalles de la cita seleccionada
+        private void CargarDetallesCita(int idCita)
+        {
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    string query = "SELECT Motivo, Estado, Fecha, Hora FROM Citas WHERE idCita = @idCita;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idCita", idCita);
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                txtMotCiD.Text = reader["Motivo"].ToString();
+                                txtEsCiD.Text = reader["Estado"].ToString();
+
+                                DateTime fecha = (DateTime)reader["Fecha"];
+                                dtpCitaFecha.Value = fecha;
+
+                                TimeSpan horaDB = (TimeSpan)reader["Hora"];
+                                DateTime hora = new DateTime(2023, 05, 05).Add(horaDB);
+                                dtpCitaHora.Value = hora;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontraron detalles para la cita seleccionada.");
                             }
                         }
                     }
@@ -109,6 +157,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
+        private void cbxIDCitaD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxIDCitaD.SelectedItem != null)
+            {
+                int idCitaSeleccionada = int.Parse(cbxIDCitaD.SelectedItem.ToString());
+                CargarDetallesCita(idCitaSeleccionada);
+            }
+        }
+
         private void btnPerfilD_Click(object sender, EventArgs e)
         {
             PerfilDueno VerDueno = new PerfilDueno();
@@ -126,5 +183,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             Application.Exit();
         }
+
+        
     }
 }
