@@ -29,13 +29,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.btnComprarProducto = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox2 = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox3 = new System.Windows.Forms.CheckedListBox();
             this.btnCanceD = new System.Windows.Forms.Button();
             this.btnVolD = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -49,90 +43,42 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.lblMostrarTotalCompra = new System.Windows.Forms.Label();
             this.dgvCarritoCompras = new System.Windows.Forms.DataGridView();
             this.IdProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblTotalCompra = new System.Windows.Forms.Label();
+            this.lblProductodgvCarrito = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompras)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(153, 484);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Alimento:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 484);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Higiene:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(434, 484);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Accesorios:";
-            // 
             // btnComprarProducto
             // 
-            this.btnComprarProducto.Location = new System.Drawing.Point(279, 15);
+            this.btnComprarProducto.Location = new System.Drawing.Point(191, 14);
             this.btnComprarProducto.Name = "btnComprarProducto";
-            this.btnComprarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnComprarProducto.Size = new System.Drawing.Size(89, 23);
             this.btnComprarProducto.TabIndex = 3;
-            this.btnComprarProducto.Text = "Comprar";
+            this.btnComprarProducto.Text = "Comprar Producto";
             this.btnComprarProducto.UseVisualStyleBackColor = true;
             this.btnComprarProducto.Click += new System.EventHandler(this.btnComprarD_Click);
             // 
-            // checkedListBox1
-            // 
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(109, 500);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox1.TabIndex = 4;
-            // 
-            // checkedListBox2
-            // 
-            this.checkedListBox2.FormattingEnabled = true;
-            this.checkedListBox2.Location = new System.Drawing.Point(258, 500);
-            this.checkedListBox2.Name = "checkedListBox2";
-            this.checkedListBox2.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox2.TabIndex = 5;
-            // 
-            // checkedListBox3
-            // 
-            this.checkedListBox3.FormattingEnabled = true;
-            this.checkedListBox3.Location = new System.Drawing.Point(407, 500);
-            this.checkedListBox3.Name = "checkedListBox3";
-            this.checkedListBox3.Size = new System.Drawing.Size(120, 94);
-            this.checkedListBox3.TabIndex = 6;
-            // 
             // btnCanceD
             // 
-            this.btnCanceD.Location = new System.Drawing.Point(55, 15);
+            this.btnCanceD.Location = new System.Drawing.Point(352, 14);
             this.btnCanceD.Name = "btnCanceD";
             this.btnCanceD.Size = new System.Drawing.Size(75, 23);
             this.btnCanceD.TabIndex = 7;
-            this.btnCanceD.Text = "Cancelar";
+            this.btnCanceD.Text = "Cancelar Producto";
             this.btnCanceD.UseVisualStyleBackColor = true;
+            this.btnCanceD.Click += new System.EventHandler(this.btnCanceD_Click);
             // 
             // btnVolD
             // 
-            this.btnVolD.Location = new System.Drawing.Point(473, 15);
+            this.btnVolD.Location = new System.Drawing.Point(28, 14);
             this.btnVolD.Name = "btnVolD";
             this.btnVolD.Size = new System.Drawing.Size(75, 23);
             this.btnVolD.TabIndex = 8;
@@ -192,16 +138,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Controls.Add(this.btnComprarProducto);
             this.panel1.Controls.Add(this.btnVolD);
             this.panel1.Controls.Add(this.btnCanceD);
-            this.panel1.Location = new System.Drawing.Point(-2, 370);
+            this.panel1.Location = new System.Drawing.Point(-2, 549);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 54);
             this.panel1.TabIndex = 16;
             // 
             // btnFinCompra
             // 
-            this.btnFinCompra.Location = new System.Drawing.Point(604, 14);
+            this.btnFinCompra.Location = new System.Drawing.Point(491, 14);
             this.btnFinCompra.Name = "btnFinCompra";
-            this.btnFinCompra.Size = new System.Drawing.Size(75, 23);
+            this.btnFinCompra.Size = new System.Drawing.Size(122, 23);
             this.btnFinCompra.TabIndex = 9;
             this.btnFinCompra.Text = "Finalizar Compra";
             this.btnFinCompra.UseVisualStyleBackColor = true;
@@ -216,7 +162,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.NombreProducto,
             this.PrecioProducto,
             this.CantidadDisponible});
-            this.dgvProductos.Location = new System.Drawing.Point(12, 82);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 138);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProductos.Size = new System.Drawing.Size(691, 150);
@@ -247,27 +193,28 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.CantidadDisponible.Name = "CantidadDisponible";
             this.CantidadDisponible.ReadOnly = true;
             // 
-            // lblTotal
+            // lblMostrarTotalCompra
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(846, 299);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(31, 13);
-            this.lblTotal.TabIndex = 18;
-            this.lblTotal.Text = "Total";
+            this.lblMostrarTotalCompra.AutoSize = true;
+            this.lblMostrarTotalCompra.Location = new System.Drawing.Point(718, 448);
+            this.lblMostrarTotalCompra.Name = "lblMostrarTotalCompra";
+            this.lblMostrarTotalCompra.Size = new System.Drawing.Size(31, 13);
+            this.lblMostrarTotalCompra.TabIndex = 18;
+            this.lblMostrarTotalCompra.Text = "Total";
             // 
             // dgvCarritoCompras
             // 
+            this.dgvCarritoCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCarritoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarritoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProductoCarrito,
             this.NombreProductoCarrito,
             this.PrecioProductoCarrito});
-            this.dgvCarritoCompras.Location = new System.Drawing.Point(12, 238);
+            this.dgvCarritoCompras.Location = new System.Drawing.Point(12, 394);
             this.dgvCarritoCompras.Name = "dgvCarritoCompras";
+            this.dgvCarritoCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCarritoCompras.Size = new System.Drawing.Size(691, 126);
             this.dgvCarritoCompras.TabIndex = 19;
-            this.dgvCarritoCompras.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCarritoCompras_CellContentClick);
             // 
             // IdProductoCarrito
             // 
@@ -287,23 +234,37 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.PrecioProductoCarrito.Name = "PrecioProductoCarrito";
             this.PrecioProductoCarrito.ReadOnly = true;
             // 
+            // lblTotalCompra
+            // 
+            this.lblTotalCompra.AutoSize = true;
+            this.lblTotalCompra.Location = new System.Drawing.Point(718, 416);
+            this.lblTotalCompra.Name = "lblTotalCompra";
+            this.lblTotalCompra.Size = new System.Drawing.Size(73, 13);
+            this.lblTotalCompra.TabIndex = 20;
+            this.lblTotalCompra.Text = "Total Compra:";
+            // 
+            // lblProductodgvCarrito
+            // 
+            this.lblProductodgvCarrito.AutoSize = true;
+            this.lblProductodgvCarrito.Location = new System.Drawing.Point(214, 360);
+            this.lblProductodgvCarrito.Name = "lblProductodgvCarrito";
+            this.lblProductodgvCarrito.Size = new System.Drawing.Size(193, 13);
+            this.lblProductodgvCarrito.TabIndex = 21;
+            this.lblProductodgvCarrito.Text = "Productos que han sido seleccionados:";
+            // 
             // Tienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1181, 632);
+            this.ClientSize = new System.Drawing.Size(803, 632);
+            this.Controls.Add(this.lblProductodgvCarrito);
+            this.Controls.Add(this.lblTotalCompra);
             this.Controls.Add(this.dgvCarritoCompras);
-            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblMostrarTotalCompra);
             this.Controls.Add(this.dgvProductos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.checkedListBox3);
-            this.Controls.Add(this.checkedListBox2);
-            this.Controls.Add(this.checkedListBox1);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "Tienda";
             this.Text = "Tienda";
             this.panel2.ResumeLayout(false);
@@ -317,14 +278,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnComprarProducto;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
-        private System.Windows.Forms.CheckedListBox checkedListBox2;
-        private System.Windows.Forms.CheckedListBox checkedListBox3;
         private System.Windows.Forms.Button btnCanceD;
         private System.Windows.Forms.Button btnVolD;
         private System.Windows.Forms.Panel panel2;
@@ -337,11 +291,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
-        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblMostrarTotalCompra;
         private System.Windows.Forms.DataGridView dgvCarritoCompras;
         private System.Windows.Forms.Button btnFinCompra;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProductoCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProductoCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProductoCarrito;
+        private System.Windows.Forms.Label lblTotalCompra;
+        private System.Windows.Forms.Label lblProductodgvCarrito;
     }
 }

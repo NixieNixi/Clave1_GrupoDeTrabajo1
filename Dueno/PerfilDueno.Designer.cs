@@ -29,15 +29,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUserUsuario = new System.Windows.Forms.Label();
+            this.lblUserId = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblDireccD = new System.Windows.Forms.Label();
             this.lblCorreoD = new System.Windows.Forms.Label();
             this.lblTelD = new System.Windows.Forms.Label();
-            this.lblUsuD = new System.Windows.Forms.Label();
+            this.lblIduser = new System.Windows.Forms.Label();
             this.lblNomD = new System.Windows.Forms.Label();
             this.btnIrTiendaD = new System.Windows.Forms.Button();
             this.btnPerfilMascotaD = new System.Windows.Forms.Button();
@@ -52,31 +52,31 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lblUserUsuario
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.LightCyan;
-            this.label1.Location = new System.Drawing.Point(152, 117);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Nombre:";
+            this.lblUserUsuario.AutoSize = true;
+            this.lblUserUsuario.BackColor = System.Drawing.Color.LightCyan;
+            this.lblUserUsuario.Location = new System.Drawing.Point(20, 96);
+            this.lblUserUsuario.Name = "lblUserUsuario";
+            this.lblUserUsuario.Size = new System.Drawing.Size(82, 13);
+            this.lblUserUsuario.TabIndex = 0;
+            this.lblUserUsuario.Text = "Nombre Dueño:";
             // 
-            // label2
+            // lblUserId
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.LightCyan;
-            this.label2.Location = new System.Drawing.Point(152, 151);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Usuario:";
+            this.lblUserId.AutoSize = true;
+            this.lblUserId.BackColor = System.Drawing.Color.LightCyan;
+            this.lblUserId.Location = new System.Drawing.Point(20, 130);
+            this.lblUserId.Name = "lblUserId";
+            this.lblUserId.Size = new System.Drawing.Size(57, 13);
+            this.lblUserId.TabIndex = 1;
+            this.lblUserId.Text = "ID Usuario";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.LightCyan;
-            this.label3.Location = new System.Drawing.Point(152, 184);
+            this.label3.Location = new System.Drawing.Point(84, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 2;
@@ -86,7 +86,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.LightCyan;
-            this.label4.Location = new System.Drawing.Point(152, 213);
+            this.label4.Location = new System.Drawing.Point(84, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 3;
@@ -96,7 +96,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightCyan;
-            this.label5.Location = new System.Drawing.Point(152, 248);
+            this.label5.Location = new System.Drawing.Point(84, 248);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 4;
@@ -129,23 +129,23 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblTelD.TabIndex = 7;
             this.lblTelD.Text = "label8";
             // 
-            // lblUsuD
+            // lblIduser
             // 
-            this.lblUsuD.AutoSize = true;
-            this.lblUsuD.Location = new System.Drawing.Point(216, 151);
-            this.lblUsuD.Name = "lblUsuD";
-            this.lblUsuD.Size = new System.Drawing.Size(35, 13);
-            this.lblUsuD.TabIndex = 6;
-            this.lblUsuD.Text = "label9";
+            this.lblIduser.AutoSize = true;
+            this.lblIduser.Location = new System.Drawing.Point(152, 130);
+            this.lblIduser.Name = "lblIduser";
+            this.lblIduser.Size = new System.Drawing.Size(53, 13);
+            this.lblIduser.TabIndex = 6;
+            this.lblIduser.Text = "ID Dueño";
             // 
             // lblNomD
             // 
             this.lblNomD.AutoSize = true;
-            this.lblNomD.Location = new System.Drawing.Point(216, 117);
+            this.lblNomD.Location = new System.Drawing.Point(152, 96);
             this.lblNomD.Name = "lblNomD";
-            this.lblNomD.Size = new System.Drawing.Size(41, 13);
+            this.lblNomD.Size = new System.Drawing.Size(79, 13);
             this.lblNomD.TabIndex = 5;
-            this.lblNomD.Text = "label10";
+            this.lblNomD.Text = "Nombre Dueño";
             // 
             // btnIrTiendaD
             // 
@@ -193,6 +193,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCerrarSeD.TabIndex = 13;
             this.btnCerrarSeD.Text = "Cerrar Sesión";
             this.btnCerrarSeD.UseVisualStyleBackColor = false;
+            this.btnCerrarSeD.Click += new System.EventHandler(this.btnCerrarSeD_Click);
             // 
             // panel2
             // 
@@ -262,13 +263,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.lblDireccD);
             this.Controls.Add(this.lblCorreoD);
             this.Controls.Add(this.lblTelD);
-            this.Controls.Add(this.lblUsuD);
+            this.Controls.Add(this.lblIduser);
             this.Controls.Add(this.lblNomD);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblUserId);
+            this.Controls.Add(this.lblUserUsuario);
             this.Name = "PerfilDueno";
             this.Text = "PerfilDueño";
             this.Load += new System.EventHandler(this.PerfilDueno_Load);
@@ -282,15 +283,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUserUsuario;
+        private System.Windows.Forms.Label lblUserId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblDireccD;
         private System.Windows.Forms.Label lblCorreoD;
         private System.Windows.Forms.Label lblTelD;
-        private System.Windows.Forms.Label lblUsuD;
+        private System.Windows.Forms.Label lblIduser;
         private System.Windows.Forms.Label lblNomD;
         private System.Windows.Forms.Button btnIrTiendaD;
         private System.Windows.Forms.Button btnPerfilMascotaD;

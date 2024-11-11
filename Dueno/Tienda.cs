@@ -28,13 +28,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private CarritoCompras carrito;
         
         
-            private int IdUsuario;  // Variable para almacenar el id del usuario logueado
+            private int IdUsuario;  
 
-            // Constructor que acepta un idUsuario
+            
             public Tienda(int idUsuario)
             {
                 InitializeComponent();
-                IdUsuario = idUsuario;   // Asigna el id del usuario a la variable privada
+                IdUsuario = idUsuario;   
                 CargarProductos();
                 carrito = new CarritoCompras();
             }
@@ -92,7 +92,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         
         private void btnComprarD_Click(object sender, EventArgs e)
         {
-            
+
             if (dgvProductos.SelectedRows.Count > 0)
             {
                 int idProducto = Convert.ToInt32(dgvProductos.SelectedRows[0].Cells["IdProducto"].Value);
@@ -100,14 +100,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 if (productoSeleccionado != null && productoSeleccionado.Cantidad > 0)
                 {
-                    
-                    decimal totalCompra = productoSeleccionado.Precio;
-                    lblTotal.Text = "Total: $" + totalCompra.ToString("F2");
+                    // Agregar al carrito y mostrar carrito actualizado
+                    carrito.AgregarProducto(productoSeleccionado);
+                    MostrarCarrito(); // Aquí actualizamos el carrito y el total
 
-                    
+                    // Actualizamos la cantidad disponible en el producto
                     productoSeleccionado.Cantidad -= 1;
-
-                    
                     dgvProductos.SelectedRows[0].Cells["CantidadDisponible"].Value = productoSeleccionado.Cantidad;
                 }
                 else
@@ -136,12 +134,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             if (e.RowIndex >= 0)
             {
-                var productoSeleccionado = productos[e.RowIndex]; // Asume que `productos` está sincronizado con `dgvProductos`
+                // Obtener el producto seleccionado
+                var productoSeleccionado = productos[e.RowIndex];
 
-                if (productoSeleccionado != null)
+                // Verificar que el producto esté disponible
+                if (productoSeleccionado.Cantidad > 0)
                 {
+                    // Agregar el producto al carrito
                     carrito.AgregarProducto(productoSeleccionado);
+
+                    // Mostrar el carrito actualizado
                     MostrarCarrito();
+                }
+                else
+                {
+                    MessageBox.Show("Producto no disponible.");
                 }
             }
         }
@@ -154,15 +161,27 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             dgvCarritoCompras.Rows.Clear();
 
+           
+            decimal total = 0;
+
+            
             foreach (var producto in carrito.ProductosSeleccionados)
             {
-                if (producto != null)  
-                {
-                    dgvCarritoCompras.Rows.Add(producto.IdProductos, producto.Nombre, producto.Precio);
-                }
+                
+                dgvCarritoCompras.Rows.Add(
+                    producto.IdProductos,
+                    producto.Nombre,
+                    producto.Precio,
+                    producto.CantidadSeleccionada,
+                    producto.Precio * producto.CantidadSeleccionada 
+                );
+
+              
+                total += producto.Precio * producto.CantidadSeleccionada;
             }
 
-            lblTotal.Text = "Total: $" + carrito.CalcularTotal().ToString("F2");
+            
+            lblMostrarTotalCompra.Text = "Total: $" + total.ToString("F2");
         }
 
 
@@ -170,11 +189,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             try
             {
-                decimal totalPago = carrito.CalcularTotal();
-                DateTime fechaPago = DateTime.Now;
-                string tipoPago = "Efectivo";
+                decimal totalPago = carrito.CalcularTotal(); // Calculamos el total de la compra
+                DateTime fechaPago = DateTime.Now;  // Fecha del pago
+                string tipoPago = "Efectivo";  // Tipo de pago (puedes ajustarlo según lo que desees)
 
-                // Insertar el pago en la base de datos
+                // Insertar el pago en la base de datos (solo la tabla pagos)
                 string queryPago = "INSERT INTO pagos (Total, Fecha, TipoPago, IdUsuario) VALUES (@Total, @Fecha, @TipoPago, @IdUsuario)";
                 using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                 {
@@ -185,29 +204,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     cmd.Parameters.AddWithValue("@TipoPago", tipoPago);
                     cmd.Parameters.AddWithValue("@IdUsuario", this.IdUsuario);
 
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery(); 
                 }
-
-                int idPago = ObtenerUltimoIdPago();
 
                 foreach (var producto in carrito.ProductosSeleccionados)
                 {
-                    // Insertar detalles del pago en la tabla `detalle_pagos`
-                    string queryDetallePago = "INSERT INTO detalle_pagos (IdPago, IdProducto, Cantidad, PrecioUnitario) VALUES (@IdPago, @IdProducto, @Cantidad, @PrecioUnitario)";
-                    using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
-                    {
-                        conexion.Open();
-                        MySqlCommand cmdDetalle = new MySqlCommand(queryDetallePago, conexion);
-                        cmdDetalle.Parameters.AddWithValue("@IdPago", idPago);
-                        cmdDetalle.Parameters.AddWithValue("@IdProducto", producto.IdProductos);
-                        cmdDetalle.Parameters.AddWithValue("@Cantidad", producto.CantidadSeleccionada);
-                        cmdDetalle.Parameters.AddWithValue("@PrecioUnitario", producto.Precio);
-
-                        cmdDetalle.ExecuteNonQuery();
-                    }
-
-                    // Actualizar el inventario de productos restando la cantidad comprada
-                    string queryActualizarCantidad = "UPDATE productos SET Cantidad = Cantidad - @CantidadComprada WHERE IdProductos = @IdProducto";
+                    string queryActualizarCantidad = "UPDATE productos SET Cantidad = Cantidad - @CantidadComprada WHERE idProductos = @IdProducto";
                     using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                     {
                         conexion.Open();
@@ -215,19 +217,20 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         cmdActualizar.Parameters.AddWithValue("@CantidadComprada", producto.CantidadSeleccionada);
                         cmdActualizar.Parameters.AddWithValue("@IdProducto", producto.IdProductos);
 
-                        cmdActualizar.ExecuteNonQuery();
+                        cmdActualizar.ExecuteNonQuery(); 
                     }
                 }
 
                 MessageBox.Show("Pago procesado con éxito.");
-                carrito.VaciarCarrito();
-                MostrarCarrito();
+                carrito.VaciarCarrito();  
+                MostrarCarrito();  
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al procesar el pago: " + ex.Message);
             }
         }
+
 
 
 
@@ -240,7 +243,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         public int ObtenerUltimoIdPago()
         {
             int idPago = 0;
-            string query = "SELECT LAST_INSERT_ID()"; // Obtiene el último ID insertado
+            string query = "SELECT LAST_INSERT_ID()"; 
             using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
             {
                 conexion.Open();
@@ -251,13 +254,44 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
             return idPago;
         }
-       
 
-
-        private void dgvCarritoCompras_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void btnCanceD_Click(object sender, EventArgs e)
         {
+            if (dgvCarritoCompras.SelectedRows.Count > 0)
+            {
+                var selectedRow = dgvCarritoCompras.SelectedRows[0];
 
+               
+                int idProducto = Convert.ToInt32(selectedRow.Cells["IdProductoCarrito"].Value);
 
+                var productoParaCancelar = carrito.ProductosSeleccionados.FirstOrDefault(p => p.IdProductos == idProducto);
+
+                if (productoParaCancelar != null)
+                {
+                    // Remover el producto del carrito
+                    carrito.ProductosSeleccionados.Remove(productoParaCancelar);
+
+                    // Remover la fila seleccionada del DataGridView
+                    dgvCarritoCompras.Rows.Remove(selectedRow);
+
+                    // Recalcular el total del carrito
+                    MostrarCarrito();
+
+                    MessageBox.Show("Producto cancelado con éxito.");
+                }
+                else
+                {
+                    MessageBox.Show("Producto no encontrado en el carrito.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona un producto para cancelar.");
+            }
         }
+
+
     }
+
 }
+

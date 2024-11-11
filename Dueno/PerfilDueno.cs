@@ -15,6 +15,14 @@ using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
+    /// <summary>
+    /// Autor:
+    /// </summary>
+    /// 
+
+    ///<remarks>
+    ///
+    ///</remarks>
     public partial class PerfilDueno : Form
     {
         public PerfilDueno()
@@ -24,15 +32,25 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnIrTiendaD_Click(object sender, EventArgs e)
         {
-            int idUsuario = ObtenerIdUsuarioActual();
-            Tienda tienda = new Tienda(idUsuario);
-            tienda.ShowDialog();
+            int idUsuario = Usuario.IdUsuario;  
+
+            if (idUsuario != 0) 
+            {
+                
+                Tienda tienda = new Tienda(idUsuario);
+                tienda.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("El ID del usuario no fue encontrado. Asegúrate de estar logueado correctamente.", "Error");
+            }
         }
 
         private int ObtenerIdUsuarioActual()
         {
             int idUsuario = 0;
-            string nombreUsuario = "nombreUsuarioActual"; // Reemplaza con la variable que almacena el nombre de usuario logueado.
+            string nombreUsuario = Usuario.Nombre; // Obtén el nombre del usuario logueado desde UsuarioSesion
 
             string query = "SELECT idUsuario FROM usuarios WHERE Nombre = @Nombre";
 
@@ -87,7 +105,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void PerfilDueno_Load(object sender, EventArgs e)
         {
             lblNomD.Text = Usuario.Nombre;  // Muestra el nombre del usuario
-            lblUsuD.Text = Usuario.IdUsuario.ToString();
+            lblIduser.Text = Usuario.IdUsuario.ToString();
+        }
+
+        private void btnCerrarSeD_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.ShowDialog();
         }
     }
 }
