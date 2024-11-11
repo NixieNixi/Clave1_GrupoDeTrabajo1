@@ -45,7 +45,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dtpCitaFecha = new System.Windows.Forms.DateTimePicker();
             this.btnRepreogramarCitaD = new System.Windows.Forms.Button();
             this.btnProgramarCitaD = new System.Windows.Forms.Button();
-            this.btnCancelarCita = new System.Windows.Forms.Button();
+            this.btnCancelarEdicionCita = new System.Windows.Forms.Button();
             this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,10 +54,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDCitaD = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtNomUsuD = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNomMascD = new System.Windows.Forms.TextBox();
-            this.cbxIDUsuD = new System.Windows.Forms.ComboBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioUser = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -196,12 +194,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnRepreogramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnRepreogramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(536, 16);
+            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(347, 16);
             this.btnRepreogramarCitaD.Name = "btnRepreogramarCitaD";
             this.btnRepreogramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
+         // this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -213,17 +212,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnProgramarCitaD.TabIndex = 22;
             this.btnProgramarCitaD.Text = "Programar";
             this.btnProgramarCitaD.UseVisualStyleBackColor = false;
+            this.btnProgramarCitaD.Click += new System.EventHandler(this.btnProgramarCitaD_Click);
             // 
-            // btnCancelarCita
+            // btnCancelarEdicionCita
             // 
-            this.btnCancelarCita.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCancelarCita.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarCita.Location = new System.Drawing.Point(696, 16);
-            this.btnCancelarCita.Name = "btnCancelarCita";
-            this.btnCancelarCita.Size = new System.Drawing.Size(86, 23);
-            this.btnCancelarCita.TabIndex = 25;
-            this.btnCancelarCita.Text = "Cancelar";
-            this.btnCancelarCita.UseVisualStyleBackColor = false;
+            this.btnCancelarEdicionCita.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelarEdicionCita.ForeColor = System.Drawing.Color.White;
+            this.btnCancelarEdicionCita.Location = new System.Drawing.Point(483, 16);
+            this.btnCancelarEdicionCita.Name = "btnCancelarEdicionCita";
+            this.btnCancelarEdicionCita.Size = new System.Drawing.Size(150, 23);
+            this.btnCancelarEdicionCita.TabIndex = 25;
+            this.btnCancelarEdicionCita.Text = "Cancelar Edicion";
+            this.btnCancelarEdicionCita.UseVisualStyleBackColor = false;
+            this.btnCancelarEdicionCita.Click += new System.EventHandler(this.btnCancelarEdicionCita_Click);
             // 
             // btnGuardarCitaD
             // 
@@ -246,13 +247,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnPerfilD.TabIndex = 26;
             this.btnPerfilD.Text = "Perfil";
             this.btnPerfilD.UseVisualStyleBackColor = false;
-            this.btnPerfilD.Click += new System.EventHandler(this.btnPerfilD_Click);
+            //this.btnPerfilD.Click += new System.EventHandler(this.btnPerfilD_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
             this.panel1.Controls.Add(this.btnPerfilD);
-            this.panel1.Controls.Add(this.btnCancelarCita);
+            this.panel1.Controls.Add(this.btnCancelarEdicionCita);
             this.panel1.Controls.Add(this.btnProgramarCitaD);
             this.panel1.Controls.Add(this.btnRepreogramarCitaD);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -306,13 +307,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label1.TabIndex = 12;
             this.label1.Text = "ID Usuario:";
             // 
-            // txtNomUsuD
-            // 
-            this.txtNomUsuD.Location = new System.Drawing.Point(376, 112);
-            this.txtNomUsuD.Name = "txtNomUsuD";
-            this.txtNomUsuD.Size = new System.Drawing.Size(152, 20);
-            this.txtNomUsuD.TabIndex = 17;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -329,18 +323,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascD.Size = new System.Drawing.Size(152, 20);
             this.txtNomMascD.TabIndex = 18;
             // 
-            // cbxIDUsuD
-            // 
-            this.cbxIDUsuD.FormattingEnabled = true;
-            this.cbxIDUsuD.Location = new System.Drawing.Point(104, 112);
-            this.cbxIDUsuD.Name = "cbxIDUsuD";
-            this.cbxIDUsuD.Size = new System.Drawing.Size(152, 21);
-            this.cbxIDUsuD.TabIndex = 34;
-            // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(104, 88);
+            this.lblNombreUsuario.Location = new System.Drawing.Point(113, 112);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(35, 13);
             this.lblNombreUsuario.TabIndex = 35;
@@ -349,7 +335,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsuarioUser
             // 
             this.lblUsuarioUser.AutoSize = true;
-            this.lblUsuarioUser.Location = new System.Drawing.Point(307, 88);
+            this.lblUsuarioUser.Location = new System.Drawing.Point(373, 112);
             this.lblUsuarioUser.Name = "lblUsuarioUser";
             this.lblUsuarioUser.Size = new System.Drawing.Size(35, 13);
             this.lblUsuarioUser.TabIndex = 36;
@@ -364,7 +350,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.lblUsuarioUser);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.cbxIDCitaD);
-            this.Controls.Add(this.cbxIDUsuD);
             this.Controls.Add(this.cbxIDMascD);
             this.Controls.Add(this.dtpCitaHora);
             this.Controls.Add(this.dtpCitaFecha);
@@ -375,7 +360,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.txtMotCiD);
             this.Controls.Add(this.txtNomMascD);
             this.Controls.Add(this.txtEsCiD);
-            this.Controls.Add(this.txtNomUsuD);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -387,8 +371,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
-            this.Load += new System.EventHandler(this.CitaMascota_Load);
+           //this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
+            //this.Load += new System.EventHandler(this.CitaMascota_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -414,7 +398,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.DateTimePicker dtpCitaFecha;
         private System.Windows.Forms.Button btnRepreogramarCitaD;
         private System.Windows.Forms.Button btnProgramarCitaD;
-        private System.Windows.Forms.Button btnCancelarCita;
+        private System.Windows.Forms.Button btnCancelarEdicionCita;
         private System.Windows.Forms.Button btnGuardarCitaD;
         private System.Windows.Forms.Button btnPerfilD;
         private System.Windows.Forms.Panel panel1;
@@ -423,10 +407,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.ComboBox cbxIDCitaD;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtNomUsuD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNomMascD;
-        private System.Windows.Forms.ComboBox cbxIDUsuD;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label lblUsuarioUser;
     }
