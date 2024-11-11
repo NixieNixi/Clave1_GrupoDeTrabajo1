@@ -19,7 +19,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// </summary>
 
     ///<remarks>
-    ///
+    ///Autor: NixieNixi
+    ///Descripcion:
+    ///Se agregarons los metodos que hacen funcional la tienda, y validaciones.
     ///</remarks>
     public partial class Tienda : Form
     {
@@ -120,8 +122,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             
             PerfilDueno perfil = new PerfilDueno();
+            this.Hide();
             perfil.ShowDialog();
-            this.Close();  
         }
 
 
@@ -290,7 +292,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-
+        private void Tienda_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
+            Application.Exit();
+        }
     }
 
 }

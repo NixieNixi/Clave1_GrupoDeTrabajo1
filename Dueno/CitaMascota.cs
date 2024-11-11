@@ -122,5 +122,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
+
+        private void CitaMascota_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
+            Application.Exit();
+        }
     }
 }

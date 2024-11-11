@@ -21,7 +21,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// 
 
     ///<remarks>
-    ///
+    ///Autor: NixeNixi
+    ///Fecha: 10/11/2024
+    ///Descipcion:
+    ///Se agrego toda la funcionabilidad
     ///</remarks>
     public partial class PerfilDueno : Form
     {
@@ -113,6 +116,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             Login login = new Login();
             this.Hide();
             login.ShowDialog();
+        }
+
+        private void PerfilDueno_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
+            Application.Exit();
         }
     }
 }

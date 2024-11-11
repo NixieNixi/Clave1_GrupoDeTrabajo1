@@ -42,25 +42,30 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescripcionProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadDisponible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblMostrarTotalCompra = new System.Windows.Forms.Label();
             this.dgvCarritoCompras = new System.Windows.Forms.DataGridView();
             this.IdProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioProductoCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadSeleccionada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTotalCompra = new System.Windows.Forms.Label();
-            this.lblProductodgvCarrito = new System.Windows.Forms.Label();
+            this.gbxProductoDisponible = new System.Windows.Forms.GroupBox();
+            this.gbxMostrarSeleccion = new System.Windows.Forms.GroupBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompras)).BeginInit();
+            this.gbxProductoDisponible.SuspendLayout();
+            this.gbxMostrarSeleccion.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnComprarProducto
             // 
-            this.btnComprarProducto.Location = new System.Drawing.Point(191, 14);
+            this.btnComprarProducto.Location = new System.Drawing.Point(235, 14);
             this.btnComprarProducto.Name = "btnComprarProducto";
-            this.btnComprarProducto.Size = new System.Drawing.Size(89, 23);
+            this.btnComprarProducto.Size = new System.Drawing.Size(125, 23);
             this.btnComprarProducto.TabIndex = 3;
             this.btnComprarProducto.Text = "Comprar Producto";
             this.btnComprarProducto.UseVisualStyleBackColor = true;
@@ -68,9 +73,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnCanceD
             // 
-            this.btnCanceD.Location = new System.Drawing.Point(352, 14);
+            this.btnCanceD.Location = new System.Drawing.Point(436, 14);
             this.btnCanceD.Name = "btnCanceD";
-            this.btnCanceD.Size = new System.Drawing.Size(75, 23);
+            this.btnCanceD.Size = new System.Drawing.Size(124, 23);
             this.btnCanceD.TabIndex = 7;
             this.btnCanceD.Text = "Cancelar Producto";
             this.btnCanceD.UseVisualStyleBackColor = true;
@@ -80,9 +85,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnVolD.Location = new System.Drawing.Point(28, 14);
             this.btnVolD.Name = "btnVolD";
-            this.btnVolD.Size = new System.Drawing.Size(75, 23);
+            this.btnVolD.Size = new System.Drawing.Size(98, 23);
             this.btnVolD.TabIndex = 8;
-            this.btnVolD.Text = "Volver";
+            this.btnVolD.Text = "Volver al Perfil";
             this.btnVolD.UseVisualStyleBackColor = true;
             this.btnVolD.Click += new System.EventHandler(this.btnVolD_Click);
             // 
@@ -94,7 +99,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(-2, -2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(807, 78);
+            this.panel2.Size = new System.Drawing.Size(828, 78);
             this.panel2.TabIndex = 15;
             // 
             // label8
@@ -140,12 +145,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Controls.Add(this.btnCanceD);
             this.panel1.Location = new System.Drawing.Point(-2, 549);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(807, 54);
+            this.panel1.Size = new System.Drawing.Size(828, 54);
             this.panel1.TabIndex = 16;
             // 
             // btnFinCompra
             // 
-            this.btnFinCompra.Location = new System.Drawing.Point(491, 14);
+            this.btnFinCompra.Location = new System.Drawing.Point(664, 14);
             this.btnFinCompra.Name = "btnFinCompra";
             this.btnFinCompra.Size = new System.Drawing.Size(122, 23);
             this.btnFinCompra.TabIndex = 9;
@@ -161,11 +166,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.IdProducto,
             this.NombreProducto,
             this.PrecioProducto,
+            this.DescripcionProducto,
             this.CantidadDisponible});
-            this.dgvProductos.Location = new System.Drawing.Point(12, 138);
+            this.dgvProductos.Location = new System.Drawing.Point(6, 19);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductos.Size = new System.Drawing.Size(691, 150);
+            this.dgvProductos.Size = new System.Drawing.Size(802, 185);
             this.dgvProductos.TabIndex = 17;
             this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
@@ -187,6 +193,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.PrecioProducto.Name = "PrecioProducto";
             this.PrecioProducto.ReadOnly = true;
             // 
+            // DescripcionProducto
+            // 
+            this.DescripcionProducto.HeaderText = "Descripcion Producto";
+            this.DescripcionProducto.Name = "DescripcionProducto";
+            this.DescripcionProducto.ReadOnly = true;
+            // 
             // CantidadDisponible
             // 
             this.CantidadDisponible.HeaderText = "Cantidad Disponible";
@@ -196,7 +208,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMostrarTotalCompra
             // 
             this.lblMostrarTotalCompra.AutoSize = true;
-            this.lblMostrarTotalCompra.Location = new System.Drawing.Point(718, 448);
+            this.lblMostrarTotalCompra.Location = new System.Drawing.Point(120, 164);
             this.lblMostrarTotalCompra.Name = "lblMostrarTotalCompra";
             this.lblMostrarTotalCompra.Size = new System.Drawing.Size(31, 13);
             this.lblMostrarTotalCompra.TabIndex = 18;
@@ -209,11 +221,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.dgvCarritoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProductoCarrito,
             this.NombreProductoCarrito,
-            this.PrecioProductoCarrito});
-            this.dgvCarritoCompras.Location = new System.Drawing.Point(12, 394);
+            this.PrecioProductoCarrito,
+            this.CantidadSeleccionada});
+            this.dgvCarritoCompras.Location = new System.Drawing.Point(6, 19);
             this.dgvCarritoCompras.Name = "dgvCarritoCompras";
             this.dgvCarritoCompras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCarritoCompras.Size = new System.Drawing.Size(691, 126);
+            this.dgvCarritoCompras.Size = new System.Drawing.Size(802, 126);
             this.dgvCarritoCompras.TabIndex = 19;
             // 
             // IdProductoCarrito
@@ -234,46 +247,65 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.PrecioProductoCarrito.Name = "PrecioProductoCarrito";
             this.PrecioProductoCarrito.ReadOnly = true;
             // 
+            // CantidadSeleccionada
+            // 
+            this.CantidadSeleccionada.HeaderText = "Cantidad Seleccionada";
+            this.CantidadSeleccionada.Name = "CantidadSeleccionada";
+            this.CantidadSeleccionada.ReadOnly = true;
+            // 
             // lblTotalCompra
             // 
             this.lblTotalCompra.AutoSize = true;
-            this.lblTotalCompra.Location = new System.Drawing.Point(718, 416);
+            this.lblTotalCompra.Location = new System.Drawing.Point(25, 164);
             this.lblTotalCompra.Name = "lblTotalCompra";
             this.lblTotalCompra.Size = new System.Drawing.Size(73, 13);
             this.lblTotalCompra.TabIndex = 20;
             this.lblTotalCompra.Text = "Total Compra:";
             // 
-            // lblProductodgvCarrito
+            // gbxProductoDisponible
             // 
-            this.lblProductodgvCarrito.AutoSize = true;
-            this.lblProductodgvCarrito.Location = new System.Drawing.Point(214, 360);
-            this.lblProductodgvCarrito.Name = "lblProductodgvCarrito";
-            this.lblProductodgvCarrito.Size = new System.Drawing.Size(193, 13);
-            this.lblProductodgvCarrito.TabIndex = 21;
-            this.lblProductodgvCarrito.Text = "Productos que han sido seleccionados:";
+            this.gbxProductoDisponible.Controls.Add(this.dgvProductos);
+            this.gbxProductoDisponible.Location = new System.Drawing.Point(12, 106);
+            this.gbxProductoDisponible.Name = "gbxProductoDisponible";
+            this.gbxProductoDisponible.Size = new System.Drawing.Size(814, 210);
+            this.gbxProductoDisponible.TabIndex = 22;
+            this.gbxProductoDisponible.TabStop = false;
+            this.gbxProductoDisponible.Text = "Productos Disponibles";
+            // 
+            // gbxMostrarSeleccion
+            // 
+            this.gbxMostrarSeleccion.Controls.Add(this.dgvCarritoCompras);
+            this.gbxMostrarSeleccion.Controls.Add(this.lblTotalCompra);
+            this.gbxMostrarSeleccion.Controls.Add(this.lblMostrarTotalCompra);
+            this.gbxMostrarSeleccion.Location = new System.Drawing.Point(12, 334);
+            this.gbxMostrarSeleccion.Name = "gbxMostrarSeleccion";
+            this.gbxMostrarSeleccion.Size = new System.Drawing.Size(814, 209);
+            this.gbxMostrarSeleccion.TabIndex = 23;
+            this.gbxMostrarSeleccion.TabStop = false;
+            this.gbxMostrarSeleccion.Text = "Productos en el Carrito";
             // 
             // Tienda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(803, 632);
-            this.Controls.Add(this.lblProductodgvCarrito);
-            this.Controls.Add(this.lblTotalCompra);
-            this.Controls.Add(this.dgvCarritoCompras);
-            this.Controls.Add(this.lblMostrarTotalCompra);
-            this.Controls.Add(this.dgvProductos);
+            this.ClientSize = new System.Drawing.Size(824, 602);
+            this.Controls.Add(this.gbxMostrarSeleccion);
+            this.Controls.Add(this.gbxProductoDisponible);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Name = "Tienda";
             this.Text = "Tienda";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tienda_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCarritoCompras)).EndInit();
+            this.gbxProductoDisponible.ResumeLayout(false);
+            this.gbxMostrarSeleccion.ResumeLayout(false);
+            this.gbxMostrarSeleccion.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -287,17 +319,20 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
         private System.Windows.Forms.Label lblMostrarTotalCompra;
         private System.Windows.Forms.DataGridView dgvCarritoCompras;
         private System.Windows.Forms.Button btnFinCompra;
+        private System.Windows.Forms.Label lblTotalCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescripcionProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadDisponible;
+        private System.Windows.Forms.GroupBox gbxProductoDisponible;
+        private System.Windows.Forms.GroupBox gbxMostrarSeleccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProductoCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreProductoCarrito;
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioProductoCarrito;
-        private System.Windows.Forms.Label lblTotalCompra;
-        private System.Windows.Forms.Label lblProductodgvCarrito;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CantidadSeleccionada;
     }
 }

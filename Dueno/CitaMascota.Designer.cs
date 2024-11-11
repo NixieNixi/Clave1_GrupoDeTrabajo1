@@ -364,6 +364,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
