@@ -84,10 +84,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                     }
                 }
             }
-            catch
+            catch (MySqlException ex)
             {
                 //Si no puede conectar mostrar mensaje de error
-                MessageBox.Show("Error de conexion a Base de datos", "Error :(");
+                MessageBox.Show("Error de conexion a Base de datos", "Error :(" + ex.Message);
 
                 //Cerrar menu de administracion de usuarios
                 panelPagos.Visible = false;

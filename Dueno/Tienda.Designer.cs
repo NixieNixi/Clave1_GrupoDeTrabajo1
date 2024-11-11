@@ -192,7 +192,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Controls.Add(this.btnComprarProducto);
             this.panel1.Controls.Add(this.btnVolD);
             this.panel1.Controls.Add(this.btnCanceD);
-            this.panel1.Location = new System.Drawing.Point(-2, 370);
+            this.panel1.Location = new System.Drawing.Point(12, 417);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(807, 54);
             this.panel1.TabIndex = 16;
@@ -250,7 +250,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(846, 299);
+            this.lblTotal.Location = new System.Drawing.Point(845, 319);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 13);
             this.lblTotal.TabIndex = 18;
@@ -258,6 +258,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // dgvCarritoCompras
             // 
+            this.dgvCarritoCompras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCarritoCompras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCarritoCompras.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdProductoCarrito,
