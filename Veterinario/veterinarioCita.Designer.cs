@@ -102,8 +102,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarVeterinarioCita = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panelVeterinarioCita.SuspendLayout();
             this.gbxInfoExamen.SuspendLayout();
             this.gbxInfoVacuna.SuspendLayout();
@@ -119,6 +120,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelVeterinarioCita.AutoScroll = true;
+            this.panelVeterinarioCita.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.panelVeterinarioCita.Controls.Add(this.chkExamen);
             this.panelVeterinarioCita.Controls.Add(this.label1);
             this.panelVeterinarioCita.Controls.Add(this.chkVacuna);
@@ -130,7 +132,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panelVeterinarioCita.Controls.Add(this.gbxaInfoExpediente);
             this.panelVeterinarioCita.Location = new System.Drawing.Point(0, 72);
             this.panelVeterinarioCita.Name = "panelVeterinarioCita";
-            this.panelVeterinarioCita.Size = new System.Drawing.Size(901, 568);
+            this.panelVeterinarioCita.Size = new System.Drawing.Size(896, 568);
             this.panelVeterinarioCita.TabIndex = 0;
             // 
             // chkExamen
@@ -845,71 +847,84 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnGuardarVeterinarioCita
             // 
-            this.btnGuardarVeterinarioCita.Location = new System.Drawing.Point(696, 24);
+            this.btnGuardarVeterinarioCita.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnGuardarVeterinarioCita.Location = new System.Drawing.Point(609, 14);
             this.btnGuardarVeterinarioCita.Name = "btnGuardarVeterinarioCita";
-            this.btnGuardarVeterinarioCita.Size = new System.Drawing.Size(75, 23);
+            this.btnGuardarVeterinarioCita.Size = new System.Drawing.Size(111, 42);
             this.btnGuardarVeterinarioCita.TabIndex = 1;
             this.btnGuardarVeterinarioCita.Text = "Guardar Datos";
-            this.btnGuardarVeterinarioCita.UseVisualStyleBackColor = true;
+            this.btnGuardarVeterinarioCita.UseVisualStyleBackColor = false;
             this.btnGuardarVeterinarioCita.Click += new System.EventHandler(this.btnGuardarVeterinarioCita_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(792, 24);
+            this.btnCancelar.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnCancelar.Location = new System.Drawing.Point(751, 14);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(111, 42);
             this.btnCancelar.TabIndex = 2;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.btnCancelar);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.btnGuardarVeterinarioCita);
-            this.panel1.Controls.Add(this.label2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 64);
+            this.panel1.Size = new System.Drawing.Size(897, 82);
             this.panel1.TabIndex = 6;
             // 
-            // label3
+            // label8
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.SteelBlue;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(16, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(210, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Veterinario - Cita";
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(12, 54);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(39, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "> Citas";
             // 
-            // label2
+            // label6
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.SteelBlue;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(16, 8);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Veterinaria Cat-Dog";
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Teal;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(12, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 16);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Veterinaria Cat-Dog";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Teal;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(10, 25);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(141, 29);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Veterinario";
             // 
             // veterinarioCita
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 638);
+            this.ClientSize = new System.Drawing.Size(897, 638);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelVeterinarioCita);
             this.Name = "veterinarioCita";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "7";
+            this.Text = "Cita Veterinario";
             this.panelVeterinarioCita.ResumeLayout(false);
             this.panelVeterinarioCita.PerformLayout();
             this.gbxInfoExamen.ResumeLayout(false);
@@ -999,11 +1014,12 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtDescripcionVacuna;
         private System.Windows.Forms.TextBox txtMotiVacuna;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtSexo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

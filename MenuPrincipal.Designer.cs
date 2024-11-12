@@ -33,13 +33,15 @@ namespace Clave1_GrupoDeTrabajo1
             this.btnIngresoDueno = new System.Windows.Forms.Button();
             this.btnInfo = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(187, 124);
+            this.label1.Location = new System.Drawing.Point(187, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 25);
             this.label1.TabIndex = 0;
@@ -47,48 +49,65 @@ namespace Clave1_GrupoDeTrabajo1
             // 
             // btnIngresoDueno
             // 
-            this.btnIngresoDueno.Location = new System.Drawing.Point(206, 171);
+            this.btnIngresoDueno.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnIngresoDueno.ForeColor = System.Drawing.Color.White;
+            this.btnIngresoDueno.Location = new System.Drawing.Point(156, 168);
             this.btnIngresoDueno.Name = "btnIngresoDueno";
-            this.btnIngresoDueno.Size = new System.Drawing.Size(94, 23);
+            this.btnIngresoDueno.Size = new System.Drawing.Size(110, 46);
             this.btnIngresoDueno.TabIndex = 1;
             this.btnIngresoDueno.Text = "Iniciar sesion";
-            this.btnIngresoDueno.UseVisualStyleBackColor = true;
+            this.btnIngresoDueno.UseVisualStyleBackColor = false;
             this.btnIngresoDueno.Click += new System.EventHandler(this.btnIngresoDueno_Click);
             // 
             // btnInfo
             // 
-            this.btnInfo.Location = new System.Drawing.Point(316, 171);
+            this.btnInfo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnInfo.ForeColor = System.Drawing.Color.White;
+            this.btnInfo.Location = new System.Drawing.Point(297, 168);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(75, 23);
+            this.btnInfo.Size = new System.Drawing.Size(110, 46);
             this.btnInfo.TabIndex = 2;
             this.btnInfo.Text = "Informacion";
-            this.btnInfo.UseVisualStyleBackColor = true;
+            this.btnInfo.UseVisualStyleBackColor = false;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(254, 243);
+            this.btnSalir.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(229, 239);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
+            this.btnSalir.Size = new System.Drawing.Size(110, 46);
             this.btnSalir.TabIndex = 2;
             this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(617, 81);
+            this.panel1.TabIndex = 8;
             // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 393);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnInfo);
             this.Controls.Add(this.btnIngresoDueno);
-            this.Controls.Add(this.label1);
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu principal";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -98,6 +117,7 @@ namespace Clave1_GrupoDeTrabajo1
         private System.Windows.Forms.Button btnIngresoDueno;
         private System.Windows.Forms.Button btnInfo;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

@@ -39,7 +39,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
     
-       
 
         //Mostrar el form veterinarioCita mediante el boton btnCita
         private void btnCita_Click(object sender, EventArgs e)
@@ -71,6 +70,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             lblNombreVeterinario.Text = Usuario.Nombre;
             lblIdVeterinario.Text = Usuario.IdUsuario.ToString();
             lblUserVeterinario.Text = Usuario.UsuarioInicio;
+        }
+
+        private void veterinarioPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
