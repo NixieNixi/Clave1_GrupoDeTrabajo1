@@ -82,5 +82,49 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
             }
         }
+
+        private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //guarda el texto de la seleccion en ConsultaIdMascota
+            string ConsultaIdMascota = cbxIdMascota.SelectedItem.ToString();
+
+            //Intentar conectar a DB y hacer la consulta del nombre de la mascota
+            try
+            {
+                //cadena de conexion a DB
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    //cadena de consulta a DB
+                    string query = "SELECT Nombre, Raza, Especie, Sexo, FechaNacimiento FROM mascotas WHERE idMascota = @idMascota;";
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        //Agregar el parametro a la consulta
+                        command.Parameters.AddWithValue("@idMascota", ConsultaIdMascota);
+
+                        //Conectar a DB
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            //Inserta la informacion en los controles correspondientes
+                            if (reader.Read())
+                            {
+                                txtMascota.Text = reader["Nombre"].ToString();
+                                txtRaza.Text = reader["Raza"].ToString();
+                                txtEspecie.Text = reader["Especie"].ToString();
+                                txtSexo.Text = reader["Sexo"].ToString();
+                                dtpFecha.Value = Convert.ToDateTime(reader["FechaNacimiento"]);
+                            }
+                        }
+                    }
+                }
+            }
+            //Si ocurre un error al conectar o hacer la consulta mostrar mensaje de error
+            catch (Exception error)
+            {
+                MessageBox.Show("Ocurrió un error: " + error.Message, "Error :(", MessageBoxButtons.OK);
+            }
+        }
     }
 }

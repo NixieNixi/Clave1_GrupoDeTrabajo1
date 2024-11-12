@@ -190,6 +190,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
                 //Limpiar controles
                 LimpiarMascota();
                 HabilitarEdicionM(false);
+                txtNombreMascotaM.Clear();
 
                 //Deshablitar la funcion de editar y crear
                 btnCancelarM.Enabled = false;

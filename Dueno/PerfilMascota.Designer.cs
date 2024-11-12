@@ -170,6 +170,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdMascota.Name = "cbxIdMascota";
             this.cbxIdMascota.Size = new System.Drawing.Size(152, 21);
             this.cbxIdMascota.TabIndex = 35;
+            this.cbxIdMascota.SelectedIndexChanged += new System.EventHandler(this.cbxIdMascota_SelectedIndexChanged);
             // 
             // label2
             // 
