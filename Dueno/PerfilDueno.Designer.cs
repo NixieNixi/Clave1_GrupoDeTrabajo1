@@ -31,9 +31,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             this.lblUserUsuario = new System.Windows.Forms.Label();
             this.lblUserId = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblDuenoTelefono = new System.Windows.Forms.Label();
+            this.lblDuenoPerfil = new System.Windows.Forms.Label();
+            this.lblDuenoDireccion = new System.Windows.Forms.Label();
             this.lblDireccD = new System.Windows.Forms.Label();
             this.lblCorreoD = new System.Windows.Forms.Label();
             this.lblTelD = new System.Windows.Forms.Label();
@@ -56,7 +56,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.lblUserUsuario.AutoSize = true;
             this.lblUserUsuario.BackColor = System.Drawing.Color.LightCyan;
-            this.lblUserUsuario.Location = new System.Drawing.Point(20, 96);
+            this.lblUserUsuario.Location = new System.Drawing.Point(84, 109);
             this.lblUserUsuario.Name = "lblUserUsuario";
             this.lblUserUsuario.Size = new System.Drawing.Size(82, 13);
             this.lblUserUsuario.TabIndex = 0;
@@ -66,73 +66,73 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.lblUserId.AutoSize = true;
             this.lblUserId.BackColor = System.Drawing.Color.LightCyan;
-            this.lblUserId.Location = new System.Drawing.Point(20, 130);
+            this.lblUserId.Location = new System.Drawing.Point(84, 143);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(57, 13);
             this.lblUserId.TabIndex = 1;
             this.lblUserId.Text = "ID Usuario";
             // 
-            // label3
+            // lblDuenoTelefono
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.LightCyan;
-            this.label3.Location = new System.Drawing.Point(84, 184);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Teléfono:";
+            this.lblDuenoTelefono.AutoSize = true;
+            this.lblDuenoTelefono.BackColor = System.Drawing.Color.LightCyan;
+            this.lblDuenoTelefono.Location = new System.Drawing.Point(84, 179);
+            this.lblDuenoTelefono.Name = "lblDuenoTelefono";
+            this.lblDuenoTelefono.Size = new System.Drawing.Size(52, 13);
+            this.lblDuenoTelefono.TabIndex = 2;
+            this.lblDuenoTelefono.Text = "Teléfono:";
             // 
-            // label4
+            // lblDuenoPerfil
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.LightCyan;
-            this.label4.Location = new System.Drawing.Point(84, 213);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Correo:";
+            this.lblDuenoPerfil.AutoSize = true;
+            this.lblDuenoPerfil.BackColor = System.Drawing.Color.LightCyan;
+            this.lblDuenoPerfil.Location = new System.Drawing.Point(84, 213);
+            this.lblDuenoPerfil.Name = "lblDuenoPerfil";
+            this.lblDuenoPerfil.Size = new System.Drawing.Size(41, 13);
+            this.lblDuenoPerfil.TabIndex = 3;
+            this.lblDuenoPerfil.Text = "Correo:";
             // 
-            // label5
+            // lblDuenoDireccion
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.LightCyan;
-            this.label5.Location = new System.Drawing.Point(84, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Dirección:";
+            this.lblDuenoDireccion.AutoSize = true;
+            this.lblDuenoDireccion.BackColor = System.Drawing.Color.LightCyan;
+            this.lblDuenoDireccion.Location = new System.Drawing.Point(84, 248);
+            this.lblDuenoDireccion.Name = "lblDuenoDireccion";
+            this.lblDuenoDireccion.Size = new System.Drawing.Size(55, 13);
+            this.lblDuenoDireccion.TabIndex = 4;
+            this.lblDuenoDireccion.Text = "Dirección:";
             // 
             // lblDireccD
             // 
             this.lblDireccD.AutoSize = true;
             this.lblDireccD.Location = new System.Drawing.Point(216, 248);
             this.lblDireccD.Name = "lblDireccD";
-            this.lblDireccD.Size = new System.Drawing.Size(35, 13);
+            this.lblDireccD.Size = new System.Drawing.Size(52, 13);
             this.lblDireccD.TabIndex = 9;
-            this.lblDireccD.Text = "label6";
+            this.lblDireccD.Text = "Direccion";
             // 
             // lblCorreoD
             // 
             this.lblCorreoD.AutoSize = true;
             this.lblCorreoD.Location = new System.Drawing.Point(216, 213);
             this.lblCorreoD.Name = "lblCorreoD";
-            this.lblCorreoD.Size = new System.Drawing.Size(35, 13);
+            this.lblCorreoD.Size = new System.Drawing.Size(38, 13);
             this.lblCorreoD.TabIndex = 8;
-            this.lblCorreoD.Text = "label7";
+            this.lblCorreoD.Text = "Correo";
             // 
             // lblTelD
             // 
             this.lblTelD.AutoSize = true;
-            this.lblTelD.Location = new System.Drawing.Point(216, 184);
+            this.lblTelD.Location = new System.Drawing.Point(216, 179);
             this.lblTelD.Name = "lblTelD";
-            this.lblTelD.Size = new System.Drawing.Size(35, 13);
+            this.lblTelD.Size = new System.Drawing.Size(49, 13);
             this.lblTelD.TabIndex = 7;
-            this.lblTelD.Text = "label8";
+            this.lblTelD.Text = "Telefono";
             // 
             // lblIduser
             // 
             this.lblIduser.AutoSize = true;
-            this.lblIduser.Location = new System.Drawing.Point(152, 130);
+            this.lblIduser.Location = new System.Drawing.Point(216, 143);
             this.lblIduser.Name = "lblIduser";
             this.lblIduser.Size = new System.Drawing.Size(53, 13);
             this.lblIduser.TabIndex = 6;
@@ -141,7 +141,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNomD
             // 
             this.lblNomD.AutoSize = true;
-            this.lblNomD.Location = new System.Drawing.Point(152, 96);
+            this.lblNomD.Location = new System.Drawing.Point(216, 109);
             this.lblNomD.Name = "lblNomD";
             this.lblNomD.Size = new System.Drawing.Size(79, 13);
             this.lblNomD.TabIndex = 5;
@@ -265,14 +265,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.lblTelD);
             this.Controls.Add(this.lblIduser);
             this.Controls.Add(this.lblNomD);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblDuenoDireccion);
+            this.Controls.Add(this.lblDuenoPerfil);
+            this.Controls.Add(this.lblDuenoTelefono);
             this.Controls.Add(this.lblUserId);
             this.Controls.Add(this.lblUserUsuario);
             this.Name = "PerfilDueno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PerfilDueño";
+            this.Text = "Perfil Dueño";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilDueno_FormClosing);
             this.Load += new System.EventHandler(this.PerfilDueno_Load);
             this.panel2.ResumeLayout(false);
@@ -287,9 +287,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private System.Windows.Forms.Label lblUserUsuario;
         private System.Windows.Forms.Label lblUserId;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblDuenoTelefono;
+        private System.Windows.Forms.Label lblDuenoPerfil;
+        private System.Windows.Forms.Label lblDuenoDireccion;
         private System.Windows.Forms.Label lblDireccD;
         private System.Windows.Forms.Label lblCorreoD;
         private System.Windows.Forms.Label lblTelD;
