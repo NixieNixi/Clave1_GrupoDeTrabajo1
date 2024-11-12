@@ -16,7 +16,7 @@ using Clave1_GrupoDeTrabajo1.Clases;
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
     /// <summary>
-    /// Autor:
+    /// Autores: NixieNixi y CanelaFeliz
     /// </summary>
     /// 
 
@@ -91,8 +91,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnPerfilMascotaD_Click(object sender, EventArgs e)
         {
+            int idUsuario = Usuario.IdUsuario; 
             //se enlaza con el perfil de mascota con su boton correspondiente
-            PerfilMascota VerPerMascota = new PerfilMascota();
+            PerfilMascota VerPerMascota = new PerfilMascota(idUsuario);
+           
             this.Hide();
             VerPerMascota.ShowDialog();
         }

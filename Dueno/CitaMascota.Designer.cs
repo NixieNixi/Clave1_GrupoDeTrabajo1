@@ -146,12 +146,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnVolverMenuDuenu
             // 
+            this.btnVolverMenuDuenu.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVolverMenuDuenu.ForeColor = System.Drawing.Color.White;
             this.btnVolverMenuDuenu.Location = new System.Drawing.Point(12, 8);
             this.btnVolverMenuDuenu.Name = "btnVolverMenuDuenu";
             this.btnVolverMenuDuenu.Size = new System.Drawing.Size(80, 35);
             this.btnVolverMenuDuenu.TabIndex = 6;
             this.btnVolverMenuDuenu.Text = "Volver a Menu";
-            this.btnVolverMenuDuenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenuDuenu.UseVisualStyleBackColor = false;
             this.btnVolverMenuDuenu.Click += new System.EventHandler(this.btnVolverMenuDuenu_Click);
             // 
             // btnReprogramar
@@ -238,18 +240,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblidUsuario.AutoSize = true;
             this.lblidUsuario.Location = new System.Drawing.Point(113, 112);
             this.lblidUsuario.Name = "lblidUsuario";
-            this.lblidUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblidUsuario.Size = new System.Drawing.Size(53, 13);
             this.lblidUsuario.TabIndex = 35;
-            this.lblidUsuario.Text = "label3";
+            this.lblidUsuario.Text = "ID Dueno";
             // 
             // lblNombreUsuario
             // 
             this.lblNombreUsuario.AutoSize = true;
             this.lblNombreUsuario.Location = new System.Drawing.Point(373, 112);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(35, 13);
+            this.lblNombreUsuario.Size = new System.Drawing.Size(79, 13);
             this.lblNombreUsuario.TabIndex = 36;
-            this.lblNombreUsuario.Text = "label3";
+            this.lblNombreUsuario.Text = "Nombre Dueno";
             // 
             // label9
             // 
@@ -412,6 +414,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

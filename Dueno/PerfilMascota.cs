@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Clave1_GrupoDeTrabajo1.Clases;
 using MySql.Data.MySqlClient;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
+    /// <summary>
+    /// Autores: NixieNixi y CanelaFeliz
+    /// </summary>
     public partial class PerfilMascota : Form
     {
-        public PerfilMascota()
+        private int IdUsuario;
+        public PerfilMascota(int idUsuario)
         {
             InitializeComponent();
+            IdUsuario = idUsuario;
             ActualizarRegistrosMascota();
         }
 
@@ -33,22 +39,22 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void ActualizarRegistrosMascota()
         {
-            //convierte el id seleccionado del combobox
-            //string IdSeleccion = txtIdDueno.Text;
-
+            
+            txtIdDueno.Text = Usuario.IdUsuario.ToString();
+            txtNombre.Text = Usuario.Nombre.ToString();
             try
             {
                 //cadena de conexion DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //cadena de consulta DB
-                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC";
-                    //string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
+                    
+                    string query = "SELECT idMascota FROM Mascotas WHERE idUsuario = @idUsuario ORDER BY idMascota ASC;";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         //Agregar el parametro a la consulta
-                        //command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+                        command.Parameters.AddWithValue("@idUsuario", IdUsuario);
 
                         //Establecer conexion a DB
                         connection.Open();
