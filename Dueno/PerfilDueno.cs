@@ -21,7 +21,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     /// 
 
     ///<remarks>
-    ///Autor: NixeNixi
+    ///Autor: NixeNixi y Canela Feliz
     ///Fecha: 10/11/2024
     ///Descipcion:
     ///Se agrego toda la funcionabilidad
@@ -91,12 +91,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnPerfilMascotaD_Click(object sender, EventArgs e)
         {
-            int idUsuario = Usuario.IdUsuario; 
-            //se enlaza con el perfil de mascota con su boton correspondiente
-            PerfilMascota VerPerMascota = new PerfilMascota(idUsuario);
-           
-            this.Hide();
-            VerPerMascota.ShowDialog();
+            int idUsuario = Usuario.IdUsuario;
+            if (idUsuario != 0)
+            {
+                PerfilMascota VerPerMascota = new PerfilMascota(idUsuario);
+
+                this.Hide();
+                VerPerMascota.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("El ID del usuario no fue encontrado. Asegúrate de estar logueado correctamente.", "Error");
+
+            }
         }
 
         private void btnCitaMascD_Click(object sender, EventArgs e)
