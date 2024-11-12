@@ -12,6 +12,8 @@ namespace Clave1_GrupoDeTrabajo1.Clases
         public static int IdUsuario { get; set; }
         public static string Nombre { get; set; }
         public static string UsuarioInicio { get; set; }
-
+        public static int Telefono { get; set; }
+        public static string Correo { get; set; }
+        public static string  Direccion { get; set; }
     }
 }
