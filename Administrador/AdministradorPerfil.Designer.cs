@@ -1072,9 +1072,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Location = new System.Drawing.Point(520, 80);
+            this.panelCitas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCitas.Location = new System.Drawing.Point(240, 70);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(100, 80);
+            this.panelCitas.Size = new System.Drawing.Size(644, 371);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1263,9 +1264,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelBtnCitas.Controls.Add(this.btnGuardarC);
             this.panelBtnCitas.Controls.Add(this.btnNueva);
             this.panelBtnCitas.Controls.Add(this.btnCancelarC);
-            this.panelBtnCitas.Location = new System.Drawing.Point(248, 304);
+            this.panelBtnCitas.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelBtnCitas.Location = new System.Drawing.Point(240, 441);
             this.panelBtnCitas.Name = "panelBtnCitas";
-            this.panelBtnCitas.Size = new System.Drawing.Size(592, 60);
+            this.panelBtnCitas.Size = new System.Drawing.Size(644, 60);
             this.panelBtnCitas.TabIndex = 11;
             this.panelBtnCitas.Visible = false;
             // 
@@ -1902,16 +1904,16 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(884, 501);
+            this.Controls.Add(this.panelCitas);
+            this.Controls.Add(this.panelBtnCitas);
             this.Controls.Add(this.panelUsuario);
             this.Controls.Add(this.panelMascotas);
-            this.Controls.Add(this.panelCitas);
             this.Controls.Add(this.panelPagos);
             this.Controls.Add(this.panelInventario);
             this.Controls.Add(this.panelBtnInventario);
             this.Controls.Add(this.panelBtnMascota);
             this.Controls.Add(this.panelBtnPagos);
             this.Controls.Add(this.panelBtnUsuarios);
-            this.Controls.Add(this.panelBtnCitas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelBotones);
             this.Controls.Add(this.panelTitulo);
