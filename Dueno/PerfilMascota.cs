@@ -34,7 +34,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void ActualizarRegistrosMascota()
         {
             //convierte el id seleccionado del combobox
-            string IdSeleccion = txtIdDueno.Text;
+            //string IdSeleccion = txtIdDueno.Text;
 
             try
             {
@@ -42,12 +42,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //cadena de consulta DB
-                    string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
+                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC";
+                    //string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario";
 
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         //Agregar el parametro a la consulta
-                        command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
+                        //command.Parameters.AddWithValue("@idUsuario", IdSeleccion);
 
                         //Establecer conexion a DB
                         connection.Open();
