@@ -17,8 +17,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             InitializeComponent();
         }
 
+        public int IdUsuario { get; set; }
+
         private void btnCita_Click(object sender, EventArgs e)
         {
+
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
