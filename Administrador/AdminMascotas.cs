@@ -189,8 +189,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             {
                 //Limpiar controles
                 LimpiarMascota();
+                HabilitarEdicionM(false);
 
                 //Deshablitar la funcion de editar y crear
+                btnCancelarM.Enabled = false;
+                btnGuardarM.Enabled = false;
                 btnEditM.Enabled = false;
                 btnNuevoM.Enabled = false;
                 btnBorrarMascota.Enabled = false;
@@ -355,11 +358,11 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         /// </summary>
         private void ActualizarRegistrosMascota()
         {
-            //convierte el id seleccionado del combobox
-            string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
-
             try
             {
+                //convierte el id seleccionado del combobox
+                string IdSeleccion = cbxIdDueno.SelectedItem.ToString();
+
                 //cadena de conexion DB
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
@@ -514,12 +517,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                             MessageBox.Show("Nueva mascota registrada ♡", "Operacion exitosa!");
 
-                            //Se actualizan los registros
-                            ActualizarRegistrosDueno();
-                            ActualizarRegistrosMascota();
-
-                            //Se limpian los campos y se deshabilta el boton cancelar
-                            btnCancelarM_Click(this, EventArgs.Empty);
+                            cbxIdDueno.SelectedIndex = -1;
                         }
                         //Si no se cambio ninguna fila mostrar mensaje de error
                         else
