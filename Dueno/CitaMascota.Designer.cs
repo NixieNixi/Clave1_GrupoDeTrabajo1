@@ -40,7 +40,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.label14 = new System.Windows.Forms.Label();
             this.dtpCitaFecha = new System.Windows.Forms.DateTimePicker();
             this.btnRepreogramarCitaD = new System.Windows.Forms.Button();
@@ -167,12 +166,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label13.TabIndex = 1;
             this.label13.Text = "Dueño";
             // 
-            // monthCalendar1
-            // 
-            this.monthCalendar1.Location = new System.Drawing.Point(576, 104);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 29;
-            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -194,7 +187,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnRepreogramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnRepreogramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(418, 15);
+            this.btnRepreogramarCitaD.Location = new System.Drawing.Point(248, 15);
             this.btnRepreogramarCitaD.Name = "btnRepreogramarCitaD";
             this.btnRepreogramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnRepreogramarCitaD.TabIndex = 23;
@@ -206,7 +199,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnProgramarCitaD.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnProgramarCitaD.ForeColor = System.Drawing.Color.White;
-            this.btnProgramarCitaD.Location = new System.Drawing.Point(205, 15);
+            this.btnProgramarCitaD.Location = new System.Drawing.Point(128, 16);
             this.btnProgramarCitaD.Name = "btnProgramarCitaD";
             this.btnProgramarCitaD.Size = new System.Drawing.Size(86, 23);
             this.btnProgramarCitaD.TabIndex = 22;
@@ -218,7 +211,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnCancelarEdicionCita.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnCancelarEdicionCita.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarEdicionCita.Location = new System.Drawing.Point(544, 16);
+            this.btnCancelarEdicionCita.Location = new System.Drawing.Point(368, 16);
             this.btnCancelarEdicionCita.Name = "btnCancelarEdicionCita";
             this.btnCancelarEdicionCita.Size = new System.Drawing.Size(150, 23);
             this.btnCancelarEdicionCita.TabIndex = 25;
@@ -257,9 +250,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Controls.Add(this.btnProgramarCitaD);
             this.panel1.Controls.Add(this.btnRepreogramarCitaD);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 286);
+            this.panel1.Location = new System.Drawing.Point(0, 296);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 62);
+            this.panel1.Size = new System.Drawing.Size(853, 52);
             this.panel1.TabIndex = 28;
             // 
             // dtpCitaHora
@@ -354,7 +347,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.dtpCitaHora);
             this.Controls.Add(this.dtpCitaFecha);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.monthCalendar1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtMotCiD);
@@ -393,7 +385,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dtpCitaFecha;
         private System.Windows.Forms.Button btnRepreogramarCitaD;
