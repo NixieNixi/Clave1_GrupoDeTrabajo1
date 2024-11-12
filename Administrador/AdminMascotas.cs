@@ -315,7 +315,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
         private void ActualizarRegistrosDueno()
         {
             //Limpia los elementos del comboBox ID Usuario
-            cbxIdUsuario.Items.Clear();
+            cbxIdDueno.Items.Clear();
 
             //Intentar conectar a DB
             try
