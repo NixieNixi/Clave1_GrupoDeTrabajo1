@@ -42,18 +42,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarC = new System.Windows.Forms.Button();
             this.btnNueva = new System.Windows.Forms.Button();
             this.btnCancelarC = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCitasNombreDueño = new System.Windows.Forms.Label();
             this.lblidUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblMascotasId = new System.Windows.Forms.Label();
+            this.lblCitasId = new System.Windows.Forms.Label();
+            this.lblCitasMotivo = new System.Windows.Forms.Label();
+            this.lblCitasFecha = new System.Windows.Forms.Label();
+            this.lblCitasEstado = new System.Windows.Forms.Label();
+            this.lblCitasMascota = new System.Windows.Forms.Label();
             this.txtNombreMascotaC = new System.Windows.Forms.TextBox();
             this.txtMotivo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblCitasHora = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.dtpHora = new System.Windows.Forms.DateTimePicker();
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
@@ -68,9 +68,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(32, 112);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(60, 13);
+            this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 12;
-            this.label10.Text = "ID Usuario:";
+            this.label10.Text = "ID Dueño:";
             // 
             // panel2
             // 
@@ -226,14 +226,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelarC.UseVisualStyleBackColor = false;
             this.btnCancelarC.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // label1
+            // lblCitasNombreDueño
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(304, 112);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Nombre:";
+            this.lblCitasNombreDueño.AutoSize = true;
+            this.lblCitasNombreDueño.Location = new System.Drawing.Point(304, 112);
+            this.lblCitasNombreDueño.Name = "lblCitasNombreDueño";
+            this.lblCitasNombreDueño.Size = new System.Drawing.Size(47, 13);
+            this.lblCitasNombreDueño.TabIndex = 12;
+            this.lblCitasNombreDueño.Text = "Nombre:";
             // 
             // lblidUsuario
             // 
@@ -253,59 +253,59 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNombreUsuario.TabIndex = 36;
             this.lblNombreUsuario.Text = "Nombre Dueno";
             // 
-            // label9
+            // lblMascotasId
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(32, 144);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "ID Mascota:";
+            this.lblMascotasId.AutoSize = true;
+            this.lblMascotasId.Location = new System.Drawing.Point(32, 144);
+            this.lblMascotasId.Name = "lblMascotasId";
+            this.lblMascotasId.Size = new System.Drawing.Size(65, 13);
+            this.lblMascotasId.TabIndex = 13;
+            this.lblMascotasId.Text = "ID Mascota:";
             // 
-            // label15
+            // lblCitasId
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(32, 176);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(39, 13);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "ID Cita";
+            this.lblCitasId.AutoSize = true;
+            this.lblCitasId.Location = new System.Drawing.Point(32, 176);
+            this.lblCitasId.Name = "lblCitasId";
+            this.lblCitasId.Size = new System.Drawing.Size(39, 13);
+            this.lblCitasId.TabIndex = 13;
+            this.lblCitasId.Text = "ID Cita";
             // 
-            // label8
+            // lblCitasMotivo
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(32, 240);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(42, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Motivo:";
+            this.lblCitasMotivo.AutoSize = true;
+            this.lblCitasMotivo.Location = new System.Drawing.Point(32, 240);
+            this.lblCitasMotivo.Name = "lblCitasMotivo";
+            this.lblCitasMotivo.Size = new System.Drawing.Size(42, 13);
+            this.lblCitasMotivo.TabIndex = 14;
+            this.lblCitasMotivo.Text = "Motivo:";
             // 
-            // label7
+            // lblCitasFecha
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(32, 208);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 13);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Fecha:";
+            this.lblCitasFecha.AutoSize = true;
+            this.lblCitasFecha.Location = new System.Drawing.Point(32, 208);
+            this.lblCitasFecha.Name = "lblCitasFecha";
+            this.lblCitasFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblCitasFecha.TabIndex = 15;
+            this.lblCitasFecha.Text = "Fecha:";
             // 
-            // label6
+            // lblCitasEstado
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(304, 176);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
-            this.label6.TabIndex = 16;
-            this.label6.Text = "Estado:";
+            this.lblCitasEstado.AutoSize = true;
+            this.lblCitasEstado.Location = new System.Drawing.Point(304, 176);
+            this.lblCitasEstado.Name = "lblCitasEstado";
+            this.lblCitasEstado.Size = new System.Drawing.Size(43, 13);
+            this.lblCitasEstado.TabIndex = 16;
+            this.lblCitasEstado.Text = "Estado:";
             // 
-            // label2
+            // lblCitasMascota
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(304, 144);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Mascota";
+            this.lblCitasMascota.AutoSize = true;
+            this.lblCitasMascota.Location = new System.Drawing.Point(304, 144);
+            this.lblCitasMascota.Name = "lblCitasMascota";
+            this.lblCitasMascota.Size = new System.Drawing.Size(48, 13);
+            this.lblCitasMascota.TabIndex = 16;
+            this.lblCitasMascota.Text = "Mascota";
             // 
             // txtNombreMascotaC
             // 
@@ -323,14 +323,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtMotivo.Size = new System.Drawing.Size(424, 20);
             this.txtMotivo.TabIndex = 21;
             // 
-            // label14
+            // lblCitasHora
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(304, 208);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(33, 13);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Hora:";
+            this.lblCitasHora.AutoSize = true;
+            this.lblCitasHora.Location = new System.Drawing.Point(304, 208);
+            this.lblCitasHora.Name = "lblCitasHora";
+            this.lblCitasHora.Size = new System.Drawing.Size(33, 13);
+            this.lblCitasHora.TabIndex = 30;
+            this.lblCitasHora.Text = "Hora:";
             // 
             // dtpFecha
             // 
@@ -398,18 +398,18 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.cbxIdMascotaC);
             this.Controls.Add(this.dtpHora);
             this.Controls.Add(this.dtpFecha);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.lblCitasHora);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.txtMotivo);
             this.Controls.Add(this.txtNombreMascotaC);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.label15);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.lblCitasMascota);
+            this.Controls.Add(this.lblCitasEstado);
+            this.Controls.Add(this.lblCitasFecha);
+            this.Controls.Add(this.lblCitasMotivo);
+            this.Controls.Add(this.lblCitasId);
+            this.Controls.Add(this.lblCitasNombreDueño);
+            this.Controls.Add(this.lblMascotasId);
             this.Controls.Add(this.label10);
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -431,7 +431,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnGuardarCitaD;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCitasNombreDueño;
         private System.Windows.Forms.Label lblidUsuario;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Button btnReprogramar;
@@ -439,15 +439,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Button btnGuardarC;
         private System.Windows.Forms.Button btnNueva;
         private System.Windows.Forms.Button btnCancelarC;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblMascotasId;
+        private System.Windows.Forms.Label lblCitasId;
+        private System.Windows.Forms.Label lblCitasMotivo;
+        private System.Windows.Forms.Label lblCitasFecha;
+        private System.Windows.Forms.Label lblCitasEstado;
+        private System.Windows.Forms.Label lblCitasMascota;
         private System.Windows.Forms.TextBox txtNombreMascotaC;
         private System.Windows.Forms.TextBox txtMotivo;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblCitasHora;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.DateTimePicker dtpHora;
         private System.Windows.Forms.ComboBox cbxIdMascotaC;

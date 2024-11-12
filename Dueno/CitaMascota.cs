@@ -48,7 +48,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         /// <summary>
         /// Este boton solo se activa si hay una mascota seleccionada
-        /// 
         /// Evento del boton Nueva que permite programar una nueva cita
         /// Habilita los botones de guardar y deshacer, limpia y ajusta los controles para ingresar los datos de la cita
         /// </summary>
