@@ -49,8 +49,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnEditarCita = new System.Windows.Forms.Button();
-            this.btnGuardarCita = new System.Windows.Forms.Button();
             this.dtpCitaHora = new System.Windows.Forms.DateTimePicker();
             this.cbxIDMascD = new System.Windows.Forms.ComboBox();
             this.cbxIDCitaD = new System.Windows.Forms.ComboBox();
@@ -202,7 +200,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
+            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -249,12 +247,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnPerfilD.TabIndex = 26;
             this.btnPerfilD.Text = "Perfil";
             this.btnPerfilD.UseVisualStyleBackColor = false;
+            this.btnPerfilD.Click += new System.EventHandler(this.btnPerfilD_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.Controls.Add(this.btnEditarCita);
-            this.panel1.Controls.Add(this.btnGuardarCita);
             this.panel1.Controls.Add(this.btnPerfilD);
             this.panel1.Controls.Add(this.btnCancelarEdicionCita);
             this.panel1.Controls.Add(this.btnProgramarCitaD);
@@ -264,26 +261,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(853, 62);
             this.panel1.TabIndex = 28;
-            // 
-            // btnEditarCita
-            // 
-            this.btnEditarCita.Location = new System.Drawing.Point(319, 27);
-            this.btnEditarCita.Name = "btnEditarCita";
-            this.btnEditarCita.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarCita.TabIndex = 28;
-            this.btnEditarCita.Text = "Editar Cita";
-            this.btnEditarCita.UseVisualStyleBackColor = true;
-            this.btnEditarCita.Click += new System.EventHandler(this.btnEditarCita_Click);
-            // 
-            // btnGuardarCita
-            // 
-            this.btnGuardarCita.Location = new System.Drawing.Point(116, 15);
-            this.btnGuardarCita.Name = "btnGuardarCita";
-            this.btnGuardarCita.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardarCita.TabIndex = 27;
-            this.btnGuardarCita.Text = "Guadar cita";
-            this.btnGuardarCita.UseVisualStyleBackColor = true;
-            this.btnGuardarCita.Click += new System.EventHandler(this.btnGuardarCita_Click);
             // 
             // dtpCitaHora
             // 
@@ -301,6 +278,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDMascD.Name = "cbxIDMascD";
             this.cbxIDMascD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDMascD.TabIndex = 34;
+            this.cbxIDMascD.Click += new System.EventHandler(this.cbxIDMascD_SelectedIndexChanged);
             // 
             // cbxIDCitaD
             // 
@@ -393,6 +371,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "CitaMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CitaMascota";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CitaMascota_FormClosing);
+            this.Load += new System.EventHandler(this.CitaMascota_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -431,7 +411,5 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.TextBox txtNomMascD;
         private System.Windows.Forms.Label lblNombreUsuario;
         private System.Windows.Forms.Label lblUsuarioUser;
-        private System.Windows.Forms.Button btnGuardarCita;
-        private System.Windows.Forms.Button btnEditarCita;
     }
 }

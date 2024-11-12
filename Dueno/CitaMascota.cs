@@ -12,25 +12,32 @@ using Clave1_GrupoDeTrabajo1.Interfaz;
 using Clave1_GrupoDeTrabajo1.Clases;
 using Clave1_GrupoDeTrabajo1.Administrador;
 
+
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
+
+    /// <summary>
+    /// Autor: NixieNixi
+    /// Descripcion: 
+    /// Este form a sido creado para la parte del dueño, donde podra manejar la inforacion de sus mascotas y sus citas.
+    /// 
+    /// </summary>
     public partial class CitaMascota : Form
     {
         private int IdUsuario;
-        private bool esNuevaCita; // Variable para identificar si es nueva cita
 
         public CitaMascota(int idUsuario)
         {
             InitializeComponent();
             IdUsuario = idUsuario;
             ActualizarMascotas();
-            DeshabilitarEdicion();
         }
 
-        // Método para actualizar las mascotas del usuario
+        // Método para actualizar el ComboBox de mascotas del usuario específico
         private void ActualizarMascotas()
         {
             cbxIDMascD.Items.Clear();
+
             try
             {
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
@@ -43,9 +50,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
+                            bool hasData = false;
                             while (reader.Read())
                             {
                                 cbxIDMascD.Items.Add(reader["idMascota"].ToString());
+                                hasData = true;
+                            }
+                            if (!hasData)
+                            {
+                                MessageBox.Show("No se encontraron mascotas para este usuario.");
                             }
                         }
                     }
@@ -57,27 +70,44 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-        // Deshabilitar campos para la edición
-        private void DeshabilitarEdicion()
+        // Método para actualizar los IDs de citas de la mascota seleccionada
+        private void ActualizarCitasDeMascota(int idMascota)
         {
-            txtMotCiD.Enabled = false;
-            txtEsCiD.Enabled = false;
-            dtpCitaFecha.Enabled = false;
-            dtpCitaHora.Enabled = false;
-            btnGuardarCita.Enabled = false;
+            cbxIDCitaD.Items.Clear();
+
+            try
+            {
+                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    string query = "SELECT idCita FROM Citas WHERE idMascota = @idMascota ORDER BY idCita ASC;";
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@idMascota", idMascota);
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            bool hasData = false;
+                            while (reader.Read())
+                            {
+                                cbxIDCitaD.Items.Add(reader["idCita"].ToString());
+                                hasData = true;
+                            }
+                            if (!hasData)
+                            {
+                                MessageBox.Show("No se encontraron citas para la mascota seleccionada.");
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error de conexión a Base de Datos: " + ex.Message, "Error :(");
+            }
         }
 
-        // Habilitar campos para la edición
-        private void HabilitarEdicion()
-        {
-            txtMotCiD.Enabled = true;
-            txtEsCiD.Enabled = true;
-            dtpCitaFecha.Enabled = true;
-            dtpCitaHora.Enabled = true;
-            btnGuardarCita.Enabled = true;
-        }
-
-        // Cargar detalles de la cita seleccionada
+        // Método para cargar los detalles de la cita seleccionada
         private void CargarDetallesCita(int idCita)
         {
             try
@@ -96,8 +126,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                             {
                                 txtMotCiD.Text = reader["Motivo"].ToString();
                                 txtEsCiD.Text = reader["Estado"].ToString();
-                                dtpCitaFecha.Value = (DateTime)reader["Fecha"];
-                                dtpCitaHora.Value = new DateTime(2023, 05, 05).Add((TimeSpan)reader["Hora"]);
+
+                                DateTime fecha = (DateTime)reader["Fecha"];
+                                dtpCitaFecha.Value = fecha;
+
+                                TimeSpan horaDB = (TimeSpan)reader["Hora"];
+                                DateTime hora = new DateTime(2023, 05, 05).Add(horaDB);
+                                dtpCitaHora.Value = hora;
                             }
                             else
                             {
@@ -113,148 +148,53 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             }
         }
 
-
-        private void CargarCitas(int idMascota)
-        {
-            cbxIDCitaD.Items.Clear(); // Limpiar el ComboBox antes de agregar nuevos ítems
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                {
-                    string query = "SELECT idCita FROM Citas WHERE idMascota = @idMascota ORDER BY idCita ASC;";
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@idMascota", idMascota); // Usamos el idMascota recibido
-                        connection.Open();
-
-                        using (MySqlDataReader reader = command.ExecuteReader())
-                        {
-                            // Verificamos si la consulta devuelve registros
-                            if (reader.HasRows)
-                            {
-                                while (reader.Read())
-                                {
-                                    cbxIDCitaD.Items.Add(reader["idCita"].ToString()); // Agregar los idCita al ComboBox
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("No se encontraron citas para esta mascota.");
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al cargar citas: " + ex.Message, "Error :(");
-            }
-        }
-
-
-        // Evento de cambio en el ComboBox de citas
-        private void cbxIDCitaD_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbxIDMascD_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxIDMascD.SelectedItem != null)
             {
                 int idMascotaSeleccionada = int.Parse(cbxIDMascD.SelectedItem.ToString());
-                CargarCitas(idMascotaSeleccionada); // Cargar las citas de la mascota seleccionada
+                ActualizarCitasDeMascota(idMascotaSeleccionada);
             }
         }
 
-        // Botón para programar una nueva cita
+        private void cbxIDCitaD_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxIDCitaD.SelectedItem != null)
+            {
+                int idCitaSeleccionada = int.Parse(cbxIDCitaD.SelectedItem.ToString());
+                CargarDetallesCita(idCitaSeleccionada);
+            }
+        }
+
+        private void btnPerfilD_Click(object sender, EventArgs e)
+        {
+            PerfilDueno VerDueno = new PerfilDueno();
+            this.Hide();
+            VerDueno.ShowDialog();
+        }
+
+        private void CitaMascota_Load(object sender, EventArgs e)
+        {
+            lblNombreUsuario.Text = Usuario.Nombre;
+            lblUsuarioUser.Text = Usuario.IdUsuario.ToString();
+        }
+
+        private void CitaMascota_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRepreogramarCitaD_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnProgramarCitaD_Click(object sender, EventArgs e)
         {
-            LimpiarCampos();
-            HabilitarEdicion();
-            esNuevaCita = true; // Nueva cita
+
         }
 
-        // Botón para reprogramar una cita existente
-        private void btnReprogramarCitaD_Click(object sender, EventArgs e)
-        {
-            if (cbxIDCitaD.SelectedItem == null)
-            {
-                MessageBox.Show("Por favor, selecciona una cita para reprogramar.");
-                return;
-            }
-            HabilitarEdicion();
-            esNuevaCita = false; // Reprogramar cita existente
-        }
-
-        // Guardar nueva cita o reprogramar una cita existente
-        private void btnGuardarCita_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtMotCiD.Text) || string.IsNullOrEmpty(txtEsCiD.Text))
-            {
-                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
-                return;
-            }
-
-            try
-            {
-                using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
-                {
-                    string query;
-                    if (esNuevaCita) // Si es nueva cita
-                    {
-                        query = "INSERT INTO Citas (Fecha, Hora, Motivo, Estado, idMascota) VALUES (@Fecha, @Hora, @Motivo, @Estado, @idMascota);";
-                    }
-                    else // Si es reprogramación de una cita existente
-                    {
-                        query = "UPDATE Citas SET Fecha = @Fecha, Hora = @Hora, Motivo = @Motivo, Estado = @Estado WHERE idCita = @idCita;";
-                    }
-
-                    using (MySqlCommand command = new MySqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Fecha", dtpCitaFecha.Value.Date);
-                        command.Parameters.AddWithValue("@Hora", dtpCitaHora.Value.TimeOfDay);
-                        command.Parameters.AddWithValue("@Motivo", txtMotCiD.Text);
-                        command.Parameters.AddWithValue("@Estado", txtEsCiD.Text);
-                        command.Parameters.AddWithValue("@idMascota", cbxIDMascD.SelectedItem);
-                        if (!esNuevaCita) // Solo si es reprogramación, agregar idCita
-                        {
-                            command.Parameters.AddWithValue("@idCita", int.Parse(cbxIDCitaD.SelectedItem.ToString()));
-                        }
-
-                        connection.Open();
-                        int result = command.ExecuteNonQuery();
-
-                        if (result > 0)
-                        {
-                            MessageBox.Show("Cita guardada exitosamente.");
-                            DeshabilitarEdicion();
-                        }
-                        else
-                        {
-                            MessageBox.Show("No se pudo guardar la cita.");
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error de conexión a Base de Datos: " + ex.Message, "Error :(");
-            }
-        }
-
-        // Botón de cancelar edición
         private void btnCancelarEdicionCita_Click(object sender, EventArgs e)
-        {
-            DeshabilitarEdicion();
-            LimpiarCampos();
-        }
-
-        // Limpiar los campos del formulario
-        private void LimpiarCampos()
-        {
-            txtMotCiD.Text = "";
-            txtEsCiD.Text = "";
-            dtpCitaFecha.Value = DateTime.Now;
-            dtpCitaHora.Value = DateTime.Now;
-        }
-
-        private void btnEditarCita_Click(object sender, EventArgs e)
         {
 
         }
