@@ -34,7 +34,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnCita = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txtIdDueno = new System.Windows.Forms.TextBox();
@@ -105,7 +104,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
-            this.panel1.Controls.Add(this.btnCita);
             this.panel1.Controls.Add(this.btnVolver);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 270);
@@ -113,27 +111,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Size = new System.Drawing.Size(555, 66);
             this.panel1.TabIndex = 12;
             // 
-            // btnCita
-            // 
-            this.btnCita.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnCita.Enabled = false;
-            this.btnCita.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCita.ForeColor = System.Drawing.Color.White;
-            this.btnCita.Location = new System.Drawing.Point(24, 16);
-            this.btnCita.Name = "btnCita";
-            this.btnCita.Size = new System.Drawing.Size(112, 30);
-            this.btnCita.TabIndex = 1;
-            this.btnCita.Text = "Agendar cita";
-            this.btnCita.UseVisualStyleBackColor = false;
-            this.btnCita.Click += new System.EventHandler(this.btnCita_Click);
-            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.Enabled = false;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(176, 16);
+            this.btnVolver.Location = new System.Drawing.Point(24, 16);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(80, 30);
             this.btnVolver.TabIndex = 2;
@@ -328,7 +312,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnCita;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtIdDueno;

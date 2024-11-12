@@ -351,6 +351,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdMascotaC
             // 
+            this.cbxIdMascotaC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascotaC.FormattingEnabled = true;
             this.cbxIdMascotaC.Location = new System.Drawing.Point(104, 144);
             this.cbxIdMascotaC.Name = "cbxIdMascotaC";
@@ -360,6 +361,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdCita
             // 
+            this.cbxIdCita.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdCita.Enabled = false;
             this.cbxIdCita.FormattingEnabled = true;
             this.cbxIdCita.Location = new System.Drawing.Point(104, 176);

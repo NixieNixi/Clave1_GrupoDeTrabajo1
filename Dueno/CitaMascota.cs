@@ -589,11 +589,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                         if (string.IsNullOrEmpty(txtMotivo.Text))
                         {
                             MessageBox.Show("Ingrese un motivo para la cita", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si la hora esta fuera del horario de antencion mostrar un mensaje
                         else if (horaIngresada > abrir || horaIngresada < cierre)
                         {
                             MessageBox.Show("ingrese una hora valida entre\n8:00 a.m. y 4:00 p.m.", "Error", MessageBoxButtons.OK);
+                            return;
                         }
                         //si no hay errores en los datos asignar los parametros con los datos del form
                         else
