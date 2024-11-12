@@ -26,15 +26,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     {
         private int IdUsuario;
         
-        public void RecibirInfoUser(int user)
+        public void RecibirInfoUser(int idUsuario)
         {
-            IdUsuario = user;
-            lblidUsuario.Text = IdUsuario.ToString();
+            IdUsuario = idUsuario;
+            lblidUsuario.Text = Usuario.IdUsuario.ToString();
         }
 
-        public CitaMascota()
+        public CitaMascota(int idUsuario)
         {
             InitializeComponent();
+            IdUsuario = idUsuario;
             ActualizarMascotas();
         }
 
@@ -305,39 +306,86 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void ActualizarMascotas()
         {
-            //Limpia los elementos del comboBox ID Mascota
-            cbxIdMascotaC.Items.Clear();
+            ////limpia los elementos del combobox id mascota
+            //cbxidmascotac.items.clear();
 
-            //Intentar conectar a DB
+            ////intentar conectar a db
+            //try
+            //{
+            //    //crea una conexion a la db
+            //    using (mysqlconnection connection = new mysqlconnection(menuprincipal.connectionstring))
+            //    {
+            //        //consulta la columna idmascota de la tabla mascotas y ordena los resultados por orden acendente
+            //        // string query = "select idmascota from mascotas order by idmascota asc;";
+            //        string query = "select idmascota from mascotas where idusuario = @idusuario order by idmascota asc;";
+
+            //        using (mysqlcommand command = new mysqlcommand(query, connection))
+            //        {
+            //            //agregar el parametro a la consulta
+            //            //command.parameters.addwithvalue("@idusuario", lblidusuario.text);
+            //            command.parameters.addwithvalue("@idusuario", idusuario); // usa el idusuario que se recibió
+
+
+            //            connection.open();
+            //            using (mysqldatareader reader = command.executereader())
+            //            {
+            //                while (reader.read())
+            //                {
+            //                    //inserta los registros de idmascota en el combobox id mascota
+            //                    cbxidmascotac.items.add(reader["idmascota"].tostring());
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //catch
+            //{
+            //    //si no puede conectar mostrar mensaje de error
+            //    messagebox.show("error de conexion a base de datos", "error :(");
+            //}
+
+            cbxIdMascotaC.Items.Clear(); // Limpiar el ComboBox antes de cargar los datos
+
             try
             {
-                //Crea una conexion a la DB
+                // Establecer la conexión con la base de datos
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
-                    //Consulta la columna idMascota de la tabla mascotas y ordena los resultados por orden acendente
-                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC;";
+                    // Consulta para obtener los idMascota de las mascotas del dueño que inició sesión
+                    string query = "SELECT idMascota FROM Mascotas WHERE idUsuario = @idUsuario ORDER BY idMascota ASC;";
+
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        //Agregar el parametro a la consulta
-                        //command.Parameters.AddWithValue("@idUsuario", lblidUsuario.Text);
+                        // Agregar el parámetro idDueño con el ID del dueño que ha iniciado sesión
+                        command.Parameters.AddWithValue("@idUsuario", IdUsuario); // Suponemos que idDueñoSesion contiene el ID del dueño actual
 
-                        connection.Open();
+                        connection.Open(); // Abrir la conexión
+
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
+                            bool hasData = false;
+                            // Leer cada idMascota y añadirlo al ComboBox
                             while (reader.Read())
                             {
-                                //Inserta los registros de idMascota en el comboBox ID Mascota
                                 cbxIdMascotaC.Items.Add(reader["idMascota"].ToString());
+                                hasData = true;
+                            }
+
+                            // Si no se encuentran mascotas, mostrar un mensaje
+                            if (!hasData)
+                            {
+                                MessageBox.Show("No se encontraron mascotas para este dueño.");
                             }
                         }
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                //Si no puede conectar mostrar mensaje de error
-                MessageBox.Show("Error de conexion a Base de Datos", "Error :(");
+                // Mostrar mensaje de error si falla la conexión o la consulta
+                MessageBox.Show("Error de conexión a la Base de Datos: " + ex.Message, "Error :(");
             }
+
         }
 
         /// <summary>
@@ -601,6 +649,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                     }
                 }
             }
+        }
+
+        private void btnVolverMenuDuenu_Click(object sender, EventArgs e)
+        {
+            PerfilDueno perfilDueno = new PerfilDueno();
+            this.Hide();
+            perfilDueno.ShowDialog();
         }
     }
 
