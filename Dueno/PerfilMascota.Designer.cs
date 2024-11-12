@@ -114,7 +114,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btnVolver.Enabled = false;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Location = new System.Drawing.Point(24, 16);
