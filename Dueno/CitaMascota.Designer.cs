@@ -36,6 +36,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label13 = new System.Windows.Forms.Label();
             this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnVolverMenuDuenu = new System.Windows.Forms.Button();
             this.btnReprogramar = new System.Windows.Forms.Button();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnGuardarC = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
-            this.btnVolverMenuDuenu = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -143,6 +143,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(591, 52);
             this.panel1.TabIndex = 28;
+            // 
+            // btnVolverMenuDuenu
+            // 
+            this.btnVolverMenuDuenu.Location = new System.Drawing.Point(12, 8);
+            this.btnVolverMenuDuenu.Name = "btnVolverMenuDuenu";
+            this.btnVolverMenuDuenu.Size = new System.Drawing.Size(80, 35);
+            this.btnVolverMenuDuenu.TabIndex = 6;
+            this.btnVolverMenuDuenu.Text = "Volver a Menu";
+            this.btnVolverMenuDuenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenuDuenu.Click += new System.EventHandler(this.btnVolverMenuDuenu_Click);
             // 
             // btnReprogramar
             // 
@@ -356,6 +366,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdCita.Name = "cbxIdCita";
             this.cbxIdCita.Size = new System.Drawing.Size(152, 21);
             this.cbxIdCita.TabIndex = 34;
+            this.cbxIdCita.SelectedIndexChanged += new System.EventHandler(this.cbxIdCita_SelectedIndexChanged);
             // 
             // cbxEstado
             // 
@@ -365,16 +376,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxEstado.Name = "cbxEstado";
             this.cbxEstado.Size = new System.Drawing.Size(152, 21);
             this.cbxEstado.TabIndex = 34;
-            // 
-            // btnVolverMenuDuenu
-            // 
-            this.btnVolverMenuDuenu.Location = new System.Drawing.Point(12, 8);
-            this.btnVolverMenuDuenu.Name = "btnVolverMenuDuenu";
-            this.btnVolverMenuDuenu.Size = new System.Drawing.Size(80, 35);
-            this.btnVolverMenuDuenu.TabIndex = 6;
-            this.btnVolverMenuDuenu.Text = "Volver a Menu";
-            this.btnVolverMenuDuenu.UseVisualStyleBackColor = true;
-            this.btnVolverMenuDuenu.Click += new System.EventHandler(this.btnVolverMenuDuenu_Click);
             // 
             // CitaMascota
             // 
