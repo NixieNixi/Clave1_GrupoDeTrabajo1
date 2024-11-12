@@ -49,6 +49,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarCitaD = new System.Windows.Forms.Button();
             this.btnPerfilD = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnEditarCita = new System.Windows.Forms.Button();
             this.btnGuardarCita = new System.Windows.Forms.Button();
             this.dtpCitaHora = new System.Windows.Forms.DateTimePicker();
             this.cbxIDMascD = new System.Windows.Forms.ComboBox();
@@ -59,7 +60,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.txtNomMascD = new System.Windows.Forms.TextBox();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblUsuarioUser = new System.Windows.Forms.Label();
-            this.btnEditarCita = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -202,7 +202,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnRepreogramarCitaD.TabIndex = 23;
             this.btnRepreogramarCitaD.Text = "Reprogramar";
             this.btnRepreogramarCitaD.UseVisualStyleBackColor = false;
-            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnRepreogramarCitaD_Click);
+            this.btnRepreogramarCitaD.Click += new System.EventHandler(this.btnReprogramarCitaD_Click);
             // 
             // btnProgramarCitaD
             // 
@@ -265,6 +265,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Size = new System.Drawing.Size(853, 62);
             this.panel1.TabIndex = 28;
             // 
+            // btnEditarCita
+            // 
+            this.btnEditarCita.Location = new System.Drawing.Point(319, 27);
+            this.btnEditarCita.Name = "btnEditarCita";
+            this.btnEditarCita.Size = new System.Drawing.Size(75, 23);
+            this.btnEditarCita.TabIndex = 28;
+            this.btnEditarCita.Text = "Editar Cita";
+            this.btnEditarCita.UseVisualStyleBackColor = true;
+            this.btnEditarCita.Click += new System.EventHandler(this.btnEditarCita_Click);
+            // 
             // btnGuardarCita
             // 
             this.btnGuardarCita.Location = new System.Drawing.Point(116, 15);
@@ -291,7 +301,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIDMascD.Name = "cbxIDMascD";
             this.cbxIDMascD.Size = new System.Drawing.Size(152, 21);
             this.cbxIDMascD.TabIndex = 34;
-            this.cbxIDMascD.SelectedIndexChanged += new System.EventHandler(this.cbxIDMascD_SelectedIndexChanged);
             // 
             // cbxIDCitaD
             // 
@@ -353,16 +362,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblUsuarioUser.Size = new System.Drawing.Size(35, 13);
             this.lblUsuarioUser.TabIndex = 36;
             this.lblUsuarioUser.Text = "label3";
-            // 
-            // btnEditarCita
-            // 
-            this.btnEditarCita.Location = new System.Drawing.Point(318, 15);
-            this.btnEditarCita.Name = "btnEditarCita";
-            this.btnEditarCita.Size = new System.Drawing.Size(75, 23);
-            this.btnEditarCita.TabIndex = 28;
-            this.btnEditarCita.Text = "Editar Cita";
-            this.btnEditarCita.UseVisualStyleBackColor = true;
-            this.btnEditarCita.Click += new System.EventHandler(this.btnEditarCita_Click);
             // 
             // CitaMascota
             // 
