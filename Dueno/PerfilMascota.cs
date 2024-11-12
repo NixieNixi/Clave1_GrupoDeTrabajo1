@@ -19,7 +19,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnCita_Click(object sender, EventArgs e)
         {
-            CitaMascota cita = new CitaMascota();
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

@@ -315,11 +315,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     //Consulta la columna idMascota de la tabla mascotas y ordena los resultados por orden acendente
-                    string query = "SELECT idMascota FROM mascotas WHERE idUsuario = @idUsuario ORDER BY idMascota ASC;";
+                    string query = "SELECT idMascota FROM mascotas ORDER BY idMascota ASC;";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         //Agregar el parametro a la consulta
-                        command.Parameters.AddWithValue("@idUsuario", IdUsuario);
+                        //command.Parameters.AddWithValue("@idUsuario", lblidUsuario.Text);
 
                         connection.Open();
                         using (MySqlDataReader reader = command.ExecuteReader())
