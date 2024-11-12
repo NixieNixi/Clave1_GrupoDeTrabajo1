@@ -58,6 +58,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxIdMascotaC = new System.Windows.Forms.ComboBox();
             this.cbxIdCita = new System.Windows.Forms.ComboBox();
             this.cbxEstado = new System.Windows.Forms.ComboBox();
+            this.btnVolverMenuDuenu = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -131,6 +132,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightBlue;
+            this.panel1.Controls.Add(this.btnVolverMenuDuenu);
             this.panel1.Controls.Add(this.btnReprogramar);
             this.panel1.Controls.Add(this.btnDeshacer);
             this.panel1.Controls.Add(this.btnGuardarC);
@@ -148,9 +150,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnReprogramar.Enabled = false;
             this.btnReprogramar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReprogramar.ForeColor = System.Drawing.Color.White;
-            this.btnReprogramar.Location = new System.Drawing.Point(24, 11);
+            this.btnReprogramar.Location = new System.Drawing.Point(116, 10);
             this.btnReprogramar.Name = "btnReprogramar";
-            this.btnReprogramar.Size = new System.Drawing.Size(104, 30);
+            this.btnReprogramar.Size = new System.Drawing.Size(101, 30);
             this.btnReprogramar.TabIndex = 1;
             this.btnReprogramar.Text = "Reprogramar";
             this.btnReprogramar.UseVisualStyleBackColor = false;
@@ -162,7 +164,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnDeshacer.Enabled = false;
             this.btnDeshacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeshacer.ForeColor = System.Drawing.Color.White;
-            this.btnDeshacer.Location = new System.Drawing.Point(464, 11);
+            this.btnDeshacer.Location = new System.Drawing.Point(508, 10);
             this.btnDeshacer.Name = "btnDeshacer";
             this.btnDeshacer.Size = new System.Drawing.Size(80, 30);
             this.btnDeshacer.TabIndex = 2;
@@ -176,7 +178,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarC.Enabled = false;
             this.btnGuardarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarC.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarC.Location = new System.Drawing.Point(360, 11);
+            this.btnGuardarC.Location = new System.Drawing.Point(422, 10);
             this.btnGuardarC.Name = "btnGuardarC";
             this.btnGuardarC.Size = new System.Drawing.Size(80, 30);
             this.btnGuardarC.TabIndex = 3;
@@ -190,7 +192,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnNueva.Enabled = false;
             this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNueva.ForeColor = System.Drawing.Color.White;
-            this.btnNueva.Location = new System.Drawing.Point(152, 11);
+            this.btnNueva.Location = new System.Drawing.Point(231, 10);
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(80, 30);
             this.btnNueva.TabIndex = 4;
@@ -204,7 +206,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnCancelarC.Enabled = false;
             this.btnCancelarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarC.ForeColor = System.Drawing.Color.White;
-            this.btnCancelarC.Location = new System.Drawing.Point(256, 11);
+            this.btnCancelarC.Location = new System.Drawing.Point(328, 10);
             this.btnCancelarC.Name = "btnCancelarC";
             this.btnCancelarC.Size = new System.Drawing.Size(80, 30);
             this.btnCancelarC.TabIndex = 5;
@@ -364,6 +366,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.cbxEstado.Size = new System.Drawing.Size(152, 21);
             this.cbxEstado.TabIndex = 34;
             // 
+            // btnVolverMenuDuenu
+            // 
+            this.btnVolverMenuDuenu.Location = new System.Drawing.Point(12, 8);
+            this.btnVolverMenuDuenu.Name = "btnVolverMenuDuenu";
+            this.btnVolverMenuDuenu.Size = new System.Drawing.Size(80, 35);
+            this.btnVolverMenuDuenu.TabIndex = 6;
+            this.btnVolverMenuDuenu.Text = "Volver a Menu";
+            this.btnVolverMenuDuenu.UseVisualStyleBackColor = true;
+            this.btnVolverMenuDuenu.Click += new System.EventHandler(this.btnVolverMenuDuenu_Click);
+            // 
             // CitaMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -431,5 +443,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private System.Windows.Forms.ComboBox cbxIdMascotaC;
         private System.Windows.Forms.ComboBox cbxIdCita;
         private System.Windows.Forms.ComboBox cbxEstado;
+        private System.Windows.Forms.Button btnVolverMenuDuenu;
     }
 }

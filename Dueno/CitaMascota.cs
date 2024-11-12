@@ -650,6 +650,13 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 }
             }
         }
+
+        private void btnVolverMenuDuenu_Click(object sender, EventArgs e)
+        {
+            PerfilDueno perfilDueno = new PerfilDueno();
+            this.Hide();
+            perfilDueno.ShowDialog();
+        }
     }
 
 }
