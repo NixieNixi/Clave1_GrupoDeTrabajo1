@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Clave1_GrupoDeTrabajo1.Clases;
 
 namespace Clave1_GrupoDeTrabajo1.Interfaz
 {
@@ -67,7 +68,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void veterinarioPerfil_Load(object sender, EventArgs e)
         {
-
+            lblNombreVeterinario.Text = Usuario.Nombre;
+            lblIdVeterinario.Text = Usuario.IdUsuario.ToString();
+            lblUserVeterinario.Text = Usuario.UsuarioInicio;
         }
     }
 }

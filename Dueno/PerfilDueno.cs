@@ -35,7 +35,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnIrTiendaD_Click(object sender, EventArgs e)
         {
-            int idUsuario = Usuario.IdUsuario;  
+            int idUsuario = Usuario.IdUsuario;
+            int telefono = Usuario.Telefono;
 
             if (idUsuario != 0) 
             {
@@ -131,6 +132,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         {
             lblNomD.Text = Usuario.Nombre;  // Muestra el nombre del usuario
             lblIduser.Text = Usuario.IdUsuario.ToString();
+            lblTelD.Text = Usuario.Telefono.ToString();
+            lblCorreoD.Text = Usuario.Correo;
+            lblDireccD.Text = Usuario.Direccion;
         }
 
         private void btnCerrarSeD_Click(object sender, EventArgs e)

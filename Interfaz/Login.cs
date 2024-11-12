@@ -76,11 +76,11 @@ namespace Clave1_GrupoDeTrabajo1
             //string nombre;
 
             // Consulta para obtener la contraseña y el rol del usuario
-            string query = "SELECT Contrasena, Rol, Nombre, IdUsuario FROM usuarios WHERE Usuario = @usuario";
+            string query = "SELECT Contrasena, Rol, Nombre, IdUsuario,Correo,Direccion,Telefono FROM usuarios WHERE Usuario = @usuario";
 
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
             {
-                using (MySqlCommand command = new MySqlCommand(query, connection))
+                using (MySqlCommand command = new MySqlCommand(query,connection))
                 {
                     command.Parameters.AddWithValue("@usuario", usuario);
                     connection.Open();
@@ -95,6 +95,10 @@ namespace Clave1_GrupoDeTrabajo1
                             string rol = reader["Rol"].ToString();
                             string nombre = reader["Nombre"].ToString();
 
+                            int telefono = Convert.ToInt32(reader["Telefono"]);
+                            string correo = reader["Correo"].ToString();
+                            string direccion = reader["Direccion"].ToString();
+
                             // Comparar la contraseña ingresada con la almacenada
                             if (contrasena == storedPassword)
                             {
@@ -102,6 +106,9 @@ namespace Clave1_GrupoDeTrabajo1
                                 Usuario.IdUsuario = idUsuario;
                                 Usuario.Nombre = nombre;
                                 Usuario.UsuarioInicio = usuario;
+                                Usuario.Correo = correo;
+                                Usuario.Telefono = telefono;
+                                Usuario.Direccion = direccion;
 
                                 // Redirigir según el rol del usuario
                                 switch (rol)
