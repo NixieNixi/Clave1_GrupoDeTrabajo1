@@ -107,7 +107,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
                 //se enlaza con su boton a la cita
                 CitaMascota cita = new CitaMascota();
-                cita.RecibirDatosUduario(idUsuario);
+                cita.RecibirInfoUser(idUsuario);
                 this.Hide();
                 cita.ShowDialog();
             }
