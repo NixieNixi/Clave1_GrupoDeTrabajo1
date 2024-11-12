@@ -679,10 +679,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelUsuario.Controls.Add(this.label13);
             this.panelUsuario.Controls.Add(this.label7);
             this.panelUsuario.Controls.Add(this.label6);
-            this.panelUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelUsuario.Location = new System.Drawing.Point(240, 70);
+            this.panelUsuario.Location = new System.Drawing.Point(256, 80);
             this.panelUsuario.Name = "panelUsuario";
-            this.panelUsuario.Size = new System.Drawing.Size(644, 431);
+            this.panelUsuario.Size = new System.Drawing.Size(120, 74);
             this.panelUsuario.TabIndex = 3;
             this.panelUsuario.Visible = false;
             // 
@@ -1919,6 +1918,7 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorPerfil_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();

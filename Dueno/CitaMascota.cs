@@ -26,11 +26,15 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
     {
         private int IdUsuario;
 
-        public CitaMascota(int idUsuario)
+        public CitaMascota()
         {
             InitializeComponent();
-            IdUsuario = idUsuario;
             ActualizarMascotas();
+        }
+
+        public void RecibirDatosUduario(int idUsuario)
+        {
+            IdUsuario = idUsuario;
         }
 
         // Método para actualizar el ComboBox de mascotas del usuario específico

@@ -45,5 +45,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             Login ventana = new Login();
             ventana.Close();
         }
+
+        private void AdministradorPerfil_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

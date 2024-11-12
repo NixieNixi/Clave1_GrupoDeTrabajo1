@@ -17,24 +17,21 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             InitializeComponent();
         }
 
-        private void PerfilMascota_Load(object sender, EventArgs e)
+        private void btnCita_Click(object sender, EventArgs e)
         {
-
+            CitaMascota cita = new CitaMascota();
         }
 
-        private void btnCitasMascD_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
-            //se enlaza con cita de la mascota con su boton
-            //CitaMascota Cita = new CitaMascota();
-           // Cita.ShowDialog();
-
+            PerfilDueno perfil = new PerfilDueno();
+            this.Hide();
+            perfil.ShowDialog();
         }
 
-        private void btnVolverD_Click(object sender, EventArgs e)
+        private void PerfilMascota_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //se enlaza a perfil del dueño mediante un boton
-            PerfilDueno VolverVolver = new PerfilDueno();
-            VolverVolver.ShowDialog();
+            Application.Exit();
         }
     }
 }
