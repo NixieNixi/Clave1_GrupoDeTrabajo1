@@ -164,6 +164,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // cbxIdMascota
             // 
+            this.cbxIdMascota.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxIdMascota.FormattingEnabled = true;
             this.cbxIdMascota.Location = new System.Drawing.Point(96, 144);
             this.cbxIdMascota.Name = "cbxIdMascota";
