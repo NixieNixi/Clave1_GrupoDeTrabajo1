@@ -23,7 +23,9 @@ namespace Clave1_GrupoDeTrabajo1
     public partial class MenuPrincipal : Form
     {
         /// <summary>
-        /// Cadena de conexion a la base de datos.
+        // Conexión a la base de datos. Asegúrate de que el usuario y la contraseña coincidan
+        // con los datos de acceso a tu servidor MySQL. Si tu configuración es distinta,
+        // reemplaza 'root' por tu usuario y 'MIMAMAMEMIMA' por tu contraseña.
         /// </summary>
         public const string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
 

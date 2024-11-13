@@ -42,31 +42,11 @@ namespace Clave1_GrupoDeTrabajo1
             this.Close();
         }
 
-        //Metodo para abrir el perfil de Dueño
-        private void btnDueño_Click(object sender, EventArgs e)
-        {
-            PerfilDueno VerDueñoPerfil = new PerfilDueno();
-            VerDueñoPerfil.Show();
-            this.Close();
-        }
-
-        //Metodo para abrir el perfil del veterinario
-        private void btnVeterinario_Click(object sender, EventArgs e)
-        {
-            veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
-            this.Hide();
-            veterinarioPerfil.ShowDialog();
-        }
-
-        //Metodo para abrir el perfil del Administrador
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            AdministradorPerfil administrador = new AdministradorPerfil();
-            this.Hide();
-            administrador.ShowDialog();
-            //this.Show();
-        }
-
+        /// <summary>
+        /// Metodo que permite ingresar al usuario al sitema de la veterinaria
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             // Obtener los valores del formulario
