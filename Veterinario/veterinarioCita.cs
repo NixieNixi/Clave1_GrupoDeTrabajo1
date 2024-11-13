@@ -87,7 +87,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void cbxIdMascota_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbxIdMascota.SelectedIndex==-1)
+            if (cbxIdMascota.SelectedIndex == -1)
             {
                 LimpiarControlesMascota();
             }
@@ -338,6 +338,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 // Guardar siempre la consulta
                 GuardarConsulta();
+
+                //ingresa el pago
+                ProcesarPago();
 
                 // Guardar otros servicios si están seleccionados
                 if (Vacuna)
@@ -781,5 +784,69 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         }
 
         //FIN CIRUGIA
+
+        //INICIO PAGOS  
+
+        private void ProcesarPago()
+        {
+            int idUsuario=0;
+
+            using (MySqlConnection connection = new MySqlConnection(MenuPrincipal.connectionString))
+            {
+                string query = "SELECT idUsuario FROM mascotas WHERE idMascota = @idMascota;";
+
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@idMascota", cbxIdMascota.Text.Trim());
+                    connection.Open();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            idUsuario = (int)reader["idUsuario"];
+                        }
+                    }
+                }
+            }
+
+            try
+            {
+                decimal totalPago = 8;
+
+                if(Vacuna)
+                {
+                    totalPago += 5;
+                } 
+                if(Examen)
+                {
+                    totalPago += 15;
+                } 
+                if(Cirugia)
+                {
+                    totalPago += 30;
+                }
+
+                // Insertar el pago en la base de datos (solo la tabla pagos)
+                string queryPago = @"INSERT INTO pagos (IdUsuario, Fecha, Estado, Total, TipoPago, TipoServicio)
+                                    VALUES (@IdUsuario, @Fecha, @Estado, @Total, @TipoPago, @TipoServicio)";
+                using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
+                {
+                    conexion.Open();
+                    MySqlCommand cmd = new MySqlCommand(queryPago, conexion);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Estado", "Pendiente");
+                    cmd.Parameters.AddWithValue("@Total", totalPago);
+                    cmd.Parameters.AddWithValue("@TipoPago", "Sin pagar");
+                    cmd.Parameters.AddWithValue("@TipoServicio", "Cita");
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al procesar el pago: " + ex.Message);
+            }
+        }
     }
 }
