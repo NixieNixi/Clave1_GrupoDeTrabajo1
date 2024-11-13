@@ -45,7 +45,6 @@ CREATE TABLE `cirugia` (
 
 LOCK TABLES `cirugia` WRITE;
 /*!40000 ALTER TABLE `cirugia` DISABLE KEYS */;
-INSERT INTO `cirugia` VALUES (4,5,5,'2024-11-12 21:44:53','Absceso','asdasd','asdads','adsad'),(5,4,4,'2024-11-12 22:42:43','Lavado gastrico','sdasd','asdasd','sdasd');
 /*!40000 ALTER TABLE `cirugia` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,7 +111,6 @@ CREATE TABLE `consultas` (
 
 LOCK TABLES `consultas` WRITE;
 /*!40000 ALTER TABLE `consultas` DISABLE KEYS */;
-INSERT INTO `consultas` VALUES (4,1,1,'2024-11-10 22:21:04',2.00,'Consulta general','','','','','',''),(5,5,5,'2024-11-12 21:44:53',12.00,'Problemas digestivos','','','','','',''),(6,4,4,'2024-11-12 22:42:43',2.00,'Chequeo Gestante','gato','epco','medio gris con un toque de gris','comer','si','le falta sopa');
 /*!40000 ALTER TABLE `consultas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,45 +144,7 @@ CREATE TABLE `examen` (
 
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
-INSERT INTO `examen` VALUES (4,5,5,'2024-11-12 21:44:53','Sida felino','sdasd','asdasd','dsads'),(5,4,4,'2024-11-12 22:42:43','Sangre','asdasd','asdasd','sdasd');
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `expedientes`
---
-
-DROP TABLE IF EXISTS `expedientes`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `expedientes` (
-  `idExpediente` int NOT NULL AUTO_INCREMENT,
-  `idMascota` int NOT NULL,
-  `idConsulta` int NOT NULL,
-  `idExamen` int DEFAULT NULL,
-  `idVacuna` int DEFAULT NULL,
-  `idCirugia` int DEFAULT NULL,
-  PRIMARY KEY (`idExpediente`),
-  KEY `idCirugia_idx` (`idCirugia`),
-  KEY `idVacuna_idx` (`idVacuna`),
-  KEY `idExamen_idx` (`idExamen`),
-  KEY `idMascota_idx` (`idMascota`),
-  KEY `idConsulta_idx` (`idConsulta`),
-  CONSTRAINT `idCirugia` FOREIGN KEY (`idCirugia`) REFERENCES `cirugia` (`idCirugia`),
-  CONSTRAINT `idConsulta` FOREIGN KEY (`idConsulta`) REFERENCES `consultas` (`idConsulta`),
-  CONSTRAINT `idExamen` FOREIGN KEY (`idExamen`) REFERENCES `examen` (`idExamen`),
-  CONSTRAINT `idMascota` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`),
-  CONSTRAINT `idVacuna` FOREIGN KEY (`idVacuna`) REFERENCES `vacuna` (`idVacuna`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `expedientes`
---
-
-LOCK TABLES `expedientes` WRITE;
-/*!40000 ALTER TABLE `expedientes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `expedientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -360,7 +320,6 @@ CREATE TABLE `vacuna` (
 
 LOCK TABLES `vacuna` WRITE;
 /*!40000 ALTER TABLE `vacuna` DISABLE KEYS */;
-INSERT INTO `vacuna` VALUES (4,5,5,'2024-11-12 21:44:53','Perro Hepatitis','asdads','sdasd','asdasd'),(5,4,4,'2024-11-12 22:42:43','Rabia','asd','asd','asd');
 /*!40000 ALTER TABLE `vacuna` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -373,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-13  1:01:15
+-- Dump completed on 2024-11-13  5:55:05
