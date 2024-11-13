@@ -297,8 +297,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Controls.Add(this.panel2);
             this.Name = "PerfilMascota";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Perfil de la Mascota";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilMascota_FormClosing);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

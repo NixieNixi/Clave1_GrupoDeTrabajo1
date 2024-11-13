@@ -71,10 +71,5 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             lblIdVeterinario.Text = Usuario.IdUsuario.ToString();
             lblUserVeterinario.Text = Usuario.UsuarioInicio;
         }
-
-        private void veterinarioPerfil_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

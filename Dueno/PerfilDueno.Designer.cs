@@ -273,7 +273,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "PerfilDueno";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil Dueño";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PerfilDueno_FormClosing);
             this.Load += new System.EventHandler(this.PerfilDueno_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

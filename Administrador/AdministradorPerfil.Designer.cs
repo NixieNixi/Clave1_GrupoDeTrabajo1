@@ -1919,7 +1919,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorPerfil_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();

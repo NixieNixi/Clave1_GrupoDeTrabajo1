@@ -120,10 +120,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         // Evento para el botón "Volver a Perfil"
         private void btnVolD_Click(object sender, EventArgs e)
         {
-            
             PerfilDueno perfil = new PerfilDueno();
-            this.Hide();
-            perfil.ShowDialog();
+            perfil.Show();
+            this.Close();
         }
 
 
@@ -287,12 +286,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 MessageBox.Show("Por favor, selecciona un producto para cancelar.");
             }
-        }
-
-        private void Tienda_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
-            Application.Exit();
         }
     }
 

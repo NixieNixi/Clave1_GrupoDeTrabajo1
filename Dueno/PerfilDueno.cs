@@ -139,15 +139,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnCerrarSeD_Click(object sender, EventArgs e)
         {
-            Login login = new Login();
-            this.Hide();
-            login.ShowDialog();
-        }
-
-        private void PerfilDueno_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
-            Application.Exit();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+            this.Close();
         }
     }
 }

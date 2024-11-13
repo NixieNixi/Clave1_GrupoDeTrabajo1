@@ -28,13 +28,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         private void btnVolver_Click(object sender, EventArgs e)
         {
             PerfilDueno perfil = new PerfilDueno();
-            this.Hide();
-            perfil.ShowDialog();
-        }
-
-        private void PerfilMascota_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
+            perfil.Show();
+            this.Close();
         }
 
         private void ActualizarRegistrosMascota()
