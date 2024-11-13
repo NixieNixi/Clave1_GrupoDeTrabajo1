@@ -42,7 +42,23 @@ namespace Clave1_GrupoDeTrabajo1
 
         private void btnInfo_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui se mostrara informacion tal como el horario de atencion, productos y servicios disponibles");
+            //MessageBox.Show("Aqui se mostrara informacion tal como el horario de atencion, productos y servicios disponibles");
+                        MessageBox.Show(
+                "Costos de los servicios:\n" +
+                "- Consulta: $8\n" +
+                "- Vacuna: $5\n" +
+                "- Examen: $15\n" +
+                "- Cirugía: $30\n\n" +
+                "Productos disponibles:\n" +
+                "- Comida para perros\n" +
+                "- Comida para gatos\n" +
+                "- Snacks y golosinas\n\n" +
+                "Horario de atención:\n" +
+                "De Lunes a Domingo: 8:00 a.m. a 4:00 p.m.\n" ,
+                "Información de Citas y Horarios",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
         }
 
         //Metodo para abrir la ventana de Login
