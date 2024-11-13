@@ -29,13 +29,8 @@ namespace Clave1_GrupoDeTrabajo1
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -47,15 +42,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(480, 182);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 57;
-            this.label3.Text = "Color Custom";
             // 
             // label2
             // 
@@ -74,46 +60,6 @@ namespace Clave1_GrupoDeTrabajo1
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 58;
             this.label1.Text = "Color Web";
-            // 
-            // button14
-            // 
-            this.button14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button14.Location = new System.Drawing.Point(422, 136);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(169, 31);
-            this.button14.TabIndex = 55;
-            this.button14.Text = "192; 255; 192";
-            this.button14.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.button13.Location = new System.Drawing.Point(422, 99);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(169, 31);
-            this.button13.TabIndex = 54;
-            this.button13.Text = "192; 192; 255";
-            this.button13.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.button12.Location = new System.Drawing.Point(422, 64);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(169, 31);
-            this.button12.TabIndex = 53;
-            this.button12.Text = "224; 224; 224";
-            this.button12.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.button11.Location = new System.Drawing.Point(422, 27);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(169, 31);
-            this.button11.TabIndex = 52;
-            this.button11.Text = "192; 255; 255";
-            this.button11.UseVisualStyleBackColor = false;
             // 
             // button10
             // 
@@ -221,13 +167,8 @@ namespace Clave1_GrupoDeTrabajo1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 321);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
@@ -246,14 +187,8 @@ namespace Clave1_GrupoDeTrabajo1
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;

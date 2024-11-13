@@ -848,5 +848,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 MessageBox.Show("Error al procesar el pago: " + ex.Message);
             }
         }
+
+        private void gbxInfoConsulta_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
