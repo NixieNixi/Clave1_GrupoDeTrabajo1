@@ -205,6 +205,5 @@
   <ItemGroup>
     <Content Include="sql\clave1_grupodetrabajodb1.sql" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

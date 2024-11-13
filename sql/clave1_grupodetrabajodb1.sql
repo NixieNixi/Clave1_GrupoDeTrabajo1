@@ -36,7 +36,7 @@ CREATE TABLE `cirugia` (
   KEY `idCItaCirugia_idx` (`idCita`),
   CONSTRAINT `idCItaCirugia` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaCirugia` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,7 +65,7 @@ CREATE TABLE `citas` (
   PRIMARY KEY (`idCita`),
   KEY `idMascota_Citas` (`idMascota`),
   CONSTRAINT `idMascota_Citas` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,6 @@ CREATE TABLE `citas` (
 
 LOCK TABLES `citas` WRITE;
 /*!40000 ALTER TABLE `citas` DISABLE KEYS */;
-INSERT INTO `citas` VALUES (1,1,'Consulta general','Programada','2024-11-15','08:00:00'),(2,1,'Vacunació','Programada','2024-11-16','09:00:00'),(3,3,'Control de peso','Programada','2024-11-17','10:00:00'),(4,4,'Chequeo Gestante','Programada','2024-11-18','11:00:00'),(5,5,'Problemas digestivos','Programada','2024-11-19','12:00:00'),(6,6,'Consulta general','Programada','2024-11-20','13:00:00'),(7,7,'Vacunació','Programada','2024-11-21','14:00:00'),(8,8,'Chequeo mensual','Programada','2024-11-22','15:00:00'),(9,9,'Cirugía programad','Programada','2024-11-23','08:30:00'),(10,10,'Revisión de herida','Programada','2024-11-24','09:30:00'),(11,11,'Chequeo general','Programada','2024-11-25','10:30:00'),(12,12,'Control post-operatorio','Programada','2024-11-26','11:30:00'),(13,13,'Desparasitació','Programada','2024-11-27','12:30:00'),(14,14,'Consulta de emergencia','Programada','2024-11-28','13:30:00');
 /*!40000 ALTER TABLE `citas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +102,7 @@ CREATE TABLE `consultas` (
   KEY `idcitaconsulta_idx` (`idCita`),
   CONSTRAINT `idcitaconsulta` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaConsulta` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +135,7 @@ CREATE TABLE `examen` (
   KEY `idCita_idx` (`idCita`),
   CONSTRAINT `idCita` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaExamen` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -146,6 +145,43 @@ CREATE TABLE `examen` (
 LOCK TABLES `examen` WRITE;
 /*!40000 ALTER TABLE `examen` DISABLE KEYS */;
 /*!40000 ALTER TABLE `examen` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `expedientes`
+--
+
+DROP TABLE IF EXISTS `expedientes`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `expedientes` (
+  `idExpediente` int NOT NULL AUTO_INCREMENT,
+  `idMascota` int NOT NULL,
+  `idConsulta` int NOT NULL,
+  `idExamen` int DEFAULT NULL,
+  `idVacuna` int DEFAULT NULL,
+  `idCirugia` int DEFAULT NULL,
+  PRIMARY KEY (`idExpediente`),
+  KEY `idCirugia_idx` (`idCirugia`),
+  KEY `idVacuna_idx` (`idVacuna`),
+  KEY `idExamen_idx` (`idExamen`),
+  KEY `idMascota_idx` (`idMascota`),
+  KEY `idConsulta_idx` (`idConsulta`),
+  CONSTRAINT `idCirugia` FOREIGN KEY (`idCirugia`) REFERENCES `cirugia` (`idCirugia`),
+  CONSTRAINT `idConsulta` FOREIGN KEY (`idConsulta`) REFERENCES `consultas` (`idConsulta`),
+  CONSTRAINT `idExamen` FOREIGN KEY (`idExamen`) REFERENCES `examen` (`idExamen`),
+  CONSTRAINT `idMascota` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`),
+  CONSTRAINT `idVacuna` FOREIGN KEY (`idVacuna`) REFERENCES `vacuna` (`idVacuna`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `expedientes`
+--
+
+LOCK TABLES `expedientes` WRITE;
+/*!40000 ALTER TABLE `expedientes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `expedientes` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -166,7 +202,7 @@ CREATE TABLE `mascotas` (
   PRIMARY KEY (`idMascota`),
   KEY `idUsuarios_idx` (`idUsuario`),
   CONSTRAINT `idUsuarios` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,7 +211,6 @@ CREATE TABLE `mascotas` (
 
 LOCK TABLES `mascotas` WRITE;
 /*!40000 ALTER TABLE `mascotas` DISABLE KEYS */;
-INSERT INTO `mascotas` VALUES (1,'Misi','2022-02-10','Gato','Curl Americano','F',7),(2,'Misty','2022-04-26','Gato','American Wirehair','F',7),(3,'Raúl','2020-03-25','Gato','Sin raza','M',8),(4,'Bonnie','2021-03-15','Gato','Americano Pelo Corto','M',5),(5,'Canelo','2015-06-14','Perro','Nureongi','M',5),(6,'Tanathos','2021-10-07','Gato','Chartreux','M',6),(7,'Pandora','2023-08-07','Gato','Fold','F',6),(8,'Luis','2021-06-12','Iguana','runoceconte','M',8),(9,'Marlen','2023-09-20','Pez','Payaso','M',8),(10,'Gaxi','2024-10-30','Gato','American Wirehair','F',7),(11,'Naranja','2024-02-15','Gato','American Wirehair','M',7),(12,'Max','2024-01-24','Perro','Salchicha','M',7),(13,'Dogger','2014-04-14','Perro','Continental','M',7),(14,'Frijol','2024-06-02','Perro','Chihuahua ','M',11);
 /*!40000 ALTER TABLE `mascotas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +232,7 @@ CREATE TABLE `pagos` (
   PRIMARY KEY (`idPago`),
   KEY `idUsuarios_ipagos` (`idUsuario`),
   CONSTRAINT `idUsuarios_pagos` FOREIGN KEY (`idUsuario`) REFERENCES `usuarios` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +241,6 @@ CREATE TABLE `pagos` (
 
 LOCK TABLES `pagos` WRITE;
 /*!40000 ALTER TABLE `pagos` DISABLE KEYS */;
-INSERT INTO `pagos` VALUES (1,5,'2022-03-14','Pagado',20.00,'Efectivo','Cita'),(2,6,'2022-04-14','Pagado',40.00,'Efectivo','Producto'),(3,7,'2022-03-13','Pagado',23.00,'Tarjeta','Cita'),(4,8,'2022-04-14','Pendiente',123.00,'Sin pagar','Producto'),(5,5,'2022-08-11','Pagado',124.50,'Efectivo','Cita'),(6,6,'2023-09-04','Pagado',153.70,'Efectivo','Producto'),(7,7,'2023-11-14','Pagado',182.90,'Bitcoin','Cita'),(8,8,'2023-12-25','Pendiente',212.10,'Sin pagar','Producto'),(10,5,'2024-11-10','Pendiente',35.00,'Efectivo','Cita');
 /*!40000 ALTER TABLE `pagos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +267,7 @@ CREATE TABLE `productos` (
 
 LOCK TABLES `productos` WRITE;
 /*!40000 ALTER TABLE `productos` DISABLE KEYS */;
-INSERT INTO `productos` VALUES (1,'Alimiau',1.00,'1 lb Comida para gato',19),(2,'CatChips',12.00,'1 lb Comida para gato',19),(3,'Gati',5.00,'1 kg Comida para gato',16),(4,'Rufo',2.00,'1 kg Comida para perro',19),(5,'Pedigree',10.00,'2 kg Comida para perro',20),(6,'Nutripet',4.00,'2.3 kg Comida para cachorro',20),(7,'PetGround',5.00,'c/u Cesped para gato',20),(8,'HappyCat',5.00,'5 lb Arena para gato sin aroma',20),(9,'Yes!pH',10.00,' 250 ml Champú para perros y gato',20);
+INSERT INTO `productos` VALUES (1,'Alimiau',1.00,'1 lb Comida para gato',16),(2,'CatChips',12.00,'1 lb Comida para gato',16),(3,'Gati',5.00,'1 kg Comida para gato',13),(4,'Rufo',2.00,'1 kg Comida para perro',19),(5,'Pedigree',10.00,'2 kg Comida para perro',17),(6,'Nutripet',4.00,'2.3 kg Comida para cachorro',15),(7,'PetGround',5.00,'c/u Cesped para gato',19),(8,'HappyCat',5.00,'5 lb Arena para gato sin aroma',18),(9,'Yes!pH',10.00,' 250 ml Champú para perros y gato',18);
 /*!40000 ALTER TABLE `productos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +314,7 @@ CREATE TABLE `usuarios` (
   `Contrasena` varchar(255) NOT NULL,
   PRIMARY KEY (`idUsuario`),
   UNIQUE KEY `Usuario_UNIQUE` (`Usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -289,7 +323,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'Dr. Gabriela Bautista','77548926','gabriela.bautista@gmail.com','Cojutepeque, Cuscatlan','Veterinario','GaBau','MeBa'),(2,'Dr. Roberto Alfaro','98765432','robert.alfa@gmail.com','San Juan Opico, La libertad','Veterinario','Rob','Alfa'),(3,'Dr. Cristian Vasquez','45678912','cristian.vasquez@gmail.com','Ilopango, San Salvador','Veterinario','Cris','Vas'),(4,'Dr. Esmeralda Castellanos','96385274','esmeralda.castellanos@gmail.com','San Marcos, San Salvador','Veterinario','Esme','Cas'),(5,'Maria Mejia','74185296','maria.mejia@gmail.com','Sta Cruz Michapa, Cuscatlan','Dueño','NixieNixi','wangxian'),(6,'Rafael Ramos','85296374','rafael.ramos@gmail.com','Santa Ana, Santa Ana','Dueño','Raff','RarMustis'),(7,'Mauricio Hernandez','12305678','mauricio.hernan@gmail.com','San Miguel Tepezontes,La Paz','Dueño','Mau2','Canela1'),(8,'Odeth Perez','75342189','odeth.perez@gmail.com','Sierra Morena,San Salvador','Dueño','Ruby','Ruby1'),(9,'Luis Escobar','12345678','luis.escobar@ues.edu.sv','San Salvador,San Salvador','Administrador','LuisEsco','Escobar12'),(10,'Nombre','12345678','correo@gmail.com','Mi casa','Dueño','usar','contraseña123'),(11,'Julio','12345678','correo@correo.com','Casa de Julio','Dueño','Panquesito','123edfg'),(12,'José','12345678','jose@correo.com','casa de jose','Dueño','js123','23eddf3'),(13,'Marcos','12345678','correo.mc@gmail.com','Madriguera de ninguna parte','Dueño','mc123','123asd'),(14,'Galleta','12345678','galletadecanela2048@gmail.com','mi casa','Administrador','canela.feliz','1234');
+INSERT INTO `usuarios` VALUES (1,'Maria Mejia','72345678','MB23011@ues.edu.sv','Cuscatlan, El Salvador','Administrador','MB23011','mb23011'),(2,'Cristian Vasquez','72345678','VH23017@ues.edu.sv','Ilopango, El Salvador','Administrador','VH23017 ','vh23017 '),(3,'Esmeralda Castellanos','72345678','PC23045@ues.edu.sv','San Marcos, El Salvador','Administrador','PC23045  ','pc23045'),(4,'Roberto Alfaro','72345678','RA23035@ues.edu.sv','Chanmico, El Salvador','Administrador','RA23035','ra23035'),(5,'Carlos Hernández','72345678','carlos.hernandez@email.com','San Salvador, El Salvador','Dueño','carlos123','contrasenaCarlos'),(6,'María López','72567890','maria.lopez@email.com','Santa Ana, El Salvador','Dueño','maria123','contrasenaMaria'),(7,'José González','73456789','jose.gonzalez@email.com','San Miguel, El Salvador','Veterinario','josevet','contrasenaJose'),(8,'Ana Martínez','74567891','ana.martinez@email.com','La Libertad, El Salvador','Veterinario','anavet','contrasenaAna'),(9,'Luis Rodríguez','75567892','luis.rodriguez@email.com','Sonsonate, El Salvador','Dueño','luis123','contrasenaLuis'),(10,'Elena Rivera','76567893','elena.rivera@email.com','Ahuachapán, El Salvador','Veterinario','elenavet','contrasenaElena'),(11,'Luis Escobar','75342186','luis.escobar@ues.edu.sv','Ciudad Universitaria, El Salvador','Administrador','LuisEsco','Escobar12'),(12,'Juan Pérez','72891234','juan.perez@email.com','Usulután, El Salvador','Dueño','juanP','contrasenaJuan'),(13,'Laura Sánchez','72233456','laura.sanchez@email.com','Zacatecoluca, El Salvador','Dueño','lauraS','contrasenaLaura'),(14,'Pedro Martínez','73344567','pedro.martinez@email.com','La Union, El Salvador','Veterinario','pedrovet','contrasenaPedro'),(15,'Sandra Gómez','74355678','sandra.gomez@email.com','Chalatenango, El Salvador','Veterinario','sandravet','contrasenaSandra'),(16,'Carlos Ramírez','75366789','carlos.ramirez@email.com','San Vicente, El Salvador','Dueño','carlosR','contrasenaCarlos'),(17,'Patricia Díaz','76377890','patricia.diaz@email.com','Sonsonate, El Salvador','Veterinario','patriciavet','contrasenaPatricia'),(18,'Ricardo Rodríguez','77388901','ricardo.rodriguez@email.com','Cojutepeque, El Salvador','Dueño','ricardoR','contrasenaRicardo'),(19,'Isabel Flores','78399012','isabel.flores@email.com','Santa Tecla, El Salvador','Veterinario','isabelvet','contrasenaIsabel'),(20,'Jorge Hernández','79310123','jorge.hernandez@email.com','Soyapango, El Salvador','Dueño','jorgeH','contrasenaJorge'),(21,'Marta Rodríguez','80321234','marta.rodriguez@email.com','La Libertad, El Salvador','Veterinario','martarvet','contrasenaMarta'),(22,'Víctor Silva','81332345','victor.silva@email.com','Ilobasco, El Salvador','Dueño','victorS','contrasenaVictor'),(23,'Nancy Pérez','82343456','nancy.perez@email.com','Ahuachapán, El Salvador','Veterinario','nancyvet','contrasenaNancy');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -314,7 +348,7 @@ CREATE TABLE `vacuna` (
   KEY `idCitaVacuna_idx` (`idCita`),
   CONSTRAINT `idCitaVacuna` FOREIGN KEY (`idCita`) REFERENCES `citas` (`idCita`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idMascotaVacuna` FOREIGN KEY (`idMascota`) REFERENCES `mascotas` (`idMascota`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -335,4 +369,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-10 21:48:34
+-- Dump completed on 2024-11-13  1:01:15
