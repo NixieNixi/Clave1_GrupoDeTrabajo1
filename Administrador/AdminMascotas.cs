@@ -518,7 +518,10 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
 
                             MessageBox.Show("Nueva mascota registrada ♡", "Operacion exitosa!");
 
-                            cbxIdDueno.SelectedIndex = -1;
+                            LimpiarMascota();
+                            cbxIdMascotaM.Enabled = true;
+                            activarM = false;
+                            btnCancelarM_Click(this, EventArgs.Empty);
                         }
                         //Si no se cambio ninguna fila mostrar mensaje de error
                         else
