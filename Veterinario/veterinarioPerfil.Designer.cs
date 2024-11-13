@@ -221,7 +221,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.Name = "veterinarioPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil Veterinario";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.veterinarioPerfil_FormClosing);
             this.Load += new System.EventHandler(this.veterinarioPerfil_Load);
             this.gbVeterinarioPerfil.ResumeLayout(false);
             this.gbVeterinarioPerfil.PerformLayout();

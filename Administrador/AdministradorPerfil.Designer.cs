@@ -754,10 +754,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelMascotas.Controls.Add(this.label20);
             this.panelMascotas.Controls.Add(this.label16);
             this.panelMascotas.Controls.Add(this.label21);
-            this.panelMascotas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMascotas.Location = new System.Drawing.Point(240, 70);
+            this.panelMascotas.Location = new System.Drawing.Point(424, 96);
             this.panelMascotas.Name = "panelMascotas";
-            this.panelMascotas.Size = new System.Drawing.Size(644, 371);
+            this.panelMascotas.Size = new System.Drawing.Size(68, 57);
             this.panelMascotas.TabIndex = 12;
             this.panelMascotas.Visible = false;
             // 
@@ -1073,9 +1072,9 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.panelCitas.Controls.Add(this.label34);
             this.panelCitas.Controls.Add(this.label32);
             this.panelCitas.Controls.Add(this.label33);
-            this.panelCitas.Location = new System.Drawing.Point(520, 80);
+            this.panelCitas.Location = new System.Drawing.Point(512, 80);
             this.panelCitas.Name = "panelCitas";
-            this.panelCitas.Size = new System.Drawing.Size(100, 100);
+            this.panelCitas.Size = new System.Drawing.Size(100, 64);
             this.panelCitas.TabIndex = 3;
             this.panelCitas.Visible = false;
             // 
@@ -1920,7 +1919,6 @@ namespace Clave1_GrupoDeTrabajo1.Administrador
             this.Name = "AdministradorPerfil";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Administración";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AdministradorPerfil_FormClosing);
             this.Load += new System.EventHandler(this.AdministradorPerfil_Load);
             this.panelBotones.ResumeLayout(false);
             this.panelBotones.PerformLayout();

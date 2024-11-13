@@ -618,15 +618,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
 
         private void btnVolverMenuDuenu_Click(object sender, EventArgs e)
         {
-            PerfilDueno perfilDueno = new PerfilDueno();
-            this.Hide();
-            perfilDueno.ShowDialog();
-        }
-
-        private void CitaMascota_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
-            Application.Exit();
+            PerfilDueno perfil = new PerfilDueno();
+            perfil.Show();
+            this.Close();
         }
     }
 

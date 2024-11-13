@@ -120,10 +120,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         // Evento para el botón "Volver a Perfil"
         private void btnVolD_Click(object sender, EventArgs e)
         {
-            
             PerfilDueno perfil = new PerfilDueno();
-            this.Hide();
-            perfil.ShowDialog();
+            perfil.Show();
+            this.Close();
         }
 
 
@@ -192,19 +191,19 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             try
             {
                 decimal totalPago = carrito.CalcularTotal(); // Calculamos el total de la compra
-                DateTime fechaPago = DateTime.Now;  // Fecha del pago
-                string tipoPago = "Efectivo";  // Tipo de pago (puedes ajustarlo según lo que desees)
 
                 // Insertar el pago en la base de datos (solo la tabla pagos)
-                string queryPago = "INSERT INTO pagos (Total, Fecha, TipoPago, IdUsuario) VALUES (@Total, @Fecha, @TipoPago, @IdUsuario)";
+                string queryPago = "INSERT INTO pagos (IdUsuario, Fecha, Estado, Total, TipoPago, TipoServicio) VALUES (@IdUsuario, @Fecha, @Estado, @Total, @TipoPago, @TipoServicio)";
                 using (MySqlConnection conexion = new MySqlConnection(MenuPrincipal.connectionString))
                 {
                     conexion.Open();
                     MySqlCommand cmd = new MySqlCommand(queryPago, conexion);
-                    cmd.Parameters.AddWithValue("@Total", totalPago);
-                    cmd.Parameters.AddWithValue("@Fecha", fechaPago);
-                    cmd.Parameters.AddWithValue("@TipoPago", tipoPago);
                     cmd.Parameters.AddWithValue("@IdUsuario", this.IdUsuario);
+                    cmd.Parameters.AddWithValue("@Fecha", DateTime.Now);
+                    cmd.Parameters.AddWithValue("@Estado", "Pendiente");
+                    cmd.Parameters.AddWithValue("@Total", totalPago);
+                    cmd.Parameters.AddWithValue("@TipoPago", "Sin pagar");
+                    cmd.Parameters.AddWithValue("@TipoServicio", "Producto");
 
                     cmd.ExecuteNonQuery(); 
                 }
@@ -232,9 +231,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 MessageBox.Show("Error al procesar el pago: " + ex.Message);
             }
         }
-
-
-
 
         private void btnFinCompra_Click(object sender, EventArgs e)
         {
@@ -290,12 +286,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             {
                 MessageBox.Show("Por favor, selecciona un producto para cancelar.");
             }
-        }
-
-        private void Tienda_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //Al presionar X en la ventana, finalizara la ejecucion total del progrma
-            Application.Exit();
         }
     }
 

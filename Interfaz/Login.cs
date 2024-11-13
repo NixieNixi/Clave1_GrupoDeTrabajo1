@@ -27,7 +27,6 @@ namespace Clave1_GrupoDeTrabajo1
     /// </remarks>
     public partial class Login : Form
     {
-        string connectionString = "Server=localhost;Database=clave1_grupodetrabajodb1; Uid =root;Pwd=MIMAMAMEMIMA;";
         public static int IdUsuario { get; set; }
 
         public Login()
@@ -39,16 +38,16 @@ namespace Clave1_GrupoDeTrabajo1
         private void btnSalir_Click(object sender, EventArgs e)
         {
             MenuPrincipal menu = new MenuPrincipal();
-            this.Hide();
-            menu.ShowDialog();
+            menu.Show();
+            this.Close();
         }
 
         //Metodo para abrir el perfil de Dueño
         private void btnDueño_Click(object sender, EventArgs e)
         {
             PerfilDueno VerDueñoPerfil = new PerfilDueno();
-            this.Hide();
-            VerDueñoPerfil.ShowDialog();
+            VerDueñoPerfil.Show();
+            this.Close();
         }
 
         //Metodo para abrir el perfil del veterinario
@@ -122,7 +121,7 @@ namespace Clave1_GrupoDeTrabajo1
                                     case "Dueño":
                                         PerfilDueno perfilDueno = new PerfilDueno(); 
                                         perfilDueno.Show();
-                                        this.Hide();
+                                        this.Close();
                                         break;
 
                                    case "Administrador":
