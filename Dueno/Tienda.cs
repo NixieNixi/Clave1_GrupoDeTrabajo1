@@ -287,6 +287,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
                 MessageBox.Show("Por favor, selecciona un producto para cancelar.");
             }
         }
+
+        private void gbxProductoDisponible_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

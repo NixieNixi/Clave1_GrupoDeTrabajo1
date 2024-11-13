@@ -321,6 +321,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTipoVacuna
             // 
             this.lblTipoVacuna.AutoSize = true;
+            this.lblTipoVacuna.BackColor = System.Drawing.Color.LightCyan;
             this.lblTipoVacuna.Location = new System.Drawing.Point(40, 32);
             this.lblTipoVacuna.Name = "lblTipoVacuna";
             this.lblTipoVacuna.Size = new System.Drawing.Size(68, 13);
@@ -330,6 +331,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMotiVacuna
             // 
             this.lblMotiVacuna.AutoSize = true;
+            this.lblMotiVacuna.BackColor = System.Drawing.Color.LightCyan;
             this.lblMotiVacuna.Location = new System.Drawing.Point(40, 64);
             this.lblMotiVacuna.Name = "lblMotiVacuna";
             this.lblMotiVacuna.Size = new System.Drawing.Size(79, 13);
@@ -339,6 +341,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDescripcionVacuna
             // 
             this.lblDescripcionVacuna.AutoSize = true;
+            this.lblDescripcionVacuna.BackColor = System.Drawing.Color.LightCyan;
             this.lblDescripcionVacuna.Location = new System.Drawing.Point(472, 64);
             this.lblDescripcionVacuna.Name = "lblDescripcionVacuna";
             this.lblDescripcionVacuna.Size = new System.Drawing.Size(63, 13);
@@ -348,6 +351,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasVacuna
             // 
             this.lblNotasVacuna.AutoSize = true;
+            this.lblNotasVacuna.BackColor = System.Drawing.Color.LightCyan;
             this.lblNotasVacuna.Location = new System.Drawing.Point(40, 96);
             this.lblNotasVacuna.Name = "lblNotasVacuna";
             this.lblNotasVacuna.Size = new System.Drawing.Size(35, 13);
@@ -357,6 +361,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblUsaMaterialesVacuna
             // 
             this.lblUsaMaterialesVacuna.AutoSize = true;
+            this.lblUsaMaterialesVacuna.BackColor = System.Drawing.Color.LightCyan;
             this.lblUsaMaterialesVacuna.Location = new System.Drawing.Point(472, 32);
             this.lblUsaMaterialesVacuna.Name = "lblUsaMaterialesVacuna";
             this.lblUsaMaterialesVacuna.Size = new System.Drawing.Size(94, 13);
@@ -429,6 +434,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxInfoConsulta.TabIndex = 11;
             this.gbxInfoConsulta.TabStop = false;
             this.gbxInfoConsulta.Text = "Informacion de la Consulta";
+            this.gbxInfoConsulta.Enter += new System.EventHandler(this.gbxInfoConsulta_Enter);
             // 
             // txtPeso
             // 
@@ -440,6 +446,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblSintomas
             // 
             this.lblSintomas.AutoSize = true;
+            this.lblSintomas.BackColor = System.Drawing.Color.LightCyan;
             this.lblSintomas.Location = new System.Drawing.Point(40, 32);
             this.lblSintomas.Name = "lblSintomas";
             this.lblSintomas.Size = new System.Drawing.Size(50, 13);
@@ -449,6 +456,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblExamFisico
             // 
             this.lblExamFisico.AutoSize = true;
+            this.lblExamFisico.BackColor = System.Drawing.Color.LightCyan;
             this.lblExamFisico.Location = new System.Drawing.Point(40, 64);
             this.lblExamFisico.Name = "lblExamFisico";
             this.lblExamFisico.Size = new System.Drawing.Size(75, 13);
@@ -458,6 +466,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDiagnostico
             // 
             this.lblDiagnostico.AutoSize = true;
+            this.lblDiagnostico.BackColor = System.Drawing.Color.LightCyan;
             this.lblDiagnostico.Location = new System.Drawing.Point(40, 96);
             this.lblDiagnostico.Name = "lblDiagnostico";
             this.lblDiagnostico.Size = new System.Drawing.Size(63, 13);
@@ -467,6 +476,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNotasCita
             // 
             this.lblNotasCita.AutoSize = true;
+            this.lblNotasCita.BackColor = System.Drawing.Color.LightCyan;
             this.lblNotasCita.Location = new System.Drawing.Point(40, 128);
             this.lblNotasCita.Name = "lblNotasCita";
             this.lblNotasCita.Size = new System.Drawing.Size(35, 13);
@@ -476,6 +486,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMedicamentos
             // 
             this.lblMedicamentos.AutoSize = true;
+            this.lblMedicamentos.BackColor = System.Drawing.Color.LightCyan;
             this.lblMedicamentos.Location = new System.Drawing.Point(472, 71);
             this.lblMedicamentos.Name = "lblMedicamentos";
             this.lblMedicamentos.Size = new System.Drawing.Size(76, 13);
@@ -485,6 +496,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTratamiento
             // 
             this.lblTratamiento.AutoSize = true;
+            this.lblTratamiento.BackColor = System.Drawing.Color.LightCyan;
             this.lblTratamiento.Location = new System.Drawing.Point(472, 39);
             this.lblTratamiento.Name = "lblTratamiento";
             this.lblTratamiento.Size = new System.Drawing.Size(63, 13);
@@ -493,6 +505,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSintomas
             // 
+            this.txtSintomas.BackColor = System.Drawing.Color.White;
             this.txtSintomas.Location = new System.Drawing.Point(180, 32);
             this.txtSintomas.Name = "txtSintomas";
             this.txtSintomas.Size = new System.Drawing.Size(200, 20);
@@ -514,6 +527,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtTratamiento
             // 
+            this.txtTratamiento.BackColor = System.Drawing.Color.White;
             this.txtTratamiento.Location = new System.Drawing.Point(578, 32);
             this.txtTratamiento.Name = "txtTratamiento";
             this.txtTratamiento.Size = new System.Drawing.Size(200, 20);
@@ -524,6 +538,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblPeso.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblPeso.AutoSize = true;
+            this.lblPeso.BackColor = System.Drawing.Color.LightCyan;
             this.lblPeso.Location = new System.Drawing.Point(472, 103);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(31, 13);
@@ -717,6 +732,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblFechaCita
             // 
             this.lblFechaCita.AutoSize = true;
+            this.lblFechaCita.BackColor = System.Drawing.Color.LightCyan;
             this.lblFechaCita.Location = new System.Drawing.Point(474, 96);
             this.lblFechaCita.Name = "lblFechaCita";
             this.lblFechaCita.Size = new System.Drawing.Size(58, 13);
@@ -725,6 +741,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtEstadoCita
             // 
+            this.txtEstadoCita.BackColor = System.Drawing.Color.White;
             this.txtEstadoCita.Enabled = false;
             this.txtEstadoCita.Location = new System.Drawing.Point(578, 64);
             this.txtEstadoCita.Name = "txtEstadoCita";
@@ -734,6 +751,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtMotiConsulta
             // 
+            this.txtMotiConsulta.BackColor = System.Drawing.Color.White;
             this.txtMotiConsulta.Enabled = false;
             this.txtMotiConsulta.Location = new System.Drawing.Point(578, 128);
             this.txtMotiConsulta.Name = "txtMotiConsulta";
@@ -746,6 +764,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblMotiConsulta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMotiConsulta.AutoSize = true;
+            this.lblMotiConsulta.BackColor = System.Drawing.Color.LightCyan;
             this.lblMotiConsulta.Location = new System.Drawing.Point(474, 128);
             this.lblMotiConsulta.Name = "lblMotiConsulta";
             this.lblMotiConsulta.Size = new System.Drawing.Size(83, 13);
@@ -757,6 +776,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblIdMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblIdMascota.AutoSize = true;
+            this.lblIdMascota.BackColor = System.Drawing.Color.LightCyan;
             this.lblIdMascota.Location = new System.Drawing.Point(36, 32);
             this.lblIdMascota.Name = "lblIdMascota";
             this.lblIdMascota.Size = new System.Drawing.Size(62, 13);
@@ -768,6 +788,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.LightCyan;
             this.label4.Location = new System.Drawing.Point(36, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
@@ -779,6 +800,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEspecie.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEspecie.AutoSize = true;
+            this.lblEspecie.BackColor = System.Drawing.Color.LightCyan;
             this.lblEspecie.Location = new System.Drawing.Point(36, 96);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Size = new System.Drawing.Size(45, 13);
@@ -790,6 +812,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblEstadoCita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEstadoCita.AutoSize = true;
+            this.lblEstadoCita.BackColor = System.Drawing.Color.LightCyan;
             this.lblEstadoCita.Location = new System.Drawing.Point(474, 64);
             this.lblEstadoCita.Name = "lblEstadoCita";
             this.lblEstadoCita.Size = new System.Drawing.Size(40, 13);
@@ -801,6 +824,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
+            this.label9.BackColor = System.Drawing.Color.LightCyan;
             this.label9.Location = new System.Drawing.Point(474, 32);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(39, 13);
@@ -809,6 +833,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSexo
             // 
+            this.txtSexo.BackColor = System.Drawing.Color.White;
             this.txtSexo.Enabled = false;
             this.txtSexo.Location = new System.Drawing.Point(180, 128);
             this.txtSexo.Name = "txtSexo";
@@ -818,6 +843,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtEspecie
             // 
+            this.txtEspecie.BackColor = System.Drawing.Color.White;
             this.txtEspecie.Enabled = false;
             this.txtEspecie.Location = new System.Drawing.Point(180, 96);
             this.txtEspecie.Name = "txtEspecie";
@@ -830,6 +856,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.lblNomMascota.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblNomMascota.AutoSize = true;
+            this.lblNomMascota.BackColor = System.Drawing.Color.LightCyan;
             this.lblNomMascota.Location = new System.Drawing.Point(36, 64);
             this.lblNomMascota.Name = "lblNomMascota";
             this.lblNomMascota.Size = new System.Drawing.Size(88, 13);
@@ -838,6 +865,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNomMascota
             // 
+            this.txtNomMascota.BackColor = System.Drawing.Color.White;
             this.txtNomMascota.Enabled = false;
             this.txtNomMascota.Location = new System.Drawing.Point(180, 61);
             this.txtNomMascota.Name = "txtNomMascota";
@@ -847,7 +875,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnGuardarVeterinarioCita
             // 
-            this.btnGuardarVeterinarioCita.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnGuardarVeterinarioCita.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnGuardarVeterinarioCita.ForeColor = System.Drawing.Color.White;
             this.btnGuardarVeterinarioCita.Location = new System.Drawing.Point(609, 14);
             this.btnGuardarVeterinarioCita.Name = "btnGuardarVeterinarioCita";
             this.btnGuardarVeterinarioCita.Size = new System.Drawing.Size(111, 42);
@@ -858,7 +887,8 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.btnCancelar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
             this.btnCancelar.Location = new System.Drawing.Point(751, 14);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 42);

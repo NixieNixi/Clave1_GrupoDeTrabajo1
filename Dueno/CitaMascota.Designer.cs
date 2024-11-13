@@ -66,6 +66,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // label10
             // 
             this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.LightCyan;
             this.label10.Location = new System.Drawing.Point(32, 112);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(56, 13);
@@ -81,7 +82,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(591, 80);
+            this.panel2.Size = new System.Drawing.Size(604, 80);
             this.panel2.TabIndex = 27;
             // 
             // label11
@@ -141,16 +142,16 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 296);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(591, 52);
+            this.panel1.Size = new System.Drawing.Size(604, 52);
             this.panel1.TabIndex = 28;
             // 
             // btnVolverMenuDuenu
             // 
             this.btnVolverMenuDuenu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolverMenuDuenu.ForeColor = System.Drawing.Color.White;
-            this.btnVolverMenuDuenu.Location = new System.Drawing.Point(12, 8);
+            this.btnVolverMenuDuenu.Location = new System.Drawing.Point(31, 10);
             this.btnVolverMenuDuenu.Name = "btnVolverMenuDuenu";
-            this.btnVolverMenuDuenu.Size = new System.Drawing.Size(80, 35);
+            this.btnVolverMenuDuenu.Size = new System.Drawing.Size(98, 30);
             this.btnVolverMenuDuenu.TabIndex = 6;
             this.btnVolverMenuDuenu.Text = "Volver a Menu";
             this.btnVolverMenuDuenu.UseVisualStyleBackColor = false;
@@ -162,7 +163,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnReprogramar.Enabled = false;
             this.btnReprogramar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReprogramar.ForeColor = System.Drawing.Color.White;
-            this.btnReprogramar.Location = new System.Drawing.Point(116, 10);
+            this.btnReprogramar.Location = new System.Drawing.Point(135, 10);
             this.btnReprogramar.Name = "btnReprogramar";
             this.btnReprogramar.Size = new System.Drawing.Size(101, 30);
             this.btnReprogramar.TabIndex = 1;
@@ -176,7 +177,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnDeshacer.Enabled = false;
             this.btnDeshacer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeshacer.ForeColor = System.Drawing.Color.White;
-            this.btnDeshacer.Location = new System.Drawing.Point(508, 10);
+            this.btnDeshacer.Location = new System.Drawing.Point(500, 10);
             this.btnDeshacer.Name = "btnDeshacer";
             this.btnDeshacer.Size = new System.Drawing.Size(80, 30);
             this.btnDeshacer.TabIndex = 2;
@@ -190,7 +191,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnGuardarC.Enabled = false;
             this.btnGuardarC.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarC.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarC.Location = new System.Drawing.Point(422, 10);
+            this.btnGuardarC.Location = new System.Drawing.Point(414, 10);
             this.btnGuardarC.Name = "btnGuardarC";
             this.btnGuardarC.Size = new System.Drawing.Size(80, 30);
             this.btnGuardarC.TabIndex = 3;
@@ -204,7 +205,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.btnNueva.Enabled = false;
             this.btnNueva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNueva.ForeColor = System.Drawing.Color.White;
-            this.btnNueva.Location = new System.Drawing.Point(231, 10);
+            this.btnNueva.Location = new System.Drawing.Point(242, 10);
             this.btnNueva.Name = "btnNueva";
             this.btnNueva.Size = new System.Drawing.Size(80, 30);
             this.btnNueva.TabIndex = 4;
@@ -229,6 +230,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasNombreDueño
             // 
             this.lblCitasNombreDueño.AutoSize = true;
+            this.lblCitasNombreDueño.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasNombreDueño.Location = new System.Drawing.Point(304, 112);
             this.lblCitasNombreDueño.Name = "lblCitasNombreDueño";
             this.lblCitasNombreDueño.Size = new System.Drawing.Size(47, 13);
@@ -256,6 +258,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblMascotasId
             // 
             this.lblMascotasId.AutoSize = true;
+            this.lblMascotasId.BackColor = System.Drawing.Color.LightCyan;
             this.lblMascotasId.Location = new System.Drawing.Point(32, 144);
             this.lblMascotasId.Name = "lblMascotasId";
             this.lblMascotasId.Size = new System.Drawing.Size(65, 13);
@@ -265,6 +268,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasId
             // 
             this.lblCitasId.AutoSize = true;
+            this.lblCitasId.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasId.Location = new System.Drawing.Point(32, 176);
             this.lblCitasId.Name = "lblCitasId";
             this.lblCitasId.Size = new System.Drawing.Size(39, 13);
@@ -274,6 +278,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasMotivo
             // 
             this.lblCitasMotivo.AutoSize = true;
+            this.lblCitasMotivo.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasMotivo.Location = new System.Drawing.Point(32, 240);
             this.lblCitasMotivo.Name = "lblCitasMotivo";
             this.lblCitasMotivo.Size = new System.Drawing.Size(42, 13);
@@ -283,6 +288,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasFecha
             // 
             this.lblCitasFecha.AutoSize = true;
+            this.lblCitasFecha.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasFecha.Location = new System.Drawing.Point(32, 208);
             this.lblCitasFecha.Name = "lblCitasFecha";
             this.lblCitasFecha.Size = new System.Drawing.Size(40, 13);
@@ -292,6 +298,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasEstado
             // 
             this.lblCitasEstado.AutoSize = true;
+            this.lblCitasEstado.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasEstado.Location = new System.Drawing.Point(304, 176);
             this.lblCitasEstado.Name = "lblCitasEstado";
             this.lblCitasEstado.Size = new System.Drawing.Size(43, 13);
@@ -301,6 +308,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasMascota
             // 
             this.lblCitasMascota.AutoSize = true;
+            this.lblCitasMascota.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasMascota.Location = new System.Drawing.Point(304, 144);
             this.lblCitasMascota.Name = "lblCitasMascota";
             this.lblCitasMascota.Size = new System.Drawing.Size(48, 13);
@@ -326,6 +334,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCitasHora
             // 
             this.lblCitasHora.AutoSize = true;
+            this.lblCitasHora.BackColor = System.Drawing.Color.LightCyan;
             this.lblCitasHora.Location = new System.Drawing.Point(304, 208);
             this.lblCitasHora.Name = "lblCitasHora";
             this.lblCitasHora.Size = new System.Drawing.Size(33, 13);
@@ -390,7 +399,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(591, 348);
+            this.ClientSize = new System.Drawing.Size(604, 348);
             this.Controls.Add(this.lblNombreUsuario);
             this.Controls.Add(this.lblidUsuario);
             this.Controls.Add(this.cbxEstado);

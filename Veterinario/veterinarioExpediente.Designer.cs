@@ -113,9 +113,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(34, 11);
+            this.btnVolver.Location = new System.Drawing.Point(189, 30);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(327, 79);
+            this.btnVolver.Size = new System.Drawing.Size(214, 42);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -125,9 +125,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnIrCita.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnIrCita.ForeColor = System.Drawing.Color.White;
-            this.btnIrCita.Location = new System.Drawing.Point(544, 11);
+            this.btnIrCita.Location = new System.Drawing.Point(542, 29);
             this.btnIrCita.Name = "btnIrCita";
-            this.btnIrCita.Size = new System.Drawing.Size(327, 79);
+            this.btnIrCita.Size = new System.Drawing.Size(214, 43);
             this.btnIrCita.TabIndex = 2;
             this.btnIrCita.Text = "Ir Cita";
             this.btnIrCita.UseVisualStyleBackColor = false;
@@ -213,6 +213,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblHistorialCitas
             // 
             this.lblHistorialCitas.AutoSize = true;
+            this.lblHistorialCitas.BackColor = System.Drawing.Color.LightCyan;
             this.lblHistorialCitas.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHistorialCitas.Location = new System.Drawing.Point(315, 134);
             this.lblHistorialCitas.Name = "lblHistorialCitas";
@@ -223,6 +224,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblHistorialCirugias
             // 
             this.lblHistorialCirugias.AutoSize = true;
+            this.lblHistorialCirugias.BackColor = System.Drawing.Color.LightCyan;
             this.lblHistorialCirugias.Font = new System.Drawing.Font("Microsoft Tai Le", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHistorialCirugias.Location = new System.Drawing.Point(332, 406);
             this.lblHistorialCirugias.Name = "lblHistorialCirugias";
@@ -407,6 +409,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // tabInformacionGeneral
             // 
+            this.tabInformacionGeneral.BackColor = System.Drawing.Color.White;
             this.tabInformacionGeneral.Controls.Add(this.gbxDatosDueno);
             this.tabInformacionGeneral.Controls.Add(this.gbxDatosMascota);
             this.tabInformacionGeneral.Location = new System.Drawing.Point(4, 22);
@@ -415,10 +418,10 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.tabInformacionGeneral.Size = new System.Drawing.Size(912, 446);
             this.tabInformacionGeneral.TabIndex = 0;
             this.tabInformacionGeneral.Text = "Informacion General";
-            this.tabInformacionGeneral.UseVisualStyleBackColor = true;
             // 
             // gbxDatosDueno
             // 
+            this.gbxDatosDueno.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gbxDatosDueno.Controls.Add(this.lblNomDueno);
             this.gbxDatosDueno.Controls.Add(this.lblTelefono);
             this.gbxDatosDueno.Controls.Add(this.lblCorreo);
@@ -439,6 +442,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNomDueno
             // 
             this.lblNomDueno.AutoSize = true;
+            this.lblNomDueno.BackColor = System.Drawing.Color.LightCyan;
             this.lblNomDueno.Location = new System.Drawing.Point(304, 32);
             this.lblNomDueno.Name = "lblNomDueno";
             this.lblNomDueno.Size = new System.Drawing.Size(79, 13);
@@ -448,6 +452,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
+            this.lblTelefono.BackColor = System.Drawing.Color.LightCyan;
             this.lblTelefono.Location = new System.Drawing.Point(576, 32);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(49, 13);
@@ -457,6 +462,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblCorreo
             // 
             this.lblCorreo.AutoSize = true;
+            this.lblCorreo.BackColor = System.Drawing.Color.LightCyan;
             this.lblCorreo.Location = new System.Drawing.Point(32, 96);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(38, 13);
@@ -466,6 +472,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
+            this.lblDireccion.BackColor = System.Drawing.Color.LightCyan;
             this.lblDireccion.Location = new System.Drawing.Point(32, 160);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(52, 13);
@@ -475,6 +482,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblIdDueno
             // 
             this.lblIdDueno.AutoSize = true;
+            this.lblIdDueno.BackColor = System.Drawing.Color.LightCyan;
             this.lblIdDueno.Location = new System.Drawing.Point(32, 32);
             this.lblIdDueno.Name = "lblIdDueno";
             this.lblIdDueno.Size = new System.Drawing.Size(53, 13);
@@ -483,6 +491,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtDireccionDueno
             // 
+            this.txtDireccionDueno.BackColor = System.Drawing.Color.White;
             this.txtDireccionDueno.Location = new System.Drawing.Point(32, 176);
             this.txtDireccionDueno.Name = "txtDireccionDueno";
             this.txtDireccionDueno.ReadOnly = true;
@@ -491,6 +500,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtCorreoDueno
             // 
+            this.txtCorreoDueno.BackColor = System.Drawing.Color.White;
             this.txtCorreoDueno.Location = new System.Drawing.Point(32, 112);
             this.txtCorreoDueno.Name = "txtCorreoDueno";
             this.txtCorreoDueno.ReadOnly = true;
@@ -499,6 +509,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNomDueno
             // 
+            this.txtNomDueno.BackColor = System.Drawing.Color.White;
             this.txtNomDueno.Location = new System.Drawing.Point(304, 48);
             this.txtNomDueno.Name = "txtNomDueno";
             this.txtNomDueno.ReadOnly = true;
@@ -507,6 +518,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtTelefonoDueno
             // 
+            this.txtTelefonoDueno.BackColor = System.Drawing.Color.White;
             this.txtTelefonoDueno.Location = new System.Drawing.Point(576, 48);
             this.txtTelefonoDueno.Name = "txtTelefonoDueno";
             this.txtTelefonoDueno.ReadOnly = true;
@@ -515,6 +527,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtIdDuenoExp
             // 
+            this.txtIdDuenoExp.BackColor = System.Drawing.Color.White;
             this.txtIdDuenoExp.Location = new System.Drawing.Point(32, 48);
             this.txtIdDuenoExp.Name = "txtIdDuenoExp";
             this.txtIdDuenoExp.ReadOnly = true;
@@ -523,6 +536,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxDatosMascota
             // 
+            this.gbxDatosMascota.BackColor = System.Drawing.Color.WhiteSmoke;
             this.gbxDatosMascota.Controls.Add(this.lblIdMascota);
             this.gbxDatosMascota.Controls.Add(this.txtSexo);
             this.gbxDatosMascota.Controls.Add(this.cbxIdMascota);
@@ -545,6 +559,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblIdMascota
             // 
             this.lblIdMascota.AutoSize = true;
+            this.lblIdMascota.BackColor = System.Drawing.Color.LightCyan;
             this.lblIdMascota.Location = new System.Drawing.Point(32, 32);
             this.lblIdMascota.Name = "lblIdMascota";
             this.lblIdMascota.Size = new System.Drawing.Size(62, 13);
@@ -553,6 +568,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtSexo
             // 
+            this.txtSexo.BackColor = System.Drawing.Color.White;
             this.txtSexo.Location = new System.Drawing.Point(304, 112);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.ReadOnly = true;
@@ -570,6 +586,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtFechaNacimiento
             // 
+            this.txtFechaNacimiento.BackColor = System.Drawing.Color.White;
             this.txtFechaNacimiento.Location = new System.Drawing.Point(576, 112);
             this.txtFechaNacimiento.Name = "txtFechaNacimiento";
             this.txtFechaNacimiento.ReadOnly = true;
@@ -578,6 +595,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtRaza
             // 
+            this.txtRaza.BackColor = System.Drawing.Color.White;
             this.txtRaza.Location = new System.Drawing.Point(32, 112);
             this.txtRaza.Name = "txtRaza";
             this.txtRaza.ReadOnly = true;
@@ -587,6 +605,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblRaza
             // 
             this.lblRaza.AutoSize = true;
+            this.lblRaza.BackColor = System.Drawing.Color.LightCyan;
             this.lblRaza.Location = new System.Drawing.Point(32, 96);
             this.lblRaza.Name = "lblRaza";
             this.lblRaza.Size = new System.Drawing.Size(32, 13);
@@ -595,6 +614,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtEspecie
             // 
+            this.txtEspecie.BackColor = System.Drawing.Color.White;
             this.txtEspecie.Location = new System.Drawing.Point(576, 48);
             this.txtEspecie.Name = "txtEspecie";
             this.txtEspecie.ReadOnly = true;
@@ -604,6 +624,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
+            this.lblSexo.BackColor = System.Drawing.Color.LightCyan;
             this.lblSexo.Location = new System.Drawing.Point(304, 96);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(31, 13);
@@ -613,6 +634,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblFechaNacimiento
             // 
             this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.BackColor = System.Drawing.Color.LightCyan;
             this.lblFechaNacimiento.Location = new System.Drawing.Point(576, 96);
             this.lblFechaNacimiento.Name = "lblFechaNacimiento";
             this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
@@ -621,6 +643,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // txtNomMascota
             // 
+            this.txtNomMascota.BackColor = System.Drawing.Color.White;
             this.txtNomMascota.Location = new System.Drawing.Point(304, 48);
             this.txtNomMascota.Name = "txtNomMascota";
             this.txtNomMascota.ReadOnly = true;
@@ -630,6 +653,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblEspecie
             // 
             this.lblEspecie.AutoSize = true;
+            this.lblEspecie.BackColor = System.Drawing.Color.LightCyan;
             this.lblEspecie.Location = new System.Drawing.Point(576, 32);
             this.lblEspecie.Name = "lblEspecie";
             this.lblEspecie.Size = new System.Drawing.Size(89, 13);
@@ -639,6 +663,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblNomMascota
             // 
             this.lblNomMascota.AutoSize = true;
+            this.lblNomMascota.BackColor = System.Drawing.Color.LightCyan;
             this.lblNomMascota.Location = new System.Drawing.Point(304, 32);
             this.lblNomMascota.Name = "lblNomMascota";
             this.lblNomMascota.Size = new System.Drawing.Size(88, 13);

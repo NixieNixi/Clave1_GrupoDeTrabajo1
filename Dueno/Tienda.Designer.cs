@@ -63,32 +63,38 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnComprarProducto
             // 
+            this.btnComprarProducto.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnComprarProducto.ForeColor = System.Drawing.Color.White;
             this.btnComprarProducto.Location = new System.Drawing.Point(235, 14);
             this.btnComprarProducto.Name = "btnComprarProducto";
             this.btnComprarProducto.Size = new System.Drawing.Size(125, 23);
             this.btnComprarProducto.TabIndex = 3;
             this.btnComprarProducto.Text = "Comprar Producto";
-            this.btnComprarProducto.UseVisualStyleBackColor = true;
+            this.btnComprarProducto.UseVisualStyleBackColor = false;
             this.btnComprarProducto.Click += new System.EventHandler(this.btnComprarD_Click);
             // 
             // btnCanceD
             // 
+            this.btnCanceD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnCanceD.ForeColor = System.Drawing.Color.White;
             this.btnCanceD.Location = new System.Drawing.Point(436, 14);
             this.btnCanceD.Name = "btnCanceD";
             this.btnCanceD.Size = new System.Drawing.Size(124, 23);
             this.btnCanceD.TabIndex = 7;
             this.btnCanceD.Text = "Cancelar Producto";
-            this.btnCanceD.UseVisualStyleBackColor = true;
+            this.btnCanceD.UseVisualStyleBackColor = false;
             this.btnCanceD.Click += new System.EventHandler(this.btnCanceD_Click);
             // 
             // btnVolD
             // 
+            this.btnVolD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnVolD.ForeColor = System.Drawing.Color.White;
             this.btnVolD.Location = new System.Drawing.Point(28, 14);
             this.btnVolD.Name = "btnVolD";
             this.btnVolD.Size = new System.Drawing.Size(98, 23);
             this.btnVolD.TabIndex = 8;
             this.btnVolD.Text = "Volver al Perfil";
-            this.btnVolD.UseVisualStyleBackColor = true;
+            this.btnVolD.UseVisualStyleBackColor = false;
             this.btnVolD.Click += new System.EventHandler(this.btnVolD_Click);
             // 
             // panel2
@@ -150,12 +156,14 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // btnFinCompra
             // 
+            this.btnFinCompra.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnFinCompra.ForeColor = System.Drawing.Color.White;
             this.btnFinCompra.Location = new System.Drawing.Point(664, 14);
             this.btnFinCompra.Name = "btnFinCompra";
             this.btnFinCompra.Size = new System.Drawing.Size(122, 23);
             this.btnFinCompra.TabIndex = 9;
             this.btnFinCompra.Text = "Finalizar Compra";
-            this.btnFinCompra.UseVisualStyleBackColor = true;
+            this.btnFinCompra.UseVisualStyleBackColor = false;
             this.btnFinCompra.Click += new System.EventHandler(this.btnFinCompra_Click);
             // 
             // dgvProductos
@@ -256,6 +264,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // lblTotalCompra
             // 
             this.lblTotalCompra.AutoSize = true;
+            this.lblTotalCompra.BackColor = System.Drawing.Color.LightCyan;
             this.lblTotalCompra.Location = new System.Drawing.Point(25, 164);
             this.lblTotalCompra.Name = "lblTotalCompra";
             this.lblTotalCompra.Size = new System.Drawing.Size(73, 13);
@@ -264,6 +273,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             // gbxProductoDisponible
             // 
+            this.gbxProductoDisponible.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.gbxProductoDisponible.Controls.Add(this.dgvProductos);
             this.gbxProductoDisponible.Location = new System.Drawing.Point(12, 106);
             this.gbxProductoDisponible.Name = "gbxProductoDisponible";
@@ -271,9 +281,11 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             this.gbxProductoDisponible.TabIndex = 22;
             this.gbxProductoDisponible.TabStop = false;
             this.gbxProductoDisponible.Text = "Productos Disponibles";
+            this.gbxProductoDisponible.Enter += new System.EventHandler(this.gbxProductoDisponible_Enter);
             // 
             // gbxMostrarSeleccion
             // 
+            this.gbxMostrarSeleccion.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.gbxMostrarSeleccion.Controls.Add(this.dgvCarritoCompras);
             this.gbxMostrarSeleccion.Controls.Add(this.lblTotalCompra);
             this.gbxMostrarSeleccion.Controls.Add(this.lblMostrarTotalCompra);
@@ -288,7 +300,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(824, 602);
             this.Controls.Add(this.gbxMostrarSeleccion);
             this.Controls.Add(this.gbxProductoDisponible);
