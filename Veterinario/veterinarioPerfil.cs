@@ -61,7 +61,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             //Ocultar el formulario actual
             this.Hide();
             //Mostrar el formulario del menú principal
-            menu.Show();
+            menu.ShowDialog();
 
         }
 

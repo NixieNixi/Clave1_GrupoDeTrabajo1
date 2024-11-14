@@ -113,7 +113,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnVolver.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(189, 30);
+            this.btnVolver.Location = new System.Drawing.Point(320, 32);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(214, 42);
             this.btnVolver.TabIndex = 1;
@@ -125,7 +125,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.btnIrCita.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnIrCita.ForeColor = System.Drawing.Color.White;
-            this.btnIrCita.Location = new System.Drawing.Point(542, 29);
+            this.btnIrCita.Location = new System.Drawing.Point(408, 472);
             this.btnIrCita.Name = "btnIrCita";
             this.btnIrCita.Size = new System.Drawing.Size(214, 43);
             this.btnIrCita.TabIndex = 2;
@@ -411,6 +411,7 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.tabInformacionGeneral.BackColor = System.Drawing.Color.White;
             this.tabInformacionGeneral.Controls.Add(this.gbxDatosDueno);
+            this.tabInformacionGeneral.Controls.Add(this.btnIrCita);
             this.tabInformacionGeneral.Controls.Add(this.gbxDatosMascota);
             this.tabInformacionGeneral.Location = new System.Drawing.Point(4, 22);
             this.tabInformacionGeneral.Name = "tabInformacionGeneral";
@@ -684,7 +685,6 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
             // 
             this.panelBotonesExp.BackColor = System.Drawing.Color.LightBlue;
             this.panelBotonesExp.Controls.Add(this.btnVolver);
-            this.panelBotonesExp.Controls.Add(this.btnIrCita);
             this.panelBotonesExp.Location = new System.Drawing.Point(0, 543);
             this.panelBotonesExp.Name = "panelBotonesExp";
             this.panelBotonesExp.Size = new System.Drawing.Size(906, 118);

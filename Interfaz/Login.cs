@@ -45,8 +45,6 @@ namespace Clave1_GrupoDeTrabajo1
         /// <summary>
         /// Metodo que permite ingresar al usuario al sitema de la veterinaria
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             // Obtener los valores del formulario
@@ -94,12 +92,14 @@ namespace Clave1_GrupoDeTrabajo1
                                 {
                                     case "Veterinario":
                                         veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
-                                        veterinarioPerfil.Show();
                                         this.Hide();
+                                        veterinarioPerfil.Show();
+                                        this.Close();
                                         break;
 
                                     case "Dueño":
-                                        PerfilDueno perfilDueno = new PerfilDueno(); 
+                                        PerfilDueno perfilDueno = new PerfilDueno();
+                                        this.Hide();
                                         perfilDueno.Show();
                                         this.Close();
                                         break;
@@ -109,6 +109,7 @@ namespace Clave1_GrupoDeTrabajo1
                                         this.Hide();
                                         menuAdmin.InfoUser(nombre, usuario);
                                         menuAdmin.Show();
+                                        this.Close();
                                         break;
                                 }
                             }

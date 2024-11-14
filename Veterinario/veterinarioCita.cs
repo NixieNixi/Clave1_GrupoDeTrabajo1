@@ -442,7 +442,9 @@ namespace Clave1_GrupoDeTrabajo1.Interfaz
         /// </summary>
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            veterinarioPerfil veterinarioPerfil = new veterinarioPerfil();
+            this.Hide();
+            veterinarioPerfil.ShowDialog();
         }
 
         //INICIO CONSULTA
